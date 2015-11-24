@@ -6,7 +6,9 @@
 5. 暂无法翻译的词或语句可保留原始英文
 
 ### 下载eslint-zh
+
 下载eslint-zh到本地目录，切换到mixed分支（对`.md`文档翻译时保留原始英文，以便校对）
+
 ```bash
 $ git clone git@github.com:molee1905/eslint-zh.git
 $ cd eslint-zh
