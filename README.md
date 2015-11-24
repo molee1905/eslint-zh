@@ -1,3 +1,51 @@
+# 翻译原则
+1. 忠于作者表达的思想
+2. 语句简洁通顺，符合中文读写习惯
+3. 不主动、不刻意删减原文内容
+4. 不主动、不刻意增加原文不存在的内容
+5. 暂无法翻译的词或语句可保留原始英文
+
+### 下载eslint-zh
+下载eslint-zh到本地目录，切换到mixed分支（对`.md`文档翻译时保留原始英文，以便校对）
+```bash
+$ git clone git@github.com:molee1905/eslint-zh.git
+$ cd eslint-zh
+$ git checkout mixed
+```
+
+### 修改文件
+
+### 本地预览
+
+在本地进行调试预览，安装[bundler][1] ，如果已安装，可跳过此步：
+```bash
+$ sudo gem install bundler
+$ bundle -h
+```
+安装依赖包
+```bash
+$ bundle install
+```
+启动jekyll
+```bash
+$ jekyll server
+```
+然后访问 http://127.0.0.1:4000/
+
+### 提交
+
+确认无误后，提交到mixed
+```bash
+$ git pull
+$ git add *
+$ git commit -m 'xxx'
+$ git push origin mixed
+```
+
+[1]: https://rubygems.org/gems/bundler
+
+---
+
 # ESLint Web Site
 
 This contains the code running on eslint.org.
