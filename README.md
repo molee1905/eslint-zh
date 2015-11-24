@@ -10,7 +10,7 @@
 ```bash
 $ git clone git@github.com:molee1905/eslint-zh.git
 $ cd eslint-zh
-$ git checkout mixed
+$ git checkout -t origin/mixed
 ```
 
 ### 修改文件
