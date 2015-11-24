@@ -8,9 +8,9 @@
 ### 下载eslint-zh
 
 下载eslint-zh到本地目录，切换到mixed分支（对`.md`文档翻译时保留原始英文，以便校对）
-
+fork  https://github.com/molee1905/eslint-zh
 ```bash
-$ git clone git@github.com:molee1905/eslint-zh.git
+$ git clone git@github.com:[your name]/eslint-zh.git
 $ cd eslint-zh
 $ git checkout -t origin/mixed
 ```
@@ -43,6 +43,8 @@ $ git add *
 $ git commit -m 'xxx'
 $ git push origin mixed
 ```
+
+Pull new request
 
 [1]: https://rubygems.org/gems/bundler
 
