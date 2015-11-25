@@ -12,7 +12,7 @@ fork  https://github.com/molee1905/eslint-zh
 ```bash
 $ git clone git@github.com:[your name]/eslint-zh.git
 $ cd eslint-zh
-$ git checkout -t origin/mixed
+$ git checkout -b mixed origin/mixed
 ```
 
 ### 修改文件
