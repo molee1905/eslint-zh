@@ -46,7 +46,6 @@ $ git commit -m 'xxx'
 $ git push origin mixed
 ```
 
-Pull new request
 
 [1]: https://rubygems.org/gems/bundler
 
