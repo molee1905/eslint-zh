@@ -34,6 +34,12 @@ $ git checkout -b mixed origin/mixed
 $ sudo gem install bundler
 $ bundle -h
 ```
+国内替换一下:
+```bash
+$ gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
+$ gem sources -l
+```
+
 安装依赖包
 ```bash
 $ bundle install
