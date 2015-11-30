@@ -20,7 +20,7 @@
 下载eslint-zh到本地目录，切换到mixed分支（对`.md`文档翻译时保留原始英文，以便校对）
 
 ```bash
-$ git clone git@github.com:[your name]/eslint-zh.git
+$ git clone git@github.com:smocean/eslint-zh.git
 $ cd eslint-zh
 $ git checkout -b mixed origin/mixed
 ```
