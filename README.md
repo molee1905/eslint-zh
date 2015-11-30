@@ -34,7 +34,7 @@ $ git checkout -b mixed origin/mixed
 $ sudo gem install bundler
 $ bundle -h
 ```
-国内替换一下:
+下载需要等待一段时间，国内可先替换一下，再安装bundler:
 ```bash
 $ gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
 $ gem sources -l
