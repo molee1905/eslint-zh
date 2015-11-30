@@ -12,7 +12,6 @@
 
 ### 下载eslint-zh
 
-fork  https://github.com/smocean/eslint-zh
 
 下载eslint-zh到本地目录，切换到mixed分支（对`.md`文档翻译时保留原始英文，以便校对）
 
