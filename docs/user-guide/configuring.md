@@ -5,51 +5,97 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Configuring ESLint
 
+# 配置 ESLint
+
 ESLint is designed to be completely configurable, meaning you can turn off every rule and run only with basic syntax validation, or mix and match the bundled rules and your custom rules to make ESLint perfect for your project. There are two primary ways to configure ESLint:
 
+ESlint 设计的就是完全可配置的，也就意味着你可以关闭所有规则，只跑基本的语法验证，或者混合或者匹配或者自定义规则去让ESLint完美地为你的项目服务。这里有俩个初级的方法去配置ESLint。
+
 1. **Configuration Comments** - use JavaScript comments to embed configuration information directly into a file.
+1. **配置注释** - 使用JavaScript注释直接包含配置信息到一个文件。
+
 1. **Configuration Files** - use a JavaScript, JSON or YAML file to specify configuration information for an entire directory and all of its subdirectories. This can be in the form of an `.eslintrc` file or an `eslintConfig` field in a `package.json` file, both of which ESLint will look for and read automatically, or you can specify a configuration file on the [command line](command-line-interface).
 
+1. **配置文件** - 使用JavaScript、JSON 或者 YAML 文件去描述配置信息，目录下所有的子目录都会生效。这也可以是以下两种形式：`.eslintrc`文件 或者在 `package.json`文件里配置`eslintConfig`域，这两种配置方式ESLint都会自动读取。再或者，你可以在[command line](command-line-interface)指定一个配置文件。
+
 There are several pieces of information that can be configured:
+有几个信息可以被配置：
 
 * **Environments** - which environments your script is designed to run in. Each environment brings with it a certain set of predefined global variables.
+* **Environments** - 指定你脚本的运行环境。每种环境都有特定的一组预定义全局变量。
+
 * **Globals** - the additional global variables your script accesses during execution.
+* **Globals** - 脚本在执行期间需要的额外的全局变量
 * **Rules** - which rules are enabled and at what error level.
+
+* **Rules** - 指定在什么错误级别应该使用什么规则
 
 All of these options give you fine-grained control over how ESLint treats your code.
 
+所有这些选项，在ESLint如何对待你的代码上给了你足够细粒度的控制权。
+
 ## Specifying Language Options
+
+## 描述语言选项
 
 ESLint allows you to specify the JavaScript language options you want to support. By default, ESLint supports only ECMAScript 5 syntax. You can override that setting to enable support for ECMAScript 6 as well as [JSX](http://facebook.github.io/jsx/) by using configuration settings.
 
+ESLint 允许你指定你想要支持的JavaScript语言。ESLint默认支持ES 5语法，但是你可以通过配置让它支持ES 6 或者 [JSX](http://facebook.github.io/jsx/)。
+
 Configuration settings are set in your `.eslintrc` file by using the `ecmaFeatures` property. The available options are:
 
+配置设置在`.eslintrc`文件使用'ecmaFeatures`属性设置。可用的选项有：
+
 * `arrowFunctions` - enable [arrow functions](https://leanpub.com/understandinges6/read#leanpub-auto-arrow-functions)
+* `arrowFunctions` - 开启[arrow functions](https://leanpub.com/understandinges6/read#leanpub-auto-arrow-functions)
 * `binaryLiterals` - enable [binary literals](https://leanpub.com/understandinges6/read#leanpub-auto-octal-and-binary-literals)
+* `binaryLiterals` - 开启 [binary literals](https://leanpub.com/understandinges6/read#leanpub-auto-octal-and-binary-literals)
 * `blockBindings` - enable `let` and `const` (aka [block bindings](https://leanpub.com/understandinges6/read#leanpub-auto-block-bindings))
+* `blockBindings` - 开启 `let` and `const` (aka [block bindings](https://leanpub.com/understandinges6/read#leanpub-auto-block-bindings))
 * `classes` - enable classes
+* `classes` - 开启 classes
 * `defaultParams` - enable [default function parameters](https://leanpub.com/understandinges6/read/#leanpub-auto-default-parameters)
+* `defaultParams` - 开启 [default function parameters](https://leanpub.com/understandinges6/read/#leanpub-auto-default-parameters)
 * `destructuring` - enable [destructuring](https://leanpub.com/understandinges6/read#leanpub-auto-destructuring-assignment)
+* `destructuring` - 开启 [destructuring](https://leanpub.com/understandinges6/read#leanpub-auto-destructuring-assignment)
 * `forOf` - enable [`for-of` loops](https://leanpub.com/understandinges6/read#leanpub-auto-iterables-and-for-of)
+* `forOf` - 开启 [`for-of` loops](https://leanpub.com/understandinges6/read#leanpub-auto-iterables-and-for-of)
 * `generators` - enable [generators](https://leanpub.com/understandinges6/read#leanpub-auto-generators)
+* `generators` - 开启 [generators](https://leanpub.com/understandinges6/read#leanpub-auto-generators)
 * `modules` - enable modules and global strict mode
+* `modules` - 开启 modules 和 global strict mode
 * `objectLiteralComputedProperties` - enable [computed object literal property names](https://leanpub.com/understandinges6/read#leanpub-auto-computed-property-names)
+* `objectLiteralComputedProperties` - 开启 [computed object literal property names](https://leanpub.com/understandinges6/read#leanpub-auto-computed-property-names)
 * `objectLiteralDuplicateProperties` - enable [duplicate object literal properties](https://leanpub.com/understandinges6/read#leanpub-auto-duplicate-object-literal-properties) in strict mode
+* `objectLiteralDuplicateProperties` - 在严格模式开启 [duplicate object literal properties](https://leanpub.com/understandinges6/read#leanpub-auto-duplicate-object-literal-properties)
 * `objectLiteralShorthandMethods` - enable [object literal shorthand methods](https://leanpub.com/understandinges6/read#leanpub-auto-method-initializer-shorthand)
+* `objectLiteralShorthandMethods` - 开启 [object literal shorthand methods](https://leanpub.com/understandinges6/read#leanpub-auto-method-initializer-shorthand)
 * `objectLiteralShorthandProperties` - enable [object literal shorthand properties](https://leanpub.com/understandinges6/read#leanpub-auto-property-initializer-shorthand)
+* `objectLiteralShorthandProperties` - 开启 [object literal shorthand properties](https://leanpub.com/understandinges6/read#leanpub-auto-property-initializer-shorthand)
 * `octalLiterals` - enable [octal literals](https://leanpub.com/understandinges6/read#leanpub-auto-octal-and-binary-literals)
+* `octalLiterals` - 开启 [octal literals](https://leanpub.com/understandinges6/read#leanpub-auto-octal-and-binary-literals)
 * `regexUFlag` - enable the [regular expression `u` flag](https://leanpub.com/understandinges6/read#leanpub-auto-the-regular-expression-u-flag)
-* `regexYFlag` - enable the [regular expression `y` flag](https://leanpub.com/understandinges6/read#leanpub-auto-the-regular-expression-y-flag)
+* `regexYFlag` - 开启 the [regular expression `y` flag](https://leanpub.com/understandinges6/read#leanpub-auto-the-regular-expression-y-flag)
 * `restParams` - enable the [rest parameters](https://leanpub.com/understandinges6/read#leanpub-auto-rest-parameters)
+* `restParams` - 开启 the [rest parameters](https://leanpub.com/understandinges6/read#leanpub-auto-rest-parameters)
 * `spread` - enable the [spread operator](https://leanpub.com/understandinges6/read#leanpub-auto-the-spread-operator) for arrays
+* `spread` - 开启 the [spread operator](https://leanpub.com/understandinges6/read#leanpub-auto-the-spread-operator) for arrays
 * `superInFunctions` - enable `super` references inside of functions
+* `superInFunctions` - 在函数里开启 `super` 引用
 * `templateStrings` - enable [template strings](https://leanpub.com/understandinges6/read/#leanpub-auto-template-strings)
+* `templateStrings` - 开启 [template strings](https://leanpub.com/understandinges6/read/#leanpub-auto-template-strings)
 * `unicodeCodePointEscapes` - enable [code point escapes](https://leanpub.com/understandinges6/read/#leanpub-auto-escaping-non-bmp-characters)
+* `unicodeCodePointEscapes` - 开启 [code point escapes](https://leanpub.com/understandinges6/read/#leanpub-auto-escaping-non-bmp-characters)
 * `globalReturn` - allow `return` statements in the global scope
+* `globalReturn` - 在全局作用举中允许声明 `return`
 * `jsx` - enable [JSX](http://facebook.github.io/jsx/)
+* `jsx` - 开启 [JSX](http://facebook.github.io/jsx/)
 * `experimentalObjectRestSpread` - enable support for the experimental [object rest/spread properties](https://github.com/sebmarkbage/ecmascript-rest-spread) (**IMPORTANT:** This is an experimental feature that may change significantly in the future. It's recommended that you do *not* write rules relying on this functionality unless you are willing to incur maintenance cost when it changes.)
+* `experimentalObjectRestSpread` - 开启对实验性属性的支持 [object rest/spread properties](https://github.com/sebmarkbage/ecmascript-rest-spread) (**注意:** 这是一个处于试验阶段的特征，未来有可能会变化。建议您*不*要写依赖这个功能的规则，除非你愿意当其变化时花费精力去维护。
 
 Here's an example `.eslintrc` file:
+
+这里是一个`.eslintrc`文件的例子：
 
 ```json
 {
@@ -66,17 +112,30 @@ Here's an example `.eslintrc` file:
 
 Setting language options helps ESLint determine what is a parsing error. All language options are `false` by default.
 
+设置语言的选项让ESLint知道如何解析，所有语言选项默认都是`false`。
+
 ## Specifying Parser
+
+## 指定解析器
 
 By default, ESLint uses [Espree](https://github.com/eslint/espree) as its parser. You can optionally specify that a different parser should be used in your configuration file so long as the parser meets the following requirements:
 
+ESLint默认使用[Espree](https://github.com/eslint/espree)做他的解析器，你可以在配置文件中任意地指定一个不同的解析器，只要他满足一下要求：
+
 1. It must be an npm module installed locally.
+1. 他必须是本地安装的npm模块
 1. It must have an Esprima-compatible interface (it must export a `parse()` method).
+1. 他必须有兼容Esprima的接口（即：他必须导出一个parse()方法）
 1. It must produce Esprima-compatible AST and token objects.
+1. 他必须提供兼容Esprima的AST 和 token 对象。
 
 Note that even with these compatibilities, there are no guarantees that an external parser will work correctly with ESLint and ESLint will not fix bugs related to incompatibilities with other parsers.
 
+注意：即使有这些兼容性，也不能保证一个外部解析器可以很好地和ESLint一起工作，ESLint也不会修复和其他解析器结合产生的兼容性问题。
+
 To indicate the npm module to use as your parser, specify it using the `parser` option in your `.eslintrc` file. For example, the following specifies to use Esprima instead of Espree:
+
+为了让npm模块使用你自己的解析器，你需要在你的`.eslintrc`文件里指定`parser` 选项。例如：下面配置文件指定Esprima作为解析器而不是Espree：
 
 ```json
 {
@@ -89,9 +148,14 @@ To indicate the npm module to use as your parser, specify it using the `parser` 
 
 The following parsers are compatible with ESLint:
 
+下面的解析器和EXLint兼容良好：
+
+* [Esprima](https://npmjs.com/package/esprima)
 * [Esprima](https://npmjs.com/package/esprima)
 * [Esprima-FB](https://npmjs.com/package/esprima-fb) - Facebook's fork of Esprima that includes their proprietary syntax additions.
+* [Esprima-FB](https://npmjs.com/package/esprima-fb) - Facebook基于Esprima的库，另增加了他们专用的语法
 * [Babel-ESLint](https://npmjs.com/package/babel-eslint) - A wrapper around the [Babel](http://babeljs.io) parser that makes it compatible with ESLint.
+* [Babel-ESLint](https://npmjs.com/package/babel-eslint) -[Babel](http://babeljs.io) 解析器的封装，使它和ESLint兼容
 
 Note when using a custom parser, the `ecmaFeatures` configuration property is still required for ESLint to work properly with features not in ECMAScript 5 by default. Parsers may or may not also use `ecmaFeatures` to determine which features to enable.
 

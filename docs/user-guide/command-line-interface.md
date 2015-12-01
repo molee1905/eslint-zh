@@ -5,25 +5,39 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Command line Interface
 
+# 命令行界面
+
 To run ESLint on Node.js, you must have npm installed. If npm is not installed, follow the instructions here: https://www.npmjs.com/
 
+为了让ESlint跑在Node.js上，你必须先安装npm。如果npm还没安装，跟着这里的说明一步步安装就好: https://www.npmjs.com/
+
 Once npm is installed, run the following
+
+一旦npm安装好了，执行下面的命令：
 
     npm i -g eslint
 
 This installs the ESLint CLI from the npm repository. To run ESLint, use the following format:
 
+这句命令从npm 仓库安装了ESlint CLI。执行下面命令使用ESlint：
+
     eslint [options] [file|dir|glob]*
 
 Such as:
+
+比如：
 
     eslint file1.js file2.js
 
 or:
 
+或者：
+
     eslint lib/**
 
 ## Options
+
+## 选项
 
 The command line utility has several options. You can view the options by running `eslint -h`.
 
