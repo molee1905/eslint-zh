@@ -5,19 +5,22 @@
 4. 不主动、不刻意增加原文不存在的内容
 5. 暂无法翻译的词或语句可保留原始英文
 6. 规则里的  除一级标题（# xxx）外，其他标题不翻译：
+
    `## 二级标题`
+   
    `### 三级标题`
+   
    `#### 四级标题`
+   
    `...`
 
 ### 下载eslint-zh
 
-fork  https://github.com/smocean/eslint-zh
 
 下载eslint-zh到本地目录，切换到mixed分支（对`.md`文档翻译时保留原始英文，以便校对）
 
 ```bash
-$ git clone git@github.com:[your name]/eslint-zh.git
+$ git clone git@github.com:smocean/eslint-zh.git
 $ cd eslint-zh
 $ git checkout -b mixed origin/mixed
 ```
@@ -31,6 +34,12 @@ $ git checkout -b mixed origin/mixed
 $ sudo gem install bundler
 $ bundle -h
 ```
+下载需要等待一段时间，国内可先替换一下，再安装bundler:
+```bash
+$ gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
+$ gem sources -l
+```
+
 安装依赖包
 ```bash
 $ bundle install
