@@ -4,9 +4,12 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow or enforce spaces inside of brackets. (array-bracket-spacing)
+# 禁止或强制在括号内使用空格。 (array-bracket-spacing)
 
 A number of style guides require or disallow spaces between array brackets. This rule
 applies to both array literals and destructuring assignment (EcmaScript 6) using arrays.
+
+一些代码风格指南要求或禁止在数组的方括号内留有空格。该规则适用于数组和数组的解构赋值 (EcmaScript 6) 
 
 ```js
 /*eslint-env es6*/
