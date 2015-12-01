@@ -159,6 +159,8 @@ The following parsers are compatible with ESLint:
 
 Note when using a custom parser, the `ecmaFeatures` configuration property is still required for ESLint to work properly with features not in ECMAScript 5 by default. Parsers may or may not also use `ecmaFeatures` to determine which features to enable.
 
+请注意：当使用自定义解析器的时候，为了使其和ESLint很好的配合使用配置属性`ecmaFeatures`依然是必须的
+
 ## Specifying Environments
 
 An environment defines global variables that are predefined. The available environments are:
