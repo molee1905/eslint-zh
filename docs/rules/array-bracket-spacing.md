@@ -23,21 +23,31 @@ var [x,y] = z;
 
 **Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
 
+**Fixable:** 该规则可以通过`--fix`命令行进行自动修复
+
 ## Rule Details
 
-This rule aims to maintain consistency around the spacing inside of array brackets, either by disallowing
-spaces inside of brackets between the brackets and other tokens or enforcing spaces. Brackets that are
-separated from the adjacent value by a new line are excepted from this rule, as this is a common pattern.
-  Object literals that are used as the first or last element in an array are also ignored.
+This rule aims to maintain consistency around the spacing inside of array brackets, either by disallowing spaces inside of brackets between the brackets and other tokens or enforcing spaces. Brackets that are separated from the adjacent value by a new line are excepted from this rule, as this is a common pattern.Object literals that are used as the first or last element in an array are also ignored.
+
+该规则旨在保持数组括号内间距的一致性， 要么不允许在括号和其他标记出现空格，要么强制使用空格。
+括号内相邻的值出现折行的，不适用此规则，因为这是一种常见模式。数组中第一个或最后一个元素是对象的话，也不适用此规则。
+
 
 ### Options
 
 There are two options for this rule:
 
+该规则有两个可选项：
+
 * `"always"` enforces a space inside of array brackets
+* `"always"` 在数组括号内强制使用1个空格
+
 * `"never"` enforces no space inside of array brackets (default)
+* `"never"` 在数组括号内不允许出现空格 (默认)
 
 Depending on your coding conventions, you can choose either option by specifying it in your configuration:
+
+根据你的编码约定，你可以在你的配置中选择任一选项：
 
 ```json
 "array-bracket-spacing": [2, "always"]
@@ -46,6 +56,8 @@ Depending on your coding conventions, you can choose either option by specifying
 #### never
 
 When `"never"` is set, the following patterns are considered problems:
+
+当设置了`"never"`，以下模式被认为是有问题的：
 
 ```js
 /*eslint array-bracket-spacing: [2, "never"]*/
@@ -65,6 +77,8 @@ var [ ,,x, ] = z;             /*error There should be no space after '['*/ /*err
 ```
 
 The following patterns are not considered problems:
+
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint array-bracket-spacing: [2, "never"]*/
@@ -92,6 +106,8 @@ var [,,x,] = z;
 
 When `"always"` is used, the following patterns are considered problems:
 
+当设置了 `"always"`, 以下模式被认为是有问题的:
+
 ```js
 /*eslint array-bracket-spacing: [2, "always"]*/
 /*eslint-env es6*/
@@ -113,6 +129,8 @@ var [,,x,] = z;                /*error A space is required after '['*/ /*error A
 ```
 
 The following patterns are not considered problems:
+
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint array-bracket-spacing: [2, "always"]*/
@@ -186,6 +204,8 @@ var foo = [ { 'foo': 'bar' } ];  /*error There should be no space after '['*/ /*
 
 The following patterns are not considered problems:
 
+以下模式被认为是没有问题的：
+
 ```js
 /*eslint array-bracket-spacing: [2, "always", { singleValue: false }]*/
 
@@ -196,6 +216,8 @@ var foo = [{ 'foo': 'bar' }];
 ```
 
 When `"objectsInArrays"` is set to `false`, the following patterns are considered problems:
+
+当设置`"objectsInArrays"`为`false`时，以下模式被认为是有问题的：
 
 ```js
 /*eslint array-bracket-spacing: [2, "always", { objectsInArrays: false }]*/
@@ -208,6 +230,8 @@ var arr = [ {                     /*error There should be no space after '['*/
 
 The following patterns are not considered problems:
 
+以下模式被认为是没有问题的：
+
 ```js
 /*eslint array-bracket-spacing: [2, "always", { objectsInArrays: false }]*/
 
@@ -219,6 +243,8 @@ var arr = [{
 
 When `"arraysInArrays"` is set to `false`, the following patterns are considered problems:
 
+当设置`"arraysInArrays"`为`false`时，以下模式被认为是有问题的：
+
 ```js
 /*eslint array-bracket-spacing: [2, "always", { arraysInArrays: false }]*/
 
@@ -227,6 +253,8 @@ var arr = [ [ 1, 2 ], 2, [ 3, 4 ] ]; /*error There should be no space after '['*
 ```
 
 The following patterns are not considered problems:
+
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint array-bracket-spacing: [2, "always", { arraysInArrays: false }]*/
@@ -239,6 +267,8 @@ var arr = [[ 1, 2 ], 2, [ 3, 4 ]];
 
 You can turn this rule off if you are not concerned with the consistency of spacing between array brackets.
 
+如果你并不关心数组括号内间距的一致性，可以关闭此规则。
+
 ## Related Rules
 
 * [space-in-parens](space-in-parens)
@@ -248,6 +278,8 @@ You can turn this rule off if you are not concerned with the consistency of spac
 ## Version
 
 This rule was introduced in ESLint 0.24.0.
+
+该规则在ESLint 0.24.0 被引入。
 
 ## Resources
 
