@@ -497,6 +497,7 @@ alert('foo');
 
 You can also disable and enable back warnings of specific rules
 
+你还可以针对具体的规则禁用或者启用警告。
 
 
 ```js
@@ -510,11 +511,15 @@ console.log('bar');
 
 To disable warnings on a specific line
 
+禁用某个具体的规则
+
 ```js
 alert('foo'); // eslint-disable-line
 ```
 
 To disable a specific rule on a specific line
+
+在某一行禁用某个规则
 
 ```js
 alert('foo'); // eslint-disable-line no-alert
@@ -522,9 +527,15 @@ alert('foo'); // eslint-disable-line no-alert
 
 ## Adding Shared Settings
 
+## 添加分享设置
+
 ESLint supports adding shared settings into configuration file. You can add `settings` object to ESLint configuration file and it will be supplied to every rule that will be executed. This may be useful if you are adding custom rules and want them to have access to the same information and be easily configurable.
 
+ESLint支持在配置文件添加分享设置。你可以添加`settings`对象到配置文件，它将提供给每个规则。如果你想让添加的自定义规则可以访问到相同的信息并且容易被配置，这将会很有用。
+
 In JSON:
+
+JSON文件中：
 
 ```json
 {
@@ -536,6 +547,8 @@ In JSON:
 
 And in YAML:
 
+YAML文件中：
+
 ```yaml
 ---
   settings:
@@ -544,17 +557,30 @@ And in YAML:
 
 ## Using Configuration Files
 
+## 使用配置文件
+
 There are two ways to use configuration files. The first is to save the file wherever you would like and pass its location to the CLI using the `-c` option, such as:
+
+有两种方式使用配置文件。第一种是在保存文件到你喜欢的地方，然后使用`-c`选项指定CLI的路径，比如：
 
     eslint -c myconfig.json myfiletotest.js
 
 The second way to use configuration files is via `.eslintrc` and `package.json` files. ESLint will automatically look for them in the directory of the file to be linted, and in successive parent directories all the way up to the root directory of the filesystem. This option is useful when you want different configurations for different parts of a project or when you want others to be able to use ESLint directly without needing to remember to pass in the configuration file.
 
+第二种方式是通过`.eslintrc`和`package.json`。ESLint将自动在文件目录里寻找配置文件，如果存不到他会在连续的父目录一路攀升到文件系统的根目录寻找。当你想对一个项目的不同部分的使用不同配置，或当你希望别人能够直接使用ESLint，而无需记住要通过在配置文件中，此选项很有用。
+
 In each case, the settings in the configuration file override default settings.
+
+每种情况，配置文件都会重写默认设置。
+
 
 ## Configuration File Formats
 
+## 配置文件格式
+
 ESLint supports configuration files in several formats:
+
+ESLint 配置文件支持以下几种格式：
 
 * **JavaScript** - use `.eslintrc.js` and export an object containing your configuration.
 * **YAML** - use `.eslintrc.yaml` or `.eslintrc.yml` to define the configuration structure.
@@ -562,7 +588,16 @@ ESLint supports configuration files in several formats:
 * **package.json** - create an `eslintConfig` property in your `package.json` file and define your configuration there.
 * **Deprecated** - use `.eslintrc`, which can be either JSON or YAML.
 
+* **JavaScript** - 使用 `.eslintrc.js` 然后导出一个包含你的配置项的对象
+* **YAML** - 使用 `.eslintrc.yaml` 或者 `.eslintrc.yml` 去定义配置的结构
+* **JSON** - 使用 `.eslintrc.json` 去定义配置的结构，ESLint的JSON文件允许js风格的注释
+* **package.json** - 创建一个在`package.json`里创建一个`eslintConfig`属性，在这里定义你的配置。
+* **Deprecated** - 使用 `.eslintrc`可以使JSON 也可以是 YAML
+
+
 If there are multiple `.eslintrc.*` files in the same directory, ESLint will only use one. The priority order is:
+
+如果同一个文件目录有多个`.eslintrc.*`，ESLint 只会使用一个，优先级是：
 
 1. `.eslintrc.js`
 1. `.eslintrc.yaml`
@@ -573,7 +608,12 @@ If there are multiple `.eslintrc.*` files in the same directory, ESLint will onl
 
 ## Configuration Cascading and Hierarchy
 
+## 配置层叠和继承
+
 When using `.eslintrc` and `package.json` files for configuration, you can take advantage of configuration cascading. For instance, suppose you have the following structure:
+
+当使用`.eslintrc` 和 `package.json`配置的时候，你可以利用配置的层叠。例如，加入你有以下文件结构：
+
 
 ```text
 your-project
@@ -586,6 +626,8 @@ your-project
 ```
 
 The configuration cascade works by using the closest `.eslintrc` file to the file being linted as the highest priority, then any configuration files in the parent directory, and so on. When you run ESLint on this project, all files in `lib/` will use the `.eslintrc` file at the root of the project as their configuration. When ESLint traverses into the `tests/` directory, it will then use `your-project/tests/.eslintrc` in addition to `your-project/.eslintrc`. So `your-project/tests/test.js` is linted based on the combination of the two `.eslintrc` files in its directory hierarchy, with the closest one taking priority. In this way, you can have project-level ESLint settings and also have directory-specific overrides.
+
+层叠配置是这样工作的：关联文件使用最近的`.eslintrc`文件作为最高优先级，然后才是父目录里的配置信息。当你在项目中跑 ESLint 的时候，`lib/`下面的所有文件将使用项目根目录里的`.eslintrc`文件作为他的配置项
 
 In the same way, if there is a `package.json` file in the root directory with an `eslintConfig` field, the configuration it describes will apply to all subdirectories beneath it, but the configuration described by the `.eslintrc` file in the tests directory will override it where there are conflicting specifications.
 
