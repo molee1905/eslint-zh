@@ -5,11 +5,17 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Labels That Are Variables Names (no-label-var)
 
+# 不允许标签是变量名 (no-label-var)
+
 ## Rule Details
 
 This rule aims to create clearer code by disallowing the bad practice of creating a label that shares a name with a variable that is in scope.
 
+此规则希望创建更清晰的代码，通过不允许同一作用域中变量名和标记名相同。
+
 The following patterns are considered problems:
+
+错误：
 
 ```js
 /*eslint no-label-var: 2*/
@@ -24,6 +30,8 @@ x:               /*error Found identifier with same name as label.*/
 ```
 
 The following patterns are not considered problems:
+
+正确：
 
 ```js
 /*eslint no-label-var: 2*/
@@ -49,6 +57,8 @@ q:
 ## Version
 
 This rule was introduced in ESLint 0.0.9.
+
+此规则在ESLint 0.0.9中被引入。
 
 ## Resources
 
