@@ -1,7 +1,3 @@
-- url: http://m.sm.cn
-  src: /img/logos/sm.png
-  name: sm.cn
-
 - url: https://www.adroll.com
   src: /img/logos/adroll.svg
   name: AdRoll
