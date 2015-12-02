@@ -166,7 +166,7 @@ if (x === 0) {
 
 This rule was introduced in ESLint 0.0.9.
 
-这个规则是在ESLint 0.0.9中开始引进。
+这个规则是在ESLint 0.0.9中引进发布的。
 
 ## Resources
 
