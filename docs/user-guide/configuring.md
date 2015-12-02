@@ -9,20 +9,20 @@ layout: doc
 
 ESLint is designed to be completely configurable, meaning you can turn off every rule and run only with basic syntax validation, or mix and match the bundled rules and your custom rules to make ESLint perfect for your project. There are two primary ways to configure ESLint:
 
-ESlint 设计的就是完全可配置的，也就意味着你可以关闭所有规则，只跑基本的语法验证，或者混合或者匹配或者自定义规则去让ESLint完美地为你的项目服务。这里有俩个初级的方法去配置ESLint。
+ESlint 设计的就是完全可配置的，也就意味着您可以关闭所有规则，只跑基本的语法验证，或者混合或者匹配或者自定义规则去让ESLint完美地为您的项目服务。这里有俩个初级的方法去配置ESLint。
 
 1. **Configuration Comments** - use JavaScript comments to embed configuration information directly into a file.
 1. **配置注释** - 使用JavaScript注释直接包含配置信息到一个文件。
 
 1. **Configuration Files** - use a JavaScript, JSON or YAML file to specify configuration information for an entire directory and all of its subdirectories. This can be in the form of an `.eslintrc` file or an `eslintConfig` field in a `package.json` file, both of which ESLint will look for and read automatically, or you can specify a configuration file on the [command line](command-line-interface).
 
-1. **配置文件** - 使用JavaScript、JSON 或者 YAML 文件去描述配置信息，目录下所有的子目录都会生效。这也可以是以下两种形式：`.eslintrc`文件 或者在 `package.json`文件里配置`eslintConfig`域，这两种配置方式ESLint都会自动读取。再或者，你可以在[command line](command-line-interface)指定一个配置文件。
+1. **配置文件** - 使用JavaScript、JSON 或者 YAML 文件去描述配置信息，目录下所有的子目录都会生效。这也可以是以下两种形式：`.eslintrc`文件 或者在 `package.json`文件里配置`eslintConfig`域，这两种配置方式ESLint都会自动读取。再或者，您可以在[command line](command-line-interface)指定一个配置文件。
 
 There are several pieces of information that can be configured:
 有几个信息可以被配置：
 
 * **Environments** - which environments your script is designed to run in. Each environment brings with it a certain set of predefined global variables.
-* **Environments** - 指定你脚本的运行环境。每种环境都有特定的一组预定义全局变量。
+* **Environments** - 指定您脚本的运行环境。每种环境都有特定的一组预定义全局变量。
 
 * **Globals** - the additional global variables your script accesses during execution.
 * **Globals** - 脚本在执行期间需要的额外的全局变量
@@ -32,7 +32,7 @@ There are several pieces of information that can be configured:
 
 All of these options give you fine-grained control over how ESLint treats your code.
 
-所有这些选项，在ESLint如何对待你的代码上给了你足够细粒度的控制权。
+所有这些选项，在ESLint如何对待您的代码上给了您足够细粒度的控制权。
 
 ## Specifying Language Options
 
@@ -40,7 +40,7 @@ All of these options give you fine-grained control over how ESLint treats your c
 
 ESLint allows you to specify the JavaScript language options you want to support. By default, ESLint supports only ECMAScript 5 syntax. You can override that setting to enable support for ECMAScript 6 as well as [JSX](http://facebook.github.io/jsx/) by using configuration settings.
 
-ESLint 允许你指定你想要支持的JavaScript语言。ESLint默认支持ES 5语法，但是你可以通过配置让它支持ES 6 或者 [JSX](http://facebook.github.io/jsx/)。
+ESLint 允许您指定您想要支持的JavaScript语言。ESLint默认支持ES 5语法，但是您可以通过配置让它支持ES 6 或者 [JSX](http://facebook.github.io/jsx/)。
 
 Configuration settings are set in your `.eslintrc` file by using the `ecmaFeatures` property. The available options are:
 
@@ -91,7 +91,7 @@ Configuration settings are set in your `.eslintrc` file by using the `ecmaFeatur
 * `jsx` - enable [JSX](http://facebook.github.io/jsx/)
 * `jsx` - 开启 [JSX](http://facebook.github.io/jsx/)
 * `experimentalObjectRestSpread` - enable support for the experimental [object rest/spread properties](https://github.com/sebmarkbage/ecmascript-rest-spread) (**IMPORTANT:** This is an experimental feature that may change significantly in the future. It's recommended that you do *not* write rules relying on this functionality unless you are willing to incur maintenance cost when it changes.)
-* `experimentalObjectRestSpread` - 开启对实验性属性的支持 [object rest/spread properties](https://github.com/sebmarkbage/ecmascript-rest-spread) (**注意:** 这是一个处于试验阶段的特征，未来有可能会变化。建议您*不*要写依赖这个功能的规则，除非你愿意当其变化时花费精力去维护。
+* `experimentalObjectRestSpread` - 开启对实验性属性的支持 [object rest/spread properties](https://github.com/sebmarkbage/ecmascript-rest-spread) (**注意:** 这是一个处于试验阶段的特征，未来有可能会变化。建议您*不*要写依赖这个功能的规则，除非您愿意当其变化时花费精力去维护。
 
 Here's an example `.eslintrc` file:
 
@@ -120,7 +120,7 @@ Setting language options helps ESLint determine what is a parsing error. All lan
 
 By default, ESLint uses [Espree](https://github.com/eslint/espree) as its parser. You can optionally specify that a different parser should be used in your configuration file so long as the parser meets the following requirements:
 
-ESLint默认使用[Espree](https://github.com/eslint/espree)做他的解析器，你可以在配置文件中任意地指定一个不同的解析器，只要他满足一下要求：
+ESLint默认使用[Espree](https://github.com/eslint/espree)做他的解析器，您可以在配置文件中任意地指定一个不同的解析器，只要他满足一下要求：
 
 1. It must be an npm module installed locally.
 1. 他必须是本地安装的npm模块
@@ -135,7 +135,7 @@ Note that even with these compatibilities, there are no guarantees that an exter
 
 To indicate the npm module to use as your parser, specify it using the `parser` option in your `.eslintrc` file. For example, the following specifies to use Esprima instead of Espree:
 
-为了让npm模块使用你自己的解析器，你需要在你的`.eslintrc`文件里指定`parser` 选项。例如：下面配置文件指定Esprima作为解析器而不是Espree：
+为了让npm模块使用您自己的解析器，您需要在您的`.eslintrc`文件里指定`parser` 选项。例如：下面配置文件指定Esprima作为解析器而不是Espree：
 
 ```json
 {
@@ -159,40 +159,72 @@ The following parsers are compatible with ESLint:
 
 Note when using a custom parser, the `ecmaFeatures` configuration property is still required for ESLint to work properly with features not in ECMAScript 5 by default. Parsers may or may not also use `ecmaFeatures` to determine which features to enable.
 
-请注意：当使用自定义解析器的时候，为了使其和ESLint很好的配合使用配置属性`ecmaFeatures`依然是必须的
+请注意：当使用自定义解析器的时候，为了兼容ES5默认不支持的特性，配置属性`ecmaFeatures`依然是必须的。解析器可能会也可能不会使用`ecmaFeatures`去决定开启那个特征。
 
 ## Specifying Environments
 
+## 配置环境
+
 An environment defines global variables that are predefined. The available environments are:
 
+一个环境定义了预定义的全局变量。可用的环境有：
+
 * `browser` - browser global variables.
+* `browser` - browser 全局变量。
 * `node` - Node.js global variables and Node.js scoping.
+* `node` - Node.js 全局变量和 Node.js 作用域。
 * `commonjs` - CommonJS global variables and CommonJS scoping (use this for browser-only code that uses Browserify/WebPack).
+* `commonjs` - CommonJS 全局变量和 CommonJS 作用域 (为了兼容使用 Browserify/WebPack 的仅支持浏览器的代码)。
 * `worker` - web workers global variables.
+* `worker` - web workers 全局变量。
 * `amd` - defines `require()` and `define()` as global variables as per the [amd](https://github.com/amdjs/amdjs-api/wiki/AMD) spec.
+* `amd` - 定义 `require()` 和 `define()` 作为像 [amd](https://github.com/amdjs/amdjs-api/wiki/AMD) 一样的全局变量。
 * `mocha` - adds all of the Mocha testing global variables.
+* `mocha` - 添加所有 Mocha testing 全局变量。
 * `jasmine` - adds all of the Jasmine testing global variables for version 1.3 and 2.0.
+* `jasmine` - 添加版本号1.3和1.2的所有 Jasmine testing 全局变量。
 * `jest` - Jest global variables.
+* `jest` - Jest 全局变量。
 * `phantomjs` - PhantomJS global variables.
+* `phantomjs` - PhantomJS 全局变量。
 * `protractor` - Protractor global variables.
+* `protractor` - Protractor 全局变量。
 * `qunit` - QUnit global variables.
+* `qunit` - QUnit 全局变量。
 * `jquery` - jQuery global variables.
+* `jquery` - jQuery 全局变量。
 * `prototypejs` - Prototype.js global variables.
+* `prototypejs` - Prototype.js 全局变量。
 * `shelljs` - ShellJS global variables.
+* `shelljs` - ShellJS 全局变量。
 * `meteor` - Meteor global variables.
+* `meteor` - Meteor 全局变量。
 * `mongo` - MongoDB global variables.
+* `mongo` - MongoDB 全局变量。
 * `applescript` - AppleScript global variables.
+* `applescript` - AppleScript全局变量。
 * `nashorn` - Java 8 Nashorn global variables.
+* `nashorn` - Java 8 Nashorn 全局变量。
 * `serviceworker` - Service Worker global variables.
+* `serviceworker` - Service Worker 全局变量。
 * `embertest` - Ember test helper globals.
+* `embertest` - Ember test 全局变量。
 * `webextensions` - WebExtensions globals.
+* `webextensions` - WebExtensions 全局变量。
 * `es6` - enable all ECMAScript 6 features except for modules.
+* `es6` - 支持除了modules所有 ECMAScript 6 特性。
 
 These environments are not mutually exclusive, so you can define more than one at a time.
 
+这些环境不是相互排斥的，所以您可以一次定义多个。
+
 Environments can be specified inside of a file, in configuration files or using the `--env` [command line](command-line-interface) flag.
 
+环境可在配置文件中被定义在一个文件里，或者使用`--env`[命令行](command-line-interface)进行配置。
+
 To specify environments using a comment inside of your JavaScript file, use the following format:
+
+使用以下注释语法格式去配置环境：
 
 ```js
 /*eslint-env node, mocha */
@@ -200,7 +232,11 @@ To specify environments using a comment inside of your JavaScript file, use the 
 
 This enables Node.js and Mocha environments.
 
+这段开启了 Node.js 和 Mocha 环境。
+
 To specify environments in a configuration file, use the `env` key and specify which environments you want to enable by setting each to `true`. For example, the following enables the browser and Node.js environments:
+
+在配置文件里配置环境的时候，使用`env`关键字，并且给您想要的环境赋值：`true`。例如，下面这段代码开启了支持browser 和 Node.js 的环境：
 
 ```json
 {
@@ -212,6 +248,8 @@ To specify environments in a configuration file, use the `env` key and specify w
 ```
 
 Or in a `package.json` file
+
+或者可以在`package.json`里进行配置：
 
 ```json
 {
@@ -228,6 +266,8 @@ Or in a `package.json` file
 
 And in YAML:
 
+在YAML文件里也可以：
+
 ```yaml
 ---
   env:
@@ -237,9 +277,15 @@ And in YAML:
 
 ## Specifying Globals
 
+## 配置全局变量
+
 The [no-undef](../rules/no-undef) rule will warn on variables that are accessed but not defined within the same file. If you are using global variables inside of a file then it's worthwhile to define those globals so that ESLint will not warn about their usage. You can define global variables either using comments inside of a file or in the configuration file.
 
+当变量被使用，但是变量声明不在同一文件的时候 [no-undef](../rules/no-undef) 规则会报出警告错误。如果您想在一个文件里使用全局变量，推荐您定义这些全局变量，这样ESLint就不会警告了。您可以将全局变量定义在文件内注释或者配置文件里。
+
 To specify globals using a comment inside of your JavaScript file, use the following format:
+
+使用下面格式，在注释里定义全局变量：
 
 ```js
 /*global var1, var2*/
@@ -247,11 +293,15 @@ To specify globals using a comment inside of your JavaScript file, use the follo
 
 This defines two global variables, `var1` and `var2`. If you want to optionally specify that these global variables should never be written to (only read), then you can set each with a `false` flag:
 
+这里定义了两个全局变量：`var1` 和 `var2`。如果您想声明这些变量为只读的，您可以赋值`false`：
+
 ```js
 /*global var1:false, var2:false*/
 ```
 
 To configure global variables inside of a configuration file, use the `globals` key and indicate the global variables you want to use. Set each global variable name equal to `true` to allow the variable to be overwritten or `false` to disallow overwriting. For example:
+
+在配置文件里配置全局变量的时候，使用关键字`globals`声明全局变量。赋值`true`表示允许变量被覆盖，赋值`false`进制重写。比如：
 
 ```json
 {
@@ -264,6 +314,8 @@ To configure global variables inside of a configuration file, use the `globals` 
 
 And in YAML:
 
+在YAML文件里应该这样配置：
+
 ```yaml
 ---
   globals:
@@ -273,11 +325,19 @@ And in YAML:
 
 These examples allow `var1` to be overwritten in your code, but disallow it for `var2`.
 
+这些例子允许`var1`可被重写，但是`var2`是只读的。
+
 ## Configuring Plugins
+
+## 配置插件
 
 ESLint supports the use of third-party plugins. Before using the plugin you have to install it using npm.
 
+ESLint支持第三方插件。在使用之前，您应该先用npm去安装他们。
+
 To configure plugins inside of a configuration file, use the `plugins` key, which contains a list of plugin names. The `eslint-plugin-` prefix can be omitted from the plugin name.
+
+在配置文件里配置插件，要使用关键字`plugins`包含一系列的插件名字。`eslint-plugin-`前缀可被省略。
 
 ```json
 {
@@ -290,6 +350,8 @@ To configure plugins inside of a configuration file, use the `plugins` key, whic
 
 And in YAML:
 
+在YAML里配置：
+
 ```yaml
 ---
   plugins:
@@ -299,15 +361,27 @@ And in YAML:
 
 **Note:** A globally-installed instance of ESLint can only use globally-installed ESLint plugins. A locally-installed ESLint can make use of both locally- and globally- installed ESLint plugins.
 
+**注意** 全局安装的ESLint只能使用全局安装的插件。本地安装的ESLint不仅可以使用本地安装的插件还可以使用全局安装的插件。
+
 ## Configuring Rules
 
+## 配置规则
+
 ESLint comes with a large number of rules. You can modify which rules your project uses either using configuration comments or configuration files. To change a rule setting, you must set the rule ID equal to one of these values:
+
+ESLint 带来了大量的规则。您可以使用配置文件或者注释修改您要使用哪些规则。修改一个规则的时候，您必须设置下面ID中的一个：
 
 * 0 - turn the rule off
 * 1 - turn the rule on as a warning (doesn't affect exit code)
 * 2 - turn the rule on as an error (exit code is 1 when triggered)
 
+* 0 - 关闭规则
+* 1 - 开启规则，使用警告级别的错误：`warn`(不会导致程序退出)
+* 2 - 开启规则，使用错误级别的错误：`error`(当被触发的时候，程序会退出)
+
 To configure rules inside of a file using configuration comments, use a comment in the following format:
+
+使用以下格式在文件注释里配置规则：
 
 ```js
 /*eslint eqeqeq:0, curly: 2*/
@@ -315,13 +389,19 @@ To configure rules inside of a file using configuration comments, use a comment 
 
 In this example, [`eqeqeq`](../rules/eqeqeq) is turned off and [`curly`](../rules/curly) is turned on as an error. If a rule has additional options, you can specify them using array literal syntax, such as:
 
+在这个例子里，[`eqeqeq`](../rules/eqeqeq) 规则被关闭，[`curly`](../rules/curly) 规则被打开，并且会报错。如果一个规则有别的选项，你可以用数组字面量配置他们，比如：
+
 ```js
 /*eslint quotes: [2, "double"], curly: 2*/
 ```
 
 This comment specifies the "double" option for the [`quotes`](../rules/quotes) rule.
 
+这条注释为规则[`quotes`](../rules/quotes)配置了"double"选项。
+
 To configure rules inside of a configuration file, use the `rules` key along with an error level and any options you want to use. For example:
+
+使用关键字`rules`后紧跟着错误级别的方式，在一个配置文件里配置。你可以使用任何想要的规则，例如：
 
 
 ```json
@@ -336,6 +416,8 @@ To configure rules inside of a configuration file, use the `rules` key along wit
 
 And in YAML:
 
+在YAML中：
+
 ```yaml
 ---
   rules:
@@ -347,6 +429,8 @@ And in YAML:
 ```
 
 To configure a rule which is defined within a plugin you have to prefix the rule ID with the plugin name and a `/`. For example:
+
+配置定义在插件中的规则的时候，您必须使用`插件名/规则ID`的形式，比如：
 
 ```json
 {
@@ -364,6 +448,8 @@ To configure a rule which is defined within a plugin you have to prefix the rule
 
 And in YAML:
 
+在YAML中：
+
 ```yaml
 ---
   plugins:
@@ -379,26 +465,39 @@ And in YAML:
 
 In these configuration files, the rule `plugin1/rule1` comes from the plugin named `plugin1`. You can also use this format with configuration comments, such as:
 
+这些配置文件中，规则`plugin1/rule1`表示来自插件`plugin1`的`rule1`规则。您也可以使用注释的格式去配置，比如：
+
 ```js
 /*eslint "plugin1/rule1": 2*/
 ```
 
 **Note:** When specifying rules from plugins, make sure to omit `eslint-plugin-`. ESLint uses only the unprefixed name internally to locate rules.
 
+**注意** 当配置从插件来的规则的时候，确保删除`eslint-plugin-`前缀。因为声明该前缀，ESLint只在内部规则里去寻找。
+
 All rules that are enabled by default are set to 2, so they will cause a non-zero exit code when encountered. You can lower these rules to a warning by setting them to 1, which has the effect of outputting the message onto the console but doesn't affect the exit code.
 
+所有被包含的规则默认错误级别是 2，所以当触发时，他们会报错一个非零错误。您可以通过设置他们错误级别为 1 降低这些规则的级别，这样报错只会在控制台显示，而不会导致程序退出。
+
 To temporary disable warnings in your file use the following format:
+
+您可以使用下面格式，暂时关闭这些警告错误：
 
 ```js
 /*eslint-disable */
 
 //suppress all warnings between comments
+
+// 关闭注释内所有警告信息
+
 alert('foo');
 
 /*eslint-enable */
 ```
 
 You can also disable and enable back warnings of specific rules
+
+
 
 ```js
 /*eslint-disable no-alert, no-console */
