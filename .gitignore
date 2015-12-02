@@ -2,3 +2,5 @@ node_modules/
 _site/
 _algolia_api_key
 Gemfile.lock
+.DS_Store
+.jekyll-metadata
