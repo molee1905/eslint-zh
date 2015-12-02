@@ -4,9 +4,13 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Treat var as Block Scoped (block-scoped-var)
+#将定义变量理解成一个块级作用域的生成
 
 The `block-scoped-var` rule generates warnings when variables are used outside of the block in which they were defined. This emulates C-style block scope.
 
+当变量在其被定义的范围之外被使用时，会违反block-scoped-var规则，从而被警告。
+这种解析方式模拟了c语言中的块级作用域
+ 
 ```js
 function doSomething() {
     if (true) {
@@ -21,7 +25,11 @@ function doSomething() {
 
 This rule aims to reduce the usage of variables outside of their binding context and emulate traditional block scope from other languages. This is to help newcomers to the language avoid difficult bugs with variable hoisting.
 
+此规则借鉴其他语言的块级作用域概念，用来减少变量跨作用域使用情况的发生
+
 The following patterns are considered problems:
+
+以下为错误示例：
 
 ```js
 /*eslint block-scoped-var: 2*/
@@ -60,6 +68,8 @@ function doAnother() {
 ```
 
 The following patterns are not considered problems:
+
+正确的使用方法如下
 
 ```js
 /*eslint block-scoped-var: 2*/
