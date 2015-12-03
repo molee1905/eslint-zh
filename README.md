@@ -13,6 +13,10 @@
    `#### 四级标题`
    
    `...`
+7. 提交某文件时，假如该文件为xxx.md，
+   则提交时的注释为: update xxx.md
+
+   如有补充，逗号分隔紧随其后: update xxx.md, resolve the conflict...
 
 ### 下载eslint-zh
 
@@ -31,7 +35,7 @@ $ git checkout -b mixed origin/mixed
 
 在本地进行调试预览，安装[bundler][1] ，如果已安装，可跳过此步：
 ```bash
-$ sudo gem install bundler
+$ [sudo] gem install bundler
 $ bundle -h
 ```
 下载需要等待一段时间，国内可先替换一下，再安装bundler:

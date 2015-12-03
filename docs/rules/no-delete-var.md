@@ -8,7 +8,7 @@ layout: doc
 
 This rule prevents the use of `delete` operator on variables:
 
-此规则阻止在变量上使用 `delted` 操作。
+此规则阻止在变量上使用 `delete` 操作。
 
 ```js
 /*eslint no-delete-var: 2*/

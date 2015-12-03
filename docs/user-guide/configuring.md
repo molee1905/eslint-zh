@@ -12,9 +12,13 @@ ESLint is designed to be completely configurable, meaning you can turn off every
 ESlint 设计的就是完全可配置的，也就意味着您可以关闭所有规则，只跑基本的语法验证，或者混合或者匹配或者自定义规则去让ESLint完美地为您的项目服务。这里有俩个初级的方法去配置ESLint。
 
 1. **Configuration Comments** - use JavaScript comments to embed configuration information directly into a file.
+<<<<<<< HEAD
 1. **配置注释** - 使用JavaScript注释直接包含配置信息到一个文件。
 
 1. **Configuration Files** - use a JavaScript, JSON or YAML file to specify configuration information for an entire directory and all of its subdirectories. This can be in the form of an `.eslintrc` file or an `eslintConfig` field in a `package.json` file, both of which ESLint will look for and read automatically, or you can specify a configuration file on the [command line](command-line-interface).
+=======
+1. **Configuration Files** - use a JavaScript, JSON or YAML file to specify configuration information for an entire directory and all of its subdirectories. This can be in the form of an [.eslintrc.*](#configuration-file-formats) file or an `eslintConfig` field in a `package.json` file, both of which ESLint will look for and read automatically, or you can specify a configuration file on the [command line](command-line-interface).
+>>>>>>> master
 
 1. **配置文件** - 使用JavaScript、JSON 或者 YAML 文件去描述配置信息，目录下所有的子目录都会生效。这也可以是以下两种形式：`.eslintrc`文件 或者在 `package.json`文件里配置`eslintConfig`域，这两种配置方式ESLint都会自动读取。再或者，您可以在[command line](command-line-interface)指定一个配置文件。
 
