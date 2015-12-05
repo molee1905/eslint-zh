@@ -9,7 +9,7 @@ layout: doc
 A number of style guides require or disallow spaces between array brackets. This rule
 applies to both array literals and destructuring assignment (EcmaScript 6) using arrays.
 
-一些代码风格指南要求或禁止在数组的方括号内留有空格。该规则适用于数组和数组的解构赋值 (EcmaScript 6) 
+一些代码风格指南要求或禁止在数组的方括号内留有空格。该规则适用于数组和数组的解构赋值 (EcmaScript 6)。
 
 ```js
 /*eslint-env es6*/
@@ -23,7 +23,7 @@ var [x,y] = z;
 
 **Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
 
-**Fixable:** 该规则可以通过`--fix`命令行进行自动修复
+**Fixable:** 该规则可以通过`--fix`命令行进行自动修复。
 
 ## Rule Details
 
