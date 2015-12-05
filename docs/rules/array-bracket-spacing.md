@@ -157,9 +157,15 @@ Note that `"always"` has a special case where `{}` and `[]` are not considered p
 
 An object literal may be used as a third array item to specify spacing exceptions. These exceptions work in the context of the first option. That is, if `"always"` is set to enforce spacing and an exception is set to `false`, it will disallow spacing for cases matching the exception. Likewise, if `"never"` is set to disallow spacing and an exception is set to `true`, it will enforce spacing for cases matching the exception.
 
+数组的第三个参数是个对象，用来指定例外情况。这些例外作用在第一个选项的基础上。如果`"always"`设置为强制使用空格但例外情况被设置为`false`，那么符合这个例外的将禁止使用空格。同样的，如果`"never"`设置为禁止试用空格但例外情况被设为`true`，那么符合这个例外的将强制使用空格。
+
 You can add exceptions like so:
 
+你可以像这样添加例外情况：
+
 In case of `"always"` option, set an exception to `false` to enable it:
+
+在`"always"`选项的情况下，设置例外为`false`来启用该规则：
 
 ```json
 "array-bracket-spacing": [2, "always", {
@@ -171,6 +177,8 @@ In case of `"always"` option, set an exception to `false` to enable it:
 
 In case of `"never"` option, set an exception to `true` to enable it:
 
+在`"never"`选项的情况下，设置例外为`true`来启用该规则：
+
 ```json
 "array-bracket-spacing": [2, "never", {
   "singleValue": true,
@@ -181,13 +189,28 @@ In case of `"never"` option, set an exception to `true` to enable it:
 
 The following exceptions are available:
 
+以下例外都可用：
+
 * `singleValue` sets the spacing of a single value inside of square brackets of an array.
+
+* `singleValue` 为数组内单一元素添加空格。
+
 * `objectsInArrays` sets the spacings between the curly braces and square brackets of object literals that are the first or last element in an array.
+
+* `objectsInArrays` 数组中第一个元素或最后一个元素是对象的，在方括号和、
+                    大括号之间设置空格。
+
 * `arraysInArrays` sets the spacing between the square brackets of array literals that are the first or last element in an array.
+
+* `arraysInArrays` 数组中第一个元素或最后一个元素是数组的，在方括号之间设置空格
 
 In each of the following examples, the `"always"` option is assumed.
 
+下面的例子中，假定是`"always"`选项。
+
 When `"singleValue"` is set to `false`, the following patterns are considered problems:
+
+当`"singleValue"`被设置为`false`，以下模式被认为是有问题的：
 
 ```js
 /*eslint array-bracket-spacing: [2, "always", { singleValue: false }]*/
@@ -217,7 +240,7 @@ var foo = [{ 'foo': 'bar' }];
 
 When `"objectsInArrays"` is set to `false`, the following patterns are considered problems:
 
-当设置`"objectsInArrays"`为`false`时，以下模式被认为是有问题的：
+当`"objectsInArrays"`被设置为`false`时，以下模式被认为是有问题的：
 
 ```js
 /*eslint array-bracket-spacing: [2, "always", { objectsInArrays: false }]*/
