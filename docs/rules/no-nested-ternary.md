@@ -5,7 +5,11 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Nested Ternaries (no-nested-ternary)
 
+# 不允许试用嵌套的三元表达式  (no-nested-ternary)
+
 Nesting ternary expressions makes code unclear. The `no-nested-ternary` rule disallows the use of nested ternary expressions.
+
+嵌套的三元表达式使代码不清晰。该规则不允许使用嵌套的三元表达式。
 
 ```js
 var foo = bar ? baz : qux === quxx ? bing : bam;
@@ -15,7 +19,11 @@ var foo = bar ? baz : qux === quxx ? bing : bam;
 
 The `no-nested-ternary` rule aims to increase the clarity and readability of code by disallowing the use of nested ternary expressions.
 
+该规则旨在通过禁用嵌套的三元表达式，提高代码的清晰度和可读性。
+
 The following patterns are considered problems:
+
+以下模式被认为是有问题的：
 
 ```js
 /*eslint no-nested-ternary: 2*/
@@ -26,6 +34,8 @@ foo ? baz === qux ? quxx() : foobar() : bar();       /*error Do not nest ternary
 ```
 
 The following patterns are considered okay and could be used alternatively:
+
+以下模式被认为是可以的，可以替代使用：
 
 ```js
 /*eslint no-nested-ternary: 2*/
@@ -49,6 +59,8 @@ if (foo) {
 ## Version
 
 This rule was introduced in ESLint 0.2.0.
+
+该规则在ESLint 0.2.0 中被引入。
 
 ## Resources
 
