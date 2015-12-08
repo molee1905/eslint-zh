@@ -5,7 +5,11 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Ternary Operators (no-ternary)
 
+# 不允许使用三元操作符 (no-ternary)
+
 The ternary operator is used to conditionally assign a value to a variable. Some believe that the use of ternary operators leads to unclear code.
+
+三元操作符用于有条件的为一个变量赋值。一些人认为使用三元操作符会导致代码不清晰。
 
 ```js
 var foo = isBar ? baz : qux;
@@ -15,7 +19,11 @@ var foo = isBar ? baz : qux;
 
 The `no-ternary` rule aims to disallow the use of ternary operators.
 
+该规则旨在不允许使用三元操作符。
+
 The following patterns are considered problems:
+
+以下模式被认为是有问题的：
 
 ```js
 /*eslint no-ternary: 2*/
@@ -30,6 +38,8 @@ function quux() {
 ```
 
 The following patterns are considered okay and could be used alternatively:
+
+以下模式被认为是可以的，可替代使用：
 
 ```js
 /*eslint no-ternary: 2*/
@@ -65,6 +75,8 @@ function quux() {
 ## Version
 
 This rule was introduced in ESLint 0.0.9.
+
+该规则在ESLint 0.0.9 中被引入。
 
 ## Resources
 
