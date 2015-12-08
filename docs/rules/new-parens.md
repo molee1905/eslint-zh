@@ -19,7 +19,7 @@ var person = new Person;
 
 This rule is aimed at highlighting a lack of convention and increasing code clarity by requiring the use of parentheses when invoking a constructor via the `new` keyword. As such, it will warn when these parentheses are omitted.
 
-该规则旨目的在于，当通过`new`关键字调用构造函数时，要求使用圆括号，以此提高代码的清晰度。因此，当圆括号省略时，该规则将发出警告。
+该规则目的在于，当通过`new`关键字调用构造函数时，要求使用圆括号，以此提高代码的清晰度。因此，当圆括号省略时，该规则将发出警告。
 
 The following patterns are considered problems:
 
