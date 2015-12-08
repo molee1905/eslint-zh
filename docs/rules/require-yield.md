@@ -7,9 +7,13 @@ layout: doc
 
 This rule generates warnings for generator functions that do not have the `yield` keyword.
 
+如果generator函数内部没有`yield`关键字，该规则将发出警告。
+
 ## Rule details
 
 The following patterns are considered problems:
+
+以下模式被认为是有问题的：
 
 ```js
 /*eslint require-yield: 2*/
@@ -21,6 +25,8 @@ function* foo() { /*error This generator function does not have `yield`.*/
 ```
 
 The following patterns are not considered problems:
+
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint require-yield: 2*/
@@ -42,6 +48,8 @@ function* foo() { }
 ## Version
 
 This rule was introduced in ESLint 1.0.0-rc-1.
+
+该规则在ESLint 1.0.0-rc-1 中被引入。
 
 ## Resources
 
