@@ -5,7 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Nested Ternaries (no-nested-ternary)
 
-# 不允许试用嵌套的三元表达式  (no-nested-ternary)
+# 不允许使用嵌套的三元表达式  (no-nested-ternary)
 
 Nesting ternary expressions makes code unclear. The `no-nested-ternary` rule disallows the use of nested ternary expressions.
 
