@@ -9,7 +9,7 @@ layout: doc
 
 The `continue` statement terminates execution of the statements in the current iteration of the current or labeled loop, and continues execution of the loop with the next iteration. When used incorrectly it makes code less testable, less readable and less maintainable. Structured control flow statements such as `if` should be used instead.
 
-`continue`终止当前的循环的此次迭代或带标签的循环，进行循环中的下一个迭代。不正确的使用会降低代码可测性、可读性和可维护性。应试用结构化的控制语句如`if`来代替。
+`continue`终止当前的循环的此次迭代或带标签的循环，执行循环中的下一个迭代。不正确的使用会降低代码可测性、可读性和可维护性。应使用结构化的控制语句如`if`来代替。
 
 ```js
 var sum = 0,
