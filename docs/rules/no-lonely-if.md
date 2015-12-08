@@ -37,7 +37,7 @@ if (foo) {
 
 This rule warns when an `if` statement's `else` block contains only another `if` statement.
 
-如果`if`语句的`else`块中只包含另一个`if`语句，该规则将会发出警告。
+如果`if`语句的`else`块中只包含另一个`if`语句，该规则将会发出提醒。
 
 The following patterns are considered problems:
 
