@@ -5,7 +5,11 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Limit Maximum Number of Statements (max-statements)
 
+# 限制语句的最大数量 (max-statements)
+
 The `max-statements` rule allows you to specify the maximum number of statements allowed in a function.
+
+该规则允许你指定一个函数中允许的语句的最大数值。
 
 ```js
 function foo() {
@@ -19,7 +23,11 @@ function foo() {
 
 This rule allows you to configure the maximum number of statements allowed in a function.  The default is 10.
 
+该规则允许配置函数中允许的最大语句数量。默认为10。
+
 The following patterns are considered problems:
+
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint max-statements: [2, 2]*/  // Maximum of 2 statements.
@@ -32,6 +40,8 @@ function foo() { /*error This function has too many statements (3). Maximum allo
 ```
 
 The following patterns are not considered problems:
+
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint max-statements: [2, 2]*/  // Maximum of 2 statements.
@@ -58,6 +68,8 @@ function foo() {
 ## Version
 
 This rule was introduced in ESLint 0.0.9.
+
+该规则在ESLint 0.0.9 中被引入。
 
 ## Resources
 
