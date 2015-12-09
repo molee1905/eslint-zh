@@ -5,9 +5,15 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow use of negated expressions in conditions (no-negated-condition)
 
+# 不允许在条件语句中使用否定的表达式 (no-negated-condition)
+
 Checks against the use of a negated expression in an if condition when the else branch is not empty or in a ternary operator. Negated conditions are more difficult to understand. Code can be made more readable by inverting the condition instead.
 
+检查在else分支不为空的if条件语句或三元操作符中否定表达式的使用。否定的条件语句让人更加难以理解。如果将条件反过来，代码会更具可读性。
+
 For example:
+
+例如：
 
 ```js
 if (!a) {
@@ -19,6 +25,8 @@ else {
 ```
 
 should instead be written as:
+
+应该被写为：
 
 ```js
 if (a) {
@@ -33,7 +41,11 @@ else {
 
 The rule is aimed at preventing the use of a negated expression in a condition.
 
+该规则旨在防止在条件语句中使用否定表达式。
+
 The following patterns are considered warnings:
+
+以下模式被认为是有问题的：
 
 ```js
 /*eslint no-negated-condition: 2*/
@@ -63,6 +75,7 @@ if (a !== b) {          /*error Unexpected negated condition.*/
 
 The following patterns are not warnings:
 
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint no-negated-condition: 2*/
@@ -88,6 +101,8 @@ a ? b : c
 ## Version
 
 This rule was introduced in ESLint 1.6.0.
+
+该规则在ESLint 1.6.0 中被引入。
 
 ## Resources
 
