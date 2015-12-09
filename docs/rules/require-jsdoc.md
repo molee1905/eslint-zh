@@ -5,7 +5,11 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Require JSDoc comment (require-jsdoc)
 
+# 要求JSDoc注释 (require-jsdoc)
+
 [JSDoc](http://usejsdoc.org) is a JavaScript API documentation generator. It uses specially-formatted comments inside of code to generate API documentation automatically. For example, this is what a JSDoc comment looks like for a function:
+
+[JSDoc](http://usejsdoc.org)是一个JavaScript API 文档生成器。它通过在代码中使用指定格式的注释自动生成API文档。例如，以下这个就是函数的JSDoc注释：
 
 ```js
 /**
@@ -21,9 +25,13 @@ function sum(num1, num2) {
 
 Some style guides require JSDoc comments for all functions as a way of explaining function behavior.
 
+一些风格指南要求对所有的函数使用JSDoc注释作为描述函数行为的一种方式。
+
 ## Rule details
 
 This rule generates warnings for nodes that do not have JSDoc comments when they should. Supported nodes:
+
+如果某些节点应该使用JSDoc注释的而没有使用，该规则将会发出警告。支持的节点：
 
 * `FunctionDeclaration`
 * `ClassDeclaration`
@@ -33,11 +41,15 @@ This rule generates warnings for nodes that do not have JSDoc comments when they
 
 This rule accepts a `require` object with its properties as
 
+该规则接收一个`require`对象，属性如下：
+
 * `FunctionDeclaration` (default: `true`)
 * `ClassDeclaration` (default: `false`)
 * `MethodDefinition` (default: `false`)
 
 Default option settings are
+
+默认选项设置如下：
 
 ```json
 {
@@ -52,6 +64,8 @@ Default option settings are
 ```
 
 The following patterns are considered problems:
+
+以下模式被认为是有问题的：
 
 ```js
 /*eslint "require-jsdoc": [2, {
@@ -72,6 +86,8 @@ class Test{            /*error Missing JSDoc comment.*/
 ```
 
 The following patterns are not considered problems:
+
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint "require-jsdoc": [2, {
@@ -116,6 +132,8 @@ class Test{
 
 If you do not require JSDoc for your functions, then you can leave this rule off.
 
+如果你不需要为函数添加JSDoc注释，你可以关闭此规则。
+
 ## Related Rules
 
 * [valid-jsdoc](valid-jsdoc)
@@ -123,6 +141,8 @@ If you do not require JSDoc for your functions, then you can leave this rule off
 ## Version
 
 This rule was introduced in ESLint 1.4.0.
+
+该规则在ESLint 1.4.0 中被引入。
 
 ## Resources
 
