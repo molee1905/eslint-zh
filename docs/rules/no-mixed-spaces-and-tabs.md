@@ -69,6 +69,8 @@ function add(x, y) {
 
 When the SmartTabs option is enabled the following does not produce a warning:
 
+当SmartTabs选项启用时，以下模式不会发出警告：
+
 ```js
 /*eslint no-mixed-spaces-and-tabs: [2, "smart-tabs"]*/
 
