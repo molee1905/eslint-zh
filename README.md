@@ -14,9 +14,9 @@
    
    `...`
 7. 提交某文件时，假如该文件为xxx.md，
-   则提交时的注释为: update xxx.md
+   则提交时的注释为: update xxx
 
-   如有补充，逗号分隔紧随其后: update xxx.md, resolve the conflict...
+   如有补充，逗号分隔紧随其后: update xxx, resolve the conflict...
 
 ### 下载eslint-zh
 
@@ -60,7 +60,7 @@ $ jekyll server
 ```bash
 $ git pull
 $ git add *
-$ git commit -m 'xxx'
+$ git commit -m 'update xxx'
 $ git push origin mixed
 ```
 
