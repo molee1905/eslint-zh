@@ -5,10 +5,14 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow lexical declarations in case/default clauses (no-case-declarations)
 
+#禁止在case/default中使用语法声明
+
 This rule disallows lexical declarations (`let`, `const`, `function` and `class`)
 in `case`/`default` clauses. The reason is that the lexical declaration is visible
 in the entire switch block but it only gets initialized when it is assigned, which
 will only happen if the case where it is defined is reached.
+
+此规则禁止在`case`/`default`分句中声明语法（`let`, `const`, `function` and `class`）。原因是语法声明在整个switch块中是可见的，但是如果能达到被定义的位置时才能被初始化。
 
 ```js
 switch (foo) {
@@ -28,6 +32,8 @@ switch (foo) {
 
 To ensure that the lexical declaration only applies to the current case clause
 wrap your clauses in blocks.
+
+为了确保语法声明只适用于当前情况，将你的声明进行包裹。
 
 ```js
 switch (foo) {
@@ -53,6 +59,8 @@ switch (foo) {
 
 This rule aims to prevent access to uninitialized lexical bindings as well as accessing hoisted functions across case clauses.
 
+此规则目的在于，防止访问未初始化的词语以及跨case分支访问悬挂的函数。
+
 ```js
 /*eslint no-case-declarations: 2*/
 
@@ -74,6 +82,8 @@ switch (foo) {
 ## When Not To Use It
 
 If you depend on fall through behavior and want access to bindings introduced in the case block.
+
+
 
 ## Related Rules
 
