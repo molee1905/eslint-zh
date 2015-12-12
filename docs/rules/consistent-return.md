@@ -7,20 +7,11 @@ layout: doc
 
 #需要一致的返回
 
-One of the confusing aspects of JavaScript is that any function may or may not return a value at any point in time. 
+One of the confusing aspects of JavaScript is that any function may or may not return a value at any point in time. When a function exits without any `return` statement executing, the function returns `undefined`. Similarly, calling `return` without specifying any value will cause the function to return `undefined`.Only when `return` is called with a value is there a change in the function's return value. 
 
 JavaScript混乱之一是，任何函数中可能会也可能不会在任何时刻返回一个值。
-
-When a function exits without any `return` statement executing, the function returns `undefined`. 
-
 当函数中没有任何`return`语句执行时，函数返回`undefined`。
-
-Similarly, calling `return` without specifying any value will cause the function to return `undefined`. 
-
 同样的，调用没有指定任何返回值的`return`，函数也会返回`undefined`。
-
-Only when `return` is called with a value is there a change in the function's return value.
-
 只有当调用带有返回值的`return`，才会改变函数的返回值。
 
 Unlike statically-typed languages that will catch when a function doesn't return the type of data expected, JavaScript has no such checks, meaning that it's easy to make mistakes such as this:
