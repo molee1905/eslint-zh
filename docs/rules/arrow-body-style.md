@@ -9,7 +9,7 @@ layout: doc
 
 Arrow functions can omit braces when there is a single statement in the body. This rule enforces the consistent use of braces in arrow functions.
 
-箭头函数体内只有单独一条语句是，可以省略括号。该规则强制箭头函数中大括号的使用的一致性。
+箭头函数体内只有单独一条语句是，可以省略大括号。该规则强制箭头函数中大括号的使用的一致性。
 
 Additionally, this rule specifically warns against a possible developer error when the intention is to return an empty object literal but creates an empty block instead, returning undefined.
 
