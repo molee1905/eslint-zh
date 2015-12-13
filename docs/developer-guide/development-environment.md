@@ -5,19 +5,35 @@ layout: doc
 
 # Development Environment
 
+# 开发环境
+
 ESLint has a very lightweight development environment that makes updating code fast and easy. This is a step-by-step guide to setting up a local development environment that will let you contribute back to the project.
+
+ESLint 有一个非常轻量的开发环境使更新代码非常快速简单。这是一个一步一步的指南帮助你安装本地的开发环境从而可以使你的贡献回馈到ESLint。
 
 ## Step 1: Install Node.js
 
+## Step 1: 安装 Node.js
+
 Go to [http://nodejs.org/] to download and install the latest stable version for your operating system.
+
+到 [http://nodejs.org/] 下载并在你的操作系统中安装最新的稳定版 node
 
 Most of the installers come with [npm](http://npmjs.org/) already installed, but if for some reason it doesn't work on your system, you can install it manually using the instructions on the website.
 
+大多数安装器自带的 [npm](http://npmjs.org/) 已经自动安装，但是由于一些原因它不能在你的系统中工作，你可以根据网站上的这个文档手动安装。
+
 ## Step 2: Fork and checkout your own ESLint repository
+
+## Step 2: Fork and checkout 你自己的 ESLint 仓库
 
 Go to [https://github.com/eslint/eslint] and click the "Fork" button. Follow the [GitHub documentation](https://help.github.com/articles/fork-a-repo) for forking and cloning.
 
+到 [https://github.com/eslint/eslint ] 网站并点击 "Fork" 按钮。按照[GitHub 文档](https://help.github.com/articles/fork-a-repo)了解关于 forking 和 cloing。
+
 Once you've cloned the repository, run `npm install` to get all the necessary dependencies:
+
+一旦你已经 clone 了仓库，运行 `npm install` 获取所有的必须的依赖:
 
 ```
 $ cd eslint
@@ -25,6 +41,8 @@ $ npm install
 ```
 
 You must be connected to the Internet for this step to work. You'll see a lot of utilities being downloaded.
+
+这一步必须联网才能工作。你会看到下载了大量的工具。
 
 ## Step 3: Add the upstream source
 
@@ -40,19 +58,31 @@ Now, the remote `upstream` points to the upstream source.
 
 ## Step 4: Install the Yeoman Generator
 
+## Step 4: 安装 Yeoman Generator
+
 [Yeoman](http://yeoman.io) is a scaffold generator that ESLint uses to help streamline development of new rules. If you don't already have Yeoman installed, you can install it via npm:
+
+[Yeoman](http://yeoman.io) 是一个脚手架生成器，ESLint 使用它来简化新规则的开发。如果你没有按转Yeoman,可以使用 npm 安装:
 
     npm install -g yo
 
 Then, you can install the ESLint Yeoman generator:
 
+随后安装 ESLint 的 Yeoman 生成器:
+
     npm install -g generator-eslint
 
 Please see the [generator documentation](https://github.com/eslint/generator-eslint) for instructions on how to use it.
 
+请查看[生成器文档](https://github.com/eslint/generator-eslint)去了解如何使用它。
+
 ## Step 5: Run the tests
 
+## Step 5: 运行测试
+
 Running the tests is the best way to ensure you have correctly setup your development environment. Make sure you're in the the `eslint` directory and run:
+
+运行测试是确保你正确安装了开发环境最好的方式。确保你在 `eslint` 文件夹并运行:
 
 ```
 npm test
@@ -63,8 +93,13 @@ The testing takes a few seconds to complete. If any tests fail, that likely mean
 
 
 ## Build Scripts
+## 构建脚本
 
 ESLint has several build scripts that help with various parts of development.
+
+ESLint 有几个构建脚本用于开发的各个部分。
+
+### npm test
 
 ### npm test
 
@@ -76,21 +111,43 @@ The primary script to use is `npm test`, which does several things:
 1. Generates `build/eslint.js` for use in a browser
 1. Runs a subset of tests in PhantomJS
 
+这个主要的脚本使用 `npm test` 运行，它主要做了以下几件事：
+
+1. 校验所有的 JavaScript (包含测试）和 JSON 文件
+1. 在 Node.js 上运行所有的测试
+1. 检查代码覆盖
+1. 生成 `build/eslint.js` 在浏览器端使用
+1. 在 PhantomJS 上运行单元测试
+
 Be sure to run this after making changes and before sending a pull request with your changes.
+
+确保在做出修改后或者提交有修改的 pull request 之前运行测试
 
 **Note:** The full code coverage report is output into `/coverage`.
 
+**Note:** 完整的代码覆盖率报告输出到 `/coverage`。
+
+
+### npm run lint
 ### npm run lint
 
 Runs just the JavaScript and JSON linting on the repository
 
+只运行仓库中 JavaScript 和 JSON 文件检测
+
+### npm run browserify
 ### npm run browserify
 
 Generates `build/eslint.js`, a version of ESLint for use in the browser
 
+生成 `build/eslint.js`，在浏览器端使用的 ESLint 版本。
+
+### npm run docs
 ### npm run docs
 
 Generates JSDoc documentation and places it into `/jsdoc`.
+
+生成 JSDoc 文档并放在 `/jsdoc`。
 
 ### npm run profile
 
@@ -108,10 +165,20 @@ Your browser should automatically open to the page in question. When that happen
 You should start to see profiles for each run show up on the left side. If not, reload the page in the browser. Once all three profiles have completed, they will be available for inspection.
 
 ## Workflow
+## 工作流
 
 Whenever you make changes to the ESLint source files, you'll need to run `npm test` to rerun the tests. The workflow is:
 
 1. Make changes
 2. Run `npm test` to run tests on the command line
 
+无论何时你对 ESLint 的源文件做了修改，你必须运行 `npm test` 做回归测试。工作流是这样的：
+
+1. 对源文件更改
+2. 在命令行运行 `npm test` 做回归测试
+
 You'll have to do this each time you make a change. The tests are run automatically whenever a pull request is received, so make sure to verify your changes work before submitting them.
+
+在每次修改后你必须做这些操作。当接收到一个 pull request 时，这些测试都会自动运行，因此在提交前确保你的修改能正常工作。
+
+
