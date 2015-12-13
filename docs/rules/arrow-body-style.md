@@ -5,7 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Require braces in arrow function body (arrow-body-style)
 
-# 要求在箭头函数体使用大括号 (arrow-body-style)
+# 要求箭头函数体使用大括号 (arrow-body-style)
 
 Arrow functions can omit braces when there is a single statement in the body. This rule enforces the consistent use of braces in arrow functions.
 
