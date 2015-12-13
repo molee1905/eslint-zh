@@ -5,7 +5,11 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Operator Assignment Shorthand (operator-assignment)
 
+# 简化赋值操作 (operator-assignment)
+
 JavaScript provides shorthand operators that combine variable assignment and some simple mathematical operations. For example, `x = x + 4` can be shortened to `x += 4`. The supported shorthand forms are as follows:
+
+Javascript 为变量赋值和一些简单的数学运算提供了速记运算符。例如，`x = x + 4`可以简化为`x += 4`。支持的简化形式如下：
 
 ```text
  Shorthand | Separate
@@ -27,13 +31,19 @@ JavaScript provides shorthand operators that combine variable assignment and som
 
 This rule enforces use of the shorthand assignment operators by requiring them where possible or prohibiting them entirely. It has two modes: `always` and `never`.
 
+该规则的目的在于，在可能或完全禁止情况下，要求强制简化的赋值操作符的使用。它又两种模式`always` and `never`。
+
 ### always
 
 `"operator-assignment": [2, "always"]`
 
 This mode enforces use of operator assignment shorthand where possible.
 
+该模式在任何可能的情况下强制使用简化的赋值操作符。
+
 The following are examples of valid patterns:
+
+以下示例为有效模式：
 
 ```js
 /*eslint operator-assignment: [2, "always"]*/
@@ -48,6 +58,8 @@ x = y + x; // `+` is not always commutative (e.g. x = "abc")
 ```
 
 The following patterns are considered problems and should be replaced by their shorthand equivalents:
+
+以下模式被认为是有问题的，应该使用它们的简化版：
 
 ```js
 /*eslint operator-assignment: [2, "always"]*/
@@ -64,7 +76,11 @@ x.y = x.y << z;   /*error Assignment can be replaced with operator assignment.*/
 
 This mode warns on any use of operator assignment shorthand.
 
+该模式对任何简化的赋值操作符的使用发出警告。
+
 The following are examples of valid patterns:
+
+以下示例为有效模式：
 
 ```js
 /*eslint operator-assignment: [2, "never"]*/
@@ -74,6 +90,8 @@ x.y = x.y / a.b;
 ```
 
 The following patterns are considered problems and should be written out fully without the shorthand assignments:
+
+以下模式被认为是有问题的，不应该使用它们的简化版：
 
 ```js
 /*eslint operator-assignment: [2, "never"]*/
@@ -86,9 +104,13 @@ x ^= (y + z) / foo(); /*error Unexpected operator assignment shorthand.*/
 
 Use of operator assignment shorthand is a stylistic choice. Leaving this rule turned off would allow developers to choose which style is more readable on a case-by-case basis.
 
+使用简化的赋值操作符是一个格式上的选择。关闭此规则将允许开发者在个案的基础上选择哪种风格更具可读性。
+
 ## Version
 
 This rule was introduced in ESLint 0.10.0.
+
+该规则在ESLint 0.10.0 中被引入。
 
 ## Resources
 
