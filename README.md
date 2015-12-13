@@ -20,11 +20,12 @@
 
 ### 下载eslint-zh
 
+fork 自己的eslint-zh
 
-下载eslint-zh到本地目录，切换到mixed分支（对`.md`文档翻译时保留原始英文，以便校对）
+下载eslint-zh到本地目录，切换到mixed分支（对`.md`文档翻译时保留原始英文，即中英文对照，以便校对）。我们所有的操作都是在在mixed分支上。
 
 ```bash
-$ git clone git@github.com:smocean/eslint-zh.git
+$ git clone git@github.com:[your name]/eslint-zh.git
 $ cd eslint-zh
 $ git checkout -b mixed origin/mixed
 ```
@@ -64,6 +65,8 @@ $ git commit -m 'update xxx'
 $ git push origin mixed
 ```
 
+然后pull request。
+注意，合并的是mixed，也就是[your name]:mixed向smocean:mixed分支发出合并请求。
 
 [1]: https://rubygems.org/gems/bundler
 
