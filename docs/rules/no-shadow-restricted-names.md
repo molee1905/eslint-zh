@@ -38,6 +38,7 @@ try {} catch(eval){}   /*error Shadowing of global property "eval".*/
 ```
 
 The following patterns are not considered problems:
+
 正确：
 
 ```js
