@@ -5,8 +5,13 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow duplicate name in class members (no-dupe-class-members)
 
+# 不允许类成员中有重复的名称 (no-dupe-class-members)
+
 If there are declarations of the same name in class members, the last declaration overwrites other declarations silently.
 It can cause unexpected behaviors.
+
+如果有同名的类成员中的声明，最后一个声明将会默默地覆盖其他的声明。
+它可以导致意外的行为。
 
 ```js
 /*eslint-env es6*/
@@ -24,7 +29,11 @@ foo.bar(); // goodbye
 
 This rule is aimed to flag the use of duplicate names in class members.
 
+该规则旨在标记类成员中重复名称的使用。
+
 The following patterns are considered problems:
+
+以下模式被认为是有问题的：
 
 ```js
 /*eslint no-dupe-class-members: 2*/
@@ -47,6 +56,8 @@ class Foo {
 ```
 
 The following patterns are not considered problems:
+
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint no-dupe-class-members: 2*/
@@ -72,11 +83,17 @@ class Foo {
 
 This rule should not be used in ES3/5 environments.
 
+该规则不应在ES3/5环境下使用。
+
 In ES2015 (ES6) or later, if you don't want to be notified about duplicate names in class members, you can safely disable this rule.
+
+在ES2015 (ES6)或之后的版本，如果你不想收到关于类成员中有重复名称的通知，你可以关闭此规则。
 
 ## Version
 
 This rule was introduced in ESLint 1.2.0.
+
+该规则在ESLint 1.2.0 中被引入。
 
 ## Resources
 
