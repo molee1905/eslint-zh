@@ -38,7 +38,7 @@ If different spacing is desired for function blocks and keyword blocks, an optio
 
 如果为`"never"`，所有的块永远不会有前置空格。
 
-如果函数块和关键字块要求不同的空格类型，可以单独传递一个可选配置的对象作为该规则的参数来配置这种情况。
+如果函数块和关键字块要求不同的空格类型，可以单独传递一个可选配置的对象作为该规则的参数来配置这种情况。( 例如：`{ "functions": "never", "keywords": "always" }` )
 
 The default is `"always"`.
 
