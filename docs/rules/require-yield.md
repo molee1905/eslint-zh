@@ -5,6 +5,8 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow generator functions that do not have `yield` (require-yield)
 
+# 禁用函数内没有`yield`的generator函数
+
 This rule generates warnings for generator functions that do not have the `yield` keyword.
 
 如果generator函数内部没有`yield`关键字，该规则将发出警告。
