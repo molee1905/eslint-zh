@@ -5,18 +5,18 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Require parens in arrow function arguments (arrow-parens)
 
-# 要求箭头函数的参数使用括号 (arrow-parens)
+# 要求箭头函数的参数使用圆括号 (arrow-parens)
 
 Arrow functions can omit parentheses when they have exactly one parameter. In all other cases the parameter(s) must
 be wrapped in parentheses. This rule enforces the consistent use of parentheses in arrow functions.
 
-箭头函数体只有一个参数时，可以省略括号。其他任何情况，参数都应被括号括起来。该规则强制箭头函数中括号的使用的一致性。
+箭头函数体只有一个参数时，可以省略圆括号。其他任何情况，参数都应被圆括号括起来。该规则强制箭头函数中圆括号的使用的一致性。
 
 ## Rule Details
 
 This rule enforces parentheses around arrow function parameters regardless of arity. For example:
 
-该规则强制箭头函数的参数使用括号括起来，不论参数数量如何。例如：
+该规则强制箭头函数的参数使用圆括号括起来，不论参数数量如何。例如：
 
 ```js
 /*eslint-env es6*/
@@ -48,7 +48,7 @@ if (a >= 2) {
 
 The rule can also be configured to discourage the use of parens when they are not required:
 
-可以配置该规则在不需要使用括号时，阻止括号的使用。
+可以配置该规则在不需要使用圆括号时，阻止圆括号的使用。
 
 ```js
 /*eslint-env es6*/
@@ -129,7 +129,7 @@ if (a => b) {
 The contents of the `if` statement is an arrow function, not a comparison.
 If the arrow function is intentional, it should be wrapped in parens to remove ambiguity.
 
-`if`语句的内容是个箭头函数，不是比较语句。如果需要使用箭头函数，它需要被括号括起来以消除歧义。
+`if`语句的内容是个箭头函数，不是比较语句。如果需要使用箭头函数，它需要被圆括号括起来以消除歧义。
 
 ```js
 /*eslint-env es6*/
