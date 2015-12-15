@@ -5,12 +5,12 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Require Object Literal Shorthand Syntax (object-shorthand)
 
-# 要求对象文本简写语法 (object-shorthand)
+# 要求对象字面量简写语法 (object-shorthand)
 
 EcmaScript 6 provides a concise form for defining object literal methods and properties. This
 syntax can make defining complex object literals much cleaner.
 
-EcmaScript 6 提供了简写的形式去定义对象中的方法和属性。这个语法可以更清洁地定义复杂对象文本。
+EcmaScript 6 提供了简写的形式去定义对象中的方法和属性。这个语法可以更清洁地定义复杂对象字面量。
 
 Here are a few common examples using the ES5 syntax:
 
@@ -54,7 +54,7 @@ This rule enforces the use of the shorthand syntax. This applies
 to all methods (including generators) defined on object literals and any
 properties defined where the key name matches name of the assigned variable.
 
-该规则强制简写语法的使用。这适用于对象文本中的所有方法（包括generators）和键名与已赋值的变量名相匹配的任何属性。
+该规则强制简写语法的使用。这适用于对象字面量中的所有方法（包括generators）和键名与已赋值的变量名相匹配的任何属性。
 
 Each of the following properties would warn:
 
@@ -89,7 +89,7 @@ var foo = {
 This rule does not flag arrow functions inside of object literals.
 The following will *not* warn:
 
-该规则不标记对象文本中的箭头函数。下面的示例将**不**发出警告：
+该规则不标记对象字面量中的箭头函数。下面的示例将**不**发出警告：
 
 ```js
 /*eslint object-shorthand: 2*/
@@ -114,7 +114,7 @@ The rule takes an option which specifies when it should be applied. It can be se
 3. `"properties` ensures the property shorthand is used (where the key and variable name match).
 3. `"properties` 保证属性简写被使用 (键和变量名称相匹配的情况).
 4. `"never"` ensures that no property or method shorthand is used in any object literal。
-4. `"never"` 保证对象文本中的任何属性和方法都不使用简写。
+4. `"never"` 保证对象字面量中的任何属性和方法都不使用简写。
 
 You can set the option in configuration like this:
 
