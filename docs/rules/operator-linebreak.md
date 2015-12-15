@@ -5,7 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Operator Linebreak (operator-linebreak)
 
-# 换行符 (operator-linebreak)
+# 操作符、换行符 (operator-linebreak)
 
 When a statement is too long to fit on a single line, line breaks are generally inserted next to the operators separating expressions. The first style coming to mind would be to place the operator at the end of the line, following the english punctuation rules.
 
