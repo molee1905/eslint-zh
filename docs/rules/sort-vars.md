@@ -100,7 +100,7 @@ var a, B, c;
 
 This rule is a formatting preference and not following it won't negatively affect the quality of your code. If you alphabetizing variables isn't a part of your coding standards, then you can leave this rule off.
 
-该规则是一个格式化偏好，不遵循它，也不对对你的代码质量产生负面印象。如果按字母顺序排序的变量不是你编码标准的一部分，那么你可以关闭此规则。
+该规则是一个格式化偏好，不遵循它，也不对对你的代码质量产生负面影响。如果按字母顺序排序的变量不是你编码标准的一部分，那么你可以关闭此规则。
 
 ## Version
 
