@@ -9,7 +9,7 @@ layout: doc
 
 Object literal property names can be defined in two ways: using literals or using strings. For example, these two objects are equivalent:
 
-对象文本的属性名称可以用两种方式进行定义：使用文本或字符串。例如，这两个对象是等效的：
+对象字面量的属性名称可以用两种方式进行定义：使用文本或字符串。例如，这两个对象是等效的：
 
 ```js
 var object1 = {
@@ -50,7 +50,7 @@ var object = {
 
 This may look alright at first sight, but this code in fact throws a syntax error in ECMAScript 5 strict mode. This happens because `1e2` and `100` are coerced into strings before getting used as the property name. Both `String(1e2)` and `String(100)` happen to be equal to `"100"`, which causes the "Duplicate data property in object literal not allowed in strict mode" error. Issues like that can be tricky to debug, so some prefer to require quotes around all property names.
 
-这可能咋一看起来是没有的问题的，但在ECMAScript 5严格模式下，这段代码实际上会抛出一个语法错误。因为 `1e2` 和 `100`在作为属性名使用之前被强制转换为字符串。`String(1e2)` 和 `String(100)` 碰巧是等于`"100"`，造成了”严格模式下对象文本中不允许重复的数据属性“的错误。这样的问题调试起来非常棘手，所以一些人喜欢要求所有的属性名都要有引号。
+这可能咋一看起来是没有的问题的，但在ECMAScript 5严格模式下，这段代码实际上会抛出一个语法错误。因为 `1e2` 和 `100`在作为属性名使用之前被强制转换为字符串。`String(1e2)` 和 `String(100)` 碰巧是等于`"100"`，造成了”严格模式下对象字面量中不允许重复的数据属性“的错误。这样的问题调试起来非常棘手，所以一些人喜欢要求所有的属性名都要有引号。
 
 ## Rule Details
 
@@ -74,7 +74,7 @@ There are four behaviors for this rule: `"always"` (default), `"as-needed"`, `"c
 
 When configured with `"always"` as the first option (the default), quoting for all properties will be enforced. Some believe that ensuring property names in object literals are always wrapped in quotes is generally a good idea, since [depending on the property name you may need to quote them anyway](https://mathiasbynens.be/notes/javascript-properties). Consider this example:
 
-当配置`"always"`作为第一个选项时(默认的)，所有的属性将被强制带引号。自从[取决于你可能需要用引号把属性名括起来](https://mathiasbynens.be/notes/javascript-properties)，一些人相信保证对象文本中的属性名称总是被包裹在引号中通常是个好主意。请考虑以下示例：
+当配置`"always"`作为第一个选项时(默认的)，所有的属性将被强制带引号。自从[取决于你可能需要用引号把属性名括起来](https://mathiasbynens.be/notes/javascript-properties)，一些人相信保证对象字面量中的属性名称总是被包裹在引号中通常是个好主意。请考虑以下示例：
 
 ```js
 var object = {
