@@ -119,17 +119,30 @@ These rules relate to using strict mode.
 
 These rules have to do with variable declarations.
 
+这些规则与变量声明有关。
+
 * [init-declarations](init-declarations) - enforce or disallow variable initializations at definition
+* [init-declarations](init-declarations) - 强制或禁止在变量声明时进行初始化
 * [no-catch-shadow](no-catch-shadow) - disallow the catch clause parameter name being the same as a variable in the outer scope
+* [no-catch-shadow](no-catch-shadow) - 不允许catch子句的参数名与外层作用域中的变量同名
 * [no-delete-var](no-delete-var) - disallow deletion of variables (recommended)
+* [no-delete-var](no-delete-var) - 不允许删除变量 (recommended)
 * [no-label-var](no-label-var) - disallow labels that share a name with a variable
+* [no-label-var](no-label-var) - 不允许标签与变量同名
 * [no-shadow-restricted-names](no-shadow-restricted-names) - disallow shadowing of names such as `arguments`
+* [no-shadow-restricted-names](no-shadow-restricted-names) - 禁止覆盖受限制的标识符，比如`arguments`
 * [no-shadow](no-shadow) - disallow declaration of variables already declared in the outer scope
+* [no-shadow](no-shadow) - 不允许声明在外层作用域下已声明过的变量
 * [no-undef-init](no-undef-init) - disallow use of undefined when initializing variables
+* [no-undef-init](no-undef-init) - 不允许变量初始化为undefined
 * [no-undef](no-undef) - disallow use of undeclared variables unless mentioned in a `/*global */` block (recommended)
+* [no-undef](no-undef) - 禁用为声明的变量，除非它们在`/*global */`块中被提到(recommended)
 * [no-undefined](no-undefined) - disallow use of `undefined` variable
+* [no-undefined](no-undefined) - 不允许使用 `undefined` 变量
 * [no-unused-vars](no-unused-vars) - disallow declaration of variables that are not used in the code (recommended)
+* [no-unused-vars](no-unused-vars) - 不允许代码中的变量只声明而不使用 (recommended)
 * [no-use-before-define](no-use-before-define) - disallow use of variables before they are defined
+* [no-use-before-define](no-use-before-define) - 不允许在变量定义之前使用它们
 
 ## Node.js and CommonJS
 
@@ -333,7 +346,7 @@ These rules existed in a previous version of ESLint but have since been replaced
 * [no-empty-class](no-empty-class) - disallow the use of empty character classes in regular expressions (replaced by [no-empty-character-class](no-empty-character-class))
 * [no-empty-class](no-empty-class) - 禁止在正则表达式中使用空字符 (替换为 [no-empty-character-class](no-empty-character-class))
 * [no-extra-strict](no-extra-strict) - disallow unnecessary use of `"use strict";` when already in strict mode (replaced by [strict](strict))
-* [no-extra-strict](no-extra-strict) - 当已经处于严格模式下，禁用不必要的`"use strict";` (替换为 [strict](strict))
+* [no-extra-strict](no-extra-strict) - 当已经处于严格模式下，禁用不必要的`"use strict";`编译指示 (替换为 [strict](strict))
 * [no-reserved-keys](no-reserved-keys) - disallow reserved words being used as object literal keys (replaced by [quote-props](quote-props))
 * [no-reserved-keys](no-reserved-keys) - 禁止使用保留字作为对象字面量的键(替换为 [quote-props](quote-props))
 * [no-space-before-semi](no-space-before-semi) - disallow space before semicolon (replaced by [semi-spacing](semi-spacing))
