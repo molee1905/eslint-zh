@@ -57,6 +57,7 @@ function f(a, b){}
 ## Version
 
 This rule was introduced in ESLint 0.1.4.
+
 此规则在ESLint 0.1.4中被引入。
 
 ## Resources
