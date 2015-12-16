@@ -5,7 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Requires or disallows a whitespace (space or tab) beginning a single-line comment (spaced-line-comment)
 
-# 开始单行注释时要求或禁止一个空白 (空格或tab) (spaced-line-comment)
+# 要求或禁止单行注释时开始部分有一个空白 (空格或tab) (spaced-line-comment)
 
 **Replacement notice**: This rule was removed in ESLint v1.0 and replaced by the [spaced-comment](spaced-comment) rule.
 
