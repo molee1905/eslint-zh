@@ -12,23 +12,19 @@ ESLint is designed to be completely configurable, meaning you can turn off every
 ESlint 设计的就是完全可配置的，也就意味着您可以关闭所有规则，只跑基本的语法验证，或者混合或者匹配或者自定义规则去让ESLint完美地为您的项目服务。这里有俩个初级的方法去配置ESLint。
 
 1. **Configuration Comments** - use JavaScript comments to embed configuration information directly into a file.
-
-1. **Configuration Files** - use a JavaScript, JSON or YAML file to specify configuration information for an entire directory and all of its subdirectories. This can be in the form of an [.eslintrc.*](#configuration-file-formats) file or an `eslintConfig` field in a `package.json` file, both of which ESLint will look for and read automatically, or you can specify a configuration file on the [command line](command-line-interface).
-
-
-1. **配置注释** - 使用JavaScript注释直接包含配置信息到一个文件。
-1. **配置文件** - 使用JavaScript、JSON 或者 YAML 文件去描述配置信息，目录下所有的子目录都会生效。这也可以是以下两种形式：[.eslintrc.*](#configuration-file-formats)文件 或者在 `package.json`文件里配置`eslintConfig`域，这两种配置方式ESLint都会自动读取。再或者，您可以在[command line](command-line-interface)指定一个配置文件。
+1. **Configuration Comments** - 使用JavaScript注释直接包含配置信息到一个文件。
+2. **Configuration Files** - use a JavaScript, JSON or YAML file to specify configuration information for an entire directory and all of its subdirectories. This can be in the form of an [.eslintrc.*](#configuration-file-formats) file or an `eslintConfig` field in a `package.json` file, both of which ESLint will look for and read automatically, or you can specify a configuration file on the [command line](command-line-interface).
+2. **Configuration Files** - 使用JavaScript、JSON 或者 YAML 文件去描述配置信息，目录下所有的子目录都会生效。这也可以是以下两种形式：[.eslintrc.*](#configuration-file-formats)文件 或者在 `package.json`文件里配置`eslintConfig`域，这两种配置方式ESLint都会自动读取。再或者，您可以在[command line](command-line-interface)指定一个配置文件。
 
 There are several pieces of information that can be configured:
 
 有几个信息可以被配置：
 
 * **Environments** - which environments your script is designed to run in. Each environment brings with it a certain set of predefined global variables.
-* **Globals** - the additional global variables your script accesses during execution.
-* **Rules** - which rules are enabled and at what error level.
-
 * **Environments** - 指定您脚本的运行环境。每种环境都有特定的一组预定义全局变量。
+* **Globals** - the additional global variables your script accesses during execution.
 * **Globals** - 脚本在执行期间需要的额外的全局变量
+* **Rules** - which rules are enabled and at what error level.
 * **Rules** - 指定在什么错误级别应该使用什么规则
 
 
@@ -123,20 +119,20 @@ Setting language options helps ESLint determine what is a parsing error. All lan
 
 By default, ESLint uses [Espree](https://github.com/eslint/espree) as its parser. You can optionally specify that a different parser should be used in your configuration file so long as the parser meets the following requirements:
 
-ESLint默认使用[Espree](https://github.com/eslint/espree)做他的解析器，您可以在配置文件中任意地指定一个不同的解析器，只要他满足一下要求：
+ESLint默认使用[Espree](https://github.com/eslint/espree)做它的解析器，您可以在配置文件中任意地指定一个不同的解析器，只要它满足一下要求：
 
 1. It must be an npm module installed locally.
-1. It must have an Esprima-compatible interface (it must export a `parse()` method).
-1. It must produce Esprima-compatible AST and token objects.
+1. 它必须是本地安装的npm模块
+2. It must have an Esprima-compatible interface (it must export a `parse()` method).
+2. 它必须有兼容Esprima的接口（即：它必须导出一个parse()方法）
+3. It must produce Esprima-compatible AST and token objects.
+3. 它必须提供兼容Esprima的AST 和 token 对象。
 
 
-1. 他必须是本地安装的npm模块
-1. 他必须有兼容Esprima的接口（即：他必须导出一个parse()方法）
-1. 他必须提供兼容Esprima的AST 和 token 对象。
 
 Note that even with these compatibilities, there are no guarantees that an external parser will work correctly with ESLint and ESLint will not fix bugs related to incompatibilities with other parsers.
 
-注意：即使有这些兼容性，也不能保证一个外部解析器可以很好地和ESLint一起工作，ESLint也不会修复和其他解析器结合产生的兼容性问题。
+注意：即使有这些兼容性，也不能保证一个外部解析器可以很好地和ESLint一起工作，ESLint也不会修复和其它解析器结合产生的兼容性问题。
 
 To indicate the npm module to use as your parser, specify it using the `parser` option in your `.eslintrc` file. For example, the following specifies to use Esprima instead of Espree:
 
@@ -161,7 +157,7 @@ The following parsers are compatible with ESLint:
 
 
 * [Esprima](https://npmjs.com/package/esprima)
-* [Esprima-FB](https://npmjs.com/package/esprima-fb) - Facebook基于Esprima的库，另增加了他们专用的语法
+* [Esprima-FB](https://npmjs.com/package/esprima-fb) - Facebook基于Esprima的库，另增加了它们专用的语法
 * [Babel-ESLint](https://npmjs.com/package/babel-eslint) -[Babel](http://babeljs.io) 解析器的封装，使它和ESLint兼容
 
 
@@ -178,49 +174,48 @@ An environment defines global variables that are predefined. The available envir
 一个环境定义了预定义的全局变量。可用的环境有：
 
 * `browser` - browser global variables.
-* `node` - Node.js global variables and Node.js scoping.
-* `commonjs` - CommonJS global variables and CommonJS scoping (use this for browser-only code that uses Browserify/WebPack).
-* `worker` - web workers global variables.
-* `amd` - defines `require()` and `define()` as global variables as per the [amd](https://github.com/amdjs/amdjs-api/wiki/AMD) spec.
-* `mocha` - adds all of the Mocha testing global variables.
-* `jasmine` - adds all of the Jasmine testing global variables for version 1.3 and 2.0.
-* `jest` - Jest global variables.
-* `phantomjs` - PhantomJS global variables.
-* `protractor` - Protractor global variables.
-* `qunit` - QUnit global variables.
-* `jquery` - jQuery global variables.
-* `prototypejs` - Prototype.js global variables.
-* `shelljs` - ShellJS global variables.
-* `meteor` - Meteor global variables.
-* `mongo` - MongoDB global variables.
-* `applescript` - AppleScript global variables.
-* `nashorn` - Java 8 Nashorn global variables.
-* `serviceworker` - Service Worker global variables.
-* `embertest` - Ember test helper globals.
-* `webextensions` - WebExtensions globals.
-* `es6` - enable all ECMAScript 6 features except for modules.
-
 * `browser` - browser 全局变量。
+* `node` - Node.js global variables and Node.js scoping.
 * `node` - Node.js 全局变量和 Node.js 作用域。
+* `commonjs` - CommonJS global variables and CommonJS scoping (use this for browser-only code that uses Browserify/WebPack).
 * `commonjs` - CommonJS 全局变量和 CommonJS 作用域 (为了兼容使用 Browserify/WebPack 的仅支持浏览器的代码)。
+* `worker` - web workers global variables.
 * `worker` - web workers 全局变量。
+* `amd` - defines `require()` and `define()` as global variables as per the [amd](https://github.com/amdjs/amdjs-api/wiki/AMD) spec.
 * `amd` - 定义 `require()` 和 `define()` 作为像 [amd](https://github.com/amdjs/amdjs-api/wiki/AMD) 一样的全局变量。
+* `mocha` - adds all of the Mocha testing global variables.
 * `mocha` - 添加所有 Mocha testing 全局变量。
+* `jasmine` - adds all of the Jasmine testing global variables for version 1.3 and 2.0.
 * `jasmine` - 添加版本号1.3和1.2的所有 Jasmine testing 全局变量。
+* `jest` - Jest global variables.
 * `jest` - Jest 全局变量。
+* `phantomjs` - PhantomJS global variables.
 * `phantomjs` - PhantomJS 全局变量。
+* `protractor` - Protractor global variables.
 * `protractor` - Protractor 全局变量。
+* `qunit` - QUnit global variables.
 * `qunit` - QUnit 全局变量。
+* `jquery` - jQuery global variables.
 * `jquery` - jQuery 全局变量。
+* `prototypejs` - Prototype.js global variables.
 * `prototypejs` - Prototype.js 全局变量。
+* `shelljs` - ShellJS global variables.
 * `shelljs` - ShellJS 全局变量。
+* `meteor` - Meteor global variables.
 * `meteor` - Meteor 全局变量。
+* `mongo` - MongoDB global variables.
 * `mongo` - MongoDB 全局变量。
+* `applescript` - AppleScript global variables.
 * `applescript` - AppleScript全局变量。
+* `nashorn` - Java 8 Nashorn global variables.
 * `nashorn` - Java 8 Nashorn 全局变量。
+* `serviceworker` - Service Worker global variables.
 * `serviceworker` - Service Worker 全局变量。
+* `embertest` - Ember test helper globals.
 * `embertest` - Ember test 全局变量。
+* `webextensions` - WebExtensions globals.
 * `webextensions` - WebExtensions 全局变量。
+* `es6` - enable all ECMAScript 6 features except for modules.
 * `es6` - 支持除了modules所有 ECMAScript 6 特性。
 
 
@@ -343,7 +338,7 @@ These examples allow `var1` to be overwritten in your code, but disallow it for 
 
 ESLint supports the use of third-party plugins. Before using the plugin you have to install it using npm.
 
-ESLint支持第三方插件。在使用之前，您应该先用npm去安装他们。
+ESLint支持第三方插件。在使用之前，您应该先用npm去安装它们。
 
 To configure plugins inside of a configuration file, use the `plugins` key, which contains a list of plugin names. The `eslint-plugin-` prefix can be omitted from the plugin name.
 
@@ -382,11 +377,10 @@ ESLint comes with a large number of rules. You can modify which rules your proje
 ESLint 带来了大量的规则。您可以使用配置文件或者注释修改您要使用哪些规则。修改一个规则的时候，您必须设置下面ID中的一个：
 
 * 0 - turn the rule off
-* 1 - turn the rule on as a warning (doesn't affect exit code)
-* 2 - turn the rule on as an error (exit code is 1 when triggered)
-
 * 0 - 关闭规则
+* 1 - turn the rule on as a warning (doesn't affect exit code)
 * 1 - 开启规则，使用警告级别的错误：`warn`(不会导致程序退出)
+* 2 - turn the rule on as an error (exit code is 1 when triggered)
 * 2 - 开启规则，使用错误级别的错误：`error`(当被触发的时候，程序会退出)
 
 To configure rules inside of a file using configuration comments, use a comment in the following format:
@@ -399,7 +393,7 @@ To configure rules inside of a file using configuration comments, use a comment 
 
 In this example, [`eqeqeq`](../rules/eqeqeq) is turned off and [`curly`](../rules/curly) is turned on as an error. If a rule has additional options, you can specify them using array literal syntax, such as:
 
-在这个例子里，[`eqeqeq`](../rules/eqeqeq) 规则被关闭，[`curly`](../rules/curly) 规则被打开，并且会报错。如果一个规则有别的选项，你可以用数组字面量配置他们，比如：
+在这个例子里，[`eqeqeq`](../rules/eqeqeq) 规则被关闭，[`curly`](../rules/curly) 规则被打开，并且会报错。如果一个规则有别的选项，你可以用数组字面量配置它们，比如：
 
 ```js
 /*eslint quotes: [2, "double"], curly: 2*/
@@ -487,7 +481,7 @@ In these configuration files, the rule `plugin1/rule1` comes from the plugin nam
 
 All rules that are enabled by default are set to 2, so they will cause a non-zero exit code when encountered. You can lower these rules to a warning by setting them to 1, which has the effect of outputting the message onto the console but doesn't affect the exit code.
 
-所有被包含的规则默认错误级别是 2，所以当触发时，他们会报错一个非零错误。您可以通过设置他们错误级别为 1 降低这些规则的级别，这样报错只会在控制台显示，而不会导致程序退出。
+所有被包含的规则默认错误级别是 2，所以当触发时，它们会报错一个非零错误。您可以通过设置它们错误级别为 1 降低这些规则的级别，这样报错只会在控制台显示，而不会导致程序退出。
 
 To temporary disable warnings in your file use the following format:
 
@@ -577,7 +571,7 @@ There are two ways to use configuration files. The first is to save the file whe
 
 The second way to use configuration files is via `.eslintrc` and `package.json` files. ESLint will automatically look for them in the directory of the file to be linted, and in successive parent directories all the way up to the root directory of the filesystem. This option is useful when you want different configurations for different parts of a project or when you want others to be able to use ESLint directly without needing to remember to pass in the configuration file.
 
-第二种方式是通过`.eslintrc`和`package.json`。ESLint将自动在文件目录里寻找配置文件，如果存不到他会在连续的父目录一路攀升到文件系统的根目录寻找。当你想对一个项目的不同部分的使用不同配置，或当你希望别人能够直接使用ESLint，而无需记住要通过在配置文件中，此选项很有用。
+第二种方式是通过`.eslintrc`和`package.json`。ESLint将自动在文件目录里寻找配置文件，如果存不到它会在连续的父目录一路攀升到文件系统的根目录寻找。当你想对一个项目的不同部分的使用不同配置，或当你希望别人能够直接使用ESLint，而无需记住要通过在配置文件中，此选项很有用。
 
 In each case, the settings in the configuration file override default settings.
 
@@ -593,15 +587,14 @@ ESLint supports configuration files in several formats:
 ESLint 配置文件支持以下几种格式：
 
 * **JavaScript** - use `.eslintrc.js` and export an object containing your configuration.
-* **YAML** - use `.eslintrc.yaml` or `.eslintrc.yml` to define the configuration structure.
-* **JSON** - use `.eslintrc.json` to define the configuration structure. ESLint's JSON files also allow JavaScript-style comments.
-* **package.json** - create an `eslintConfig` property in your `package.json` file and define your configuration there.
-* **Deprecated** - use `.eslintrc`, which can be either JSON or YAML.
-
 * **JavaScript** - 使用 `.eslintrc.js` 然后导出一个包含你的配置项的对象
+* **YAML** - use `.eslintrc.yaml` or `.eslintrc.yml` to define the configuration structure.
 * **YAML** - 使用 `.eslintrc.yaml` 或者 `.eslintrc.yml` 去定义配置的结构
+* **JSON** - use `.eslintrc.json` to define the configuration structure. ESLint's JSON files also allow JavaScript-style comments.
 * **JSON** - 使用 `.eslintrc.json` 去定义配置的结构，ESLint的JSON文件允许js风格的注释
+* **package.json** - create an `eslintConfig` property in your `package.json` file and define your configuration there.
 * **package.json** - 创建一个在`package.json`里创建一个`eslintConfig`属性，在这里定义你的配置。
+* **Deprecated** - use `.eslintrc`, which can be either JSON or YAML.
 * **Deprecated** - 使用 `.eslintrc`可以使JSON 也可以是 YAML
 
 
@@ -637,7 +630,7 @@ your-project
 
 The configuration cascade works by using the closest `.eslintrc` file to the file being linted as the highest priority, then any configuration files in the parent directory, and so on. When you run ESLint on this project, all files in `lib/` will use the `.eslintrc` file at the root of the project as their configuration. When ESLint traverses into the `tests/` directory, it will then use `your-project/tests/.eslintrc` in addition to `your-project/.eslintrc`. So `your-project/tests/test.js` is linted based on the combination of the two `.eslintrc` files in its directory hierarchy, with the closest one taking priority. In this way, you can have project-level ESLint settings and also have directory-specific overrides.
 
-层叠配置是这样工作的：关联文件使用最近的`.eslintrc`文件作为最高优先级，然后才是父目录里的配置信息。当你在项目中跑 ESLint 的时候，`lib/`下面的所有文件将使用项目根目录里的`.eslintrc`文件作为他的配置文件。当 ESLint 扫描到`test/`目录下，它就会用`your-project/tests/.eslintrc` 而不是 `your-project/.eslintrc`。所以`your-project/tests/test.js`是基于它的目录层次结构中的两个`.eslintrc`文件的组合去检查的，并且最近的一个优先级更高。通过这种方式，你可以有项目级ESLint设置，也有覆盖特定目录的ESLint设置。
+层叠配置是这样工作的：关联文件使用最近的`.eslintrc`文件作为最高优先级，然后才是父目录里的配置信息。当你在项目中跑 ESLint 的时候，`lib/`下面的所有文件将使用项目根目录里的`.eslintrc`文件作为它的配置文件。当 ESLint 扫描到`test/`目录下，它就会用`your-project/tests/.eslintrc` 而不是 `your-project/.eslintrc`。所以`your-project/tests/test.js`是基于它的目录层次结构中的两个`.eslintrc`文件的组合去检查的，并且最近的一个优先级更高。通过这种方式，你可以有项目级ESLint设置，也有覆盖特定目录的ESLint设置。
 
 
 In the same way, if there is a `package.json` file in the root directory with an `eslintConfig` field, the configuration it describes will apply to all subdirectories beneath it, but the configuration described by the `.eslintrc` file in the tests directory will override it where there are conflicting specifications.
@@ -660,7 +653,7 @@ If there is an `.eslintrc` and a `package.json` file found in the same directory
 
 **Note:** If you have a personal configuration file in your home directory (`~/.eslintrc`), it will only be used if no other configuration files are found. Since a personal configuration would apply to everything inside of a user's directory, including third-party code, this could cause problems when running ESLint.
 
-**注意** 如果你家目录下有自定义配置文件(`~/.eslintrc`)，当且仅当没有其他配置文件被发现的时候它才会被使用。因为家目录里的配置系那个会作用于用户的每一个文件，包括第三方的代码，当ESLint运行时会导致问题。
+**注意** 如果你家目录下有自定义配置文件(`~/.eslintrc`)，当且仅当没有其它配置文件被发现的时候它才会被使用。因为家目录里的配置系那个会作用于用户的每一个文件，包括第三方的代码，当ESLint运行时会导致问题。
 
 By default, ESLint will look for configuration files in all parent folders up to the root directory. This can be useful if you want all of your projects to follow a certain convention, but can sometimes lead to unexpected results. To limit ESLint to a specific project, place `"root": true` inside the `eslintConfig` field of the `package.json` file or in the `.eslintrc` file at your project's root level.  ESLint will stop looking in parent folders once it finds a configuration with `"root": true`.
 
@@ -699,7 +692,7 @@ home
 ```text
 home
 └── user
-    ├── .eslintrc <- 当有其他配置文件的时候永远不会被调用
+    ├── .eslintrc <- 当有其它配置文件的时候永远不会被调用
     └── projectA
         ├── .eslintrc  <- 不会使用
         └── lib
@@ -756,13 +749,12 @@ Configurations can be extended by using:
 可以使用以下方式扩展配置：
 
 1. YAML file
-1. JSON file
-1. JS file
-1. Shareable configuration package
-
 1. YAML 文件
+1. JSON file
 1. JSON 文件
+1. JS file
 1. JS 文件
+1. Shareable configuration package
 1. 可分享的配置包
 
 
@@ -808,7 +800,7 @@ Configurations may also be provided as an array, with additional files overridin
 
 The extended configurations can also contain their own `extends`, resulting in recursive merging of the referenced configurations.
 
-扩展配置也可以包含他们自己的`extends`，导致递归合并引用配置。
+扩展配置也可以包含它们自己的`extends`，导致递归合并引用配置。
 
 You can also extend configurations using shareable configuration packages. To do so, be sure to install the configuration package you want from npm and then use the package name, such as:
 
@@ -870,7 +862,7 @@ You can tell ESLint to ignore specific files and directories by creating an `.es
 
 When ESLint is run, it looks in the current working directory to find an `.eslintignore` file before determining which files to lint. If this file is found, then those preferences are applied when traversing directories. Only one `.eslintignore` file can be used at a time, so `.eslintignore` files other than the one in the current working directory will not be used.
 
-当ESLint 运行的时候，他会在决定哪些文件应该被检查之前在当前文件中寻找`.eslintignore`文件。如果找到，这些规则就会在被扫描的时候用上。同一时间只有一个`.eslintignore`会被应用。所以当前工作目录的`.eslintignore`文件不会被使用。
+当ESLint 运行的时候，它会在决定哪些文件应该被检查之前在当前文件中寻找`.eslintignore`文件。如果找到，这些规则就会在被扫描的时候用上。同一时间只有一个`.eslintignore`会被应用。所以当前工作目录的`.eslintignore`文件不会被使用。
 
 Globs are matched using [minimatch](https://github.com/isaacs/minimatch), so a number of features are available:
 
@@ -916,7 +908,7 @@ build/
 
 If you'd prefer to use a different file than the `.eslintignore` in the current working directory, you can specify it on the command line using the `--ignore-path` option. For example, you can use `.jshintignore` file because it has the same format:
 
-如果你更喜欢使用一个不同的文件而不是在当前文件夹下使用`.eslintignore`文件，你可以在命令行使用`--ignore-path` 选项去配置。比如，你可以使用`.jshintignore`文件，因为他有相似的格式：
+如果你更喜欢使用一个不同的文件而不是在当前文件夹下使用`.eslintignore`文件，你可以在命令行使用`--ignore-path` 选项去配置。比如，你可以使用`.jshintignore`文件，因为它有相似的格式：
 
     eslint --ignore-path .jshintignore file.js
 
