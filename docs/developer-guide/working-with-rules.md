@@ -7,6 +7,8 @@ layout: doc
 
 Each ESLint rule has two files: a source file in the `lib/rules` directory and a test file in the `tests/lib/rules` directory. Both files should be named with the rule ID (i.e., `no-eval.js` for rule ID `no-eval`) The basic source code format for a rule is:
 
+每个ESLint规则有两个文件：`lib/rules`目录下的一个源文件和`tests/lib/rules`目录下的一个测试文件。两个文件都要以规则的ID命名（即`no-eval.js`的规则ID为`no-eval`）。
+
 ```js
 /**
  * @fileoverview Rule to flag use of an empty block statement
@@ -34,9 +36,16 @@ module.exports.schema = [
 
 **Important:** Rule submissions will not be accepted unless they are in this format.
 
+**重要的:** 非此格式的规则的提交，将不会被接受。
+
 ## Rule Basics
 
+## 规则概要
+
 Each rule is represented by a single object with several properties. The properties are equivalent to AST node types from [ESTree](https://github.com/estree/estree). For example, if your rule wants to know when an identifier is found in the AST, then add a method called "Identifier", such as:
+
+
+每个规则都表现为一个非空对象。它的属性相当于ESTree中的AST节点类型。例如，如果你的规则想知道一个标识符什么时候在AST中被发现，添加一个叫做"Identifier"的方法，比如：
 
 ```js
 module.exports = function(context) {
@@ -51,9 +60,13 @@ module.exports = function(context) {
 };
 ```
 
-Each method that matches a node in the AST will be passed the corresponding node. You can then evaluate the node and it's surrounding tree to determine whether or not an issue needs reporting.
+Each method that matches a node in the AST will be passed the corresponding node. You can then evaluate the node and its surrounding tree to determine whether or not an issue needs reporting.
+
+每个与AST中节点相匹配的方法将被传递到对应的节点。你可以评估这个节点和它周围的树来决定是否有需要报告的问题。
 
 By default, the method matching a node name is called during the traversal when the node is first encountered, on the way down the AST. You can also specify to visit the node on the other side of the traversal, as it comes back up the tree, by adding `:exit` to the end of the node type, such as:
+
+默认情况下，与节点名相匹配的方法在AST的向下遍历过程中第一次遇到该节点时调用。你也可以指定在向上遍历时访问节点，通过添加`:exit`到节点的末尾，例如：
 
 ```js
 module.exports = function(context) {
@@ -70,46 +83,84 @@ module.exports = function(context) {
 
 In this code, `"Identifier:exit"` is called on the way up the AST. This capability allows you to keep track as the traversal enters and exits specific parts of the AST.
 
+在这段代码中，`"Identifier:exit"`在AST的向上回溯过程中被调用。这一功能允许你跟踪遍历进入和退出AST的特定部分。
+
 ## The Context Object
 
 The `context` object contains additional functionality that is helpful for rules to do their jobs. As the name implies, the `context` object contains information that is relevant to the context of the rule. The `context` object has the following properties:
 
+`context`对象包含额外的功能，有利于规则完成他们的工作。顾名思义，`context`对象包含与规则上下文相关的信息。`context`对象具有以下属性：
+
 * `ecmaFeatures` - the language feature flags.
+* `ecmaFeatures` - 语言特征标记。
 * `id` - the rule ID.
+* `id` - 规则ID。
 * `options` - an array of rule options.
+* `options` - 一个规则选项数组。
 * `settings` - the `settings` from configuration.
+* `settings` - 配置中的 `settings`。
 
 Additionally, the `context` object has the following methods:
 
+另外，`context`对象有以下方法：
+
 * `getAncestors()` - returns an array of ancestor nodes based on the current traversal.
+* `getAncestors()` - 基于当前遍历，返回一个父节点数组。
 * `getDeclaredVariables(node)` - returns the declared variables on the given node.
+* `getDeclaredVariables(node)` - 返回给定节点上声明的变量。
 * `getFilename()` - returns the filename associated with the source.
+* `getFilename()` - 返回与源相关的文件名。
 * `getScope()` - returns the current scope.
+* `getScope()` - 返回当前作用域。
 * `getSourceCode()` - returns a `SourceCode` object that you can use to work with the source that was passed to ESLint
+* `getSourceCode()` - 返回一个 `SourceCode` 对象，你可以在源码中使用并传递给ESLint。
 * `isMarkedAsUsed(name)` - returns true if a given variable name has been marked as used.
+* `isMarkedAsUsed(name)` - 如果给定的变量名已被标记为使用，返回true。
 * `markVariableAsUsed(name)` - marks the named variable in scope as used. This affects the [no-unused-vars](../rules/no-unused-vars) rule.
+* `markVariableAsUsed(name)` - 标记在作用域中使用的已命名的变量。这会影响 [no-unused-vars](../rules/no-unused-vars) 规则.
 * `report(descriptor)` - reports a problem in the code.
+* `report(descriptor)` - 报告代码中的一个问题。
 
 **Deprecated:** The following methods on the `context` object are deprecated. Please use the corresponding methods on `SourceCode` instead:
 
+**弃用:** 以下`context`对象的方法被弃用。请使用相应的`SourceCode`里的方法：
+
 * `getAllComments()` - returns an array of all comments in the source. Use `sourceCode.getAllComments()` instead.
+* `getAllComments()` - 返回源中一个所有注释的数组。 使用 `sourceCode.getAllComments()` 代替。
 * `getComments(node)` - returns the leading and trailing comments arrays for the given node. Use `sourceCode.getComments(node)` instead.
+* `getComments(node)` - 返回给定节点的前导注释和末尾注释的数组。使用 `sourceCode.getComments(node)` 代替。
 * `getFirstToken(node)` - returns the first token representing the given node. Use `sourceCode.getFirstToken(node)` instead.
+* `getFirstToken(node)` - 返回代表给定节点的第一个记号。使用 `sourceCode.getFirstToken(node)` 代替。
 * `getFirstTokens(node, count)` - returns the first `count` tokens representing the given node. Use `sourceCode.getFirstTokens(node, count)` instead.
+* `getFirstTokens(node, count)` - 返回代表给定节点的第一个`count`记号。使用 `sourceCode.getFirstTokens(node, count)` 代替。
 * `getJSDocComment(node)` - returns the JSDoc comment for a given node or `null` if there is none. Use `sourceCode.getJSDocComment(node)` instead.
+* `getJSDocComment(node)` - 返回给定节点的JSDoc注释，如果没有则返回`null`。使用 `sourceCode.getJSDocComment(node)` 代替。
 * `getLastToken(node)` - returns the last token representing the given node.  Use `sourceCode.getLastToken(node)` instead.
+* `getLastTokens(node, count)` - 返回代表给定节点的最后一个记号。使用 `sourceCode.getLastTokens(node, count)` 代替。
 * `getLastTokens(node, count)` - returns the last `count` tokens representing the given node. Use `sourceCode.getLastTokens(node, count)` instead.
+* `getLastTokens(node, count)` - 返回代表给定节点的最后一个`count`记号。 使用 `sourceCode.getLastTokens(node, count)` 代替。
 * `getNodeByRangeIndex(index)` - returns the deepest node in the AST containing the given source index. Use `sourceCode.getNodeByRangeIndex(index)` instead.
+* `getNodeByRangeIndex(index)` - 返回AST中最深的节点，包括给定的源的索引。 使用 `sourceCode.getNodeByRangeIndex(index)` 代替。
 * `getSource(node)` - returns the source code for the given node. Omit `node` to get the whole source. Use `sourceCode.getText(node)` instead.
+* `getSource(node)` - 返回给定节点的源码。 省略 `node`，返回所有源码。使用 `sourceCode.getText(node)` 代替。
 * `getSourceLines()` - returns the entire source code split into an array of string lines. Use `sourceCode.lines` instead.
+* `getSourceLines()` - 返回整个源码，分成字符串行数组。使用 `sourceCode.lines` 代替。
 * `getTokenAfter(nodeOrToken)` - returns the first token after the given node or token. Use `sourceCode.getTokenAfter(nodeOrToken)` instead.
+* `getTokenAfter(nodeOrToken)` - 返回给定的节点或记号之后的第一个记号。 使用 `sourceCode.getTokenAfter(nodeOrToken)` 代替。
 * `getTokenBefore(nodeOrToken)` - returns the first token before the given node or token. Use `sourceCode.getTokenBefore(nodeOrToken)` instead.
+* `getTokenBefore(nodeOrToken)` - 返回给定的节点或记号之前的第一个记号。 使用 `sourceCode.getTokenBefore(nodeOrToken)` 代替。
 * `getTokenByRangeStart(index)` - returns the token whose range starts at the given index in the source. Use `sourceCode.getTokenByRangeStart(index)` instead.
+* `getTokenByRangeStart(index)` - 返回源中范围从给定的索引开始的记号。使用 `sourceCode.getTokenByRangeStart(index)` 代替。
 * `getTokens(node)` - returns all tokens for the given node. Use `sourceCode.getTokens(node)` instead.
+* `getTokens(node)` - 返回给定节点的所有记号。使用 `sourceCode.getTokens(node)` 代替。
 * `getTokensAfter(nodeOrToken, count)` - returns `count` tokens after the given node or token. Use `sourceCode.getTokensAfter(nodeOrToken, count)` instead.
+* `getTokensAfter(nodeOrToken, count)` - 返回给定节点或记号之后的`count`记号。 使用 `sourceCode.getTokensAfter(nodeOrToken, count)` 代替。
 * `getTokensBefore(nodeOrToken, count)` - returns `count` tokens before the given node or token. Use `sourceCode.getTokensBefore(nodeOrToken, count)` instead.
+* `getTokensBefore(nodeOrToken, count)` - 返回给定节点或记号之前的`count`记号。 使用 `sourceCode.getTokensBefore(nodeOrToken, count)` 代替。
 * `getTokensBetween(node1, node2)` - returns the tokens between two nodes. Use `sourceCode.getTokensBetween(node1, node2)` instead.
+* `getTokensBetween(node1, node2)` - 返回两个节点之间的记号。 使用 `sourceCode.getTokensBetween(node1, node2)` 代替。
 * `report(node, [location], message)` - reports a problem in the code.
+* `report(node, [location], message)` - 报告代码中的一个问题。
 
 ### context.report()
 
