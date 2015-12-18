@@ -4,8 +4,11 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Octal Literals (no-octal)
+#禁止八进制字面量
 
 Octal literals are numerals that begin with a leading zero, such as:
+
+八进制自面量是指那些以0开始的数字，比如：
 
 ```js
 var num = 071;      // 57
@@ -13,13 +16,21 @@ var num = 071;      // 57
 
 The leading zero to identify an octal literal has been a source of confusion and error in JavaScript. ECMAScript 5 deprecates the use of octal numeric literals in JavaScript and octal literals cause syntax errors in strict mode.
 
+在JavaScript中，前导数字0来识别八进制字面量已经成为困惑和错误。ECMAScript 5弃用了八进制字面量在JavaScript中的使用并且八进制字面量在严格模式下会导致语法错误。
+
 It's therefore recommended to avoid using octal literals in JavaScript code.
+
+因此建议避免在JavaScript代码中使用八进制字面量。
 
 ## Rule Details
 
 The rule is aimed at preventing the use of a deprecated JavaScript feature, the use of octal literals. As such it will warn whenever an octal literal is found.
 
+此规则目的在于防止使用弃用的JavaScript特性，使用八进制字面量。因此它会随时给出警告当八进制字面量被发现时。
+
 The following patterns are considered problems:
+
+以下模式被认为是有问题的：
 
 ```js
 /*eslint no-octal: 2*/
@@ -29,6 +40,8 @@ var result = 5 + 07; /*error Octal literals should not be used.*/
 ```
 
 The following patterns are not considered problems:
+
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint no-octal: 2*/
@@ -47,6 +60,8 @@ var num  = "071";
 ## Version
 
 This rule was introduced in ESLint 0.0.6.
+
+此规则在ESLint 0.0.6中被引入。
 
 ## Resources
 
