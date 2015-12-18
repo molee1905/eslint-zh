@@ -9,11 +9,11 @@ layout: doc
 
 To run ESLint on Node.js, you must have npm installed. If npm is not installed, follow the instructions here: https://www.npmjs.com/
 
-为了让ESlint跑在Node.js上，你必须先安装npm。如果npm还没安装，跟着这里的说明一步步安装就好: https://www.npmjs.com/
+为了在Node.js上运行ESLint，你必须先安装npm。如果npm还没安装，跟着这里的说明一步步安装就好: https://www.npmjs.com/
 
 Once npm is installed, run the following
 
-一旦npm安装好了，执行下面的命令：
+一旦安装了npm，执行下面的命令：
 
     npm i -g eslint
 

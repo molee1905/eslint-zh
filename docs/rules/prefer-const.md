@@ -19,7 +19,7 @@ If a variable is never modified, using the `const` declaration is better.
 
 This rule is aimed at flagging variables that are declared using `let` keyword, but never modified after the initial assignment.
 
-该规则旨在标记那些使用`let`声明，挡在初始化赋值后从未被修改过过的变量。
+该规则旨在标记那些使用`let`声明，但在初始化赋值后从未被修改过的变量。
 
 The following patterns are considered problems:
 

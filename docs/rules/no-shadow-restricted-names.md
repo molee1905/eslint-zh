@@ -9,7 +9,7 @@ layout: doc
 
 ES5 §15.1.1 Value Properties of the Global Object (`NaN`, `Infinity`, `undefined`) as well as strict mode restricted identifiers `eval` and `arguments` are considered to be restricted names in JavaScript. Defining them to mean something else can have unintended consequences and confuse others reading the code. For example, there's nothing prevent you from writing:
 
-ES5 §15.1.1中全局属性值(`NaN`, `Infinity`, `undefined`)和严格模式下被限定的标示符`eval`，`arguments`是深思熟虑后被限制的关键字。重定义关键字会产生意想不到的后果且易迷惑其他读者。比如：
+ES5 §15.1.1中全局属性值(`NaN`, `Infinity`, `undefined`)和严格模式下被限定的标识符`eval`，`arguments`是深思熟虑后被限制的关键字。重定义关键字会产生意想不到的后果且易迷惑其他读者。比如：
 
 ```js
 var undefined = "foo";
@@ -23,7 +23,7 @@ Then any code used within the same scope would not get the global `undefined`, b
 
 The following patterns are considered problems:
 
-错误：
+以下模式被认为是有问题的：
 
 ```js
 /*eslint no-shadow-restricted-names: 2*/
@@ -38,7 +38,8 @@ try {} catch(eval){}   /*error Shadowing of global property "eval".*/
 ```
 
 The following patterns are not considered problems:
-正确：
+
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint no-shadow-restricted-names: 2*/
@@ -56,6 +57,7 @@ function f(a, b){}
 ## Version
 
 This rule was introduced in ESLint 0.1.4.
+
 此规则在ESLint 0.1.4中被引入。
 
 ## Resources

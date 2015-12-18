@@ -4,12 +4,17 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Script URLs (no-script-url)
+#禁止Script地址链
 
 Using `javascript:` URLs is considered by some as a form of `eval`. Code passed in `javascript:` URLs has to be parsed and evaluated by the browser in the same way that `eval` is processed.
+
+在链接地址中使用`javascript:`被有些人认为是`eval`的一种形式。代码通过`javascript:`链接不得不被浏览器解析和赋值，与`eval`的处理方式一样。
 
 ## Rule Details
 
 The following patterns are considered problems:
+
+以下模式被认为是有问题的：
 
 ```js
 /*eslint no-script-url: 2*/
@@ -20,6 +25,9 @@ location.href = "javascript:void(0)"; /*error Script URL is a form of eval.*/
 ## Compatibility
 
 * **JSHint**: This rule corresponds to `scripturl` rule of JSHint.
+
+* **JSHint**：此规则对应JSHint中的`scripturl`规则。
+
 
 ## Further Reading
 

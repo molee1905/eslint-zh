@@ -5,7 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow the use of the Object constructor (no-new-object)
 
-# 禁止使用对象的构造函数 (no-new-object)
+# 禁止使用Object的构造函数 (no-new-object)
 
 The `Object` constructor is used to create new generic objects in JavaScript, such as:
 

@@ -119,17 +119,30 @@ These rules relate to using strict mode.
 
 These rules have to do with variable declarations.
 
+这些规则与变量声明有关。
+
 * [init-declarations](init-declarations) - enforce or disallow variable initializations at definition
+* [init-declarations](init-declarations) - 强制或禁止在变量声明时进行初始化
 * [no-catch-shadow](no-catch-shadow) - disallow the catch clause parameter name being the same as a variable in the outer scope
+* [no-catch-shadow](no-catch-shadow) - 不允许catch子句的参数名与外层作用域中的变量同名
 * [no-delete-var](no-delete-var) - disallow deletion of variables (recommended)
+* [no-delete-var](no-delete-var) - 不允许删除变量 (recommended)
 * [no-label-var](no-label-var) - disallow labels that share a name with a variable
+* [no-label-var](no-label-var) - 不允许标签与变量同名
 * [no-shadow-restricted-names](no-shadow-restricted-names) - disallow shadowing of names such as `arguments`
+* [no-shadow-restricted-names](no-shadow-restricted-names) - 禁止覆盖受限制的标识符，比如`arguments`
 * [no-shadow](no-shadow) - disallow declaration of variables already declared in the outer scope
+* [no-shadow](no-shadow) - 不允许声明在外层作用域下已声明过的变量
 * [no-undef-init](no-undef-init) - disallow use of undefined when initializing variables
+* [no-undef-init](no-undef-init) - 不允许变量初始化为undefined
 * [no-undef](no-undef) - disallow use of undeclared variables unless mentioned in a `/*global */` block (recommended)
+* [no-undef](no-undef) - 禁用为声明的变量，除非它们在`/*global */`块中被提到(recommended)
 * [no-undefined](no-undefined) - disallow use of `undefined` variable
+* [no-undefined](no-undefined) - 不允许使用 `undefined` 变量
 * [no-unused-vars](no-unused-vars) - disallow declaration of variables that are not used in the code (recommended)
+* [no-unused-vars](no-unused-vars) - 不允许代码中的变量只声明而不使用 (recommended)
 * [no-use-before-define](no-use-before-define) - disallow use of variables before they are defined
+* [no-use-before-define](no-use-before-define) - 不允许在变量定义之前使用它们
 
 ## Node.js and CommonJS
 
@@ -149,93 +162,175 @@ These rules are specific to JavaScript running on Node.js or using CommonJS in t
 
 These rules are purely matters of style and are quite subjective.
 
+这些规则完全是风格问题，是相当主观的。
+
 * [array-bracket-spacing](array-bracket-spacing) - enforce spacing inside array brackets (fixable)
+* [array-bracket-spacing](array-bracket-spacing) - 强制数组方括号中使用空格 (fixable)
 * [block-spacing](block-spacing) - disallow or enforce spaces inside of single line blocks (fixable)
+* [block-spacing](block-spacing) - 禁止或强制在单行代码块中使用空格 (fixable)
 * [brace-style](brace-style) - enforce one true brace style
+* [brace-style](brace-style) - 强制使用一种大括号风格
 * [camelcase](camelcase) - require camel case names
+* [camelcase](camelcase) - 要求使用骆驼拼写法
 * [comma-spacing](comma-spacing) - enforce spacing before and after comma (fixable)
+* [comma-spacing](comma-spacing) - 强制在逗号周围使用空格 (fixable)
 * [comma-style](comma-style) - enforce one true comma style
+* [comma-style](comma-style) - 强制使用一种逗号风格
 * [computed-property-spacing](computed-property-spacing) - require or disallow padding inside computed properties (fixable)
+* [computed-property-spacing](computed-property-spacing) - 禁止或强制在计算属性中使用空格 (fixable)
 * [consistent-this](consistent-this) - enforce consistent naming when capturing the current execution context
+* [consistent-this](consistent-this) - 当获取当前执行环境的上下文时，强制使用一致的命名
 * [eol-last](eol-last) - enforce newline at the end of file, with no multiple empty lines (fixable)
+* [eol-last](eol-last) - 要求文件末尾保留一行空行 (fixable)
 * [func-names](func-names) - require function expressions to have a name
+* [func-names](func-names) - 要求函数表达式有个一名字
 * [func-style](func-style) - enforce use of function declarations or expressions
+* [func-style](func-style) - 强制使用函数声明或函数表达式
 * [id-length](id-length) - this option enforces minimum and maximum identifier lengths (variable names, property names etc.)
+* [id-length](id-length) - 该选项强制标识符的长度（变量名，属性明等）
 * [id-match](id-match) - require identifiers to match the provided regular expression
+* [id-match](id-match) - 要求标识符匹配所提供的正则表达式
 * [indent](indent) - specify tab or space width for your code (fixable)
+* [indent](indent) - 为你的代码指定tab或空格缩进宽度 (fixable)
 * [jsx-quotes](jsx-quotes) - specify whether double or single quotes should be used in JSX attributes
+* [jsx-quotes](jsx-quotes) - 指定应该在JSX属性中使用双引号还是单引号
 * [key-spacing](key-spacing) - enforce spacing between keys and values in object literal properties
+* [key-spacing](key-spacing) - 强制对象字面量属性中键和值之间的间距
 * [linebreak-style](linebreak-style) - disallow mixed 'LF' and 'CRLF' as linebreaks
+* [linebreak-style](linebreak-style) - 禁止混合使用行分隔符'LF'和回车换行'CRLF'作为换行符
 * [lines-around-comment](lines-around-comment) - enforce empty lines around comments
+* [lines-around-comment](lines-around-comment) - 强制注释周围有空行
 * [max-depth](max-depth) - specify the maximum depth that blocks can be nested
+* [max-depth](max-depth) - 指定块可嵌套的最大深度
 * [max-len](max-len) - specify the maximum length of a line in your program
+* [max-len](max-len) - 指定你程序中一行的最大长度
 * [max-nested-callbacks](max-nested-callbacks) - specify the maximum depth callbacks can be nested
-* [max-params](max-params) - limits the number of parameters that can be used in the function declaration.
+* [max-nested-callbacks](max-nested-callbacks) - 指定回调函数最大嵌套深度
+* [max-params](max-params) - limits the number of parameters that can be used in the function declaration
+* [max-params](max-params) - 限制函数声明中可使用的参数数量
 * [max-statements](max-statements) - specify the maximum number of statement allowed in a function
+* [max-statements](max-statements) - 指定一个函数所允许的语句的最大数量
 * [new-cap](new-cap) - require a capital letter for constructors
+* [new-cap](new-cap) - 要求构造函数首字母大写
 * [new-parens](new-parens) - disallow the omission of parentheses when invoking a constructor with no arguments
+* [new-parens](new-parens) - 调用无参构造函数时，不允许省略圆括号
 * [newline-after-var](newline-after-var) - require or disallow an empty newline after variable declarations
-* [no-array-constructor](no-array-constructor) - disallow use of the `Array` constructor
+* [no-array-constructor](no-array-constructor) - 要求或禁止变量声明语句后有空行
 * [no-bitwise](no-bitwise) - disallow use of bitwise operators
+* [no-bitwise](no-bitwise) - 不允许使用按位运算符 
 * [no-continue](no-continue) - disallow use of the `continue` statement
+* [no-continue](no-continue) - 不允许使用 `continue` 语句
 * [no-inline-comments](no-inline-comments) - disallow comments inline after code
+* [no-inline-comments](no-inline-comments) - 不允许代码行后有注释
 * [no-lonely-if](no-lonely-if) - disallow `if` as the only statement in an `else` block
+* [no-lonely-if](no-lonely-if) - 禁止`if`作为唯一的语句出现在`else`语句中
 * [no-mixed-spaces-and-tabs](no-mixed-spaces-and-tabs) - disallow mixed spaces and tabs for indentation (recommended)
+* [no-mixed-spaces-and-tabs](no-mixed-spaces-and-tabs) - 不允许空格和tab混合缩进 (recommended)
 * [no-multiple-empty-lines](no-multiple-empty-lines) - disallow multiple empty lines
+* [no-multiple-empty-lines](no-multiple-empty-lines) - 不允许多个空行
 * [no-negated-condition](no-negated-condition) - disallow negated conditions
+* [no-negated-condition](no-negated-condition) - 不允许否定的表达式
 * [no-nested-ternary](no-nested-ternary) - disallow nested ternary expressions
+* [no-nested-ternary](no-nested-ternary) - 不允许使用嵌套的三元表达式
 * [no-new-object](no-new-object) - disallow the use of the `Object` constructor
+* [no-new-object](no-new-object) - 不允许使用`Object`的构造函数
 * [no-plusplus](no-plusplus) - disallow use of unary operators, `++` and `--`
+* [no-plusplus](no-plusplus) - 不允许使用`++` 和 `--`
 * [no-restricted-syntax](no-restricted-syntax) - disallow use of certain syntax in code
+* [no-restricted-syntax](no-restricted-syntax) - 不允许在代码中使用特定的语法
 * [no-spaced-func](no-spaced-func) - disallow space between function identifier and application (fixable)
+* [no-spaced-func](no-spaced-func) - 不允许函数调用时，function标识符和括号之间有空格 (fixable)
 * [no-ternary](no-ternary) - disallow the use of ternary operators
+* [no-ternary](no-ternary) - 不允许使用三元操作符
 * [no-trailing-spaces](no-trailing-spaces) - disallow trailing whitespace at the end of lines (fixable)
+* [no-trailing-spaces](no-trailing-spaces) - 禁用行尾空格 (fixable)
 * [no-underscore-dangle](no-underscore-dangle) - disallow dangling underscores in identifiers
+* [no-underscore-dangle](no-underscore-dangle) - 禁止标识符中有悬空下划线
 * [no-unneeded-ternary](no-unneeded-ternary) - disallow the use of ternary operators when a simpler alternative exists
+* [no-unneeded-ternary](no-unneeded-ternary) - 在有更简单的可替代的表达式存在时，禁止使用三元操作符
 * [object-curly-spacing](object-curly-spacing) - require or disallow padding inside curly braces (fixable)
-* [one-var](one-var) - require or disallow one variable declaration per function
+* [object-curly-spacing](object-curly-spacing) - 禁止或强制对象的花括号中有空格 (fixable)
+* [one-var](one-var) - require or disallow one variable declaration per scope
+* [one-var](one-var) - 要求或禁止每个作用域只有一个变量声明
 * [operator-assignment](operator-assignment) - require assignment operator shorthand where possible or prohibit it entirely
 * [operator-linebreak](operator-linebreak) - enforce operators to be placed before or after line breaks
+* [operator-linebreak](operator-linebreak) - 强制操作符放在换行符之前或之后
 * [padded-blocks](padded-blocks) - enforce padding within blocks
+* [padded-blocks](padded-blocks) - 强制块内填充
 * [quote-props](quote-props) - require quotes around object literal property names
+* [quote-props](quote-props) - 要求对象字面量属性名称用引号括起来
 * [quotes](quotes) - specify whether backticks, double or single quotes should be used (fixable)
+* [quotes](quotes) - 指定是否应使用反勾号、双引号互殴单引号(fixable)
 * [require-jsdoc](require-jsdoc) - Require JSDoc comment
+* [require-jsdoc](require-jsdoc) - 要求使用 JSDoc 注释
 * [semi-spacing](semi-spacing) - enforce spacing before and after semicolons
+* [semi-spacing](semi-spacing) - 强制分号之前和之后有空格
 * [semi](semi) - require or disallow use of semicolons instead of ASI (fixable)
+* [semi](semi) - 要求或禁止使用分号而不是ASI (fixable)
 * [sort-vars](sort-vars) - sort variables within the same declaration block
+* [sort-vars](sort-vars) - 对同一个声明块中的变量进行排序
 * [space-after-keywords](space-after-keywords) - require a space after certain keywords (fixable)
+* [space-after-keywords](space-after-keywords) - 要求在特定的关键字之后有一个空格 (fixable)
 * [space-before-blocks](space-before-blocks) - require or disallow a space before blocks (fixable)
+* [space-before-blocks](space-before-blocks) - 要求或禁止块之前的空格 (fixable)
 * [space-before-function-paren](space-before-function-paren) - require or disallow a space before function opening parenthesis (fixable)
+* [space-before-function-paren](space-before-function-paren) - 要求或禁止函数左括号之前有一个空格 (fixable)
 * [space-before-keywords](space-before-keywords) - require a space before certain keywords (fixable)
+* [space-before-keywords](space-before-keywords) - 要求特定的关键字之前有一个空格 (fixable)
 * [space-in-parens](space-in-parens) - require or disallow spaces inside parentheses
+* [space-in-parens](space-in-parens) - 要求或禁止圆括号内有空格
 * [space-infix-ops](space-infix-ops) - require spaces around operators (fixable)
+* [space-infix-ops](space-infix-ops) - 要求操作符周围有空格 (fixable)
 * [space-return-throw-case](space-return-throw-case) - require a space after `return`, `throw`, and `case` (fixable)
+* [space-return-throw-case](space-return-throw-case) - 要求`return`，`throw`和 `case`之后一个空格 (fixable)
 * [space-unary-ops](space-unary-ops) - require or disallow spaces before/after unary operators (fixable)
+* [space-unary-ops](space-unary-ops) - 要求或禁止在一元操作符之前或之后存在空格 (fixable)
 * [spaced-comment](spaced-comment) - require or disallow a space immediately following the `//` or `/*` in a comment
+* [spaced-comment](spaced-comment) - 要求或禁止注释中`//`` 或 `/*`紧跟一个空格
 * [wrap-regex](wrap-regex) - require regex literals to be wrapped in parentheses
+* [wrap-regex](wrap-regex) - 要求正则表达式被括号括起来
 
 ## ECMAScript 6
 
 These rules are only relevant to ES6 environments.
 
+这些规则只与ES6环境有关。
+
 * [arrow-body-style](arrow-body-style) - require braces in arrow function body
+* [arrow-body-style](arrow-body-style) - 要求箭头函数体使用大括号
 * [arrow-parens](arrow-parens) - require parens in arrow function arguments
+* [arrow-parens](arrow-parens) - 要求箭头函数的参数使用圆括号
 * [arrow-spacing](arrow-spacing) - require space before/after arrow function's arrow (fixable)
+* [arrow-spacing](arrow-spacing) - 要求箭头函数的箭头之前或之后有空格 (fixable)
 * [constructor-super](constructor-super) - verify calls of `super()` in constructors
+* [constructor-super](constructor-super) - 验证构造函数中`super()`的调用
 * [generator-star-spacing](generator-star-spacing) - enforce spacing around the `*` in generator functions (fixable)
+* [generator-star-spacing](generator-star-spacing) - 强制generator函数中*号周围有空格 (fixable)
 * [no-arrow-condition](no-arrow-condition) - disallow arrow functions where a condition is expected
+* [no-arrow-condition](no-arrow-condition) - 禁止在本应使用条件语句的地方使用箭头函数
 * [no-class-assign](no-class-assign) - disallow modifying variables of class declarations
+* [no-class-assign](no-class-assign) - 不允许修改类声明的变量
 * [no-const-assign](no-const-assign) - disallow modifying variables that are declared using `const`
+* [no-const-assign](no-const-assign) - 不允许改变用`const`声明的变量
 * [no-dupe-class-members](no-dupe-class-members) - disallow duplicate name in class members
+* [no-dupe-class-members](no-dupe-class-members) - 不允许类成员中有重复的名称
 * [no-this-before-super](no-this-before-super) - disallow use of `this`/`super` before calling `super()` in constructors.
+* [no-this-before-super](no-this-before-super) - 在构造函数中禁止在调用`super()`之前使用`this`或`super`
 * [no-var](no-var) - require `let` or `const` instead of `var`
+* [no-var](no-var) - 要求使用 `let` 或 `const` 而不是 `var`
 * [object-shorthand](object-shorthand) - require method and property shorthand syntax for object literals
+* [object-shorthand](object-shorthand) - 要求对象字面量中方法和属性使用简写语法
 * [prefer-arrow-callback](prefer-arrow-callback) - suggest using arrow functions as callbacks
+* [prefer-arrow-callback](prefer-arrow-callback) - 推荐使用箭头函数作为回调
 * [prefer-const](prefer-const) - suggest using `const` declaration for variables that are never modified after declared
+* [prefer-const](prefer-const) - 建议使用`const`声明那些声明后从不被修改过的变量
 * [prefer-reflect](prefer-reflect) - suggest using Reflect methods where applicable
+* [prefer-reflect](prefer-reflect) - 建议在合适的地方使用反射方法
 * [prefer-spread](prefer-spread) - suggest using the spread operator instead of `.apply()`.
-* [prefer-template](prefer-template) - suggest using template literals instead of strings concatenation
+* [prefer-spread](prefer-spread) - 建议使用扩展运算符而非`.apply()`
+* [prefer-template](prefer-template) - 建议使用模板而非字符串连接
 * [require-yield](require-yield) - disallow generator functions that do not have `yield`
+* [require-yield](require-yield) - 禁用函数内没有`yield`的generator函数
 
 
 ## Removed
@@ -243,15 +338,28 @@ These rules are only relevant to ES6 environments.
 These rules existed in a previous version of ESLint but have since been replaced by newer rules.
 
 * [generator-star](generator-star) - enforce the position of the `*` in generator functions (replaced by [generator-star-spacing](generator-star-spacing))
+* [generator-star](generator-star) - 强制`*`在generator函数中的位置 (替换为 [generator-star-spacing](generator-star-spacing))
 * [global-strict](global-strict) - require or disallow the `"use strict"` pragma in the global scope (replaced by [strict](strict))
+* [global-strict](global-strict) - 要求或禁止全局作用域下的`"use strict"` (替换为 [strict](strict))
 * [no-comma-dangle](no-comma-dangle) - disallow trailing commas in object literals (replaced by [comma-dangle](comma-dangle))
+* [no-comma-dangle](no-comma-dangle) - 禁用对象字面量中尾部逗号 (替换为 [comma-dangle](comma-dangle))
 * [no-empty-class](no-empty-class) - disallow the use of empty character classes in regular expressions (replaced by [no-empty-character-class](no-empty-character-class))
+* [no-empty-class](no-empty-class) - 禁止在正则表达式中使用空字符 (替换为 [no-empty-character-class](no-empty-character-class))
 * [no-extra-strict](no-extra-strict) - disallow unnecessary use of `"use strict";` when already in strict mode (replaced by [strict](strict))
-* [no-reserved-keys](no-reserved-keys) - disallow reserved words being used as object literal keys
+* [no-extra-strict](no-extra-strict) - 当已经处于严格模式下，禁用不必要的`"use strict";`编译指示 (替换为 [strict](strict))
+* [no-reserved-keys](no-reserved-keys) - disallow reserved words being used as object literal keys (replaced by [quote-props](quote-props))
+* [no-reserved-keys](no-reserved-keys) - 禁止使用保留字作为对象字面量的键(替换为 [quote-props](quote-props))
 * [no-space-before-semi](no-space-before-semi) - disallow space before semicolon (replaced by [semi-spacing](semi-spacing))
+* [no-space-before-semi](no-space-before-semi) - 禁用分号前空格 (替换为 [semi-spacing](semi-spacing))
 * [no-wrap-func](no-wrap-func) - disallow wrapping of non-IIFE statements in parens (replaced by [no-extra-parens](no-extra-parens))
+* [no-wrap-func](no-wrap-func) - 禁止非IIFE语句括在括号中 (替换为 [no-extra-parens](no-extra-parens))
 * [space-after-function-name](space-after-function-name) - require a space after function names (replaced by [space-before-function-paren](space-before-function-paren))
+* [space-after-function-name](space-after-function-name) - 要求函数名后有一个空格 (替换为 [space-before-function-paren](space-before-function-paren))
 * [space-before-function-parentheses](space-before-function-parentheses) - require or disallow space before function parentheses (replaced by [space-before-function-paren](space-before-function-paren))
+* [space-before-function-parentheses](space-before-function-parentheses) - 要求或禁止函数的圆括号前有空格 (替换为 [space-before-function-paren](space-before-function-paren))
 * [space-in-brackets](space-in-brackets) - require or disallow spaces inside brackets (replaced by [object-curly-spacing](object-curly-spacing) and [array-bracket-spacing](array-bracket-spacing))
+* [space-in-brackets](space-in-brackets) - 要求或禁止括号内有空格 (替换为 [object-curly-spacing](object-curly-spacing) and [array-bracket-spacing](array-bracket-spacing))
 * [space-unary-word-ops](space-unary-word-ops) - require or disallow spaces before/after unary operators (replaced by [space-unary-ops](space-unary-ops))
+* [space-unary-word-ops](space-unary-word-ops) - 要求或禁止一元操作符之前或之后有空格 (替换为 [space-unary-ops](space-unary-ops))
 * [spaced-line-comment](spaced-line-comment) - require or disallow a space immediately following the `//` in a line comment (replaced by [spaced-comment](spaced-comment))
+* [spaced-line-comment](spaced-line-comment) - 要求或禁止注释中`//`紧跟一个空格 (替换为 [spaced-comment](spaced-comment))

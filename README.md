@@ -4,7 +4,9 @@
 3. 不主动、不刻意删减原文内容
 4. 不主动、不刻意增加原文不存在的内容
 5. 暂无法翻译的词或语句可保留原始英文
-6. 规则里的  除一级标题（# xxx）外，其他标题不翻译：
+6. 使用“你”，不使用“您”
+7. 使用“它”，“它们”；不使用“他”，“她”，“他们”，“她们”
+8. 规则里的  除一级标题（# xxx）外，其他标题不翻译：
 
    `## 二级标题`
    
@@ -13,18 +15,19 @@
    `#### 四级标题`
    
    `...`
-7. 提交某文件时，假如该文件为xxx.md，
+9. 提交某文件时，假如该文件为xxx.md，
    则提交时的注释为: update xxx
 
    如有补充，逗号分隔紧随其后: update xxx, resolve the conflict...
 
 ### 下载eslint-zh
 
+fork 自己的eslint-zh
 
-下载eslint-zh到本地目录，切换到mixed分支（对`.md`文档翻译时保留原始英文，以便校对）
+下载eslint-zh到本地目录，切换到mixed分支（对`.md`文档翻译时保留原始英文，即中英文对照，以便校对）。我们所有的操作都是在mixed分支上。
 
 ```bash
-$ git clone git@github.com:smocean/eslint-zh.git
+$ git clone git@github.com:[your name]/eslint-zh.git
 $ cd eslint-zh
 $ git checkout -b mixed origin/mixed
 ```
@@ -64,6 +67,9 @@ $ git commit -m 'update xxx'
 $ git push origin mixed
 ```
 
+然后pull request。
+
+注意，合并的是mixed，也就是[your name]:mixed向smocean:mixed分支发出合并请求。
 
 [1]: https://rubygems.org/gems/bundler
 

@@ -157,7 +157,7 @@ Note that `"always"` has a special case where `{}` and `[]` are not considered p
 
 An object literal may be used as a third array item to specify spacing exceptions. These exceptions work in the context of the first option. That is, if `"always"` is set to enforce spacing and an exception is set to `false`, it will disallow spacing for cases matching the exception. Likewise, if `"never"` is set to disallow spacing and an exception is set to `true`, it will enforce spacing for cases matching the exception.
 
-数组的第三个参数是个对象，用来指定例外情况。这些例外作用在第一个选项的基础上。如果`"always"`设置为强制使用空格但例外情况被设置为`false`，那么符合这个例外的将禁止使用空格。同样的，如果`"never"`设置为禁止试用空格但例外情况被设为`true`，那么符合这个例外的将强制使用空格。
+数组的第三个参数是个对象，用来指定例外情况。这些例外作用在第一个选项的基础上。如果`"always"`设置为强制使用空格但例外情况被设置为`false`，那么符合这个例外的将禁止使用空格。同样的，如果`"never"`设置为禁止使用空格但例外情况被设为`true`，那么符合这个例外的将强制使用空格。
 
 You can add exceptions like so:
 

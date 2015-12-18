@@ -5,21 +5,36 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Unused Variables (no-unused-vars)
 
+# 禁用未使用过变量(no-unused-vars)
+
 Variables that are declared and not used anywhere in the code are most likely an error due to incomplete refactoring. Such variables take up space in the code and can lead to confusion by readers.
+
+已申明的变量在代码里未被使用过，就像是由于不完整的重构而导致的遗漏错误。这样的变量增加了代码量，并且混淆读者。
 
 ## Rule Details
 
 This rule is aimed at eliminating unused variables, functions and variables in parameters of functions, as such, warns when one is found.
 
+此规则旨在排查是否存在未使用过的变量，方法和方法中的参数名，当发现存在，报警告。
+
 A variable is considered to be used when it:
 
+符合下面条件的变量被认为是可以使用的:
+
 1. Represents a function that is called (`doSomething()`)
+2. 作为回调函数
 1. Is read (`var y = x`)
+2. 可读 (`var y = x`)
 1. Is passed into a function as an argument (`doSomething(x)`)
+2. 传入函数中作为argument对象
 
 A variable is *not* considered read if it is only ever assigned to (`var x = 5`) or declared.
 
+一个变量仅仅是被复制过(`var x = 5`)或者是被申明过，则认为它是不可读。
+
 The following patterns are considered problems:
+
+以下模式被认为是有问题的：
 
 ```js
 /*eslint no-unused-vars: 2*/
@@ -47,6 +62,8 @@ function fact(n) {           /*error "fact" is defined but never used*/
 
 The following patterns are not considered problems:
 
+以下模式被认为是没有问题的：
+
 ```js
 /*eslint no-unused-vars: 2*/
 
@@ -67,9 +84,13 @@ myFunc(function foo() {
 
 In environments outside of CommonJS or ECMAScript modules, you may use `var` to create a global variable that may be used by other scripts. You can use the `/* exported variableName */` comment block to indicate that this variable is being exported and therefore should not be considered unused. Note that `/* exported */` has no effect when used with the `node` or `commonjs` environments or when `ecmaFeatures.modules` is true.
 
+在CommonJS或者ECMAScript模块外部，可用`var`创建一个被其他模块代码引用的变量。你也可以用`/* exported variableName */`注释快表明此变量已导出，因此此变量不会被认为是未被使用过的。需要提醒，在`node`环境，`commonjs`环境，还有当`ecmaFeatures.modules`为true时，`/* exported */`注释快导出变量无效。
+
 ### Options
 
 By default this rule is enabled with `all` option for variables and `after-used` for arguments.
+
+配置项的默认值，`all`管理变量，`after-used`管理参数。
 
 ```json
 {
@@ -83,16 +104,28 @@ By default this rule is enabled with `all` option for variables and `after-used`
 
 This option has two settings:
 
+此配置项有两个值：
+
 * `all` checks all variables for usage, including those in the global scope. This is the default setting.
 * `local` checks only that locally-declared variables are used but will allow global variables to be unused.
+
+* `all`检测所有变量，包括全局环境中的变量。这是默认值。
+* `local`仅仅检测本作用域中申明的变量是否使用，允许不使用全局环境中的变量。
+
 
 #### args
 
 This option has three settings:
 
+此配置项有三个值：
+
 * `all` - all named arguments must be used.
 * `after-used` - only the last argument must be used. This allows you, for instance, to have two named parameters to a function and as long as you use the second argument, ESLint will not warn you about the first. This is the default setting.
 * `none` - do not check arguments.
+
+* `all`-所有命名参数必须使用
+* `after-used`-最后一个参数必须使用。如：一个函数有两个参数，你使用了第二个参数，ESLint不会报警告
+* `none`-不检查参数
 
 ##### with `{ "args": "all" }`
 
@@ -127,11 +160,15 @@ This option has three settings:
 #### Ignore identifiers that match specific patterns
 
 * `varsIgnorePattern` - all variables that match this regexp pattern will not be checked.
+* `varsIgnorePattern`-匹配到给定正则表达式的变量不被检测
 * `argsIgnorePattern` - all arguments that match this regexp pattern will not be checked.
+* `argsIgnorePattern`-匹配到给定正则表达式的参数不被检测
 
 ##### Examples
 
 * Ignore all unused function arguments with a leading underscore
+
+* 忽略带有下划线的参数名：
 
     ```json
     {
@@ -142,6 +179,8 @@ This option has three settings:
     ```
 
     With this configuration, this rule will not warn about the following code:
+    
+    正确：
 
     ```js
     /*eslint no-unused-vars: [2, {"args": "after-used", "argsIgnorePattern": "^_"}]*/
@@ -153,6 +192,7 @@ This option has three settings:
     ```
 
 * Ignore all unused variables which contain the term `ignored` or `Ignored`:
+* 忽略含有`ignored`和`Ignored`的变量：
 
     ```json
         {
@@ -164,6 +204,8 @@ This option has three settings:
     ```
 
     With this configuration, this rule will not warn about the following code:
+    
+    正确：
 
     ```js
     /*eslint no-unused-vars: [2, {"args": "after-used", "varsIgnorePattern": "[iI]gnored"}]*/
@@ -177,9 +219,13 @@ This option has three settings:
 
 If you don't want to be notified about unused variables or function arguments, you can safely turn this rule off.
 
+如果你不希望因为未使用变量或参数名而报警告，你可关闭此规则。
+
 ## Version
 
 This rule was introduced in ESLint 0.0.9.
+
+此规则在ESLint 0.0.9中被引入。
 
 ## Resources
 

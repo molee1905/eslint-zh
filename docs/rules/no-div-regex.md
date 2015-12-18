@@ -5,7 +5,12 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Regexs That Look Like Division (no-div-regex)
 
+#禁止正则表达式看起来像除法符号
+
 Require regex literals to escape division operators.
+
+需要将正则表达式避开除法运算符
+
 
 ```js
 function bar() { return /=foo/; }
@@ -15,7 +20,11 @@ function bar() { return /=foo/; }
 
 This is used to disambiguate the division operator to not confuse users.
 
+此规则用来消除除法符号的歧义使用户不产生疑惑。
+
 The following patterns are considered problems:
+
+以下模式被认为是有问题的：
 
 ```js
 /*eslint no-div-regex: 2*/
@@ -24,6 +33,8 @@ function bar() { return /=foo/; } /*error A regular expression literal can be co
 ```
 
 The following patterns are not considered problems:
+
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint no-div-regex: 2*/
@@ -39,6 +50,8 @@ function bar() { return /\=foo/; }
 ## Version
 
 This rule was introduced in ESLint 0.1.0.
+
+此规则在ESLint 0.1.0中被引入。
 
 ## Resources
 
