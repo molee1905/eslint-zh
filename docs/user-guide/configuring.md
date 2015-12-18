@@ -45,50 +45,50 @@ Configuration settings are set in your `.eslintrc` file by using the `ecmaFeatur
 配置设置在`.eslintrc`文件使用'ecmaFeatures`属性设置。可用的选项有：
 
 * `arrowFunctions` - enable [arrow functions](https://leanpub.com/understandinges6/read#leanpub-auto-arrow-functions)
+* `arrowFunctions` - 开启[arrow functions](https://leanpub.com/understandinges6/read#leanpub-auto-arrow-functions)
 * `binaryLiterals` - enable [binary literals](https://leanpub.com/understandinges6/read#leanpub-auto-octal-and-binary-literals)
+* `binaryLiterals` - 开启 [binary literals](https://leanpub.com/understandinges6/read#leanpub-auto-octal-and-binary-literals)
 * `blockBindings` - enable `let` and `const` (aka [block bindings](https://leanpub.com/understandinges6/read#leanpub-auto-block-bindings))
+* `blockBindings` - 开启 `let` and `const` (aka [block bindings](https://leanpub.com/understandinges6/read#leanpub-auto-block-bindings))
 * `classes` - enable classes
+* `classes` - 开启 classes
 * `defaultParams` - enable [default function parameters](https://leanpub.com/understandinges6/read/#leanpub-auto-default-parameters)
+* `defaultParams` - 开启 [default function parameters](https://leanpub.com/understandinges6/read/#leanpub-auto-default-parameters)
 * `destructuring` - enable [destructuring](https://leanpub.com/understandinges6/read#leanpub-auto-destructuring-assignment)
+* `destructuring` - 开启 [destructuring](https://leanpub.com/understandinges6/read#leanpub-auto-destructuring-assignment)
 * `forOf` - enable [`for-of` loops](https://leanpub.com/understandinges6/read#leanpub-auto-iterables-and-for-of)
+* `forOf` - 开启 [`for-of` loops](https://leanpub.com/understandinges6/read#leanpub-auto-iterables-and-for-of)
 * `generators` - enable [generators](https://leanpub.com/understandinges6/read#leanpub-auto-generators)
+* `generators` - 开启 [generators](https://leanpub.com/understandinges6/read#leanpub-auto-generators)
 * `modules` - enable modules and global strict mode
+* `modules` - 开启 modules 和 global strict mode
 * `objectLiteralComputedProperties` - enable [computed object literal property names](https://leanpub.com/understandinges6/read#leanpub-auto-computed-property-names)
+* `objectLiteralComputedProperties` - 开启 [computed object literal property names](https://leanpub.com/understandinges6/read#leanpub-auto-computed-property-names)
 * `objectLiteralDuplicateProperties` - enable [duplicate object literal properties](https://leanpub.com/understandinges6/read#leanpub-auto-duplicate-object-literal-properties) in strict mode
+* `objectLiteralDuplicateProperties` - 在严格模式开启 [duplicate object literal properties](https://leanpub.com/understandinges6/read#leanpub-auto-duplicate-object-literal-properties)
 * `objectLiteralShorthandMethods` - enable [object literal shorthand methods](https://leanpub.com/understandinges6/read#leanpub-auto-method-initializer-shorthand)
+* `objectLiteralShorthandMethods` - 开启 [object literal shorthand methods](https://leanpub.com/understandinges6/read#leanpub-auto-method-initializer-shorthand)
 * `objectLiteralShorthandProperties` - enable [object literal shorthand properties](https://leanpub.com/understandinges6/read#leanpub-auto-property-initializer-shorthand)
+* `objectLiteralShorthandProperties` - 开启 [object literal shorthand properties](https://leanpub.com/understandinges6/read#leanpub-auto-property-initializer-shorthand)
 * `octalLiterals` - enable [octal literals](https://leanpub.com/understandinges6/read#leanpub-auto-octal-and-binary-literals)
+* `octalLiterals` - 开启 [octal literals](https://leanpub.com/understandinges6/read#leanpub-auto-octal-and-binary-literals)
 * `regexUFlag` - enable the [regular expression `u` flag](https://leanpub.com/understandinges6/read#leanpub-auto-the-regular-expression-u-flag)
+* `regexUFlag` - 开启 [regular expression `u` flag](https://leanpub.com/understandinges6/read#leanpub-auto-the-regular-expression-y-flag)
 * `restParams` - enable the [rest parameters](https://leanpub.com/understandinges6/read#leanpub-auto-rest-parameters)
+* `restParams` - 开启 [rest parameters](https://leanpub.com/understandinges6/read#leanpub-auto-rest-parameters)
 * `spread` - enable the [spread operator](https://leanpub.com/understandinges6/read#leanpub-auto-the-spread-operator) for arrays
+* `spread` - 开启 [spread operator](https://leanpub.com/understandinges6/read#leanpub-auto-the-spread-operator) for arrays
 * `superInFunctions` - enable `super` references inside of functions
+* `superInFunctions` - 在函数里开启 `super` 引用
 * `templateStrings` - enable [template strings](https://leanpub.com/understandinges6/read/#leanpub-auto-template-strings)
+* `templateStrings` - 开启 [template strings](https://leanpub.com/understandinges6/read/#leanpub-auto-template-strings)
 * `unicodeCodePointEscapes` - enable [code point escapes](https://leanpub.com/understandinges6/read/#leanpub-auto-escaping-non-bmp-characters)
+* `unicodeCodePointEscapes` - 开启 [code point escapes](https://leanpub.com/understandinges6/read/#leanpub-auto-escaping-non-bmp-characters)
 * `globalReturn` - allow `return` statements in the global scope
+* `globalReturn` - 在全局作用域中允许声明 `return`
+* `jsx` - 开启 [JSX](http://facebook.github.io/jsx/)
 * `jsx` - enable [JSX](http://facebook.github.io/jsx/)
 * `experimentalObjectRestSpread` - enable support for the experimental [object rest/spread properties](https://github.com/sebmarkbage/ecmascript-rest-spread) (**IMPORTANT:** This is an experimental feature that may change significantly in the future. It's recommended that you do *not* write rules relying on this functionality unless you are willing to incur maintenance cost when it changes.)
-* `arrowFunctions` - 开启[arrow functions](https://leanpub.com/understandinges6/read#leanpub-auto-arrow-functions)
-* `binaryLiterals` - 开启 [binary literals](https://leanpub.com/understandinges6/read#leanpub-auto-octal-and-binary-literals)
-* `blockBindings` - 开启 `let` and `const` (aka [block bindings](https://leanpub.com/understandinges6/read#leanpub-auto-block-bindings))
-* `classes` - 开启 classes
-* `defaultParams` - 开启 [default function parameters](https://leanpub.com/understandinges6/read/#leanpub-auto-default-parameters)
-* `destructuring` - 开启 [destructuring](https://leanpub.com/understandinges6/read#leanpub-auto-destructuring-assignment)
-* `forOf` - 开启 [`for-of` loops](https://leanpub.com/understandinges6/read#leanpub-auto-iterables-and-for-of)
-* `generators` - 开启 [generators](https://leanpub.com/understandinges6/read#leanpub-auto-generators)
-* `modules` - 开启 modules 和 global strict mode
-* `objectLiteralComputedProperties` - 开启 [computed object literal property names](https://leanpub.com/understandinges6/read#leanpub-auto-computed-property-names)
-* `objectLiteralDuplicateProperties` - 在严格模式开启 [duplicate object literal properties](https://leanpub.com/understandinges6/read#leanpub-auto-duplicate-object-literal-properties)
-* `objectLiteralShorthandMethods` - 开启 [object literal shorthand methods](https://leanpub.com/understandinges6/read#leanpub-auto-method-initializer-shorthand)
-* `objectLiteralShorthandProperties` - 开启 [object literal shorthand properties](https://leanpub.com/understandinges6/read#leanpub-auto-property-initializer-shorthand)
-* `octalLiterals` - 开启 [octal literals](https://leanpub.com/understandinges6/read#leanpub-auto-octal-and-binary-literals)
-* `regexYFlag` - 开启 the [regular expression `y` flag](https://leanpub.com/understandinges6/read#leanpub-auto-the-regular-expression-y-flag)
-* `restParams` - 开启 the [rest parameters](https://leanpub.com/understandinges6/read#leanpub-auto-rest-parameters)
-* `spread` - 开启 the [spread operator](https://leanpub.com/understandinges6/read#leanpub-auto-the-spread-operator) for arrays
-* `superInFunctions` - 在函数里开启 `super` 引用
-* `templateStrings` - 开启 [template strings](https://leanpub.com/understandinges6/read/#leanpub-auto-template-strings)
-* `unicodeCodePointEscapes` - 开启 [code point escapes](https://leanpub.com/understandinges6/read/#leanpub-auto-escaping-non-bmp-characters)
-* `globalReturn` - 在全局作用举中允许声明 `return`
-* `jsx` - 开启 [JSX](http://facebook.github.io/jsx/)
 * `experimentalObjectRestSpread` - 开启对实验性属性的支持 [object rest/spread properties](https://github.com/sebmarkbage/ecmascript-rest-spread) (**注意:** 这是一个处于试验阶段的特征，未来有可能会变化。建议您*不*要写依赖这个功能的规则，除非您愿意当其变化时花费精力去维护。
 
 
