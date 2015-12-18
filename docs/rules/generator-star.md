@@ -5,7 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Enforce the position of the * in generators (generator-star)
 
-# 在generator函数中强制*的位置(generator-star)
+# 强制*在generator函数中的位置(generator-star)
 
 **Replacement notice**: This rule was removed in ESLint v1.0 and replaced by the [generator-star-spacing](generator-star-spacing) rule.
 

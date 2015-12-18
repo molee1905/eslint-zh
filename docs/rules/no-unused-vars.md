@@ -5,7 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Unused Variables (no-unused-vars)
 
-# 不允许存在未使用过变量(no-unused-vars)
+# 禁用未使用过变量(no-unused-vars)
 
 Variables that are declared and not used anywhere in the code are most likely an error due to incomplete refactoring. Such variables take up space in the code and can lead to confusion by readers.
 
@@ -19,7 +19,7 @@ This rule is aimed at eliminating unused variables, functions and variables in p
 
 A variable is considered to be used when it:
 
-符合下面条件的变量必被使用:
+符合下面条件的变量被认为是可以使用的:
 
 1. Represents a function that is called (`doSomething()`)
 2. 作为回调函数
@@ -34,7 +34,7 @@ A variable is *not* considered read if it is only ever assigned to (`var x = 5`)
 
 The following patterns are considered problems:
 
-错误：
+以下模式被认为是有问题的：
 
 ```js
 /*eslint no-unused-vars: 2*/
@@ -62,7 +62,7 @@ function fact(n) {           /*error "fact" is defined but never used*/
 
 The following patterns are not considered problems:
 
-正确：
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint no-unused-vars: 2*/
@@ -160,9 +160,8 @@ This option has three settings:
 #### Ignore identifiers that match specific patterns
 
 * `varsIgnorePattern` - all variables that match this regexp pattern will not be checked.
-* `argsIgnorePattern` - all arguments that match this regexp pattern will not be checked.
-
 * `varsIgnorePattern`-匹配到给定正则表达式的变量不被检测
+* `argsIgnorePattern` - all arguments that match this regexp pattern will not be checked.
 * `argsIgnorePattern`-匹配到给定正则表达式的参数不被检测
 
 ##### Examples

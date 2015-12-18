@@ -5,13 +5,20 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Enforce require() on the top-level module scope. (global-require)
 
+# 强制在顶部加载模块(global-require)
+
+
 In Node.js, module dependencies are included using the `require()` function, such as:
+
+在Node.js中，引入模块依赖使用`require()`函数，例如：
 
 ```js
 var fs = require("fs");
 ```
 
 While `require()` may be called anywhere in code, some style guide prescribe that it should be called only in the top-level scope of a module to make it easier to identify dependencies. For instance, it's arguably harder to identify dependencies when they are deeply nested inside of functions and other statements:
+
+然而`require()`可以在代码的任何地方被调用，一些编码规范规定`require()`被调用仅仅在模块范围内的头部，使其更加易于识别依赖。举个例子：这很难识别依赖，当它在多层函数嵌套里和其他申明里。
 
 ```js
 function foo() {
@@ -24,17 +31,25 @@ function foo() {
 
 Since `require()` does a synchronous load, it can cause performance problems when used in other locations.
 
+因为`require()`是同步加载的，他能导致性能问题，当在其他位置使用。
+
 ## Rule Details
 
 This rule requires all calls to `require()` to be at the top-level module scope.
 
+此规则要求所有调用`require()`必须在模块范围顶部。
+
 You can enable this rule with the following syntax:
+
+你能启动这个规则通过下面的语法：
 
 ```json
 "global-require": 2
 ```
 
 The following patterns are considered problems:
+
+以下模式被认为有问题：
 
 ```js
 /*eslint global-require: 2*/
@@ -66,7 +81,9 @@ try {
 }
 ```
 
-The following patterns are not considered problems:
+The following patterns are not considered problems:、
+
+以下模式被认为没问题：
 
 ```js
 /*eslint global-require: 2*/
@@ -97,9 +114,13 @@ var x = require("x"),
 
 If you have a module that must be initialized with information that comes from the file-system or if a module is only used in very rare situations and will cause significant overhead to load it may make sense to disable the rule.
 
+如果一个模块必须使用来至于系统文件的信息初始化或者一个模块仅仅在非常稀少的情况下使用，将导致重大开销去加载模块，禁用此规则将是有意义的。
+
 ## Version
 
 This rule was introduced in ESLint 1.4.0.
+
+此规则在ESLint 1.4.0中被引入。
 
 ## Resources
 

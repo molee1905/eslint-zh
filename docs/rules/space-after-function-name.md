@@ -5,7 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Require or disallow spaces following function names (space-after-function-name)
 
-# 函数名称后要求或禁止空格 (space-after-function-name)
+# 要求或禁止函数名称后的空格 (space-after-function-name)
 
 **Replacement notice**: This rule was removed in ESLint v1.0 and replaced by the [space-before-function-paren](space-before-function-paren) rule.
 

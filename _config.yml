@@ -4,7 +4,7 @@ exclude: [
   'vendor'
 ]
 description: "A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."
-url: http://eslint.org
+url: http://eslint.cn
 markdown: redcarpet
 permalink: /blog/:year/:month/:title
 paginate: 25

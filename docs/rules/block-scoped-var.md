@@ -29,7 +29,7 @@ This rule aims to reduce the usage of variables outside of their binding context
 
 The following patterns are considered problems:
 
-以下为错误示例：
+以下模式被认为是有问题的：
 
 ```js
 /*eslint block-scoped-var: 2*/
@@ -69,7 +69,7 @@ function doAnother() {
 
 The following patterns are not considered problems:
 
-正确的使用方法如下
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint block-scoped-var: 2*/

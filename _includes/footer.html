@@ -56,10 +56,10 @@
       $('.expender').click(function() {
         if ($('.logos').hasClass('expended')) {
           $('.logos').removeClass('expended').css('max-height', '150px');
-          $('.expender').html('see more <span class="caret"/>');
+          $('.expender').html('查看更多 <span class="caret"/>');
         } else {
           $('.logos').addClass('expended').css('max-height', 5000);
-          $('.expender').html('see less <span class="dropup"><span class="caret"></span></span>');
+          $('.expender').html('收起 <span class="dropup"><span class="caret"></span></span>');
         }
       });
     {% endif %}

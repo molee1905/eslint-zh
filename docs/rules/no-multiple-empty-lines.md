@@ -5,11 +5,11 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallows multiple blank lines (no-multiple-empty-lines)
 
-# 不允许多重空行 (no-multiple-empty-lines)
+# 不允许多个空行 (no-multiple-empty-lines)
 
 Some developers prefer to have multiple blank lines removed, while others feel that it helps improve readability. Whitespace is useful for separating logical sections of code, but excess whitespace takes up more of the screen.
 
-一些开发者喜欢删除多重空行，然而其他人认为多重空行可以提高可读性。空白对于分离代码代码段逻辑是有帮助的，但过量的空白会占用更多的屏幕。
+一些开发者喜欢删除多个空行，然而其他人认为多个空行可以提高可读性。空白对于分离代码代码段逻辑是有帮助的，但过量的空白会占用更多的屏幕。
 
 ## Rule Details
 

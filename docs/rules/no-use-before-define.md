@@ -5,12 +5,12 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Early Use (no-use-before-define)
 
-# 禁止早期使用(no-use-before-define)
+# 不允许提早使用(no-use-before-define)
 
 
 In JavaScript, prior to ES6, variable and function declarations are hoisted to the top of a scope, so it's possible to use identifiers before their formal declarations in code. This can be confusing and some believe it is best to always declare variables and functions before using them.
 
-早期ES6标准的JavaScript中，某个作用域中变量和函数的申明要提前到作用域之前，所以可能存在这种情况：此变量在申明前被使用。这会扰乱读者，部分人认为最好的做法是使用变量之前先申明变量。
+在ES6标准之前的JavaScript中，某个作用域中变量和函数的申明要提前到作用域之前，所以可能存在这种情况：此变量在申明前被使用。这会扰乱读者，部分人认为最好的做法是使用变量之前先申明变量。
 
 In ES6, block-level bindings (`let` and `const`) introduce a "temporal dead zone" where a `ReferenceError` will be thrown with any attempt to access the variable before its declaration.
 
@@ -24,7 +24,7 @@ This rule will warn when it encounters a reference to an identifier that has not
 
 The following patterns are considered problems:
 
-错误：
+以下模式被认为是有问题的：
 
 ```js
 /*eslint no-use-before-define: 2*/
@@ -50,7 +50,7 @@ var b = 1;
 
 The following patterns are not considered problems:
 
-正确：
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint no-use-before-define: 2*/
