@@ -166,17 +166,30 @@ Additionally, the `context` object has the following methods:
 
 The main method you'll use is `context.report()`, which publishes a warning or error (depending on the configuration being used). This method accepts a single argument, which is an object containing the following properties:
 
+你将使用的主要方法是`context.report()`，它用来发布警告或错误（取决于你所使用的配置）。该方法只接收一个参数，是个对象，包含以下属性：
+
 * `message` - the problem message.
+* `message` - 有问题的消息
 * `node` - (optional)  the AST node related to the problem. If present and `loc` is not specified, then the starting location of the node is used as the location of the problem.
+* `node` - (可选的)  与问题有关的AST节点。如果存在且没有指定`loc`，那么该节点的开始位置被用来作为问题的位置。
 * `loc` - (optional) an object specifying the location of the problem. If both `loc` and `node` are specified, then the location is used from `loc` instead of `node`.
+* `loc` - (可选的) 用来指定问题位置的一个对象。如果同时指定的了`loc`和`node`，那么位置将从`loc`获取而非`node`。
     * `line` - the 1-based line number at which the problem occurred.
+    * `line` - 问题发生的行号，从1开始
     * `col` - the 0-based column number at which the problem occurred.
+    * `col` - 问题发生的列号，从0开始
 * `data` - (optional) placeholder data for `message`.
+* `data` - (可选的) `message`的占位符.
 * `fix` - (optional) a function that applies a fix to resolve the problem.
+* `fix` - (可选的) 一个用来解决问题的函数
 
 Note that at least one of `node` or `loc` is required.
 
+请注意，`node`或`loc`至少有一个是必须的。
+
 The simplest example is to use just `node` and `message`:
+
+最简单的示例是只使用`node`和`message`：
 
 ```js
 context.report({
@@ -187,7 +200,11 @@ context.report({
 
 The node contains all of the information necessary to figure out the line and column number of the offending text as well the source text representing the node.
 
+该节点包含所有必要的信息，用来找出违规文本的行列号作为该节点的源文本。
+
 You can also use placeholders in the message and provide `data`:
+
+你也可以在消息中使用占位符和提供`data`：
 
 ```js
 {% raw %}
@@ -203,11 +220,19 @@ context.report({
 
 Note that leading and trailing whitespace is optional in message parameters.
 
+注意：消息中参数的前导和末尾空白是可选的。
+
 The node contains all of the information necessary to figure out the line and column number of the offending text as well the source text representing the node.
+
+该节点包含所有必要的信息，用来找出违规文本的行列号作为该节点的源文本。
 
 ### Applying Fixes
 
+### 修复
+
 If you'd like ESLint to attempt to fix the problem you're reporting, you can do so by specifying the `fix` function when using `context.report()`. The `fix` function receives a single argument, a `fixer` object, that you can use to apply a fix. For example:
+
+如果你想让ESLint尝试去修复你所报告的问题，你可在使用`context.report()`时指定`fix`函数。`fix`函数接收一个参数，即一个 `fixer`对象，你可以用来进行修复。例如：
 
 ```js
 context.report({
@@ -221,26 +246,45 @@ context.report({
 
 Here, the `fix()` function is used to insert a semicolon after the node. Note that the fix is not immediately applied and may not be applied at all if there are conflicts with other fixes. If the fix cannot be applied, then the problem message is reported as usual; if the fix can be applied, then the problem message is not reported.
 
+在这里，`fix()`函数被用来在该节点之后插入一个分号。注意，此函数并不立即进行修复，如果与其它修复程序有冲突，可能根本就不进行修复。如果不进行修复，则像往常一下报告问题消息；如果进行修复，则不会报告问题消息。
+
 The `fixer` object has the following methods:
 
+`fixer`对象有一下几个方法：
+
 * `insertTextAfter(nodeOrToken, text)` - inserts text after the given node or token
+* `insertTextAfter(nodeOrToken, text)` - 在给定的节点或记号之后插入文本
 * `insertTextAfterRange(range, text)` - inserts text after the given range
+* `insertTextAfterRange(range, text)` - 在给定的范围之后插入文本
 * `insertTextBefore(nodeOrToken, text)` - inserts text before the given node or token
+* `insertTextBefore(nodeOrToken, text)` - 在给定的节点或记号之前插入文本
 * `insertTextBeforeRange(range, text)` - inserts text before the given range
+* `insertTextBeforeRange(range, text)` - 在给定的范围之前插入文本
 * `remove(nodeOrToken)` - removes the given node or token
+* `remove(nodeOrToken)` - 删除给定的节点或记号
 * `removeRange(range)` - removes text in the given range
+* `removeRange(range)` - 删除给定范围内的文本
 * `replaceText(nodeOrToken, text)` - replaces the text in the given node or token
+* `replaceText(nodeOrToken, text)` - 替换给定的节点或记号内的文本
 * `replaceTextRange(range, text)` - replaces the text in the given range
+* `replaceTextRange(range, text)` - 替换给定范围内的文本
 
 Best practices for fixes:
 
+修复的最佳实践：
+
 1. Make fixes that are as small as possible. Anything more than a single character is risky and could prevent other, simpler fixes from being made.
+1. 使修复程序尽可能的小。多个字符就会多份风险，有可能妨碍其它更简单的修复程序的创建。
 1. Only make one fix per message. This is enforced because you must return the result of the fixer operation from `fix()`.
+1. 是每条消息只有一个修复。 这是强制的，因为你必须从 `fix()`返回修复操作的结果。
 1. Fixes should not introduce clashes with other rules. You can accidentally introduce a new problem that won't be reported until ESLint is run again. Another good reason to make as small a fix as possible.
+1. 修复不应引入与其它规则的冲突。你可能不经意键引入了一个新的问题，不会被报告，直到ESLint重新运行。另一个好的理由是让修复程序尽可能的小。
 
 ### context.options
 
 Some rules require options in order to function correctly. These options appear in configuration (`.eslintrc`, command line, or in comments). For example:
+
+以下规则要求一些可选项才能正确运行。这些可选项出现在配置中（`.eslintrc`，命令行，或在注释中）。例如：
 
 ```json
 {
@@ -249,6 +293,9 @@ Some rules require options in order to function correctly. These options appear 
 ```
 
 The `quotes` rule in this example has one option, `"double"` (the `2` is the error level). You can retrieve the options for a rule by using `context.options`, which is an array containing every configured option for the rule. In this case, `context.options[0]` would contain `"double"`:
+
+在这个例子中`quotes`规则有一个可选项`"double"`（`2`是错误级别）。你可以使用`context.options`检索一个规则的可选项，它是个数组，包含该规则的所有配置的可选项。在这个例子中，`context.options[0]`包含`"double"`：
+
 
 ```js
 module.exports = function(context) {
@@ -261,7 +308,11 @@ module.exports = function(context) {
 
 Since `context.options` is just an array, you can use it to determine how many options have been passed as well as retrieving the actual options themselves. Keep in mind that the error level is not part of `context.options`, as the error level cannot be known or modified from inside a rule.
 
+由于`context.options`仅仅是个数组，你可以使用它来决定有多少可选项被传入，
+
 When using options, make sure that your rule has some logic defaults in case the options are not provided.
+
+当使用可选项时，要确保你的规则
 
 ### context.getSourceCode()
 
