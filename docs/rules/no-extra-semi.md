@@ -8,7 +8,7 @@ layout: doc
 
 JavaScript will more or less let you put semicolons after any statement without complaining. Typos and misunderstandings about where semicolons are required can lead to extra semicolons that are unnecessary.
 
-JavaScript任何语句后有多个或没有分号都不会出错。Typos and misunderstandings about where semicolons are required can lead to extra semicolons that are unnecessary.
+JavaScript任何语句后有多个或没有分号都不会出错。 书写错误和对哪里需要有分号的误解会导致额外的不必要的分号出现。
 
 
 **Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
