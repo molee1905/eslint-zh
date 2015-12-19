@@ -44,28 +44,17 @@ The most important method on `linter` is `verify()`, which initiates linting of 
 `linter`最重要的方法为`verify()`，它对给的的文本的linting进行初始化。这个方法接受4个参数：
 
 * `code` - the source code to lint (a string or instance of `SourceCode`).
-
 * `code`-要lint的源代码（字符串或者`SourceCode`的实例）。
-
 * `config` - a configuration object.
-
-*`config`- 一个配置对象。
-
+* `config` - 一个配置对象。
 * `options` - (optional) Additional options for this run.
-
-*`options`-(可选的)运行的额外选项。
-
-* `filename` - (optional) the filename to associate with the source code.
-
-*`filename`-(可选的)与源代码关联的文件名。
-
-* `saveState` - (optional) set to true to maintain the internal state of `linter` after linting (mostly used for testing purposes).
-
-*`saveState`-(可选的)设置为true来保持lint后`linter`的内部状态（主要用来测试）。
-
-* `allowInlineConfig` - (optional) set to `false` to disable inline comments from changing eslint rules.
-
-*`allowInLinrConfig`-(可选的)设置为`false`来从改变 eslint 规则禁用行内注释。
+* `options` - (可选的)运行的额外选项。
+    * `filename` - (optional) the filename to associate with the source code.
+    * `filename` - (可选的)与源代码关联的文件名。
+    * `saveState` - (optional) set to true to maintain the internal state of `linter` after linting (mostly used for testing purposes).
+    * `saveState` - (可选的)设置为true来保持lint后`linter`的内部状态（主要用来测试）。
+    * `allowInlineConfig` - (optional) set to `false` to disable inline comments from changing eslint rules.
+    * `allowInLinrConfig` - (可选的)设置为`false`来从改变 eslint 规则禁用行内注释。
 
 You can call `verify()` like this:
 
@@ -119,40 +108,23 @@ The information available for each linting message is:
 这些信息对所有的linting信息都是可用的：
 
 * `column` - the column on which the error occurred.
-
-*`column`-出错的列。
-
+* `column` - 出错的列。
 * `fatal` - usually omitted, but will be set to true if there's a parsing error (not related to a rule).
-
-* `fatal`- 通常忽略，但是有解析错误会被设置为true（和规则无关）。
-
+* `fatal` - 通常忽略，但是有解析错误会被设置为true（和规则无关）。
 * `line` - the line on which the error occurred.
-
-* `line`- 出错的行。
-
+* `line` - 出错的行。
 * `message` - the message that should be output.
-
-* `message`- 应该被输出的信息。
-
+* `message` - 应该被输出的信息。
 * `nodeType` - the node or token type that was reported with the problem.
-
-* `nodeType`-和问题一起报到的节点和令牌类型。
-
+* `nodeType` - 和问题一起报到的节点和令牌类型。
 * `ruleId` - the ID of the rule that triggered the messages (or null if `fatal` is true).
-
-* `ruleId`-触发该消息的规则的ID(如果`fatal`为true则此值为null)。
-
+* `ruleId` - 触发该消息的规则的ID(如果`fatal`为true则此值为null)。
 * `severity` - either 1 or 2, depending on your configuration.
-
-* `serverity`-根据你的配置，值为1或2。
-
+* `serverity` - 根据你的配置，值为1或2。
 * `source` - the line of code where the problem is (or empty string if it can't be found).
-
-* `source`-引起问的的代码的所在行（如果找不到的话就为空）。
-
+* `source` - 引起问的的代码的所在行（如果找不到的话就为空）。
 * `fix` - an object describing the fix for the problem (this property is omitted if no fix is available).
-
-* `fix`- 描述修复问题信息的对象（如果没有修复则会忽略此属性）。
+* `fix` - 描述修复问题信息的对象（如果没有修复则会忽略此属性）。
 
 You can also get an instance of the `SourceCode` object used inside of `linter` by using the `getSourceCode()` method:
 
@@ -195,79 +167,36 @@ The `CLIEngine` is a constructor, and you can create a new instance by passing i
 `CLIEngine`是一个构造器，你可以通过传递想用的选项创建一个实例。下面是可以的选项：
 
 * `configFile` - The configuration file to use (default: null). Corresponds to `-c`.
-
-* `configFile` -要使用的配置文件（默认：null）。对应于`-c`。
-
+* `configFile` - 要使用的配置文件（默认：null）。对应于`-c`。
 * `envs` - An array of environments to load (default: empty array). Corresponds to `--env`.
-
 * `envs` -需要加载的环境的数组（默认为空数组）。对应于`--env`。
-
 * `extensions` - An array of filename extensions that should be checked for code. The default is an array containing just `".js"`. Corresponds to `--ext`.
-
 * `extensions`-应被代码检查的文件名扩展的数组。默认为仅包含`".js"`的数组。对应于`--ext`。
-
 * `globals` - An array of global variables to declare (default: empty array). Corresponds to `--global`.
-
 * `globals` -要声明为全局变量的数组（默认为空数组）。对应于`--global`。
-
 * `fix` - True indicates that fixes should be applied to the text when possible.
-
 * `fix` - True代表可能时修改应该到文本。
-
-* `ignore` - False disables use of 
-
-* `ignore`- 值为false时禁用。
-
-* `.eslintignore` (default: true). Corresponds to `--no-ignore`.
-
-* `.eslintignore` (默认true)。对应于 `--no-ignore`.
-
-* `ignorePath` - The ignore file to use instead of 
-
-* `ignorePath` - 要代替的忽略文件。
-
-* `.eslintignore` (default: null). Corresponds to `--ignore-path`.
-
-* `.eslintignore` (默认为null)。对应于`--ignore-path`.
-
+* `ignore` - False disables use of `.eslintignore` (default: true). Corresponds to `--no-ignore`.
+* `ignore`- 值为false时禁用`.eslintignore`(默认为true)。对应于 `--no-ignore`。
+* `ignorePath` - The ignore file to use instead of `.eslintignore` (default: null). Corresponds to `--ignore-path`.
+* `ignorePath` - 要使用的忽略文件不是`.eslintignore` (默认为null)。对应于`--ignore-path`。
 * `ignorePattern` - Glob patterns for paths to ignore. String or array of strings.
-
-* `ignorePattern` - 忽略路径的Glob模式.。字符串或者字符串的数组。
-
+* `ignorePattern` - 忽略路径的Glob模式。字符串或者字符串的数组。
 * `baseConfig` - Set to false to disable use of base config. Could be set to an object to override default base config as well.
-
 * `baseConfig` - 设置为false禁用基本配置。 也可以设置为一个对象来重写基本配置。
-
 * `rulePaths` - An array of directories to load custom rules from (default: empty array). Corresponds to `--rulesdir`.
-
 * `rulePaths` - 用来从自定义规则加载的目录的数组。 (默认为空数组)。 对应于`--rulesdir`。
-
 * `rules` - An object of rules to use (default: null). Corresponds to `--rule`.
-
 * `rules` - 要使用的规则的对象 (默认为null)。 对应于 `--rule`。
-
-* `useEslintrc` - Set to false to disable use of 
-
-* `useEslintrc` - 设置为false时禁用。
-
-`.eslintrc` files (default: true). Corresponds to `--no-eslintrc`.
-
-`.eslintrc` 文件 (默认为true)。对应于`--no-eslintrc`。
-
+* `useEslintrc` - Set to false to disable use of `.eslintrc` files (default: true). Corresponds to `--no-eslintrc`.
+* `useEslintrc` - 设置为false时禁用`.eslintrc`文件(默认为true)。对应于`--no-eslintrc`。
 * `parser` - Specify the parser to be used (default: `espree`). Corresponds to `--parser`.
-
 * `parser` - 指定使用的解析器(默认为 `espree`)。对应于 `--parser`。
-
 * `cache` - Operate only on changed files (default: `false`). Corresponds to `--cache`.
-
 * `cache` - 仅操作改变的文件(默认为 `false`)。对应于`--cache`.
-
 * `cacheFile` - Name of the file where the cache will be stored (default: `.eslintcache`). Corresponds to `--cache-file`. Deprecated: use `cacheLocation` instead.
-
 * `cacheFile` - 存放缓存的文件名。（默认为`.eslintcache`）。对应于`--cache-file`。已经过时，用`cacheLocation`代替。
-
 * `cacheLocation` - Name of the file or directory where the cache will be stored (default: `.eslintcache`). Correspond to `--cache-location`
-
 * `cacheLocation` - 存放缓存的文件或者目录名。（默认为`.eslintcache`）。 对应于--cache-location`。
 
 For example:
@@ -355,6 +284,7 @@ Once you get a report object, it's up to you to determine how to output the resu
 You can pass filesystem-style or glob patterns to ESLint and have it function properly. In order to achieve this, ESLint must resolve non-glob patterns into glob patterns before determining which files to execute on. The `resolveFileGlobPatterns()` methods uses the current settings from `CLIEngine` to resolve non-glob patterns into glob patterns. Pass an array of patterns that might be passed to the ESLint CLI and it will return an array of glob patterns that mean the same thing. Here's an example:
 
 你可以传递filesystem-style 或者 glob 模式给 ESLint，以让它正常运行。为了做到这点，ESLint必须在确定要执行的文件之前将non-glob模式分解为glob模式 。`resolveFileGlobPatterns()` 方法使用`CLIEngine`的当前设置将non-glob模式分解为glob模式 。传递一个模式的数组，它可能传入到ESLint CLI ，将返回一个glob模式的数组意味着同样的事情。例如：
+
 ```js
 var CLIEngine = require("eslint").CLIEngine;
 
@@ -484,6 +414,7 @@ Retrieves a formatter, which you can then use to format a report object. The arg
 获取一个格式化工具，可以用它格式报告对象。参数或者是内建格式化工具的名字：
 
 * "[stylish](./user-guide/formatters#stylish)" (the default)
+* "[stylish](./user-guide/formatters#stylish)" (默认)
 * "[checkstyle](./user-guide/formatters#checkstyle)"
 * "[compact](./user-guide/formatters#compact)"
 * "[html](./user-guide/formatters#html)"
@@ -588,6 +519,8 @@ CLIEngine.outputFixes(report);
 ```
 
 ## Deprecated APIs
+
+## 启用的API
 
 * `cli` - the `cli` object has been deprecated in favor of `CLIEngine`. As of v1.0.0, `cli` is no longer exported and should not be used by external tools.
 
