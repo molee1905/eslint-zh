@@ -312,11 +312,13 @@ Since `context.options` is just an array, you can use it to determine how many o
 
 When using options, make sure that your rule has some logic defaults in case the options are not provided.
 
-当使用可选项时，要确保你的规则
+当使用可选项时，要确保你的规则一些默认逻辑，以防止没有提供可选项的情况。
 
 ### context.getSourceCode()
 
 The `SourceCode` object is the main object for getting more information about the source code being linted. You can retrieve the `SourceCode` object at any time by using the `getSourceCode()` method:
+
+`SourceCode`是获取被检查源码的更多信息的主要对象。你可以使用`getSourceCode()`在任何时间检索`SourceCode`对象。
 
 ```js
 module.exports = function(context) {
@@ -329,12 +331,15 @@ module.exports = function(context) {
 
 Once you have an instance of `SourceCode`, you can use the methods on it to work with the code:
 
+一旦你获取了`SourceCode`的一个实例，你可以在代码中使用它的方法：
+
 * `getAllComments()` - returns an array of all comments in the source.
+* `getAllComments()` - 返回一个包含源中所有注释的数组
 * `getComments(node)` - returns the leading and trailing comments arrays for the given node.
 * `getFirstToken(node)` - returns the first token representing the given node.
 * `getFirstTokens(node, count)` - returns the first `count` tokens representing the given node.
 * `getJSDocComment(node)` - returns the JSDoc comment for a given node or `null` if there is none.
-* `getLastToken(node)` - returns the last token representing the given node.
+* `getLastToken(node)` - 返回给定节点的JSDoc注释，如果没有则返回null。
 * `getLastTokens(node, count)` - returns the last `count` tokens representing the given node.
 * `getNodeByRangeIndex(index)` - returns the deepest node in the AST containing the given source index.
 * `isSpaceBetweenTokens(first, second)` - returns true if there is a whitespace character between the two tokens.
@@ -343,17 +348,26 @@ Once you have an instance of `SourceCode`, you can use the methods on it to work
 * `getTokenBefore(nodeOrToken)` - returns the first token before the given node or token.
 * `getTokenByRangeStart(index)` - returns the token whose range starts at the given index in the source.
 * `getTokens(node)` - returns all tokens for the given node.
+* `getTokens(node)` - 返回给定节点的所有记号。
 * `getTokensAfter(nodeOrToken, count)` - returns `count` tokens after the given node or token.
+* `getTokensAfter(nodeOrToken, count)` - 返回给定节点或记号之后的`count`记号。
 * `getTokensBefore(nodeOrToken, count)` - returns `count` tokens before the given node or token.
+* `getTokensBefore(nodeOrToken, count)` - 返回给定节点或记号之前的`count`记号。
 * `getTokensBetween(node1, node2)` - returns the tokens between two nodes.
+* `getTokensBetween(node1, node2)` - 返回两个节点间记号。
 
 There are also some properties you can access:
 
+也有一些属性可供你访问：
+
 * `text` - the full text of the code being linted.
+* `text` - 被检查的代码全文。
 * `ast` - the `Program` node of the AST for the code being linted.
 * `lines` - an array of lines, split according to the specification's definition of line breaks.
 
 You should use a `SourceCode` object whenever you need to get more information about the code being linted.
+
+你应该使用`SourceCode`对象，无论在何时你需要获取有关被检查的代码的更多信息。
 
 ### Options Schemas
 
