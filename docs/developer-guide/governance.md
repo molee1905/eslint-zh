@@ -17,7 +17,7 @@ ESLint是依赖社区贡献的开源项目。任何人都可以通过提交代�
 
 Users are community members who have a need for the project. Anyone can be a User; there are no special requirements. Common User contributions include evangelizing the project (e.g., display a link on a website and raise awareness through word-of-mouth), informing developers of strengths and weaknesses from a new user perspective, or providing moral support (a "thank you" goes a long way).
 
-用户为对该项目有需求的社区成员。所有人都可以成为用户，并我没有任何特殊的需求。普遍用户的贡献包括宣传该项目（在网站上展示链接或者通过口碑吸引注意），从新用户的角度告知开发者优缺点，或者提供道义上的支持（感谢长期的发展）。
+用户为对该项目有需求的社区成员。所有人都可以成为用户，并且没有任何特殊的需求。普遍用户的贡献包括宣传该项目（在网站上展示链接或者通过口碑吸引注意），从新用户的角度告知开发者优缺点，或者提供道义上的支持（感谢长期的发展）。
 
 Users who continue to engage with the project and its community will often become more and more involved. Such Users may find themselves becoming Contributors, as described in the next section.
 
@@ -177,6 +177,10 @@ A Project Lead can be invited to become an Administrator by an existing Administ
 
 ----
 
+This work is a derivative of [YUI Contributor Model](https://github.com/yui/yui3/wiki/Contributor-Model).
+
 本项工作衍生于 [YUI Contributor Model](https://github.com/yui/yui3/wiki/Contributor-Model)。
+
+This work is licensed under a [Creative Commons Attribution-ShareAlike 2.0 UK: England & Wales License](http://creativecommons.org/licenses/by-sa/2.0/uk/).
 
 本项工作采用[Creative Commons Attribution-ShareAlike 2.0 UK: England & Wales License](http://creativecommons.org/licenses/by-sa/2.0/uk/)授权。
