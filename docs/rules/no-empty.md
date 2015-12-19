@@ -94,6 +94,7 @@ If you intentionally use empty statements then you can disable this rule.
 ## Version
 
 This rule was introduced in ESLint 0.0.2.
+
 这个规则是在ESLint 0.0.2 中引进发布的。
 
 ## Resources
