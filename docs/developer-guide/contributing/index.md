@@ -5,12 +5,13 @@ layout: doc
 
 # Contributing
 
+# 贡献
+
 One of the great things about open source projects is that anyone can contribute in any number of meaningful ways. ESLint couldn't exist without the help of the many contributors it's had since the project began, and we want you to feel like you can contribute and make a difference as well.
 
-This guide is intended for anyone who wants to contribute to an ESLint project. Please read it carefully as it answers a lot of the questions many newcomers have when first working with our projects.
-
-# 贡献
 关于开源项目最伟大的地方之一在于任何人都能够以一些有意义的方式作出贡献。ESLint 项目之所以存在也离不开众多贡献者从始至终的帮助，我们希望你觉得你可以有所贡献并且做的很棒。
+
+This guide is intended for anyone who wants to contribute to an ESLint project. Please read it carefully as it answers a lot of the questions many newcomers have when first working with our projects.
 
 本指南适用于任何想要给 ESLint 项目做出贡献的人。请仔细阅读，因为它回答了许多新人在第一次参与我们项目时遇到的问题。
 
