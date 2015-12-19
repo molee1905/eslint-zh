@@ -70,6 +70,9 @@ Related aside: there are some interesting caveats in IE 6-8 where the exception 
 
 This rule was introduced in ESLint 0.0.9.
 
+这个规则是在ESLint 0.0.9 中引进发布的。
+
+
 ## Resources
 
 * [Rule source](https://github.com/eslint/eslint/tree/master/lib/rules/no-ex-assign.js)
