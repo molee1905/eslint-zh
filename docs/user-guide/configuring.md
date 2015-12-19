@@ -119,7 +119,7 @@ Setting language options helps ESLint determine what is a parsing error. All lan
 
 By default, ESLint uses [Espree](https://github.com/eslint/espree) as its parser. You can optionally specify that a different parser should be used in your configuration file so long as the parser meets the following requirements:
 
-ESLint默认使用[Espree](https://github.com/eslint/espree)做它的解析器，你可以在配置文件中任意地指定一个不同的解析器，只要它满足一下要求：
+ESLint默认使用[Espree](https://github.com/eslint/espree)做它的解析器，你可以在配置文件中任意地指定一个不同的解析器，只要它满足以下要求：
 
 1. It must be an npm module installed locally.
 1. 它必须是本地安装的npm模块
@@ -149,15 +149,12 @@ To indicate the npm module to use as your parser, specify it using the `parser` 
 
 The following parsers are compatible with ESLint:
 
-下面的解析器和EXLint兼容良好：
+下面的解析器和ELint兼容良好：
 
 * [Esprima](https://npmjs.com/package/esprima)
 * [Esprima-FB](https://npmjs.com/package/esprima-fb) - Facebook's fork of Esprima that includes their proprietary syntax additions.
-* [Babel-ESLint](https://npmjs.com/package/babel-eslint) - A wrapper around the [Babel](http://babeljs.io) parser that makes it compatible with ESLint.
-
-
-* [Esprima](https://npmjs.com/package/esprima)
 * [Esprima-FB](https://npmjs.com/package/esprima-fb) - Facebook基于Esprima的库，另增加了它们专用的语法
+* [Babel-ESLint](https://npmjs.com/package/babel-eslint) - A wrapper around the [Babel](http://babeljs.io) parser that makes it compatible with ESLint.
 * [Babel-ESLint](https://npmjs.com/package/babel-eslint) -[Babel](http://babeljs.io) 解析器的封装，使它和ESLint兼容
 
 
@@ -237,7 +234,7 @@ To specify environments using a comment inside of your JavaScript file, use the 
 
 This enables Node.js and Mocha environments.
 
-这段开启了 Node.js 和 Mocha 环境。
+该设置开启了 Node.js 和 Mocha 环境。
 
 To specify environments in a configuration file, use the `env` key and specify which environments you want to enable by setting each to `true`. For example, the following enables the browser and Node.js environments:
 
@@ -401,11 +398,11 @@ In this example, [`eqeqeq`](../rules/eqeqeq) is turned off and [`curly`](../rule
 
 This comment specifies the "double" option for the [`quotes`](../rules/quotes) rule.
 
-这条注释为规则[`quotes`](../rules/quotes)配置了"double"选项。
+这条注释为规则[`quotes`](../rules/quotes)指定了"double"选项。
 
 To configure rules inside of a configuration file, use the `rules` key along with an error level and any options you want to use. For example:
 
-使用关键字`rules`后紧跟着错误级别的方式，在一个配置文件里配置。你可以使用任何想要的规则，例如：
+若要在一个配置文件中配置规则，使用关键字`rules`连同任何你想使用的选项和一个错误级别，例如：
 
 
 ```json
@@ -523,7 +520,7 @@ alert('foo'); // eslint-disable-line
 
 To disable a specific rule on a specific line
 
-在某一行禁用某个规则
+在某一特定的行禁用某个特定的规则
 
 ```js
 alert('foo'); // eslint-disable-line no-alert
