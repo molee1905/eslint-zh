@@ -69,13 +69,13 @@ If you're interested in writing a tool that uses ESLint, then you can use the No
 
 如果你很感兴趣使用ESLint写一个工具，你可以使用Node.js API。
 
-## Section 6: [Contributing](contributing/)
+## Section 7: [Contributing](contributing/)
 
 Once you've made changes that you want to share with the community, the next step is to submit those changes back via a pull request.
 
 一旦你做出改变，想分享到社区，下一步就是通过发送请求提交这些改变。
 
-## Section 7: [Governance](governance.html)
+## Section 8: [Governance](governance.html)
 
 After you've made several contributions, you might be eligible to be a Committer or Reviewer. Learn what that means for you and your involvement in the project.
 
