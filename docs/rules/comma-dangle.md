@@ -196,7 +196,7 @@ You can turn this rule off if you are not concerned with dangling commas.
 
 This rule was introduced in ESLint 0.16.0.
 
-这个规则是在ESLint 0.16.0中引进发布的。
+该规则是在ESLint 0.16.0 中被引入。
 
 ## Resources
 
