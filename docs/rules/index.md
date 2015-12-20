@@ -17,38 +17,70 @@ Some rules are fixable using the `--fix` command line flag. Those rules are mark
 
 The following rules point out areas where you might have made mistakes.
 
+下面的规则指出了你可能犯错误的地方。
+
 * [comma-dangle](comma-dangle) - disallow or enforce trailing commas (recommended)
+* [comma-dangle](comma-dangle) - 禁止或强化末尾逗号 (recommended)
 * [no-cond-assign](no-cond-assign) - disallow assignment in conditional expressions (recommended)
+* [no-cond-assign](no-cond-assign) - 禁止条件表示中赋值(recommended)
 * [no-console](no-console) - disallow use of `console` in the node environment (recommended)
+* [no-console](no-console) - 禁止node环境下使用 `console`(recommended)
 * [no-constant-condition](no-constant-condition) - disallow use of constant expressions in conditions (recommended)
+* [no-constant-condition](no-constant-condition) - 禁止在条件中使用常量表达式 (recommended)
 * [no-control-regex](no-control-regex) - disallow control characters in regular expressions (recommended)
+* [no-control-regex](no-control-regex) - 禁止在正则表达式中使用控制字符 (recommended)
 * [no-debugger](no-debugger) - disallow use of `debugger` (recommended)
+* [no-debugger](no-debugger) - 禁用 `debugger` (recommended)
 * [no-dupe-args](no-dupe-args) - disallow duplicate arguments in functions (recommended)
+* [no-dupe-args](no-dupe-args) - 禁止函数中有重复参数(recommended)
 * [no-dupe-keys](no-dupe-keys) - disallow duplicate keys when creating object literals (recommended)
+* [no-dupe-keys](no-dupe-keys) - 创建对象字面量时，禁止重复的键 (recommended)
 * [no-duplicate-case](no-duplicate-case) - disallow a duplicate case label. (recommended)
+* [no-duplicate-case](no-duplicate-case) - 禁止重复的case标签 (recommended)
 * [no-empty-character-class](no-empty-character-class) - disallow the use of empty character classes in regular expressions (recommended)
+* [no-empty-character-class](no-empty-character-class) - 禁止在正则表达式中使用空字符集 (recommended)
 * [no-empty](no-empty) - disallow empty statements (recommended)
+* [no-empty](no-empty) - 禁止空语句 (recommended)
 * [no-ex-assign](no-ex-assign) - disallow assigning to the exception in a `catch` block (recommended)
+* [no-ex-assign](no-ex-assign) - 禁止对 `catch` 块的异常进行赋值 (recommended)
 * [no-extra-boolean-cast](no-extra-boolean-cast) - disallow double-negation boolean casts in a boolean context (recommended)
+* [no-extra-boolean-cast](no-extra-boolean-cast) - 在布尔类型的上下文中禁止双重否定布尔转换 (recommended)
 * [no-extra-parens](no-extra-parens) - disallow unnecessary parentheses
+* [no-extra-parens](no-extra-parens) - 禁止不必要的括号
 * [no-extra-semi](no-extra-semi) - disallow unnecessary semicolons (recommended) (fixable)
+* [no-extra-semi](no-extra-semi) - 禁止不必要的分号 (recommended) (fixable)
 * [no-func-assign](no-func-assign) - disallow overwriting functions written as function declarations (recommended)
+* [no-func-assign](no-func-assign) - 禁止重写函数声明 (recommended)
 * [no-inner-declarations](no-inner-declarations) - disallow function or variable declarations in nested blocks (recommended)
+* [no-inner-declarations](no-inner-declarations) - 禁止在嵌套的块中声明函数或变量 (recommended)
 * [no-invalid-regexp](no-invalid-regexp) - disallow invalid regular expression strings in the `RegExp` constructor (recommended)
+* [no-invalid-regexp](no-invalid-regexp) - 禁止`RegExp`构造函数中无效的正则表达式字符串 (recommended)
 * [no-irregular-whitespace](no-irregular-whitespace) - disallow irregular whitespace outside of strings and comments (recommended)
+* [no-irregular-whitespace](no-irregular-whitespace) - 禁止在字符串和注释之外不规则的空白 (recommended)
 * [no-negated-in-lhs](no-negated-in-lhs) - disallow negation of the left operand of an `in` expression (recommended)
+* [no-negated-in-lhs](no-negated-in-lhs) - 禁止`in`操作符的否定的左操作数(recommended)
 * [no-obj-calls](no-obj-calls) - disallow the use of object properties of the global object (`Math` and `JSON`) as functions (recommended)
+* [no-obj-calls](no-obj-calls) - 禁止全局对象(`Math` 和 `JSON`)当作函数使用 (recommended)
 * [no-regex-spaces](no-regex-spaces) - disallow multiple spaces in a regular expression literal (recommended)
+* [no-regex-spaces](no-regex-spaces) - 禁止在正则表达式字面量中使用多个空格 (recommended)
 * [no-sparse-arrays](no-sparse-arrays) - disallow sparse arrays (recommended)
+* [no-sparse-arrays](no-sparse-arrays) - 禁用稀疏数组 (recommended)
 * [no-unexpected-multiline](no-unexpected-multiline) - Avoid code that looks like two expressions but is actually one
+* [no-unexpected-multiline](no-unexpected-multiline) - 避免代码看起来像两个表达式但实际上是一个
 * [no-unreachable](no-unreachable) - disallow unreachable statements after a return, throw, continue, or break statement (recommended)
+* [no-unreachable](no-unreachable) - 禁止return， throw， continue或 break 语句之后的不可达语句 (recommended)
 * [use-isnan](use-isnan) - disallow comparisons with the value `NaN` (recommended)
+* [use-isnan](use-isnan) - 禁止与 `NaN`进行比较 (recommended)
 * [valid-jsdoc](valid-jsdoc) - Ensure JSDoc comments are valid
+* [valid-jsdoc](valid-jsdoc) - 确保JSDoc注释是有效的
 * [valid-typeof](valid-typeof) - Ensure that the results of typeof are compared against a valid string (recommended)
+* [valid-typeof](valid-typeof) - 确保typeof结果与一个有效的字符串相比较 (recommended)
 
 ## Best Practices
 
 These are rules designed to prevent you from making mistakes. They either prescribe a better way of doing something or help you avoid footguns.
+
+这些规则是为了阻止你犯错误。They either prescribe a better way of doing something or help you avoid footguns.
 
 * [accessor-pairs](accessor-pairs) - Enforces getter/setter pairs in objects
 * [block-scoped-var](block-scoped-var) - treat `var` statements as if they were block scoped
@@ -148,15 +180,25 @@ These rules have to do with variable declarations.
 
 These rules are specific to JavaScript running on Node.js or using CommonJS in the browser.
 
+这些规则是对javascript来时是特殊，它们运行在Node.js上或者在浏览器中使用CommonJS。
+
 * [callback-return](callback-return) - enforce `return` after a callback
 * [global-require](global-require) - enforce `require()` on top-level module scope
+* [global-require](global-require) - 强制 `require()` 出现在顶层模块作用域中
 * [handle-callback-err](handle-callback-err) - enforce error handling in callbacks
+* [handle-callback-err](handle-callback-err) - 强制回调函数中有容错处理
 * [no-mixed-requires](no-mixed-requires) - disallow mixing regular variable and require declarations
+* [no-mixed-requires](no-mixed-requires) - 禁止混合常规变量和require声明
 * [no-new-require](no-new-require) - disallow use of `new` operator with the `require` function
+* [no-new-require](no-new-require) - 禁止对`require`函数使用`new` 操作符
 * [no-path-concat](no-path-concat) - disallow string concatenation with `__dirname` and `__filename`
+* [no-path-concat](no-path-concat) - 禁止同`__dirname` 和 `__filename`进行字符串明教
 * [no-process-exit](no-process-exit) - disallow `process.exit()`
+* [no-process-exit](no-process-exit) - 禁用 `process.exit()`
 * [no-restricted-modules](no-restricted-modules) - restrict usage of specified node modules
+* [no-restricted-modules](no-restricted-modules) - 限制指定的node模块的使用
 * [no-sync](no-sync) - disallow use of synchronous methods
+* [no-sync](no-sync) - 禁用同步方法
 
 ## Stylistic Issues
 
