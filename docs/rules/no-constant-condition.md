@@ -100,7 +100,7 @@ for (;;) {
 
 This rule was introduced in ESLint 0.4.1.
 
-该规则是在ESLint 0.4.1中引进发布的
+该规则是在ESLint 0.4.1中被引入的
 
 ## Resources
 

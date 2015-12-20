@@ -66,7 +66,7 @@ If you intentionally use extra semicolons then you can disable this rule.
 
 This rule was introduced in ESLint 0.0.9.
 
-这个规则是在ESLint 0.0.9 中引进发布的。
+该规则是在ESLint 0.0.9 中被引入的。
 
 ## Resources
 

@@ -166,7 +166,7 @@ The function declaration portion rule will be rendered obsolete when [block-scop
 
 This rule was introduced in ESLint 0.6.0.
 
-这个规则是在ESLint 0.6.0 中引进的。
+该规则是在ESLint 0.6.0 中引进的。
 
 
 ## Resources

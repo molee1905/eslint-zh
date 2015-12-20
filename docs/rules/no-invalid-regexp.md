@@ -61,7 +61,7 @@ ECMAScript 6 添加了 “u” ([unicode](https://people.mozilla.org/~jorendorff
 
 This rule was introduced in ESLint 0.1.4.
 
-这个规则是在ESLint 0.1.4 中引进的。
+该规则是在ESLint 0.1.4 中引进的。
 
 ## Resources
 

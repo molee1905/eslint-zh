@@ -40,7 +40,7 @@ If your code is still very much in development and don't want to worry about str
 
 This rule was introduced in ESLint 0.0.2.
 
-这个规则是在ESLint 0.0.2中引进发布的。
+该规则是在ESLint 0.0.2中被引入的。
 
 ## Resources
 

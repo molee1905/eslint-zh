@@ -57,7 +57,7 @@ var bar = new RegExp("^abc[]");
 
 This rule was introduced in ESLint 0.22.0.
 
-这个规则是在ESLint 0.22.0 中引进发布的。
+该规则是在ESLint 0.22.0 中被引入的。
 
 ## Resources
 
