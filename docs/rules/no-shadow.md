@@ -31,7 +31,7 @@ This rule aims to eliminate shadowed variable declarations.
 
 The following patterns are considered problems:
 
-错误：
+以下模式被认为是有问题的：
 
 ```js
 /*eslint no-shadow: 2*/

@@ -88,7 +88,7 @@ You can use this option if you want to prevent `typeof` check on a variable whic
 
 The following patterns are considered problems with option `typeof` set:
 
-错误：
+当设置为`typeof`，以下模式被认为是有问题的：
 
 ```js
 /* eslint no-undef: [2, { typeof: true }] */
@@ -98,7 +98,7 @@ if(typeof a === "string"){}      /* error "a" is not defined. */
 
 The following patterns are not considered problems with option `typeof` set:
 
-正确：
+当设置为`typeof`，以下模式被认为是没有问题的：
 
 ```js
 /* eslint no-undef: [2, { typeof: true }] */

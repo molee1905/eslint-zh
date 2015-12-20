@@ -15,7 +15,7 @@ This rule aims to create clearer code by disallowing the bad practice of creatin
 
 The following patterns are considered problems:
 
-错误：
+以下模式被认为是有问题的：
 
 ```js
 /*eslint no-label-var: 2*/
@@ -31,7 +31,7 @@ x:               /*error Found identifier with same name as label.*/
 
 The following patterns are not considered problems:
 
-正确：
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint no-label-var: 2*/
