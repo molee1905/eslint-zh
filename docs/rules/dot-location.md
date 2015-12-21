@@ -4,7 +4,7 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Enforce newline before and after dot (dot-location)
-# 在点符号前后强制新行
+# 在点号之前或之后强制换行 (dot-location)
 
 JavaScript allows you to place newlines before or after a dot in a member expression.
 
@@ -67,7 +67,6 @@ The following patterns are not considered problems:
 
 以下模式被认为是没有问题的：
 
-
 ```js
 /*eslint dot-location: [2, "object"]*/
 
@@ -86,7 +85,6 @@ The following patterns are considered problems:
 
 以下模式被认为是有问题的：
 
-
 ```js
 /*eslint dot-location: [2, "property"]*/
 
@@ -97,7 +95,6 @@ property;
 The following patterns are not considered problems:
 
 以下模式被认为是没有问题的：
-
 
 ```js
 /*eslint dot-location: [2, "property"]*/
