@@ -4,12 +4,11 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Require Following Curly Brace Conventions (curly)
-#需要大括号跟随
+# 要求遵循大括号约定 (curly)
 
 JavaScript allows the omission of curly braces when a block contains only one statement.
 
-当只有一条语句时，JavaScript允许省略大括号
-
+当只有一条语句时，JavaScript允许省略大括号。
 
 However, it is considered by many to be best practice to _never_ omit curly braces around blocks, even when they are optional, because it can lead to bugs and reduces code clarity. So the following:
 然而，很多人认为，在块区域前后时刻保留大括号是一种最佳实践，即使他们是可有可无的，因为省略大括号会导致错误，并且降低代码的清晰度。所以以下模式：
@@ -114,6 +113,8 @@ for (var i=0; i < items.length; i++) { /*error Unnecessary { after 'for' conditi
 ```
 
 It will not warn for these patterns:
+
+以下模式不会给出警告：
 
 ```js
 /*eslint curly: [2, "multi"]*/
@@ -354,7 +355,7 @@ If you have no strict conventions about when to use block statements and when no
 
 This rule was introduced in ESLint 0.0.2.
 
-此规则在ESLint 0.0.2中被引入
+此规则在ESLint 0.0.2中被引入。
 
 ## Resources
 
