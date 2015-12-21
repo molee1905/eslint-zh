@@ -5,7 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow the type conversion with shorter notations. (no-implicit-coercion)
 
-#禁止使用较短的符号实现类型转换
+# 禁止使用较短的符号实现类型转换
 
 In JavaScript, there are a lot of different ways to convert value types.
 Some of them might be hard to read and understand.
