@@ -157,7 +157,7 @@ it will disallow spacing for cases matching the exception. Likewise,
 if `"never"` is set to disallow spacing and an exception is set to `true`,
 it will enforce spacing for cases matching the exception.
 
-这些例外作用在第一个选项的基础上。也就是，如果`"always"`设置为强制使用空格但例外情况被设置为`false`，那么符合这个例外的将禁止使用空格。同样的，如果`"never"`设置为禁止试用空格但例外情况被设为`true`，那么符合这个例外的将强制使用空格。
+这些例外作用在第一个选项的基础上。也就是，如果`"always"`设置为强制使用空格但例外情况被设置为`false`，那么符合这个例外的将禁止使用空格。同样的，如果`"never"`设置为禁止使用空格但例外情况被设为`true`，那么符合这个例外的将强制使用空格。
 
 You can add exceptions like so:
 
