@@ -5,7 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow lexical declarations in case/default clauses (no-case-declarations)
 
-#禁止在case/default中使用语法声明
+# 不允许在case或default子句中使用词法声明 (no-case-declarations)
 
 This rule disallows lexical declarations (`let`, `const`, `function` and `class`)
 in `case`/`default` clauses. The reason is that the lexical declaration is visible
@@ -83,8 +83,6 @@ switch (foo) {
 
 If you depend on fall through behavior and want access to bindings introduced in the case block.
 
-
-
 ## Related Rules
 
 * [no-fallthrough](no-fallthrough)
@@ -92,6 +90,8 @@ If you depend on fall through behavior and want access to bindings introduced in
 ## Version
 
 This rule was introduced in ESLint 1.9.0.
+
+该规则在ESLint 1.9.0中被引入。
 
 ## Resources
 
