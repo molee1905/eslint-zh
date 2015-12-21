@@ -4,10 +4,9 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Warning Comments (no-warning-comments)
-＃禁止警告注释(no-warning-comments)
+# 禁止警告注释 (no-warning-comments)
 
 Often code is marked during development process for later work on it or with additional thoughts. Examples are typically `// TODO: do something` or `// FIXME: this is not a good idea`. These comments are a warning signal, that there is something not production ready in your code. Most likely you want to fix it or remove the comments before you roll out your code with a good feeling.
-
 
 通常在开发过程中代码标记是为以后工作或额外的想法。例子通常是`// TODO: 做了什么` 或者 `// FIXME: 不是一个好想法`。这些注释是一个警告信号,在你的代码中不会产生什么。最有可能你想改正或删除评论之前推出你中意的代码。
 
