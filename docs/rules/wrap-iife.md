@@ -5,7 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Require IIFEs to be Wrapped (wrap-iife)
 
-# 需要把立即执行的函数包裹起来
+# 需要把立即执行的函数包裹起来 (wrap-iife)
 
 Require immediate function invocation to be wrapped in parentheses.
 
