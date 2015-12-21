@@ -4,12 +4,11 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # No empty labels (no-empty-label)
-#无空标签（no-empty-label）
+# 禁用空标签（no-empty-label）
 
 Labeled statements are only used in conjunction with labeled break and continue statements. ECMAScript has no goto statement.
 
 ECMAScript没有goto语句.标签语句只能被用来标记break和continue语句。
-
 
 ## Rule Details
 
@@ -19,7 +18,7 @@ This error occurs when a label is used to mark a statement that is not an iterat
 
 The following patterns are considered problems:
 
-错误示例如下：
+以下模式被认为是有问题的：
 
 ```js
 /*eslint no-empty-label: 2*/
@@ -30,7 +29,7 @@ var x = 10;
 
 The following patterns are not considered problems:
 
-正确示例如下：
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint no-empty-label: 2*/
@@ -45,7 +44,7 @@ for (var i=10; i; i--) {
 
 This rule was introduced in ESLint 0.0.9.
 
-这条规则在ESLint 0.0.9中被引入。
+该规则在ESLint 0.0.9 中被引入。
 
 ## Resources
 
