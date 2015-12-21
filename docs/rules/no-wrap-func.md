@@ -14,7 +14,7 @@ layout: doc
 
 Although it's possible to wrap functions in parentheses, this can be confusing when the code also contains immediately-invoked function expressions (IIFEs) since parentheses are often used to make this distinction. For example:
 
-尽管圆括号包围函数是可能的，当代码同时含有立即执行函数表达式（IIFES）时会造成混淆,因为圆括号常常被这样使用。例如：
+尽管圆括号包围函数是可能的，当代码同时含有立即执行函数表达式（IIFEs）时会造成混淆,因为圆括号常常被这样使用。例如：
 
 ```js
 var foo = (function() {
