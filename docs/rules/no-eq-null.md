@@ -5,7 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Null Comparisons (no-eq-null)
 
-#禁止Null比较(no-eq-null)
+# 禁止Null比较 (no-eq-null)
 
 Comparing to `null` without a type-checking operator (`==` or `!=`), can have unintended results as the comparison will evaluate to true when comparing to not just a `null`, but also an `undefined` value.
 
@@ -42,7 +42,6 @@ while (qux != null) {  /*error Use ‘===’ to compare with ‘null’.*/
 The following patterns are considered okay:
 
 以下模式被认为是没有问题的：
-
 
 ```js
 /*eslint no-eq-null: 2*/
