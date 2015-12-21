@@ -4,7 +4,8 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Use of the Comma Operator (no-sequences)
-#不允许使用逗号操作符
+
+# 不允许使用逗号操作符 (no-sequences)
 
 The comma operator includes multiple expressions where only one is expected. It evaluates each operand from left to right and returns the value of the last operand. However, this frequently obscures side effects, and its use is often an accident. Here are some examples of its use:
 
@@ -33,7 +34,6 @@ This rule forbids the use of the comma operator, with the following exceptions:
 * If the expression sequence is explicitly wrapped in parentheses.
 
 如果表达式顺序被显示的括号包裹。
-
 
 The following patterns are considered problems:
 
