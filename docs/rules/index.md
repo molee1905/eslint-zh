@@ -154,7 +154,7 @@ These are rules designed to prevent you from making mistakes. They either prescr
 * [no-new-wrappers](no-new-wrappers) - disallows creating new instances of `String`,`Number`, and `Boolean`
 * [no-new-wrappers](no-new-wrappers) - 禁止创建`String`，`Number`和 `Boolean`的新实例
 * [no-new](no-new) - disallow use of the `new` operator when not part of an assignment or comparison
-* [no-new](no-new) - 非赋值或条件语句禁止试用`new`操作符
+* [no-new](no-new) - 非赋值或条件语句禁止使用`new`操作符
 * [no-octal-escape](no-octal-escape) - disallow use of octal escape sequences in string literals, such as `var foo = "Copyright \251";`
 * [no-octal-escape](no-octal-escape) - 禁止在字符串中使用八进制转义序列，比如 `var foo = "Copyright \251";`
 * [no-octal](no-octal) - disallow use of octal literals (recommended)
@@ -186,7 +186,7 @@ These are rules designed to prevent you from making mistakes. They either prescr
 * [no-void](no-void) - disallow use of the `void` operator
 * [no-void](no-void) - 禁用`void`操作符
 * [no-warning-comments](no-warning-comments) - disallow usage of configurable warning terms in comments - e.g. `TODO` or `FIXME`
-* [no-warning-comments](no-warning-comments) - 禁止在注释中试用可配置的警告术语 - 比如 `TODO` 或 `FIXME`
+* [no-warning-comments](no-warning-comments) - 禁止在注释中使用可配置的警告术语 - 比如 `TODO` 或 `FIXME`
 * [no-with](no-with) - disallow use of the `with` statement
 * [no-with](no-with) - 禁用`with`语句
 * [radix](radix) - require use of the second argument for `parseInt()`
