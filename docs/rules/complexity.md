@@ -4,11 +4,7 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Limit Cyclomatic Complexity (complexity)
-<<<<<<< Updated upstream
-# 限制环路复杂度 (complexity)
-=======
-# 限制环路复杂度(复杂度)
->>>>>>> Stashed changes
+# 限制环路复杂度(complexity)
 
 
 Cyclomatic complexity measures the number of linearly independent paths through a program's source code. This rule allows setting a cyclomatic complexity threshold.
@@ -36,7 +32,7 @@ This rule is aimed at reducing code complexity by capping the amount of cyclomat
 
 The following patterns are considered problems:
 
-以下模式被认为是有问题的：
+错误示例如下：
 
 ```js
 /*eslint complexity: [2, 2]*/
@@ -53,8 +49,7 @@ function a(x) {               /*error Function 'a' has a complexity of 3.*/
 ```
 
 The following patterns are not considered problems:
-
-以下模式被认为是没有问题的：
+正确示例如下：
 
 ```js
 /*eslint complexity: [2, 2]*/
@@ -91,7 +86,7 @@ If you can't determine an appropriate complexity limit for your code, then it's 
 
 This rule was introduced in ESLint 0.0.9.
 
-该规则在ESLint 0.0.9 中被引入。
+此规则在ESLint 0.0.9中被引入。
 
 ## Resources
 
