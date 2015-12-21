@@ -5,11 +5,11 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Require spaces following unary word operators (space-unary-word-ops)
 
-# 一元操作符后要求空格 (space-unary-word-ops)
+# 一元操作符后要求空格(space-unary-word-ops)
 
 **Replacement notice**: This rule was removed and has been replaced by the [space-unary-ops](space-unary-ops) rule.
 
-**替换声明**: 该规则被移除切被[space-unary-ops](space-unary-ops) 规则替换。
+**替换声明**: 该规则被移除且被[space-unary-ops](space-unary-ops)规则替换。
 
 Require spaces following unary word operators.
 
