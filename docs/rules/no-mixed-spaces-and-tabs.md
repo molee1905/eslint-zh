@@ -22,7 +22,7 @@ The `no-mixed-spaces-and-tabs` rule is aimed at flagging any lines of code that 
 
 This option suppresses warnings about mixed tabs and spaces when the latter are used for alignment only. This technique is called [SmartTabs](http://www.emacswiki.org/emacs/SmartTabs). The option is turned off by default.
 
-该选项取消混合试用tab缩进和空格缩进时的警告，前提是后使用的仅仅是为了对齐。这中技术被称为[SmartTabs](http://www.emacswiki.org/emacs/SmartTabs)。该选项默认是关闭的。
+该选项取消混合使用tab缩进和空格缩进时的警告，前提是后使用的仅仅是为了对齐。这中技术被称为[SmartTabs](http://www.emacswiki.org/emacs/SmartTabs)。该选项默认是关闭的。
 
 You can enable this option by using the following configuration:
 
