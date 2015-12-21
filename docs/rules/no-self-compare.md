@@ -5,8 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Self Compare (no-self-compare)
 
-#禁止自身比较（no-self-compare）
-
+# 禁止自身比较（no-self-compare）
 
 Comparing a variable against itself is usually an error, either an typo or refactoring error. It is confusing to the reader and may potentially introduce a runtime error.
 
