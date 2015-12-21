@@ -24,7 +24,9 @@ If you'd like to work on a pull request and you've never submitted code before, 
   * Exception: documentation-only changes do not require an issue.
 1. 确保有一个议题（issue）描述你正在做的事情。你可以新建一个议题（issue）或者表明你正在[working on an existing issue](working-on-issues)。
   * 例外: 只修改文档可以不需要一个议题（issue）。
+
 After that, you're ready to start working on code.
+
 在这之后，表示你做好了开始写代码的准备。
 
 ## Working with Code
@@ -50,6 +52,7 @@ The process of submitting a pull request is fairly straightforward and generally
 
 
 Details about each step are found below.
+
 有关每个步骤的详细信息见下文。
 
 ### Step 1: Create a new branch<a name="step1"></a>
