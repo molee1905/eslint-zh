@@ -4,13 +4,10 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Warning Comments (no-warning-comments)
-<<<<<<< Updated upstream
-# 禁止警告注释 (no-warning-comments)
-=======
 ＃ 禁止警告注释(no-warning-comments)
->>>>>>> Stashed changes
 
 Often code is marked during development process for later work on it or with additional thoughts. Examples are typically `// TODO: do something` or `// FIXME: this is not a good idea`. These comments are a warning signal, that there is something not production ready in your code. Most likely you want to fix it or remove the comments before you roll out your code with a good feeling.
+
 
 通常在开发过程中代码标记是为以后工作或额外的想法。例子通常是`// TODO: 做了什么` 或者 `// FIXME: 不是一个好想法`。这些注释是一个警告信号,在你的代码中不会产生什么。最有可能你想改正或删除评论之前推出你中意的代码。
 
@@ -108,7 +105,7 @@ These patterns would not be considered problems:
 
 * If you have a large code base that was not developed with a policy to not use such warning terms, you might get hundreds of warnings / errors which might be contra-productive if you can't fix all of them (e.g. if you don't get the time to do it) as you might overlook other warnings / errors or get used to many of them and don't pay attention on it anymore.
 
-* 如果你有一个大型的代码基础，没有用此规则进行开发，不使用这种警告条款，你可能会得到数以百计的警告/错误，它可能会降低生产质量如果你不能修复所有这些 (例如如果你没有时间去做它)，因此你可能会忽略其他警告/错误或者习惯它们中的大部分而不会再注意它们。
+* 如果你有一个大型的代码，基于没有用此规则进行开发，不使用这种警告条款，你可能会得到数以百计的警告/错误，它可能会降低生产质量如果你不能修复所有这些问题(例如如果你没有时间去做它)，因此你可能会忽略其他警告/错误或者习惯它们中的大部分而不会再注意它们。
 
 * Same reason as the point above: You shouldn't configure terms that are used very often (e.g. central parts of the native language used in your comments).
 * 正如以上所说的一些原因：你不能配置那些经常被使用的条款(例如中央部分的注释中使用的本地语言)
