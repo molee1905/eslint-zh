@@ -89,7 +89,7 @@ var fs = require('fs'),        // "core"     \
 
 The following patterns are not considered problems:
 
-一下形式被认为没问题：
+以下模式被认为是没问题的：
 
 ```js
 /*eslint no-mixed-requires: 2*/
@@ -112,7 +112,7 @@ var foo = require('foo' + VERSION),
 
 The following patterns are considered problems:
 
-以下形式被认为有问题：
+以下模式被认为有问题的：
 
 ```js
 /*eslint no-mixed-requires: 2*/
@@ -123,7 +123,7 @@ var fs = require('fs'), /*error Do not mix 'require' and other declarations.*/
 
 The following patterns are considered problems when grouping is turned on:
 
-以下形式被认为有问题，当分组关闭：
+当分组关闭时，以下模式被认为有问题的:
 
 ```js
 /*eslint no-mixed-requires: [2, {"grouping": true}]*/
