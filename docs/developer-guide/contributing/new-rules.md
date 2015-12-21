@@ -8,7 +8,7 @@ layout: doc
 
 ESLint is all about rules. For most of the project's lifetime, we've had over 100 rules, and that list continues to grow. However, we can't just accept any proposed rule because all rules need to work cohesively together. As such, we have some guidelines around which rules can be part of the ESLint core and which are better off as custom rules and plugins.
 
-ESLint 全都由规则组成。在项目的大多数时间中，我们已经拥有了超过100条规则，并且规则列表还在持续增加中。然而我们不能一味地接受这些提出的规则，我们需要这些规则在一起能协同工作。因此，我们制定了一些准则,它告诉我们哪些规则可以成为 ESLint 核心的一部分，哪些更适合作为自定义规则或插件。
+ESLint 全都由规则组成。在项目的大多数时间中，我们已经创建了超过100条规则，并且规则列表还在持续增加中。然而我们不能一味地接受这些提出的规则，我们需要这些规则在一起能协同工作。因此，我们制定了一些准则,它告诉我们哪些规则可以成为 ESLint 核心的一部分，哪些更适合作为自定义规则或插件。
 
 ## Core Rule Guidelines
 
@@ -18,11 +18,11 @@ In general, ESLint core rules must be:
 
 1. **Widely applicable.** The rules we distribute need to be of importance to a large number of developers. Individual preferences for uncommon patterns are not supported.
 
-1. **适用广泛。** 我们发布的规则重点针对于大部分的开发者，不支持小众的个人偏好。
+1. **适用广泛。** 我们发布的规则重点针对于大众的开发者，不支持小众的个人偏好。
 
 1. **Generic.** Rules cannot be so specific that users will have trouble understanding when to use them. A rule is typically too specific if describing what it does requires more than two "and"s (if a and b and c and d, then this rule warns).
 
-1.**通用性。** 规则不能太特殊而导致用户使用过程中产生误解。如果一条规则需要2个以上的“and”来描述，那么它通常就是太特殊了。
+1.**通用性。** 规则不能太具体而导致用户使用过程中产生误解。如果一条规则需要2个以上的“and”来描述，那么它通常就是太具体了(if a and b and c and d, then this rule warns)。
 
 1. **Atomic.** Rules must function completely on their own. Rules are expressly forbidden from knowing about the state or presence of other rules.
 
@@ -42,7 +42,7 @@ In general, ESLint core rules must be:
 
 Even though these are the formal criteria for inclusion, each rule is evaluated on its own basis.
 
-尽管这些都是纳入正式的标准，但是每条规则也通过了以上规则的评估。
+尽管这些规则都已经纳入正式的标准，但是每条规则都通过了以上规则的评估。
 
 ## Proposing a Rule
 
@@ -74,4 +74,4 @@ Please keep in mind that we receive a lot of rule proposals and the ESLint team 
 
 Remember that ESLint is completely pluggable, which means you can create your own rules and distribute them using plugins. We did this on purpose because we don't want to be the gatekeepers for all possible rules. Even if we don't accept a rule into the core, that doesn't mean you can't have the exact rule that you want. See the [working with rules](../working-with-rules) and [working with plugins](../working-with-plugins) documentation for more information.
 
-请记住，ESLint 是完全插件化的这意味着你可以创建自己的规则并将它们用插件的方式分发出去。我们有意为之因为我们不愿意做所有可能性规则的守门人。即使我们不能接受这条规则为核心规则，它也并不意味着你不能拥有自己的附加规则。你可以从[working with rules](../working-with-rules) 和[working with plugins](../working-with-plugins) 的文档中找到更多信息。
+请记住，ESLint 是完全插件化的这意味着你可以创建自己的规则并将它们用插件的方式分发出去。我们有意为之因为我们不愿意做所有可能性规则的守门人。即使我们不能接受这条规则为核心规则，它也并不意味着你不能拥有自己想要的附加规则。你可以从[working with rules](../working-with-rules) 和[working with plugins](../working-with-plugins) 的文档中找到更多信息。
