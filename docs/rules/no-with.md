@@ -5,7 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # No with Statements (no-with)
 
-#没有with语句
+# 禁用with语句 (no-with)
 
 The `with` statement is potentially problematic because it adds members of an object to the current scope, making it impossible to tell what a variable inside the block actually refers to. Additionally, the `with` statement cannot be used in strict mode.
 
@@ -33,7 +33,6 @@ with (foo) { /*error Unexpected use of 'with' statement.*/
 If you intentionally use `with` statements then you can disable this rule.
 
 如果你有意要使用`with`语句，可以禁用此规则。
-
 
 ## Further Reading
 
