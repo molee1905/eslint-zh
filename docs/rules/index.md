@@ -202,7 +202,10 @@ These are rules designed to prevent you from making mistakes. They either prescr
 
 These rules relate to using strict mode.
 
+该规则与使用strict模式有关。
+
 * [strict](strict) - controls location of Use Strict Directives
+* [strict](strict) - 控制Use Strict指令的位置
 
 ## Variables
 
