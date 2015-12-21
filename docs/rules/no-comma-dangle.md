@@ -9,7 +9,7 @@ layout: doc
 
 **Replacement notice**: This rule was removed in ESLint v1.0 and replaced by the [comma-dangle](comma-dangle) rule.
 
-**替换声明**: 该规则在 ESLint v1.0 中被移除，被[comma-dangle](comma-dangle) 规则替换。
+**替换声明**: 该规则在 ESLint v1.0 中被移除，被[comma-dangle](comma-dangle)规则替换。
 
 Trailing commas in object literals are valid according to the ECMAScript 5 (and ECMAScript 3!) spec, however IE8 (when not in IE8 document mode) and below will throw an error when it encounters trailing commas in JavaScript.
 

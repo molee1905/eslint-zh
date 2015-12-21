@@ -9,7 +9,7 @@ layout: doc
 
 ESLint is an open source project that depends on contributions from the community. Anyone may contribute to the project at any time by submitting code, participating in discussions, making suggestions, or any other contribution they see fit. This document describes how various types of contributors work within the ESLint project.
 
-ESLint是依赖社区贡献的开源项目。任何人都可以通过提交代码、参与讨论、提出建议或者其他认为适合的方式做出贡献。本文档描述了在ESLint项目中不用方式的贡献如何起作用。
+ESLint是依赖社区贡献的开源项目。任何人都可以通过提交代码、参与讨论、提出建议或者其他适合的方式做出贡献。本文档描述了在ESLint项目中不用方式的贡献如何起作用。
 
 ## Roles and Responsibilities
 
@@ -35,7 +35,7 @@ Contributors have read-only access to source code and so submit changes via pull
 
 As Contributors gain experience and familiarity with the project, their profile within, and commitment to, the community will increase. At some stage, they may find themselves being nominated for committership by an existing Committer.
 
-贡献者获得体验并对项目熟悉，重视并投入，社区就会获得提高。在某个阶段，他们发现自己被现有的提交者提名为committership。
+贡献者获得体验并对项目熟悉，重视并投入，社区就会获得发展。在某个阶段，他们发现自己被现有的提交者提名为committership。
 
 ### Committers
 
@@ -47,11 +47,11 @@ Committers:
 
 * Are expected to work on public branches of the source repository and submit pull requests from that branch to the master branch.
 
-* 期望他在资源库的公共分支工作，并且从这个分支想master分支提交pull requests。
+* 希望在资源库的公共分支工作，并且从这个分支向master分支提交pull requests。
 
 * Are expected to delete their public branches when they are no longer necessary.
 
-* 期望他当不在需要的适合删除公共的分支。
+* 希望其当不在需要的时候删除公共的分支。
 
 * May submit small changes (documentation updates, changes to tests or code comments, configuration changes) without pull requests.
 
@@ -59,7 +59,7 @@ Committers:
 
 * Must submit pull requests for any non-trivial changes.
 
-*必须对重要的修改提交 pull requests 。
+* 必须对重要的修改提交 pull requests 。
 
 * Have their work reviewed by Reviewers before acceptance into the repository.
 
@@ -79,7 +79,7 @@ To become a Committer:
 
 * One must have shown a willingness and ability to participate in the project as a team player. Typically, a potential Committer will need to show that they have an understanding of and alignment with the project, its objectives, and its strategy.
 
-* 必须展示已成员参与到项目中的意愿和能力。一般来说，一个潜在的提交者需要表现他们从客观和策略的角度对与项目紧密合作的理解。
+* 必须展示已成员参与到项目中的意愿和能力。一般来说，一个潜在的提交者需要表现其从客观和策略的角度对与项目紧密合作的理解。
 
 * Committers are expected to be respectful of every community member and to work collaboratively in the spirit of inclusion.
 
@@ -95,7 +95,7 @@ New Committers can be nominated by any existing Committer. Once they have been n
 
 It is important to recognize that committership is a privilege, not a right. That privilege must be earned and once earned it can be removed by the Reviewers in extreme circumstances. However, under normal circumstances committership exists for as long as the Committer wishes to continue engaging with the project.
 
-意思到committership是一种特权但不是权利是非常重要的。这种特权必须要争取，一旦争取它可以在极端的情况下被审阅者移除。但是，正常情况下，这种特权如果提交者愿意继续参与项目将会长期存在。
+意识到committership是一种特权但不是权利是非常重要的。这种特权必须要争取，一旦争取它可以在极端的情况下被审阅者移除。但是，正常情况下，这种特权如果提交者愿意继续参与项目将会长期存在。
 
 A Committer who shows an above-average level of contribution to the project, particularly with respect to its strategic direction and long-term health, may be nominated to become a Reviewer, described below.
 
@@ -129,7 +129,7 @@ To become a Reviewer:
 
 * Reviewers are expected to work in a helpful and collaborative way with the community.
 
-* 审阅者要以有益切协同的方式与社区合作。
+* 审阅者要以有益且协同的方式与社区合作。
 
 * Have given good feedback on others' submissions and displayed an overall understanding of the code quality standards for the project.
 
@@ -147,7 +147,7 @@ A Committer is invited to become a Reviewer by existing Reviewers. A nomination 
 
 Project Leads have additional responsibilities over and above those of a Reviewer. These responsibilities include administration of a GitHub repo, management and scheduling of releases, publish access to npm, issue and milestone tracking (including closing of all issues for any reason), and setting the direction for the project. Project Leads must also ensure the continued development of the project they oversee by nominating Committers and Reviewers for the project, contributing code, maintaining a roadmap, and being a community representative for the project.
 
-相比于审阅者项目，领导者有着额外的责任。他们的责任包括管理 GitHub的仓库，管理和调度发布，发布到npm，问题和里程碑跟踪（包括关闭问题的理由），并要为项目设立发展方向。项目领导也必须保证持续发展，他们负责提交者和审阅者的贡献代码，维护一个路线图，并成为项目的社区代表。
+相比于审阅者项目，领导者有着额外的责任。他们的责任包括管理 GitHub的仓库，管理和调度发布，发布到npm，问题和milestone跟踪（包括关闭问题的理由），并要为项目设立发展方向。项目领导也必须保证持续发展，他们负责提交者和审阅者的贡献代码，维护一个路线图，并成为项目的社区代表。
 
 There are two ways someone can become a Project Lead. First, when an outside project is accepted into the ESLint organization, the person who has been maintaining that project will be the Project Lead. Any community member can suggest a project be included in the ESLint organization.
 
@@ -162,7 +162,7 @@ Second, a Reviewer can be invited to become a Project Lead by an existing Projec
 Administrators oversee the ESLint organization as a whole. They are responsible for administering the GitHub organization, domain name, mailing list, social media presence, and website. Administrators need not be Project Leads but must have been Project Leads at one point in time.
 
 
-管理员监督ESLint组织作为一个整体。他们是负责管理GitHub组织、域名、邮件列表，在社交媒体和网站。管理员不需要项目领导，但必须在一个时间点做过项目领导者。
+管理员监督ESLint组织作为一个整体。他们是负责管理GitHub组织、域名、邮件列表，在社交媒体和网站。管理员不需要是领导项目，但必须在一个时间点做过项目领导者。
 
 
 Administrators oversee the efforts of Project Leads to help organize efforts around projects. They seek out new resources and tools to help the projects work more effectively and represent the organization. Administrators work within the community to understand requirements and reach out through efforts such as fundraising, organizing meetings, instituting policies, and more.
