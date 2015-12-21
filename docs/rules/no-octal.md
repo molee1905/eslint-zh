@@ -4,7 +4,8 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Octal Literals (no-octal)
-#禁止八进制字面量
+
+# 禁止八进制字面量 (no-octal)
 
 Octal literals are numerals that begin with a leading zero, such as:
 
