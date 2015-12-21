@@ -7,7 +7,6 @@ layout: doc
 
 # 不允许覆盖 (no-shadow)
 
-
 Shadowing is the process by which a local variable shares the same name as a variable in its containing scope. For example:
 
 覆盖是指在同一作用域里局部变量和全局变量同名，比如：

@@ -5,7 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Enforce Return After Callback (callback-return)
 
-# 强制返回callback函数
+# 强制返回callback函数 (callback-return)
 
 The callback pattern is at the heart of most I/O and event-driven programming
  in JavaScript.

@@ -5,7 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Unused Variables (no-unused-vars)
 
-# 禁用未使用过变量(no-unused-vars)
+# 禁用未使用过变量 (no-unused-vars)
 
 Variables that are declared and not used anywhere in the code are most likely an error due to incomplete refactoring. Such variables take up space in the code and can lead to confusion by readers.
 

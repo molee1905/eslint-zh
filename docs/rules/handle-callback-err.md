@@ -5,7 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Enforce Callback Error Handling (handle-callback-err)
 
-# 强制回调错误处理(handle-callback-err)
+# 强制回调错误处理 (handle-callback-err)
 
 In node, a common pattern for dealing with asynchronous behavior is called the callback pattern.
 This pattern expects an `Error` object or `null` as the first argument of the callback.

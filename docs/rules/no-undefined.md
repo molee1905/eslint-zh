@@ -5,7 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Use of `undefined` Variable (no-undefined)
 
-# 不允许使用`undefined`变量(no-undefined)
+# 不允许使用`undefined`变量 (no-undefined)
 
 The `undefined` variable is unique in JavaScript because it is actually a property of the global object. As such, in ECMAScript 3 it was possible to overwrite the value of `undefined`. While ECMAScript 5 disallows overwriting `undefined`, it's still possible to shadow `undefined`, such as:
 
@@ -61,7 +61,7 @@ This rule aims to eliminate the use of `undefined`, and as such, generates a war
 
 The following patterns are considered problems:
 
-错误：
+以下模式被认为是有问题的：
 
 ```js
 /*eslint no-undefined: 2*/
@@ -81,7 +81,7 @@ function foo(undefined) { /*error Unexpected use of undefined.*/
 
 The following patterns are not considered problems:
 
-正确：
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint no-undefined: 2*/

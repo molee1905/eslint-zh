@@ -5,7 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Initializing to undefined (no-undef-init)
 
-# 不允许初始化变量值为undefined(no-undef-init)
+# 不允许初始化变量值为undefined (no-undef-init)
 
 In JavaScript, a variable that is declared and not initialized to any value automatically gets the value of `undefined`. For example:
 
