@@ -4,7 +4,7 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Require === and !== (eqeqeq)
-# 需要 === 和 !==(eqeqeq)
+# 要求使用 === 和 !== (eqeqeq)
 
 It is considered good practice to use the type-safe equality operators `===` and `!==` instead of their regular counterparts `==` and `!=`.
 
@@ -36,7 +36,6 @@ This rule is aimed at eliminating the type-unsafe equality operators.
 The following patterns are considered problems:
 
 以下模式被认为是有问题的：
-
 
 ```js
 /* eslint eqeqeq: 2 */
@@ -71,7 +70,6 @@ You can specify this option using the following configuration:
 The following patterns are not considered problems:
 
 以下模式被认为是没有问题的：
-
 
 ```js
 /* eslint eqeqeq: [2, "smart"] */
@@ -117,7 +115,7 @@ You can specify this option using the following configuration:
 
 The following patterns are not considered problems:
 
-如下模式被认为是没有问题的：
+以下模式被认为是没有问题的：
 
 ```js
 /* eslint eqeqeq: [2, "allow-null"] */
@@ -127,7 +125,7 @@ foo == null
 
 The following patterns are considered problems with "allow-null":
 
-如下模式在"allow-null"下被认为是有问题的：
+如果设置了"allow-null"，以下模式被认为是有问题的：
 
 ```js
 /* eslint eqeqeq: [2, "allow-null"] */
