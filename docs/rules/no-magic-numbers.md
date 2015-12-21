@@ -5,7 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Magic Numbers (no-magic-numbers)
 
-#禁止幻数(no-magic-numbers)
+# 禁止幻数 (no-magic-numbers)
 
 'Magic numbers' are numbers that occur multiple time in code without an explicit meaning.
 They should preferably be replaced by named constants.
