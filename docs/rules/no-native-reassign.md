@@ -4,7 +4,8 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Reassignment of Native Objects (no-native-reassign)
-#禁止重新分配内置对象
+
+# 禁止对原生对象赋值 (no-native-reassign)
 
 Reports an error when they encounter an attempt to assign a value to built-in native object.
 
@@ -49,7 +50,6 @@ This rule accepts an `exceptions` option, which can be used to specify a list of
 If you are trying to override one of the native objects.
 
 如果你想尝试覆盖其中一个内置对象。
-
 
 ## Related Rules
 
