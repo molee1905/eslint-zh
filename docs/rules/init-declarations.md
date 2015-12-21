@@ -93,7 +93,7 @@ Variables must not be initialized at declaration, except in for loops, where it 
 When configured with `"always"` (the default), the following patterns are considered problems:
 
 
-当配置了  `"always"` (默认值） ，以下模式被认为有问题：
+当配置了  `"always"` (默认值） ，以下模式被认为是有问题的：
 
 ```js
 /*eslint init-declarations: [2, "always"]*/
@@ -107,7 +107,7 @@ function foo() {
 
 The following patterns are not considered problems with `"always"`.
 
-下面的模式不被视为有问题 `"always"`。
+当设置为`"always"`，以下模式被认为是没有问题的：
 
 ```js
 /*eslint init-declarations: [2, "always"]*/
@@ -138,7 +138,7 @@ function foo() {
 
 The following patterns are not considered problems with `"never"`. Note that `const` variable initializations are ignored with `"never"`.
 
-下面的模式不被视有问题 `"never"`。需要注意的是 `const` 变量初始化忽略 `"never"`。
+当设置为 `"never"`，下面的模式被认为是没有问题的。需要注意的是 `const` 变量初始化忽略 `"never"`。
 
 ```js
 /*eslint init-declarations: [2, "never"]*/
@@ -153,7 +153,7 @@ function foo() {
 
 With `"ignoreForLoopInit"` enabled, the following pattern is not considered a problem.
 
-随着 `"ignoreForLoopInit"` 启用，下面的模式不被视为有问题。
+随着 `"ignoreForLoopInit"` 启用，下面的模式被认为是没有问题的。
 
 ```js
 /*eslint init-declarations: [2, "never", { "ignoreForLoopInit": true }]*/
