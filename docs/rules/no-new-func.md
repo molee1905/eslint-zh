@@ -4,7 +4,7 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Function Constructor (no-new-func)
-#禁止Function构造函数(no-new-func)
+# 禁止Function构造函数 (no-new-func)
 
 It's possible to create functions in JavaScript using the `Function` constructor, such as:
 
@@ -33,7 +33,7 @@ var x = Function("a", "b", "return a + b");     /*error The Function constructor
 
 The following patterns are not considered problems:
 
-以下模式被认为是正确的：
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint no-new-func: 2*/
@@ -48,7 +48,6 @@ var x = function (a, b) {
 In more advanced cases where you really need to use the `Function` constructor.
 
 在一些更高级的情况下，你真的需要使用`Function`构造函数。
-
 
 ## Further Reading
 
