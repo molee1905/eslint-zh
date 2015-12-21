@@ -28,7 +28,7 @@ requires that you specify the name of your error object. The name of the argumen
 
 The following are considered problems:
 
-以下形式被认为有问题：
+以下模式被认为有问题的：
 
 ```js
 /*eslint handle-callback-err: 2*/
@@ -41,7 +41,7 @@ function loadData (err, data) { /*error Expected error to be handled.*/
 
 The following are not considered problems:
 
-以下形式被认为没有问题：
+以下模式被认为没有问题的：
 
 ```js
 /*eslint handle-callback-err: 2*/
