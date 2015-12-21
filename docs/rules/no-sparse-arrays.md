@@ -35,7 +35,7 @@ The confusion around sparse arrays defined in this manner is enough that it's re
 
 This rule aims to eliminate sparse arrays that are defined by extra commas.
 
-该规则旨在消除试用额外的逗号定义的稀疏数组。
+该规则旨在消除使用额外的逗号定义的稀疏数组。
 
 The following patterns are considered problems:
 
