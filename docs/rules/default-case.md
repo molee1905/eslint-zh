@@ -4,7 +4,7 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Require Default Case in Switch Statements (default-case)
-#在switch语句中，需要有default分支
+# 要求switch语句中有default分支 (default-case)
 
 Some code conventions require that all `switch` statements have a `default` case, even if the default case is empty, such as:
 
@@ -74,7 +74,7 @@ switch (a) {       /*error Expected a default case.*/
 
 The following patterns are not considered problems:
 
-正确示例如下：
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint default-case: 2*/
@@ -114,6 +114,8 @@ If you don't want to enforce a `default` case for `switch` statements, you can s
 ## Version
 
 This rule was introduced in ESLint 0.6.0.
+
+该规则在ESLint 0.6.0 中被引入。
 
 ## Resources
 
