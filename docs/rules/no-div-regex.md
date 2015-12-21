@@ -5,7 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Regexs That Look Like Division (no-div-regex)
 
-#禁止正则表达式看起来像除法符号
+# 禁止使用看起来像除法的正则表达式 (no-div-regex)
 
 Require regex literals to escape division operators.
 
