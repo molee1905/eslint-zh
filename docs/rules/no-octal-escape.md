@@ -4,12 +4,12 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Octal Escapes (no-octal-escape)
-#禁止八进制转义
+
+# 禁止八进制转义 (no-octal-escape)
 
 As of version 5 of the ECMAScript specification, octal escape sequences are a deprecated feature and should not be used. It is recommended that Unicode escapes be used instead.
 
 自ECMAScript规范第5版起，八进制转义序列是弃用的特性并且不会被使用。它被建议改而采用Unicode转义符。
-
 
 ```js
 var foo = "Copyright \251";
