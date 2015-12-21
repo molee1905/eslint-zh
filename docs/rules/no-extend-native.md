@@ -4,11 +4,11 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Extending of Native Objects (no-extend-native)
-#禁止扩展本地对象(no-extend-native)
+# 禁止扩展原生对象 (no-extend-native)
 
 In JavaScript, you can extend any object, including builtin or "native" objects. Sometimes people change the behavior of these native objects in ways that break the assumptions made about them in other parts of the code.
 
-在JavaScript中，你可以扩展任何对象，包括内置或者"本地"对象。有时人们改变这些本地对象的行为，以这种方式打破在其他代码中关于它们所做的假设。
+在JavaScript中，你可以扩展任何对象，包括内置或者"原生"对象。有时人们改变这些本地对象的行为，以这种方式打破在其他代码中关于它们所做的假设。
 
 For example here we are overriding a builtin method that will then affect all Objects, even other builtins.
 
