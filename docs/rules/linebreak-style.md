@@ -15,7 +15,7 @@ different line endings are written by either of the mentioned (might especially 
 The linebreaks (new lines) used in windows operating system are usually _carriage returns_ (CR) followed by a _line feed_ (LF) making it a _carriage return line feed_ (CRLF)
 whereas Linux and Unix use a simple _line feed_ (LF). The corresponding _control sequences_ are `"\n"` (for LF) and `"\r\n"` for (CRLF).
 
-在windows操作系统中换行(新行)通常是回车(CR)加换行分隔符(LF)，也就是回车换行(CRLF)，然而在Linux和Unix中试用简单的换行分隔符(LF)。对应的控制字符为`"\n"` (LF) 和 `"\r\n"`(CRLF)。
+在windows操作系统中换行(新行)通常是回车(CR)加换行分隔符(LF)，也就是回车换行(CRLF)，然而在Linux和Unix中使用简单的换行分隔符(LF)。对应的控制字符为`"\n"` (LF) 和 `"\r\n"`(CRLF)。
 
 Many versioning systems (like git and subversion) can automatically ensure the correct ending. However to cover all contingencies you can activate this rule.
 
