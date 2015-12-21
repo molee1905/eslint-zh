@@ -4,12 +4,12 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow process.env (no-process-env)
-#禁止process.env(no-process-env)
+
+# 禁用process.env (no-process-env)
 
 The `process.env` object in Node.js is used to store deployment/configuration parameters. Littering it through out a project could lead to maintenance issues as it's another kind of global dependency. As such, it could lead to merge conflicts in a multi-user setup and deployment issues in a multi-server setup. Instead, one of the best practices is to define all those parameters in a single configuration/settings file which could be accessed throughout the project.
 
 Node.js中的`process.env`对象用于存储部署/配置参数。在项目中无序的使用它会作为另一个全局依赖而导致维护问题。因此,它可能会在一个多用户的设置中导致合并冲突和导致一个多服务器设置中的部署问题。相反,最好的做法是定义所有这些参数在一个配置/设置文件，这个文件可以在整个项目中访问。
-
 
 ## Rule Details
 
