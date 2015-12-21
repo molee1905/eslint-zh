@@ -5,12 +5,11 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Floating Decimals (no-floating-decimal)
 
-#禁止浮点小数(no-floating-decimal)
+# 禁止浮点小数 (no-floating-decimal)
 
 Float values in JavaScript contain a decimal point, and there is no requirement that the decimal point be preceded or followed by a number. For example, the following are all valid JavaScript numbers:
 
 浮点型值在JavaScript中会包含一个小数点，小数点的前后没有必要存在一个数字。例如，以下例子都是有效的JavaScript数字：
-
 
 ```js
 var num = .5;
