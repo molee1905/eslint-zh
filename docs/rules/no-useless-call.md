@@ -4,14 +4,13 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow unnecessary `.call()` and `.apply()`. (no-useless-call)
-#禁止没有必要的`.call()`和 `.apply()`（no-useless-call）
+
+# 禁止不必要的`.call()`和 `.apply()`（no-useless-call）
 
 The function invocation can be written by `Function.prototype.call()` and `Function.prototype.apply()`.
 But `Function.prototype.call()` and `Function.prototype.apply()` are slower than the normal function invocation.
 
 函数的调用可以写成`Function.prototype.call()` 和 `Function.prototype.apply()`，但是`Function.prototype.call()` 和 `Function.prototype.apply()`比正常的函数调用效率低。
-
-
 
 ## Rule Details
 
