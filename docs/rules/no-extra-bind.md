@@ -4,7 +4,7 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow unnecessary function binding (no-extra-bind)
-#禁止不必要的函数绑定(no-extra-bind)
+# 禁止不必要的函数绑定 (no-extra-bind)
 
 The `bind()` method is used to create functions with specific `this` values and, optionally, binds arguments to specific values. When used to specify the value of `this`, it's important that the function actually use `this` in its function body. For example:
 
@@ -21,7 +21,6 @@ console.log(boundGetName());      // "ESLint"
 This code is an example of a good use of `bind()` for setting the value of `this`.
 
 以上代码是一个很好的使用`bind()`来设置`this`值的例子。
-
 
 Sometimes during the course of code maintenance, the `this` value is removed from the function body. In that case, you can end up with a call to `bind()` that doesn't accomplish anything:
 
