@@ -4,7 +4,8 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Unnecessary Nested Blocks (no-lone-blocks)
-#禁止不必要的块嵌套
+
+# 禁止不必要的嵌套块 (no-lone-blocks)
 
 In JavaScript, prior to ES6, standalone code blocks delimited by curly braces do not create a new scope and have no use. For example, these curly braces do nothing to `foo`:
 
