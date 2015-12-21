@@ -8,7 +8,7 @@ layout: doc
 
 If you want to contribute to an ESLint repo, please use a GitHub pull request. This is the fastest way for us to evaluate your code and to merge it into the code base. Please don't file an issue with snippets of code. Doing so means that we need to manually merge the changes in and update any appropriate tests. That decreases the likelihood that your code is going to get included in a timely manner. Please use pull requests.
 
-如果你想要贡献代码到 ESLint 仓库，请使用 GitHub 发出一个合并请求。这是最快的方法让我们评估你的代码，然后把它合并到代码库中。请不要使用代码片段来整理成一个议题（issue）。这样做的话意味着我们需要手动地合并修改并更新对应的测试用例。它降低了你的代码及时地被合并的可能性。请使用合并请求。
+如果你想要贡献代码到 ESLint 仓库，请使用 GitHub 发出一个合并请求。这是最快的方法让我们评估你的代码，然后把它合并到代码库中。请不要使用代码片段来整理成一个议题（issue）。这样做的话意味着我们需要手动地合并修改并更新对应的测试用例。它会降低你的代码及时地被合并的可能性。请使用合并请求。
 
 ## Getting Started
 
@@ -59,7 +59,7 @@ Details about each step are found below.
 
 The first step to sending a pull request is to create a new branch in your ESLint fork. Give the branch a descriptive name that describes what it is you're fixing, such as:
 
-发起一个合并请求的第一步是，在你fork的 ESLint 中新建一个分支。给这个分支一个描述性的名字用来介绍它正在修复的事情，比如：
+发起一个合并请求的第一步是，在你fork的 ESLint 中新建一个分支。给这个分支起一个描述性的名字用来介绍它正在修复的事情，比如：
 
 ```
 $ git checkout -b issue1234
@@ -108,9 +108,9 @@ The `Tag` is one of the following:
 * `New` - implemented a new feature.
 * `New` - 实现一个新特性。
 * `Update` - for a backwards-compatible enhancement.
-* `Update` - 对于向后兼容的增强。
+* `Update` - 用于向后兼容的增强。
 * `Breaking` - for a backwards-incompatible enhancement or feature.
-* `Breaking` - 向后不兼容的功能增强或新特性。
+* `Breaking` - 用于非向后兼容的功能增强或新特性。
 * `Docs` - changes to documentation only.
 * `Docs` - 只修改了文档。
 * `Build` - changes to build process only.
@@ -128,7 +128,7 @@ The message summary should be a one-sentence description of the change, and it m
 
 Here are some good commit message summary examples
 
-下面展示几个良好的摘要信息的示例：
+下面展示几个描述良好的摘要信息的示例：
 
 ```
 Build: Update Travis to only test Node 0.10 (refs #734)
@@ -138,7 +138,7 @@ Upgrade: Esprima to 1.2, switch to using Esprima comment attachment (fixes #730)
 
 The commit message format is important because these messages are used to create a changelog for each release. The tag and issue number help to create more consistent and useful changelogs.
 
-提交信息的格式是重要的，因为每次发版时这些信息用来生成更新日志。
+提交信息的格式是重要的，因为每次发版时要用这些信息生成更新日志。
 
 ### Step 3: Rebase onto upstream<a name="step3"></a>
 
@@ -155,7 +155,7 @@ git rebase upstream/master
 
 After rebasing, be sure to run all of the tests once again to make sure nothing broke:
 
-rebase过后, 一定要确定重新运行一次测试用例来确保没有东西损坏。
+rebase过后, 务必再次运行测试用例来确保没有东西被破坏。
 
 ```
 npm test
@@ -200,7 +200,7 @@ With your code ready to go, this is a good time to double-check your submission 
 
 Now you're ready to send the pull request. Go to your ESLint fork and then follow the [GitHub documentation](https://help.github.com/articles/creating-a-pull-request) on how to send a pull request.
 
-现在你准备好了要发出合并请求（pull request）。到你的 ESLint 副本 并且按照这个[GitHub documentation](https://help.github.com/articles/creating-a-pull-request) 文档中如何发出一个合并请求（pull request）去做。
+现在你准备好了要发出合并请求（pull request）。到你的 ESLint 副本 并且跟着这个[GitHub documentation](https://help.github.com/articles/creating-a-pull-request) 文档中如何发出一个合并请求（pull request）去做。
 
 ## Following Up
 
@@ -209,7 +209,7 @@ Once your pull request is sent, it's time for the team to review it. As such, pl
 一旦你发出合并请求（pull request），小组会立即检查它。因此，请确保以下事情：
 
 1. Monitor the status of the Travis CI build for your pull request. If it fails, please investigate why. We cannot merge pull requests that fail Travis for any reason.
-1. 监视针对你的合并请求（pull request） Travis CI 的构建状态。如果它失败了，请研究原因。我们不会合并因为任何原因导致Travis失败的合并请求（pull request）。
+1. 监视 Travis CI 针对你的合并请求（pull request） 的构建状态。如果它失败了，请研究原因。我们不会合并因为任何原因导致Travis失败的合并请求（pull request）。
 1. Respond to comments left on the pull request from team members. Remember, we want to help you land your code, so please be receptive to our feedback.
 1. 回复小组成员关于这次合并请求（pull request）的评论 。记住, 我们想要部署你的代码， 所以请你积极处理我们的反馈。
 1. We may ask you to make changes, rebase, or squash your commits.
@@ -219,7 +219,7 @@ Once your pull request is sent, it's time for the team to review it. As such, pl
 
 If your commit message is in the incorrect format, you'll be asked to update it. You can do so via:
 
-如果你提交的信息格式不正确，你会被要求更新它。你可以这样做:
+如果你提交的信息格式不正确，你将会被要求更新它。你可以这样做:
 
 ```
 $ git commit --amend
@@ -227,7 +227,7 @@ $ git commit --amend
 
 This will open up your editor so you can make changes. After that, you'll need to do a forced push to your branch:
 
-这样会打开你的编辑器然后你可以做些修改。之后，你需要用 forced push到你的分支。
+这样会打开你的编辑器然后你可以做些修改。之后，你需要强制推送到你的分支。
 
 ```
 $ git push origin issue1234 -f
@@ -237,7 +237,7 @@ $ git push origin issue1234 -f
 
 If we ask you to make code changes, there's no need to close the pull request and create a new one. Just go back to the branch on your fork and make your changes. Then, when you're ready, you can add your changes into the branch:
 
-如果我们要求你做代码变更，这时不需要关闭这个合并请求（pull request）去创建一个新的。只要回到你fork的分支，做出你的修改。接着当你准备好了，你可以增加你的修改到这个分支：
+如果我们要求你做代码变更，这时不需要关闭这个合并请求（pull request）去创建一个新的。只要回到你fork的分支，做出你的修改。接着当你准备好了，你可以添加你的修改到这个分支：
 
 ```
 $ git add -A
