@@ -83,63 +83,120 @@ These are rules designed to prevent you from making mistakes. They either prescr
 这些规则是为了阻止你犯错误。They either prescribe a better way of doing something or help you avoid footguns.
 
 * [accessor-pairs](accessor-pairs) - Enforces getter/setter pairs in objects
+* [accessor-pairs](accessor-pairs) - 强制 getter/setter成对出现在对象中
 * [block-scoped-var](block-scoped-var) - treat `var` statements as if they were block scoped
+* [block-scoped-var](block-scoped-var) - 把 `var` 语句看作是在块级作用域范围之内
 * [complexity](complexity) - specify the maximum cyclomatic complexity allowed in a program
+* [complexity](complexity) - 指定程序中允许的最大环路复杂度
 * [consistent-return](consistent-return) - require `return` statements to either always or never specify values
+* [consistent-return](consistent-return) - 要求 `return` 语句要么总是指定返回的值，要么不指定
 * [curly](curly) - specify curly brace conventions for all control statements
+* [curly](curly) - 为所有控制语句指定花括号约定
 * [default-case](default-case) - require `default` case in `switch` statements
+* [default-case](default-case) - 要求 `switch`语句中有`default`分支
 * [dot-location](dot-location) - enforces consistent newlines before or after dots
+* [dot-location](dot-location) - 强制在点号之前或之后一致的换行
 * [dot-notation](dot-notation) - encourages use of dot notation whenever possible
+* [dot-notation](dot-notation) - 鼓励尽可能使用点号
 * [eqeqeq](eqeqeq) - require the use of `===` and `!==` (fixable)
+* [eqeqeq](eqeqeq) - 要求使用 `===` 和 `!==` (fixable)
 * [guard-for-in](guard-for-in) - make sure `for-in` loops have an `if` statement
+* [guard-for-in](guard-for-in) - 确保`for-in`循环中有一个 `if`语句
 * [no-alert](no-alert) - disallow the use of `alert`, `confirm`, and `prompt`
+* [no-alert](no-alert) - 禁用 `alert`，`confirm` 和 `prompt`
 * [no-caller](no-caller) - disallow use of `arguments.caller` or `arguments.callee`
+* [no-caller](no-caller) - 禁用 `arguments.caller` 或 `arguments.callee`
 * [no-case-declarations](no-case-declarations) - disallow lexical declarations in case clauses
+* [no-case-declarations](no-case-declarations) - 不允许在case子句中使用词法声明
 * [no-div-regex](no-div-regex) - disallow division operators explicitly at beginning of regular expression
+* [no-div-regex](no-div-regex) - 禁止除法操作符显式的出现在正则表达式开始的位置
 * [no-else-return](no-else-return) - disallow `else` after a `return` in an `if`
+* [no-else-return](no-else-return) - 禁止`if`语句中有`return`之后有`else`
 * [no-empty-label](no-empty-label) - disallow use of labels for anything other than loops and switches
+* [no-empty-label](no-empty-label) - 禁止非循环和switch语句使用标签
 * [no-empty-pattern](no-empty-pattern) - disallow use of empty destructuring patterns
+* [no-empty-pattern](no-empty-pattern) - 禁止使用空解构模式
 * [no-eq-null](no-eq-null) - disallow comparisons to null without a type-checking operator
+* [no-eq-null](no-eq-null) - 禁止在没有类型检查操作符情况下与null进行比较
 * [no-eval](no-eval) - disallow use of `eval()`
+* [no-eval](no-eval) - 禁用 `eval()`
 * [no-extend-native](no-extend-native) - disallow adding to native types
+* [no-extend-native](no-extend-native) - 禁止扩展原生类型
 * [no-extra-bind](no-extra-bind) - disallow unnecessary function binding
+* [no-extra-bind](no-extra-bind) - 禁止不必要的函数绑定
 * [no-fallthrough](no-fallthrough) - disallow fallthrough of `case` statements (recommended)
 * [no-floating-decimal](no-floating-decimal) - disallow the use of leading or trailing decimal points in numeric literals
+* [no-floating-decimal](no-floating-decimal) - 禁止数字字面量中使用前导和末尾小数点
 * [no-implicit-coercion](no-implicit-coercion) - disallow the type conversions with shorter notations
+* [no-implicit-coercion](no-implicit-coercion) - 禁止是用短符号进行类型转换
 * [no-implied-eval](no-implied-eval) - disallow use of `eval()`-like methods
+* [no-implied-eval](no-implied-eval) - 禁止使用隐式`eval()`
 * [no-invalid-this](no-invalid-this) - disallow `this` keywords outside of classes or class-like objects
+* [no-invalid-this](no-invalid-this) - 禁止 `this` 关键字出现在类和类对象之外
 * [no-iterator](no-iterator) - disallow usage of `__iterator__` property
+* [no-iterator](no-iterator) - 禁用 `__iterator__`属性
 * [no-labels](no-labels) - disallow use of labeled statements
+* [no-labels](no-labels) - 禁用标签语句
 * [no-lone-blocks](no-lone-blocks) - disallow unnecessary nested blocks
+* [no-lone-blocks](no-lone-blocks) - 禁用不必要的嵌套块
 * [no-loop-func](no-loop-func) - disallow creation of functions within loops
+* [no-loop-func](no-loop-func) - 禁止在循环中创建函数
 * [no-magic-numbers](no-magic-numbers) - disallow the use of magic numbers
+* [no-magic-numbers](no-magic-numbers) - 禁用幻数
 * [no-multi-spaces](no-multi-spaces) - disallow use of multiple spaces (fixable)
+* [no-multi-spaces](no-multi-spaces) - 禁止使用多个空格 (fixable)
 * [no-multi-str](no-multi-str) - disallow use of multiline strings
+* [no-multi-str](no-multi-str) - 禁止使用多行字符串
 * [no-native-reassign](no-native-reassign) - disallow reassignments of native objects
+* [no-native-reassign](no-native-reassign) - 禁止对原生对象赋值
 * [no-new-func](no-new-func) - disallow use of new operator for `Function` object
+* [no-new-func](no-new-func) - 禁止对`Function`对象使用new操作符
 * [no-new-wrappers](no-new-wrappers) - disallows creating new instances of `String`,`Number`, and `Boolean`
+* [no-new-wrappers](no-new-wrappers) - 禁止创建`String`，`Number`和 `Boolean`的新实例
 * [no-new](no-new) - disallow use of the `new` operator when not part of an assignment or comparison
+* [no-new](no-new) - 非赋值或条件语句禁止试用`new`操作符
 * [no-octal-escape](no-octal-escape) - disallow use of octal escape sequences in string literals, such as `var foo = "Copyright \251";`
+* [no-octal-escape](no-octal-escape) - 禁止在字符串中使用八进制转义序列，比如 `var foo = "Copyright \251";`
 * [no-octal](no-octal) - disallow use of octal literals (recommended)
+* [no-octal](no-octal) - 禁用八进制字面量 (recommended)
 * [no-param-reassign](no-param-reassign) - disallow reassignment of function parameters
+* [no-param-reassign](no-param-reassign) - 不允许对函数的参数进行重新赋值
 * [no-process-env](no-process-env) - disallow use of `process.env`
+* [no-process-env](no-process-env) - 禁用`process.env`
 * [no-proto](no-proto) - disallow usage of `__proto__` property
+* [no-proto](no-proto) - 禁用`__proto__`属性
 * [no-redeclare](no-redeclare) - disallow declaring the same variable more than once (recommended)
+* [no-redeclare](no-redeclare) - 禁止多次声明同一变量 (recommended)
 * [no-return-assign](no-return-assign) - disallow use of assignment in `return` statement
+* [no-return-assign](no-return-assign) - 禁止在`return`语句中使用赋值语句
 * [no-script-url](no-script-url) - disallow use of `javascript:` urls.
+* [no-script-url](no-script-url) - 禁止使用`javascript:`url.
 * [no-self-compare](no-self-compare) - disallow comparisons where both sides are exactly the same
+* [no-self-compare](no-self-compare) - 禁止自身比较
 * [no-sequences](no-sequences) - disallow use of the comma operator
+* [no-sequences](no-sequences) - 禁用逗号操作符
 * [no-throw-literal](no-throw-literal) - restrict what can be thrown as an exception
+* [no-throw-literal](no-throw-literal) - 限制可悲抛出的异常
 * [no-unused-expressions](no-unused-expressions) - disallow usage of expressions in statement position
+* [no-unused-expressions](no-unused-expressions) - 禁止在语句的位置使用表达式
 * [no-useless-call](no-useless-call) - disallow unnecessary `.call()` and `.apply()`
+* [no-useless-call](no-useless-call) - 禁止不必要的 `.call()` 和 `.apply()`
 * [no-useless-concat](no-useless-concat) - disallow unnecessary concatenation of literals or template literals
+* [no-useless-concat](no-useless-concat) - 禁止不必要的字符串字面量或模板字面量的连接
 * [no-void](no-void) - disallow use of the `void` operator
+* [no-void](no-void) - 禁用`void`操作符
 * [no-warning-comments](no-warning-comments) - disallow usage of configurable warning terms in comments - e.g. `TODO` or `FIXME`
+* [no-warning-comments](no-warning-comments) - 禁止在注释中试用可配置的警告术语 - 比如 `TODO` 或 `FIXME`
 * [no-with](no-with) - disallow use of the `with` statement
+* [no-with](no-with) - 禁用`with`语句
 * [radix](radix) - require use of the second argument for `parseInt()`
+* [radix](radix) - 要求使用`parseInt()`的第二个参数
 * [vars-on-top](vars-on-top) - require declaration of all vars at the top of their containing scope
+* [vars-on-top](vars-on-top) - 要求所有的var声明在它们所在的作用域顶部
 * [wrap-iife](wrap-iife) - require immediate function invocation to be wrapped in parentheses
+* [wrap-iife](wrap-iife) - 要求IIFE使用括号括起来
 * [yoda](yoda) - require or disallow Yoda conditions
+* [yoda](yoda) - 要求或禁止Yoda条件
 
 ## Strict Mode
 
