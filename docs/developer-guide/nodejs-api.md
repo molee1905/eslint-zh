@@ -41,7 +41,7 @@ var linter = require("eslint").linter;
 
 The most important method on `linter` is `verify()`, which initiates linting of the given text. This method accepts four arguments:
 
-`linter`最重要的方法为`verify()`，它对给的的文本的linting进行初始化。这个方法接受4个参数：
+`linter`最重要的方法为`verify()`，它对给的的文本的lint进行初始化。这个方法接受4个参数：
 
 * `code` - the source code to lint (a string or instance of `SourceCode`).
 * `code`-要lint的源代码（字符串或者`SourceCode`的实例）。
@@ -85,7 +85,7 @@ var messages = linter.verify(code, {
 
 The `verify()` method returns an array of objects containing information about the linting warnings and errors. Here's an example:
 
-`verify()`方法返回一个包含linting警告和错误的对象的数组。下面是个例子：
+`verify()`方法返回一个包含lint警告和错误的对象的数组。下面是个例子：
 
 ```js
 {
@@ -105,7 +105,7 @@ The `verify()` method returns an array of objects containing information about t
 
 The information available for each linting message is:
 
-这些信息对所有的linting信息都是可用的：
+这些信息对所有的lint信息都是可用的：
 
 * `column` - the column on which the error occurred.
 * `column` - 出错的列。
@@ -175,7 +175,7 @@ The `CLIEngine` is a constructor, and you can create a new instance by passing i
 * `globals` - An array of global variables to declare (default: empty array). Corresponds to `--global`.
 * `globals` -要声明为全局变量的数组（默认为空数组）。对应于`--global`。
 * `fix` - True indicates that fixes should be applied to the text when possible.
-* `fix` - True代表可能时修改应该到文本。
+* `fix` - True代表可能时修改应用到文本。
 * `ignore` - False disables use of `.eslintignore` (default: true). Corresponds to `--no-ignore`.
 * `ignore`- 值为false时禁用`.eslintignore`(默认为true)。对应于 `--no-ignore`。
 * `ignorePath` - The ignore file to use instead of `.eslintignore` (default: null). Corresponds to `--ignore-path`.
@@ -217,8 +217,7 @@ var cli = new CLIEngine({
 
 In this code, a new `CLIEngine` instance is created that sets two environments, `"browser"` and `"mocha"`, disables loading of `.eslintrc` and `package.json` files, and enables the `semi` rule as an error. You can then call methods on `cli` and these options will be used to perform the correct action.
 
-在上面的代码中，创建了一个`CLIEngine`实例，设置两种环境，`"browser"` 和 `"mocha"`,禁止加载 `.eslintrc` 和 `package.json` 文件,
-开启`semi`规则作为错误。你可以在`cli`调用，然后这些选项将被应用并正确运行。
+在上面的代码中，创建了一个`CLIEngine`实例，设置两种环境，`"browser"` 和 `"mocha"`,禁止加载 `.eslintrc` 和 `package.json` 文件,开启`semi`规则作为错误。你可以在`cli`调用，然后这些选项将被应用并正确运行。
 
 ### executeOnFiles()
 
@@ -273,7 +272,7 @@ The return value is an object containing the results of the linting operation. H
 
 The top-level report object has a `results` array containing all linting results for files that had warnings or errors (any files that did not produce a warning or error are omitted). Each file result includes the `filePath`, a `messages` array, `errorCount`, `warningCount`, and optionally `output`. The `messages` array contains the result of calling `linter.verify()` on the given file. The `errorCount` and `warningCount` give the exact number of errors and warnings respectively on the given file. The `output` property gives the source code for the file with as many fixes applied as possible, so you can use that to rewrite the files if necessary. The top-level report object also has `errorCount` and `warningCount` which give the exact number of errors and warnings respectively on all the files.
 
-顶层的报告对象有一个`result`数组，该数组包含引起警告或错误的文件的lint结果（不引起警告或错误的文件都会被忽略）。每个文件的结果包含`filePath`, 一个`messages` 数组, `errorCount`, `warningCount`, 和可选的 `output`。`message`数组包含对给定文件调用`linter.verify()`函数的结果。`errorCount` 和 `warningCount` 对于给定文件分别给错误和警告的确切数目。`output`属性会给出尽可能多的应用在文件上的修复源代码。所以，如果有必要你可以使用它来重写文件。顶层的报告对象也包含`errorCount` 和 `warningCount`，分别对所有 的文件给出准确的警告和错误数量。
+顶层的报告对象有一个`result`数组，该数组包含引起警告或错误的文件的lint结果（不引起警告或错误的文件都会被忽略）。每个文件的结果包含`filePath`, 一个`messages` 数组, `errorCount`, `warningCount`, 和可选的 `output`。`message`数组包含对给定文件调用`linter.verify()`函数的结果。`errorCount` 和 `warningCount` 对于给定文件分别给错误和警告的确切数目。`output`属性会给出尽可能多的应用在文件上的修复源代码。所以，如果有必要你可以使用它来重写文件。顶层的报告对象也包含`errorCount` 和 `warningCount`，分别对所有的文件给出准确的警告和错误数量。
 
 Once you get a report object, it's up to you to determine how to output the results.
 
@@ -283,7 +282,7 @@ Once you get a report object, it's up to you to determine how to output the resu
 
 You can pass filesystem-style or glob patterns to ESLint and have it function properly. In order to achieve this, ESLint must resolve non-glob patterns into glob patterns before determining which files to execute on. The `resolveFileGlobPatterns()` methods uses the current settings from `CLIEngine` to resolve non-glob patterns into glob patterns. Pass an array of patterns that might be passed to the ESLint CLI and it will return an array of glob patterns that mean the same thing. Here's an example:
 
-你可以传递filesystem-style 或者 glob 模式给 ESLint，以让它正常运行。为了做到这点，ESLint必须在确定要执行的文件之前将non-glob模式分解为glob模式 。`resolveFileGlobPatterns()` 方法使用`CLIEngine`的当前设置将non-glob模式分解为glob模式 。传递一个模式的数组，它可能传入到ESLint CLI ，将返回一个glob模式的数组意味着同样的事情。例如：
+你可以传递filesystem-style 或者 glob 模式给 ESLint，以让它正常运行。为了做到这点，ESLint必须在确定要执行的文件之前将non-glob模式分解为glob模式 。`resolveFileGlobPatterns()` 方法使用`CLIEngine`的当前设置将non-glob模式分解为glob模式。传递一个模式的数组，它可能传入到ESLint CLI ，将返回一个glob模式的数组意味着同样的事情。例如：
 
 ```js
 var CLIEngine = require("eslint").CLIEngine;
@@ -464,7 +463,7 @@ var formatter = CLIEngine.getFormatter();
 
 **Important:** You must pass in the `results` property of the report. Passing in `report` directly will result in an error.
 
-**重要:** 你必须传递报告的 `results` 。 直接传递 `report` 会引起错误。
+**重要:** 你必须传递报告的 `results`。直接传递 `report` 会引起错误。
 
 ### getErrorResults()
 
@@ -492,7 +491,7 @@ var errorReport = CLIEngine.getErrorResults(report.results)
 
 **Important:** You must pass in the `results` property of the report. Passing in `report` directly will result in an error.
 
-**重要:** 你必须传递报告的 `results` 。 直接传递 `report` 会引起错误。
+**重要:** 你必须传递报告的 `results`。直接传递 `report` 会引起错误。
 
 ### outputFixes()
 
