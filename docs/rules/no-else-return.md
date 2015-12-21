@@ -3,12 +3,13 @@ title: Rule no-else-return
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
-# Disallow return in else (no-else-return)
-#禁止在else语句中return
+# Disallow return before else (no-else-return)
+
+# 禁止在else前有return (no-else-return)
 
 If an `if` block contains a `return` statement, the `else` block becomes unnecessary. Its contents can be placed outside of the block.
 
-如果`if`区块包含 `return`语句，`else`区块的存在就显得冗余。可以将else中内容移至区块外。
+如果`if`区块包含 `return`语句，`else`块就成了多余的了。可以将else中内容移至块外。
 
 ```js
 function foo() {
@@ -24,11 +25,11 @@ function foo() {
 
 This rule is aimed at highlighting an unnecessary block of code following an `if` containing a return statement. As such, it will warn when it encounters an `else` following a chain of `if`s, all of them containing a `return` statement.
 
-此规则目的在于，突出那些跟随在包含return的`if`语句后的冗余代码。因此，当`else`跟随在每个块都包含`return`语句的`if`链后时，会发生错误。
+该规则目的在于，突出那些跟随在包含return的`if`语句后的冗余代码。因此，当`else`跟随在每个块都包含`return`语句的`if`链后时，该规则会发出警告。
 
 The following patterns are considered problems:
 
-错误示例如下：
+以下模式被认为是有问题的：
 
 ```js
 /*eslint no-else-return: 2*/
@@ -77,7 +78,7 @@ function foo() {
 
 The follow patterns are not considered problems:
 
-正确示例如下：
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint no-else-return: 2*/
@@ -116,6 +117,7 @@ function foo() {
 This rule was introduced in ESLint 0.0.9.
 
 这条规则在ESLint 0.0.9中被引入。
+
 ## Resources
 
 * [Rule source](https://github.com/eslint/eslint/tree/master/lib/rules/no-else-return.js)
