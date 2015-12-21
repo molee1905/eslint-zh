@@ -4,12 +4,17 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Invalid Regular Expressions (no-invalid-regexp)
+# 禁止无效的正则表达式（no-invalid-regexp）
 
 This rule validates string arguments passed to the `RegExp` constructor.
+
+该规则验证 `RegExp` 构造函数的字符参数。
 
 ## Rule Details
 
 The following patterns are considered problems:
+
+以下模式被认为是有问题的：
 
 ```js
 /*eslint no-invalid-regexp: 2*/
@@ -22,6 +27,8 @@ new RegExp('\\') /*error Invalid regular expression: /\/: \ at end of pattern*/
 ```
 
 The following patterns are not considered problems:
+
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint no-invalid-regexp: 2*/
@@ -37,6 +44,8 @@ this.RegExp('[')
 
 ECMAScript 6 adds the "u" ([unicode](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-get-regexp.prototype.unicode)) and "y" ([sticky](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-get-regexp.prototype.sticky)) flags. You can enable these to be recognized as valid by adding the following to your `.eslintrc` file:
 
+ECMAScript 6 添加了 “u” ([unicode](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-get-regexp.prototype.unicode)) 和 "y" ([sticky](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-get-regexp.prototype.sticky)) 标识。可以通过下面的 `eslintrc` 文件启用这些标识。
+
 ```json
 "ecmaFeatures": {
   "regexYFlag": true,
@@ -51,6 +60,8 @@ ECMAScript 6 adds the "u" ([unicode](https://people.mozilla.org/~jorendorff/es6-
 ## Version
 
 This rule was introduced in ESLint 0.1.4.
+
+该规则是在ESLint 0.1.4 中引进的。
 
 ## Resources
 

@@ -9,19 +9,19 @@ layout: doc
 
 ESLint is designed to be completely configurable, meaning you can turn off every rule and run only with basic syntax validation, or mix and match the bundled rules and your custom rules to make ESLint perfect for your project. There are two primary ways to configure ESLint:
 
-ESlint 设计的就是完全可配置的，也就意味着您可以关闭所有规则，只跑基本的语法验证，或者混合或者匹配或者自定义规则去让ESLint完美地为您的项目服务。这里有俩个初级的方法去配置ESLint。
+ESlint 被设计为完全可配置的，这意味着你可以关闭所有规则，只运行基本的语法验证，或混合和匹配绑定的规则和你自定义规则，让ESLint更适合于你项目。有两个主要的方法配置ESLint。
 
 1. **Configuration Comments** - use JavaScript comments to embed configuration information directly into a file.
 1. **Configuration Comments** - 使用JavaScript注释直接包含配置信息到一个文件。
 2. **Configuration Files** - use a JavaScript, JSON or YAML file to specify configuration information for an entire directory and all of its subdirectories. This can be in the form of an [.eslintrc.*](#configuration-file-formats) file or an `eslintConfig` field in a `package.json` file, both of which ESLint will look for and read automatically, or you can specify a configuration file on the [command line](command-line-interface).
-2. **Configuration Files** - 使用JavaScript、JSON 或者 YAML 文件去描述配置信息，目录下所有的子目录都会生效。这也可以是以下两种形式：[.eslintrc.*](#configuration-file-formats)文件 或者在 `package.json`文件里配置`eslintConfig`域，这两种配置方式ESLint都会自动读取。再或者，您可以在[command line](command-line-interface)指定一个配置文件。
+2. **Configuration Files** - 使用JavaScript、JSON 或者 YAML 文件去描述配置信息，目录下所有的子目录都会生效。这也可以是以下两种形式：[.eslintrc.*](#configuration-file-formats)文件 或者在 `package.json`文件里配置`eslintConfig`域，这两种配置方式ESLint都会自动读取。再或者，你可以在[command line](command-line-interface)指定一个配置文件。
 
 There are several pieces of information that can be configured:
 
-有几个信息可以被配置：
+有很多信息可以配置：
 
 * **Environments** - which environments your script is designed to run in. Each environment brings with it a certain set of predefined global variables.
-* **Environments** - 指定您脚本的运行环境。每种环境都有特定的一组预定义全局变量。
+* **Environments** - 指定你脚本的运行环境。每种环境都有特定的一组预定义全局变量。
 * **Globals** - the additional global variables your script accesses during execution.
 * **Globals** - 脚本在执行期间需要的额外的全局变量
 * **Rules** - which rules are enabled and at what error level.
@@ -30,7 +30,7 @@ There are several pieces of information that can be configured:
 
 All of these options give you fine-grained control over how ESLint treats your code.
 
-所有这些选项，在ESLint如何对待您的代码上给了您足够细粒度的控制权。
+所有这些选项，让你可以细粒度地控制ESLint如何对待你的代码。
 
 ## Specifying Language Options
 
@@ -38,11 +38,11 @@ All of these options give you fine-grained control over how ESLint treats your c
 
 ESLint allows you to specify the JavaScript language options you want to support. By default, ESLint supports only ECMAScript 5 syntax. You can override that setting to enable support for ECMAScript 6 as well as [JSX](http://facebook.github.io/jsx/) by using configuration settings.
 
-ESLint 允许您指定您想要支持的JavaScript语言。ESLint默认支持ES 5语法，但是您可以通过配置让它支持ES 6 或者 [JSX](http://facebook.github.io/jsx/)。
+ESLint 允许你指定你想要支持的JavaScript语言选项。默认情况下，ESLint支持ES 5语法，但是你可以通过配置让它支持ES 6 或者 [JSX](http://facebook.github.io/jsx/)。
 
 Configuration settings are set in your `.eslintrc` file by using the `ecmaFeatures` property. The available options are:
 
-配置设置在`.eslintrc`文件使用'ecmaFeatures`属性设置。可用的选项有：
+配置设置在`.eslintrc`文件使用`ecmaFeatures`属性设置。可用的选项有：
 
 * `arrowFunctions` - enable [arrow functions](https://leanpub.com/understandinges6/read#leanpub-auto-arrow-functions)
 * `arrowFunctions` - 开启[arrow functions](https://leanpub.com/understandinges6/read#leanpub-auto-arrow-functions)
@@ -89,7 +89,7 @@ Configuration settings are set in your `.eslintrc` file by using the `ecmaFeatur
 * `jsx` - 开启 [JSX](http://facebook.github.io/jsx/)
 * `jsx` - enable [JSX](http://facebook.github.io/jsx/)
 * `experimentalObjectRestSpread` - enable support for the experimental [object rest/spread properties](https://github.com/sebmarkbage/ecmascript-rest-spread) (**IMPORTANT:** This is an experimental feature that may change significantly in the future. It's recommended that you do *not* write rules relying on this functionality unless you are willing to incur maintenance cost when it changes.)
-* `experimentalObjectRestSpread` - 开启对实验性属性的支持 [object rest/spread properties](https://github.com/sebmarkbage/ecmascript-rest-spread) (**注意:** 这是一个处于试验阶段的特征，未来有可能会变化。建议您*不*要写依赖这个功能的规则，除非您愿意当其变化时花费精力去维护。
+* `experimentalObjectRestSpread` - 开启对实验性属性的支持 [object rest/spread properties](https://github.com/sebmarkbage/ecmascript-rest-spread) (**注意:** 这是一个处于试验阶段的特征，未来有可能会变化。建议你*不*要写依赖这个功能的规则，除非你愿意当其变化时花费精力去维护。
 
 
 Here's an example `.eslintrc` file:
@@ -119,7 +119,7 @@ Setting language options helps ESLint determine what is a parsing error. All lan
 
 By default, ESLint uses [Espree](https://github.com/eslint/espree) as its parser. You can optionally specify that a different parser should be used in your configuration file so long as the parser meets the following requirements:
 
-ESLint默认使用[Espree](https://github.com/eslint/espree)做它的解析器，您可以在配置文件中任意地指定一个不同的解析器，只要它满足一下要求：
+ESLint默认使用[Espree](https://github.com/eslint/espree)做它的解析器，你可以在配置文件中任意地指定一个不同的解析器，只要它满足以下要求：
 
 1. It must be an npm module installed locally.
 1. 它必须是本地安装的npm模块
@@ -136,7 +136,7 @@ Note that even with these compatibilities, there are no guarantees that an exter
 
 To indicate the npm module to use as your parser, specify it using the `parser` option in your `.eslintrc` file. For example, the following specifies to use Esprima instead of Espree:
 
-为了让npm模块使用您自己的解析器，您需要在您的`.eslintrc`文件里指定`parser` 选项。例如：下面配置文件指定Esprima作为解析器而不是Espree：
+为了让npm模块使用你自己的解析器，你需要在你的`.eslintrc`文件里指定`parser` 选项。例如：下面配置文件指定Esprima作为解析器而不是Espree：
 
 ```json
 {
@@ -149,15 +149,12 @@ To indicate the npm module to use as your parser, specify it using the `parser` 
 
 The following parsers are compatible with ESLint:
 
-下面的解析器和EXLint兼容良好：
+下面的解析器和ELint兼容良好：
 
 * [Esprima](https://npmjs.com/package/esprima)
 * [Esprima-FB](https://npmjs.com/package/esprima-fb) - Facebook's fork of Esprima that includes their proprietary syntax additions.
-* [Babel-ESLint](https://npmjs.com/package/babel-eslint) - A wrapper around the [Babel](http://babeljs.io) parser that makes it compatible with ESLint.
-
-
-* [Esprima](https://npmjs.com/package/esprima)
 * [Esprima-FB](https://npmjs.com/package/esprima-fb) - Facebook基于Esprima的库，另增加了它们专用的语法
+* [Babel-ESLint](https://npmjs.com/package/babel-eslint) - A wrapper around the [Babel](http://babeljs.io) parser that makes it compatible with ESLint.
 * [Babel-ESLint](https://npmjs.com/package/babel-eslint) -[Babel](http://babeljs.io) 解析器的封装，使它和ESLint兼容
 
 
@@ -221,7 +218,7 @@ An environment defines global variables that are predefined. The available envir
 
 These environments are not mutually exclusive, so you can define more than one at a time.
 
-这些环境不是相互排斥的，所以您可以一次定义多个。
+这些环境不是相互排斥的，所以你可以一次定义多个。
 
 Environments can be specified inside of a file, in configuration files or using the `--env` [command line](command-line-interface) flag.
 
@@ -237,11 +234,11 @@ To specify environments using a comment inside of your JavaScript file, use the 
 
 This enables Node.js and Mocha environments.
 
-这段开启了 Node.js 和 Mocha 环境。
+该设置开启了 Node.js 和 Mocha 环境。
 
 To specify environments in a configuration file, use the `env` key and specify which environments you want to enable by setting each to `true`. For example, the following enables the browser and Node.js environments:
 
-在配置文件里配置环境的时候，使用`env`关键字，并且给您想要的环境赋值：`true`。例如，下面这段代码开启了支持browser 和 Node.js 的环境：
+在配置文件里配置环境的时候，使用`env`关键字，并且给你想要的环境赋值：`true`。例如，下面这段代码开启了支持browser 和 Node.js 的环境：
 
 ```json
 {
@@ -286,7 +283,7 @@ And in YAML:
 
 The [no-undef](../rules/no-undef) rule will warn on variables that are accessed but not defined within the same file. If you are using global variables inside of a file then it's worthwhile to define those globals so that ESLint will not warn about their usage. You can define global variables either using comments inside of a file or in the configuration file.
 
-当变量被使用，但是变量声明不在同一文件的时候 [no-undef](../rules/no-undef) 规则会报出警告错误。如果您想在一个文件里使用全局变量，推荐您定义这些全局变量，这样ESLint就不会警告了。您可以将全局变量定义在文件内注释或者配置文件里。
+当变量被使用，但是变量声明不在同一文件的时候 [no-undef](../rules/no-undef) 规则会报出警告错误。如果你想在一个文件里使用全局变量，推荐你定义这些全局变量，这样ESLint就不会警告了。你可以将全局变量定义在文件内注释或者配置文件里。
 
 To specify globals using a comment inside of your JavaScript file, use the following format:
 
@@ -298,7 +295,7 @@ To specify globals using a comment inside of your JavaScript file, use the follo
 
 This defines two global variables, `var1` and `var2`. If you want to optionally specify that these global variables should never be written to (only read), then you can set each with a `false` flag:
 
-这里定义了两个全局变量：`var1` 和 `var2`。如果您想声明这些变量为只读的，您可以赋值`false`：
+这里定义了两个全局变量：`var1` 和 `var2`。如果你想声明这些变量为只读的，你可以赋值`false`：
 
 ```js
 /*global var1:false, var2:false*/
@@ -338,7 +335,7 @@ These examples allow `var1` to be overwritten in your code, but disallow it for 
 
 ESLint supports the use of third-party plugins. Before using the plugin you have to install it using npm.
 
-ESLint支持第三方插件。在使用之前，您应该先用npm去安装它们。
+ESLint支持第三方插件。在使用之前，你应该先用npm去安装它们。
 
 To configure plugins inside of a configuration file, use the `plugins` key, which contains a list of plugin names. The `eslint-plugin-` prefix can be omitted from the plugin name.
 
@@ -374,7 +371,7 @@ And in YAML:
 
 ESLint comes with a large number of rules. You can modify which rules your project uses either using configuration comments or configuration files. To change a rule setting, you must set the rule ID equal to one of these values:
 
-ESLint 带来了大量的规则。您可以使用配置文件或者注释修改您要使用哪些规则。修改一个规则的时候，您必须设置下面ID中的一个：
+ESLint 带来了大量的规则。你可以使用配置文件或者注释修改你要使用哪些规则。修改一个规则的时候，你必须设置下面ID中的一个：
 
 * 0 - turn the rule off
 * 0 - 关闭规则
@@ -401,11 +398,11 @@ In this example, [`eqeqeq`](../rules/eqeqeq) is turned off and [`curly`](../rule
 
 This comment specifies the "double" option for the [`quotes`](../rules/quotes) rule.
 
-这条注释为规则[`quotes`](../rules/quotes)配置了"double"选项。
+这条注释为规则[`quotes`](../rules/quotes)指定了"double"选项。
 
 To configure rules inside of a configuration file, use the `rules` key along with an error level and any options you want to use. For example:
 
-使用关键字`rules`后紧跟着错误级别的方式，在一个配置文件里配置。你可以使用任何想要的规则，例如：
+若要在一个配置文件中配置规则，使用关键字`rules`连同任何你想使用的选项和一个错误级别，例如：
 
 
 ```json
@@ -434,7 +431,7 @@ And in YAML:
 
 To configure a rule which is defined within a plugin you have to prefix the rule ID with the plugin name and a `/`. For example:
 
-配置定义在插件中的规则的时候，您必须使用`插件名/规则ID`的形式，比如：
+配置定义在插件中的规则的时候，你必须使用`插件名/规则ID`的形式，比如：
 
 ```json
 {
@@ -469,7 +466,7 @@ And in YAML:
 
 In these configuration files, the rule `plugin1/rule1` comes from the plugin named `plugin1`. You can also use this format with configuration comments, such as:
 
-这些配置文件中，规则`plugin1/rule1`表示来自插件`plugin1`的`rule1`规则。您也可以使用注释的格式去配置，比如：
+这些配置文件中，规则`plugin1/rule1`表示来自插件`plugin1`的`rule1`规则。你也可以使用注释的格式去配置，比如：
 
 ```js
 /*eslint "plugin1/rule1": 2*/
@@ -481,11 +478,11 @@ In these configuration files, the rule `plugin1/rule1` comes from the plugin nam
 
 All rules that are enabled by default are set to 2, so they will cause a non-zero exit code when encountered. You can lower these rules to a warning by setting them to 1, which has the effect of outputting the message onto the console but doesn't affect the exit code.
 
-所有被包含的规则默认错误级别是 2，所以当触发时，它们会报错一个非零错误。您可以通过设置它们错误级别为 1 降低这些规则的级别，这样报错只会在控制台显示，而不会导致程序退出。
+所有被包含的规则默认错误级别是 2，所以当触发时，它们会报错一个非零错误。你可以通过设置它们错误级别为 1 降低这些规则的级别，这样报错只会在控制台显示，而不会导致程序退出。
 
 To temporary disable warnings in your file use the following format:
 
-您可以使用下面格式，暂时关闭这些警告错误：
+你可以使用下面格式，暂时关闭这些警告错误：
 
 ```js
 /*eslint-disable */
@@ -523,7 +520,7 @@ alert('foo'); // eslint-disable-line
 
 To disable a specific rule on a specific line
 
-在某一行禁用某个规则
+在某一特定的行禁用某个特定的规则
 
 ```js
 alert('foo'); // eslint-disable-line no-alert
@@ -804,7 +801,7 @@ The extended configurations can also contain their own `extends`, resulting in r
 
 You can also extend configurations using shareable configuration packages. To do so, be sure to install the configuration package you want from npm and then use the package name, such as:
 
-您也可以使用可分享包扩展配置。首先您得从npm安装想使用的配置包，比如：
+你也可以使用可分享包扩展配置。首先你得从npm安装想使用的配置包，比如：
 
 ```js
 {
@@ -824,7 +821,7 @@ In this example, the `eslint-config-myrules` package will be loaded as an object
 
 **Note:** You can omit `eslint-config-` and ESLint will automatically insert it for you, similar to how plugins work. See [Shareable Configs](../developer-guide/shareable-configs) for more information.
 
-**注意** 您可以删除 `eslint-config-`前缀，ESLint 会自动帮你上的，类似插件的工作。更多资料请查看 [Shareable Configs](../developer-guide/shareable-configs)
+**注意** 你可以删除 `eslint-config-`前缀，ESLint 会自动帮你上的，类似插件的工作。更多资料请查看 [Shareable Configs](../developer-guide/shareable-configs)
 
 ## Comments in Configuration Files
 

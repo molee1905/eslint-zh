@@ -5,7 +5,11 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Spaces in Regular Expressions (no-regex-spaces)
 
+# 禁止正则表达式中空格 (no-regex-spaces)
+
 Regular expressions can be very complex and difficult to understand, which is why it's important to keep them as simple as possible in order to avoid mistakes. One of the more error-prone things you can do with a regular expression is to use more than one space, such as:
+
+正则表达式可以很复杂，很难理解，这就是为什么要保持它们尽可能的简单，以避免错误。你在使用正则表达式时最容易出错的是使用了不止一个空格，例如：
 
 ```js
 var re = /foo   bar/;
@@ -13,17 +17,25 @@ var re = /foo   bar/;
 
 In this regular expression, it's very hard to tell how many spaces are intended to be matched. It's better to use only one space and then specify how many spaces are expected, such as:
 
+在正则表达式中，很难断定想要匹配多少个空格。最好是只使用一个空格，然后指定需要多少个，例如：
+
 ```js
 var re = /foo {3}bar/;
 ```
 
 Now it is very clear that three spaces are expected to be matched.
 
+现在非常清楚，需要匹配3个空格。
+
 ## Rule Details
 
 This rule aims to eliminate errors due to multiple spaces inside of a regular expression. As such, it warns whenever more than one space in a row is found inside of a regular expression literal.
 
+该规则旨在消除由于正则表达式中多个空格造成的错误。因此，如果在正则表达式字面量中发现一行中不止有一个空格时，该规则将发出警告。
+
 The following patterns are considered problems:
+
+以下模式被认为是有问题的：
 
 ```js
 /*eslint no-regex-spaces: 2*/
@@ -32,6 +44,8 @@ var re = /foo   bar/; /*error Spaces are hard to count. Use {3}.*/
 ```
 
 The following patterns are not considered problems:
+
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint no-regex-spaces: 2*/
@@ -45,6 +59,8 @@ var re = new RegExp("foo   bar");
 
 If you want to allow multiple spaces in a regular expression, then you can safely turn this rule off.
 
+如果你允许多个空格出现在正则表达式中，你可以关闭此规则。
+
 ## Further Reading
 
 * [Spaces are hard to count](http://jslinterrors.com/spaces-are-hard-to-count-use-a/)
@@ -57,6 +73,8 @@ If you want to allow multiple spaces in a regular expression, then you can safel
 ## Version
 
 This rule was introduced in ESLint 0.4.0.
+
+该规则在ESLint 0.4.0中被引入。
 
 ## Resources
 

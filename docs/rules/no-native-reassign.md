@@ -4,7 +4,7 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Reassignment of Native Objects (no-native-reassign)
-#禁止重现分配内置对象
+#禁止重新分配内置对象
 
 Reports an error when they encounter an attempt to assign a value to built-in native object.
 

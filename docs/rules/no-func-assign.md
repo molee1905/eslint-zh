@@ -4,8 +4,11 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Function Assignment (no-func-assign)
+# 禁止函数赋值（no-func-assign）
 
 JavaScript functions can be written as a FunctionDeclaration `function foo() { ... }` or as a FunctionExpression `var foo = function() { ... };`. While a JavaScript interpreter might tolerate it, overwriting/reassigning a function written as a FunctionDeclaration is often indicative of a mistake or issue.
+
+Javascript函数能以函数声明 `function foo() { ... }` 或者函数表达式 `var foo = function() { ... }`的形式书写。尽管Javascript编译器接受对函数的重写和再指定，但是作为函数声明通常认为是个错误或问题。
 
 ```js
 function foo() {}
@@ -16,7 +19,11 @@ foo = bar;
 
 This rule is aimed at flagging probable mistakes and issues in the form of overwriting a function that was written as a FunctionDeclaration. As such it will warn when this issue is encountered.
 
+该规则旨在消除对函数重写带来的错误和问题。因此遇到这个问题时将发出警告。
+
 The following patterns are considered problems:
+
+以下模式被认为是有问题的
 
 ```js
 /*eslint no-func-assign: 2*/
@@ -31,6 +38,8 @@ function foo() {
 
 Unlike the same rule in JSHint, the following pattern is also considered a warning:
 
+与JSHint中的规则不同,下面的模式也被认为是一个警告:
+
 ```js
 /*eslint no-func-assign: 2*/
 
@@ -39,6 +48,8 @@ function foo() {}
 ```
 
 The following patterns are not considered problems:
+
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint no-func-assign: 2*/
@@ -58,6 +69,8 @@ function foo() {
 ## Version
 
 This rule was introduced in ESLint 0.0.9.
+
+该规则是在ESLint 0.0.9 中被引入的。
 
 ## Resources
 

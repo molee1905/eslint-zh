@@ -5,7 +5,11 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Assignment of the Exception Parameter (no-ex-assign)
 
+# 禁止为异常参数赋值（no-ex-assign）
+
 When an error is caught using a `catch` block, it's possible to accidentally (or purposely) overwrite the reference to the error. Such as:
+
+使用 `catch` 捕获到一个错误时，有可能意外地(或故意)覆盖错误的引用。如:
 
 ```js
 try {
@@ -17,12 +21,17 @@ try {
 
 This makes it impossible to track the error from that point on.
 
+这使得它不可以从这里追踪错误。
 
 ## Rule Details
 
 This rule's purpose is to enforce convention. Assigning a value to the exception parameter wipes out all the valuable data contained therein and thus should be avoided. Since there is no `arguments` object to offer alternative access to this data, assignment of the parameter is absolutely destructive.
 
+该规则的目的是强制约定。为异常参数赋值，其中所包含的所有有价值的数据会丢失,因此应该避免。由于没有 `arguments` 对象提供替代的选择访问这些数据,赋值给该参数绝对是毁灭性的。
+
 The following patterns are considered problems:
+
+下面是有问题的代码：
 
 ```js
 /*eslint no-ex-assign: 2*/
@@ -35,6 +44,8 @@ try {
 ```
 
 The following patterns are not considered problems:
+
+下面是正确的代码：
 
 ```js
 /*eslint no-ex-assign: 2*/
@@ -58,6 +69,9 @@ Related aside: there are some interesting caveats in IE 6-8 where the exception 
 ## Version
 
 This rule was introduced in ESLint 0.0.9.
+
+该规则是在ESLint 0.0.9 中被引入的。
+
 
 ## Resources
 

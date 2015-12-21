@@ -4,14 +4,22 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Warning Comments (no-warning-comments)
+＃禁止警告注释(no-warning-comments)
 
 Often code is marked during development process for later work on it or with additional thoughts. Examples are typically `// TODO: do something` or `// FIXME: this is not a good idea`. These comments are a warning signal, that there is something not production ready in your code. Most likely you want to fix it or remove the comments before you roll out your code with a good feeling.
+
+
+通常在开发过程中代码标记是为以后工作或额外的想法。例子通常是`// TODO: 做了什么` 或者 `// FIXME: 不是一个好想法`。这些注释是一个警告信号,在你的代码中不会产生什么。最有可能你想改正或删除评论之前推出你中意的代码。
 
 ## Rule Details
 
 This rule can be used to help finding these `warning-comments`. It can be configured with an array of terms you don't want to exist in your code. It will raise a warning when one or more of the configured `warning-comments` are present in the checked files.
 
+此规则可以用来寻找那些`warning-comments`。它可以用一个数组来配置那些你不想放在代码中的东西。它会引起警告当一个或多个被配置的`warning-comments`存在于检查文件中。
+
 The default configuration looks like this:
+
+默认的配置如下：
 
 ```json
 "no-warning-comments": [0, { "terms": ["todo", "fixme", "xxx"], "location": "start" }]
@@ -19,18 +27,35 @@ The default configuration looks like this:
 
 This preconfigures
 
+如上配置
+
 * the rule is disabled because it is set to `0`. Changing this to `1` for warn or `2` for error mode activates it (this works exactly the same as everywhere else in `ESLint`).
+
+* 规则不可用因为它被设置为`0`。改为`1`警告或者`2`错误模式来激活它
+
 * the `terms` array is set to `todo`, `fixme` and `xxx` as `warning-comments`. `terms` has to be an array. It can hold any terms you might want to warn about in your comments - they do not have to be single words. E.g. `really bad idea` is as valid as `attention`.
+
+* `terms`数组设置为`todo`, `fixme` 和 `xxx` 作为 `warning-comments`. `terms`必须是个数组。它可以容纳任何的条款，你可能想要警告你的评论-他们没有必要是单个词。例如`really bad idea`与`attention`同样有效。
+
 * the `terms` are case-insensitive and are matched as whole words. E.g. `fix` would not match `fixing`.
+
+* `terms`是不区分大小写的,匹配整个单词。如。`fix`不匹配`fixing`。
+
 * the `location`-option set to `start` configures the rule to check only the start of comments. E.g. `// TODO` would be matched, `// This is a TODO` would not. You can change this to `anywhere` to check your complete comments.
 
+* `location`选项设置为`start`配置规则检查注释的开头。如，`// TODO`将会匹配，`// This is a TODO`不会匹配。你可以改变为`anywhere`来检查你整个评论。
+
 As already seen above, the configuration is quite simple. Example that enables the rule and configures it to check the complete comment, not only the start:
+
+正如上面已经见过的,配置非常简单。例如开启规则并配置它检查完整的评论,而不仅是开始：
 
 ```json
 "no-warning-comments": [2, { "terms": ["todo", "fixme", "any other term"], "location": "anywhere" }]
 ```
 
 The following patterns are considered problems:
+
+以下模式被认为是有问题的：
 
 ```
 /*eslint no-warning-comments: [2, { "terms": ["todo", "fixme", "any other term"], "location": "anywhere" }]*/
@@ -46,6 +71,8 @@ The following patterns are considered problems:
 ```
 
 These patterns would not be considered problems:
+
+以下模式被认为是没有问题的：
 
 ```
 /*eslint no-warning-comments: [2, { "terms": ["todo", "fixme", "any other term"], "location": "anywhere" }]*/
@@ -113,6 +140,8 @@ These patterns would not be considered problems:
 ## Version
 
 This rule was introduced in ESLint 0.4.4.
+
+此规则在ESLint 0.4.4中被引入。
 
 ## Resources
 

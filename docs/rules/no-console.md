@@ -5,6 +5,8 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Use of console (no-console)
 
+# 禁用console (no-console)
+
 In JavaScript that is designed to be executed in the browser, it's considered a best practice to avoid using methods on `console`. Such messages are considered to be for debugging purposes and therefore not suitable to ship to the client. In general, calls using `console` should be stripped before being pushed to production.
 
 在JavaScript中，console用于在浏览器中运行，是一种避免在控制台使用方法的最佳实践。console输出的消息被认为是用于调试目的，因此不适合输出到客户端。通常在发布到产品时应该删除掉。
@@ -59,7 +61,7 @@ If you're using Node.js, however, `console` is used to output information to the
 
 This rule was introduced in ESLint 0.0.2.
 
-这个规则是在ESLint 0.0.2中引进发布的。
+该规则是在ESLint 0.0.2 中被引入。
 
 ## Resources
 

@@ -38,7 +38,7 @@ By default the rule treats `cb`, `callback`, and `next` as callbacks.
 
 The following patterns are considered problems:
 
-错误：
+以下模式被认为是有问题的：
 
 ```js
 /*eslint callback-return: 2*/
@@ -53,7 +53,7 @@ function foo() {
 
 The following patterns are not considered problems:
 
-正确
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint callback-return: 2*/

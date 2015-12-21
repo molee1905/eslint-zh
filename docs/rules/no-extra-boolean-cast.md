@@ -4,8 +4,11 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Extra Boolean Casts (no-extra-boolean-cast)
+# 禁止额外布尔类型转换（no-extra-boolean-cast）
 
 In contexts such as an `if` statement's test where the result of the expression will already be coerced to a Boolean, casting to a Boolean via double negation (`!!`) is unnecessary. For example, these `if` statements are equivalent:
+
+在上下文中如 `if` 语句的测试表达式的结果已经强制转化成布尔值，再通过双重否定（`!!`）转化是不必要的。例如，这些 `if` 语句是等价的：
 
 ```js
 if (!!foo) {
@@ -21,7 +24,11 @@ if (foo) {
 
 This rule aims to eliminate the use of double-negation Boolean casts in an already Boolean context.
 
+该规则旨在避免在已有布尔上下文中使用双重否定的布尔类型转换。
+
 The following patterns are considered problems:
+
+下面是有问题的代码：
 
 ```js
 /*eslint no-extra-boolean-cast: 2*/
@@ -53,6 +60,8 @@ for (; !!foo; ) {             /*error Redundant double negation in a for loop co
 
 The following patterns are not considered problems:
 
+下面是正确的代码：
+
 ```js
 /*eslint no-extra-boolean-cast: 2*/
 
@@ -68,6 +77,9 @@ var foo = bar ? !!baz : !!bat;
 ## Version
 
 This rule was introduced in ESLint 0.4.0.
+
+该规则是在ESLint 0.4.0 中被引入的。
+
 
 ## Resources
 

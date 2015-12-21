@@ -55,7 +55,7 @@ If you need to use control character pattern matching, then you should turn this
 
 This rule was introduced in ESLint 0.1.0.
 
-这个规则是在ESLint 0.1.0中引进发布的。
+该规则是在ESLint 0.1.0中被引入的。
 
 ## Resources
 
