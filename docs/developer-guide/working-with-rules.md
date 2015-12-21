@@ -574,7 +574,7 @@ The `options` property must be an array of options. This gets passed through to 
 
 Each invalid case must be an object containing the code to test and at least one message that is produced by the rule. The `errors` key specifies an array of objects, each containing a message (your rule may trigger multiple messages for the same code). You should also specify the type of AST node you expect to receive back using the `type` key. The AST node should represent the actual spot in the code where there is a problem. For example:
 
-每个无效的用例不想是个对象，包含要测试的代码和至少一条规则产生的消息。`errors`键指定一个包含对象数组，每个对象都包含一条消息（你的规则对同一段代码可能触发多个消息）。你还应该使用`type`键指定你希望接收到的AST节点类型。AST节点应该代表有问题的代码的实际的点。例如：
+每个无效的用例必须是个对象，包含要测试的代码和至少一条规则产生的消息。`errors`键指定一个包含对象数组，每个对象都包含一条消息（你的规则对同一段代码可能触发多个消息）。你还应该使用`type`键指定你希望接收到的AST节点类型。AST节点应该代表有问题的代码的实际的点。例如：
 
 ```js
 invalid: [
