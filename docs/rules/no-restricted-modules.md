@@ -37,7 +37,7 @@ The syntax to specify restricted modules looks like this:
 
 The following patterns are considered problems:
 
-以下的模式被认为是错误的:
+以下的模式被认为是有问题的:
 
 ```js
 /*eslint no-restricted-modules: [2, "fs"]*/
@@ -53,7 +53,7 @@ var fs = require(' cluster '); /*error 'cluster' module is restricted from being
 
 The following patterns are not considered problems:
 
-以下的模式被认为是正确的:
+以下的模式被认为是没有问题的:
 
 ```js
 /*eslint no-restricted-modules: [2, "fs"]*/
