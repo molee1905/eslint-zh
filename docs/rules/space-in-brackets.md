@@ -5,7 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow or enforce spaces inside of brackets. (space-in-brackets)
 
-# 在括号中禁止或强制空格. (space-in-brackets)
+# 在括号中禁止或强制空格。(space-in-brackets)
 
 **Replacement notice**: This rule was removed in ESLint v1.0 and replaced by the [object-curly-spacing](object-curly-spacing), [computed-property-spacing](computed-property-spacing) and [array-bracket-spacing](array-bracket-spacing) rules.
 

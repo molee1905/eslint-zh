@@ -9,7 +9,7 @@ layout: doc
 
 **Replacement notice**: This rule was removed in ESLint v1.0 and replaced by the [generator-star-spacing](generator-star-spacing) rule.
 
-**替换声明**: 该规则在ESLint v1.0 中移除并被 [generator-star-spacing](generator-star-spacing) 规则代替。
+**替换声明**: 该规则在ESLint v1.0 中移除并被[generator-star-spacing](generator-star-spacing)规则代替。
 
 Generators are a new type of function in ECMAScript 6 that can return multiple values over time.
 
@@ -68,7 +68,7 @@ This rule enforces that the `*` is either placed next to the `function` keyword 
 option for this rule is a string specifying the placement of the asterick. For this option you may pass
 `"start"`, `"middle"` or `"end"`. The default is `"end"`.
 
-该规则强制`*`挨着`function`关键字或者函数名称放置。此规则的单一选项是一个字符串，用来指定星号的位置。你可以选择`"start"`, `"middle"` 或者`"end"`. 默认为`"end"`。
+该规则强制`*`挨着`function`关键字或者函数名称放置。此规则的单一选项是一个字符串，用来指定星号的位置。你可以选择`"start"`, `"middle"` 或者`"end"`。默认为`"end"`。
 
 You can set the style in configuration like this:
 
@@ -80,7 +80,7 @@ You can set the style in configuration like this:
 
 When using `"start"` this placement will be enforced:
 
-使用 `"start"`时位置将被强制为:
+使用`"start"`时位置将被强制为:
 
 ```js
 /*eslint-env es6*/
@@ -91,7 +91,7 @@ function* generator() {
 
 When using `"middle"` this placement will be enforced:
 
-使用`"middle"` 时位置被强制为:
+使用`"middle"`时位置被强制为:
 
 ```js
 /*eslint-env es6*/
@@ -113,7 +113,7 @@ function *generator() {
 
 When using the expression syntax `"start"` will be enforced here:
 
-当使用表达式语法 `"start"`时将像下面这样强制:
+当使用表达式语法`"start"`时将像下面这样强制:
 
 ```js
 /*eslint-env es6*/
@@ -124,7 +124,7 @@ var generator = function* () {
 
 When using the expression syntax `"middle"` will be enforced here:
 
-当使用表达式语法 `"middle"`时将像下面这样强制:
+当使用表达式语法`"middle"`时将像下面这样强制:
 
 ```js
 /*eslint-env es6*/
@@ -135,7 +135,7 @@ var generator = function * () {
 
 When using the expression syntax `"end"` will be enforced here:
 
-当使用表达式语法 `"end"`时将像下面这样强制:
+当使用表达式语法`"end"`时将像下面这样强制:
 
 ```js
 /*eslint-env es6*/
@@ -146,7 +146,7 @@ var generator = function *() {
 
 When using the expression syntax this is valid for both `"start"` and `"end"`:
 
-使用表达式语法时`"start"` and `"end"`同样适用:
+使用表达式语法时`"start"`和`"end"`同样适用:
 
 ```js
 /*eslint-env es6*/
@@ -157,7 +157,7 @@ var generator = function*() {
 
 To use this rule you must set the `generators` flag to `true` in the `ecmaFeatures` configuration object.
 
-要使用该规则必须在`ecmaFeatures` 配置对象中将设置`generators` 标记为 `true` 。
+要使用该规则必须在`ecmaFeatures` 配置对象中将设置`generators`标记为`true` 。
 
 Also note, that shortened object literal syntax for generators is not affected by this rule.
 
@@ -167,7 +167,7 @@ Also note, that shortened object literal syntax for generators is not affected b
 
 If your project will not be using generators you do not need this rule.
 
-如果你的工程中不会使用generator函数就不必使用该规则。
+如果你的项目中不会使用generator函数就不必使用该规则。
 
 ## Further Reading
 
