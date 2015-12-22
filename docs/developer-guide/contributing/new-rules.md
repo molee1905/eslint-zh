@@ -22,7 +22,7 @@ In general, ESLint core rules must be:
 
 1. **Generic.** Rules cannot be so specific that users will have trouble understanding when to use them. A rule is typically too specific if describing what it does requires more than two "and"s (if a and b and c and d, then this rule warns).
 
-1.**通用性。** 规则不能太具体而导致用户使用过程中产生误解。如果一条规则需要2个以上的“and”来描述，那么它通常就是太具体了(if a and b and c and d, then this rule warns)。
+1. **通用性。** 规则不能太具体而导致用户使用过程中产生误解。如果一条规则需要2个以上的“and”来描述，那么它通常就是太具体了(if a and b and c and d, then this rule warns)。
 
 1. **Atomic.** Rules must function completely on their own. Rules are expressly forbidden from knowing about the state or presence of other rules.
 
