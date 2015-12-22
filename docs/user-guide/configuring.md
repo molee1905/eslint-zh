@@ -9,7 +9,7 @@ layout: doc
 
 ESLint is designed to be completely configurable, meaning you can turn off every rule and run only with basic syntax validation, or mix and match the bundled rules and your custom rules to make ESLint perfect for your project. There are two primary ways to configure ESLint:
 
-ESlint 被设计为完全可配置的，这意味着你可以关闭所有规则，只运行基本的语法验证，或混合和匹配绑定的规则和你自定义规则，让ESLint更适合于你项目。有两个主要的方法配置ESLint。
+ESlint 被设计为完全可配置的，这意味着你可以关闭所有规则，只运行基本的语法验证，或混合和匹配绑定的规则和你自定义规则，让ESLint更适合于你项目。有两个主要的方法配置ESLint：
 
 1. **Configuration Comments** - use JavaScript comments to embed configuration information directly into a file.
 1. **Configuration Comments** - 使用JavaScript注释直接包含配置信息到一个文件。

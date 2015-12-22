@@ -72,11 +72,11 @@ If you're going to work on an issue, please add a comment to that issue saying s
 
 If an issue has already been claimed by someone, please be respectful of that person's desire to complete the work and don't work on it unless you verify that they are no longer interested.
 
-如果一个议题已被认领，请尊重他想完成这项工作的愿望，不要在上面工作，除非你确定他们已经不在感兴趣了。
+如果一个议题已被认领，请尊重他想完成这项工作的愿望，不要在上面工作，除非你确定他们已经不再感兴趣了。
 
 If you find you can't finish the work, then simply add a comment letting people know, for example:
 
-如果你发现你不能完成这项工作，简单添加一条评论让人们知道，例如:
+如果你发现你不能完成这项工作，简单地添加一条评论让人们知道，例如:
 
 * "Sorry, it looks like I don't have time to do this."
 * "I thought I knew enough to fix this, but it turns out I don't."
