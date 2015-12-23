@@ -176,7 +176,7 @@ These are rules designed to prevent you from making mistakes. They either prescr
 * [no-sequences](no-sequences) - disallow use of the comma operator
 * [no-sequences](no-sequences) - 禁用逗号操作符
 * [no-throw-literal](no-throw-literal) - restrict what can be thrown as an exception
-* [no-throw-literal](no-throw-literal) - 限制可悲抛出的异常
+* [no-throw-literal](no-throw-literal) - 限制可被抛出的异常
 * [no-unused-expressions](no-unused-expressions) - disallow usage of expressions in statement position
 * [no-unused-expressions](no-unused-expressions) - 禁止在语句的位置使用表达式
 * [no-useless-call](no-useless-call) - disallow unnecessary `.call()` and `.apply()`
