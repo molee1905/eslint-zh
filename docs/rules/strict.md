@@ -211,7 +211,7 @@ This mode ensures that all functions are executed in strict mode. A Use Strict D
 
 The following patterns are considered problems:
 
-以下形式被认为有问题：
+以下模式被认为有问题：
 
 ```js
 // "strict": 2
@@ -223,7 +223,7 @@ function foo() {
 
 The following patterns do not cause a warning:
 
-以下模式不会导致警告：
+以下模式不会引起警告：
 
 ```js
 // "strict": 2
