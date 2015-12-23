@@ -488,9 +488,6 @@ To temporary disable warnings in your file use the following format:
 /*eslint-disable */
 
 //suppress all warnings between comments
-
-// 关闭注释内所有警告信息
-
 alert('foo');
 
 /*eslint-enable */
@@ -765,7 +762,6 @@ The extended configuration provides base rules, which can be overridden by the c
 
     "rules": {
         // Override any settings from the "parent" configuration
-        // 覆盖所有“父级”目录的配置
         "eqeqeq": 1
     }
 }
@@ -780,16 +776,13 @@ Configurations may also be provided as an array, with additional files overridin
     "extends": [
         "./node_modules/coding-standard/eslintDefaults.js",
         // Override eslintDefaults.js
-        // 覆盖 eslintDefaults.js
         "./node_modules/coding-standard/.eslintrc-es6",
         // Override .eslintrc-es6
-        // 覆盖 .eslintrc-es6
         "./node_modules/coding-standard/.eslintrc-jsx",
     ],
 
     "rules": {
         // Override any settings from the "parent" configuration
-        // 覆盖所有“父级”目录的配置
         "eqeqeq": 1
     }
 }
@@ -809,7 +802,6 @@ You can also extend configurations using shareable configuration packages. To do
 
     "rules": {
         // Override any settings from the "parent" configuration
-        // 覆盖所有“父级”目录的配置
         "eqeqeq": 1
     }
 }
@@ -838,7 +830,6 @@ JSON和YAML配置文件格式都支持注释(`package.json` 本应该支持但�
     },
     "rules": {
         // Override our default settings just for this directory
-        // 覆盖本目录下的默认设置
         "eqeqeq": 1,
         "strict": 0
     }
