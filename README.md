@@ -1,5 +1,7 @@
 # ESLint Web Site
 
+[![Join the chat at https://gitter.im/smocean/eslint-zh](https://badges.gitter.im/smocean/eslint-zh.svg)](https://gitter.im/smocean/eslint-zh?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This contains the code running on eslint.org.
 
 ## Pull Requests
