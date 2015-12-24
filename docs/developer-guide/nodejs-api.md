@@ -152,7 +152,7 @@ In this way, you can retrieve the text and AST used for the last run of `linter.
 
 The primary Node.js API is `CLIEngine`, which is the underlying utility that runs the ESLint command line interface. This object will read the filesystem for configuration and file information but will not output any results. Instead, it allows you direct access to the important information so you can deal with the output yourself.
 
-主要的Node.js API 是 `CLIEngine`，它是运行在ESLint命令行接口的基础实用工具。该对象会读取文件系统获得配置和文件信息，但不会输出任何结果。相反，它运行你直接访问重要信息，所有你可以自己处理输出结果。
+主要的Node.js API 是 `CLIEngine`，它是运行在ESLint命令行接口的基础实用工具。该对象会读取文件系统获得配置和文件信息，但不会输出任何结果。相反，它允许你直接访问重要信息，这样你就可以自己处理输出结果。
 
 You can get a reference to the `CLIEngine` by doing the following:
 
