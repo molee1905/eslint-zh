@@ -5,7 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Validates JSDoc comments are syntactically correct (valid-jsdoc)
 
-# 验证JSDoc注释是语法正确的
+# 验证JSDoc注释是语法正确的 (valid-jsdoc)
 
 [JSDoc](http://usejsdoc.org) is a JavaScript API documentation generator. It uses specially-formatted comments inside of code to generate API documentation automatically. For example, this is what a JSDoc comment looks like for a function:
 

@@ -7,7 +7,7 @@ layout: doc
 
 # 要求或禁止关键字之前的空格 (space-before-keywords)
 
-Keywords are syntax elements of JavaScript, such as `function` and `if`. These identifiers have special meaning to the language and so often appear in a different color in code editors. As an important part of the language, style guides often refer to the spacing that should be used around keywords. For example, you might have a style guide that says keywords should be always be preceeded by spaces, which would mean `if-else` statements must look like this:
+Keywords are syntax elements of JavaScript, such as `function` and `if`. These identifiers have special meaning to the language and so often appear in a different color in code editors. As an important part of the language, style guides often refer to the spacing that should be used around keywords. For example, you might have a style guide that says keywords should be always be preceded by spaces, which would mean `if-else` statements must look like this:
 
 关键字是Javascript中的语法元素，比如`function` 和 `if`。这些标识符对该语言有特殊意义，因此经常在代码编辑器中以不同的颜色出现。作为Javascript语言的重要组成部分，风格指南经常提到关键字周围应该使用空格。例如，你可能有一个风格指南说关键字应该总是有前置空格，这意味着`if-else`语句必须看起来像下面这样：
 

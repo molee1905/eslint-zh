@@ -5,7 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Avoid unexpected multiline expressions (no-unexpected-multiline)
 
-# 避免意外的多行表达式
+# 避免意外的多行表达式 (no-unexpected-multiline)
 
 Semicolons are optional in JavaScript, via a process called automatic semicolon insertion (ASI). See the documentation for [semi](./semi) for a fuller discussion of that feature.
 
@@ -28,7 +28,7 @@ This particular rule aims to spot scenarios where a newline looks like it is end
 
 ## Rule Details
 
-This rule is aimed at ensuring that two unrelated consecutive lines are not accidentially interpreted as a single expression.
+This rule is aimed at ensuring that two unrelated consecutive lines are not accidentally interpreted as a single expression.
 
 该规则旨在保证两个无关的连续的行不被意外的解释为单个表达式。
 

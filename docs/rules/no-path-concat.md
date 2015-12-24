@@ -3,9 +3,9 @@ title: Rule no-path-concat
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
-# Disallow string concatenation when using __dirname and __filename (no-path-concat)
+# Disallow string concatenation when using `__dirname` and `__filename` (no-path-concat)
 
-# 当使用 _dirname 和 _filename 时不支持字符串拼接 (no-path-concat)
+# 当使用 `_dirname` 和 `_filename` 时不支持字符串拼接 (no-path-concat)
 
 In Node.js, the `__dirname` and `__filename` global variables contain the directory path and the file path of the currently executing script file, respectively. Sometimes, developers try to use these variables to create paths to other files, such as:
 

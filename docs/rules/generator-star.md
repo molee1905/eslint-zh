@@ -65,7 +65,7 @@ To keep a sense of consistency when using generators this rule enforces a single
 ## Rule Details
 
 This rule enforces that the `*` is either placed next to the `function` keyword or the name of the function. The single
-option for this rule is a string specifying the placement of the asterick. For this option you may pass
+option for this rule is a string specifying the placement of the asterisk. For this option you may pass
 `"start"`, `"middle"` or `"end"`. The default is `"end"`.
 
 该规则强制`*`挨着`function`关键字或者函数名称放置。此规则的单一选项是一个字符串，用来指定星号的位置。你可以选择`"start"`, `"middle"` 或者`"end"`。默认为`"end"`。
