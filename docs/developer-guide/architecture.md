@@ -140,7 +140,7 @@ This object may not:
 
 Individual rules are the most specialized part of the ESLint architecture. Rules can do very little, they are simply a set of instructions executed against an AST that is provided. They do get some context information passed in, but the primary responsibility of a rule is to inspect the AST and report warnings.
 
-独特的规则是ESLint 架构中最专业的部分。规则能做的很少，他们只是对提供的AST执行的一组指令。它们获取以下传入的上下文信息，但主要职责是家常AST，报告警告。
+独特的规则是ESLint 架构中最专业的部分。规则能做的很少，它们只是对提供的AST执行的一组指令。它们获取以下传入的上下文信息，但主要职责是家常AST，报告警告。
 
 These objects' responsibilities are:
 
