@@ -2,6 +2,7 @@
 title: Integrations
 layout: doc
 redirect_from: "/docs/integrations/"
+disablePreview: true
 ---
 
 # Integrations

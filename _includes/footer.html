@@ -10,6 +10,13 @@
           <li><a href="https://twitter.com/geteslint">Twitter</a></li>
           <li>Copyright &copy; 2013-2015 Nicholas C. Zakas. All rights reserved.</li>
         </ul>
+        {% if page.disablePreview != true %}
+        <div class="preview-panel">
+          <label class="radio-inline"><input type="radio" name="lang-type" value="lang-mixed" checked><span class="outer"><span class="inner"></span></span>中英文</label>
+          <label class="radio-inline"><input type="radio" name="lang-type" value="lang-zh"><span class="outer"><span class="inner"></span></span>中文</label>
+          <label class="radio-inline"><input type="radio" name="lang-type" value="lang-en"><span class="outer"><span class="inner"></span></span>英文</label>
+        </div>
+        {% endif %}
       </footer>
     </div><!-- /.container -->
 
@@ -62,7 +69,16 @@
           $('.expender').html('收起 <span class="dropup"><span class="caret"></span></span>');
         }
       });
-    {% endif %}
+      {% endif %}
+      {% if page.disablePreview != true %}
+        $('input[name=lang-type]').on('click', function() {
+            var type = $(this).val();
+
+            $('.doc').removeClass(function(index,clz){
+                return clz.slice(3);
+            }).addClass(type);
+        });
+      {% endif %}
     });
   </script>
 </body>

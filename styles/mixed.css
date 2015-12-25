@@ -1,3 +1,10 @@
+.preview-panel {
+    position: fixed;
+    top: 40px;
+    left: 250px;
+    z-index: 1031;
+    font-size: 14px;
+}
 h1:nth-of-type(2n+1),
 p:nth-of-type(2n+1),
 li:nth-of-type(2n+1),
@@ -11,4 +18,16 @@ p:nth-of-type(2n+1):hover,
 p:only-of-type,
 li:nth-of-type(2n+1):hover {
     color: #333;
+}
+
+.lang-zh h1:nth-of-type(odd):not(:only-of-type),
+.lang-zh p:nth-of-type(odd):not(:only-of-type),
+.lang-zh li:nth-of-type(odd) {
+    display: none;
+}
+
+.lang-en h1:nth-of-type(even),
+.lang-en p:nth-of-type(even),
+.lang-en li:nth-of-type(even) {
+    display: none;
 }
