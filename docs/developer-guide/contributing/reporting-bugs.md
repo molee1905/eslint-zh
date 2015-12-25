@@ -33,11 +33,11 @@ In addition, if you're reporting a bug with a rule, be sure to include:
 
 Please include as much detail as possible to help us properly address your issue. If we need to triage issues and constantly ask people for more detail, that's time taken away from actually fixing issues. Help us be as efficient as possible by including a lot of detail in your issues.
 
-请包含尽可能多的细节来帮助我们正确地解决你的问题。如果我们需要对问题分类，会不断询问更多细节，距离实际修复问题是需要时间的。包括更多的细节在你的问题上可以帮助我们尽可能高效。
+请包含尽可能多的细节来帮助我们正确地解决你的议题（issue）。如果我们需要对议题（issue）分类，会不断询问更多细节，距离实际修复问题是需要时间的。包括更多的细节在你的议题（issue）上可以帮助我们尽可能高效。
 
 **Note:** If you just have a question that won't necessarily result in a change to ESLint, such as asking how something works or how to contribute, please use the [mailing list](https://groups.google.com/group/eslint) instead of filing an issue.
 
-**注意** 如果你只是有一个问题，并不一定会导致改变ESLint，比如问一些如何工作或如果参与，请使用[邮件列表](https://groups.google.com/group/eslint)而不是提交一个问题。
+**注意：** 如果你只是有一个问题，并不一定会导致改变ESLint，比如问一些如何工作或如何参与的问题，请使用[邮件列表](https://groups.google.com/group/eslint)而不是提交一个议题（issue）。
 
 
 
