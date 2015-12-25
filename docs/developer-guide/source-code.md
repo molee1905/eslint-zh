@@ -14,7 +14,7 @@ ESLint 托管在 [GitHub](http://www.github.com)，使用 [Git](http://git-scm.c
 
 If you simply want to create a local copy of the source to play with, you can clone the main repository using this command:
 
-如果仅仅想拷贝源码到本地，可以使用此命令 clone 主分支：
+如果仅仅想拷贝源码到本地，可以使用这个命令克隆主仓库：
 
     git clone git://github.com/eslint/eslint.git
 
@@ -48,7 +48,7 @@ Now when you run `eslint`, it will be running your local copy and showing your c
 
 **Note:** It's a good idea to re-rerun `npm install` whenever you pull from the main repository to ensure you have the latest development dependencies.
 
-**Note:** 当你从主分支上 pull 代码后，请重新运行 `npm install` 命令，确保安装最新的开发依赖。
+**注意：** 当你从主仓库上 pull 代码后，请重新运行 `npm install` 命令，确保安装最新的开发依赖。
 
 ## Directory structure
 
