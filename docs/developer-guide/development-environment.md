@@ -15,21 +15,21 @@ ESLint 有一个非常轻量的开发环境使更新代码非常快速简单。�
 
 ## Step 1: 安装 Node.js
 
-Go to [http://nodejs.org/] to download and install the latest stable version for your operating system.
+Go to [http://nodejs.org/](http://nodejs.org/) to download and install the latest stable version for your operating system.
 
-到 [http://nodejs.org/] 下载并在你的操作系统中安装最新的稳定版 node
+到[http://nodejs.org/](http://nodejs.org/)为你的操作系统下载并安装最新的稳定版。
 
 Most of the installers come with [npm](http://npmjs.org/) already installed, but if for some reason it doesn't work on your system, you can install it manually using the instructions on the website.
 
-大多数安装器自带的 [npm](http://npmjs.org/) 已经自动安装，但是由于一些原因它不能在你的系统中工作，你可以根据网站上的这个文档手动安装。
+大多数安装器自带的[npm](http://npmjs.org/) 已经自动安装，但是由于一些原因它不能在你的系统中工作，你可以根据网站上的说明手动安装。
 
 ## Step 2: Fork and checkout your own ESLint repository
 
 ## Step 2: Fork and checkout 你自己的 ESLint 仓库
 
-Go to [https://github.com/eslint/eslint] and click the "Fork" button. Follow the [GitHub documentation](https://help.github.com/articles/fork-a-repo) for forking and cloning.
+Go to [https://github.com/eslint/eslint](https://github.com/eslint/eslint) and click the "Fork" button. Follow the [GitHub documentation](https://help.github.com/articles/fork-a-repo) for forking and cloning.
 
-到 [https://github.com/eslint/eslint ] 网站并点击 "Fork" 按钮。按照[GitHub 文档](https://help.github.com/articles/fork-a-repo)了解关于 forking 和 cloing。
+到[https://github.com/eslint/eslint](https://github.com/eslint/eslint) 网站并点击 "Fork" 按钮。按照[GitHub 文档](https://help.github.com/articles/fork-a-repo)了解关于 forking 和 cloing。
 
 Once you've cloned the repository, run `npm install` to get all the necessary dependencies:
 
