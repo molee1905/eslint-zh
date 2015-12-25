@@ -1,0 +1,14 @@
+h1:nth-of-type(2n+1),
+p:nth-of-type(2n+1),
+li:nth-of-type(2n+1),
+li:nth-of-type(2n+1) p:only-of-type {
+    color: rgba(51,51,51,.5);
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+h1:nth-of-type(2n+1):hover,
+p:nth-of-type(2n+1):hover,
+p:only-of-type,
+li:nth-of-type(2n+1):hover {
+    color: #333;
+}
