@@ -125,6 +125,7 @@ These are rules designed to prevent you from making mistakes. They either prescr
 * [no-extra-bind](no-extra-bind) - disallow unnecessary function binding
 * [no-extra-bind](no-extra-bind) - 禁止不必要的函数绑定
 * [no-fallthrough](no-fallthrough) - disallow fallthrough of `case` statements (recommended)
+* [no-fallthrough](no-fallthrough) - disallow fallthrough of `case` statements (recommended)
 * [no-floating-decimal](no-floating-decimal) - disallow the use of leading or trailing decimal points in numeric literals
 * [no-floating-decimal](no-floating-decimal) - 禁止数字字面量中使用前导和末尾小数点
 * [no-implicit-coercion](no-implicit-coercion) - disallow the type conversions with shorter notations
@@ -355,6 +356,7 @@ These rules are purely matters of style and are quite subjective.
 * [one-var](one-var) - require or disallow one variable declaration per scope
 * [one-var](one-var) - 要求或禁止每个作用域只有一个变量声明
 * [operator-assignment](operator-assignment) - require assignment operator shorthand where possible or prohibit it entirely
+* [operator-assignment](operator-assignment) - 完全禁止或在可能的情况下要求使用简化的赋值操作符
 * [operator-linebreak](operator-linebreak) - enforce operators to be placed before or after line breaks
 * [operator-linebreak](operator-linebreak) - 强制操作符放在换行符之前或之后
 * [padded-blocks](padded-blocks) - enforce padding within blocks
