@@ -244,6 +244,7 @@ These rules are specific to JavaScript running on Node.js or using CommonJS in t
 这些规则是对javascript来时是特殊，它们运行在Node.js上或者在浏览器中使用CommonJS。
 
 * [callback-return](callback-return) - enforce `return` after a callback
+* [callback-return](callback-return) - enforce `return` after a callback
 * [global-require](global-require) - enforce `require()` on top-level module scope
 * [global-require](global-require) - 强制 `require()` 出现在顶层模块作用域中
 * [handle-callback-err](handle-callback-err) - enforce error handling in callbacks

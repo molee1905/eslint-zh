@@ -39,9 +39,9 @@ As Contributors gain experience and familiarity with the project, their profile 
 
 ### Committers
 
-Committers are community members who have shown that they are committed to the continued development of the project through ongoing engagement with the community. Committers are given push access to the project's GitHub repos and must abide by the project's [Contribution Guidelines](contributing.html).
+Committers are community members who have shown that they are committed to the continued development of the project through ongoing engagement with the community. Committers are given push access to the project's GitHub repos and must abide by the project's [Contribution Guidelines](contributing).
 
-提交者是社区成员，他们已经表现出通过不断的参与到社区致力于项目的持续发展。提交者对该项目的git仓库授权了push权限，且必须遵守项目的 [贡献指南](contributing.html).
+提交者是社区成员，他们已经表现出通过不断的参与到社区致力于项目的持续发展。提交者对该项目的git仓库授权了push权限，且必须遵守项目的 [贡献指南](contributing).
 
 Committers:
 

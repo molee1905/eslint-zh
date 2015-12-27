@@ -10,7 +10,7 @@ Our public [issues tracker](https://github.com/eslint/eslint/issues) lists all o
 
 ## Issue Labels
 
-## 问题标签
+## Issue 标签
 
 We use labels to indicate the status of issues. The most important labels are:
 
@@ -41,7 +41,7 @@ We accept and assign issue bounties using [BountySource](https://www.bountysourc
 
 ## Issue Priority
 
-## 问题优先级
+## Issue 优先级
 
 Because we have a lot of issues, we prioritize certain issues above others. The following is the list of priorities, from highest to lowest:
 

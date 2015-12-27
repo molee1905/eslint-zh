@@ -14,7 +14,7 @@ If you want to contribute to an ESLint repo, please use a GitHub pull request. T
 
 If you'd like to work on a pull request and you've never submitted code before, follow these steps:
 
-如果你想要使用合并请求进行工作，但是你以前从来没有提交过代码，请遵循以下步骤：
+如果你想要使用合并请求（pull request）进行工作，但是你以前从来没有提交过代码，请遵循以下步骤：
 
 1. Sign our [Contributor License Agreement](/cla).
 1. 签署我们的 [电子协议 （Contributor License Agreement）](/cla)。
@@ -59,7 +59,7 @@ Details about each step are found below.
 
 The first step to sending a pull request is to create a new branch in your ESLint fork. Give the branch a descriptive name that describes what it is you're fixing, such as:
 
-发起一个合并请求的第一步是，在你fork的 ESLint 中新建一个分支。给这个分支起一个描述性的名字用来介绍它正在修复的事情，比如：
+发起一个合并请求（pull request）的第一步是，在你 fork 的 ESLint 中新建一个分支。给这个分支起一个描述性的名字用来介绍它正在修复的事情，比如：
 
 ```
 $ git checkout -b issue1234
@@ -165,7 +165,7 @@ npm test
 
 ESLint requires just one commit per pull request. If you have used multiple commits, be sure to [squash](http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html) your commits.
 
-ESLint 要求每个合并请求包含一次变更。如果你多次提交，请注意要[压缩（squash）](http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html)你的变更。
+ESLint 要求每个合并请求（pull request）包含一次。如果你多次提交，请注意要[压缩（squash）](http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html)你的提交。
 
 ### Step 6: Double check your submission<a name="step6"></a>
 

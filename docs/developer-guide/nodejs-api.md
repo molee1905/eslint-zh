@@ -412,16 +412,16 @@ Retrieves a formatter, which you can then use to format a report object. The arg
 
 获取一个格式化工具，可以用它格式报告对象。参数或者是内建格式化工具的名字：
 
-* "[stylish](./user-guide/formatters#stylish)" (the default)
-* "[stylish](./user-guide/formatters#stylish)" (默认)
+* "[stylish](../user-guide/formatters#stylish)" (the default)
+* "[stylish](../user-guide/formatters#stylish)" (默认)
 * "[checkstyle](./user-guide/formatters#checkstyle)"
-* "[compact](./user-guide/formatters#compact)"
-* "[html](./user-guide/formatters#html)"
-* "[jslint-xml](./user-guide/formatters#jslint-xml)"
-* "[json](./user-guide/formatters#json)"
-* "[junit](./user-guide/formatters#junit)"
-* "[tap](./user-guide/formatters#tap)"
-* "[unix](./user-guide/formatters#unix)"
+* "[compact](../user-guide/formatters#compact)"
+* "[html](../user-guide/formatters#html)"
+* "[jslint-xml](../user-guide/formatters#jslint-xml)"
+* "[json](../user-guide/formatters#json)"
+* "[junit](../user-guide/formatters#junit)"
+* "[tap](../user-guide/formatters#tap)"
+* "[unix](../user-guide/formatters#unix)"
 
 or the full path to a JavaScript file containing a custom formatter. You can also omit the argument to retrieve the default formatter.
 
