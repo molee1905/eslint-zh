@@ -27,7 +27,7 @@
 ```
 如果申请格式正确，管理员会在第一时间回复：
 ```
-  thanks @your name, go ahead!!!
+  thanks @your name: `cla/index.md`
 ```
 如果你收到此回复，你就可以开始了。
 
