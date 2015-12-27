@@ -1,4 +1,5 @@
-# 翻译原则
+### 校对原则
+
 1. 忠于作者表达的思想
 2. 语句简洁通顺，符合中文读写习惯
 3. 不主动、不刻意删减原文内容
@@ -6,30 +7,42 @@
 5. 暂无法翻译的词或语句可保留原始英文
 6. 使用“你”，不使用“您”
 7. 使用“它”，“它们”；不使用“他”，“她”，“他们”，“她们”
-8. 规则里的  除一级标题（# xxx）外，其他标题不翻译：
-
-   `## 二级标题`
-   
-   `### 三级标题`
-   
-   `#### 四级标题`
-   
-   `...`
+8. 英文和数字与中文之间要留空格，中文标点符号和中文之间不需要留空格
 9. 提交某文件时，假如该文件为xxx.md，
+   
    则提交时的注释为: update xxx
 
    如有补充，逗号分隔紧随其后: update xxx, resolve the conflict...
 
+### 认领
+
+在 issue：[All Task](https://github.com/smocean/eslint-zh/issues/15) 中选择未被认领的任务，在 issue：[Apply for a task](https://github.com/smocean/eslint-zh/issues/16) 中进行回复，格式如下：
+
+```
+**Application:** `file path`
+
+// 如果 file path 为cla/index.md，则如下：
+
+**Application:** `cla/index.md`
+```
+如果申请格式正确，管理员会在第一时间回复：
+```
+  thanks @your name, go ahead!!!
+```
+如果你收到此回复，你就可以开始了。
+
+**注意：**原则上每次只能申领一个任务，每个任务不超过**1周**，对于较长篇幅，一般不超过**2周**。
+
 ### 下载eslint-zh
 
-fork 自己的eslint-zh
+fork [eslint-zh](https://github.com/smocean/eslint-zh)
 
-下载eslint-zh到本地目录，切换到mixed分支（对`.md`文档翻译时保留原始英文，即中英文对照，以便校对）。我们所有的操作都是在mixed分支上。
+下载eslint-zh到本地目录，切换到alpha分支
 
 ```bash
 $ git clone git@github.com:[your name]/eslint-zh.git
 $ cd eslint-zh
-$ git checkout -b mixed origin/mixed
+$ git checkout -b alpha origin/alpha
 ```
 
 ### 修改文件
@@ -57,41 +70,76 @@ $ jekyll server
 ```
 然后访问 http://127.0.0.1:4000/
 
-### 提交
+### 提交到自己的仓库
 
-确认无误后，提交到mixed
+确认无误后，提交到alpha
 ```bash
 $ git pull
 $ git add *
 $ git commit -m 'update xxx'
-$ git push origin mixed
+$ git push origin alpha
 ```
 
 然后pull request。
 
-注意，合并的是mixed，也就是[your name]:mixed向smocean:mixed分支发出合并请求。
+### 发pull request
+在md文件顶部
+```
+---
+title: List of available rules
+layout: doc
+---
+```
+加上你的github名：
+```
+---
+title: List of available rules
+layout: doc
+proofreader: @your github ID
+---
+```
+**注意：**合并的是alpha，也就是[your name]:alpha向smocean:alpha分支发出合并请求。
 
 [1]: https://rubygems.org/gems/bundler
 
----
 
-# ESLint Web Site
 
-This contains the code running on eslint.org.
+### 参考
+英文 | 中文 
+------ | :-----
+by default | 默认地
+style guideline | 风格指南
+require | 要求
+disallow | 不允许、禁止
+enforce | 强制
+issue | 议题（issue）
+pull request | 合并请求（pull request）
+upstream | 上游（upstream）
+rebase | [变基](http://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%8F%98%E5%9F%BA)（rebase)
+This rule aims to do| 该规则旨在
+squash your commits | 压缩你的提交
 
-## Pull Requests
+* The following patterns are considered problems:
+* 以下模式被认为是有问题的：
 
-Please note that all HTML documentation is split between this repository and the main [ESLint repository](https://github.com/eslint/eslint). Documentation for rules and APIs is located in the core repository, the rest is located in this repository. You can easily determine if original documentation file is native to website repository by checking for `<!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->` comment just below the header of the markdown file. If that header is present, this file is located in the core ESLint repository and any pull requests should be send there. Otherwise, file is native to this site repository and can be fixed by creating a pull request in this repository.
+* The following patterns are considered errors: 
+* 以下模式被认为是有错误的：
 
-## How to add your company/project logo to the site
+* The following patterns are considered valid:
+* 以下模式被认为是有效的：
 
-* Create a fork of this repository
-* Clone it locally
-* Create a new branch
-* Add your logo image to /img/logos/ directory. Logo should be at least 150px of height. Name your logo with your company/project name.
-* Update /_data/logos.yml file and add an entry for your company with the name, url and src (should point to the logo you just added).
-* Commit your changes to your fork and create a pull request into the main repository.
+* The following patterns are not considered problems:
+* 以下模式被认为是没有问题的：
 
-## License
+* The following patterns are not considered errors:
+* 以下模式被认为是正确的：
 
-MIT
+* The following patterns do not cause a warning: 
+* 以下模式不会引起警告：
+
+* This rule was introduced in ESLint 0.0.9.
+* 该规则在ESLint 0.0.9 中被引入。
+
+* No empty labels (no-empty-label)
+* 禁止使用空标签 (no-empty-label) (此处No是不允许、禁止的意思，同disallow)
+
