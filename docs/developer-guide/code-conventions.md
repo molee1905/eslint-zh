@@ -5,11 +5,20 @@ layout: doc
 
 # Code Conventions
 
+# 代码 约定
+
 Programming language style guides are important for the long-term maintainability of software. This guide is based on the [Code Conventions for the Java Programming Language](http://java.sun.com/docs/codeconv/) and [Douglas Crockford's Code Conventions for the JavaScript Programming Language](http://javascript.crockford.com/code.html). Modifications have been made due to my personal experience and preferences.
+
+编程语言的格式指导对于软件的长期可维护性至关重要，这个指导是基于 [java编程语言代码规范](http://java.sun.com/docs/codeconv/) 和 [Douglas Crockford所写的 javascript编程语言代码规范](http://javascript.crockford.com/code.html). 并根据我的经验和个人风格进行了修改。
+
 
 ## File Format
 
+## 文件 格式
+
 Each file has this same basic format:
+
+每个文件都要有一个相同的 基础格式:
 
 ```js
 /**
@@ -45,7 +54,11 @@ module.exports = {
 
 The `@author` field gives you credit for having created the file. The `@copyright` field indicates that you are the copyright holder for the file.
 
+`@author` 区域填写创建文件的作者，`@copyright`区域说明了你拥有这个文件的版权
+
 Your submission may touch other parts of the ESLint code that you did not write. In that case, you are welcome to add a copyright notice to the top of the file if you have done any amount of significant work on the file (we leave it up to you to decide what "significant" means - if you aren't sure, just ask). You should never change the `@author` field, but you can add another `@copyright` field on top of the existing ones, such as:
+
+你有可能提交并不是你写的ESLint代码。这种情况下，你只需在头部增加一个版权标注就可以了，前提是你认为你的修改是重要的（你可以自己把握‘重要’的意义，如果你不确定，尽管来问）。你不能修改`@author`这个区域，但是你可以在原有的`@copyright`前 再增加一个,如下：
 
 ```js
 /**
@@ -59,7 +72,11 @@ Your submission may touch other parts of the ESLint code that you did not write.
 
 ## Indentation
 
+## 缩进
+
 Each indentation level is made up of four spaces. Do not use tabs.
+
+每个缩进级别由4个空格组成，而不是使用tabs.
 
     // Good
     if (true) {
@@ -68,7 +85,11 @@ Each indentation level is made up of four spaces. Do not use tabs.
 
 ## Primitive Literals
 
+## 基本数据类型
+
 Strings should always use double quotes (never single quotes) and should always appear on a single line. Never use a slash to create a new line in a string.
+
+字符串 应该保持使用算引号（坚决不要单引号）并且保持在同一行中，坚决不要把一个字符串截断成新的一行。
 
     // Good
     var name = "Nicholas";
@@ -81,6 +102,10 @@ Strings should always use double quotes (never single quotes) and should always 
     named Brady.";
 
 Numbers should be written as decimal integers, e-notation integers, hexadecimal integers or floating-point decimals with at least one digit before and one digit after the decimal point. Never use octal literals.
+
+数字类型应该书写成 十进制整数，科学计数整数，16进制整数或是在小数点前后都至少有一个数的浮点小数，不要使用八进制数
+
+
 
     // Good
     var count = 10;
@@ -106,12 +131,20 @@ Numbers should be written as decimal integers, e-notation integers, hexadecimal 
 
 The special value `null` should be used only in the following situations:
 
+特殊值 `null` 应该仅在以下情况使用:
+
 1. To initialize a variable that may later be assign an object value.
+1. 为了初始化一个后续将赋予一个对象值的变量.
 1. To compare against an initialized variable that may or may not have an object value.
+1. 要比较一个初始化变量是不是具有一个对象类型的值
 1. To pass into a function where an object is expected.
+1. 为了给函数传递一个预期存在的对象类型参数
 1. To return from a function where an object is expected.
+1. 为了从函数返回一个预期存在的对象类型值
 
 Examples:
+
+例如:
 
     // Good
     var person = null;
@@ -146,6 +179,8 @@ Examples:
 
 Never use the special value `undefined`. To see if a variable has been defined, use the `typeof` operator:
 
+不要是用特殊值 `undefined`。如果想查看一个值是不是被定义，可以使用 `typeof` 操作符
+
     // Good
     if (typeof variable == "undefined") {
         // do something
@@ -158,7 +193,11 @@ Never use the special value `undefined`. To see if a variable has been defined, 
 
 ## Operator Spacing
 
+## 操作符 间距
+
 Operators with two operands must be preceded and followed by a single space to make the expression clear. Operators include assignments and logical operators.
+
+双目操作符 必须在 前后分别有1个空格使得表达式清晰。操作符包含赋值运算符和逻辑操作符
 
     // Good
     var found = (values[i] === item);
@@ -188,7 +227,11 @@ Operators with two operands must be preceded and followed by a single space to m
 
 ## Parentheses Spacing
 
+## 括号 间距
+
 When parentheses are used, there should be no white space immediately after the opening paren or immediately before the closing paren.
+
+当使用括号的时候，在开括号后或闭括号前 不应该有空格。
 
     // Good
     var found = (values[i] === item);
@@ -218,14 +261,24 @@ When parentheses are used, there should be no white space immediately after the 
 
 ## Object Literals
 
+## 对象数据类型
+
 Object literals should have the following format:
 
+对象数据类型应该具有以下规范：
+
 * The opening brace should be on the same line as the containing statement.
+* 左大括号应该在对象声明的同一行
 * Each property-value pair should be indented one level with the first property appearing on the next line after the opening brace.
+* 每一个键值对应该保持一级缩进，第一个属性应该被写在左大括号后的再另起一行。
 * Each property-value pair should have an unquoted property name, followed by a colon (no space preceding it), followed by the value.
+* 每一个键值对的属性不带引号，跟随一个冒号（中间没有空格），再后边接键值对的值。
 * If the value is a function, it should wrap under the property name and should have a blank line both before and after the function.
+* 如果值是函数类型，它应该包含在给该属性名下，并且在上下都留有一个空行
 * Additional empty lines may be inserted to group related properties or otherwise improve readability.
+* 为有联系的属性或其他提高可读性的目的 增加额外的空行分割
 * The closing brace should be on a separate line.
+* 右大括号在独立的一行
 
 Examples:
 
@@ -261,6 +314,8 @@ Examples:
 
 When an object literal is passed to a function, the opening brace should be on the same line as if the value is a variable. All other formatting rules from above still apply.
 
+当对象变量被传进函数时， 左大括号应该与函数同一行 剩下其他的规范规则 沿用上面的规则。
+
     // Good
     doSomething({
         key1: value1,
@@ -272,22 +327,39 @@ When an object literal is passed to a function, the opening brace should be on t
 
 ## Comments
 
+## 注释
+
 Make frequent use of comments to aid others in understanding your code. Use comments when:
 
+多用注释帮助别人理解你的代码。在以下情况使用：
+
 * Code is difficult to understand.
+* 代码难以理解
 * The code might be mistaken for an error.
+* 代码可能被误解为错误代码
 * Browser-specific code is necessary but not obvious.
+* 为浏览器兼容而写的必要但不易被察觉的代码
 * Documentation generation is necessary for an object, method, or property (use appropriate documentation comments).
+* 为一个对象、方法、属性生成一个文档是必要的（使用一个恰当文件注释）
 
 ### Single-Line Comments
 
+### 单行注释
+
 Single-line comments should be used to documentation one line of code or a group of related lines of code. A single-line comment may be used in three ways:
 
+单行注释应该适用于文件的一行或一组多行间有联系的代码，单行注释使用于以下三个途径
+
 1. On a separate line, describing the code beneath it.
+1. 独占一行，解释下一行代码
 1. At the end of a line, describing the code before it.
+1. 在代码行尾部，解释前面的代码
 1. On multiple lines, to comment out sections of code.
+1. 注释大段代码
 
 When on a separate line, a single-line comment should be at the same indentation level as the code it describes and be preceded by a single line. Never use multiple single-line comments on consecutive lines, use a multi-line comment instead.
+
+在单独一行中，单行代码应该与 解释的代码有同样的缩进 并在该代码之上。不要用多个单行注释 跨行注释，应该用多行注释符替代
 
     // Good
     if (condition){
@@ -322,6 +394,8 @@ When on a separate line, a single-line comment should be at the same indentation
 
 For single-line comments at the end of a line, ensure there is at least one indentation level between the end of the code and the beginning of the comment:
 
+在行尾的单行注释，确保至少有一个缩进在代码和注释之间
+
     // Good
     var result = something + somethingElse;    // somethingElse will never be null
 
@@ -329,6 +403,8 @@ For single-line comments at the end of a line, ensure there is at least one inde
     var result = something + somethingElse;// somethingElse will never be null
 
 The only acceptable time to have multiple single-line comments on successive lines is to comment out large sections of code. Multi-line comments should not be used for this purpose.
+
+多行使用单行注释的情况只能在大段注释代码的时候可以被接受，多行注释不能在这种情况下被使用
 
     // Good
     // if (condition){
@@ -338,13 +414,22 @@ The only acceptable time to have multiple single-line comments on successive lin
 
 ### Multi-Line Comments
 
+### 多行注释
+
 Multi-line comments should be used to document code that requires more explanation. Each multi-line comment should have at least three lines:
 
+多行注释应该在需要更详细解释的时候被使用，每个多行注释至少应注意以下三点
+
 1. The first line contains only the `/*` comment opening. No further text is allowed on this line.
+1. 注释的第一行仅包含`/*`，其他注释文字描述等不能书写
 1. The next line(s) have a `*` aligned with the `*` in the first line. Text is allowed on these lines.
+1. 接下来行的`*`要对齐第一行的`*`，注释文字允许书写在这些行中
 1. The last line has the `*/` comment opening aligned with the preceding lines. No other text is allowed on this line.
+1. 最后一行 以`*/`单独结束注释，其他注释文字描述等不能书写。
 
 The first line of multi-comments should be indented to the same level as the code it describes. Each subsequent line should have the same indentation plus one space (for proper alignment of the `*` characters). Each multi-line comment should be preceded by one empty line.
+
+多行注释第一行应该和被描述的代码保持同样的缩进。接下来行都应该空一格（为了对齐`*`字符）。每个多行注释前应该用一个空行分隔
 
     // Good
     if (condition){
@@ -390,15 +475,26 @@ The first line of multi-comments should be indented to the same level as the cod
 
 ### Comment Annotations
 
+### 注释 批注
+
 Comments may be used to annotate pieces of code with additional information. These annotations take the form of a single word followed by a colon. The acceptable annotations are:
 
+注释有可能被使用去注释一段代码的额外信息，这些注释使用一个单词后跟着冒号的形式。可被接受的注释包含：
+
 * `TODO` - indicates that the code is not yet complete. Information about the next steps should be included.
+* `TODO` - 说明代码还没有完成，提供了接下来的计划的信息
 * `HACK` - indicates that the code is using a shortcut. Information about why the hack is being used should be included. This may also indicate that it would be nice to come up with a better way to solve the problem.
+* `HACK` - 说明该代码正使用一些便捷方法，提供了为什么这个方法的信息。也有可能被使用以表达 该问题被一个更好的办法解决了
 * `XXX` - indicates that the code is problematic and should be fixed as soon as possible.
+* `XXX` - 说明该代码有问题，应该被尽可能快的解决掉
 * `FIXME` - indicates that the code is problematic and should be fixed soon. Less important than `XXX`.
+* `FIXME` - 说明该代码有问题，需要尽快解决，但重要程度不及`XXX`.
 * `REVIEW` - indicates that the code needs to be reviewed for potential changes.
+* `REVIEW` - 说明该代码因为潜在的变动需要被代码复查.
 
 These annotations may be used with either single-line or multi-line comments and should follow the same formatting rules as the general comment type. Examples:
+
+这些批注可能出现在任何一个单行或多行注释中，应该保持同样的格式规范在全局注释中，例如：
 
     // Good
     // TODO: I'd like to find a way to make this faster
@@ -433,7 +529,11 @@ These annotations may be used with either single-line or multi-line comments and
 
 ## Variable Declarations
 
+## 变量声明
+
 All variables should be declared before they are used. Variable declarations should take place at the beginning of a function using a single `var` statement with one variable per line. All lines after the first should be indented one level so the variable names line up. Variables should be initialized when declared if applicable and the equals operator should be at a consistent indentation level. Initialized variables should come first followed by uninitialized variables.
+
+所有的变量在使用前都要被声明，变量声明应该发生在函数的开始，并使用一个`var`声明，每行一个变量。第一行后的每行应保持同一个缩进排列。声明变量的时候要进行初始化。尽可能将赋值保持在同一个缩进水平。先书写初始化的变量，再写为初始化的变量声明
 
     // Good
     var count   = 10,
@@ -472,9 +572,15 @@ All variables should be declared before they are used. Variable declarations sho
 
 Always declare variables. Implied globals should not be used.
 
+保持变量声明，全局变量不应该被使用
+
 ## Function Declarations
 
+## 函数声明
+
 Functions should be declared before they are used. When a function is not a method (not attached to an object) it should be defined using function declaration format (not function expression format nor using the `Function` constructor). There should be no space between the function name and the opening parentheses. There should be one space between the closing parentheses and the right brace. The right brace should be on the same line as the `function` keyword. There should be no space after the opening parentheses or before the closing parentheses. Named arguments should have a space after the comma but not before it. The function body should be indented one level.
+
+
 
     // Good
     function doSomething(arg1, arg2) {
