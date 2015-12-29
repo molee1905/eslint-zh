@@ -1,6 +1,8 @@
 ---
 title: Change Requests
 layout: doc
+translator: coocon
+proofreader: molee1905
 ---
 
 # Change Requests
@@ -31,8 +33,8 @@ If you're requesting a change to a rule, it's helpful to include this informatio
 
 Please include as much detail as possible to help us properly address your issue. If we need to triage issues and constantly ask people for more detail, that's time taken away from actually fixing issues. Help us be as efficient as possible by including a lot of detail in your issues.
 
-请尽可能的包括更多细节来帮助我们正确地定位你的问题。如果我们需要鉴别问题并且不断地向他人询问更多细节，这实际上占用了修复问题的时间。为了帮助我们尽可能的高效，请在你的议题（issues）中包含更多的细节。
+请包括尽可能的多的细节来帮助我们正确地处理你的议题（issue)。如果我们需要对议题（issue)进行分类而且时常会询问更多的细节，那么实际修复这些问题将需要更多的时间。为了使我们尽可能的高效，请在你的议题（issue）中包含更多的细节。
 
 **Note:** If you just have a question that won't necessarily result in a change to ESLint, such as asking how something works or how to contribute, please use the [mailing list](https://groups.google.com/group/eslint) instead of filing an issue.
 
-**注意：** 如果你恰好有一个问题而不需要对 ESLint 进行修改，例如询问一些工作原理或者疑惑如何做出贡献，请使用这个[邮件列表（mailing list）](https://groups.google.com/group/eslint) 而不是提交一个议题。
+**注意：** 如果你只是有一个问题，且该问题并不一定会导致 ESLint 发生改变，比如询问一些工作原理或者如何做出贡献，那么请使用 [邮件列表（mailing list）](https://groups.google.com/group/eslint) 而不是提交一个议题（issue）。
