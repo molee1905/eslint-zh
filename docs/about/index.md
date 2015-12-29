@@ -1,7 +1,7 @@
 ---
 title: About
 layout: doc
-proofreader: sunshiner
+translator: sunshiner
 ---
 
 # About
