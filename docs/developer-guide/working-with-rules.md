@@ -138,7 +138,6 @@ Additionally, the `context` object has the following methods:
 * `getJSDocComment(node)` - 返回给定节点的JSDoc注释，如果没有则返回`null`。使用 `sourceCode.getJSDocComment(node)` 代替。
 * `getLastToken(node)` - returns the last token representing the given node.  Use `sourceCode.getLastToken(node)` instead.
 * `getLastToken(node)` - 返回代表给定节点最后一个记号。 使用 `sourceCode.getLastToken(node)` 代替.
-* `getLastTokens(node, count)` - 返回代表给定节点的最后一个记号。使用 `sourceCode.getLastTokens(node, count)` 代替。
 * `getLastTokens(node, count)` - returns the last `count` tokens representing the given node. Use `sourceCode.getLastTokens(node, count)` instead.
 * `getLastTokens(node, count)` - 返回代表给定节点的最后一个`count`记号。 使用 `sourceCode.getLastTokens(node, count)` 代替。
 * `getNodeByRangeIndex(index)` - returns the deepest node in the AST containing the given source index. Use `sourceCode.getNodeByRangeIndex(index)` instead.
