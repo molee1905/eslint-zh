@@ -1,5 +1,4 @@
 ### 校对原则
-
 1. 忠于作者表达的思想
 2. 语句简洁通顺，符合中文读写习惯
 3. 不主动、不刻意删减原文内容
@@ -15,7 +14,6 @@
    如有补充，逗号分隔紧随其后: update xxx, resolve the conflict...
 
 ### 认领
-
 在 issue：[All Task](https://github.com/smocean/eslint-zh/issues/15) 中选择未被认领的任务，在 issue：[Apply for a task](https://github.com/smocean/eslint-zh/issues/16) 中进行回复，格式如下：
 
 ```
@@ -29,7 +27,7 @@
 ```
   thanks @your name: `cla/index.md`
 ```
-如果你收到此回复，你就可以开始了。
+如果你收到此回复或看到 issue：[Apply for a task](https://github.com/smocean/eslint-zh/issues/16)中你选择的已被管理员设置为选中，你就可以开始了。
 
 **注意：**原则上每次只能申领一个任务，每个任务不超过**1周**，对于较长篇幅，一般不超过**2周**。
 
@@ -75,7 +73,7 @@ $ jekyll server
 确认无误后，提交到alpha
 ```bash
 $ git pull
-$ git add *
+$ git add -A
 $ git commit -m 'update xxx'
 $ git push origin alpha
 ```
@@ -90,15 +88,16 @@ title: List of available rules
 layout: doc
 ---
 ```
-加上你的github名：
+加上译者的github名和你的github名：
 ```
 ---
 title: List of available rules
 layout: doc
-proofreader: @your github ID
+translator: translator's github ID
+proofreader: your github ID
 ---
 ```
-**注意：**合并的是alpha，也就是[your name]:alpha向smocean:alpha分支发出合并请求。
+**注意：**合并的是`alpha`，也就是`[your name]:alpha`向`smocean:alpha`分支发出合并请求。
 
 [1]: https://rubygems.org/gems/bundler
 
@@ -107,6 +106,7 @@ proofreader: @your github ID
 ### 参考
 英文 | 中文 
 ------ | :-----
+pluggable | 插件化的
 by default | 默认地
 style guideline | 风格指南
 require | 要求
@@ -115,7 +115,7 @@ enforce | 强制
 issue | 议题（issue）
 pull request | 合并请求（pull request）
 upstream | 上游（upstream）
-rebase | [变基](http://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%8F%98%E5%9F%BA)（rebase)
+rebase | [衍合](http://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%8F%98%E5%9F%BA)（rebase)
 This rule aims to do| 该规则旨在
 squash your commits | 压缩你的提交
 
@@ -142,4 +142,7 @@ squash your commits | 压缩你的提交
 
 * No empty labels (no-empty-label)
 * 禁止使用空标签 (no-empty-label) (此处No是不允许、禁止的意思，同disallow)
+
+
+
 
