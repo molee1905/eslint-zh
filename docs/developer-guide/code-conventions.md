@@ -342,13 +342,14 @@ Make frequent use of comments to aid others in understanding your code. Use comm
 * Documentation generation is necessary for an object, method, or property (use appropriate documentation comments).
 * 为一个对象、方法、属性生成一个文档是必要的（使用一个恰当文件注释）
 
+
 ### Single-Line Comments
 
 ### 单行注释
 
 Single-line comments should be used to documentation one line of code or a group of related lines of code. A single-line comment may be used in three ways:
 
-单行注释应该适用于文件的一行或一组多行间有联系的代码，单行注释使用于以下三个途径
+单行注释应该适用于文件的一行或一组多行间有联系的代码，单行注释使用于以下三个途径：
 
 1. On a separate line, describing the code beneath it.
 1. 独占一行，解释下一行代码
@@ -580,6 +581,8 @@ Always declare variables. Implied globals should not be used.
 
 Functions should be declared before they are used. When a function is not a method (not attached to an object) it should be defined using function declaration format (not function expression format nor using the `Function` constructor). There should be no space between the function name and the opening parentheses. There should be one space between the closing parentheses and the right brace. The right brace should be on the same line as the `function` keyword. There should be no space after the opening parentheses or before the closing parentheses. Named arguments should have a space after the comma but not before it. The function body should be indented one level.
 
+函数应该在使用前被声明，当一个函数不是一个方法（不赋值给一个对象）应该使用函数声明格式去定义（非函数表达式，也不会调用`Function`构造器）。在函数名和左括号之间不应该有空格。在右括号和左大括号间需要有一个空格。而且左大括号需要同关键字`function` 同一行。 在左括号后边和右括号前边不应该加空格，参数名字的逗号后边需要有个空格，函数体内的代码需要保持一个缩进级别
+
 
 
     // Good
@@ -607,6 +610,8 @@ Functions should be declared before they are used. When a function is not a meth
     var doSomething = new Function("arg1", "arg2", "return arg1 + arg2");
 
 Functions declared inside of other functions should be declared immediately after the `var` statement.
+
+在其他函数中声明的函数应该在`var`声明后马上被声明
 
     // Good
     function outer() {
@@ -640,6 +645,8 @@ Functions declared inside of other functions should be declared immediately afte
 
 Anonymous functions may be used for assignment of object methods or as arguments to other functions. There should be no space between the `function` keyword and the opening parentheses.
 
+匿名函数有可能被使用在分别对象的方法或作为另外函数的参数，在`function`和开括号间不应该有空格
+
     // Good
     object.method = function() {
         // code
@@ -651,6 +658,8 @@ Anonymous functions may be used for assignment of object methods or as arguments
     };
 
 Immediately-invoked functions should surround the entire function call with parentheses.
+
+立即执行的函数应该整体被括号包裹
 
     // Good
     var value = (function() {
@@ -686,7 +695,11 @@ Immediately-invoked functions should surround the entire function call with pare
 
 Care should be taken to name variables and functions properly. Names should be limited to alphanumeric characters and, in some cases, the underscore character. Do not use the dollar sign (`$`) or back slash (`\`) characters in any names.
 
+应该注意命名变量和函数的正确性，命名应该使用有限的数字或字母或是下划线。不要使用美元符号 (`$`) 或反斜杠(`\`)在你的命名中。
+
 Variable names should be formatted in camel case with the first letter being lowercase and the first letter of each subsequent word being uppercase. The first word of a variable name should be a noun (not a verb) to avoid confusion with functions. Do not use underscore for variable names.
+
+变量命名应该遵守驼峰式规则，首字母小写，后续的每个词的首字母大写。变量命名时的首个词应该是名词（不能是动词），避免与函数名混乱，不要使用下划线作为连接。
 
     // Good
     var accountNumber = "8401-1";
@@ -701,6 +714,8 @@ Variable names should be formatted in camel case with the first letter being low
     var account_number = "8401-1";
 
 Function names should also be formatted using camel case. The first word of a function name should be a verb (not a noun) to avoid confusion with variables. Do not use underscore for function names.
+
+函数命名应该遵守驼峰式命名规则，第一个词应该是一个动词（非名词），避免与变量混淆。不要使用下划线作为连接
 
     // Good
     function doSomething() {
@@ -724,6 +739,8 @@ Function names should also be formatted using camel case. The first word of a fu
 
 Constructor functions, those functions used with the `new` operator to create new objects, should be formatted in camel case but must begin with an uppercase letter. Constructor function names should begin with a non-verb because `new` is the action of creating an object instance.
 
+构建函数，使用`new` 创建一个新的对象，应该遵守驼峰式并且首字母大写。构建函数命名的首词不能是动词，因为`new` 是一个创建对象实例的行为。
+
     // Good
     function MyObject() {
         // code
@@ -746,6 +763,8 @@ Constructor functions, those functions used with the `new` operator to create ne
 
 Variables that act as constants (values that won't be changed) should be formatted using all uppercase letters with words separated by a single underscore.
 
+常数变量（变量内容不改变）应该全部使用大写字母，用下划线分割
+
     // Good
     var TOTAL_COUNT = 10;
 
@@ -756,6 +775,8 @@ Variables that act as constants (values that won't be changed) should be formatt
     var total_COUNT = 10;
 
 Object properties follow the same naming conventions as variables. Object methods follow the same naming conventions as functions. If a property or method is meant to be private, then it should be prefixed with an underscore character.
+
+对象的属性应该遵循变量的规定。对象的方法应该遵循方法的规定。如果方法或变量是私有的需要在命名前加下划线前缀
 
     // Good
     var object = {
@@ -768,7 +789,11 @@ Object properties follow the same naming conventions as variables. Object method
 
 ## Strict Mode
 
+## 严格模式
+
 Strict mode should be used only inside of functions and never globally.
+
+严格模式应该被使用在函数内部而不是全局使用
 
     // Bad: Global strict mode
     "use strict";
@@ -786,6 +811,8 @@ Strict mode should be used only inside of functions and never globally.
 
 If you want strict mode to apply to multiple functions without needing to write `"use strict"` multiple times, use immediate function invocation:
 
+如果你想对多个函数应用严格模式，你不需要写`"use strict"`多次，使用一个立即执行函数调用。
+
     // Good
     (function() {
         "use strict";
@@ -802,7 +829,11 @@ If you want strict mode to apply to multiple functions without needing to write 
 
 ## Assignments
 
+## 赋值
+
 When assigning a value to a variable, use parentheses around a right-side expression that contains a comparison.
+
+把一个比较的结果值赋予一个变量时，需要用括号把赋值表达式右边括起来。
 
     // Good
     var flag = (i < count);
@@ -812,7 +843,11 @@ When assigning a value to a variable, use parentheses around a right-side expres
 
 ## Equality Operators
 
+## 相等比较
+
 Use `===` and `!==` instead of `==` and `!=`. This avoids type coercion errors.
+
+使用 `===` 和 `!==` 替代 `==` 和 `!=`. 这将避免强制类型转换错误
 
     // Good
     var same = (a === b);
@@ -822,7 +857,11 @@ Use `===` and `!==` instead of `==` and `!=`. This avoids type coercion errors.
 
 ## Ternary Operator
 
+## 三目运算符 
+
 The ternary operator should be used only for assigning values conditionally and never as a shortcut for an `if` statement.
+
+三目运算符仅在条件选择赋值时使用，不要作为`if`的捷径使用。
 
     // Good
     var value = condition ? value1 : value2;
@@ -832,9 +871,15 @@ The ternary operator should be used only for assigning values conditionally and 
 
 ## Statements
 
+## 语句
+
 ### Simple Statements
 
+### 简易语句
+
 Each line should contain at most one statement. All simple statements should end with a semicolon (`;`).
+
+每一行最多只包含一个语句，所有的简单语句应该使用分号(`;`)结束
 
     // Good
     count++;
@@ -845,7 +890,11 @@ Each line should contain at most one statement. All simple statements should end
 
 ### return Statement
 
+### 返回语句
+
 A return statement with a value should not use parentheses unless they make the return value more obvious in some way. Example:
+
+一个带值返回语句不应该使用括号，除非返回值明显符合以下情况，例如：
 
     return;
 
@@ -855,16 +904,28 @@ A return statement with a value should not use parentheses unless they make the 
 
 ### Compound Statements
 
+### 复合语句
+
 Compound statements are lists of statements enclosed inside of braces.
 
+复合语句是用括号闭合的语句列表
+
 * The enclosed statements should be indented one more level than the compound statement.
+* 被闭合的语句应该保持同样的缩进级别
 * The opening brace should be at the end of the line that begins the compound statement; the closing brace should begin a line and be indented to the beginning of the compound statement.
+* 开括号应该在复合语句的第一行；闭括号应该独立一行并于复合语句开始保持同样缩进
 * Braces are used around all statements, even single statements, when they are part of a control structure, such as a `if` or `for` statement. This makes it easier to add statements without accidentally introducing bugs due to forgetting to add braces.
+* 当语句是控制结构体一部分，例如`if` or `for`语句时，哪怕语句再简单，括号也要完整包括。
 * The statement beginning keyword, such as `if`, should be followed by one space and the opening brace should be preceded by a space.
+* 语句的开始关键词，例如`if`，应该在左括号前 和 左大括号与右括号间留有一个空格
 
 ### if Statement
 
+### if 语句
+
 The `if` class of statements should have the following form:
+
+`if`类型的语句应该保持如下的类型：
 
     if (condition) {
         statements
@@ -885,6 +946,8 @@ The `if` class of statements should have the following form:
     }
 
 It is never permissible to omit the braces in any part of an `if` statement.
+
+绝不允许在 `if`语句中忽略使用括号
 
     // Good
     if (condition) {
@@ -908,7 +971,11 @@ It is never permissible to omit the braces in any part of an `if` statement.
 
 ### for Statement
 
+### for 语句
+
 The `for` class of statements should have the following form:
+
+`for` 类型语句应该遵守如下的格式：
 
     for (initialization; condition; update) {
         statements
@@ -919,6 +986,8 @@ The `for` class of statements should have the following form:
     }
 
 Variables should not be declared in the initialization section of a `for` statement.
+
+在一个`for`语句中变量不应该被声明在初始化片段
 
     // Good
     var i,
@@ -940,9 +1009,15 @@ Variables should not be declared in the initialization section of a `for` statem
 
 When using a `for-in` statement, double-check whether or not you need to use `hasOwnProperty()` to filter out object members.
 
+当使用 `for-in` 语句时，再检查一遍你有没有使用  `hasOwnProperty()` 去过滤掉对象的成员
+
 ### while Statement
 
+### while 语句
+
 The `while` class of statements should have the following form:
+
+`while` 类型语句应该遵守如下的格式：
 
     while (condition) {
         statements
@@ -950,7 +1025,11 @@ The `while` class of statements should have the following form:
 
 ### do Statement
 
+### do 语句
+
 The `do` class of statements should have the following form:
+
+`do` 类型语句应该遵守如下的格式：
 
     do {
         statements
@@ -958,9 +1037,15 @@ The `do` class of statements should have the following form:
 
 Note the use of a semicolon as the final part of this statement. There should be a space before and after the `while` keyword.
 
+注意语句最终部分要加分号，在`while`的前后都要加一个空格
+
 ### switch Statement
 
+### switch 语句
+
 The `switch` class of statements should have the following form:
+
+`switch` 类型语句应该遵守如下的格式：
 
     switch (expression) {
         case expression:
@@ -972,7 +1057,11 @@ The `switch` class of statements should have the following form:
 
 Each `case` is indented one level under the `switch`. Each `case` after the first, including `default`, should be preceded by a single empty line.
 
+每个`case`都应该对齐`switch`的下一个缩进级别。除了第一个以后的`case`包括`default`应该在前边空出一行。
+
 Each group of statements (except the default) should end with `break`, `return`, `throw`, or a comment indicating fall through.
+
+每组语句(除了default)，都应该以`break`, `return`, `throw`或一个fall through的注释说明。
 
     // Good
     switch (value) {
@@ -992,6 +1081,8 @@ Each group of statements (except the default) should end with `break`, `return`,
 
 If a `switch` doesn't have a `default` case, then it should be indicated with a comment.
 
+如果一个`switch`没有`default` 块，那么需要有注释说明一下。
+
     // Good
     switch (value) {
         case 1:
@@ -1009,7 +1100,11 @@ If a `switch` doesn't have a `default` case, then it should be indicated with a 
 
 ### try Statement
 
+### try 语句
+
 The `try` class of statements should have the following form:
+
+`try` 类型语句应该遵守如下的格式：
 
     try {
         statements
@@ -1027,29 +1122,54 @@ The `try` class of statements should have the following form:
 
 ## White Space
 
+## 空格
+
 Blank lines improve readability by setting off sections of code that are logically related.
+
+有逻辑联系的代码片段前后添加空行会增加可读性
 
 Two blank lines should always be used in the following circumstances:
 
+在如下情况应该保持使用两个空行
+
 * Between sections of a source file
+* 源文件片段之间 
 * Between class and interface definitions
+* 在类和接口定义之间
 
 One blank line should always be used in the following circumstances:
 
+在如下情况下应该用一个空行
+
 * Between methods
+* 方法之间
 * Between the local variables in a method and its first statement
+* 在方法的变量和第一行语句之间
 * Before a multi-line or single-line comment
+* 在一个多行或单行注释前
 * Between logical sections inside a method to improve readability
+* 为提高可读性，在一个方法的逻辑片段前
 
 Blank spaces should be used in the following circumstances:
 
+以下情况下应该使用空格
+
 * A keyword followed by a parenthesis should be separated by a space.
+* 关键词后跟一个括号应该被空格分隔
 * A blank space should appear after commas in argument lists.
+* 在参数列表的逗号后应该跟一个空格
 * All binary operators except dot (`.`) should be separated from their operands by spaces. Blank spaces should never separate unary operators such as unary minus, increment (`++`), and decrement (`--`) from their operands.
+* 所有的二元运算符不包括 点(`.`)应该被空格分隔操作符，空格不能分隔一元操作符比如负号，自增(`++`)和自减(`--`)
 * The expressions in a `for` statement should be separated by blank spaces.
+* 在`for` 语句的表达式应该被空格分隔
 
 ## Things to Avoid
 
+## 要避免做的事
+
 * Never use the primitive wrapper types, such as `String`, to create new objects.
+*不要使用原始的包装类型例如`String`，要创建一个新的对象
 * Never use `eval()`.
+* 不要使用`eval()`。
 * Never use the `with` statement. This statement isn't available in strict mode and likely won't be available in future ECMAScript editions.
+* 不要使用 `with`语句，这个语句在严格模式下不被允许并且在未来的ECMAScript版本中也不被支持。
