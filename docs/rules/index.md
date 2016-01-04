@@ -391,7 +391,7 @@ These rules are purely matters of style and are quite subjective.
 * [space-unary-ops](space-unary-ops) - require or disallow spaces before/after unary operators (fixable)
 * [space-unary-ops](space-unary-ops) - 要求或禁止在一元操作符之前或之后存在空格 (fixable)
 * [spaced-comment](spaced-comment) - require or disallow a space immediately following the `//` or `/*` in a comment
-* [spaced-comment](spaced-comment) - 要求或禁止注释中`//`` 或 `/*`紧跟一个空格
+* [spaced-comment](spaced-comment) - 要求或禁止注释中`//` 或 `/*`紧跟一个空格
 * [wrap-regex](wrap-regex) - require regex literals to be wrapped in parentheses
 * [wrap-regex](wrap-regex) - 要求正则表达式被括号括起来
 
