@@ -80,7 +80,7 @@ The following rules point out areas where you might have made mistakes.
 
 These are rules designed to prevent you from making mistakes. They either prescribe a better way of doing something or help you avoid footguns.
 
-这些规则是为了阻止你犯错误。They either prescribe a better way of doing something or help you avoid footguns.
+这些规则是为了阻止你犯错误。它们要么为你指明了更好的做事方法，要么可以帮助你绕开雷区。
 
 * [accessor-pairs](accessor-pairs) - Enforces getter/setter pairs in objects
 * [accessor-pairs](accessor-pairs) - 强制 getter/setter成对出现在对象中
@@ -441,6 +441,8 @@ These rules are only relevant to ES6 environments.
 ## Removed
 
 These rules existed in a previous version of ESLint but have since been replaced by newer rules.
+
+以下规则只存在于旧版的ESLint中，并已被新规则所取代。
 
 * [generator-star](generator-star) - enforce the position of the `*` in generator functions (replaced by [generator-star-spacing](generator-star-spacing))
 * [generator-star](generator-star) - 强制`*`在generator函数中的位置 (替换为 [generator-star-spacing](generator-star-spacing))
