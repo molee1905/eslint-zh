@@ -282,6 +282,8 @@ Object literals should have the following format:
 
 Examples:
 
+例如:
+
     // Good
     var object = {
 
@@ -1168,7 +1170,7 @@ Blank spaces should be used in the following circumstances:
 ## 要避免做的事
 
 * Never use the primitive wrapper types, such as `String`, to create new objects.
-*不要使用原始的包装类型例如`String`，要创建一个新的对象
+* 不要使用原始的包装类型例如`String`，要创建一个新的对象
 * Never use `eval()`.
 * 不要使用`eval()`。
 * Never use the `with` statement. This statement isn't available in strict mode and likely won't be available in future ECMAScript editions.
