@@ -76,7 +76,7 @@ We need all of this information in order to determine whether or not the rule is
 
 Please keep in mind that we receive a lot of rule proposals and the ESLint team is completely a volunteer team that works in its free time to maintain ESLint. As a result, even if we like the idea for a rule, we may not have the resources to implement it. You greatly increase the likelihood of getting a new core rule into ESLint if you are willing to implement it yourself. The team is very good at guiding first-time contributors through the rule creation process.
 
-我们接受了许多规则提案，ESLint 团队是一支完全由志愿者组成的团队，他们用业余时间维护 ESLint。因此，即使我们喜欢某条规则的想法，我们可能没有资源去实现它。如果你愿意自己实现这条规则，这将会大大增加它成为 ESLint 核心规则的可能性。这个团队非常善于指导初次次贡献者完成规则创建过程。
+我们收到了许多规则提案，而且ESLint 团队是一支完全由志愿者组成的团队，我们只能利用业余时间维护 ESLint。因此，即使我们喜欢某条规则的想法，我们可能没有人力去实现它。如果你愿意自己实现这条规则，这将会大大增加它成为 ESLint 核心规则的可能性。这个团队非常善于指导初次次贡献者完成规则创建过程。
 
 ## Creating Your Own Rules
 
