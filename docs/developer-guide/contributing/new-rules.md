@@ -34,7 +34,7 @@ In general, ESLint core rules must be:
 
 1. **Unique.** No two rules can produce the same warning. Overlapping rules confuse end users and there is an expectation that core ESLint rules do not overlap.
 
-1. **唯一性。** 不同的规则不能产生相同的警告。重叠的规则会混淆使用者而且我们也希望核心的 ESLint 规则不重叠。
+1. **唯一性。** 没有两条规则可以产生相同的警告。重叠的规则会混淆使用者而且我们也希望核心的 ESLint 规则不重叠。
 
 1. **Library agnostic.** Rules must be based solely on JavaScript runtime environments and not on specific libraries or frameworks. For example, core rules shouldn't only apply if you're using jQuery but we may have some rules that apply only if you're using Node.js (a runtime).
 
