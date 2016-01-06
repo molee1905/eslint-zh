@@ -49,7 +49,7 @@ This rule enforces a style where it requires to have a getter for every property
 
 By activating the option `getWithoutSet` it enforces the presence of a setter for every property which has a getter defined.
 
-通过激活 `getWithoutSet` 选项，强制为每个定义了getter的属性提供对应的setter。
+通过激活 `getWithoutSet` 选项，强制为每个定义了 getter 的属性提供对应的 setter。
 
 
 ### Options
