@@ -39,7 +39,7 @@ var o = {
 
 This rule warns if setters are defined without getters. Using an option `getWithoutSet`, it will warn if you have a getter without a setter also.
 
-如果只定义 setter 而没有定义 getter，该规则会发出警告。设置了 getWithoutSet 选项，如果只有 getter 而没有 setter，该规则同样会发出警告。
+如果只定义 setter 而没有定义 getter，该规则会发出警告。设置了 `getWithoutSet` 选项，如果只有 getter 而没有 setter，该规则同样会发出警告。
 
 ## Rule Details
 
