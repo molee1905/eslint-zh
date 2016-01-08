@@ -1,6 +1,8 @@
 ---
 title: Documentation
 layout: doc
+translator: molee1905
+proofreader: fengnana
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Working with Plugins
