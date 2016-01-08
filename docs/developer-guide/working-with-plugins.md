@@ -45,7 +45,7 @@ module.exports = {
 
 You can also create plugins that would tell ESLint how to process files other than JavaScript. In order to create a processor, object that is exported from your module has to conform to the following interface:
 
-你也可以创建插件告诉ESLint除了JavaScript如何处理文件。为了创建一个处理器，从你的模块中输出的对象必须符合以下接口：
+你也可以创建插件告诉ESLint如何处理JavaScript之外的文件。为了创建一个处理器，从你的模块中输出的对象必须符合以下接口：
 
 ```js
 processors: {
@@ -97,7 +97,7 @@ You can provide default configuration for the rules included in your plugin by m
 exported object to include `rulesConfig` property. `rulesConfig` follows the same pattern as
 you would use in your .eslintrc config `rules` property, but without plugin name as a prefix.
 
-你可以在你的插件中通过修改输出一个包含`rulesConfig`属性的对象为规则提供默认的配置。同你在 .eslintrc 中使用的`rules`属性一样，`rulesConfig`遵循同样的模式，但是没有插件名作为前缀。
+你可以在你的插件中通过输出一个包含`rulesConfig`属性的对象为规则提供默认的配置。同你在 .eslintrc 中使用的`rules`属性一样，`rulesConfig`遵循同样的模式，但是没有插件名作为前缀。
 
 ```js
 module.exports = {
