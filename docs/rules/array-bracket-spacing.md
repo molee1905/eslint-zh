@@ -1,6 +1,8 @@
 ---
 title: Rule array-bracket-spacing
 layout: doc
+translator: molee1905
+proofreader: qifeigit
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow or enforce spaces inside of brackets. (array-bracket-spacing)
@@ -152,6 +154,8 @@ var [ ,,x, ] = z;
 ```
 
 Note that `"always"` has a special case where `{}` and `[]` are not considered problems.
+
+注意 `"always"` 有一个特殊的情况，`{}` 和 `[]` 被认为是没有问题的。
 
 #### Exceptions
 
