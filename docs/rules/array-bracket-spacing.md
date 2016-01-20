@@ -155,7 +155,7 @@ var [ ,,x, ] = z;
 
 Note that `"always"` has a special case where `{}` and `[]` are not considered problems.
 
-注意 `"always"` 有一个特殊的情况，`{}` 和 `[]` 被认为是没有问题的。
+注意 `"always"` 有一种特殊的情况，`{}` 和 `[]` 被认为是没有问题的。
 
 #### Exceptions
 
