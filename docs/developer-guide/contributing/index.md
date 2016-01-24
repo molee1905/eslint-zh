@@ -1,6 +1,8 @@
 ---
 title: Contributing
 layout: doc
+translator: coocon
+proofreader: molee1905
 ---
 
 # Contributing

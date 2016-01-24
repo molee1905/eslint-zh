@@ -1,6 +1,8 @@
 ---
 title: Pull Requests
 layout: doc
+translator: coocon
+proofreader: molee1905
 ---
 # Pull Requests
 
