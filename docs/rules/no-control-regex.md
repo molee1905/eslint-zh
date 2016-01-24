@@ -1,6 +1,8 @@
 ---
 title: Rule no-control-regex
 layout: doc
+translator: ybbjegj
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Controls Characters in Regular Expressions (no-control-regex)
