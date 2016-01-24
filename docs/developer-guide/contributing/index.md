@@ -53,7 +53,7 @@ If you'd like to request a change other than a bug fix or new rule, this section
 
 Have some extra time and want to contribute? This section talks about the process of working on issues.
 
-有一些额外的时间，想要作出贡献？本节讨论操作议题（issues）的过程。
+有一些额外的时间，想要作出贡献？本节讨论操作议题（issue）的过程。
 
 ## Submitting a [Pull Request](pull-requests)
 
@@ -61,4 +61,4 @@ Have some extra time and want to contribute? This section talks about the proces
 
 We're always looking for contributions from the community. This section explains the requirements for pull requests and the process of contributing code.
 
-我们一直在寻求来自社区的贡献。本节解释了合并请求（pull requests）的要求以及贡献代码的过程。
+我们一直在寻求来自社区的贡献。本节解释了合并请求（pull request）的要求以及贡献代码的过程。
