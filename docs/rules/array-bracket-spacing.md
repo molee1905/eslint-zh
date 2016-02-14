@@ -306,7 +306,7 @@ You can turn this rule off if you are not concerned with the consistency of spac
 
 This rule was introduced in ESLint 0.24.0.
 
-该规则在ESLint 0.24.0 被引入。
+该规则在 ESLint 0.24.0 被引入。
 
 ## Resources
 
