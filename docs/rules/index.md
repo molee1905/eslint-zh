@@ -98,8 +98,8 @@ These are rules designed to prevent you from making mistakes. They either prescr
 * [dot-location](dot-location) - 强制在点号之前或之后一致的换行
 * [dot-notation](dot-notation) - encourages use of dot notation whenever possible
 * [dot-notation](dot-notation) - 鼓励尽可能使用点号
-* [eqeqeq](eqeqeq) - require the use of `===` and `!==` (fixable)
-* [eqeqeq](eqeqeq) - 要求使用 `===` 和 `!==` (fixable)
+* [eqeqeq](eqeqeq) - require the use of `===` and `!==`
+* [eqeqeq](eqeqeq) - 要求使用 `===` 和 `!==`
 * [guard-for-in](guard-for-in) - make sure `for-in` loops have an `if` statement
 * [guard-for-in](guard-for-in) - 确保`for-in`循环中有一个 `if`语句
 * [no-alert](no-alert) - disallow the use of `alert`, `confirm`, and `prompt`

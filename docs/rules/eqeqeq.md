@@ -29,10 +29,6 @@ This rule is aimed at eliminating the type-unsafe equality operators.
 
 此规则目的在于，消除类型不安全的相等运算。
 
-**Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
-
-**可修复:**此规则通过在命令行中使用`--fix`自动修复。
-
 The following patterns are considered problems:
 
 以下模式被认为是有问题的：
