@@ -1,6 +1,8 @@
 ---
 title: Rule comma-style
 layout: doc
+translator: molee1905
+proofreader: sunshiner
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Comma style (comma-style)

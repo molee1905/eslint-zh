@@ -1,6 +1,8 @@
 ---
 title: Rule complexity
 layout: doc
+translator: fengnana
+proofreader: sunshiner
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Limit Cyclomatic Complexity (complexity)

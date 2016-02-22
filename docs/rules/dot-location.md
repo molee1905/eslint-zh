@@ -1,6 +1,8 @@
 ---
 title: Rule dot-location
 layout: doc
+translator: fengnana
+proofreader: sunshiner
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Enforce newline before and after dot (dot-location)

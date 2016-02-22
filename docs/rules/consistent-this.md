@@ -1,6 +1,8 @@
 ---
 title: Rule consistent-this
 layout: doc
+translator: molee1905
+proofreader: sunshiner
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Require Consistent This (consistent-this)

@@ -1,6 +1,8 @@
 ---
 title: Rule default-case
 layout: doc
+translator: fengnana
+proofreader: sunshiner
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Require Default Case in Switch Statements (default-case)
