@@ -1,6 +1,8 @@
 ---
 title: Getting source code
 layout: doc
+translator: maoshuyu
+proofreader: hacke2
 ---
 
 # Source Code
