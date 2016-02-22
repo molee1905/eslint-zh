@@ -8,11 +8,11 @@ layout: doc
 
 JavaScript allows you to place newlines before or after a dot in a member expression.
 
-JavaScript允许你在成员表达式中的点符号的前面或者后面放置一个换行符
+JavaScript允许你在成员表达式中的点操作符的前面或者后面放置一个换行符
 
 Consistency in placing a newline before or after the dot can greatly increase readability.
 
-点符号前面或者后面放置统一的换行符，能增强代码可读性。
+点操作符前面或者后面放置统一的换行符，能增强代码可读性。
 
 ```js
 var a = universe.
@@ -26,7 +26,7 @@ var b = universe
 
 This rule aims to enforce newline consistency in member expressions. This rule prevents the use of mixed newlines around the dot in a member expression.
 
-此规则目的在于，在成员表达式中，强制换行的一致性。此规则防止在成员表达式中的点符号周围使用多个换行符。
+此规则目的在于规范成员表达式中强制换行的一致性。此规则防止在成员表达式中点操作符周围使用不同风格的换行风格。
 
 ### Options
 
@@ -34,9 +34,9 @@ The rule takes one option, a string, which can be either `object` or `property`.
 If it is `object`, the dot in a member expression should be on the same line as the object portion.
 If it is `property`, the dot in a member expression should be on the same line as the property portion.
 
-规则中带有一个选项，字符类型，可以为`object` 或者 `property`。
+规则中带有一个字符类型选项，该选项的值可以是`object` 或者 `property`。
 
-如果是`object`，成员表达式中的点符号应该作为对象部分放在同一行。如果是`property`，成员表达式中的点符号应该作为属性部分放在同一行。
+如果是`object`，成员表达式中的点操作符应该和对象部分放在同一行。如果是`property`，成员表达式中的点操作符应该和属性部分放在同一行。
 
 If unset, the default behavior is `"object"`.
 
@@ -50,7 +50,7 @@ If unset, the default behavior is `"object"`.
 
 This is the default option. It requires the dot to be on the same line as the object.
 
-这是默认选项，他需要点符号作为对象部分放在同一行.
+这是默认选项，他需要点操作符和对象部分放在同一行.
 
 The following patterns are considered problems:
 
@@ -79,7 +79,7 @@ var bar = object.property;
 
 This option requires the dot to be on the same line as the property.
 
-此选项需要点符号作为property放在同一行。
+此选项需要点操作符和属性放在同一行。
 
 The following patterns are considered problems:
 
@@ -108,7 +108,7 @@ var bar = object.property;
 
 You can turn this rule off if you are not concerned with the consistency of newlines before or after dots in member expressions.
 
-如果你不关心成员表达式中点符号前面或者后面换行符的一致性，可以关掉此规则
+如果你不关心成员表达式中点操作符换行符前后的一致性，可以关掉此规则
 
 ## Related Rules
 
