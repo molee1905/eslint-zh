@@ -1,6 +1,8 @@
 ---
 title: Documentation
 layout: doc
+translator: maoshuyu
+proofreader: hacke2
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Shareable Configs
@@ -63,7 +65,7 @@ npm link eslint-config-myconfig
 
 Be sure to replace `eslint-config-myconfig` with the actual name of your module.
 
-确保使用这是的模块名称替换 `eslint-config-myconfig`。
+确保使用你模块的真实名称替换 `eslint-config-myconfig`。
 
 ## Using a Shareable Config
 
@@ -103,7 +105,7 @@ It's possible to share multiple configs in the same npm package. You can specify
 
 As an example, you can create a file called `my-special-config.js` in the root of your npm package and export a config, such as:
 
-例如，你可以创建一个叫 `my-special-config.js` 在 npm 包的根目录并且 export 一个配置对象。如下：
+例如，你可以创建一个叫 `my-special-config.js` 在 npm 包的根目录并且导出一个配置对象。如下：
 
 ```js
 module.exports = {
@@ -129,7 +131,7 @@ Note that you can leave off the `.js` from the filename. In this way, you can ad
 
 **Important:** We strongly recommend always including a default config for your plugin to avoid errors.
 
-**Important:** 我们强烈的建议为你的插件包含默认的配置从而避免错误。
+**重要:** 我们强烈的建议为你的插件包含默认的配置从而避免错误。
 
 ## Local Config File Resolution
 
@@ -217,7 +219,7 @@ module.exports = {
 
 In the last file, you'll once again see that to properly resolve your config, you'll need include the full package path.
 
-在最后一个文件中，您会再次看到，要正确地解决您的配置，您需要包含完整的包路径。
+在最后一个文件中，你会再次看到，要正确地解决你的配置，你需要包含完整的包路径。
 
 ## Further Reading
 
