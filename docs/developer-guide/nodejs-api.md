@@ -1,19 +1,23 @@
 ---
 title: Documentation
 layout: doc
+translator: yanggao40
+proofreader: hacke2
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Node.js API
 
 While ESLint is designed to be run on the command line, it's possible to use ESLint programmatically through the Node.js API. The purpose of the Node.js API is to allow plugin and tool authors to use the ESLint functionality directly, without going through the command line interface.
 
-ESLint 被设计为在命令行中运行，所以通过 Node.js API 使用ESLint编程是可能的。Node.js API 的目的是使插件和工具的作者可以直接使用 ESLint的功能，而不需要通过命令行接口。
+ESLint 被设计为在命令行中运行，所以通过 Node.js API 使用ESLint编程是可能的。Node.js API 的目的是允许作者可以直接使用 ESLint的功能来制作插件和工具的，而不需要通过命令行接口。
 
 **Note:** Use undocumented parts of the API at your own risk. Only those parts that are specifically mentioned in this document are approved for use and will remain stable and reliable. Anything left undocumented is unstable and may change or be removed at any point.
 
 **注意:** 使用文档中没有的API的风险需自己承担。只有文档中声明的部分是赞成使用且可保持稳定可靠。文档中未声明的部分是不稳定的且可能随时被移除。
 
 ## SourceCode
+
+## 源代码
 
 The `SourceCode` type represents the parsed source code that ESLint executes on. It's used internally in ESLint and is also available so that already-parsed code can be used. You can create a new instance of `SourceCode` by passing in the text string representing the code and an abstract syntax tree (AST) in [ESTree](https://github.com/estree/estree) format (including location information, range information, comments, and tokens):
 
@@ -33,7 +37,7 @@ The `SourceCode` constructor throws an error if the AST is missing any of the re
 
 The `linter` object does the actual evaluation of the JavaScript code. It doesn't do any filesystem operations, it simply parses and reports on the code. You can retrieve `linter` like this:
 
-`linter`对象对JavaScript进行评估。它不会对文件系统进行操作，它简单地解析和报告代码。你可以这样取得`linter`： 
+`linter`对象对JavaScript代码进行评估。它不会对文件系统进行操作，它只会简单地解析和报告代码。你可以这样取得`linter`： 
 
 ```js
 var linter = require("eslint").linter;
@@ -44,7 +48,7 @@ The most important method on `linter` is `verify()`, which initiates linting of 
 `linter`最重要的方法为`verify()`，它对给的的文本的lint进行初始化。这个方法接受4个参数：
 
 * `code` - the source code to lint (a string or instance of `SourceCode`).
-* `code`-要lint的源代码（字符串或者`SourceCode`的实例）。
+* `code`- 要lint的源代码（字符串或者`SourceCode`的实例）。
 * `config` - a configuration object.
 * `config` - 一个配置对象。
 * `options` - (optional) Additional options for this run.
@@ -85,7 +89,7 @@ var messages = linter.verify(code, {
 
 The `verify()` method returns an array of objects containing information about the linting warnings and errors. Here's an example:
 
-`verify()`方法返回一个包含lint警告和错误的对象的数组。下面是个例子：
+`verify()`方法返回一个包含linting警告和错误的对象的数组。下面是个例子：
 
 ```js
 {
@@ -169,11 +173,11 @@ The `CLIEngine` is a constructor, and you can create a new instance by passing i
 * `configFile` - The configuration file to use (default: null). Corresponds to `-c`.
 * `configFile` - 要使用的配置文件（默认：null）。对应于`-c`。
 * `envs` - An array of environments to load (default: empty array). Corresponds to `--env`.
-* `envs` -需要加载的环境的数组（默认为空数组）。对应于`--env`。
+* `envs` - 需要加载的环境的数组（默认为空数组）。对应于`--env`。
 * `extensions` - An array of filename extensions that should be checked for code. The default is an array containing just `".js"`. Corresponds to `--ext`.
-* `extensions`-应被代码检查的文件名扩展的数组。默认为仅包含`".js"`的数组。对应于`--ext`。
+* `extensions`- 应被代码检查的文件名扩展的数组。默认为仅包含`".js"`的数组。对应于`--ext`。
 * `globals` - An array of global variables to declare (default: empty array). Corresponds to `--global`.
-* `globals` -要声明为全局变量的数组（默认为空数组）。对应于`--global`。
+* `globals` - 要声明为全局变量的数组（默认为空数组）。对应于`--global`。
 * `fix` - True indicates that fixes should be applied to the text when possible.
 * `fix` - True代表可能时修改应用到文本。
 * `ignore` - False disables use of `.eslintignore` (default: true). Corresponds to `--no-ignore`.
@@ -276,7 +280,7 @@ The top-level report object has a `results` array containing all linting results
 
 Once you get a report object, it's up to you to determine how to output the results.
 
-一旦获取一个报告对象，决定怎么输出结果取决于你。
+一旦获取一个报告对象，怎么输出结果取决于你。
 
 ### resolveFileGlobPatterns()
 
