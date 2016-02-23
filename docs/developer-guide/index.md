@@ -43,7 +43,7 @@ Before you can get started, you'll need to get a copy of the ESLint source code.
 
 在你开始之前，你需要获取ESLint的源码。本节解释如何获取源码和源码结构。
 
-## Section 2: Setup a Development Environment
+## Section 2: Setup a [Development Environment](development-environment.html)
 
 ## 第二节： 设置[开发环境](development-environment.html)
 
