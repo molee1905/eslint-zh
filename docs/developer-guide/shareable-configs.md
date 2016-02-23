@@ -65,7 +65,7 @@ npm link eslint-config-myconfig
 
 Be sure to replace `eslint-config-myconfig` with the actual name of your module.
 
-确保使用你模块的真实名称替换 `eslint-config-myconfig`。
+确保使用你的模块的实际的名称替换 `eslint-config-myconfig`。
 
 ## Using a Shareable Config
 
