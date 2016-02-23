@@ -9,7 +9,7 @@ proofreader: hacke2
 
 While ESLint is designed to be run on the command line, it's possible to use ESLint programmatically through the Node.js API. The purpose of the Node.js API is to allow plugin and tool authors to use the ESLint functionality directly, without going through the command line interface.
 
-ESLint 被设计为在命令行中运行，所以通过 Node.js API 使用ESLint编程是可能的。Node.js API 的目的是允许作者可以直接使用 ESLint的功能来制作插件和工具的，而不需要通过命令行接口。
+ESLint 被设计为在命令行中运行，所以通过 Node.js API 使用ESLint编程是可能的。Node.js API 的目的是使插件和工具的作者可以直接使用 ESLint的功能，而不需要通过命令行接口。
 
 **Note:** Use undocumented parts of the API at your own risk. Only those parts that are specifically mentioned in this document are approved for use and will remain stable and reliable. Anything left undocumented is unstable and may change or be removed at any point.
 
