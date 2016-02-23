@@ -1,6 +1,8 @@
 ---
 title: Governance model
 layout: doc
+translator: yanggao40
+proofreader: hacke2
 ---
 
 # Governance
@@ -9,25 +11,31 @@ layout: doc
 
 ESLint is an open source project that depends on contributions from the community. Anyone may contribute to the project at any time by submitting code, participating in discussions, making suggestions, or any other contribution they see fit. This document describes how various types of contributors work within the ESLint project.
 
-ESLint是依赖社区贡献的开源项目。任何人都可以通过提交代码、参与讨论、提出建议或者其他适合的方式做出贡献。本文档描述了在ESLint项目中不用方式的贡献如何起作用。
+ESLint是依赖社区贡献的开源项目。任何人都可以通过提交代码、参与讨论、提出建议或者其他适合的方式做出贡献。本文档描述了不同类型的贡献者如何在ESLint项目中工作。
 
 ## Roles and Responsibilities
 
+## 角色与义务
+
 ### Users
+
+### 用户
 
 Users are community members who have a need for the project. Anyone can be a User; there are no special requirements. Common User contributions include evangelizing the project (e.g., display a link on a website and raise awareness through word-of-mouth), informing developers of strengths and weaknesses from a new user perspective, or providing moral support (a "thank you" goes a long way).
 
-用户为对该项目有需求的社区成员。所有人都可以成为用户，并且没有任何特殊的需求。普遍用户的贡献包括宣传该项目（在网站上展示链接或者通过口碑吸引注意），从新用户的角度告知开发者优缺点，或者提供道义上的支持（感谢长期的发展）。
+用户为对该项目有需求的社区成员。所有人都可以成为用户，并且没有任何特殊的需求。普遍用户的贡献包括宣传该项目（例如在网站上展示链接或者通过口碑吸引注意），从新用户的角度告知开发者优缺点，或者提供道义上的支持（感谢长期的发展）。
 
 Users who continue to engage with the project and its community will often become more and more involved. Such Users may find themselves becoming Contributors, as described in the next section.
 
-继续与该项目和社区打交道的用户会越来越参与其中。这样的用户会发展自己成为的贡献者，就像下节描述的那样。
+继续与该项目和社区打交道的用户会越来越多的参与其中。这样的用户会发展自己成为的贡献者，就像下节描述的那样。
 
 ### Contributors
 
+### 贡献者
+
 Contributors are community members who contribute in concrete ways to the project, most often in the form of code and/or documentation. Anyone can become a Contributor, and contributions can take many forms. There is no expectation of commitment to the project, no specific skill requirements, and no selection process.
 
-贡献者为以具体的方式做出贡献的社区成员，大部分以代码或文档的方式。所有的人都可以成为贡献者，并且贡献的方式有许多中。该项目没有期望的承诺，不要求特定的技能，也没有筛选程序。
+贡献者为以具体的方式做出贡献的社区成员，大部分以代码或文档的方式。所有人都可以成为贡献者，并且贡献的方式有许多种。该项目没有期望的承诺，不要求特定的技能，也没有筛选程序。
 
 Contributors have read-only access to source code and so submit changes via pull requests. Contributor pull requests have their contribution reviewed and merged by a Reviewer. Reviewers and Committers work with Contributors to review their code and prepare it for merging.
 
@@ -39,11 +47,15 @@ As Contributors gain experience and familiarity with the project, their profile 
 
 ### Committers
 
+### 提交者
+
 Committers are community members who have shown that they are committed to the continued development of the project through ongoing engagement with the community. Committers are given push access to the project's GitHub repos and must abide by the project's [Contribution Guidelines](contributing).
 
 提交者是社区成员，他们已经表现出通过不断的参与到社区致力于项目的持续发展。提交者对该项目的git仓库授权了push权限，且必须遵守项目的 [贡献指南](contributing).
 
 Committers:
+
+提交者：
 
 * Are expected to work on public branches of the source repository and submit pull requests from that branch to the master branch.
 
@@ -79,7 +91,7 @@ To become a Committer:
 
 * One must have shown a willingness and ability to participate in the project as a team player. Typically, a potential Committer will need to show that they have an understanding of and alignment with the project, its objectives, and its strategy.
 
-* 必须展示已成员参与到项目中的意愿和能力。一般来说，一个潜在的提交者需要表现其从客观和策略的角度对与项目紧密合作的理解。
+* 必须展示已参与到项目中的成员的意愿和能力。一般来说，一个潜在的提交者需要表现其从客观和策略的角度对与项目紧密合作的理解。
 
 * Committers are expected to be respectful of every community member and to work collaboratively in the spirit of inclusion.
 
@@ -95,13 +107,15 @@ New Committers can be nominated by any existing Committer. Once they have been n
 
 It is important to recognize that committership is a privilege, not a right. That privilege must be earned and once earned it can be removed by the Reviewers in extreme circumstances. However, under normal circumstances committership exists for as long as the Committer wishes to continue engaging with the project.
 
-意识到committership是一种特权但不是权利是非常重要的。这种特权必须要争取，一旦争取它可以在极端的情况下被审阅者移除。但是，正常情况下，这种特权如果提交者愿意继续参与项目将会长期存在。
+意识到提交者的身份是一种特权但不是权利是非常重要的。这种特权必须要争取，一旦争取它可以在极端的情况下被审阅者移除。但是，正常情况下，这种特权如果提交者愿意继续参与项目将会长期存在。
 
 A Committer who shows an above-average level of contribution to the project, particularly with respect to its strategic direction and long-term health, may be nominated to become a Reviewer, described below.
 
 展现了对项目中上水平的的贡献的提交者，特别对战略方向和长期健康发展，可能被提名为审阅者，下面为描述。
 
 ### Reviewers
+
+### 审阅者
 
 Reviewers have additional responsibilities over and above those of a Committer. These responsibilities ensure the smooth running of the project. Reviewers are expected to review code contributions, approve changes to this document, and manage the copyrights within the project outputs.
 
@@ -145,6 +159,8 @@ A Committer is invited to become a Reviewer by existing Reviewers. A nomination 
 
 ### Project Lead
 
+### 项目领导者
+
 Project Leads have additional responsibilities over and above those of a Reviewer. These responsibilities include administration of a GitHub repo, management and scheduling of releases, publish access to npm, issue and milestone tracking (including closing of all issues for any reason), and setting the direction for the project. Project Leads must also ensure the continued development of the project they oversee by nominating Committers and Reviewers for the project, contributing code, maintaining a roadmap, and being a community representative for the project.
 
 相比于审阅者项目，领导者有着额外的责任。他们的责任包括管理 GitHub的仓库，管理和调度发布，发布到npm，问题和milestone跟踪（包括关闭问题的理由），并要为项目设立发展方向。项目领导也必须保证持续发展，他们负责提交者和审阅者的贡献代码，维护一个路线图，并成为项目的社区代表。
@@ -158,6 +174,8 @@ Second, a Reviewer can be invited to become a Project Lead by an existing Projec
 第二，审阅者可以被已有的项目领导者邀请成为领导者。已有的审阅者可以成为领导者的前提是至少提交了75条合格的pull request且积极参与项目的时间不少于6个月。希望项目领导者是特殊的领导者，可以以有益的，包容和支持的方式与他人合作。提名为领导者会被已有的领导者讨论并投票决定。
 
 ### Administrator
+
+### 管理员
 
 Administrators oversee the ESLint organization as a whole. They are responsible for administering the GitHub organization, domain name, mailing list, social media presence, and website. Administrators need not be Project Leads but must have been Project Leads at one point in time.
 
