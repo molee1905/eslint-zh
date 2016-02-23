@@ -1,6 +1,8 @@
 ---
 title: Rule no-empty-character-class
 layout: doc
+translator: ybbjegj
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow Empty Character Classes (no-empty-character-class)
@@ -23,7 +25,7 @@ This rule is aimed at highlighting possible typos and unexpected behavior in reg
 
 The following patterns are considered problems:
 
-下面是有问题的代码：
+以下模式被认为是有问题的：
 
 ```js
 /*eslint no-empty-character-class: 2*/
@@ -37,7 +39,7 @@ bar.match(/^abc[]/); /*error Empty class.*/
 
 The following patterns are not considered problems:
 
-下面是正确的代码：
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint no-empty-character-class: 2*/
@@ -57,7 +59,7 @@ var bar = new RegExp("^abc[]");
 
 This rule was introduced in ESLint 0.22.0.
 
-该规则是在ESLint 0.22.0 中被引入的。
+该规则在 ESLint 0.22.0 中被引入。
 
 ## Resources
 
