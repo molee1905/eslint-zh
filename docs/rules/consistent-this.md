@@ -1,6 +1,8 @@
 ---
 title: Rule consistent-this
 layout: doc
+translator: molee1905
+proofreader: sunshiner
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Require Consistent This (consistent-this)
@@ -9,7 +11,7 @@ layout: doc
 
 It is often necessary to capture the current execution context in order to make it available subsequently. A prominent example of this are jQuery callbacks:
 
-通常，非常有必要获取当前执行环境的上下文以便在后续过长中继续使用。一个常见的例子就是jQuery的回调函数：
+通常，非常有必要获取当前执行环境的上下文以便在后续过程中继续使用。一个常见的例子就是jQuery的回调函数：
 
 ```js
 var self = this;
@@ -21,7 +23,7 @@ jQuery('li').click(function (event) {
 
 There are many commonly used aliases for `this` such as `self`, `that` or `me`. It is desirable to ensure that whichever alias the team agrees upon is used consistently throughout the application.
 
-`this`有多常用的别名例如`self`, `that` 或 `me`。在整个应用中，团队认可的别名应确保在使用过程中保持一致。
+`this`有多常用的别名例如`self`, `that` 或 `me`。所以在整个项目中确保团队成员使用同样的别名是一个很有必要的事情。
 
 ## Rule Details
 
@@ -31,7 +33,7 @@ This rule designates a variable as the chosen alias for `this`. It then enforces
 
 * if a variable with the designated name is declared or assigned to, it *must* explicitly be assigned the current execution context, i.e. `this`
 
-* 如果一个指定名称的变量被声明或赋值，它*必须*显示的被赋值为当前执行环境的上下文，比如`this`。
+* 如果指定的那个名称被声明或赋值，那么它*必须*显式的被赋值为当前执行环境的上下文，比如`this`。
 
 * if `this` is explicitly assigned to a variable, the name of that variable must be the designated one
 
@@ -89,7 +91,7 @@ foo.bar = this;
 
 A declaration of an alias does not need to assign `this` in the declaration, but it must perform an appropriate assignment in the same scope as the declaration. The following patterns are also considered okay:
 
-别名没有必要在声明是就赋值为`this`，但必须在同样的作用域下完成赋值。以下模式被认为是可以的：
+别名没有必要在声明时就赋值为`this`，但必须在和声明时同样的作用域下完成赋值。以下模式被认为是可以的：
 
 ```js
 /*eslint consistent-this: [2, "self"]*/

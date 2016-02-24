@@ -1,6 +1,8 @@
 ---
 title: Rule curly
 layout: doc
+translator: fengnana
+proofreader: sunshiner
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Require Following Curly Brace Conventions (curly)
@@ -8,7 +10,7 @@ layout: doc
 
 JavaScript allows the omission of curly braces when a block contains only one statement.
 
-当只有一条语句时，JavaScript允许省略大括号。
+当代码块只有一条语句时，JavaScript允许省略大括号。
 
 However, it is considered by many to be best practice to _never_ omit curly braces around blocks, even when they are optional, because it can lead to bugs and reduces code clarity. So the following:
 然而，很多人认为，在块区域前后时刻保留大括号是一种最佳实践，即使他们是可有可无的，因为省略大括号会导致错误，并且降低代码的清晰度。所以以下模式：
@@ -28,13 +30,13 @@ if (foo) {
 
 There are, however, some who prefer to only use braces when there is more than one statement to be executed.
 
-然而，依然有人当只有需要执行多余一条语句时，才愿意使用大括号。
+然而，依然有人更乐意在有多条执行语句时才使用大括号。
 
 ## Rule Details
 
 This rule is aimed at preventing bugs and increasing code clarity by ensuring that block statements are wrapped in curly braces. It will warn when it encounters blocks that omit curly braces.
 
-此规则目的在于，通过确保使用大括号包裹块语句，来避免bug的发生，并且增加了代码的清晰度
+此规则目的在于，通过确保代码块使用了大括号包裹以避免bug的发生，并且增加代码的清晰度
 
 The following patterns are considered problems:
 
@@ -80,7 +82,7 @@ if (foo) {
 #### multi
 
 By default, this rule warns whenever `if`, `else`, `for`, `while`, or `do` are used without block statements as their body. However, you can specify that block statements should be used only when there are multiple statements in the block and warn when there is only one statement in the block. To do so, configure the rule as:
-默认的，此规则每当`if`, `else`, `for`, `while`, 和 `do` 不使用块语句作为主体时，会给出警告 。然而，你可以指定当块中有多条语句时，才使用块语句，而当只有一条语句在块语句中时，则会给出警告。
+默认情况下当`if`, `else`, `for`, `while`, 或 `do` 不使用大括号包裹代码时，会给出警告。然而，你可以指定当块中有多条语句时才使用大括号，而当代码块中只有一条语句时只会给出警告。
 实现如上定制，配置规则如下：
 
 ```json
@@ -264,8 +266,8 @@ for (var i = 0; foo; i++)
 When using any of the `multi*` option, you can add an option to enforce all bodies of a `if`,
 `else if` and `else` chain to be with or without braces.
 
-当在使用任何`multi*`选项时，你可以添加一个选择来强制`if`,
-`else if` and `else`链中所有的代码主体使用或者不使用大括号。
+当在使用任何`multi*`选项时，你可以添加一个参数来强制`if`,
+`else if` and `else`中所有的代码块使用或者不使用大括号。
 
 ```json
 curly: [2, "multi", "consistent"]

@@ -1,6 +1,8 @@
 ---
 title: Rule comma-style
 layout: doc
+translator: molee1905
+proofreader: sunshiner
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Comma style (comma-style)
@@ -9,19 +11,19 @@ layout: doc
 
 Comma Style rule enforces comma styles for a list of things separated by commas. There are two comma styles primarily in JavaScript. The standard one in which commas are placed at the end of the line. And Comma-First, in which, commas are placed at the start of the next line after the list item.
 
-此规则对由逗号分隔的列表强制使用逗号风格。在Javascript中主要由两种逗号风格。标准的是将逗号放置到行尾。逗号-优先的，将逗号放置到列表元素的下一行的开始。
+逗号风格规则是对由逗号分隔的列表中逗号的位置做出规定。在Javascript中主要有两种逗号风格。标准的风格是将逗号放置到行尾，另一种是逗号优先风格，此风格将逗号放置到列表元素的下一行的开始。
 
 One of the justifications for using Comma-First is that it helps tracking missing and trailing commas.
 In case linting is turned off, missing commas in variable declarations lead to leakage of global variables and trailing commas lead to errors in older versions of IE.
 
-使用逗号-优先的理由之一是，它可以帮助跟踪丢失的和尾部的逗号。如果检测被关闭，在旧版的IE浏览器中，变量声明时，缺失逗号可能导致全局变量泄露，尾部的逗号将导致错误。
+使用逗号优先的理由之一是它可以帮助跟踪漏写和多余的逗号。如果检测被关闭，在旧版的IE浏览器中，变量声明时，缺失逗号可能导致全局变量泄露，尾部的逗号将导致错误。
 
 
 ## Rule Details
 
 This rule is aimed at enforcing a particular comma style in JavaScript. As such, it warns whenever it sees a variable declaration, object property and array element that does not adhere to a particular comma style. It doesn't support cases where there are line breaks before and after comma (lone commas) with in declarations, properties and elements. It also avoids single line declaration cases.
 
-该规则旨在强制在Javascript使用一种特定的逗号风格。因此，如果变量声明，对象属性和数组元素没有遵循该特定的逗号风格时，此规则将发出警告。如果变量声明对象属性和数组元素中，在逗号之前或之后(单独的逗号)有换行符，则不受此约束。单行声明的情况也不受此约束。
+该规则是为了在Javascript中强制使用一种特定的逗号风格。因此，如果变量声明，对象属性和数组元素没有遵循该特定的逗号风格时，此规则将发出警告。在变量声明，对象属性或数组元素中，如果一个逗号(该行只有这一个逗号)之前和之后都有换行符，则不受此规定约束。单行声明的情况也不受此约束。
 
 ### Options
 
@@ -42,7 +44,7 @@ You can set the style in configuration like this:
 
 This is the default setting for this rule. This option requires that the comma be placed after and be in the same line as the variable declaration, object property and array element.
 
-这个该规则的默认设置。该选项要求逗号放置在变量声明，对象属性和数组元素之后并且在同一行。
+这个是该规则的默认值。对于变量声明，对象属性和数组元素这些情况，该选项要求逗号放置在声明后面，并且与声明处于同一行。
 
 While using this setting, the following patterns are considered problems:
 
@@ -102,7 +104,7 @@ function bar() {
 
 This option requires that the comma be placed before and be in the same line as the variable declaration, object property and array element.
 
-该选项要求逗号放置在变量声明，对象属性和数组元素之前并且在同一行。
+该选项要求逗号放置在变量声明，对象属性或数组元素之前并且在同一行。
 
 While using this setting, the following patterns are considered problems:
 
@@ -158,7 +160,7 @@ function bar() {
 
 Exceptions of the following nodes may be passed in order to tell ESLint to ignore nodes of certain types.
 
-为了告诉ESLint忽略某些类型的节点，以下节点的例外情况将会通过验证。
+如果想让ESLint忽略某些类型的节点，可以通过设置exceptions属性来实现。
 
 ```text
 ArrayExpression,
@@ -168,7 +170,7 @@ VariableDeclaration
 
 An example use case is if a user wanted to only enforce comma style in var statements.
 
-一个示例用例就是如果用户只希望在var语句中强制使用逗号风格。
+下面的用例就是只希望在变量声明中强制使用逗号风格规则。
 
 The following is considered a warning:
 

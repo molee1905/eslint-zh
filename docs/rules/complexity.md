@@ -1,15 +1,17 @@
 ---
 title: Rule complexity
 layout: doc
+translator: fengnana
+proofreader: sunshiner
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Limit Cyclomatic Complexity (complexity)
-# 限制环路复杂度(complexity)
+# 限制圈复杂度(complexity)
 
 
 Cyclomatic complexity measures the number of linearly independent paths through a program's source code. This rule allows setting a cyclomatic complexity threshold.
 
-环路复杂度(Cyclomatic Complexity)数量上表现为覆盖所有代码的独立现行路径条数。此规则允许设置环路复杂度阈值。
+圈复杂度(Cyclomatic Complexity)数量上表现为覆盖所有代码的独立现行路径条数。此规则允许设置圈复杂度阈值。
 
 ```js
 function a(x) {
@@ -27,8 +29,8 @@ function a(x) {
 
 This rule is aimed at reducing code complexity by capping the amount of cyclomatic complexity allowed in a program. As such, it will warn when the cyclomatic complexity crosses the configured threshold.
 
-此规则目的在于用项目中允许的环路复杂度峰值来减少代码复杂度，
-因此，它会在环路复杂度越过配置的阈值时给出警告。
+此规则目的在于通过在项目中设置圈复杂度阈值来控制代码的复杂度，
+因此，它会在圈复杂度越过配置的阈值时给出警告。
 
 The following patterns are considered problems:
 

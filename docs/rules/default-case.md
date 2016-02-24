@@ -1,6 +1,8 @@
 ---
 title: Rule default-case
 layout: doc
+translator: fengnana
+proofreader: sunshiner
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Require Default Case in Switch Statements (default-case)
@@ -27,11 +29,11 @@ switch (foo) {
 
 The thinking is that it's better to always explicitly state what the default behavior should be so that it's clear whether or not the developer forgot to include the default behavior by mistake.
 
-考虑到，开发人员可能会误将默认分支忘记定义而导致程序发生错误，所以总是明确定义默认分支是很好的行为。
+考虑到开发人员可能会忘记定义默认分支而导致程序发生错误，所以明确规定定义默认分支是很好的选择。
 
 Other code conventions allow you to skip the `default` case so long as there is a comment indicating the omission is intentional, such as:
 
-还有些代码规范中，允许省略掉`default`分支，但是要写明注释以说明是故意为之。如下：
+有些代码规范中允许省略掉`default`分支，但是要写明注释以说明是故意为之。如下：
 
 ```js
 switch (foo) {
@@ -49,13 +51,13 @@ switch (foo) {
 
 Once again, the intent here is to show that the developer intended for there to be no default behavior.
 
-再次指出，以上示例主要表明开发者并没有默认分支的情况需要处理。
+再次指出，以上示例的前提是开发者并没有默认分支的情况需要处理。
 
 ## Rule Details
 
 This rule aims to require `default` case in `switch` statements. You may optionally include a `// no default` after the last `case` if there is no `default` case.
 
-此规则的目的是，在`switch`语句中，需要有`default`分支。或者你也可以在最后一个`case`分支下，使用`// no default`来表明此处不需要`default`分支。
+此规则的目的是在`switch`语句中强制声明`default`分支。或者也可以在最后一个`case`分支下，使用`// no default`来表明此处不需要`default`分支。
 
 The following pattern is considered a warning:
 

@@ -1,6 +1,8 @@
 ---
 title: Rule comma-spacing
 layout: doc
+translator: molee1905
+proofreader: sunshiner
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Enforces spacing around commas (comma-spacing)
@@ -13,7 +15,7 @@ layout: doc
 
 Spacing around commas improve readability of a list of items. Although most of the style guidelines for languages prescribe adding a space after a comma and not before it, it is subjective to the preferences of a project.
 
-逗号周围的空格可以提高列表项的可读性。尽管大多数的语言风格指南规定在逗号之后而不是之前添加一个空格，那是某个项目的主观偏好而已。
+逗号前后的空格可以提高列表项的可读性。对于大多数语言的代码风格来说一般是在逗号之后而不是之前添加一个空格，当然你也可以在项目中按照自己的偏好决定在哪里添加空格。
 
 
 ```js
@@ -31,7 +33,7 @@ This rule aims to enforce spacing around a comma. As such, it warns whenever it 
 
 The rule takes one option, an object, which has two keys `before` and `after` having boolean values `true` or `false`. If `before` is `true`, space is enforced before commas and if it's `false`, space is disallowed before commas. If `after` is `true`, space is enforced after commas and if it's `false`, space is disallowed after commas. The default is `{"before": false, "after": true}`.
 
-该规则只有一个可选项，是个对象，有两个键`before` 和 `after`对应的值可以为`true` 或 `false`。如果`before` 设置为 `true`，逗号前必须有空格；如果为`false`，逗号前禁止有空格。如果`after` 设置为 `true`，逗号后必须有空格；如果为`false`，逗号后禁止有空格。默认值为`{"before": false, "after": true}`。
+该规则唯一的可选项是一个包含`before` 和 `after`两个属性的对象，这两个属性对应的属性值是`true` 或 `false`。如果`before` 设置为 `true`，逗号前必须有空格；如果为`false`，逗号前禁止有空格。如果`after` 设置为 `true`，逗号后必须有空格；如果为`false`，逗号后禁止有空格。默认值为`{"before": false, "after": true}`。
 
 ```json
     "comma-spacing": [2, {"before": false, "after": true}]

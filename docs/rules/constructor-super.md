@@ -1,6 +1,8 @@
 ---
 title: Rule constructor-super
 layout: doc
+translator: molee1905
+proofreader: sunshiner
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Verify calls of `super()` in constructors (constructor-super)
@@ -21,7 +23,7 @@ This rule checks whether or not there is a valid `super()` call.
 
 This rule is aimed to flag invalid/missing `super()` calls.
 
-该规则知道标记无效或缺失的`super()`调用。
+该规则为了标记无效或缺失的`super()`调用。
 
 The following patterns are considered problems:
 
