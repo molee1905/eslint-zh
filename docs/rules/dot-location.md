@@ -52,7 +52,7 @@ If unset, the default behavior is `"object"`.
 
 This is the default option. It requires the dot to be on the same line as the object.
 
-这是默认选项，他需要点操作符和对象部分放在同一行.
+这是默认选项，它需要点操作符和对象部分放在同一行.
 
 The following patterns are considered problems:
 
@@ -121,7 +121,7 @@ You can turn this rule off if you are not concerned with the consistency of newl
 
 This rule was introduced in ESLint 0.21.0.
 
-此规则在ESLint 0.21.0中被引入
+此规则在 ESLint 0.21.0 中被引入
 
 ## Resources
 
