@@ -44,7 +44,7 @@ You can set the style in configuration like this:
 
 This is the default setting for this rule. This option requires that the comma be placed after and be in the same line as the variable declaration, object property and array element.
 
-这个是该规则的默认值。对于变量声明，对象属性和数组元素这些情况，该选项要求逗号放置在声明后面，并且与声明处于同一行。
+这个是该规则的默认值。该选项要求逗号放置在变量声明，对象属性和数组元素之后并且在同一行。
 
 While using this setting, the following patterns are considered problems:
 
@@ -104,7 +104,7 @@ function bar() {
 
 This option requires that the comma be placed before and be in the same line as the variable declaration, object property and array element.
 
-该选项要求逗号放置在变量声明，对象属性或数组元素之前并且在同一行。
+该选项要求逗号放置在变量声明，对象属性和数组元素之前并且在同一行。
 
 While using this setting, the following patterns are considered problems:
 
@@ -170,7 +170,7 @@ VariableDeclaration
 
 An example use case is if a user wanted to only enforce comma style in var statements.
 
-下面的用例就是只希望在变量声明中强制使用逗号风格规则。
+下面的用例就是用户只希望在变量声明中强制使用逗号风格规则。
 
 The following is considered a warning:
 
