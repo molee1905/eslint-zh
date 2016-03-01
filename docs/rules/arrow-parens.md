@@ -1,6 +1,8 @@
 ---
 title: Rule arrow-parens
 layout: doc
+translator: @molee1905
+proofreader: @ILFront-End
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Require parens in arrow function arguments (arrow-parens)
@@ -31,8 +33,7 @@ a => {}
 Following this style will help you find arrow functions (`=>`) which may be mistakenly included in a condition
 when a comparison such as `>=` was the intent.
 
-跟随此风格，将帮助你找到本想在条件语句中使用比较语句比如`>=`，却将箭头函数 (`=>`)错误地包含进来这样情况。
-
+使用此规则将帮助你找出可能被错误地包含到条件语句中的箭头函数 (`=>`) ，当此条件语句的本意是 `>=` 比较。
 
 ```js
 /*eslint-env es6*/
@@ -64,7 +65,7 @@ a => {}
 
 The rule takes one option, a string, which could be either `"always"` or `"as-needed"`. The default is `"always"`.
 
-该规则有一个可选项，是个字符串，可以为`"always"` 或 `"as-needed"`。默认为`"always"`。
+该规则有一个可选项，是个字符串，可以为 `"always"` 或 `"as-needed"` 。默认为 `"always"`。
 
 You can set the option in configuration like this:
 
@@ -76,7 +77,7 @@ You can set the option in configuration like this:
 
 When the rule is set to `"always"` the following patterns are considered problems:
 
-当设置为`"always"`，以下模式被认为是有问题的：
+当设置为 `"always"` ，以下模式被认为是有问题的：
 
 ```js
 /*eslint arrow-parens: [2, "always"]*/
@@ -110,7 +111,7 @@ a.then((foo) => { if (true) {}; });
 
 One benefits of this option is that it prevents the incorrect use of arrow functions in conditionals:
 
-该选项的一个好处是，它阻止了在条件语句中不正确地使用箭头函数。
+设置 `"always"` 选项的一个好处是，它阻止了在条件语句中不正确地使用箭头函数。
 
 ```js
 /*eslint-env es6*/
@@ -147,7 +148,7 @@ if ((a) => b) {
 
 The following is another example of this behavior:
 
-下面是另一个示例：
+下面是此行为的另一个示例：
 
 ```js
 /*eslint-env es6*/
@@ -163,7 +164,7 @@ var f = a => b ? c: d;
 
 This should be rewritten like so:
 
-应该被重新为这样：
+应该像这样写：
 
 ```js
 /*eslint-env es6*/
@@ -215,7 +216,7 @@ a.then(foo => { if (true) {}; });
 
 This rule was introduced in ESLint 1.0.0-rc-1.
 
-该规则在ESLint 1.0.0-rc-1 中被引入。
+该规则在 ESLint 1.0.0-rc-1 中被引入。
 
 ## Resources
 
