@@ -4,6 +4,7 @@ layout: doc
 translator: @molee1905
 proofreader: @ILFront-End
 ---
+
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow or enforce spaces inside of single line blocks. (block-spacing)
 
