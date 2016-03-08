@@ -1,6 +1,8 @@
 ---
 title: Rule brace-style
 layout: doc
+translator: @molee1905
+proofreader: @ILFront-End
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Require Brace Style (brace-style)
@@ -9,12 +11,11 @@ layout: doc
 
 Brace style is closely related to [indent style](http://en.wikipedia.org/wiki/Indent_style) in programming and describes the placement of curly braces relative to their control statement and body. There are probably a dozen, if not more, brace styles in the world.
 
-在编程过程中，大括号风格与[缩进风格](http://en.wikipedia.org/wiki/Indent_style)紧密联系,用来描述大括号相对控制语句和代码块的位置，少说也有十几种。
+在编程过程中，大括号风格与[缩进风格](http://en.wikipedia.org/wiki/Indent_style)紧密联系，用来描述大括号相对控制语句和代码块的位置，少说也有十几种。
 
 The *one true brace style* is one of the most common brace styles in JavaScript, in which the opening curly brace of a block is placed on the same line as its corresponding statement or declaration. For example:
 
-在Javascript，*one true brace style*也是最常见的一种就是将大括号放在控制语句或声明语句
-同一行的位置。例如：
+在Javascript，*one true brace style* 是最常见的一种括号风格，就是将左大括号和控制语句或者声明语句放在同一行。例如：
 
 ```js
 if (foo) {
@@ -71,11 +72,11 @@ The rule takes two options:
 
 1. A string which must be either "1tbs", "stroustrup" or "allman". The default is "1tbs".
 
-1. 一个字符串，必须是"1tbs"、"stroustrup"或"allman"。默认值是"1tbs"。
+1. 一个字符串，必须是 "1tbs"、"stroustrup" 或 "allman"。默认值是 "1tbs"。
 
 2. An object that further controls the behaviour of this rule. Currently, the only available parameter is `allowSingleLine`, which indicates whether start and end braces may be on the same line.
 
-2. 一个对象，进一步限制该规则的行为。目前，唯一可用的参数是 'allowSingleLine'，用来指示是否开始和结束大括号是否在同一行。
+2. 一个对象，进一步限制该规则的行为。目前，唯一可用的参数是 'allowSingleLine'，用来指示左右大括号是否能在同一行。
 
 You can set the style in configuration like this:
 
@@ -89,7 +90,7 @@ You can set the style in configuration like this:
 
 This is the default setting for this rule and enforces one true brace style. While using this setting, the following patterns are considered problems:
 
-该选项是此默认设置，强制使用one true brace style。当使用此设置时，以下模式被认为是有问题的：
+该选项是此默认设置，强制使用 one true brace style。当使用此设置时，以下模式被认为是有问题的：
 
 
 ```js
@@ -122,7 +123,7 @@ else {              /*error Closing curly brace does not appear on the same line
 
 The following patterns use the one true brace style and are not considered problems:
 
-以下模式使用one true brace style，被认为是没有问题的：
+以下模式使用 one true brace style，被认为是没有问题的：
 
 ```js
 /*eslint brace-style: 2*/
@@ -172,7 +173,7 @@ try { somethingRisky(); } catch(e) { handleError(); }
 
 This enforces Stroustrup style. While using this setting, the following patterns are considered problems:
 
-该选项强制使用Stroustrup风格。当使用此设置时，以下模式被认为是有问题的：
+该选项强制使用 Stroustrup 风格。当使用此设置时，以下模式被认为是有问题的：
 
 ```js
 /*eslint brace-style: [2, "stroustrup"]*/
@@ -204,7 +205,7 @@ if (foo) {
 
 The following patterns use the Stroustrup style and are not considered problems:
 
-以下模式使用Stroustrup风格，被认为是没有问题的：
+以下模式使用 Stroustrup 风格，被认为是没有问题的：
 
 ```js
 /*eslint brace-style: [2, "stroustrup"]*/
@@ -259,7 +260,7 @@ catch(e) { handleError(); }
 
 This enforces Allman style. While using this setting, the following patterns are considered problems:
 
-该选项强制使用Allman风格。当使用此设置时，以下模式被认为是有问题的：
+该选项强制使用 Allman 风格。当使用此设置时，以下模式被认为是有问题的：
 
 ```js
 /*eslint brace-style: [2, "allman"]*/
@@ -289,7 +290,7 @@ if (foo) {           /*error Opening curly brace appears on the same line as con
 
 The following patterns use the Allman style and are not considered problems:
 
-以下模式使用Allman风格，被认为是没有问题的：
+以下模式使用 Allman 风格，被认为是没有问题的：
 
 ```js
 /*eslint brace-style: [2, "allman"]*/
@@ -349,7 +350,7 @@ catch(e) { handleError(); }
 
 If your project will not be using the one true brace style, turn this rule off.
 
-如果你的项目不使用one true brace style，关闭此规则即可。
+如果你的项目不使用 one true brace style，关闭此规则即可。
 
 ## Further Reading
 
@@ -359,7 +360,7 @@ If your project will not be using the one true brace style, turn this rule off.
 
 This rule was introduced in ESLint 0.0.7.
 
-该规则实在ESLint 0.0.7中被引进的。
+该规则实在 ESLint 0.0.7 中被引进的。
 
 ## Resources
 
