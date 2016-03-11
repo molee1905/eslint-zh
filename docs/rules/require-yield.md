@@ -3,11 +3,12 @@ title: Rule require-yield
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow generator functions that do not have `yield` (require-yield)
 
 This rule generates warnings for generator functions that do not have the `yield` keyword.
 
-## Rule details
+## Rule Details
 
 The following patterns are considered problems:
 
@@ -15,7 +16,7 @@ The following patterns are considered problems:
 /*eslint require-yield: 2*/
 /*eslint-env es6*/
 
-function* foo() { /*error This generator function does not have `yield`.*/
+function* foo() {
   return 10;
 }
 ```

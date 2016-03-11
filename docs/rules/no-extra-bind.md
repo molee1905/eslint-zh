@@ -3,6 +3,7 @@ title: Rule no-extra-bind
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow unnecessary function binding (no-extra-bind)
 
 The `bind()` method is used to create functions with specific `this` values and, optionally, binds arguments to specific values. When used to specify the value of `this`, it's important that the function actually use `this` in its function body. For example:
@@ -30,7 +31,7 @@ console.log(boundGetName());      // "ESLint"
 
 In this code, the reference to `this` has been removed but `bind()` is still used. In this case, the `bind()` is unnecessary overhead (and a performance hit) and can be safely removed.
 
-## Rule details
+## Rule Details
 
 This rule is aimed at avoiding the unnecessary use of `bind()` and as such will warn whenever an immediately-invoked function expression (IIFE) is using `bind()` and doesn't have an appropriate `this` value. This rule won't flag usage of `bind()` that includes function argument binding.
 
@@ -42,25 +43,25 @@ The following patterns are considered problems:
 /*eslint no-extra-bind: 2*/
 /*eslint-env es6*/
 
-var x = function () {   /*error The function binding is unnecessary.*/
+var x = function () {
     foo();
 }.bind(bar);
 
-var x = (() => {        /*error The function binding is unnecessary.*/
+var x = (() => {
     foo();
 }).bind(bar);
 
-var x = (() => {        /*error The function binding is unnecessary.*/
+var x = (() => {
     this.foo();
 }).bind(bar);
 
-var x = function () {   /*error The function binding is unnecessary.*/
+var x = function () {
     (function () {
       this.foo();
     }());
 }.bind(bar);
 
-var x = function () {   /*error The function binding is unnecessary.*/
+var x = function () {
     function foo() {
       this.bar();
     }

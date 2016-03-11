@@ -3,6 +3,7 @@ title: Rule no-unused-expressions
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Unused Expressions (no-unused-expressions)
 
 Unused expressions are those expressions that evaluate to a value but are never used. For example:
@@ -19,33 +20,31 @@ This rule aims to eliminate unused expressions. The value of an expression shoul
 
 **Note:** Sequence expressions (those using a comma, such as `a = 1, b = 2`) are always considered unused unless their return value is assigned or a function call is made with the sequence expression value.
 
-### Options
+## Options
 
 This rule, in it's default state, does not require any arguments. If you would like to enable one or more of the following you may pass an object with the options set as follows:
 
 * `allowShortCircuit` set to `true` will allow you to use short circuit evaluations in your expressions (Default: `false`).
 * `allowTernary` set to `true` will enable you use ternary operators in your expressions similarly to short circuit evaluations (Default: `false`).
 
-### Usage
-
 By default the following patterns are considered problems:
 
 ```js
 /*eslint no-unused-expressions: 2*/
 
-0         /*error Expected an assignment or function call and instead saw an expression.*/
+0
 
-if(0) 0   /*error Expected an assignment or function call and instead saw an expression.*/
+if(0) 0
 
-{0}       /*error Expected an assignment or function call and instead saw an expression.*/
+{0}
 
-f(0), {}  /*error Expected an assignment or function call and instead saw an expression.*/
+f(0), {}
 
-a && b()  /*error Expected an assignment or function call and instead saw an expression.*/
+a && b()
 
-a, b()    /*error Expected an assignment or function call and instead saw an expression.*/
+a, b()
 
-c = a, b; /*error Expected an assignment or function call and instead saw an expression.*/
+c = a, b;
 ```
 
 The following patterns are not considered problems by default:
@@ -99,11 +98,11 @@ The above options still will not allow expressions that have code paths without 
 ```js
 /*eslint no-unused-expressions: [2, { allowShortCircuit: true, allowTernary: true }]*/
 
-a || b         /*error Expected an assignment or function call and instead saw an expression.*/
+a || b
 
-a ? b : 0      /*error Expected an assignment or function call and instead saw an expression.*/
+a ? b : 0
 
-a ? b : c()    /*error Expected an assignment or function call and instead saw an expression.*/
+a ? b : c()
 ```
 
 ## Version

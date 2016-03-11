@@ -3,6 +3,7 @@ title: Rule accessor-pairs
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Enforces getter/setter pairs in objects (accessor-pairs)
 
 It's a common mistake in JavaScript to create an object with just a setter for a property but never have a corresponding getter defined for it. Without a getter, you cannot read the property, so it ends up not being used.
@@ -37,12 +38,10 @@ This rule enforces a style where it requires to have a getter for every property
 
 By activating the option `getWithoutSet` it enforces the presence of a setter for every property which has a getter defined.
 
-### Options
+## Options
 
 `getWithoutSet` set to `true` will warn for getters without setters (Default `false`).
 `setWithoutGet` set to `true` will warn for setters without getters (Default `true`).
-
-#### Usage
 
 By default `setWithoutGet` option is always set to `true`.
 
@@ -57,14 +56,14 @@ The following patterns are considered problems by default:
 ```js
 /*eslint accessor-pairs: 2*/
 
-var o = {                       /*error Getter is not present*/
+var o = {
     set a(value) {
         this.val = value;
     }
 };
 
 var o = {d: 1};
-Object.defineProperty(o, 'c', { /*error Getter is not present*/
+Object.defineProperty(o, 'c', {
     set: function(value) {
         this.val = value;
     }
@@ -97,34 +96,34 @@ Object.defineProperty(o, 'c', {
 
 ```
 
-#### getWithoutSet
+### `getWithoutSet`
 
 The following patterns are considered problems with option `getWithoutSet` set:
 
 ```js
 /*eslint accessor-pairs: [2, { getWithoutSet: true }]*/
 
-var o = {                       /*error Getter is not present*/
+var o = {
     set a(value) {
         this.val = value;
     }
 };
 
-var o = {                       /*error Setter is not present*/
+var o = {
     get a() {
         return this.val;
     }
 };
 
 var o = {d: 1};
-Object.defineProperty(o, 'c', { /*error Getter is not present*/
+Object.defineProperty(o, 'c', {
     set: function(value) {
         this.val = value;
     }
 });
 
 var o = {d: 1};
-Object.defineProperty(o, 'c', { /*error Setter is not present*/
+Object.defineProperty(o, 'c', {
     get: function() {
         return this.val;
     }

@@ -3,6 +3,7 @@ title: Rule no-multi-str
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Multiline Strings (no-multi-str)
 
 It's possible to create multiline strings in JavaScript by using a slash before a newline, such as:
@@ -21,9 +22,7 @@ This rule is aimed at preventing the use of multiline strings.
 The following generates a warning:
 
 ```js
-/*eslint no-multi-str: 2*/
-
-/*error Multiline support is limited to browsers supporting ES5 only.*/ var x = "Line 1 \
+/*eslint no-multi-str: 2*/ var x = "Line 1 \
          Line 2";
 ```
 

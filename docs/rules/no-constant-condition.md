@@ -3,6 +3,7 @@ title: Rule no-constant-condition
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow use of constant expressions in conditions (no-constant-condition)
 
 Comparing a literal expression in a condition is usually a typo or development trigger for a specific behavior.
@@ -17,15 +18,17 @@ This pattern is most likely an error and should be avoided.
 
 ## Rule Details
 
-The rule is aimed at preventing the use of a constant expression in a condition.
-As such, it warns whenever it sees a constant expression inside a condition expression.
+The rule is aimed at preventing a constant expression in the test of:
 
-The following patterns are considered problems:
+* `if`, `for`, `while`, or `do...while` statement
+* `?:` ternary expression
+
+Examples of **incorrect** code for this rule:
 
 ```js
 /*eslint no-constant-condition: 2*/
 
-if (true) {             /*error Unexpected constant condition.*/
+if (true) {
     doSomething();
 }
 ```
@@ -33,13 +36,13 @@ if (true) {             /*error Unexpected constant condition.*/
 ```js
 /*eslint no-constant-condition: 2*/
 
-var result = 0 ? a : b; /*error Unexpected constant condition.*/
+var result = 0 ? a : b;
 ```
 
 ```js
 /*eslint no-constant-condition: 2*/
 
-while (-2) {            /*error Unexpected constant condition.*/
+while (-2) {
     doSomething();
 }
 ```
@@ -47,7 +50,7 @@ while (-2) {            /*error Unexpected constant condition.*/
 ```js
 /*eslint no-constant-condition: 2*/
 
-for (;true;) {          /*error Unexpected constant condition.*/
+for (;true;) {
     doSomething();
 }
 ```
@@ -55,12 +58,12 @@ for (;true;) {          /*error Unexpected constant condition.*/
 ```js
 /*eslint no-constant-condition: 2*/
 
-do{                     /*error Unexpected constant condition.*/
+do{
     something();
 } while (x = -1)
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
 ```js
 /*eslint no-constant-condition: 2*/

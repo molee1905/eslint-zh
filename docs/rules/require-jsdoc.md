@@ -3,6 +3,7 @@ title: Rule require-jsdoc
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require JSDoc comment (require-jsdoc)
 
 [JSDoc](http://usejsdoc.org) is a JavaScript API documentation generator. It uses specially-formatted comments inside of code to generate API documentation automatically. For example, this is what a JSDoc comment looks like for a function:
@@ -21,7 +22,7 @@ function sum(num1, num2) {
 
 Some style guides require JSDoc comments for all functions as a way of explaining function behavior.
 
-## Rule details
+## Rule Details
 
 This rule generates warnings for nodes that do not have JSDoc comments when they should. Supported nodes:
 
@@ -29,7 +30,7 @@ This rule generates warnings for nodes that do not have JSDoc comments when they
 * `ClassDeclaration`
 * `MethodDefinition`
 
-### Options
+## Options
 
 This rule accepts a `require` object with its properties as
 
@@ -57,17 +58,17 @@ The following patterns are considered problems:
 /*eslint "require-jsdoc": [2, {
     "require": {
         "FunctionDeclaration": true,
-        "MethodDefinition": false,
-        "ClassDeclaration": false
+        "MethodDefinition": true,
+        "ClassDeclaration": true
     }
 }]*/
 
-function foo() {       /*error Missing JSDoc comment.*/
+function foo() {
     return 10;
 }
 
-class Test{            /*error Missing JSDoc comment.*/
-    getDate(){}        /*error Missing JSDoc comment.*/
+class Test{
+    getDate(){}
 }
 ```
 
@@ -77,8 +78,8 @@ The following patterns are not considered problems:
 /*eslint "require-jsdoc": [2, {
     "require": {
         "FunctionDeclaration": true,
-        "MethodDefinition": false,
-        "ClassDeclaration": false
+        "MethodDefinition": true,
+        "ClassDeclaration": true
     }
 }]*/
 
@@ -112,7 +113,7 @@ class Test{
 }
 ```
 
-## When not to use
+## When Not To Use It
 
 If you do not require JSDoc for your functions, then you can leave this rule off.
 

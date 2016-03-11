@@ -3,7 +3,8 @@ title: Rule no-useless-concat
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
-# Disallow unncessary concatenation of strings (no-useless-concat)
+
+# Disallow unnecessary concatenation of strings (no-useless-concat)
 
 It's unnecessary to concatenate two strings together, such as:
 
@@ -28,11 +29,11 @@ The following patterns are considered problems:
 /*eslint-env es6*/
 
 // these are the same as "10"
-var a = `some` + `string`; /*error Unexpected string concatenation of literals.*/
-var a = '1' + '0';         /*error Unexpected string concatenation of literals.*/
-var a = '1' + `0`;         /*error Unexpected string concatenation of literals.*/
-var a = `1` + '0';         /*error Unexpected string concatenation of literals.*/
-var a = `1` + `0`;         /*error Unexpected string concatenation of literals.*/
+var a = `some` + `string`;
+var a = '1' + '0';
+var a = '1' + `0`;
+var a = `1` + '0';
+var a = `1` + `0`;
 ```
 
 The following patterns are not considered problems:

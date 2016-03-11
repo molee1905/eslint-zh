@@ -3,6 +3,7 @@ title: Rule wrap-iife
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require IIFEs to be Wrapped (wrap-iife)
 
 Require immediate function invocation to be wrapped in parentheses.
@@ -15,7 +16,7 @@ var x = function () { return { y: 1 };}();
 
 Since function statements cannot be immediately invoked, and function expressions can be, a common technique to create an immediately-invoked function expression is to simply wrap a function statement in parentheses. The opening parentheses causes the contained function to be parsed as an expression, rather than a declaration.
 
-### Options
+## Options
 
 The rule takes one option which can enforce a consistent wrapping style. The default is `outside`.
 
@@ -42,19 +43,19 @@ The following patterns are considered problems:
 ```js
 /*eslint wrap-iife: 2*/
 
-var x = function () { return { y: 1 };}(); /*error Wrap an immediate function invocation in parentheses.*/
+var x = function () { return { y: 1 };}();
 ```
 
 ```js
 /*eslint wrap-iife: [2, "outside"]*/
 
-var x = (function () { return { y: 1 };})(); /*error Move the invocation into the parens that contain the function.*/
+var x = (function () { return { y: 1 };})();
 ```
 
 ```js
 /*eslint wrap-iife: [2, "inside"]*/
 
-var x = (function () { return { y: 1 };}()); /*error Wrap only the function expression in parens.*/
+var x = (function () { return { y: 1 };}());
 ```
 
 The following patterns are not considered problems:

@@ -3,6 +3,7 @@ title: Rule wrap-regex
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require Regex Literals to be Wrapped (wrap-regex)
 
 When a regular expression is used in certain situations, it can end up looking like a division operator. For example:
@@ -23,7 +24,7 @@ The following patterns are considered problems:
 /*eslint wrap-regex: 2*/
 
 function a() {
-    return /foo/.test("bar"); /*error Wrap the regexp literal in parens to disambiguate the slash.*/
+    return /foo/.test("bar");
 }
 ```
 

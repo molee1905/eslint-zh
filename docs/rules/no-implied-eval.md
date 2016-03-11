@@ -3,6 +3,7 @@ title: Rule no-implied-eval
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Implied eval() (no-implied-eval)
 
 It's considered a good practice to avoid using `eval()` in JavaScript. There are security and performance implications involved with doing so, which is why many linters (including ESLint) recommend disallowing `eval()`. However, there are some other ways to pass a string and have it interpreted as JavaScript code that have similar concerns.
@@ -34,15 +35,15 @@ The following patterns are considered problems:
 ```js
 /*eslint no-implied-eval: 2*/
 
-setTimeout("alert('Hi!');", 100);    /*error Implied eval. Consider passing a function instead of a string.*/
+setTimeout("alert('Hi!');", 100);
 
-setInterval("alert('Hi!');", 100);   /*error Implied eval. Consider passing a function instead of a string.*/
+setInterval("alert('Hi!');", 100);
 
-execScript("alert('Hi!')");          /*error Implied eval. Consider passing a function instead of a string.*/
+execScript("alert('Hi!')");
 
-window.setTimeout("count = 5", 10);  /*error Implied eval. Consider passing a function instead of a string.*/
+window.setTimeout("count = 5", 10);
 
-window.setInterval("foo = bar", 10); /*error Implied eval. Consider passing a function instead of a string.*/
+window.setInterval("foo = bar", 10);
 ```
 
 The following patterns are not considered problems:

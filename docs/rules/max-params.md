@@ -3,6 +3,7 @@ title: Rule max-params
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Limit Maximum Number of Parameters (max-params)
 
 Functions that take numerous parameters can be difficult to read and write because it requires the memorization of what each parameter is, its type, and the order they should appear in. As a result, many coders adhere to a convention that caps the number of parameters a function can take.
@@ -22,7 +23,7 @@ The following patterns are considered problems:
 ```js
 /*eslint max-params: [2, 3]*/
 
-function foo (bar, baz, qux, qxx) { /*error This function has too many parameters (4). Maximum allowed is 3.*/
+function foo (bar, baz, qux, qxx) {
     doSomething();
 }
 ```
@@ -36,6 +37,19 @@ function foo (bar, baz, qux) {
     doSomething();
 }
 ```
+
+Optionally, you may specify a `maximum` object property:
+
+```json
+"max-params": [2, 2]
+```
+
+is equivalent to
+
+```json
+"max-params": [2, {"maximum": 2}]
+```
+
 
 ## Related Rules
 

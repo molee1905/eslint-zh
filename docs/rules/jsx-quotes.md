@@ -3,6 +3,7 @@ title: Rule jsx-quotes
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Enforce JSX Quote Style (jsx-quotes)
 
 JSX attribute values can contain string literals, which are delimited with single or double quotes.
@@ -20,6 +21,8 @@ If you want to have e.g. a double quote within a JSX attribute value, you have t
 <a b='"' />
 ```
 
+**Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
+
 ## Rule Details
 
 This rule takes one argument.
@@ -31,12 +34,16 @@ The default is `"prefer-double"`.
 The following patterns are considered problems when set to `"prefer-double"`:
 
 ```xml
+/*eslint jsx-quotes: [2, "prefer-double"]*/
+
 <a b='c' />
 ```
 
 The following patterns are not considered problems when set to `"prefer-double"`:
 
 ```xml
+/*eslint jsx-quotes: [2, "prefer-double"]*/
+
 <a b="c" />
 <a b='"' />
 ```
@@ -44,12 +51,16 @@ The following patterns are not considered problems when set to `"prefer-double"`
 The following patterns are considered problems when set to `"prefer-single"`:
 
 ```xml
+/*eslint jsx-quotes: [2, "prefer-single"]*/
+
 <a b="c" />
 ```
 
 The following patterns are not considered problems when set to `"prefer-single"`:
 
 ```xml
+/*eslint jsx-quotes: [2, "prefer-single"]*/
+
 <a b='c' />
 <a b="'" />
 ```

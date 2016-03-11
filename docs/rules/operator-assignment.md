@@ -3,6 +3,7 @@ title: Rule operator-assignment
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Operator Assignment Shorthand (operator-assignment)
 
 JavaScript provides shorthand operators that combine variable assignment and some simple mathematical operations. For example, `x = x + 4` can be shortened to `x += 4`. The supported shorthand forms are as follows:
@@ -25,9 +26,13 @@ JavaScript provides shorthand operators that combine variable assignment and som
 
 ## Rule Details
 
-This rule enforces use of the shorthand assignment operators by requiring them where possible or prohibiting them entirely. It has two modes: `always` and `never`.
+This rule enforces use of the shorthand assignment operators by requiring them where possible or prohibiting them entirely.
 
-### always
+## Options
+
+This rule has two options: `always` and `never`. The default is `always`.
+
+### "always"
 
 `"operator-assignment": [2, "always"]`
 
@@ -52,13 +57,13 @@ The following patterns are considered problems and should be replaced by their s
 ```js
 /*eslint operator-assignment: [2, "always"]*/
 
-x = x + y;        /*error Assignment can be replaced with operator assignment.*/
-x = y * x;        /*error Assignment can be replaced with operator assignment.*/
-x[0] = x[0] / y;  /*error Assignment can be replaced with operator assignment.*/
-x.y = x.y << z;   /*error Assignment can be replaced with operator assignment.*/
+x = x + y;
+x = y * x;
+x[0] = x[0] / y;
+x.y = x.y << z;
 ```
 
-### never
+### "never"
 
 `"operator-assignment": [2, "never"]`
 
@@ -78,8 +83,8 @@ The following patterns are considered problems and should be written out fully w
 ```js
 /*eslint operator-assignment: [2, "never"]*/
 
-x *= y;               /*error Unexpected operator assignment shorthand.*/
-x ^= (y + z) / foo(); /*error Unexpected operator assignment shorthand.*/
+x *= y;
+x ^= (y + z) / foo();
 ```
 
 ## When Not To Use It

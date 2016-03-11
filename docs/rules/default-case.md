@@ -3,6 +3,7 @@ title: Rule default-case
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require Default Case in Switch Statements (default-case)
 
 Some code conventions require that all `switch` statements have a `default` case, even if the default case is empty, such as:
@@ -51,7 +52,7 @@ The following pattern is considered a warning:
 ```js
 /*eslint default-case: 2*/
 
-switch (a) {       /*error Expected a default case.*/
+switch (a) {
     case 1:
         /* code */
         break;

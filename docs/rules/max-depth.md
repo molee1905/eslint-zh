@@ -3,6 +3,7 @@ title: Rule max-depth
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Limit Maximum Depth (max-depth)
 
 The `max-depth` rule allows you to specify the maximum depth blocks can be nested.
@@ -23,12 +24,16 @@ function foo() {
 
 This rule aims to reduce the complexity of your code by allowing you to configure the maximum depth blocks can be nested in a function. As such, it will warn when blocks are nested too deeply.
 
-### Options
+## Options
 
 The default depth above which this rule will warn is `4`.  You can configure the depth as an option by using the second argument in your configuration. For example, this sets the rule as an error with a maximum depth of 10:
 
 ```json
 "max-depth": [2, 10]
+
+// or you can use an object property
+
+"max-depth": [2, {"maximum": 10}]
 ```
 
 The following patterns are considered problems:
@@ -39,7 +44,7 @@ The following patterns are considered problems:
 function foo() {
   for (;;) {
     if (true) {
-      if (true) { /*error Blocks are nested too deeply (3).*/
+      if (true) {
 
       }
     }

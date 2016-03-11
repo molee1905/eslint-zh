@@ -3,6 +3,7 @@ title: Rule linebreak-style
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow mixing CRLF and LF linebreaks (linebreak-style)
 
 When developing with a lot of people all having different editors, VCS applications and operating systems it may occur that
@@ -22,21 +23,21 @@ The following patterns are considered problems:
 ```js
 /*eslint linebreak-style: 2*/
 
-var a = 'a', // \r\n /*error Expected linebreaks to be 'LF' but found 'CRLF'.*/
+var a = 'a', // \r\n
     b = 'b'; // \n
 ```
 
 ```js
 /*eslint linebreak-style: [2, "unix"]*/
 
-var a = 'a'; // \r\n /*error Expected linebreaks to be 'LF' but found 'CRLF'.*/
+var a = 'a'; // \r\n
 
 ```
 
 ```js
 /*eslint linebreak-style: [2, "windows"]*/
 
-var a = 'a';// \n    /*error Expected linebreaks to be 'CRLF' but found 'LF'.*/
+var a = 'a';// \n
 ```
 
 The following patterns are not considered problems:
@@ -63,7 +64,7 @@ function foo(params) { // \r\n
 } // \r\n
 ```
 
-### Options
+## Options
 
 This rule may take one option which is either `unix` (LF) or `windows` (CRLF). When omitted `unix` is assumed.
 

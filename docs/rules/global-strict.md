@@ -3,6 +3,7 @@ title: Rule global-strict
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Global Strict Mode (global-strict)
 
 **Replacement notice**: This rule was removed in ESLint v1.0 and replaced by the [strict](strict) rule. `"global"` mode in the strict rule is most similar to this rule.
@@ -21,7 +22,7 @@ However, if you're using Node.js, you may want to turn strict mode on globally. 
 
 This rule requires or disallows global strict mode invoked by a `"use strict"` pragma in the global scope.
 
-The following pattern is under strict mode globally and is considered valid with the "always" option and a warning with the "never" option.
+The following pattern is under strict mode globally and is considered valid with the `"always"` option and a warning with the `"never"` option.
 
 ```js
 "use strict";
@@ -31,7 +32,7 @@ function foo() {
 }
 ```
 
-The following patterns apply strict mode only to functions so are valid with the "never" option but are problems with the "always" option.
+The following patterns apply strict mode only to functions so are valid with the `"never"` option but are problems with the `"always"` option.
 
 ```js
 function foo() {
@@ -47,7 +48,7 @@ function foo() {
 }());
 ```
 
-### Options
+## Options
 
 ```json
 "global-strict": [2, "always"]

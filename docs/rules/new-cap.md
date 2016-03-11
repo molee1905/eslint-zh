@@ -3,6 +3,7 @@ title: Rule new-cap
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require Constructors to Use Initial Caps (new-cap)
 
 The `new` operator in JavaScript creates a new instance of a particular type of object. That type of object is represented by a constructor function. Since constructor functions are just regular functions, the only defining characteristic is that `new` is being used as part of the call. Native JavaScript functions begin with an uppercase letter to distinguish those functions that are to be used as constructors from functions that are not. Many style guides recommend following this pattern to more easily determine which functions are to be used as constructors.
@@ -20,8 +21,8 @@ The following patterns are considered problems:
 ```js
 /*eslint new-cap: 2*/
 
-var friend = new person(); /*error A constructor name should not start with a lowercase letter.*/
-var colleague = Person();  /*error A function with a name starting with an uppercase letter should only be used as a constructor.*/
+var friend = new person();
+var colleague = Person();
 ```
 
 The following patterns are not considered problems:
@@ -51,20 +52,20 @@ var colleague = foo.Person();
 
 By default both `newIsCap` and `capIsNew` options are set to `true`.
 
-### newIsCap
+### `newIsCap`
 
 When `true`, rule checks if all `new` operators are called only with uppercase-started functions.
 
-### capIsNew
+### `capIsNew`
 
 When `true`, rule checks if all uppercase-started functions are called only with `new` operator.
 
-### newIsCapExceptions
+### `newIsCapExceptions`
 
 Array of lowercase function names that are permitted to be used with the `new` operator.
 If provided, it must be an `Array`.
 
-### capIsNewExceptions
+### `capIsNewExceptions`
 
 Array of uppercase-starting function names that are permitted to be used without the `new` operator. If not provided, `capIsNewExceptions` defaults to the following:
 
@@ -81,7 +82,7 @@ Array of uppercase-starting function names that are permitted to be used without
 
 If provided, it must be an `Array`. The default values will continue to be excluded when `capIsNewExceptions` is provided.
 
-### properties
+### `properties`
 
 By default, this rule will check properties such as `object.Property` using the other options (default value is `true`). When set to `false`, this rule will not check properties so `new object.property()` is valid even when `newIsCap` is `true`.
 

@@ -3,6 +3,7 @@ title: Rule prefer-reflect
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Suggest using Reflect methods where applicable (prefer-reflect)
 
 The ES6 Reflect API comes with a handful of methods which somewhat deprecate methods on old constructors:
@@ -41,15 +42,15 @@ The following patterns are considered problems:
 ```js
 /*eslint prefer-reflect: 2*/
 
-foo.apply(undefined, args); /*error Avoid using Function.prototype.apply, instead use Reflect.apply*/
-foo.apply(null, args);      /*error Avoid using Function.prototype.apply, instead use Reflect.apply*/
-obj.foo.apply(obj, args);   /*error Avoid using Function.prototype.apply, instead use Reflect.apply*/
-obj.foo.apply(other, args); /*error Avoid using Function.prototype.apply, instead use Reflect.apply*/
+foo.apply(undefined, args);
+foo.apply(null, args);
+obj.foo.apply(obj, args);
+obj.foo.apply(other, args);
 
-foo.call(undefined, arg);   /*error Avoid using Function.prototype.call, instead use Reflect.apply*/
-foo.call(null, arg);        /*error Avoid using Function.prototype.call, instead use Reflect.apply*/
-obj.foo.call(obj, arg);     /*error Avoid using Function.prototype.call, instead use Reflect.apply*/
-obj.foo.call(other, arg);   /*error Avoid using Function.prototype.call, instead use Reflect.apply*/
+foo.call(undefined, arg);
+foo.call(null, arg);
+obj.foo.call(obj, arg);
+obj.foo.call(other, arg);
 ```
 
 The following patterns are not considered problems:
@@ -100,7 +101,7 @@ The following patterns are considered problems:
 ```js
 /*eslint prefer-reflect: 2*/
 
-Object.defineProperty({}, 'foo', {value: 1}) /*error Avoid using Object.defineProperty, instead use Reflect.defineProperty*/
+Object.defineProperty({}, 'foo', {value: 1})
 ```
 
 The following patterns are not considered problems:
@@ -125,7 +126,7 @@ The following patterns are considered problems:
 ```js
 /*eslint prefer-reflect: 2*/
 
-Object.getOwnPropertyDescriptor({}, 'foo') /*error Avoid using Object.getOwnPropertyDescriptor, instead use Reflect.getOwnPropertyDescriptor*/
+Object.getOwnPropertyDescriptor({}, 'foo')
 ```
 
 The following patterns are not considered problems:
@@ -152,7 +153,7 @@ The following patterns are considered problems:
 ```js
 /*eslint prefer-reflect: 2*/
 
-Object.getPrototypeOf({}, 'foo') /*error Avoid using Object.getPrototypeOf, instead use Reflect.getPrototypeOf*/
+Object.getPrototypeOf({}, 'foo')
 ```
 
 The following patterns are not considered problems:
@@ -177,7 +178,7 @@ The following patterns are considered problems:
 ```js
 /*eslint prefer-reflect: 2*/
 
-Object.setPrototypeOf({}, Object.prototype) /*error Avoid using Object.setPrototypeOf, instead use Reflect.setPrototypeOf*/
+Object.setPrototypeOf({}, Object.prototype)
 ```
 
 The following patterns are not considered problems:
@@ -204,7 +205,7 @@ The following patterns are considered problems:
 ```js
 /*eslint prefer-reflect: 2*/
 
-Object.isExtensible({}) /*error Avoid using Object.isExtensible, instead use Reflect.isExtensible*/
+Object.isExtensible({})
 ```
 
 The following patterns are not considered problems:
@@ -229,7 +230,7 @@ The following patterns are considered problems:
 ```js
 /*eslint prefer-reflect: 2*/
 
-Object.getOwnPropertyNames({}) /*error Avoid using Object.getOwnPropertyNames, instead use Reflect.getOwnPropertyNames*/
+Object.getOwnPropertyNames({})
 ```
 
 The following patterns are not considered problems:
@@ -254,7 +255,7 @@ The following patterns are considered problems:
 ```js
 /*eslint prefer-reflect: 2*/
 
-Object.preventExtensions({}) /*error Avoid using Object.preventExtensions, instead use Reflect.preventExtensions*/
+Object.preventExtensions({})
 ```
 
 The following patterns are not considered problems:
@@ -279,7 +280,7 @@ The following patterns are considered problems:
 ```js
 /*eslint prefer-reflect: 2*/
 
-delete foo.bar; /*error Avoid using the delete keyword, instead use Reflect.deleteProperty*/
+delete foo.bar;
 ```
 
 The following patterns are not considered problems:
@@ -302,13 +303,13 @@ Reflect.deleteProperty(foo, 'bar');
 ```
 
 
-## When Not to Use It
+## When Not To Use It
 
 This rule should not be used in ES3/5 environments.
 
 In ES2015 (ES6) or later, if you don't want to be notified about places where Reflect could be used, you can safely disable this rule.
 
-## Related rules
+## Related Rules
 
 * [no-useless-call](no-useless-call)
 * [prefer-spread](prefer-spread)

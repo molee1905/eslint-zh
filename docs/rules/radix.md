@@ -3,6 +3,7 @@ title: Rule radix
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require Radix Parameter (radix)
 
 When using the `parseInt()` function it is common to omit the second argument, the radix, and let the function try to determine from the first argument what type of number it is. By default, `parseInt()` will autodetect decimal and hexadecimal (via `0x` prefix). Prior to ECMAScript 5, `parseInt()` also autodetected octal literals, which caused problems because many developers assumed a leading `0` would be ignored.
@@ -27,7 +28,7 @@ On the other hand, if the code is targeting only ES5-compliant environments pass
 
 This rule is aimed at preventing the unintended conversion of a string to a number of a different base than intended or at preventing the redundant `10` radix if targeting modern environments only.
 
-### Options
+## Options
 
 There are two options for this rule:
 
@@ -40,20 +41,20 @@ Depending on your coding conventions, you can choose either option by specifying
 "radix": [2, "always"]
 ```
 
-#### always
+### "always"
 
 The following patterns are considered problems:
 
 ```js
 /*eslint radix: 2*/
 
-var num = parseInt("071");        /*error Missing radix parameter.*/
+var num = parseInt("071");
 
-var num = parseInt(someValue);    /*error Missing radix parameter.*/
+var num = parseInt(someValue);
 
-var num = parseInt("071", "abc"); /*error Invalid radix parameter.*/
+var num = parseInt("071", "abc");
 
-var num = parseInt();             /*error Missing parameters.*/
+var num = parseInt();
 ```
 
 The following patterns are not considered problems:
@@ -68,18 +69,18 @@ var num = parseInt("071", 8);
 var num = parseFloat(someValue);
 ```
 
-#### as-needed
+### "as-needed"
 
 The following patterns are considered problems:
 
 ```js
 /*eslint radix: [2. "as-needed"] */
 
-var num = parseInt("071", 10);    /*error Redundant radix parameter.*/
+var num = parseInt("071", 10);
 
-var num = parseInt("071", "abc"); /*error Invalid radix parameter.*/
+var num = parseInt("071", "abc");
 
-var num = parseInt();             /*error Missing parameters.*/
+var num = parseInt();
 ```
 
 The following patterns are not considered problems:

@@ -3,6 +3,7 @@ title: Rule no-eq-null
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Null Comparisons (no-eq-null)
 
 Comparing to `null` without a type-checking operator (`==` or `!=`), can have unintended results as the comparison will evaluate to true when comparing to not just a `null`, but also an `undefined` value.
@@ -22,11 +23,11 @@ The following patterns are considered problems:
 ```js
 /*eslint no-eq-null: 2*/
 
-if (foo == null) {     /*error Use ‘===’ to compare with ‘null’.*/
+if (foo == null) {
   bar();
 }
 
-while (qux != null) {  /*error Use ‘===’ to compare with ‘null’.*/
+while (qux != null) {
   baz();
 }
 ```

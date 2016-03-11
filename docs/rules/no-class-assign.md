@@ -3,6 +3,7 @@ title: Rule no-class-assign
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow modifying variables of class declarations (no-class-assign)
 
 `ClassDeclaration` creates a variable, and we can modify the variable.
@@ -27,14 +28,14 @@ The following patterns are considered problems:
 /*eslint-env es6*/
 
 class A { }
-A = 0;         /*error `A` is a class.*/
+A = 0;
 ```
 
 ```js
 /*eslint no-class-assign: 2*/
 /*eslint-env es6*/
 
-A = 0;         /*error `A` is a class.*/
+A = 0;
 class A { }
 ```
 
@@ -44,7 +45,7 @@ class A { }
 
 class A {
     b() {
-        A = 0; /*error `A` is a class.*/
+        A = 0;
     }
 }
 ```
@@ -55,7 +56,7 @@ class A {
 
 let A = class A {
     b() {
-        A = 0; /*error `A` is a class.*/
+        A = 0;
         // `let A` is shadowed by the class name.
     }
 }
@@ -93,7 +94,7 @@ class A {
 }
 ```
 
-## When Not to Use It
+## When Not To Use It
 
 If you don't want to be notified about modifying variables of class declarations, you can safely disable this rule.
 

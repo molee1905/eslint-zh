@@ -3,6 +3,7 @@ title: Rule handle-callback-err
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Enforce Callback Error Handling (handle-callback-err)
 
 In node, a common pattern for dealing with asynchronous behavior is called the callback pattern.
@@ -25,7 +26,7 @@ The following are considered problems:
 ```js
 /*eslint handle-callback-err: 2*/
 
-function loadData (err, data) { /*error Expected error to be handled.*/
+function loadData (err, data) {
     doSomething();
 }
 
@@ -93,7 +94,7 @@ Examples for valid configurations:
     // ...
     ```
 
-## When Not To Use This Rule
+## When Not To Use It
 
 There are cases where it may be safe for your application to ignore errors, however only ignore errors if you are
 confident that some other form of monitoring will help you catch the problem.

@@ -23,9 +23,9 @@ If that sounds like you, then continue reading to get started.
 
 Before you can get started, you'll need to get a copy of the ESLint source code. This section explains how to do that and a little about the source code structure.
 
-## Section 2: Setup a [Development Environment](development-environment.html)
+## Section 2: Set up a [Development Environment](development-environment.html)
 
-Developing for ESLint is a bit different than running it on the command line. This section shows you how to setup a development environment and get you ready to write code.
+Developing for ESLint is a bit different than running it on the command line. This section shows you how to set up a development environment and get you ready to write code.
 
 ## Section 3: Run the [Unit Tests](unit-tests.html)
 
@@ -43,10 +43,6 @@ You've developed library-specific rules for ESLint and you want to share it with
 
 If you're interested in writing a tool that uses ESLint, then you can use the Node.js API to get programmatic access to functionality.
 
-## Section 6: [Contributing](contributing/)
+## Section 7: [Contributing](contributing/)
 
 Once you've made changes that you want to share with the community, the next step is to submit those changes back via a pull request.
-
-## Section 7: [Governance](governance.html)
-
-After you've made several contributions, you might be eligible to be a Committer or Reviewer. Learn what that means for you and your involvement in the project.

@@ -3,6 +3,7 @@ title: Rule prefer-template
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Suggest using template literals instead of string concatenation. (prefer-template)
 
 In ES2015 (ES6), we can use template literals instead of string concatenation.
@@ -26,8 +27,8 @@ The following patterns are considered problems:
 ```js
 /*eslint prefer-template: 2*/
 
-var str = "Hello, " + name + "!";           /*error Unexpected string concatenation.*/
-var str = "Time: " + (12 * 60 * 60 * 1000); /*error Unexpected string concatenation.*/
+var str = "Hello, " + name + "!";
+var str = "Time: " + (12 * 60 * 60 * 1000);
 ```
 
 The following patterns are not considered problems:
@@ -44,11 +45,15 @@ var str = `Time: ${12 * 60 * 60}`;
 var str = "Hello, " + "World!";
 ```
 
-## When Not to Use It
+## When Not To Use It
 
 This rule should not be used in ES3/5 environments.
 
 In ES2015 (ES6) or later, if you don't want to be notified about string concatenation, you can safely disable this rule.
+
+## Related Rules
+
+* [quotes](quotes)
 
 ## Version
 

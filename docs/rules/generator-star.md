@@ -3,6 +3,7 @@ title: Rule generator-star
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Enforce the position of the * in generators (generator-star)
 
 **Replacement notice**: This rule was removed in ESLint v1.0 and replaced by the [generator-star-spacing](generator-star-spacing) rule.
@@ -48,7 +49,7 @@ To keep a sense of consistency when using generators this rule enforces a single
 ## Rule Details
 
 This rule enforces that the `*` is either placed next to the `function` keyword or the name of the function. The single
-option for this rule is a string specifying the placement of the asterick. For this option you may pass
+option for this rule is a string specifying the placement of the asterisk. For this option you may pass
 `"start"`, `"middle"` or `"end"`. The default is `"end"`.
 
 You can set the style in configuration like this:

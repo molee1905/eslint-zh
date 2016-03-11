@@ -3,6 +3,7 @@ title: Rule no-self-compare
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Self Compare (no-self-compare)
 
 Comparing a variable against itself is usually an error, either an typo or refactoring error. It is confusing to the reader and may potentially introduce a runtime error.
@@ -17,7 +18,7 @@ This error is raised to highlight a potentially confusing and potentially pointl
 /*eslint no-self-compare: 2*/
 
 var x = 10;
-if (x === x) { /*error Comparing to itself is potentially pointless.*/
+if (x === x) {
     x = 20;
 }
 ```

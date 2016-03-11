@@ -3,6 +3,7 @@ title: Rule arrow-parens
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require parens in arrow function arguments (arrow-parens)
 
 Arrow functions can omit parentheses when they have exactly one parameter. In all other cases the parameter(s) must
@@ -50,15 +51,15 @@ The rule can also be configured to discourage the use of parens when they are no
 a => {}
 ```
 
-### Options
+## Options
 
-The rule takes one option, a string, which could be either "always" or "as-needed". The default is "always".
+The rule takes one option, a string, which could be either `"always"` or `"as-needed"`. The default is `"always"`.
 
 You can set the option in configuration like this:
 
 "arrow-parens": [2, "always"]
 
-#### "always"
+### "always"
 
 When the rule is set to `"always"` the following patterns are considered problems:
 
@@ -66,12 +67,12 @@ When the rule is set to `"always"` the following patterns are considered problem
 /*eslint arrow-parens: [2, "always"]*/
 /*eslint-env es6*/
 
-a => {};                     /*error Expected parentheses around arrow function argument.*/
-a => a;                      /*error Expected parentheses around arrow function argument.*/
-a => {'\n'};                 /*error Expected parentheses around arrow function argument.*/
-a.then(foo => {});           /*error Expected parentheses around arrow function argument.*/
-a.then(foo => a);            /*error Expected parentheses around arrow function argument.*/
-a(foo => { if (true) {}; }); /*error Expected parentheses around arrow function argument.*/
+a => {};
+a => a;
+a => {'\n'};
+a.then(foo => {});
+a.then(foo => a);
+a(foo => { if (true) {}; });
 ```
 
 The following patterns are not considered problems:
@@ -88,7 +89,7 @@ a.then((foo) => {});
 a.then((foo) => { if (true) {}; });
 ```
 
-##### If Statements
+#### If Statements
 
 One benefits of this option is that it prevents the incorrect use of arrow functions in conditionals:
 
@@ -145,7 +146,7 @@ var f = (a) => b ? c: d;
 ```
 
 
-#### "as-needed"
+### "as-needed"
 
 When the rule is set to `"as-needed"` the following patterns are considered problems:
 
@@ -153,12 +154,12 @@ When the rule is set to `"as-needed"` the following patterns are considered prob
 /*eslint arrow-parens: [2, "as-needed"]*/
 /*eslint-env es6*/
 
-(a) => {};                     /*error Unexpected parentheses around single function argument*/
-(a) => a;                      /*error Unexpected parentheses around single function argument*/
-(a) => {'\n'};                 /*error Unexpected parentheses around single function argument*/
-a.then((foo) => {});           /*error Unexpected parentheses around single function argument*/
-a.then((foo) => a);            /*error Unexpected parentheses around single function argument*/
-a((foo) => { if (true) {}; }); /*error Unexpected parentheses around single function argument*/
+(a) => {};
+(a) => a;
+(a) => {'\n'};
+a.then((foo) => {});
+a.then((foo) => a);
+a((foo) => { if (true) {}; });
 ```
 
 The following patterns are not considered problems:

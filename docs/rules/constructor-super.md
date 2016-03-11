@@ -3,6 +3,7 @@ title: Rule constructor-super
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Verify calls of `super()` in constructors (constructor-super)
 
 Constructors of derived classes must call `super()`.
@@ -23,18 +24,18 @@ The following patterns are considered problems:
 
 class A {
     constructor() {
-        super();       /*error unexpected `super()`.*/
+        super();
     }
 }
 
 class A extends null {
     constructor() {
-        super();       /*error unexpected `super()`.*/
+        super();
     }
 }
 
 class A extends B {
-    constructor() { }  /*error this constructor requires `super()`.*/
+    constructor() { }
 }
 ```
 
@@ -59,7 +60,7 @@ class A extends B {
 }
 ```
 
-## When Not to Use It
+## When Not To Use It
 
 If you don't want to be notified about invalid/missing `super()` callings in constructors, you can safely disable this rule.
 

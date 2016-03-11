@@ -3,6 +3,7 @@ title: Rule no-this-before-super
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow use of `this`/`super` before calling `super()` in constructors. (no-this-before-super)
 
 In the constructor of derived classes, if `this`/`super` are used before `super()` calls, it raises a reference error.
@@ -21,28 +22,28 @@ The following patterns are considered problems:
 
 class A extends B {
     constructor() {
-        this.a = 0;        /*error "this" is not allowed before super()*/
+        this.a = 0;
         super();
     }
 }
 
 class A extends B {
     constructor() {
-        this.foo();        /*error "this" is not allowed before super()*/
+        this.foo();
         super();
     }
 }
 
 class A extends B {
     constructor() {
-        super.foo();       /*error "super" is not allowed before super()*/
+        super.foo();
         super();
     }
 }
 
 class A extends B {
     constructor() {
-        super(this.foo()); /*error "this" is not allowed before super()*/
+        super(this.foo());
     }
 }
 ```
@@ -73,7 +74,7 @@ class A extends B {
 }
 ```
 
-## When Not to Use It
+## When Not To Use It
 
 If you don't want to be notified about using `this`/`super` before `super()` in constructors, you can safely disable this rule.
 

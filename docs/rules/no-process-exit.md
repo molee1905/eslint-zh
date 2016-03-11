@@ -3,6 +3,7 @@ title: Rule no-process-exit
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow process.exit() (no-process-exit)
 
 The `process.exit()` method in Node.js is used to immediately stop the Node.js process and exit. This is a dangerous operation because it can occur in any method at any point in time, potentially stopping a Node.js application completely when an error occurs. For example:
@@ -33,8 +34,8 @@ The following patterns are considered problems:
 ```js
 /*eslint no-process-exit: 2*/
 
-process.exit(1); /*error Don't use process.exit(); throw an error instead.*/
-process.exit(0); /*error Don't use process.exit(); throw an error instead.*/
+process.exit(1);
+process.exit(0);
 ```
 
 The following patterns are not considered problems:

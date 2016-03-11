@@ -3,6 +3,7 @@ title: Rule no-nested-ternary
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Nested Ternaries (no-nested-ternary)
 
 Nesting ternary expressions makes code unclear. The `no-nested-ternary` rule disallows the use of nested ternary expressions.
@@ -20,9 +21,9 @@ The following patterns are considered problems:
 ```js
 /*eslint no-nested-ternary: 2*/
 
-var thing = foo ? bar : baz === qux ? quxx : foobar; /*error Do not nest ternary expressions*/
+var thing = foo ? bar : baz === qux ? quxx : foobar;
 
-foo ? baz === qux ? quxx() : foobar() : bar();       /*error Do not nest ternary expressions*/
+foo ? baz === qux ? quxx() : foobar() : bar();
 ```
 
 The following patterns are considered okay and could be used alternatively:

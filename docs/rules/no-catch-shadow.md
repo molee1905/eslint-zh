@@ -3,6 +3,7 @@ title: Rule no-catch-shadow
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Shadowing of Variables Inside of catch (no-catch-shadow)
 
 In IE 8 and earlier, the catch clause parameter can overwrite the value of a variable in the outer scope, if that variable has the same name as the catch clause parameter.
@@ -23,7 +24,7 @@ console.log(err)    // err is 'problem', not 'x'
 
 This rule is aimed at preventing unexpected behavior in your program that may arise from a bug in IE 8 and earlier, in which the catch clause parameter can leak into outer scopes. This rule will warn whenever it encounters a catch clause parameter that has the same name as a variable in an outer scope.
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
 ```js
 /*eslint no-catch-shadow: 2*/
@@ -32,7 +33,7 @@ var err = "x";
 
 try {
     throw "problem";
-} catch (err) {      /*error Value of 'err' may be overwritten in IE 8 and earlier.*/
+} catch (err) {
 
 }
 
@@ -42,14 +43,16 @@ function err() {
 
 try {
     throw "problem";
-} catch (err) {      /*error Value of 'err' may be overwritten in IE 8 and earlier.*/
+} catch (err) {
 
 }
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
 ```js
+/*eslint no-catch-shadow: 2*/
+
 var err = "x";
 
 try {

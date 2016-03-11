@@ -3,6 +3,7 @@ title: Rule no-continue
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow continue (no-continue)
 
 The `continue` statement terminates execution of the statements in the current iteration of the current or labeled loop, and continues execution of the loop with the next iteration. When used incorrectly it makes code less testable, less readable and less maintainable. Structured control flow statements such as `if` should be used instead.
@@ -35,7 +36,7 @@ var sum = 0,
 
 for(i = 0; i < 10; i++) {
     if(i >= 5) {
-        continue;              /*error Unexpected use of continue statement*/
+        continue;
     }
 
     a += i;
@@ -50,7 +51,7 @@ var sum = 0,
 
 labeledLoop: for(i = 0; i < 10; i++) {
     if(i >= 5) {
-        continue labeledLoop;  /*error Unexpected use of continue statement*/
+        continue labeledLoop;
     }
 
     a += i;

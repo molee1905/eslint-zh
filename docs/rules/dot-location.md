@@ -3,6 +3,7 @@ title: Rule dot-location
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Enforce newline before and after dot (dot-location)
 
 JavaScript allows you to place newlines before or after a dot in a member expression.
@@ -21,7 +22,7 @@ var b = universe
 
 This rule aims to enforce newline consistency in member expressions. This rule prevents the use of mixed newlines around the dot in a member expression.
 
-### Options
+## Options
 
 The rule takes one option, a string, which can be either `object` or `property`.
 If it is `object`, the dot in a member expression should be on the same line as the object portion.
@@ -33,7 +34,7 @@ If unset, the default behavior is `"object"`.
     "dot-location": [2, "object"]
 ```
 
-#### "object"
+### "object"
 
 This is the default option. It requires the dot to be on the same line as the object.
 
@@ -43,7 +44,7 @@ The following patterns are considered problems:
 /*eslint dot-location: [2, "object"]*/
 
 var foo = object
-.property;       /*error Expected dot to be on same line as object.*/
+.property;
 ```
 
 The following patterns are not considered problems:
@@ -56,7 +57,7 @@ property;
 var bar = object.property;
 ```
 
-#### "property"
+### "property"
 
 This option requires the dot to be on the same line as the property.
 
@@ -65,7 +66,7 @@ The following patterns are considered problems:
 ```js
 /*eslint dot-location: [2, "property"]*/
 
-var foo = object. /*error Expected dot to be on same line as property.*/
+var foo = object.
 property;
 ```
 

@@ -3,6 +3,7 @@ title: Rule max-len
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Limit Maximum Length of Line (max-len)
 
 Very long lines of code in any language can be difficult to read. In order to aid in readability and maintainability many coders have developed a convention to limit lines of code to X number of characters (traditionally 80 characters).
@@ -24,7 +25,7 @@ The following patterns are considered problems:
 ```js
 /*eslint max-len: [2, 80, 4]*/ // maximum length of 80 characters
 
-var foo = { "bar": "This is a bar.", "baz": { "qux": "This is a qux" }, "difficult": "to read" }; /*error Line 3 exceeds the maximum line length of 80.*/
+var foo = { "bar": "This is a bar.", "baz": { "qux": "This is a qux" }, "difficult": "to read" };
 ```
 
 The following patterns are not considered problems:
@@ -41,28 +42,36 @@ var foo = {
 };
 ```
 
-### Options
+## Options
 
-The `max-len` rule has two required options:
+The `max-len` rule supports the following options:
 
-* The total number of characters allowed on each line of code. This character count includes indentation.
-* The character count to use whenever a tab character is encountered.
+`code`: The total number of characters allowed on each line of code. This character count includes indentation. Defaults to 80.
 
-For example, to specify a maximum line length of 80 characters with each tab counting as 4 characters, use the following configuration:
+`comments`: The total number of characters allowed on a line of comments (e.g. no code on the line). If not specified, `code` is used for comment lines.
+
+`tabWidth`: The character count to use whenever a tab character is encountered. Defaults to 4.
+
+`ignoreComments`: Ignores all trailing comments and comments on their own line. For example, `function foo(/*string*/ bar) { /* ... */ }` isn't collapsed.
+
+`ignoreTrailingComments`: Only ignores comments that are trailing source.
+
+`ignoreUrls`: Ignores lines that contain a URL.
+
+`ignorePattern`: Ignores lines matching a regular express, such as `^\\s*var\\s.+=\\s*require\\s*\\(`. Be aware that regular expressions can only match a single line and need to be doubly escaped when written in YAML or JSON.
+
+Optionally, you may specify `code` and `tabWidth` as integers before the options object:
 
 ```json
-"max-len": [2, 80, 4]
+"max-len": [2, 80, 4, {"ignoreUrls": true}]
 ```
 
-There are additional optional arguments to ignore comments, lines with URLs, or lines matching a regular expression.
+is equivalent to
 
 ```json
-"max-len": [2, 80, 4, {"ignoreComments": true, "ignoreUrls": true, "ignorePattern": "^\\s*var\\s.+=\\s*require\\s*\\("}]
+"max-len": [2, {"code": 80, "tabWidth": 4, "ignoreUrls": true}]
 ```
 
-The `ignoreComments` option only ignores trailing comments and comments on their own line. For example, `function foo(/*string*/ bar) { /* ... */ }` isn't collapsed.
-
-Be aware that regular expressions can only match a single line and need to be doubly escaped when written in YAML or JSON.
 
 ## Related Rules
 
