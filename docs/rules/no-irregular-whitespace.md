@@ -3,6 +3,7 @@ title: Rule no-irregular-whitespace
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # No irregular whitespace (no-irregular-whitespace)
 
 # 禁止不规则的空白 (no-irregular-whitespace)
@@ -36,9 +37,9 @@ This rule is aimed at catching invalid whitespace that is not a normal tab and s
 
 该规则旨在捕捉无效的不是正常的tab和空格的空白。这些字符有的会在现代浏览器中引发问题，其他的会引起调试问题。
 
-With this rule enabled the following characters will cause warnings outside of strings:
+With this rule enabled the following characters will cause warnings outside of strings and comments:
 
-启用了此规则，以下字符将会在字符串之外引起警告：
+启用了此规则，以下字符将会在字符串和注释之外引起警告：
 
     \u000B - Line Tabulation (\v) - <VT>
     \u000C - Form Feed (\f) - <FF>
@@ -65,41 +66,41 @@ With this rule enabled the following characters will cause warnings outside of s
     \u205f - Medium Mathematical Space
     \u3000 - Ideographic Space
 
-The following examples are considered problems:
+Examples of **incorrect** code for this rule:
 
-以下模式被认为是有问题的：
+**错误** 代码示例：
 
 ```js
 /*eslint no-irregular-whitespace: 2*/
 
-function thing() /*<NBSP>*/{ /*error Irregular whitespace not allowed*/
+function thing() /*<NBSP>*/{
   return 'test';
 }
 
-function thing( /*<NBSP>*/){ /*error Irregular whitespace not allowed*/
+function thing( /*<NBSP>*/){
   return 'test';
 }
 
-function thing /*<NBSP>*/(){ /*error Irregular whitespace not allowed*/
+function thing /*<NBSP>*/(){
   return 'test';
 }
 
-function thing᠎/*<MVS>*/(){   /*error Irregular whitespace not allowed*/
+function thing᠎/*<MVS>*/(){
   return 'test';
 }
 
 function thing() {
-  return 'test'; /*<ENSP>*/  /*error Irregular whitespace not allowed*/
+  return 'test'; /*<ENSP>*/
 }
 
 function thing() {
-  return 'test'; /*<NBSP>*/  /*error Irregular whitespace not allowed*/
+  return 'test'; /*<NBSP>*/
 }
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
-以下模式被认为是没有问题的：
+**正确** 代码示例：
 
 ```js
 /*eslint no-irregular-whitespace: 2*/
@@ -115,6 +116,29 @@ function thing() {
 function thing() {
   return 'th <NBSP>ing';
 }
+
+// Description<NBSP>: some descriptive text
+
+/*
+Description<NBSP>: some descriptive text
+*/
+```
+
+## Options
+
+The `no-irregular-whitespace` rule has no required option and has one optional one that needs to be passed in a single options object:
+
+`no-irregular-whitespace` 规则没有必选项，只有一个可选项是个对象。
+
+* **skipComments** *(default: `false`)*: whether to ignore irregular whitespace within comments (`true`) or whether to check for them in there, too (`false`).
+* **skipComments** *(默认: `false`)*: 是否忽略注释中不规则的空格(`true`) 或 非法对它们进行检查 (`false`)
+
+For example, to specify that you want to skip checking for irregular whitespace within comments, use the following configuration:
+
+例如，你想跳过对注释中的不规则的空格的检查，使用下面的配置进行：
+
+```json
+"no-irregular-whitespace": [2, { "skipComments": true }]
 ```
 
 ## When Not To Use It

@@ -3,6 +3,7 @@ title: Rule one-var
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require or Disallow One Variable Declaration per Scope (one-var)
 
 # 每个作用域要求或禁止只有一个变量声明
@@ -47,7 +48,7 @@ This rule is aimed at enforcing the use of either one variable declaration or mu
 
 该规则旨在强制在函数(`var`)或块(`let` 和 `const`) 范围使用单一声明还是多条声明。因此，如果出现意外数目的声明语句，它将发出警告。
 
-### Options
+## Options
 
 There are two ways to configure this rule. The first is by using one string specified as `"always"` (the default) to enforce one variable declaration per scope or `"never"` to enforce multiple variable declarations per scope.  If you declare variables in your code with `let` and `const`, then `"always"` and `"never"` will apply to the block scope for those declarations, not the function scope.
 
@@ -90,9 +91,9 @@ Exactly one declarator per declaration per function (var) or block (let or const
 "one-var": [2, "never"]
 ```
 
-Configure each declaration type individually. Defaults to "always" if key not present.
+Configure each declaration type individually. Defaults to `"always"` if key not present.
 
-单独配置每个声明类型。如果键不存在，默认为"always"。
+单独配置每个声明类型。如果键不存在，默认为`"always"`。
 
 ```json
 "one-var": [2, {
@@ -102,9 +103,9 @@ Configure each declaration type individually. Defaults to "always" if key not pr
 }]
 ```
 
-Configure uninitialized and initialized seperately. Defaults to "always" if key not present.
+Configure uninitialized and initialized seperately. Defaults to `"always"` if key not present.
 
-分开配置未初始化的和已初始化的变量声明。如果键不存在，默认为"always"。
+分开配置未初始化的和已初始化的变量声明。如果键不存在，默认为`"always"`。
 
 ```json
 "one-var": [2, {
@@ -123,23 +124,23 @@ When configured with `"always"` as the first option (the default), the following
 
 function foo() {
     var bar;
-    var baz;     /*error Combine this with the previous 'var' statement.*/
+    var baz;
     let qux;
-    let norf;    /*error Combine this with the previous 'let' statement.*/
+    let norf;
 }
 
 function foo(){
     const bar = false;
-    const baz = true;  /*error Combine this with the previous 'const' statement.*/
+    const baz = true;
     let qux;
-    let norf;          /*error Combine this with the previous 'let' statement.*/
+    let norf;
 }
 
 function foo() {
     var bar;
 
     if (baz) {
-        var qux = true; /*error Combine this with the previous 'var' statement.*/
+        var qux = true;
     }
 }
 ```
@@ -193,14 +194,14 @@ When configured with `"never"` as the first option, the following patterns are c
 /*eslint-env es6*/
 
 function foo() {
-    var bar,          /*error Split 'var' declarations into multiple statements.*/
+    var bar,
         baz;
-    const bar = true, /*error Split 'const' declarations into multiple statements.*/
+    const bar = true,
         baz = false;
 }
 
 function foo() {
-    var bar,          /*error Split 'var' declarations into multiple statements.*/
+    var bar,
         qux;
 
     if (baz) {
@@ -209,7 +210,7 @@ function foo() {
 }
 
 function foo(){
-    let bar = true,   /*error Split 'let' declarations into multiple statements.*/
+    let bar = true,
         baz = false;
 }
 ```

@@ -3,6 +3,7 @@ title: Rule require-yield
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow generator functions that do not have `yield` (require-yield)
 
 # 禁用函数内没有`yield`的generator函数
@@ -11,7 +12,7 @@ This rule generates warnings for generator functions that do not have the `yield
 
 如果generator函数内部没有`yield`关键字，该规则将发出警告。
 
-## Rule details
+## Rule Details
 
 The following patterns are considered problems:
 
@@ -21,7 +22,7 @@ The following patterns are considered problems:
 /*eslint require-yield: 2*/
 /*eslint-env es6*/
 
-function* foo() { /*error This generator function does not have `yield`.*/
+function* foo() {
   return 10;
 }
 ```

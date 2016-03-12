@@ -3,6 +3,7 @@ title: Rule space-before-function-paren
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require or disallow a space before function parenthesis (space-before-function-paren)
 
 # 要求或禁止函数圆括号之前有一个空格 (space-before-function-paren)
@@ -39,15 +40,21 @@ This rule aims to enforce consistent spacing before function parentheses and as 
 
 该规则旨在强制函数括号之前的空格的一致性，因此，当空格值匹配指定首选参数时，该规则将发出警告。
 
+## Options
+
 This rule takes one argument. If it is `"always"` then all named functions and anonymous functions must have space before function parentheses. If `"never"` then all named functions and anonymous functions must not have space before function parentheses. If you want different spacing for named and anonymous functions you can pass a configuration object as the rule argument to configure those separately (e. g. `{"anonymous": "always", "named": "never"}`).
 
 该规则有一个参数。如果为`"always"`，所有命名的函数和匿名函数的圆括号之前都必须有空格。如果为`"never"` ，所有命名的函数和匿名函数的圆括号之前都必须没有空格。如果命名的函数和匿名函数要求不同的空格类型，可以单独传递一个可选配置的对象作为该规则的参数来配置这种情况(例如 `{"anonymous": "always", "named": "never"}`)。
 
 The default configuration is `"always"`.
 
+<<<<<<< HEAD
 默认配置为`"always"`。
 
 ### `"always"`
+=======
+### "always"
+>>>>>>> eslint/master
 
 The following patterns are considered problems:
 
@@ -57,26 +64,26 @@ The following patterns are considered problems:
 /*eslint space-before-function-paren: 2*/
 /*eslint-env es6*/
 
-function foo() {           /*error Missing space before function parentheses.*/
+function foo() {
     // ...
 }
 
-var bar = function() {     /*error Missing space before function parentheses.*/
+var bar = function() {
     // ...
 };
 
-var bar = function foo() { /*error Missing space before function parentheses.*/
+var bar = function foo() {
     // ...
 };
 
 class Foo {
-    constructor() {        /*error Missing space before function parentheses.*/
+    constructor() {
         // ...
     }
 }
 
 var foo = {
-    bar() {                /*error Missing space before function parentheses.*/
+    bar() {
         // ...
     }
 };
@@ -115,7 +122,7 @@ var foo = {
 };
 ```
 
-### `"never"`
+### "never"
 
 The following patterns are considered problems:
 
@@ -125,26 +132,26 @@ The following patterns are considered problems:
 /*eslint space-before-function-paren: [2, "never"]*/
 /*eslint-env es6*/
 
-function foo () {           /*error Unexpected space before function parentheses.*/
+function foo () {
     // ...
 }
 
-var bar = function () {     /*error Unexpected space before function parentheses.*/
+var bar = function () {
     // ...
 };
 
-var bar = function foo () { /*error Unexpected space before function parentheses.*/
+var bar = function foo () {
     // ...
 };
 
 class Foo {
-    constructor () {        /*error Unexpected space before function parentheses.*/
+    constructor () {
         // ...
     }
 }
 
 var foo = {
-    bar () {                /*error Unexpected space before function parentheses.*/
+    bar () {
         // ...
     }
 };
@@ -193,22 +200,22 @@ The following patterns are considered problems:
 /*eslint space-before-function-paren: [2, { "anonymous": "always", "named": "never" }]*/
 /*eslint-env es6*/
 
-function foo () {      /*error Unexpected space before function parentheses.*/
+function foo () {
     // ...
 }
 
-var bar = function() { /*error Missing space before function parentheses.*/
+var bar = function() {
     // ...
 };
 
 class Foo {
-    constructor () {   /*error Unexpected space before function parentheses.*/
+    constructor () {
         // ...
     }
 }
 
 var foo = {
-    bar () {           /*error Unexpected space before function parentheses.*/
+    bar () {
         // ...
     }
 };
@@ -253,22 +260,22 @@ The following patterns are considered problems:
 /*eslint space-before-function-paren: [2, { "anonymous": "never", "named": "always" }]*/
 /*eslint-env es6*/
 
-function foo() {        /*error Missing space before function parentheses.*/
+function foo() {
     // ...
 }
 
-var bar = function () { /*error Unexpected space before function parentheses.*/
+var bar = function () {
     // ...
 };
 
 class Foo {
-    constructor() {     /*error Missing space before function parentheses.*/
+    constructor() {
         // ...
     }
 }
 
 var foo = {
-    bar() {             /*error Missing space before function parentheses.*/
+    bar() {
         // ...
     }
 };

@@ -5,6 +5,7 @@ translator: ybbjegj
 proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Assignment of the Exception Parameter (no-ex-assign)
 
 # 禁止为异常参数赋值（no-ex-assign）
@@ -31,9 +32,9 @@ This rule's purpose is to enforce a convention. Assigning a value to the excepti
 
 该规则的目的是强制一种约定。为异常参数赋值，其中所包含的所有有价值的数据会丢失，因此应该避免。由于没有 `arguments` 对象来提供替代的选择去访问这些数据，给该参数赋值绝对是毁灭性的。
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
-以下模式被认为是有问题的：
+**错误** 代码示例：
 
 ```js
 /*eslint no-ex-assign: 2*/
@@ -41,13 +42,13 @@ The following patterns are considered problems:
 try {
     // code
 } catch (e) {
-    e = 10;   /*error Do not assign to the exception parameter.*/
+    e = 10;
 }
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
-以下模式被认为是没有问题的：
+**正确** 代码示例：
 
 ```js
 /*eslint no-ex-assign: 2*/
@@ -59,16 +60,10 @@ try {
 }
 ```
 
-## Notes
-
-Related aside: there are some interesting caveats in IE 6-8 where the exception identifier will leak into the outer scope causing some unexpected behavior. Ben Alman has a [great article](http://weblog.bocoup.com/the-catch-with-try-catch/) that explains this behavior in detail
-
-在 IE 6-8 中有一些有趣的警告，异常标识符将泄露到外出作用域，导致一些意想不到的行为。Ben Alman 有篇[the-catch-with-try-catch](http://weblog.bocoup.com/the-catch-with-try-catch/)文章，作了详细的解释。
-
 ## Further Reading
 
 * [Do not assign to the exception parameter](http://jslinterrors.com/do-not-assign-to-the-exception-parameter/)
-* [The "catch" with try...catch -- Ben Alman](http://weblog.bocoup.com/the-catch-with-try-catch/)
+* [The "catch" with try...catch](http://weblog.bocoup.com/the-catch-with-try-catch/) by Ben Alman explains how the exception identifier can leak into the outer scope in IE 6-8
 
 ## Version
 

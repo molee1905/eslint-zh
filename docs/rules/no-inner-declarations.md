@@ -3,6 +3,7 @@ title: Rule no-inner-declarations
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Declarations in Program or Function Body (no-inner-declarations)
 # 在程序或函数中声明（no-inner-declarations）
 
@@ -70,12 +71,11 @@ This rule requires that function declarations and, optionally, variable declarat
 
 该规则要求函数声明和可选的变量声明在程序或函数体的根部。
 
-### Options
+## Options
 
 This rule takes a single option to specify whether it should check just function declarations or both function and variable declarations. The default is `"functions"`. Setting it to `"both"` will apply the same rules to both types of declarations.
 
 该规则接受单个选项来确定是只检测函数声明还是函数和变量声明都检测。默认值是 `"functions"`. 设定为 `"both"` 同样的规则适用于两种类型的声明
-
 
 You can set the option in configuration like this:
 
@@ -85,49 +85,32 @@ You can set the option in configuration like this:
 "no-inner-declarations": [2, "both"]
 ```
 
-The following patterns are considered problems:
+### functions
 
-以下模式被认为是有问题的
+Examples of **incorrect** code for the default `"functions"` option:
+
+默认选项`"functions"`的 **错误** 代码示例：
 
 ```js
 /*eslint no-inner-declarations: 2*/
 
 if (test) {
-    function doSomething() { }        /*error Move function declaration to program root.*/
+    function doSomething() { }
 }
 
 function doSomethingElse() {
     if (test) {
-        function doAnotherThing() { } /*error Move function declaration to function body root.*/
+        function doAnotherThing() { }
     }
 }
 ```
 
-With "both" option to check variable declarations, the following are considered problems:
+Examples of **correct** code for the default `"functions"` option:
 
-设定 “both” 选项来检测变量声明，以下模式被认为是有问题的：
-
-```js
-/*eslint no-inner-declarations: [2, "both"]*/
-
-if (test) {
-    var foo = 42;            /*error Move variable declaration to program root.*/
-}
-
-function doAnotherThing() {
-    if (test) {
-        var bar = 81;        /*error Move variable declaration to function body root.*/
-    }
-}
-```
-
-The following patterns are considered valid:
-
-以下模式被认为是有效的
+默认选项`"functions"`的 **正确** 代码示例：
 
 ```js
 /*eslint no-inner-declarations: 2*/
-/*eslint-env es6*/
 
 function doSomething() { }
 
@@ -143,6 +126,35 @@ var fn;
 if (test) {
     fn = function fnExpression() { };
 }
+```
+
+### both
+
+Examples of **incorrect** code for the `"both"` option:
+
+选项`"both"`的 **错误** 代码示例：
+
+```js
+/*eslint no-inner-declarations: [2, "both"]*/
+
+if (test) {
+    var foo = 42;
+}
+
+function doAnotherThing() {
+    if (test) {
+        var bar = 81;
+    }
+}
+```
+
+Examples of **correct** code for the `"both"` option:
+
+选项`"both"`的 **错误** 代码示例：
+
+```js
+/*eslint no-inner-declarations: 2*/
+/*eslint-env es6*/
 
 var bar = 42;
 

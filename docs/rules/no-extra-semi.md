@@ -3,6 +3,7 @@ title: Rule no-extra-semi
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Extra Semicolons (no-extra-semi)
 # 禁止冗余分号（no-extra-semi）
 
@@ -21,24 +22,24 @@ This rule is aimed at eliminating extra unnecessary semicolons. While not techni
 
 该规则旨在消除冗余的分号。尽管不是技术错误,但冗余分号是阅读代码时困惑的根源
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
-下面是有问题的代码：
+**错误** 代码示例：
 
 ```js
 /*eslint no-extra-semi: 2*/
 
-var x = 5;;      /*error Unnecessary semicolon.*/
+var x = 5;;
 
 function foo() {
     // code
-};               /*error Unnecessary semicolon.*/
+};
 
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
-下面是正确的代码：
+**正确** 代码示例：
 
 ```js
 /*eslint no-extra-semi: 2*/
@@ -55,12 +56,12 @@ var foo = function() {
 
 If you intentionally use extra semicolons then you can disable this rule.
 
-如果你故意使用空语句，你可以禁用该规则。
+如果你有意使用空语句，你可以禁用该规则。
 
 ## Related Rules
 
 * [semi](semi)
-* [no-space-before-semi](no-space-before-semi)
+* [semi-spacing](semi-spacing)
 
 ## Version
 

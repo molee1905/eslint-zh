@@ -3,6 +3,7 @@ title: Rule no-unreachable
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Unreachable Code (no-unreachable)
 
 # 禁止不可达代码 (no-unreachable)
@@ -21,39 +22,51 @@ function fn() {
 
 ## Rule Details
 
-This rule is aimed at detecting unreachable code. It produces an error when a statements in a block exist after a `return`, `throw`, `break`, or `continue` statement. The rule checks inside the program root, block statements, and switch cases.
+This rule is aimed at detecting unreachable code. It produces an error when a statements exist after a `return`, `throw`, `break`, or `continue` statement.
 
-该规则旨在检测不可达代码。当一个块中某个语句出现在`return`，`throw`，`break`，或 `continue`语句之后，它将产生一个错误。该规则检查the program root， 块语句和 switch cases语句。
+该规则旨在检测不可达代码。当一个块中某个语句出现在`return`，`throw`，`break`，或 `continue`语句之后，它将产生一个错误。 
+ 
+Examples of **incorrect** code for this rule:
 
-The following are considered problems:
-
-以下模式被认为是有问题的：
+**错误** 代码示例：
 
 ```js
 /*eslint no-unreachable: 2*/
 
 function foo() {
     return true;
-    console.log("done");      /*error Found unexpected statement after a return.*/
+    console.log("done");
 }
 
 function bar() {
     throw new Error("Oops!");
-    console.log("done");      /*error Found unexpected statement after a throw.*/
+    console.log("done");
 }
 
 while(value) {
     break;
-    console.log("done");      /*error Found unexpected statement after a break.*/
+    console.log("done");
 }
 
 throw new Error("Oops!");
-console.log("done");          /*error Found unexpected statement after a throw.*/
+console.log("done");
+
+function baz() {
+    if (Math.random() < 0.5) {
+        return;
+    } else {
+        throw new Error();
+    }
+    console.log("done");
+}
+
+for (;;) {}
+console.log("done");
 ```
 
-The following patterns are not considered problems (due to JavaScript function and variable hoisting):
+Examples of **correct** code for this rule, because of JavaScript function and variable hoisting:
 
-以下模式被认为是没有问题的（由于Javascript函数和变量提升）：
+**正确** 代码示例，由于Javascript函数和变量提升：
 
 ```js
 /*eslint no-unreachable: 2*/

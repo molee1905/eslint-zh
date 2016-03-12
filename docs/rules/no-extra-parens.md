@@ -3,6 +3,7 @@ title: Rule no-extra-parens
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Extra Parens (no-extra-parens)
 # 禁止冗余的括号（no-extra-parens）
 
@@ -11,8 +12,6 @@ This rule restricts the use of parentheses to only where they are necessary. It 
 该规则限制只有在必要的地方才使用圆括号。也可能仅限于对函数表达式的检测。
 
 ## Rule Details
-
-### Exceptions
 
 A few cases of redundant parentheses are always allowed:
 
@@ -24,25 +23,40 @@ A few cases of redundant parentheses are always allowed:
 * IIFEs: `var x = (function () {})();`, `((function foo() {return 1;})())` are always valid.
 * IIFEs: `var x = (function () {})();`, `((function foo() {return 1;})())`是有效的。
 
-### Options
+## Options
 
-The default behavior of the rule is specified by `"all"` and it will report unnecessary parentheses around any expression.The following patterns are considered problems:
+This rule takes 1 or 2 arguments. The first one is a string which must be one of the following:
 
-该规则的默认行为被指定 ‘“all”’，它将检测所有表达式的冗余括号。下面是有问题的代码：
+* `"all"` (default): it will report unnecessary parentheses around any expression.
+* `"all"` (默认): 它将报告表达式周围任何不必要的括号。
+* `"functions"`: only function expressions will be checked for unnecessary parentheses.
+* `"functions"`: 只有函数才会被检查不必要的括号。
+
+The second one is an object for more fine-grained configuration when the first option is `"all"`.
+
+当第一个选项是`"all"`时，第二个则为一个对象，已提供细粒度的配置。
+
+### all
+
+Examples of **incorrect** code for the default `"all"` option:
+
+默认选项`"all"`的 **错误** 代码示例：
 
 ```js
 /*eslint no-extra-parens: 2*/
 
-a = (b * c); /*error Gratuitous parentheses around expression.*/
+a = (b * c);
 
-(a * b) + c; /*error Gratuitous parentheses around expression.*/
+(a * b) + c;
 
-typeof (a);  /*error Gratuitous parentheses around expression.*/
+typeof (a);
+
+(function(){} ? a() : b());
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for the default `"all"` option:
 
-下面是正确的代码：
+默认选项`"all"`的 **正确** 代码示例：
 
 ```js
 /*eslint no-extra-parens: 2*/
@@ -51,26 +65,46 @@ The following patterns are not considered problems:
 
 ({}.toString.call());
 
-(function(){} ? a() : b())
+(function(){}) ? a() : b();
 
 (/^a$/).test(x);
 ```
 
-If the option is set to `"functions"`, only function expressions will be checked for unnecessary parentheses. The following patterns are considered problems:
+### conditionalAssign
 
-如果设定为 `"functions"`, 仅仅函数表达式会被检测冗余括号。下面是有问题的代码：
+When setting the first option as `"all"`, an additional option can be added to allow extra parens for assignment in conditional statements.
+
+Examples of **correct** code for the `"all"` and `{ "conditionalAssign": true }` options:
+
+```js
+/*eslint no-extra-parens: [2, "all", { "conditionalAssign": false }]*/
+
+while ((foo = bar())) {}
+
+if ((foo = bar())) {}
+
+do; while ((foo = bar()))
+
+for (;(a = b););
+```
+
+### functions
+
+Examples of **incorrect** code for the `"functions"` option:
+
+选项`"functions"`的 **错误** 代码示例：
 
 ```js
 /*eslint no-extra-parens: [2, "functions"]*/
 
-((function foo() {}))();           /*error Gratuitous parentheses around expression.*/
+((function foo() {}))();
 
-var y = (function () {return 1;}); /*error Gratuitous parentheses around expression.*/
+var y = (function () {return 1;});
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for the `"functions"` option:
 
-下面是正确代码：
+选项`"functions"`的 **正确** 代码示例：
 
 ```js
 /*eslint no-extra-parens: [2, "functions"]*/
@@ -94,6 +128,10 @@ typeof (a);
 ## Further Reading
 
 * [MDN: Operator Precedence](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
+
+## Related Rules
+
+* [no-cond-assign](no-cond-assign)
 
 ## Version
 

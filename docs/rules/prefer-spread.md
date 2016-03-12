@@ -3,6 +3,7 @@ title: Rule prefer-spread
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Suggest using the spread operator instead of `.apply()`. (prefer-spread)
 
 # 建议使用扩展运算符而非`.apply()`。 (prefer-spread)
@@ -40,11 +41,11 @@ The following patterns are considered problems:
 ```js
 /*eslint prefer-spread: 2*/
 
-foo.apply(undefined, args); /*error use the spread operator instead of the ".apply()".*/
+foo.apply(undefined, args);
 
-foo.apply(null, args);      /*error use the spread operator instead of the ".apply()".*/
+foo.apply(null, args);
 
-obj.foo.apply(obj, args);   /*error use the spread operator instead of the ".apply()".*/
+obj.foo.apply(obj, args);
 ```
 
 The following patterns are not considered problems:
@@ -82,13 +83,13 @@ So if the `this` argument is computed in a dynamic expression, this rule cannot 
 /*eslint prefer-spread: 2*/
 
 // This warns.
-a[i++].foo.apply(a[i++], args); /*error use the spread operator instead of the ".apply()".*/
+a[i++].foo.apply(a[i++], args);
 
 // This does not warn.
 a[++i].foo.apply(a[i], args);
 ```
 
-## When Not to Use It
+## When Not To Use It
 
 This rule should not be used in ES3/5 environments.
 
@@ -98,7 +99,7 @@ In ES2015 (ES6) or later, if you don't want to be notified about `Function.proto
 
 在ES2015 (ES6)或以后的版本，如果你不希望收到关于`Function.prototype.apply()`调用的通知，关闭此规则即可。
 
-## Related rules
+## Related Rules
 
 * [no-useless-call](no-useless-call)
 

@@ -3,6 +3,7 @@ title: Rule no-regex-spaces
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Spaces in Regular Expressions (no-regex-spaces)
 
 # 禁止正则表达式中空格 (no-regex-spaces)
@@ -33,19 +34,19 @@ This rule aims to eliminate errors due to multiple spaces inside of a regular ex
 
 该规则旨在消除由于正则表达式中多个空格造成的错误。因此，如果在正则表达式字面量中发现一行中不止有一个空格时，该规则将发出警告。
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
-以下模式被认为是有问题的：
+**错误** 代码示例：
 
 ```js
 /*eslint no-regex-spaces: 2*/
 
-var re = /foo   bar/; /*error Spaces are hard to count. Use {3}.*/
+var re = /foo   bar/;
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
-以下模式被认为是没有问题的：
+**正确** 代码示例：
 
 ```js
 /*eslint no-regex-spaces: 2*/

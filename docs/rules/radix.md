@@ -3,6 +3,7 @@ title: Rule radix
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require Radix Parameter (radix)
 #需要基数参数(radix)
 
@@ -38,7 +39,7 @@ This rule is aimed at preventing the unintended conversion of a string to a numb
 
 此规则目的在于防止一个字符串意想不到的转换成与预期不同的数字或防止多余的`10`基数,如果只针对现代环境。
 
-### Options
+## Options
 
 There are two options for this rule:
 
@@ -57,7 +58,7 @@ Depending on your coding conventions, you can choose either option by specifying
 "radix": [2, "always"]
 ```
 
-#### always
+### "always"
 
 The following patterns are considered problems:
 
@@ -66,13 +67,13 @@ The following patterns are considered problems:
 ```js
 /*eslint radix: 2*/
 
-var num = parseInt("071");        /*error Missing radix parameter.*/
+var num = parseInt("071");
 
-var num = parseInt(someValue);    /*error Missing radix parameter.*/
+var num = parseInt(someValue);
 
-var num = parseInt("071", "abc"); /*error Invalid radix parameter.*/
+var num = parseInt("071", "abc");
 
-var num = parseInt();             /*error Missing parameters.*/
+var num = parseInt();
 ```
 
 The following patterns are not considered problems:
@@ -89,7 +90,7 @@ var num = parseInt("071", 8);
 var num = parseFloat(someValue);
 ```
 
-#### as-needed
+### "as-needed"
 
 The following patterns are considered problems:
 
@@ -98,11 +99,11 @@ The following patterns are considered problems:
 ```js
 /*eslint radix: [2. "as-needed"] */
 
-var num = parseInt("071", 10);    /*error Redundant radix parameter.*/
+var num = parseInt("071", 10);
 
-var num = parseInt("071", "abc"); /*error Invalid radix parameter.*/
+var num = parseInt("071", "abc");
 
-var num = parseInt();             /*error Missing parameters.*/
+var num = parseInt();
 ```
 
 The following patterns are not considered problems:

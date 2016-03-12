@@ -3,6 +3,7 @@ title: Rule no-func-assign
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Function Assignment (no-func-assign)
 # 禁止函数赋值（no-func-assign）
 
@@ -21,35 +22,35 @@ This rule is aimed at flagging probable mistakes and issues in the form of overw
 
 该规则旨在消除对函数重写带来的错误和问题。因此遇到这个问题时将发出警告。
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
-以下模式被认为是有问题的
+**错误** 代码示例：
 
 ```js
 /*eslint no-func-assign: 2*/
 
 function foo() {}
-foo = bar;        /*error 'foo' is a function.*/
+foo = bar;
 
 function foo() {
-    foo = bar;    /*error 'foo' is a function.*/
+    foo = bar;
 }
 ```
 
-Unlike the same rule in JSHint, the following pattern is also considered a warning:
+Examples of **incorrect** code for this rule, unlike the corresponding rule in JSHint:
 
-与JSHint中的规则不同,下面的模式也被认为是一个警告:
+**错误** 代码示例，与JSHint中的规则不同：
 
 ```js
 /*eslint no-func-assign: 2*/
 
-foo = bar;        /*error 'foo' is a function.*/
+foo = bar;
 function foo() {}
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
-以下模式被认为是没有问题的：
+**正确** 代码示例：
 
 ```js
 /*eslint no-func-assign: 2*/
@@ -70,7 +71,7 @@ function foo() {
 
 This rule was introduced in ESLint 0.0.9.
 
-该规则是在ESLint 0.0.9 中被引入的。
+该规则是在 ESLint 0.0.9 中被引入的。
 
 ## Resources
 

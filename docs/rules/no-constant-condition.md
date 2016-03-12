@@ -5,6 +5,7 @@ translator: ybbjegj
 proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow use of constant expressions in conditions (no-constant-condition)
 
 # 禁止在条件中使用常量表达式 (no-constant-condition)
@@ -25,19 +26,23 @@ This pattern is most likely an error and should be avoided.
 
 ## Rule Details
 
-The rule is aimed at preventing the use of a constant expression in a condition.
-As such, it warns whenever it sees a constant expression inside a condition expression.
+The rule is aimed at preventing a constant expression in the test of:
 
-该规则的目的在于防止在条件中使用常量表达式。因此，当在条件表达式中发现常量表达式时，该规则就发出警告。
+该规则的目的在于防止在条件中使用常量表达式。
 
-The following patterns are considered problems:
+* `if`, `for`, `while`, or `do...while` statement
+* `if`，`for`， `while`， 或 `do...while` 语句
+* `?:` ternary expression
+* `?:` 三元表达式
 
-以下模式被认为是有问题的：
+Examples of **incorrect** code for this rule:
+
+**错误** 代码示例：
 
 ```js
 /*eslint no-constant-condition: 2*/
 
-if (true) {             /*error Unexpected constant condition.*/
+if (true) {
     doSomething();
 }
 ```
@@ -45,13 +50,13 @@ if (true) {             /*error Unexpected constant condition.*/
 ```js
 /*eslint no-constant-condition: 2*/
 
-var result = 0 ? a : b; /*error Unexpected constant condition.*/
+var result = 0 ? a : b;
 ```
 
 ```js
 /*eslint no-constant-condition: 2*/
 
-while (-2) {            /*error Unexpected constant condition.*/
+while (-2) {
     doSomething();
 }
 ```
@@ -59,7 +64,7 @@ while (-2) {            /*error Unexpected constant condition.*/
 ```js
 /*eslint no-constant-condition: 2*/
 
-for (;true;) {          /*error Unexpected constant condition.*/
+for (;true;) {
     doSomething();
 }
 ```
@@ -67,14 +72,14 @@ for (;true;) {          /*error Unexpected constant condition.*/
 ```js
 /*eslint no-constant-condition: 2*/
 
-do{                     /*error Unexpected constant condition.*/
+do{
     something();
 } while (x = -1)
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
-以下模式被认为是没有问题的：
+**正确** 代码示例：
 
 ```js
 /*eslint no-constant-condition: 2*/

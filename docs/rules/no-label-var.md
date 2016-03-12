@@ -3,6 +3,7 @@ title: Rule no-label-var
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Labels That Are Variables Names (no-label-var)
 
 # 不允许标签是变量名 (no-label-var)
@@ -13,25 +14,25 @@ This rule aims to create clearer code by disallowing the bad practice of creatin
 
 此规则希望创建更清晰的代码，通过不允许同一作用域中变量名和标记名相同。
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
-以下模式被认为是有问题的：
+**错误** 代码示例：
 
 ```js
 /*eslint no-label-var: 2*/
 
 var x = foo;
 function bar() {
-x:               /*error Found identifier with same name as label.*/
+x:
   for (;;) {
     break x;
   }
 }
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
-以下模式被认为是没有问题的：
+**正确** 代码示例：
 
 ```js
 /*eslint no-label-var: 2*/
@@ -50,9 +51,21 @@ q:
 }
 ```
 
+## When Not To Use It
+
+If you don't want to be notified about usage of labels, then it's safe to disable this rule.
+
+如果你想被通知标题的使用情况，可以禁用此规则。
+
 ## Further Reading
 
 * ['{a}' is a statement label](http://jslinterrors.com/a-is-a-statement-label/)
+
+## Related Rules
+
+* [no-extra-label](./no-extra-label)
+* [no-labels](./no-labels)
+* [no-unused-labels](./no-unused-labels)
 
 ## Version
 

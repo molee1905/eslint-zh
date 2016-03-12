@@ -3,6 +3,7 @@ title: Rule no-obj-calls
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Global Object Function Calls (no-obj-calls)
 
 # 禁止全局对象函数调用
@@ -26,20 +27,20 @@ This rule is aimed at preventing the accidental calling of global objects as fun
 
 该规则旨在阻止意外调用全局对象函数。
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
-以下模式被认为是有问题的：
+**错误** 代码示例：
 
 ```js
 /*eslint no-obj-calls: 2*/
 
-var x = Math(); /*error 'Math' is not a function.*/
-var y = JSON(); /*error 'JSON' is not a function.*/
+var x = Math();
+var y = JSON();
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
-以下模式被认为是没有问题的：
+**正确** 代码示例：
 
 ```js
 /*eslint no-obj-calls: 2*/

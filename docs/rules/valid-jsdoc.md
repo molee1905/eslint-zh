@@ -3,6 +3,7 @@ title: Rule valid-jsdoc
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Validates JSDoc comments are syntactically correct (valid-jsdoc)
 
 # 验证JSDoc注释是语法正确的 (valid-jsdoc)
@@ -29,26 +30,26 @@ JSDoc注释有自己的语法，它很容易错误书写一个注释，因为编
 
 ## Rule Details
 
-This rule aims to prevent invalid and incomplete JSDoc comments. In doing so, it will warn when:
+This rule aims to prevent invalid and incomplete JSDoc comments. It will warn when any of the following is true:
 
 该规则旨在防止无效的和不完整的JSDoc注释。这样做，它将发出警告，当：
 
-1. There is a JSDoc syntax error
-1. 有JSDoc语法错误
-1. A `@param` or `@returns` is used without a type specified
-1. `@param` 或 `@returns` 没有指定类型
-1. A `@param` or `@returns` is used without a description
-1. `@param` 或 `@returns` 没有描述
-1. A comment for a function is missing `@returns`
-1. 函数的注释缺少 `@returns`
-1. A parameter has no associated `@param` in the JSDoc comment
-1. 一个参数在JSDoc注释中没有对应的`@param`
-1. `@param`s are out of order with named arguments
-1. `@param`与命名的参数顺序不对应
+* There is a JSDoc syntax error
+* 有JSDoc语法错误
+* A `@param` or `@returns` is used without a type specified
+* `@param` 或 `@returns` 没有指定类型
+* A `@param` or `@returns` is used without a description
+* `@param` 或 `@returns` 没有描述
+* A comment for a function is missing `@returns`
+* 函数的注释缺少 `@returns`
+* A parameter has no associated `@param` in the JSDoc comment
+* 一个参数在JSDoc注释中没有对应的`@param`
+* `@param`s are out of order with named arguments
+* `@param`与命名的参数顺序不对应
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
-以下模式被认为是有问题的：
+**错误** 代码示例：
 
 ```js
 /*eslint valid-jsdoc: 2*/
@@ -110,9 +111,9 @@ function foo(a) {
 }
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
-以下模式被认为是没有问题的：
+**正确** 代码示例：
 
 ```js
 /*eslint valid-jsdoc: 2*/
@@ -143,11 +144,22 @@ function foo(num1, num2) { }
 function foo(a) {
     return a;
 }
+
+// @returns is not required for a constructor
+class Foo {
+    /**
+    *
+    * @param {int} num1 The first number.
+    */
+    constructor(num1) {
+        this.num1 = num1;
+    }
+}
 ```
 
-### Options
+## Options
 
-#### prefer
+### prefer
 
 JSDoc offers a lot of tags with overlapping meaning. For example, both `@return` and `@returns` are acceptable for specifying the return value of a function. However, you may want to enforce a certain tag be used instead of others. You can specify your preferences regarding tag substitution by providing a mapping called `prefer` in the rule configuration. For example, to specify that `@returns` should be used instead of `@return`, you can use the following configuration:
 
@@ -163,6 +175,7 @@ JSDoc提供了很多有重叠的标签.例如，`@return` 和 `@returns`都是�
 
 With this configuration, ESLint will warn when it finds `@return` and recommend to replace it with `@returns`.
 
+<<<<<<< HEAD
 在这个配置中，当ESLint发现`@return`，它将发出警告，并推荐使用`@returns`代替。
 
 
@@ -171,6 +184,11 @@ With this configuration, ESLint will warn when it finds `@return` and recommend 
 By default ESLint requires you to specify `@return` for every documented function regardless of whether there is anything returned by the function. While using `@return {void}` or `@return {undefined}` stops it from asking for a description of the return value using the `requireReturn` option and setting it to `false` prevents an error from being logged unless there is a return in the function. Note that with this option set to `false`, if there is a return in the function, an error will still be logged and if there is a `@return` specified and there are no `return` statements in the function an error will also be logged. This option is purely to prevent the forced addition of `@return {void}` to an entire codebase not to turn off JSDoc return checking.
 
 默认情况下，ESLint要求你为每个documented函数指定`@return`，不管该函数中是否有返回值。当使用`@return {void}` 或 `@return {undefined}`不再要求返回值有描述，使用`requireReturn`并设置它为`false`, 防止一个错误被记入日志，除非函数中有一个返回语句。注意，该选项设置为`false`时，如果函数中有一个返回语句，一个错误仍将被记入日志。如果有个指定的`@return`，并且函数中没有`return`语句一个错误仍将被记入日志。这个选项纯粹是为了防止不关掉JSDoc返回检查的情况下强制添加`@return {void}`到整个代码库。
+=======
+### requireReturn
+
+By default ESLint requires you to document every function with a `@return` tag regardless of whether there is anything returned by the function. If instead you want to enforce that only functions with a `return` statement are documented with a `@return` tag, set the `requireReturn` option to `false`.  When `requireReturn` is `false`, every function documented with a `@return` tag must have a `return` statement, and every function with a `return` statement must have a `@return` tag.
+>>>>>>> eslint/master
 
 ```json
 "valid-jsdoc": [2, {
@@ -178,7 +196,7 @@ By default ESLint requires you to specify `@return` for every documented functio
 }]
 ```
 
-#### requireParamDescription
+### requireParamDescription
 
 By default ESLint requires you to specify a description for each `@param`. You can choose not to require descriptions for `@param` by setting `requireParamDescription` to `false`.
 
@@ -190,7 +208,7 @@ By default ESLint requires you to specify a description for each `@param`. You c
 }]
 ```
 
-#### requireReturnDescription
+### requireReturnDescription
 
 By default ESLint requires you to specify a description for each `@return`. You can choose not to require descriptions for `@return` by setting `requireReturnDescription` to `false`.
 
@@ -202,7 +220,7 @@ By default ESLint requires you to specify a description for each `@return`. You 
 }]
 ```
 
-#### matchDescription
+### matchDescription
 
 Specify a regular expression to validate JSDoc comment block description against.
 
@@ -214,7 +232,7 @@ Specify a regular expression to validate JSDoc comment block description against
 }]
 ```
 
-#### requireReturnType
+### requireReturnType
 
 By default ESLint requires you to specify `type` for `@return` tag for every documented function.
 
@@ -224,6 +242,89 @@ By default ESLint requires you to specify `type` for `@return` tag for every doc
 "valid-jsdoc": [2, {
     "requireReturnType": false
 }]
+```
+
+### preferType
+
+It will validate all the types from jsdoc with the options setup by the user. Inside the options, key should be what the type you want to check and the value of it should be what the expected type should be. Note that we don't check for spelling mistakes with this option.
+In the example below, it will expect the "object" to start with an uppercase and all the "string" type to start with a lowercase.
+
+```json
+"valid-jsdoc": [2, {
+    "preferType": {
+        "String": "string",
+        "object": "Object",
+        "test": "TesT"
+    }
+}]
+```
+
+Examples of **incorrect** code for a sample of `"preferType"` options:
+
+```js
+/*eslint valid-jsdoc: [2, { "preferType": { "String": "string", "object": "Object", "test": "TesT" } }]*/
+
+/**
+ * Adds two numbers together.
+ * @param {String} param1 The first parameter.
+ * @returns {object} The sum of the two numbers.
+ */
+function foo(param1) {
+    return {a: param1};
+}
+
+/**
+ * Adds two numbers together.
+ * @param {Array<String>} param1 The first parameter.
+ * @param {{1:test}} param2 The second parameter.
+ * @returns {object} The sum of the two numbers.
+ */
+function foo(param1, param2) {
+    return {a: param1};
+}
+
+/**
+ * Adds two numbers together.
+ * @param {String|int} param1 The first parameter.
+ * @returns {object} The sum of the two numbers.
+ */
+function foo(param1) {
+    return {a: param1};
+}
+```
+
+Examples of **correct** code for a sample of `"preferType"` options:
+
+```js
+/*eslint valid-jsdoc: [2, { "preferType": { "String": "string", "object": "Object", "test": "TesT" } }]*/
+
+/**
+ * Adds two numbers together.
+ * @param {string} param1 The first parameter.
+ * @returns {Object} The sum of the two numbers.
+ */
+function foo(param1) {
+    return {a: param1};
+}
+
+/**
+ * Adds two numbers together.
+ * @param {Array<string>} param1 The first parameter.
+ * @param {{1:TesT}} param2 The second parameter.
+ * @returns {Object} The sum of the two numbers.
+ */
+function foo(param1, param2) {
+    return {a: param1};
+}
+
+/**
+ * Adds two numbers together.
+ * @param {string|int} param1 The first parameter.
+ * @returns {Object} The sum of the two numbers.
+ */
+function foo(param1) {
+    return {a: param1};
+}
 ```
 
 ## When Not To Use It

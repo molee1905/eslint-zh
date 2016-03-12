@@ -3,6 +3,7 @@ title: Rule quotes
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Enforce Quote Style (quotes)
 
 # 强制引号风格 (quotes)
@@ -43,8 +44,12 @@ The rule configuration takes up to two options:
 
 1. The first option is `"double"`, `"single"` or `"backtick"` for double-quotes, single-quotes or backticks respectively. The default is `"double"`.
 1. 第一个选项是`"double"`，`"single"` 或 `"backtick"`对应双引号，单引号或反勾号。默认是`"double"`。
-2. The second option is the `"avoid-escape"` flag. When using `"avoid-escape"`, this rule will not report a problem when a string is using incorrect quotes so long as the string contains a quote that would have to be escaped. For example, if you specify `"double"` and `"avoid-escape"`, the string `'He said, "hi!"'` is not considered a problem because using double quotes for that string would require escaping the double quotes inside of the string. This option is off by default.
-2. 第二个选项是`"avoid-escape"`标记。当使用`"avoid-escape"`时，如果一个字符串使用了不正确的引号，只要这个字符串包含需要转义的引号，该规则就不会报告问题。例如，如果你指定`"double"` 和 `"avoid-escape"`，字符串`'He said, "hi!"'`不被认为是个问题，因为，该字符串使用双引号要求转义该字符串内的双引号。该选项默认是关闭的。
+2. The second option is the `"avoid-escape"` flag. When using `"avoid-escape"`, this rule will not report a problem when a string is using single-quotes or double-quotes so long as the string contains a quote that would have to be escaped otherwise. For example, if you specify `"double"` and `"avoid-escape"`, the string `'He said, "hi!"'` is not considered a problem because using double quotes for that string would require escaping the double quotes inside of the string. This option is off by default.
+2. 第二个选项是`"avoid-escape"`标记。当使用`"avoid-escape"`时，如果一个字符串使用了单引号或双引号，只要这个字符串包含需要转义的引号，该规则就不会报告问题。例如，如果你指定`"double"` 和 `"avoid-escape"`，字符串`'He said, "hi!"'`不被认为是个问题，因为，该字符串使用双引号要求转义该字符串内的双引号。该选项默认是关闭的。
+
+When using `"single"` or `"double"`, template literals that don't contain a substitution, don't contain a line break and aren't tagged templates, are flagged as problems, even with the `"avoid-escape"` option.
+
+当使用`"single"` 或 `"double"`，模板字面量不包含一个替代，不包含一个换行符和不是被标记的模板，都将被标记为是问题，即使有`"avoid-escape"`选项。
 
 Configuration looks like this:
 
@@ -61,42 +66,44 @@ The following patterns are considered problems:
 ```js
 /*eslint quotes: [2, "double"]*/
 
-var single = 'single';                                 /*error Strings must use doublequote.*/
-var unescaped = 'a string containing "double" quotes'; /*error Strings must use doublequote.*/
+var single = 'single';
+var unescaped = 'a string containing "double" quotes';
 ```
 
 ```js
 /*eslint quotes: [2, "single"]*/
 
-var double = "double";                                 /*error Strings must use singlequote.*/
-var unescaped = "a string containing 'single' quotes"; /*error Strings must use singlequote.*/
+var double = "double";
+var unescaped = "a string containing 'single' quotes";
 ```
 
 ```js
 /*eslint quotes: [2, "double", "avoid-escape"]*/
 
-var single = 'single'; /*error Strings must use doublequote.*/
+var single = 'single';
+var single = `single`;
 ```
 
 ```js
 /*eslint quotes: [2, "single", "avoid-escape"]*/
 
-var double = "double"; /*error Strings must use singlequote.*/
+var double = "double";
+var double = `double`;
 ```
 
 ```js
 /*eslint quotes: [2, "backtick"]*/
 
-var single = 'single';                             /*error Strings must use backtick.*/
-var double = "double";                             /*error Strings must use backtick.*/
-var unescaped = 'a string containing `backticks`'; /*error Strings must use backtick.*/
+var single = 'single';
+var double = "double";
+var unescaped = 'a string containing `backticks`';
 ```
 
 ```js
 /*eslint quotes: [2, "backtick", "avoid-escape"]*/
 
-var single = 'single'; /*error Strings must use backtick.*/
-var double = "double"; /*error Strings must use backtick.*/
+var single = 'single';
+var double = "double";
 ```
 
 The following patterns are not considered problems:
@@ -108,7 +115,8 @@ The following patterns are not considered problems:
 /*eslint-env es6*/
 
 var double = "double";
-var backtick = `backtick`; // backticks are allowed
+var backtick = `back\ntick`;  // backticks are allowed due to newline
+var backtick = tag`backtick`; // backticks are allowed due to tag
 ```
 
 ```js
@@ -116,7 +124,7 @@ var backtick = `backtick`; // backticks are allowed
 /*eslint-env es6*/
 
 var single = 'single';
-var backtick = `backtick`; // backticks are allowed
+var backtick = `back${x}tick`; // backticks are allowed due to substitution
 ```
 
 ```js

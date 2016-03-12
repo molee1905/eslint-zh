@@ -5,6 +5,7 @@ translator: fengnana
 proofreader: maoshuyu
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Magic Numbers (no-magic-numbers)
 
 # 禁止使用魔术数字 (no-magic-numbers)
@@ -25,7 +26,7 @@ var now = Date.now(),
 The `no-magic-numbers` rule aims to make code more readable and refactoring easier by ensuring that special numbers
 are declared as constants to make their meaning explicit.
 
-`no-magic-numbers` 规则旨在确保将具体的数字声明为意义明确的常量从而使代码更加可读并且易于重构。
+`no-magic-numbers`规则旨在确保将具体的数字声明为意义明确的常量从而使代码更加可读并且易于重构。
 
 The following pattern is considered a problem:
 
@@ -35,13 +36,18 @@ The following pattern is considered a problem:
 /*eslint no-magic-numbers: 2*/
 
 var dutyFreePrice = 100,
-    finalPrice = dutyFreePrice + (dutyFreePrice * 0.25); /*error No magic number: 0.25*/
+    finalPrice = dutyFreePrice + (dutyFreePrice * 0.25);
+
+
+/*eslint no-magic-numbers: 2*/
+
+var data = ['foo', 'bar', 'baz'];
+var thirdValue = data[3];
 ```
 
 The following pattern is considered okay:
 
 以下模式被认为是没有问题的：
-
 
 ```js
 /*eslint no-magic-numbers: 2*/
@@ -54,20 +60,37 @@ var dutyFreePrice = 100,
 
 ## Options
 
-### ignore
+### `ignore`
 
-An array of numbers to ignore. It's set to `[0, 1, 2]` by default.
+An array of numbers to ignore. It's set to `[]` by default.
 If provided, it must be an `Array`.
 
 一个数字数组，指定检测中可以忽略的数字。默认为 `[0, 1, 2]` 。如果设置该选项，请确保为数组类型。
 
-### enforceConst
+### `ignoreArrayIndexes`
+
+A boolean to specify if numbers used as array indexes are considered okay. `false` by default.
+
+一个布尔值，指定数字用作数组的索引是否是可以的。默认为 `false`。
+
+The following pattern is considered okay:
+
+以下模式被认为是可以的：
+
+```js
+/*eslint no-magic-numbers: [2, {"ignoreArrayIndexes": true }]*/
+
+var data = ['foo', 'bar', 'baz'];
+var thirdValue = data[3];
+```
+
+### `enforceConst`
 
 A boolean to specify if we should check for the const keyword in variable declaration of numbers. `false` by default.
 
-一个布尔值，指定是否应该在数字变量的声明中检测 const 关键字。默认为 `false` 。
+一个布尔值，指定是否应该在数字变量的声明中检测 const 关键字。默认为 `false`。
 
-### detectObjects
+### `detectObjects`
 
 A boolean to specify if we should detect numbers when setting object properties for example. `false` by default.
 

@@ -5,6 +5,7 @@ translator: ybbjegj
 proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Duplicate Keys (no-dupe-keys)
 
 # 禁止重复的键 (no-dupe-keys)
@@ -26,32 +27,32 @@ This rule is aimed at preventing possible errors and unexpected behavior that mi
 
 该规则旨在防止在对象字面量中因使用重复的键而可能引起的错误和异常行为。 因此，只要有重复键，该规则就会发出警告。
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
-以下模式被认为是有问题的：
+**错误** 代码示例：
 
 ```js
 /*eslint no-dupe-keys: 2*/
 
 var foo = {
     bar: "baz",
-    bar: "qux"     /*error Duplicate key 'bar'.*/
+    bar: "qux"
 };
 
 var foo = {
     "bar": "baz",
-    bar: "qux"     /*error Duplicate key 'bar'.*/
+    bar: "qux"
 };
 
 var foo = {
     0x1: "baz",
-    1: "qux"       /*error Duplicate key '1'.*/
+    1: "qux"
 };
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
-以下模式被认为是没有问题的：
+**正确** 代码示例：
 
 ```js
 /*eslint no-dupe-keys: 2*/

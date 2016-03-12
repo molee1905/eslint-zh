@@ -3,6 +3,7 @@ title: Rule no-mixed-requires
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Mixed Requires (no-mixed-requires)
 
 # 不允许混淆Requires (no-mixed-requires)
@@ -13,6 +14,7 @@ In the Node.JS community it is often customary to separate the `require`d module
 
 ## Rule Details
 
+<<<<<<< HEAD
 When this rule is enabled, all `var` statements must satisfy the following conditions:
 
 当这个规则启动，所有的`var`语句必须满足以下条件：
@@ -50,6 +52,12 @@ If enabled, violations will be reported whenever a single `var` statement contai
 如果启用规则，一个单独的`var`语句包含混淆类型的模块引入声明，将会报错。
 
 ### Nomenclature
+=======
+When this rule is enabled, each `var` statement must satisfy the following conditions:
+
+* either none or all variable declarations must be require declarations (default)
+* all require declarations must be of the same type (grouping)
+>>>>>>> eslint/master
 
 This rule distinguishes between six kinds of variable declaration types:
 
@@ -72,10 +80,13 @@ This rule distinguishes between six kinds of variable declaration types:
 
 In this document, the first four types are summed up under the term *require declaration*.
 
+<<<<<<< HEAD
 在这个文档中，前四个类型总结了必须申明。
 
 #### Example
 
+=======
+>>>>>>> eslint/master
 ```javascript
 var fs = require('fs'),        // "core"     \
     async = require('async'),  // "module"   |- these are "require declaration"s
@@ -85,7 +96,34 @@ var fs = require('fs'),        // "core"     \
     bam;                       // "uninitialized"
 ```
 
-## Examples
+## Options
+
+This rule comes with two boolean options. Both are turned off by default. You can set those in your `eslint.json`:
+
+```json
+{
+    "no-mixed-requires": [2, {"grouping": true, "allowCall": true}]
+}
+```
+
+The second way to configure this rule is with boolean. This way of setting is deprecated.
+
+```json
+{
+    "no-mixed-requires": [2, true]
+}
+```
+
+If enabled, violations will be reported whenever a single `var` statement contains require declarations of mixed types (see the examples below).
+
+The following patterns are considered problems:
+
+```js
+/*eslint no-mixed-requires: 2*/
+
+var fs = require('fs'),
+    i = 0;
+```
 
 The following patterns are not considered problems:
 
@@ -110,6 +148,7 @@ var foo = require('foo' + VERSION),
     baz = require();
 ```
 
+<<<<<<< HEAD
 The following patterns are considered problems:
 
 以下模式被认为有问题的：
@@ -120,6 +159,9 @@ The following patterns are considered problems:
 var fs = require('fs'), /*error Do not mix 'require' and other declarations.*/
     i = 0;
 ```
+=======
+### grouping
+>>>>>>> eslint/master
 
 The following patterns are considered problems when grouping is turned on:
 
@@ -129,20 +171,25 @@ The following patterns are considered problems when grouping is turned on:
 /*eslint no-mixed-requires: [2, {"grouping": true}]*/
 
 // invalid because of mixed types "core" and "file"
-var fs = require('fs'),                /*error Do not mix core, module, file and computed requires.*/
+var fs = require('fs'),
     async = require('async');
 
 // invalid because of mixed types "file" and "unknown"
-var foo = require('foo'),              /*error Do not mix core, module, file and computed requires.*/
+var foo = require('foo'),
     bar = require(getBarModuleName());
 ```
 
+### allowCall
 
-## When Not To Use It
+The following patterns are not considered problems when `allowCall` is turned on:
 
-Internally, the list of core modules is retrieved via `require("repl")._builtinLibs`. If you use different versions of Node.JS for ESLint and your application, the list of core modules for each version may be different.
-The above mentioned `_builtinLibs` property became available in 0.8, for earlier versions a hardcoded list of module names is used as a fallback. If your version of Node is older than 0.6 that list may be inaccurate.
+```js
+var async = require('async'),
+    debug = require('diagnostics')('my-module'),
+    eslint = require('eslint');
+```
 
+<<<<<<< HEAD
 内部的核心模块列表查找方式是`require("repl")._builtinLibs`。如果在你的ESlint和应用中使用不同的Node.JS版本，每个版本的核心模块可能不同。
 
 If you use a pattern such as [UMD][4] where the `require`d modules are not loaded in variable declarations, this rule will obviously do nothing for you.
@@ -150,6 +197,26 @@ If you use a pattern such as [UMD][4] where the `require`d modules are not loade
 如果你使用[UMD][4]模式，当所需的模块没有加载在变量申明中，此规则不会为你做什么。
 
 The implementation is not aware of any local functions with the name `require` that may shadow Node's global `require`.
+=======
+The following patterns are always considered problems regardless of `allowCall`:
+
+```js
+var async = require('async'),
+    debug = require('diagnostics').someFunction('my-module'), /* Allow Call doesn't allow calling any function */
+    eslint = require('eslint');
+```
+
+## Known Limitations
+
+* The implementation is not aware of any local functions with the name `require` that may shadow Node's global `require`.
+
+* Internally, the list of core modules is retrieved via `require("repl")._builtinLibs`. If you use different versions of Node.JS for ESLint and your application, the list of core modules for each version may be different.
+  The above mentioned `_builtinLibs` property became available in 0.8, for earlier versions a hardcoded list of module names is used as a fallback. If your version of Node is older than 0.6 that list may be inaccurate.
+
+## When Not To Use It
+
+If you use a pattern such as [UMD][4] where the `require`d modules are not loaded in variable declarations, this rule will obviously do nothing for you.
+>>>>>>> eslint/master
 
 应用不会意识到任何本地`require`方法可能会覆盖Node的全局`require`方法。
 

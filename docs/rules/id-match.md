@@ -3,6 +3,7 @@ title: Rule id-match
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require IDs to match a pattern (id-match)
 
 # 要求标识符匹配某种模式 (id-match)
@@ -24,7 +25,7 @@ It doesn't apply to function calls, so that you can still use functions or objec
 
 此规则对照赋值和方法定义给出了正则表达式，为你提供了最大限度的灵活性。它并不适用于方法调用，所以你仍可以使用一些你无法控制的方法和对象。
 
-### Options
+## Options
 
 This rule needs a text RegExp to operate with, and accepts an options map. Its signature is as follows:
 
@@ -54,24 +55,24 @@ For the rule in this example, which is simply camelcase, the following patterns 
 ```js
 /*eslint id-match: [2, "^[a-z]+([A-Z][a-z]+)*$", {"properties": true}]*/
 
-var my_favorite_color = "#112C85"; /*error Identifier 'my_favorite_color' does not match the pattern '^[a-z]+([A-Z][a-z]+)*$'.*/
+var my_favorite_color = "#112C85";
 
-var _myFavoriteColor  = "#112C85"; /*error Identifier '_myFavoriteColor' does not match the pattern '^[a-z]+([A-Z][a-z]+)*$'.*/
+var _myFavoriteColor  = "#112C85";
 
-var myFavoriteColor_  = "#112C85"; /*error Identifier 'myFavoriteColor_' does not match the pattern '^[a-z]+([A-Z][a-z]+)*$'.*/
+var myFavoriteColor_  = "#112C85";
 
-var MY_FAVORITE_COLOR = "#112C85"; /*error Identifier 'MY_FAVORITE_COLOR' does not match the pattern '^[a-z]+([A-Z][a-z]+)*$'.*/
+var MY_FAVORITE_COLOR = "#112C85";
 
-function do_something() {          /*error Identifier 'do_something' does not match the pattern '^[a-z]+([A-Z][a-z]+)*$'.*/
+function do_something() {
     // ...
 }
 
-obj.do_something = function() {    /*error Identifier 'do_something' does not match the pattern '^[a-z]+([A-Z][a-z]+)*$'.*/
+obj.do_something = function() {
     // ...
 };
 
 var obj = {
-    my_pref: 1                     /*error Identifier 'my_pref' does not match the pattern '^[a-z]+([A-Z][a-z]+)*$'.*/
+    my_pref: 1
 };
 ```
 

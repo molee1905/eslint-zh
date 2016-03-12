@@ -3,6 +3,7 @@ title: Rule max-statements
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Limit Maximum Number of Statements (max-statements)
 
 # 限制语句的最大数量 (max-statements)
@@ -25,13 +26,27 @@ This rule allows you to configure the maximum number of statements allowed in a 
 
 该规则允许配置函数中允许的最大语句数量。默认为10。
 
+## Options
+
+There is an additional optional argument to ignore top level functions.
+
+有一个额外的可选参数忽略顶层函数。
+
+```json
+"max-statements": [2, 10, {"ignoreTopLevelFunctions": true}]
+
+// or you can use an object property to set the maximum
+
+"max-statements": [2, {"maximum": 10}, {"ignoreTopLevelFunctions": true}]
+```
+
 The following patterns are considered problems:
 
 以下模式被认为是没有问题的：
 
 ```js
 /*eslint max-statements: [2, 2]*/  // Maximum of 2 statements.
-function foo() { /*error This function has too many statements (3). Maximum allowed is 2.*/
+function foo() {
   var bar = 1;
   var baz = 2;
 
@@ -55,6 +70,16 @@ function foo() {
     return 42;
   };
 }
+```
+
+```js
+/*eslint max-statements: [2, 1, {ignoreTopLevelFunctions: true}]*/  // Maximum of 1 statement.
+(function() {
+  var bar = 1;
+  return function () {
+    return 42;
+  };
+})()
 ```
 
 ## Related Rules

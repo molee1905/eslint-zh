@@ -3,6 +3,7 @@ title: Rule use-isnan
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require isNaN() (use-isnan)
 
 # 要求使用isNaN() (use-isnan)
@@ -17,25 +18,25 @@ This rule is aimed at eliminating potential errors as the result of comparing ag
 
 该规则旨在消除与特殊值`NaN`进行比较造成的潜在的错误。
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
-以下模式被认为是有问题的：
+**错误** 代码示例：
 
 ```js
 /*eslint use-isnan: 2*/
 
-if (foo == NaN) { /*error Use the isNaN function to compare with NaN.*/
+if (foo == NaN) {
     // ...
 }
 
-if (foo != NaN) { /*error Use the isNaN function to compare with NaN.*/
+if (foo != NaN) {
     // ...
 }
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
-以下模式被认为是没有问题的：
+**正确** 代码示例：
 
 ```js
 /*eslint use-isnan: 2*/
@@ -49,7 +50,7 @@ if (isNaN(NaN)) {
 }
 ```
 
-## Further reading
+## Further Reading
 
 * [Use the isNaN function to compare with NaN](http://jslinterrors.com/use-the-isnan-function-to-compare-with-nan/)
 

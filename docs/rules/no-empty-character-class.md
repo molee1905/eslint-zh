@@ -5,6 +5,7 @@ translator: ybbjegj
 proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Empty Character Classes (no-empty-character-class)
 
 # 禁止空字符集（no-empty-character-class）
@@ -23,23 +24,23 @@ This rule is aimed at highlighting possible typos and unexpected behavior in reg
 
 该规则旨在强调正则表达式中使用空字符集时，可能出现的拼写错误和异常行为。
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
-以下模式被认为是有问题的：
+**错误** 代码示例：
 
 ```js
 /*eslint no-empty-character-class: 2*/
 
-var foo = /^abc[]/;  /*error Empty class.*/
+var foo = /^abc[]/;
 
-/^abc[]/.test(foo);  /*error Empty class.*/
+/^abc[]/.test(foo);
 
-bar.match(/^abc[]/); /*error Empty class.*/
+bar.match(/^abc[]/);
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
-以下模式被认为是没有问题的：
+**正确** 代码示例：
 
 ```js
 /*eslint no-empty-character-class: 2*/

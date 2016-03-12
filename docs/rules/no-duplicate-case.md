@@ -9,39 +9,19 @@ proofreader: molee1905
 
 # 禁止重复 case 标签（no-duplicate-case）
 
-A switch statements with duplicate case labels is normally an indication of a programmer error.
+If a switch statement has duplicate case labels, it is likely that a programmer copied a case but forgot to change the label.
 
-在 switch 语句中出现重复 case 标签通常是开发者出现错误的标志。
-
-In the following example the 3rd case label uses again the literal 1 that has already been used in the first case label.
-Most likely the case block was copied from above and it was forgotten to change the literal.
-
-下面例子中的第三个 case 使用的字面量 1 已经在第一个 case 中使用过了。这种情况最有可能是直接复制上面的 case 块，但是忘记改变字面量造成的。
-
-```js
-var a = 1;
-
-switch (a) {
-    case 1:
-        break;
-    case 2:
-        break;
-    case 1:         // duplicate literal 1
-        break;
-    default:
-        break;
-}
-```
+如果在 switch 语句中出现重复 case 标签，很有可能是开发者拷贝了一个case语句，并且忘了改标签。
 
 ## Rule Details
 
-This inspection reports any duplicated case labels on JavaScript switch statements.
+This rule is aimed at eliminating duplicate case labels in switch statements
 
 该检查报告 JavaScript switch 语句中出现重复 case 标签的情况。
+ 
+Examples of **incorrect** code for this rule:
 
-The following patterns are considered problems:
-
-以下模式被认为是有问题的：
+**错误** 代码示例：
 
 ```js
 /*eslint no-duplicate-case: 2*/
@@ -52,20 +32,9 @@ var a = 1,
 switch (a) {
     case 1:
         break;
-    case 1:      /*error Duplicate case label.*/
-        break;
     case 2:
         break;
-    default:
-        break;
-}
-
-switch (a) {
-    case "1":
-        break;
-    case "1":    /*error Duplicate case label.*/
-        break;
-    case "2":
+    case 1:         // duplicate case label
         break;
     default:
         break;
@@ -74,28 +43,64 @@ switch (a) {
 switch (a) {
     case one:
         break;
-    case one:    /*error Duplicate case label.*/
-        break;
     case 2:
+        break;
+    case one:         // duplicate case label
+        break;
+    default:
+        break;
+}
+
+switch (a) {
+    case "1":
+        break;
+    case "2":
+        break;
+    case "1":         // duplicate case label
         break;
     default:
         break;
 }
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
-以下模式被认为是没有问题的：
+**正确** 代码示例：
 
 ```js
 /*eslint no-duplicate-case: 2*/
 
-var a = 1;
+var a = 1,
+    one = 1;
 
 switch (a) {
     case 1:
         break;
     case 2:
+        break;
+    case 3:
+        break;
+    default:
+        break;
+}
+
+switch (a) {
+    case one:
+        break;
+    case 2:
+        break;
+    case 3:
+        break;
+    default:
+        break;
+}
+
+switch (a) {
+    case "1":
+        break;
+    case "2":
+        break;
+    case "3":
         break;
     default:
         break;

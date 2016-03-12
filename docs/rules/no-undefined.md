@@ -3,6 +3,7 @@ title: Rule no-undefined
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Use of `undefined` Variable (no-undefined)
 
 # 不允许使用`undefined`变量 (no-undefined)
@@ -46,42 +47,41 @@ Taking all of this into account, some style guides forbid the use of `undefined`
 综合所有，一些编码风格指南禁止使用`undefined`为值，建议改为：
 
 * Variables that should be `undefined` are simply left uninitialized.
-* Checking if a value is `undefined` should be done with `typeof`.
-* Using the `void` operator to generate the value of `undefined` if necessary.
-
 * 要使变量值为`undefined`,不初始化即可。
+* Checking if a value is `undefined` should be done with `typeof`.
 * 应该使用`typeof`检测一个值是否是`undefined`。
+* Using the `void` operator to generate the value of `undefined` if necessary.
 * 如果有必要，使用`void`操作生成`undefined`。
 
-## Examples
+## Rule Details
 
 This rule aims to eliminate the use of `undefined`, and as such, generates a warning whenever it is used.
 
 此规则的目的在于消除使用`undefined`，使用`undefined`会产生一个警告。
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
-以下模式被认为是有问题的：
+**错误** 代码示例：
 
 ```js
 /*eslint no-undefined: 2*/
 
-var foo = undefined;      /*error Unexpected use of undefined.*/
+var foo = undefined;
 
-var undefined = "foo";    /*error Unexpected use of undefined.*/
+var undefined = "foo";
 
-if (foo === undefined) {  /*error Unexpected use of undefined.*/
+if (foo === undefined) {
     // ...
 }
 
-function foo(undefined) { /*error Unexpected use of undefined.*/
+function foo(undefined) {
     // ...
 }
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
-以下模式被认为是没有问题的：
+**正确** 代码示例：
 
 ```js
 /*eslint no-undefined: 2*/

@@ -3,6 +3,7 @@ title: Rule space-before-blocks
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require Or Disallow Space Before Blocks (space-before-blocks)
 
 # 要求或禁止块之前的空格 (space-before-blocks)
@@ -24,27 +25,23 @@ This rule will enforce consistency of spacing before blocks. It is only applied 
 
 该规则将强制块之前的空格的一致性。它只在非行首的块上起作用。
 
-This rule ignores spacing which is between `=>` and a block. The spacing is handled by the `arrow-spacing` rule.
+* This rule ignores spacing which is between `=>` and a block. The spacing is handled by the `arrow-spacing` rule.
+* 该规则忽略`=>`和块之间的空格。`arrow-spacing`规则处理这些空格。
+* This rule ignores spacing which is between a keyword and a block. The spacing is handled by the `keyword-spacing` rule.
+* 该规则忽略关键字和块之间的空格。`keyword-spacing`规则处理这些空格。
 
-该规则忽略`=>`和块之间的空格。`arrow-spacing`规则处理这个空格。
+## Options
 
-This rule takes one argument. 
-If it is `"always"` then blocks must always have at least one preceding space. If `"never"`then all blocks should never have any preceding space. 
-If different spacing is desired for function blocks and keyword blocks, an optional configuration object can be passed as the rule argument to configure the cases separately.( e.g. `{ "functions": "never", "keywords": "always" }` )
+This rule takes one argument. If it is `"always"` then blocks must always have at least one preceding space. If `"never"` then all blocks should never have any preceding space. If different spacing is desired for function blocks, keyword blocks and classes, an optional configuration object can be passed as the rule argument to configure the cases separately.
+( e.g. `{ "functions": "never", "keywords": "always", classes: "always" }` )
 
-该规则有一个参数。
-
-如果为`"always"`，块语句必须总是有至少一个前置空格。
-
-如果为`"never"`，所有的块永远不会有前置空格。
-
-如果函数块和关键字块要求不同的空格类型，可以单独传递一个可选配置的对象作为该规则的参数来配置这种情况。( 例如：`{ "functions": "never", "keywords": "always" }` )
+该规则有一个参数。如果为`"always"`，块语句必须总是有至少一个前置空格。如果为`"never"`，所有的块永远不会有前置空格。如果函数块和关键字块要求不同的空格类型，可以单独传递一个可选配置的对象作为该规则的参数来配置这种情况。(比如：`{ "functions": "never", "keywords": "always", classes: "always" } `)
 
 The default is `"always"`.
 
-默认为`"always"`。
+默认为 `"always"`。
 
-### `"always"`
+### "always"
 
 The following patterns are considered problems:
 
@@ -53,23 +50,21 @@ The following patterns are considered problems:
 ```js
 /*eslint space-before-blocks: 2*/
 
-if (a){           /*error Missing space before opening brace.*/
+if (a){
     b();
 }
 
-if (a) {
-    b();
-} else{           /*error Missing space before opening brace.*/
-    c();
-}
+function a(){}
 
-function a(){}    /*error Missing space before opening brace.*/
-
-for (;;){         /*error Missing space before opening brace.*/
+for (;;){
     b();
 }
 
-try {} catch(a){} /*error Missing space before opening brace.*/
+try {} catch(a){}
+
+class Foo{
+  constructor(){}
+}
 ```
 
 The following patterns are not considered problems:
@@ -83,6 +78,13 @@ if (a) {
     b();
 }
 
+if (a) {
+    b();
+} else{ /*no error. this is checked by `keyword-spacing` rule.*/
+    c();
+}
+
+
 function a() {}
 
 for (;;) {
@@ -92,7 +94,7 @@ for (;;) {
 try {} catch(a) {}
 ```
 
-### `"never"`
+### "never"
 
 The following patterns are considered problems:
 
@@ -101,17 +103,17 @@ The following patterns are considered problems:
 ```js
 /*eslint space-before-blocks: [2, "never"]*/
 
-if (a) {           /*error Unexpected space before opening brace.*/
+if (a) {
     b();
 }
 
-function a() {}    /*error Unexpected space before opening brace.*/
+function a() {}
 
-for (;;) {         /*error Unexpected space before opening brace.*/
+for (;;) {
     b();
 }
 
-try {} catch(a) {} /*error Unexpected space before opening brace.*/
+try {} catch(a) {}
 ```
 
 The following patterns are not considered problems:
@@ -132,32 +134,36 @@ for (;;){
 }
 
 try{} catch(a){}
+
+class Foo{
+  constructor(){}
+}
 ```
 
-The following patterns are considered problems when configured `{ "functions": "never", "keywords": "always" }`:
+The following patterns are considered problems when configured `{ "functions": "never", "keywords": "always", classes: "never" }`:
 
 当配置为`{ "functions": "never", "keywords": "always" }`，以下模式被认为是有问题的：
 
 ```js
-/*eslint space-before-blocks: [2, { "functions": "never", "keywords": "always" }]*/
+/*eslint space-before-blocks: [2, { "functions": "never", "keywords": "always", classes: "never" }]*/
 /*eslint-env es6*/
 
-function a() {}    /*error Unexpected space before opening brace.*/
+function a() {}
 
-try {} catch(a){}  /*error Missing space before opening brace.*/
+try {} catch(a){}
 
-class Foo{         /*error Missing space before opening brace.*/
-  constructor() {} /*error Unexpected space before opening brace.*/
+class Foo{
+  constructor() {}
 }
 ```
 
 
-The following patterns are not considered problems when configured `{ "functions": "never", "keywords": "always" }`:
+The following patterns are not considered problems when configured `{ "functions": "never", "keywords": "always", classes: "never" }`:
 
 当配置为`{ "functions": "never", "keywords": "always" }`，以下模式被认为是没有问题的：
 
 ```js
-/*eslint space-before-blocks: [2, { "functions": "never", "keywords": "always" }]*/
+/*eslint space-before-blocks: [2, { "functions": "never", "keywords": "always", classes: "never" }]*/
 /*eslint-env es6*/
 
 for (;;) {
@@ -173,30 +179,30 @@ class Foo {
 }
 ```
 
-The following patterns are considered problems when configured `{ "functions": "always", "keywords": "never" }`:
+The following patterns are considered problems when configured `{ "functions": "always", "keywords": "never", classes: "never" }`:
 
 当配置为`{ "functions": "always", "keywords": "never" }`，以下模式被认为是有问题的：
 
 ```js
-/*eslint space-before-blocks: [2, { "functions": "always", "keywords": "never" }]*/
+/*eslint space-before-blocks: [2, { "functions": "always", "keywords": "never", classes: "never" }]*/
 /*eslint-env es6*/
 
-function a(){}      /*error Missing space before opening brace.*/
+function a(){}
 
-try {} catch(a) {}  /*error Unexpected space before opening brace.*/
+try {} catch(a) {}
 
-class Foo {         /*error Unexpected space before opening brace.*/
-  constructor(){}   /*error Missing space before opening brace.*/
+class Foo {
+  constructor(){}
 }
 ```
 
 
-The following patterns are not considered problems when configured `{ "functions": "always", "keywords": "never" }`:
+The following patterns are not considered problems when configured `{ "functions": "always", "keywords": "never", classes: "never" }`:
 
 当配置为`{ "functions": "always", "keywords": "never" }`，以下模式被认为是没有问题的：
 
 ```js
-/*eslint space-before-blocks: [2, { "functions": "always", "keywords": "never" }]*/
+/*eslint space-before-blocks: [2, { "functions": "always", "keywords": "never", classes: "never" }]*/
 /*eslint-env es6*/
 
 if (a){
@@ -210,6 +216,33 @@ class Foo{
 }
 ```
 
+The following patterns are considered problems when configured `{ "functions": "never", "keywords": "never", classes: "always" }`:
+
+当配置为`{ "functions": "never", "keywords": "never", classes: "always" }`， 以下模式被认为是有问题的：
+
+```js
+/*eslint space-before-blocks: [2, { "functions": "never", "keywords": "never", classes: "always" }]*/
+/*eslint-env es6*/
+
+class Foo{
+  constructor(){}
+}
+```
+
+
+The following patterns are not considered problems when configured `{ "functions": "never", "keywords": "never", classes: "always" }`:
+
+当配置为`{ "functions": "never", "keywords": "never", classes: "always" }`，以下模式被认为是没有问题的：
+
+```js
+/*eslint space-before-blocks: [2, { "functions": "never", "keywords": "never", classes: "always" }]*/
+/*eslint-env es6*/
+
+class Foo {
+  constructor(){}
+}
+```
+
 ## When Not To Use It
 
 You can turn this rule off if you are not concerned with the consistency of spacing before blocks or if you are using the `space-after-keywords` rule set to `"never"`.
@@ -218,7 +251,7 @@ You can turn this rule off if you are not concerned with the consistency of spac
 
 ## Related Rules
 
-* [space-after-keywords](space-after-keywords)
+* [keyword-spacing](keyword-spacing)
 * [arrow-spacing](arrow-spacing)
 * [brace-style](brace-style)
 

@@ -3,6 +3,7 @@ title: Rule max-depth
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Limit Maximum Depth (max-depth)
 
 # 限制最大深度 (max-depth)
@@ -29,7 +30,7 @@ This rule aims to reduce the complexity of your code by allowing you to configur
 
 此规则旨在通过允许你配置在一个函数中可以嵌套的最大深度来减少你的代码的复杂性。因此，如果块嵌套太深，该规则会发出警告。
 
-### Options
+## Options
 
 The default depth above which this rule will warn is `4`.  You can configure the depth as an option by using the second argument in your configuration. For example, this sets the rule as an error with a maximum depth of 10:
 
@@ -37,6 +38,10 @@ The default depth above which this rule will warn is `4`.  You can configure the
 
 ```json
 "max-depth": [2, 10]
+
+// or you can use an object property
+
+"max-depth": [2, {"maximum": 10}]
 ```
 
 The following patterns are considered problems:
@@ -49,7 +54,7 @@ The following patterns are considered problems:
 function foo() {
   for (;;) {
     if (true) {
-      if (true) { /*error Blocks are nested too deeply (3).*/
+      if (true) {
 
       }
     }

@@ -3,6 +3,7 @@ title: Rule no-sparse-arrays
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Sparse Arrays (no-sparse-arrays)
 
 # 禁用稀疏数组
@@ -37,20 +38,20 @@ This rule aims to eliminate sparse arrays that are defined by extra commas.
 
 该规则旨在消除使用额外的逗号定义的稀疏数组。
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
-以下模式被认为是有问题的：
+**错误** 代码示例：
 
 ```js
 /*eslint no-sparse-arrays: 2*/
 
-var items = [,];                 /*error Unexpected comma in middle of array.*/
-var colors = [ "red",, "blue" ]; /*error Unexpected comma in middle of array.*/
+var items = [,];
+var colors = [ "red",, "blue" ];
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
-以下模式被认为是没有问题的：
+**正确** 代码示例：
 
 ```js
 /*eslint no-sparse-arrays: 2*/

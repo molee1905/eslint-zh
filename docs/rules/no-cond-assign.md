@@ -5,6 +5,7 @@ translator: ybbjegj
 proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Assignment in Conditional Statements (no-cond-assign)
 
 # 禁止在条件语句中赋值（no-cond-assign）
@@ -30,7 +31,7 @@ This rule is aimed at eliminating ambiguous assignments in `for`, `if`, `while`,
 
 这个规则的目的在于消除 `for`，`if`， `while`，和 `do...while` 条件语句中的模棱两可的赋值。
 
-### Options
+## Options
 
 The rule takes one option, a string, which must contain one of the following values:
 
@@ -44,37 +45,38 @@ The rule takes one option, a string, which must contain one of the following val
 
 * `always`: 禁止所有的赋值。
 
-#### "except-parens"
+### except-parens
 
-This is the default option. It disallows assignments unless they are enclosed in parentheses. This option makes it possible to use common patterns, such as reassigning a value in the condition of a `while` or `do...while` loop, without causing a warning.
+The default `"except-parens"` option disallows assignment expressions unless they are enclosed in parentheses. It allows common patterns, such as reassigning a value in the condition of a `while` or `do...while` loop.
 
-这个是默认选项。它禁止出现赋值语句，除非赋值语句被圆括号括起来。这个选项可以使用普通模式，如在 `while` 或 `do...while` 循环的条件中重新分配一个值，不会引起警告。
+默认选项 `"except-parens"`禁止出现赋值语句，除非赋值语句被圆括号括起来。
+它允许使用普通模式，如在 `while` 或 `do...while` 循环的条件中赋值。
 
-The following patterns are considered problems:
+Examples of **incorrect** code for the default `"except-parens"` option:
 
-下面的模式是被认为有问题的。
+默认选项`"except-parens"`的**错误**代码示例：
 
 ```js
 /*eslint no-cond-assign: 2*/
 
 // Unintentional assignment
 var x;
-if (x = 0) {         /*error Expected a conditional expression and instead saw an assignment.*/
+if (x = 0) {
     var b = 1;
 }
 
 // Practical example that is similar to an error
 function setHeight(someNode) {
     "use strict";
-    do {             /*error Expected a conditional expression and instead saw an assignment.*/
+    do {
         someNode.height = "100px";
     } while (someNode = someNode.parentNode);
 }
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for the default `"except-parens"` option:
 
-下面的模式是被认为没有问题的。
+默认选项`"except-parens"`的**正确**代码示例：
 
 ```js
 /*eslint no-cond-assign: 2*/
@@ -102,29 +104,29 @@ function setHeight(someNode) {
 }
 ```
 
-#### "always"
+### always
 
-This option disallows all assignments in conditional statement tests. All assignments are treated as problems.
+The `"always"` option disallows assignment expressions in the test of a conditional statement.
 
 该选项禁止所有的赋值出现在条件语句中。所有的赋值都会被视为是问题。
 
-The following patterns are considered problems:
+Examples of **incorrect** code for the `"always"` option:
 
-以下模式是被认为有问题的。
+选项`"always"`的 **错误** 代码示例：
 
 ```js
 /*eslint no-cond-assign: [2, "always"]*/
 
 // Unintentional assignment
 var x;
-if (x = 0) {         /*error Unexpected assignment within an 'if' statement.*/
+if (x = 0) {
     var b = 1;
 }
 
 // Practical example that is similar to an error
 function setHeight(someNode) {
     "use strict";
-    do {             /*error Unexpected assignment within a 'do...while' statement.*/
+    do {
         someNode.height = "100px";
     } while (someNode = someNode.parentNode);
 }
@@ -132,7 +134,7 @@ function setHeight(someNode) {
 // Practical example that wraps the assignment in parentheses
 function setHeight(someNode) {
     "use strict";
-    do {             /*error Unexpected assignment within a 'do...while' statement.*/
+    do {
         someNode.height = "100px";
     } while ((someNode = someNode.parentNode));
 }
@@ -140,15 +142,15 @@ function setHeight(someNode) {
 // Practical example that wraps the assignment and tests for 'null'
 function setHeight(someNode) {
     "use strict";
-    do {             /*error Unexpected assignment within a 'do...while' statement.*/
+    do {
         someNode.height = "100px";
     } while ((someNode = someNode.parentNode) !== null);
 }
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for the `"always"` option:
 
-以下模式是被认为没有问题的。
+选项`"always"`的 **正确** 代码示例：
 
 ```js
 /*eslint no-cond-assign: [2, "always"]*/
@@ -163,6 +165,10 @@ if (x === 0) {
 ## Further Reading
 
 * [JSLint -- Unexpected assignment expression](http://jslinterrors.com/unexpected-assignment-expression/)
+
+## Related Rules
+
+* [no-extra-parens](no-extra-parens)
 
 ## Version
 

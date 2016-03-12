@@ -3,6 +3,7 @@ title: Rule no-catch-shadow
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Shadowing of Variables Inside of catch (no-catch-shadow)
 # 不允许在catch语句中遮盖变量 (no-catch-shadow)
 
@@ -28,9 +29,9 @@ This rule is aimed at preventing unexpected behavior in your program that may ar
 
 此规则旨在防止程序中的意外情况引起的IE8以及更早版本中catch语句参数和外部参数同名的bug。每当遇到catch语句参数和外部变量有相同的名字时警告。
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
-以下模式被认为是有问题的
+**错误** 代码示例：
 
 ```js
 /*eslint no-catch-shadow: 2*/
@@ -39,7 +40,7 @@ var err = "x";
 
 try {
     throw "problem";
-} catch (err) {      /*error Value of 'err' may be overwritten in IE 8 and earlier.*/
+} catch (err) {
 
 }
 
@@ -49,16 +50,18 @@ function err() {
 
 try {
     throw "problem";
-} catch (err) {      /*error Value of 'err' may be overwritten in IE 8 and earlier.*/
+} catch (err) {
 
 }
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
-以下模式被认为是没有问题的
+**正确** 代码示例：
 
 ```js
+/*eslint no-catch-shadow: 2*/
+
 var err = "x";
 
 try {

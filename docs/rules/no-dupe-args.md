@@ -5,31 +5,46 @@ translator: ybbjegj
 proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # No duplicate arguments (no-dupe-args)
 
 # 禁止重复参数（no-dupe-args）
 
 In strict mode you will receive a `SyntaxError` if a function takes multiple arguments with the same name.
-Outside of strict mode duplicate arguments will mask the value of the first argument. This rule checks for duplicate
-parameter names to help prevent that mistake.
 
-在严格模式下，如果一个函数有多个同名的参数，将会抛出 `SyntaxError`。在非严格模式下，将使用第一个参数的值。该规则通过检测重复的参数名来避免这种错误。
+在严格模式下，如果一个函数有多个同名的参数，将会抛出 `SyntaxError`。
+
+Outside of strict mode duplicate arguments will mask the value of the first argument.
+
+在非严格模式下，将使用第一个参数的值。
 
 ## Rule Details
 
-This rule prevents having duplicate param names.
+This rule prevents duplicate parameter names in a function.
 
-该规则防止出现重复的参数名。
+该规则防止函数中出现重复的参数名。
 
-For example the following code will cause the rule to warn:
+Examples of **incorrect** code for this rule:
 
-例如，下面的代码会导致规则发出警告:
+**错误** 代码示例：
 
 ```js
 /*eslint no-dupe-args: 2*/
 
-function foo(a, b, a) {               /*error Duplicate param 'a'.*/
+function foo(a, b, a) {
     console.log("which a is it?", a);
+}
+```
+
+Examples of **correct** code for this rule:
+
+**正确** 代码示例：
+
+```js
+/*eslint no-dupe-args: 2*/
+
+function foo(a, b, c) {
+    console.log(a, b, c);
 }
 ```
 

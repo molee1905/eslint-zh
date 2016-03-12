@@ -3,6 +3,7 @@ title: Rule quote-props
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Quoting Style for Property Names (quote-props)
 
 # 属性名称的引号风格 (quote-props)
@@ -58,7 +59,7 @@ This rule aims to enforce use of quotes in property names and as such will flag 
 
 该规则旨在强制引号在属性名种的使用，因此，该规则将标记任何没有使用引号的属性(默认行为)。
 
-### Options
+## Options
 
 There are four behaviors for this rule: `"always"` (default), `"as-needed"`, `"consistent"` and `"consistent-as-needed"`. You can define these options in your configuration as:
 
@@ -70,7 +71,7 @@ There are four behaviors for this rule: `"always"` (default), `"as-needed"`, `"c
 }
 ```
 
-#### always
+### "always"
 
 When configured with `"always"` as the first option (the default), quoting for all properties will be enforced. Some believe that ensuring property names in object literals are always wrapped in quotes is generally a good idea, since [depending on the property name you may need to quote them anyway](https://mathiasbynens.be/notes/javascript-properties). Consider this example:
 
@@ -116,8 +117,8 @@ When configured with `"always"` as the first option (the default), quoting for a
 /*eslint quote-props: [2, "always"]*/
 
 var object = {
-    foo: "bar",         /*error Unquoted property `foo` found.*/
-    baz: 42,            /*error Unquoted property `baz` found.*/
+    foo: "bar",
+    baz: 42,
     "qux-lorem": true
 };
 ```
@@ -149,7 +150,7 @@ var object3 = {
 };
 ```
 
-#### as-needed
+### "as-needed"
 
 When configured with `"as-needed"` as the first option, quotes will be enforced when they are strictly required, and unnecessary quotes will cause warnings. The following patterns are considered problems:
 
@@ -159,10 +160,10 @@ When configured with `"as-needed"` as the first option, quotes will be enforced 
 /*eslint quote-props: [2, "as-needed"]*/
 
 var object = {
-    "a": 0,    /*error Unnecessarily quoted property `a` found.*/
-    "0": 0,    /*error Unnecessarily quoted property `0` found.*/
-    "true": 0, /*error Unnecessarily quoted property `true` found.*/
-    "null": 0  /*error Unnecessarily quoted property `null` found.*/
+    "a": 0,
+    "0": 0,
+    "true": 0,
+    "null": 0
 };
 ```
 
@@ -195,7 +196,7 @@ var object3 = {
 };
 ```
 
-When the `"as-needed"` mode is selected, an additional `keywords` option can be provided. This flag indicates whether language keywords can be used unquoted as properties. By default it is set to `false`.
+When the `"as-needed"` mode is selected, an additional `keywords` option can be provided. This flag indicates whether language keywords should be quoted as properties. By default it is set to `false`.
 
 当`"as-needed"`方式被选用时，可提供一个额外的`keywords`选项。此标记指示关键字作为属性是否可以不用引号。默认情况下它被设置为`false`。
 
@@ -213,8 +214,8 @@ When `keywords` is set to `true`, the following patterns become problems:
 /*eslint quote-props: [2, "as-needed", { "keywords": true }]*/
 
 var x = {
-    while: 1,       /*error Unquoted reserved word `while` used as key.*/
-    volatile: "foo" /*error Unquoted reserved word `volatile` used as key.*/
+    while: 1,
+    volatile: "foo"
 };
 ```
 
@@ -259,7 +260,7 @@ When `numbers` is set to `true`, the following patterns become problems:
 /*eslint quote-props: [2, "as-needed", { "numbers": true }]*/
 
 var x = {
-    100: 1 /*error Unquoted number literal `100` used as key.*/
+    100: 1
 }
 ```
 
@@ -273,7 +274,7 @@ var x = {
 }
 ```
 
-#### consistent
+### "consistent"
 
 When configured with `"consistent"`, the patterns below are considered problems. Basically `"consistent"` means all or no properties are expected to be quoted, in other words quoting style can't be mixed within an object. Please note the latter situation (no quotation at all) isn't always possible as some property names require quoting.
 
@@ -282,13 +283,13 @@ When configured with `"consistent"`, the patterns below are considered problems.
 ```js
 /*eslint quote-props: [2, "consistent"]*/
 
-var object1 = {        /*error Inconsistently quoted property `baz` found.*/ /*error Inconsistently quoted property `qux-lorem` found.*/
+var object1 = {
     foo: "bar",
     "baz": 42,
     "qux-lorem": true
 };
 
-var object2 = {        /*error Inconsistently quoted property `baz` found.*/
+var object2 = {
     'foo': 'bar',
     baz: 42
 };
@@ -318,7 +319,7 @@ var object3 = {
 };
 ```
 
-#### consistent-as-needed
+### "consistent-as-needed"
 
 When configured with `"consistent-as-needed"`, the behavior is similar to `"consistent"` with one difference. Namely, properties' quoting should be consistent (as in `"consistent"`) but whenever all quotes are redundant a warning is raised. In other words if at least one property name has to be quoted (like `qux-lorem`) then all property names must be quoted, otherwise no properties can be quoted. The following patterns are considered problems:
 
@@ -327,13 +328,13 @@ When configured with `"consistent-as-needed"`, the behavior is similar to `"cons
 ```js
 /*eslint quote-props: [2, "consistent-as-needed"]*/
 
-var object1 = {         /*error Inconsistently quoted property `baz` found.*/ /*error Inconsistently quoted property `qux-lorem` found.*/
+var object1 = {
     foo: "bar",
     "baz": 42,
     "qux-lorem": true
 };
 
-var object2 = {         /*error Properties shouldn't be quoted as all quotes are redundant.*/
+var object2 = {
     'foo': 'bar',
     'baz': 42
 };
@@ -375,7 +376,7 @@ When `keywords` is set to `true`, the following patterns are considered problems
 ```js
 /*eslint quote-props: [2, "consistent-as-needed", { "keywords": true }]*/
 
-var x = {           /*error Properties should be quoted as `while` is a reserved word.*/ /*error Properties should be quoted as `volatile` is a reserved word.*/
+var x = {
     while: 1,
     volatile: "foo"
 };

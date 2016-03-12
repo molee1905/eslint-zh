@@ -3,6 +3,7 @@ title: Rule no-undef-init
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Initializing to undefined (no-undef-init)
 
 # 不允许初始化变量值为undefined (no-undef-init)
@@ -36,21 +37,21 @@ This rule aims to eliminate variable declarations that initialize to `undefined`
 
 此规则旨在限制变量申明明后被初始化为`undefined`.
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
-以下模式被认为是有问题的：
+**错误** 代码示例：
 
 ```js
 /*eslint no-undef-init: 2*/
 /*eslint-env es6*/
 
-var foo = undefined; /*error It's not necessary to initialize 'foo' to undefined.*/
-let bar = undefined; /*error It's not necessary to initialize 'bar' to undefined.*/
+var foo = undefined;
+let bar = undefined;
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
-以下模式被认为是没有问题的：
+**正确** 代码示例：
 
 ```js
 /*eslint no-undef-init: 2*/

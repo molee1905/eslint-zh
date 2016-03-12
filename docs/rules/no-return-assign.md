@@ -3,9 +3,10 @@ title: Rule no-return-assign
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Assignment in return Statement (no-return-assign)
 
-#禁止给返回语句赋值
+# 禁止给返回语句赋值 (no-return-assign)
 
 One of the interesting, and sometimes confusing, aspects of JavaScript is that assignment can happen at almost any point. Because of this, an errant equals sign can end up causing assignment when the true intent was to do a comparison. This is especially true when using a `return` statement. For example:
 
@@ -32,7 +33,7 @@ This rule aims to eliminate assignments from `return` statements. As such, it wi
 
 此规则目的在于从`return`语句中移除赋值。因此，每当在`return`中发现赋值它会给出警告。
 
-### Options
+## Options
 
 The rule takes one option, a string, which must contain one of the following values:
 
@@ -43,7 +44,7 @@ The rule takes one option, a string, which must contain one of the following val
 * `always`: Disallow all assignments.
 * `always`：禁止所有赋值
 
-#### "except-parens"
+### "except-parens"
 
 This is the default option.
 It disallows assignments unless they are enclosed in parentheses.
@@ -58,11 +59,11 @@ The following patterns are considered problems:
 /*eslint no-return-assign: 2*/
 
 function doSomething() {
-    return foo = bar + 2; /*error Return statement should not contain assignment.*/
+    return foo = bar + 2;
 }
 
 function doSomething() {
-    return foo += 2;      /*error Return statement should not contain assignment.*/
+    return foo += 2;
 }
 ```
 
@@ -86,7 +87,7 @@ function doSomething() {
 }
 ```
 
-#### "always"
+### "always"
 
 This option disallows all assignments in `return` statements.
 All assignments are treated as problems.
@@ -101,15 +102,15 @@ The following patterns are considered problems:
 /*eslint no-return-assign: [2, "always"]*/
 
 function doSomething() {
-    return foo = bar + 2;   /*error Return statement should not contain assignment.*/
+    return foo = bar + 2;
 }
 
 function doSomething() {
-    return foo += 2;        /*error Return statement should not contain assignment.*/
+    return foo += 2;
 }
 
 function doSomething() {
-    return (foo = bar + 2); /*error Return statement should not contain assignment.*/
+    return (foo = bar + 2);
 }
 ```
 

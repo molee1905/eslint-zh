@@ -3,6 +3,7 @@ title: Rule no-unexpected-multiline
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Avoid unexpected multiline expressions (no-unexpected-multiline)
 
 # 避免意外的多行表达式 (no-unexpected-multiline)
@@ -16,12 +17,19 @@ The rules for ASI are relatively straightforward: In short, as once described by
 ASI的规则是相对简单的：简而言之，正如Isaac Schlueter曾经描述的那样，一个`\n`字符总是一个语句的结尾(像分号一样)，除非下面之一为true
 
 1. The statement has an unclosed paren, array literal, or object literal or ends in some other way that is not a valid way to end a statement. (For instance, ending with `.` or `,`.)
+
 1. 该语句有一个没有闭合的括号，数组或对象或其他某种方式，不是有效结束一个语句的方式。（比如，以`.` 或 `,`结尾）
+
 2. The line is `--` or `++` (in which case it will decrement/increment the next token.)
+
 2. 该行市`--` 或 `++`（在这种情况下它将减量/增量的下一个标记）
+
 3. It is a `for()`, `while()`, `do`, `if()`, or `else`, and there is no `{`
+
 3. 它是个 `for()`， `while()`，`do`， `if()`，或 `else`，没有`{`
+
 4. The next line starts with `[`, `(`, `+`, `*`, `/`, `-`, `,`, `.`, or some other binary operator that can only be found between two tokens in a single expression.
+
 4. 下一行以`[`，`(`， `+`， `*`， `/`， `-`， `,`， `.`或一些其他在单个表达式中两个标记之间的二元操作符
 
 This particular rule aims to spot scenarios where a newline looks like it is ending a statement, but is not.
@@ -32,23 +40,30 @@ This rule is aimed at ensuring that two unrelated consecutive lines are not acci
 
 该规则旨在保证两个无关的连续的行不被意外的解释为单个表达式。
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
-以下模式被认为是有问题的：
+**错误** 代码示例：
 
 ```js
 /*eslint no-unexpected-multiline: 2*/
 
 var foo = bar
-(1 || 2).baz();               /*error Unexpected newline between function and ( of function call.*/
+(1 || 2).baz();
 
 var hello = 'world'
-[1, 2, 3].forEach(addNumber); /*error Unexpected newline between object and [ of property access.*/
+[1, 2, 3].forEach(addNumber);
+
+let x = function() {}
+`hello`
+
+let x = function() {}
+x
+`hello`
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
-以下模式被认为是没有问题的：
+**正确** 代码示例：
 
 ```js
 /*eslint no-unexpected-multiline: 2*/
@@ -64,6 +79,12 @@ var hello = 'world';
 
 var hello = 'world'
 void [1, 2, 3].forEach(addNumber);
+
+let x = function() {};
+`hello`
+
+let tag = function() {}
+tag `hello`
 ```
 
 ## When Not To Use It

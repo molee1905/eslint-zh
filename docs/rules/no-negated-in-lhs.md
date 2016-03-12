@@ -3,6 +3,7 @@ title: Rule no-negated-in-lhs
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow negated left operand of `in` operator (no-negated-in-lhs)
 
 # 禁止`in`操作符的否定的左操作数
@@ -39,21 +40,21 @@ if(('' + !a) in b) {
 }
 ```
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
-以下模式被认为是有问题的：
+**错误** 代码示例：
 
 ```js
 /*eslint no-negated-in-lhs: 2*/
 
-if(!a in b) {       /*error The `in` expression's left operand is negated*/
+if(!a in b) {
     // do something
 }
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
-以下模式被认为是没有问题的：
+**正确** 代码示例：
 
 ```js
 /*eslint no-negated-in-lhs: 2*/

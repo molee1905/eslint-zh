@@ -3,8 +3,9 @@ title: Rule no-warning-comments
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Warning Comments (no-warning-comments)
-＃ 禁止警告注释(no-warning-comments)
+＃ 禁止警告注释 (no-warning-comments)
 
 Often code is marked during development process for later work on it or with additional thoughts. Examples are typically `// TODO: do something` or `// FIXME: this is not a good idea`. These comments are a warning signal, that there is something not production ready in your code. Most likely you want to fix it or remove the comments before you roll out your code with a good feeling.
 
@@ -60,10 +61,10 @@ The following patterns are considered problems:
 ```
 /*eslint no-warning-comments: [2, { "terms": ["todo", "fixme", "any other term"], "location": "anywhere" }]*/
 
-// TODO: this                          /*error Unexpected todo comment.*/
-// todo: this too                      /*error Unexpected todo comment.*/
-// Even this: TODO                     /*error Unexpected todo comment.*/
-/*                                     /*error Unexpected todo comment.*/ /*error Unexpected fixme comment.*/ /*Unexpected any other term comment.*/ /*
+// TODO: this
+// todo: this too
+// Even this: TODO
+/* /*
  * The same goes for this TODO comment
  * Or a fixme
  * as well as any other term
@@ -88,7 +89,7 @@ These patterns would not be considered problems:
 
 ```
 
-## Rule Options
+## Options
 
 ```json
 "no-warning-comments": [<enabled>, { "terms": <terms>, "location": <location> }]
@@ -101,58 +102,58 @@ These patterns would not be considered problems:
 * `location`: optional string that configures where in your comments to check for matches. Defaults to `"start"`.
 * `location`： 可选字符串来配置匹配注释中的检测位置。
 
-## When not to use it
+### Examples
 
-* If you have a large code base that was not developed with a policy to not use such warning terms, you might get hundreds of warnings / errors which might be contra-productive if you can't fix all of them (e.g. if you don't get the time to do it) as you might overlook other warnings / errors or get used to many of them and don't pay attention on it anymore.
+* Rule configured to warn on matches and search the complete comment, not only the start of it. Note that the `term` configuration is omitted to use the defaults terms.
 
-* 如果你有一个大型的代码，基于没有用此规则进行开发，不使用这种警告条款，你可能会得到数以百计的警告/错误，它可能会降低生产质量如果你不能修复所有这些问题(例如如果你没有时间去做它)，因此你可能会忽略其他警告/错误或者习惯它们中的大部分而不会再注意它们。
-
-* Same reason as the point above: You shouldn't configure terms that are used very often (e.g. central parts of the native language used in your comments).
-* 正如以上所说的一些原因：你不能配置那些经常被使用的条款(例如中央部分的注释中使用的本地语言)
-
-## Further reading
-
-### More examples of valid configurations
-
-1. Rule configured to warn on matches and search the complete comment, not only the start of it. Note that the `term` configuration is omitted to use the defaults terms.
-
-1. 用于警告的规则匹配和搜索完整的注释,而不仅是它的开始。注意`term`的配置被省略使用默认条款。
+* 用于警告的规则匹配和搜索完整的注释,而不仅是它的开始。注意`term`的配置被省略使用默认条款。
 
    ```json
    "no-warning-comments": [1, { "location": "anywhere" }]
    ```
 
-2. Rule configured to warn on matches of the term `bad string` at the start of comments. Note that the `location` configuration is omitted to use the default location.
+* Rule configured to warn on matches of the term `bad string` at the start of comments. Note that the `location` configuration is omitted to use the default location.
 
-2. 规则配置到 `bad string` 在注释的开始时发出警告。注意`location`配置被省略使用默认位置。
+* 规则配置到 `bad string` 在注释的开始时发出警告。注意`location`配置被省略使用默认位置。
 
    ```json
    "no-warning-comments": [1, { "terms": ["bad string"] }]
    ```
 
-3. Rule configured to warn with error on matches of the default terms at the start of comments. Note that the complete configuration object (that normally holds `terms` and/or `location`) can be omitted for simplicity.
+* Rule configured to warn with error on matches of the default terms at the start of comments. Note that the complete configuration object (that normally holds `terms` and/or `location`) can be omitted for simplicity.
 
-3. 配置的规则在注释的开始位置匹配默认条款而给出错误警告。请注意，完整的配置对象（通常有`terms` 和/或者 `location`）可以简化省略。
+* 配置的规则在注释的开始位置匹配默认条款而给出错误警告。请注意，完整的配置对象（通常有`terms` 和/或者 `location`）可以简化省略。
 
    ```json
    "no-warning-comments": [2]
    ```
 
-4. Rule configured to warn on matches of the default terms at the start of comments. Note that the complete configuration object (as already seen in the example above) and even the square brackets can be omitted for simplicity.
+* Rule configured to warn on matches of the default terms at the start of comments. Note that the complete configuration object (as already seen in the example above) and even the square brackets can be omitted for simplicity.
 
-4. 配置的规则在注释的开始位置匹配默认条款而给出警告。请注意，为简化起见,完整的配置对象（以上例子中看到的）甚至是方括号可以省略。
+* 配置的规则在注释的开始位置匹配默认条款而给出警告。请注意，为简化起见,完整的配置对象（以上例子中看到的）甚至是方括号可以省略。
 
    ```json
    "no-warning-comments": 1
    ```
 
-5. Rule configured to warn on matches of the specified terms at any location in the comments. Note that you can use as many terms as you want.
+* Rule configured to warn on matches of the specified terms at any location in the comments. Note that you can use as many terms as you want.
 
-5. 规则配置为在评论中的任何位置匹配指定的条款时发出警告。请注意，你可以使用任意多个条款。
+* 规则配置为在评论中的任何位置匹配指定的条款时发出警告。请注意，你可以使用任意多个条款。
 
    ```json
    "no-warning-comments": [1, { "terms": ["really any", "term", "can be matched"], "location": "anywhere" }]
    ```
+
+## When Not To Use It
+
+* If you have a large code base that was not developed with a policy to not use such warning terms, you might get hundreds of warnings / errors which might be contra-productive if you can't fix all of them (e.g. if you don't get the time to do it) as you might overlook other warnings / errors or get used to many of them and don't pay attention on it anymore.
+
+* 如果你有一个大型的代码，基于没有用此规则进行开发，不使用这种警告条款，你可能会得到数以
+百计的警告/错误，它可能会降低生产质量如果你不能修复所有这些问题(例如如果你没有时间去做它)，因此你可能会忽略其他警告/错误或者习惯它们中的大部分而不会再注意它们。
+
+* Same reason as the point above: You shouldn't configure terms that are used very often (e.g. central parts of the native language used in your comments).
+
+正如以上所说的一些原因：你不能配置那些经常被使用的条款(例如中央部分的注释中使用的本地语言)。
 
 ## Version
 

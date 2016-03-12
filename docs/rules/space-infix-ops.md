@@ -3,6 +3,7 @@ title: Rule space-infix-ops
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require Spaces Around Infix Operators (space-infix-ops)
 
 # 要求中缀操作符周围有空格 (space-infix-ops)
@@ -37,7 +38,7 @@ This rule is aimed at ensuring there are spaces around infix operators.
 
 此规则旨在确保中缀运算符周围有空格。
 
-### Options
+## Options
 
 This rule accepts a single options argument with the following defaults:
 
@@ -65,19 +66,19 @@ The following patterns are considered problems:
 /*eslint space-infix-ops: 2*/
 /*eslint-env es6*/
 
-a+b                   /*error Infix operators must be spaced.*/
+a+b
 
-a+ b                  /*error Infix operators must be spaced.*/
+a+ b
 
-a +b                  /*error Infix operators must be spaced.*/
+a +b
 
-a?b:c                 /*error Infix operators must be spaced.*/
+a?b:c
 
-const a={b:1};        /*error Infix operators must be spaced.*/
+const a={b:1};
 
-var {a=0}=bar;        /*error Infix operators must be spaced.*/
+var {a=0}=bar;
 
-function foo(a=0) { } /*error Infix operators must be spaced.*/
+function foo(a=0) { }
 ```
 
 The following patterns are not considered problems:

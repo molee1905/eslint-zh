@@ -3,6 +3,7 @@ title: Rule no-restricted-syntax
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow certain syntax (no-restricted-syntax)
 
 # 禁用特定的语法 (no-restricted-syntax)
@@ -21,7 +22,7 @@ This rule is aimed at eliminating certain syntax from your JavaScript. As such, 
 
 该规则目的是从你的Javascript代码中消除特定的语法。因此，如果它发现一个节点类型是该规则的选项所限制的，该规则将发出警告。
 
-### Options
+## Options
 
 This rule takes a list of strings where strings denote the node types:
 
@@ -42,11 +43,11 @@ The following patterns are considered problems:
 ```js
 /* eslint no-restricted-syntax: [2, "FunctionExpression", "WithStatement"] */
 
-with (me) {                       /*error Using "WithStatement" is not allowed.*/
+with (me) {
     dontMess();
 }
 
-var doSomething = function () {}; /*error Using "FunctionExpression" is not allowed.*/
+var doSomething = function () {};
 ```
 
 The following patterns are not considered problems:

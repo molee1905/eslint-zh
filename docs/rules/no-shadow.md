@@ -3,6 +3,7 @@ title: Rule no-shadow
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Shadowing (no-shadow)
 
 # 不允许覆盖 (no-shadow)
@@ -28,9 +29,9 @@ This rule aims to eliminate shadowed variable declarations.
 
 此规则旨在消除变量声明覆盖。
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
-以下模式被认为是有问题的：
+**错误** 代码示例：
 
 ```js
 /*eslint no-shadow: 2*/
@@ -38,24 +39,24 @@ The following patterns are considered problems:
 
 var a = 3;
 function b() {
-    var a = 10;       /*error a is already declared in the upper scope.*/
+    var a = 10;
 }
 
 var b = function () {
-    var a = 10;       /*error a is already declared in the upper scope.*/
+    var a = 10;
 }
 
-function b(a) {       /*error a is already declared in the upper scope.*/
+function b(a) {
     a = 10;
 }
 b(a);
 
 if (true) {
-    let a = 5;        /*error a is already declared in the upper scope.*/
+    let a = 5;
 }
 ```
 
-### Options
+## Options
 
 This rule takes one option, an object, with properties `"builtinGlobals"`, `"hoist"` and `"allow"`.
 
@@ -63,66 +64,63 @@ This rule takes one option, an object, with properties `"builtinGlobals"`, `"hoi
 
 ```json
 {
-    "no-shadow": [2, {"builtinGlobals": false, "hoist": "functions", "allow": []}]
+    "no-shadow": [2, { "builtinGlobals": false, "hoist": "functions", "allow": [] }]
 }
 ```
 
-#### builtinGlobals
+### builtinGlobals
 
-`false` by default.
-If this is `true`, this rule checks with built-in global variables such as `Object`, `Array`, `Number`, ...
+The `builtinGlobals` option is `false` by default.
+If it is `true`, the rule prevents shadowing of built-in global variables: `Object`, `Array`, `Number`, and so on.
 
 默认值是`false`，如果builtinGlobals是`true`，会检测内置对象如`Object`,`Array`,`Number`, ...
 
+Examples of **incorrect** code for the `{ "builtinGlobals": true }` option:
 
-When `{"builtinGlobals": true}`, the following patterns are considered problems:
-
-当`{"builtinGlobals": true}`，以下写法错误：
+选项`{"builtinGlobals": true}`的 **错误** 代码示例：
 
 ```js
 /*eslint no-shadow: [2, { "builtinGlobals": true }]*/
 
 function foo() {
-    var Object = 0; /*error Object is already declared in the upper scope.*/
+    var Object = 0;
 }
 ```
 
-#### hoist
+### hoist
 
-The option has three settings:
+The `hoist` option has three settings:
 
 此配置项有三个值：
 
-* `all` - reports all shadowing before the outer variables/functions are defined.
-* `all`-在被覆盖之前呈报函数和变量的覆盖错误。
 * `functions` (by default) - reports shadowing before the outer functions are defined.
 * `functions`(默认值)-在被覆盖前呈报函数覆盖错误。
+* `all` - reports all shadowing before the outer variables/functions are defined.
+* `all`-在被覆盖之前呈报函数和变量的覆盖错误。
 * `never` - never report shadowing before the outer variables/functions are defined.
 * `never`-不呈报覆盖错误。
 
 
-##### { "hoist": "all" }
+#### hoist: functions
 
-With `"hoist"` set to `"all"`, both `let a` and `let b` in the `if` statement are considered problems.
+Examples of **incorrect** code for the default `{ "hoist": "functions" }` option:
 
 当`"hoist"`配置项为`"all"`，在条件语句中`let a`和`let b`是不恰当的。
 
 ```js
-/*eslint no-shadow: [2, { "hoist": "all" }]*/
+/*eslint no-shadow: [2, { "hoist": "functions" }]*/
 /*eslint-env es6*/
 
 if (true) {
-    let a = 3;    /*error a is already declared in the upper scope.*/
-    let b = 6;    /*error b is already declared in the upper scope.*/
+    let b = 6;
 }
 
-let a = 5;
 function b() {}
 ```
 
-##### { "hoist": "functions" } (default)
+Although `let b` in the `if` statement is before the *function* declaration in the outer scope, it is incorrect.
 
-With `"hoist"` set to `"functions"`, `let b` is considered a warning. But `let a` in the `if` statement is not considered a warning, because it is before `let a` of the outer scope.
+Examples of **correct** code for the default `{ "hoist": "functions" }` option:
 
 当`"hoist"`配置项为`"functions"`，在条件语句中有`let a`和`let b`会报警告。
 
@@ -133,18 +131,37 @@ With `"hoist"` set to `"functions"`, `let b` is considered a warning. But `let a
 
 if (true) {
     let a = 3;
-    let b = 6;    /*error b is already declared in the upper scope.*/
+}
+
+let a = 5;
+```
+
+Because `let a` in the `if` statement is before the *variable* declaration in the outer scope, it is correct.
+
+#### hoist: all
+
+Examples of **incorrect** code for the `{ "hoist": "all" }` option:
+
+当`"hoist"`设置为`"never"`,条件语句中有`let a`和`let b`不会报警告，因为他们在外面声明了。
+
+```js
+/*eslint no-shadow: [2, { "hoist": "all" }]*/
+/*eslint-env es6*/
+
+if (true) {
+    let a = 3;
+    let b = 6;
 }
 
 let a = 5;
 function b() {}
 ```
 
-##### { "hoist": "never" }
+#### hoist: never
 
-With `"hoist"` set to `"never"`, neither `let a` nor `let b` in the `if` statement are considered problems, because they are before the declarations of the outer scope.
+Examples of **correct** code for the `{ "hoist": "never" }` option:
 
-当`"hoist"`设置为`"never"`,条件语句中有`let a`和`let b`不会报警告，因为他们在外面声明了。
+此配置项是一个数组,数组里的标示被允许覆盖
 
 ```js
 /*eslint no-shadow: [2, { "hoist": "never" }]*/
@@ -159,25 +176,25 @@ let a = 5;
 function b() {}
 ```
 
-#### allow
+Because `let a` and `let b` in the `if` statement are before the declarations in the outer scope, they are correct.
 
-The option is an array of identifier names to be allowed (ie. "resolve", "reject", "done", "cb" etc.):
+因为在`if`语句中`let a` 和 `let b` 在外层作用域声明语句之前，所以是正确的。
 
-此配置项是一个数组,数组里的标示被允许覆盖
 
-```json
-{
-    "rules": {
-        "no-shadow": [2, {"allow": ["done"]}]
-    }
-}
-```
+### allow
 
-Allows for the following code to be valid:
+The `allow` option is an array of identifier names for which shadowing is allowed. For example, `"resolve"`, `"reject"`, `"done"`, `"cb"`.
 
-下面的代码是有效的：
+`allow`选项是个标识符名称的数组，以允许他们被重写。例如：`"resolve"`， `"reject"`， `"done"`， `"cb"`。
+
+Examples of **correct** code for the `{ "allow": ["done"] }` option:
+
+选项`{ "allow": ["done"] }`的 **正确**代码示例：
 
 ```js
+/*eslint no-shadow: [2, { "allow": ["done"] }]*/
+/*eslint-env es6*/
+
 import async from 'async';
 
 function foo(done) {
@@ -194,6 +211,10 @@ foo(function (err, result) {
 ## Further Reading
 
 * [Variable Shadowing](http://en.wikipedia.org/wiki/Variable_shadowing)
+
+## Related Rules
+
+* [no-shadow-restricted-names](no-shadow-restricted-names)
 
 ## Version
 

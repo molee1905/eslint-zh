@@ -3,6 +3,7 @@ title: Rule no-multi-spaces
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow multiple spaces (no-multi-spaces)
 
 # 禁止多个空格 (no-multi-spaces)
@@ -44,15 +45,15 @@ The following patterns are considered problems:
 ```js
 /*eslint no-multi-spaces: 2*/
 
-var a =  1;            /*error Multiple spaces found before '1'.*/
+var a =  1;
 
-if(foo   === "bar") {} /*error Multiple spaces found before '==='.*/
+if(foo   === "bar") {}
 
-a <<  b                /*error Multiple spaces found before 'b'.*/
+a <<  b
 
-var arr = [1,  2];     /*error Multiple spaces found before '2'.*/
+var arr = [1,  2];
 
-a ?  b: c              /*error Multiple spaces found before 'b'.*/
+a ?  b: c
 ```
 
 The following patterns are not considered problems:
@@ -73,7 +74,7 @@ var arr = [1, 2];
 a ? b: c
 ```
 
-### Exceptions
+## Options
 
 Some rules, like key-spacing in one of its alignment modes, might require multiple spaces in some instances. To support this case, this rule accepts an options object with a property named `exceptions`. The `exceptions` object expects property names to be AST node types as defined by [ESTree](https://github.com/estree/estree). The easiest way to determine the node types for `exceptions` is to use the [online demo](http://eslint.org/parser).
 
@@ -82,6 +83,8 @@ Some rules, like key-spacing in one of its alignment modes, might require multip
 You can ignore certain parts of your code by setting node types as properties on the `exceptions` object with a value of `true`. By default, all node types are `false` except for `Property`, which is `true` by default in order to skip properties.
 
 你可以忽略代码中主要部分通过设置`exceptions`对象中属性的节点类型为`true`值。默认的，所有的节点类型值是`false`除了`Property`，`Property`默认值为`true`是为了跳过属性。
+
+### exceptions
 
 With this option, The following patterns are not considered problems:
 
@@ -111,7 +114,7 @@ The default `Property` exception can be disabled by setting it to `false`, so th
 /* eslint key-spacing: [2, { align: "value" }] */
 
 var obj = {
-    first:  "first",  /*error Multiple spaces found before '"first"'.*/
+    first:  "first",
     second: "second"
 };
 ```

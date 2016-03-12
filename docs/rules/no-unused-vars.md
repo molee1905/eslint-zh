@@ -3,6 +3,7 @@ title: Rule no-unused-vars
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Unused Variables (no-unused-vars)
 
 # 禁用未使用过变量 (no-unused-vars)
@@ -15,6 +16,7 @@ Variables that are declared and not used anywhere in the code are most likely an
 
 This rule is aimed at eliminating unused variables, functions and variables in parameters of functions, as such, warns when one is found.
 
+<<<<<<< HEAD
 此规则旨在排查是否存在未使用过的变量，方法和方法中的参数名，当发现存在，报警告。
 
 A variable is considered to be used when it:
@@ -27,40 +29,51 @@ A variable is considered to be used when it:
 2. 可读 (`var y = x`)
 1. Is passed into a function as an argument (`doSomething(x)`)
 2. 传入函数中作为argument对象
+=======
+A variable is considered to be used if any of the following are true:
 
-A variable is *not* considered read if it is only ever assigned to (`var x = 5`) or declared.
+* It represents a function that is called (`doSomething()`)
+* It is read (`var y = x`)
+* It is passed into a function as an argument (`doSomething(x)`)
+>>>>>>> eslint/master
 
+A variable is *not* considered to be used if it is only ever assigned to (`var x = 5`) or declared.
+
+<<<<<<< HEAD
 一个变量仅仅是被复制过(`var x = 5`)或者是被申明过，则认为它是不可读。
 
 The following patterns are considered problems:
+=======
+Examples of **incorrect** code for this rule:
+>>>>>>> eslint/master
 
 以下模式被认为是有问题的：
 
 ```js
 /*eslint no-unused-vars: 2*/
-/*global some_unsed_var */   /*error "some_unsed_var" is defined but never used*/
+/*global some_unused_var */
 
 //It checks variables you have defined as global
-some_unsed_var = 42;
+some_unused_var = 42;
 
-var x;                       /*error "x" is defined but never used*/
+var x;
 
-var y = 10;                  /*error "y" is defined but never used*/
+var y = 10;
 y = 5;
 
 // By default, unused arguments cause warnings.
-(function(foo) {             /*error "foo" is defined but never used*/
+(function(foo) {
     return 5;
 })();
 
 // Unused recursive functions also cause warnings.
-function fact(n) {           /*error "fact" is defined but never used*/
+function fact(n) {
     if (n < 2) return 1;
     return n * fact(n - 1);
 }
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
 以下模式被认为是没有问题的：
 
@@ -82,11 +95,17 @@ myFunc(function foo() {
 
 ### Exporting Variables
 
-In environments outside of CommonJS or ECMAScript modules, you may use `var` to create a global variable that may be used by other scripts. You can use the `/* exported variableName */` comment block to indicate that this variable is being exported and therefore should not be considered unused. Note that `/* exported */` has no effect when used with the `node` or `commonjs` environments or when `ecmaFeatures.modules` is true.
+In environments outside of CommonJS or ECMAScript modules, you may use `var` to create a global variable that may be used by other scripts. You can use the `/* exported variableName */` comment block to indicate that this variable is being exported and therefore should not be considered unused. Note that `/* exported */` has no effect when used with the `node` or `commonjs` environments or when `ecmaFeatures.modules` or `ecmaFeatures.globalReturn` are true.
 
+## Options
+
+<<<<<<< HEAD
 在CommonJS或者ECMAScript模块外部，可用`var`创建一个被其他模块代码引用的变量。你也可以用`/* exported variableName */`注释快表明此变量已导出，因此此变量不会被认为是未被使用过的。需要提醒，在`node`环境，`commonjs`环境，还有当`ecmaFeatures.modules`为true时，`/* exported */`注释快导出变量无效。
 
 ### Options
+=======
+This rule takes one argument which can be an string or an object. The string settings are the same as those of the `vars` property (explained below).
+>>>>>>> eslint/master
 
 By default this rule is enabled with `all` option for variables and `after-used` for arguments.
 
@@ -95,20 +114,21 @@ By default this rule is enabled with `all` option for variables and `after-used`
 ```json
 {
     "rules": {
-        "no-unused-vars": [2, {"vars": "all", "args": "after-used"}]
+        "no-unused-vars": [2, { "vars": "all", "args": "after-used" }]
     }
 }
 ```
 
-#### vars
+### vars
 
-This option has two settings:
+The `vars` option has two settings:
 
 此配置项有两个值：
 
 * `all` checks all variables for usage, including those in the global scope. This is the default setting.
 * `local` checks only that locally-declared variables are used but will allow global variables to be unused.
 
+<<<<<<< HEAD
 * `all`检测所有变量，包括全局环境中的变量。这是默认值。
 * `local`仅仅检测本作用域中申明的变量是否使用，允许不使用全局环境中的变量。
 
@@ -128,46 +148,77 @@ This option has three settings:
 * `none`-不检查参数
 
 ##### with `{ "args": "all" }`
+=======
+### varsIgnorePattern
+
+The `varsIgnorePattern` option specifies exceptions not to check for usage: variables whose names match a regexp pattern. For example, variables whose names contain `ignored` or `Ignored`.
+
+Examples of **correct** code for the `{ "varsIgnorePattern": "[iI]gnored" }` option:
+>>>>>>> eslint/master
 
 ```js
-/*eslint no-unused-vars: [2, { "args": "all" }]*/
+/*eslint no-unused-vars: [2, { "varsIgnorePattern": "[iI]gnored" }]*/
 
-(function(foo, bar, baz) { /*error "foo" is defined but never used*/ /*error "baz" is defined but never used*/
-    return bar;
-})();
+var firstVarIgnored = 1;
+var secondVar = 2;
+console.log(secondVar);
 ```
 
-##### with `{ "args": "after-used" }`
+### args
+
+The `args` option has three settings:
+
+* `after-used` - only the last argument must be used. This allows you, for instance, to have two named parameters to a function and as long as you use the second argument, ESLint will not warn you about the first. This is the default setting.
+* `all` - all named arguments must be used.
+* `none` - do not check arguments.
+
+#### args: after-used
+
+Examples of **incorrect** code for the default `{ "args": "after-used" }` option:
 
 ```js
 /*eslint no-unused-vars: [2, { "args": "after-used" }]*/
 
-(function(foo, bar, baz) { /*error "baz" is defined but never used*/
-    return bar;
-})();
-```
-
-##### with `{ "args": "none" }`
-
-```js
-/*eslint no-unused-vars: [2, { "args": "none" }]*/
-
+// 1 error
+// "baz" is defined but never used
 (function(foo, bar, baz) {
     return bar;
 })();
 ```
 
-#### Ignore identifiers that match specific patterns
+Examples of **correct** code for the default `{ "args": "after-used" }` option:
 
+```js
+/*eslint no-unused-vars: [2, {"args": "after-used"}]*/
+
+(function(foo, bar, baz) {
+    return baz;
+})();
+```
+
+#### args: all
+
+<<<<<<< HEAD
 * `varsIgnorePattern` - all variables that match this regexp pattern will not be checked.
 * `varsIgnorePattern`-匹配到给定正则表达式的变量不被检测
 * `argsIgnorePattern` - all arguments that match this regexp pattern will not be checked.
 * `argsIgnorePattern`-匹配到给定正则表达式的参数不被检测
+=======
+Examples of **incorrect** code for the `{ "args": "all" }` option:
+>>>>>>> eslint/master
 
-##### Examples
+```js
+/*eslint no-unused-vars: [2, { "args": "all" }]*/
 
-* Ignore all unused function arguments with a leading underscore
+// 2 errors
+// "foo" is defined but never used
+// "baz" is defined but never used
+(function(foo, bar, baz) {
+    return bar;
+})();
+```
 
+<<<<<<< HEAD
 * 忽略带有下划线的参数名：
 
     ```json
@@ -181,41 +232,48 @@ This option has three settings:
     With this configuration, this rule will not warn about the following code:
     
     正确：
+=======
+#### args: none
 
-    ```js
-    /*eslint no-unused-vars: [2, {"args": "after-used", "argsIgnorePattern": "^_"}]*/
+Examples of **correct** code for the `{ "args": "none" }` option:
+>>>>>>> eslint/master
 
-    function foo(x, _y) {
-        return x + 1;
-    }
-    foo();
-    ```
+```js
+/*eslint no-unused-vars: [2, { "args": "none" }]*/
 
+(function(foo, bar, baz) {
+    return bar;
+})();
+```
+
+<<<<<<< HEAD
 * Ignore all unused variables which contain the term `ignored` or `Ignored`:
 * 忽略含有`ignored`和`Ignored`的变量：
+=======
+### argsIgnorePattern
+>>>>>>> eslint/master
 
-    ```json
-        {
-            "ecmaFeatures": { "destructuring": true },
-            "rules": {
-                "no-unused-vars": [2, {"vars": "all", "varsIgnorePattern": "[iI]gnored"}]
-            }
-        }
-    ```
+The `argsIgnorePattern` option specifies exceptions not to check for usage: arguments whose names match a regexp pattern. For example, variables whose names begin with an underscore.
 
+<<<<<<< HEAD
     With this configuration, this rule will not warn about the following code:
     
     正确：
+=======
+Examples of **correct** code for the `{ "argsIgnorePattern": "^_" }` option:
+>>>>>>> eslint/master
 
-    ```js
-    /*eslint no-unused-vars: [2, {"args": "after-used", "varsIgnorePattern": "[iI]gnored"}]*/
+```js
+/*eslint no-unused-vars: [2, { "argsIgnorePattern": "^_" }]*/
 
-    var [ firstItemIgnored, secondItem ] = items;
-    console.log(secondItem);
-    ```
+function foo(x, _y) {
+    return x + 1;
+}
+foo();
+```
 
 
-## When Not to Use It
+## When Not To Use It
 
 If you don't want to be notified about unused variables or function arguments, you can safely turn this rule off.
 

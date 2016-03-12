@@ -5,6 +5,7 @@ translator: ybbjegj
 proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Use of console (no-console)
 
 # 禁用 console (no-console)
@@ -18,33 +19,54 @@ console.log("Made it here.");
 console.error("That shouldn't have happened.");
 ```
 
-
 ## Rule Details
 
 This rule is aimed at eliminating unwanted `console` references from your JavaScript. As such, it warns whenever it sees `console` used as an identifier in code.
 
 该规则目的在于消除 JavaScript 代码中不需要的 `console` 引用。因此，在代码中只要发现 `console` 标识符，该规则就会发出警告。
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
-以下模式被认为是有问题的：
+**错误** 代码示例：
 
 ```js
 /*eslint no-console: 2*/
 
-console.log("Hello world!");              /*error Unexpected console statement.*/
-console.error("Something bad happened."); /*error Unexpected console statement.*/
+console.log("Hello world!");
+console.error("Something bad happened.");
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
-以下模式被认为是没有问题的：
+**正确** 代码示例：
 
 ```js
 /*eslint no-console: 2*/
 
 // custom console
 Console.log("Hello world!");
+```
+
+## Options
+
+This rule supports the following options:
+
+该规则支持以下选项：
+
+`allow`: The list of console operations to be used as exceptions to the rule. 
+
+`allow`: console操作的列表作为该规则的例外情况。 
+
+For example:
+
+例如: 
+
+```js
+/*eslint no-console: [2, { allow: ["warn", "error"] }] */
+
+console.log("this will be considered a problem");
+console.warn("this will not be considered a problem");
+console.error("this will not be considered a problem");
 ```
 
 ## When Not To Use It

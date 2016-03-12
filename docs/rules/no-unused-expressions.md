@@ -3,6 +3,7 @@ title: Rule no-unused-expressions
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Unused Expressions (no-unused-expressions)
 
 #禁止未使用的表达式(no-unused-expressions)
@@ -30,7 +31,7 @@ This rule aims to eliminate unused expressions. The value of an expression shoul
 **注意:**连续的表达式（那些使用逗号如`a = 1, b = 2`）通常被认为
 是无用的，除非它们的返回值被使用或者是连续表达式的值被一个函数调用。
 
-### Options
+## Options
 
 This rule, in it's default state, does not require any arguments. If you would like to enable one or more of the following you may pass an object with the options set as follows:
 
@@ -44,9 +45,6 @@ This rule, in it's default state, does not require any arguments. If you would l
 
 `allowTernary`设置为`true`将会允许你在表达式中使用类似简短circuit evaluations的三元运算符。（默认为：`false`）
 
-
-### Usage
-
 By default the following patterns are considered problems:
 
 以下模式默认被认为是有问题的：
@@ -54,19 +52,19 @@ By default the following patterns are considered problems:
 ```js
 /*eslint no-unused-expressions: 2*/
 
-0         /*error Expected an assignment or function call and instead saw an expression.*/
+0
 
-if(0) 0   /*error Expected an assignment or function call and instead saw an expression.*/
+if(0) 0
 
-{0}       /*error Expected an assignment or function call and instead saw an expression.*/
+{0}
 
-f(0), {}  /*error Expected an assignment or function call and instead saw an expression.*/
+f(0), {}
 
-a && b()  /*error Expected an assignment or function call and instead saw an expression.*/
+a && b()
 
-a, b()    /*error Expected an assignment or function call and instead saw an expression.*/
+a, b()
 
-c = a, b; /*error Expected an assignment or function call and instead saw an expression.*/
+c = a, b;
 ```
 
 The following patterns are not considered problems by default:
@@ -130,11 +128,11 @@ The above options still will not allow expressions that have code paths without 
 ```js
 /*eslint no-unused-expressions: [2, { allowShortCircuit: true, allowTernary: true }]*/
 
-a || b         /*error Expected an assignment or function call and instead saw an expression.*/
+a || b
 
-a ? b : 0      /*error Expected an assignment or function call and instead saw an expression.*/
+a ? b : 0
 
-a ? b : c()    /*error Expected an assignment or function call and instead saw an expression.*/
+a ? b : c()
 ```
 
 ## Version
