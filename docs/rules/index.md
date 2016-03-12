@@ -375,7 +375,7 @@ These rules are purely matters of style and are quite subjective.
 * [no-underscore-dangle](no-underscore-dangle) - 禁止标识符中有悬空下划线
 * [no-unneeded-ternary](no-unneeded-ternary) - disallow the use of ternary operators when a simpler alternative exists
 * [no-unneeded-ternary](no-unneeded-ternary) - 在有更简单的可替代的表达式存在时，禁止使用三元操作符
-<<<<<<< HEAD
+* [no-whitespace-before-property](no-whitespace-before-property) - disallow whitespace before properties
 * [no-whitespace-before-property](no-whitespace-before-property) - disallow whitespace before properties
 * [object-curly-spacing](object-curly-spacing) - require or disallow padding inside curly braces (fixable)
 * [object-curly-spacing](object-curly-spacing) - 禁止或强制对象的花括号中有空格 (fixable)
@@ -395,7 +395,6 @@ These rules are purely matters of style and are quite subjective.
 * [quotes](quotes) - 指定是否应使用反勾号、双引号互殴单引号(fixable)
 * [require-jsdoc](require-jsdoc) - Require JSDoc comment
 * [require-jsdoc](require-jsdoc) - 要求使用 JSDoc 注释
-<<<<<<< HEAD
 * [semi](semi) - require or disallow use of semicolons instead of ASI (fixable)
 * [semi](semi) - 要求或禁止使用分号而不是ASI (fixable)
 * [semi-spacing](semi-spacing) - enforce spacing before and after semicolons (fixable)
@@ -438,6 +437,7 @@ These rules are only relevant to ES6 environments.
 * [no-class-assign](no-class-assign) - disallow modifying variables of class declarations (recommended)
 * [no-class-assign](no-class-assign) - 不允许修改类声明的变量 (recommended)
 * [no-confusing-arrow](no-confusing-arrow) - disallow arrow functions where they could be confused with comparisons
+* [no-confusing-arrow](no-confusing-arrow) - disallow arrow functions where they could be confused with comparisons
 * [no-const-assign](no-const-assign) - disallow modifying variables that are declared using `const` (recommended)
 * [no-const-assign](no-const-assign) - 不允许改变用`const`声明的变量 (recommended)
 * [no-dupe-class-members](no-dupe-class-members) - disallow duplicate name in class members (recommended)
@@ -445,6 +445,7 @@ These rules are only relevant to ES6 environments.
 * [no-new-symbol](no-new-symbol) - disallow use of the `new` operator with the `Symbol` object (recommended)
 * [no-this-before-super](no-this-before-super) - disallow use of `this`/`super` before calling `super()` in constructors (recommended)
 * [no-this-before-super](no-this-before-super) - 在构造函数中禁止在调用`super()`之前使用`this`或`super` (recommended)
+* [no-useless-constructor](no-useless-constructor) - disallow unnecessary constructor
 * [no-useless-constructor](no-useless-constructor) - disallow unnecessary constructor
 * [no-var](no-var) - require `let` or `const` instead of `var`
 * [no-var](no-var) - 要求使用 `let` 或 `const` 而不是 `var`
