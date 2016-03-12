@@ -5,6 +5,7 @@ translator: molee1905
 proofreader: fengnana
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Working with Plugins
 
 # 使用插件
@@ -25,9 +26,9 @@ The easiest way to start creating a plugin is to use the [Yeoman generator](http
 
 ### 插件中的规则
 
-If your plugin has rules, then it must export an object with a `rules` property. This `rules` property should be an object containing a key-value mapping of rule ID to rule. The rule ID does not have to follow any naming convention (so it can just be `dollar-sign`, for instance).
+Plugins can expose additional rules for use in ESLint. To do so, the plugin must export a `rules` object containing a key-value mapping of rule ID to rule. The rule ID does not have to follow any naming convention (so it can just be `dollar-sign`, for instance).
 
-如果你的插件包含规则，那么它必须输出一个带有`rules`属性的对象。这个`rules`属性应该是包含规则ID和对应规则的键值对对象。这个规则ID不需要遵循任何命名规范（所以，比如，它可以是`dollar-sign`）。
+在ESLint中，插件可以暴露额外的规则以供使用。为此，插件必须输出一个`rules`对象，包含规则ID和对应规则的一个键值对。这个规则ID不需要遵循任何命名规范（所以，比如，它可以是`dollar-sign`）。
 
 ```js
 module.exports = {
@@ -38,6 +39,31 @@ module.exports = {
     }
 };
 ```
+
+To use the rule in ESLint, you would use the unprefixed plugin name, followed by a slash, followed by the rule name. So if this plugin were named `eslint-plugin-myplugin`, then in your configuration you'd refer to the rule by the name `myplugin/dollar-sign`. Example: `"rules": {"myplugin/dollar-sign": 2}`.
+
+### Environments in Plugins
+
+Plugins can expose additional environments for use in ESLint. To do so, the plugin must export an `environments` object. The keys of the `environments` object are the names of the different environments provided and the values are the environment settings. For example:
+
+```js
+module.exports = {
+    environments: {
+        jquery: {
+            globals: {
+                $: false
+            }
+        }
+    }
+};
+```
+
+There's a `jquery` environment defined in this plugin. To use the environment in ESLint, you would use the unprefixed plugin name, followed by a slash, followed by the environment name. So if this plugin were named `eslint-plugin-myplugin`, then you would set the environment in your configuration to be `"myplugin/jquery"`.
+
+Plugin environments can define the following objects:
+
+1. `globals` - acts the same `globals` in a configuration file. The keys are the names of the globals and the values are `true` to allow the global to be overwritten and `false` to disallow.
+1. `parserOptions` - acts the same as `parserOptions` in a configuration file.
 
 ### Processors in Plugins
 
@@ -89,28 +115,26 @@ To support multiple extensions, add each one to the `processors` element and poi
 你可以在一个插件中同时有规则和处理器。你也可以一个插件中有多个处理器。
 为了支持多个扩展，将每一个处理器添加到`processors`元素，然后将它们指向同一个对象。
 
-### Default Configuration for Plugins
+### Configs in Plugins
 
-### 插件的默认配置
+### 插件配置
 
-You can provide default configuration for the rules included in your plugin by modifying
-exported object to include `rulesConfig` property. `rulesConfig` follows the same pattern as
-you would use in your .eslintrc config `rules` property, but without plugin name as a prefix.
+You can bundle configurations inside a plugin. This can be useful when you want to provide not just code style, but also some custom rules to support it. You can specify configurations under `configs` key. Please note that when exposing configurations, you have to name each one, and there is no default. So your users will have to specify the name of the configuration they want to use.
 
-你可以在你的插件中通过输出一个包含`rulesConfig`属性的对象为规则提供默认的配置。同你在 .eslintrc 中使用的`rules`属性一样，`rulesConfig`遵循同样的模式，但是没有插件名作为前缀。
+你可以在插件中包含配置。但你想提供不止代码风格，还有一些自定义规则时，这会非常有用。你可以在`configs`键下指定配置。请注意，当暴露配置时，你需要对它们进行命名，而且是没有默认的。所以，你的用户将需要指定他们想使用的配置的名称。
 
 ```js
-module.exports = {
-    rules: {
-        "myFirstRule": require("./lib/rules/my-first-rule"),
-        "mySecondRule": require("./lib/rules/my-second-rule")
-    },
-    rulesConfig: {
-        "myFirstRule": 1,
-        "mySecondRule": [2, "on"]
+configs: {
+    myConfig: {
+        env: ["browser"],
+        rules: {
+            semi: 2
+        }
     }
-};
+}
 ```
+
+**Note:** Please note that configuration will not automatically attach your rules and you have to specify your plugin name and any rules you want to enable that are part of the plugin. See [Configuring Plugins](../user-guide/configuring#configuring-plugins)
 
 ### Peer Dependency
 

@@ -43,7 +43,7 @@ Before you can get started, you'll need to get a copy of the ESLint source code.
 
 在你开始之前，你需要获取ESLint的源码。本节解释如何获取源码和源码结构。
 
-## Section 2: Setup a [Development Environment](development-environment.html)
+## Section 2: Set up a [Development Environment](development-environment.html)
 
 ## 第二节： 设置[开发环境](development-environment.html)
 
@@ -91,10 +91,3 @@ Once you've made changes that you want to share with the community, the next ste
 
 一旦你做出改变，想分享到社区，下一步就是通过发送请求提交这些改变。
 
-## Section 8: [Governance](governance.html)
-
-## 第八节： [管理](governance.html)
-
-After you've made several contributions, you might be eligible to be a Committer or Reviewer. Learn what that means for you and your involvement in the project.
-
-在你做出了许多贡献，你可能有资格成为一个提交者或审阅者。了解这些让你参与这个项目。

@@ -3,6 +3,7 @@ title: Rule no-lonely-if
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow `if` as the Only Statement in an `else` Block (no-lonely-if)
 
 # 禁止`if`作为唯一的语句出现在`else`语句中 (no-lonely-if)
@@ -49,7 +50,7 @@ The following patterns are considered problems:
 if (condition) {
     // ...
 } else {
-    if (anotherCondition) { /*error Unexpected if as the only statement in an else block.*/
+    if (anotherCondition) {
         // ...
     }
 }
@@ -57,7 +58,7 @@ if (condition) {
 if (condition) {
     // ...
 } else {
-    if (anotherCondition) { /*error Unexpected if as the only statement in an else block.*/
+    if (anotherCondition) {
         // ...
     } else {
         // ...

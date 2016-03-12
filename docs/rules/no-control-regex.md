@@ -5,6 +5,7 @@ translator: ybbjegj
 proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Controls Characters in Regular Expressions (no-control-regex)
 
 # 禁止在正则表达式中使用控制字符（no-control-regex）
@@ -19,7 +20,7 @@ This rule is aimed at ensuring all regular expressions don't use control charact
 
 该规则目的在于确保所有的正则表达式都不使用控制字符。
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
 以下模式被认为是有问题的：
 
@@ -27,10 +28,10 @@ The following patterns are considered problems:
 /*eslint no-control-regex: 2*/
 
 var pattern1 = /\\x1f/;
-var pattern2 = new RegExp("\x1f"); /*error Unexpected control character in regular expression.*/
+var pattern2 = new RegExp("\x1f");
 ```
 
-The following patterns do not cause a warning:
+Examples of **correct** code for this rule:
 
 以下模式不会引发警告：
 

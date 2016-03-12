@@ -3,6 +3,7 @@ title: Rule no-new
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow new For Side Effects (no-new)
 #禁止使用new产生副作用
 
@@ -39,7 +40,7 @@ The following patterns are considered problems:
 ```js
 /*eslint no-new: 2*/
 
-new Thing(); /*error Do not use 'new' for side effects.*/
+new Thing();
 ```
 
 The following patterns are not considered problems:

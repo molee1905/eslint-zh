@@ -8,7 +8,7 @@ proofreader: hacke2
 # Source Code
 # 源码
 
-ESLint is hosted at [GitHub](http://www.github.com) and uses [Git](http://git-scm.com/) for source control. In order to obtain the source code, you must first install Git on your system. Instructions for installing and setting up Git can be found at [http://help.github.com/set-up-git-redirect](http://help.github.com/set-up-git-redirect).
+ESLint is hosted at [GitHub](https://github.com/eslint/eslint) and uses [Git](http://git-scm.com/) for source control. In order to obtain the source code, you must first install Git on your system. Instructions for installing and setting up Git can be found at [http://help.github.com/set-up-git-redirect](http://help.github.com/set-up-git-redirect).
 
 ESLint 托管在 [GitHub](http://www.github.com)，使用 [Git](http://git-scm.com/) 作为版本控制工具。
 你必须先在操作系统中安装 [Git](http://git-scm.com/) ，才能获取到源码。

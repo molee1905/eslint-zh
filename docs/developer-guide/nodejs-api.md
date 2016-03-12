@@ -5,6 +5,7 @@ translator: yanggao40
 proofreader: hacke2
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Node.js API
 
 While ESLint is designed to be run on the command line, it's possible to use ESLint programmatically through the Node.js API. The purpose of the Node.js API is to allow plugin and tool authors to use the ESLint functionality directly, without going through the command line interface.
@@ -33,6 +34,43 @@ The `SourceCode` constructor throws an error if the AST is missing any of the re
 
 缺少任何必要的信息`SourceCode`构造器都会抛出错误。
 
+The `SourceCode` constructor strips Unicode BOM.
+Please note the AST also should be parsed from stripped text.
+
+`SourceCode`构造函数剥离Unicode BOM。请注意，AST也应该从剥离后的文本进行解析。
+
+```js
+var SourceCode = require("eslint").SourceCode;
+
+var code = new SourceCode("\uFEFFvar foo = bar;", ast);
+
+assert(code.hasBOM === true);
+assert(code.text === "var foo = bar;");
+```
+
+### splitLines()
+
+This is a static function on `SourceCode` that is used to split the source code text into an array of lines.
+
+
+```js
+var SourceCode = require("eslint").SourceCode;
+
+var code = "var a = 1;\nvar b = 2;"
+
+// split code into an array
+var codeLines = SourceCode.splitLines(code);
+
+/*
+    Value of codeLines will be
+    [
+        "var a = 1;",
+        "var b = 2;"
+    ]
+ */
+```
+
+
 ## linter
 
 The `linter` object does the actual evaluation of the JavaScript code. It doesn't do any filesystem operations, it simply parses and reports on the code. You can retrieve `linter` like this:
@@ -48,17 +86,21 @@ The most important method on `linter` is `verify()`, which initiates linting of 
 `linter`最重要的方法为`verify()`，它对给的的文本的lint进行初始化。这个方法接受4个参数：
 
 * `code` - the source code to lint (a string or instance of `SourceCode`).
+<<<<<<< HEAD
 * `code`- 要lint的源代码（字符串或者`SourceCode`的实例）。
-* `config` - a configuration object.
-* `config` - 一个配置对象。
-* `options` - (optional) Additional options for this run.
-* `options` - (可选的)运行的额外选项。
+* `config` - a configuration object that is equivalent to an eslintrc file.
+* `config` - 一个配置对象，相当于一个eslintrc文件。
+* `optionsOrFilename` - (optional) Additional options for this run or a string representing the filename to associate with the code being linted.
+* `options` - (可选的)运行的额外选项或与要检查的代码有关的文件名。
     * `filename` - (optional) the filename to associate with the source code.
     * `filename` - (可选的)与源代码关联的文件名。
-    * `saveState` - (optional) set to true to maintain the internal state of `linter` after linting (mostly used for testing purposes).
-    * `saveState` - (可选的)设置为true来保持lint后`linter`的内部状态（主要用来测试）。
+    * `saveState` - (optional) see below. This will override any value passed as the fourth argument if an options object is used here instead of the filename.
+    * `saveState` - (可选的) 这里如果是个对象而不是文件名，它将覆盖第四个参数的值。
     * `allowInlineConfig` - (optional) set to `false` to disable inline comments from changing eslint rules.
     * `allowInLinrConfig` - (可选的)设置为`false`来从改变 eslint 规则禁用行内注释。
+* `saveState` - (optional) set to true to maintain the internal state of `linter` after linting (mostly used for testing purposes)
+* `saveState` - (可选的)设置为true来保持lint后`linter`的内部状态（主要用来测试）。
+
 
 You can call `verify()` like this:
 
@@ -94,7 +136,6 @@ The `verify()` method returns an array of objects containing information about t
 ```js
 {
     fatal: false,
-    severity: 2,
     ruleId: "semi",
     severity: 2,
     line: 1,
@@ -202,6 +243,8 @@ The `CLIEngine` is a constructor, and you can create a new instance by passing i
 * `cacheFile` - 存放缓存的文件名。（默认为`.eslintcache`）。对应于`--cache-file`。已经过时，用`cacheLocation`代替。
 * `cacheLocation` - Name of the file or directory where the cache will be stored (default: `.eslintcache`). Correspond to `--cache-location`
 * `cacheLocation` - 存放缓存的文件或者目录名。（默认为`.eslintcache`）。 对应于--cache-location`。
+* `cwd` - Path to a directory that should be considered as the current working directory.
+
 
 For example:
 
@@ -414,16 +457,18 @@ var isIgnored = cli.isPathIgnored("foo/bar.js");
 
 Retrieves a formatter, which you can then use to format a report object. The argument is either the name of a built-in formatter:
 
+<<<<<<< HEAD
 获取一个格式化工具，可以用它格式报告对象。参数或者是内建格式化工具的名字：
 
-* "[stylish](../user-guide/formatters#stylish)" (the default)
-* "[stylish](../user-guide/formatters#stylish)" (默认)
 * "[checkstyle](./user-guide/formatters#checkstyle)"
 * "[compact](../user-guide/formatters#compact)"
 * "[html](../user-guide/formatters#html)"
 * "[jslint-xml](../user-guide/formatters#jslint-xml)"
 * "[json](../user-guide/formatters#json)"
 * "[junit](../user-guide/formatters#junit)"
+* "[stylish](../user-guide/formatters#stylish)" (the default)
+* "[stylish](../user-guide/formatters#stylish)" (默认)
+* "[table](../user-guide/formatters#table)"
 * "[tap](../user-guide/formatters#tap)"
 * "[unix](../user-guide/formatters#unix)"
 

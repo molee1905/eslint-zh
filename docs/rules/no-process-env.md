@@ -3,6 +3,7 @@ title: Rule no-process-env
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow process.env (no-process-env)
 
 # 禁用process.env (no-process-env)
@@ -25,7 +26,7 @@ The following patterns are considered problems:
 ```js
 /*eslint no-process-env: 2*/
 
-if(process.env.NODE_ENV === "development") { /*error Unexpected use of process.env.*/
+if(process.env.NODE_ENV === "development") {
     //...
 }
 ```

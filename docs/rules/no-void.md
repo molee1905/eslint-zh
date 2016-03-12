@@ -3,6 +3,7 @@ title: Rule no-void
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow use of the void operator. (no-void)
 
 # 禁止使用void操作符 (no-void)
@@ -75,9 +76,9 @@ The following patterns are considered problems:
 ```js
 /*eslint no-void: 2*/
 
-void foo              /*error Expected 'undefined' and instead saw 'void'.*/
+void foo
 
-var foo = void bar(); /*error Expected 'undefined' and instead saw 'void'.*/
+var foo = void bar();
 ```
 
 ## When Not To Use It

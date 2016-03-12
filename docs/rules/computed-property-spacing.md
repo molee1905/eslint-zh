@@ -5,6 +5,7 @@ translator: molee1905
 proofreader: sunshiner
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow or enforce spaces inside of computed properties. (computed-property-spacing)
 
 # 禁止或强制在计算属性中使用空格。(computed-property-spacing)
@@ -42,8 +43,7 @@ Brackets that are separated from the adjacent value by a new line are exempt fro
 
 它强制要求或禁止括号和其内部值之间的空格。括号内相邻的值出现折行的，不适用此规则。
 
-
-### Options
+## Options
 
 There are two main options for the rule:
 
@@ -65,7 +65,7 @@ Depending on your coding conventions, you can choose either option by specifying
 "computed-property-spacing": [2, "never"]
 ```
 
-#### never
+### "never"
 
 When `"never"` is set, the following patterns will give a warning:
 
@@ -75,10 +75,10 @@ When `"never"` is set, the following patterns will give a warning:
 /*eslint computed-property-spacing: [2, "never"]*/
 /*eslint-env es6*/
 
-obj[foo ]                                                       /*error There should be no space before ']'*/
-obj[ 'foo']        /*error There should be no space after '['*/
-var x = {[ b ]: a} /*error There should be no space after '['*/ /*error There should be no space before ']'*/
-obj[foo[ bar ]]    /*error There should be no space after '['*/ /*error There should be no space before ']'*/
+obj[foo ]
+obj[ 'foo']
+var x = {[ b ]: a}
+obj[foo[ bar ]]
 ```
 
 The following patterns are considered correct:
@@ -95,7 +95,7 @@ var x = {[b]: a}
 obj[foo[bar]]
 ```
 
-#### always
+### "always"
 
 When `"always"` is used, the following patterns will give a warning:
 
@@ -105,13 +105,13 @@ When `"always"` is used, the following patterns will give a warning:
 /*eslint computed-property-spacing: [2, "always"]*/
 /*eslint-env es6*/
 
-obj[foo]          /*error A space is required after '['*/ /*error A space is required before ']'*/
-var x = {[b]: a}  /*error A space is required after '['*/ /*error A space is required before ']'*/
-obj[ foo]                                                 /*error A space is required before ']'*/
+obj[foo]
+var x = {[b]: a}
+obj[ foo]
 obj[ foo ]
-obj['foo' ]       /*error A space is required after '['*/
-obj[foo[ bar ]]   /*error A space is required after '['*/ /*error A space is required before ']'*/
-var x = {[ b]: a}                                         /*error A space is required before ']'*/
+obj['foo' ]
+obj[foo[ bar ]]
+var x = {[ b]: a}
 ```
 
 The following patterns are considered correct:

@@ -3,6 +3,7 @@ title: Rule space-before-function-parentheses
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require or disallow spaces before function parentheses (space-before-function-parentheses)
 
 # 在函数括号前要求或禁止空格 (space-before-function-parentheses)

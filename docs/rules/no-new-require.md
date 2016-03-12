@@ -3,6 +3,7 @@ title: Rule no-new-require
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow new require (no-new-require)
 
 # 不允许new require (no-new-require)
@@ -48,7 +49,7 @@ The following pattern is considered a warning:
 ```js
 /*eslint no-new-require: 2*/
 
-var appHeader = new require('app-header'); /*error Unexpected use of new with require.*/
+var appHeader = new require('app-header');
 ```
 
 The following pattern is not a warning:

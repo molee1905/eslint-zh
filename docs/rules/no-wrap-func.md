@@ -3,6 +3,7 @@ title: Rule no-wrap-func
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Parens Around Functions (no-wrap-func)
 
 # 禁止括号包围函数 (no-wrap-func)

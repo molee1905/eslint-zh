@@ -5,6 +5,7 @@ translator: molee1905
 proofreader: sunshiner
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Comma style (comma-style)
 
 # 逗号风格 (comma-style)
@@ -25,12 +26,12 @@ This rule is aimed at enforcing a particular comma style in JavaScript. As such,
 
 该规则是为了在Javascript中强制使用一种特定的逗号风格。因此，如果变量声明，对象属性和数组元素没有遵循该特定的逗号风格时，此规则将发出警告。在变量声明，对象属性或数组元素中，如果一个逗号(该行只有这一个逗号)之前和之后都有换行符，则不受此规定约束。单行声明的情况也不受此约束。
 
-### Options
+## Options
 
-The rule takes an option, a string, which could be either "last" or "first". The default is "last".
+The rule takes an option, a string, which could be either `"last"` or `"first"`. The default is `"last"`.
 
-该规则有一个可选项，是个字符串，可以是"last" 或 "first"。
-默认是 "last"。
+该规则有一个可选项，是个字符串，可以是`"last"` 或 `"first"`。
+默认是 `"last"`。
 
 You can set the style in configuration like this:
 
@@ -40,7 +41,7 @@ You can set the style in configuration like this:
 "comma-style": [2, "first"]
 ```
 
-#### "last"
+### "last"
 
 This is the default setting for this rule. This option requires that the comma be placed after and be in the same line as the variable declaration, object property and array element.
 
@@ -54,21 +55,21 @@ While using this setting, the following patterns are considered problems:
 /*eslint comma-style: [2, "last"]*/
 
 var foo = 1
-,                        /*error Bad line breaking before and after ','.*/
+,
 bar = 2;
 
 var foo = 1
-  , bar = 2;             /*error ',' should be placed last.*/
+  , bar = 2;
 
 
 var foo = ["apples"
-           , "oranges"]; /*error ',' should be placed last.*/
+           , "oranges"];
 
 
 function bar() {
     return {
         "a": 1
-        ,"b:": 2         /*error ',' should be placed last.*/
+        ,"b:": 2
     };
 }
 
@@ -100,7 +101,7 @@ function bar() {
 
 ```
 
-#### "first"
+### "first"
 
 This option requires that the comma be placed before and be in the same line as the variable declaration, object property and array element.
 
@@ -114,17 +115,17 @@ While using this setting, the following patterns are considered problems:
 /*eslint comma-style: [2, "first"]*/
 
 var foo = 1,
-    bar = 2;           /*error ',' should be placed first.*/
+    bar = 2;
 
 
 var foo = ["apples",
-           "oranges"]; /*error ',' should be placed first.*/
+           "oranges"];
 
 
 function bar() {
     return {
         "a": 1,
-        "b:": 2        /*error ',' should be placed first.*/
+        "b:": 2
     };
 }
 
@@ -156,7 +157,7 @@ function bar() {
 
 ```
 
-#### Exceptions
+### Exceptions
 
 Exceptions of the following nodes may be passed in order to tell ESLint to ignore nodes of certain types.
 
@@ -180,7 +181,7 @@ The following is considered a warning:
 /*eslint comma-style: [2, "first", {exceptions: {ArrayExpression: true, ObjectExpression: true} }]*/
 
 var o = {},
-    a = []; /*error ',' should be placed first.*/
+    a = [];
 ```
 
 But the following would not be a warning:

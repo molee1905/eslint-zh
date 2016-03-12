@@ -3,6 +3,7 @@ title: Rule camelcase
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require Camelcase (camelcase)
 
 # 要求使用骆驼拼写法
@@ -17,7 +18,7 @@ This rule looks for any underscores (`_`) located within the source code. It ign
 
 此规则在源码中查找下划线 (`_`) 。它忽略前导和尾部的下划线，只检查在变量名称中间的下划线。如果ESLint判断定某个变量是个常量(全部大写)，将不会发出警告。反正则会发出警告。该规则仅仅标记定义和赋值，不适用于方法调用。
 
-### Options
+## Options
 
 This rule accepts a single options argument with the following defaults:
 
@@ -49,18 +50,18 @@ The following patterns are considered problems:
 
 ```js
 /*eslint camelcase: 2*/
-var my_favorite_color = "#112C85"; /*error Identifier 'my_favorite_color' is not in camel case.*/
+var my_favorite_color = "#112C85";
 
-function do_something() {          /*error Identifier 'do_something' is not in camel case.*/
+function do_something() {
     // ...
 }
 
-obj.do_something = function() {    /*error Identifier 'do_something' is not in camel case.*/
+obj.do_something = function() {
     // ...
 };
 
 var obj = {
-    my_pref: 1                     /*error Identifier 'my_pref' is not in camel case.*/
+    my_pref: 1
 };
 ```
 
@@ -78,6 +79,8 @@ var foo = bar.baz_boom;
 var foo = { qux: bar.baz_boom };
 
 obj.do_something();
+
+var { category_id: category } = query;
 ```
 
 

@@ -3,6 +3,7 @@ title: Rule no-comma-dangle
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Dangling Commas (no-comma-dangle)
 
 # 禁止尾部逗号 (no-comma-dangle)

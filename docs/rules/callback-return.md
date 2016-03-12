@@ -3,6 +3,7 @@ title: Rule callback-return
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Enforce Return After Callback (callback-return)
 
 # 强制返回callback函数 (callback-return)
@@ -45,7 +46,7 @@ The following patterns are considered problems:
 
 function foo() {
     if (err) {
-        callback(err); /*error Expected return with your callback function.*/
+        callback(err);
     }
     callback();
 }
@@ -66,7 +67,7 @@ function foo() {
 }
 ```
 
-### Options
+## Options
 
 The rule takes a single option, which is an array of possible callback names.
 
@@ -76,7 +77,7 @@ The rule takes a single option, which is an array of possible callback names.
 callback-return: [2, ["callback", "cb", "next"]]
 ```
 
-### Gotchas
+## Known Limitations
 
 There are several cases of bad behavior that this rule will not catch and even a few cases where
 the rule will warn even though you are handling your callbacks correctly. Most of these issues arise
@@ -84,7 +85,7 @@ in areas where it is difficult to understand the meaning of the code through sta
 
 有一些不好的情况是此规则不起作用，甚至有些情况是即使你正确的使用了回调函数，但还是报警告。这些问题多数出现在很难通过静态分析就能理解代码含义的地方。
 
-#### Passing the Callback by Reference
+### Passing the Callback by Reference
 
 Here is a case where we pass the callback to the `setTimeout` function. Our rule does not detect this pattern, but
 it is likely a mistake.
@@ -102,7 +103,7 @@ function foo(callback) {
 }
 ```
 
-#### Triggering the Callback within a Nested Function
+### Triggering the Callback within a Nested Function
 
 If you are calling the callback from within a nested function or an immediately invoked
 function expression, we won't be able to detect that you're calling the callback and so
@@ -123,7 +124,7 @@ function foo(callback) {
 }
 ```
 
-#### If/Else Statements
+### If/Else Statements
 
 Here is a case where you're doing the right thing in making sure to only `callback()` once, but because of the
 difficulty in determining what you're doing, this rule does not allow for this pattern.
@@ -135,9 +136,9 @@ difficulty in determining what you're doing, this rule does not allow for this p
 
 function foo(callback) {
     if (err) {
-        callback(err); // this is fine, but WILL warn /*error Expected return with your callback function.*/
+        callback(err); // this is fine, but WILL warn
     } else {
-        callback();    // this is fine, but WILL warn /*error Expected return with your callback function.*/
+        callback();    // this is fine, but WILL warn
     }
 }
 ```

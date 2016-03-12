@@ -3,6 +3,7 @@ title: Rule no-new-func
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Function Constructor (no-new-func)
 # 禁止Function构造函数 (no-new-func)
 
@@ -27,8 +28,8 @@ This error is raised to highlight the use of a bad practice. By passing a string
 ```js
 /*eslint no-new-func: 2*/
 
-var x = new Function("a", "b", "return a + b"); /*error The Function constructor is eval.*/
-var x = Function("a", "b", "return a + b");     /*error The Function constructor is eval.*/
+var x = new Function("a", "b", "return a + b");
+var x = Function("a", "b", "return a + b");
 ```
 
 The following patterns are not considered problems:

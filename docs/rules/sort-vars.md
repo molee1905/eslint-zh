@@ -3,6 +3,7 @@ title: Rule sort-vars
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Variable Sorting (sort-vars)
 
 # 变量排序 (sort-vars)
@@ -28,11 +29,11 @@ The following patterns are considered problems:
 ```js
 /*eslint sort-vars: 2*/
 
-var b, a;    /*error Variables within the same declaration block should be sorted alphabetically*/
+var b, a;
 
-var a, B, c; /*error Variables within the same declaration block should be sorted alphabetically*/
+var a, B, c;
 
-var a, A;    /*error Variables within the same declaration block should be sorted alphabetically*/
+var a, A;
 ```
 
 The following patterns are not considered problems:
@@ -59,7 +60,7 @@ Alphabetical list is maintained starting from the first variable and excluding a
 ```js
 /*eslint sort-vars: 2*/
 
-var c, d, a, b; /*error Variables within the same declaration block should be sorted alphabetically*/
+var c, d, a, b;
 ```
 
 But this one, will only produce one:
@@ -69,10 +70,10 @@ But this one, will only produce one:
 ```js
 /*eslint sort-vars: 2*/
 
-var c, d, a, e; /*error Variables within the same declaration block should be sorted alphabetically*/
+var c, d, a, e;
 ```
 
-## Rule Options
+## Options
 
 ```
 "sort-vars": [<enabled>, { "ignoreCase": <boolean> }]
@@ -96,7 +97,7 @@ var a, A;
 var a, B, c;
 ```
 
-## When not to use
+## When Not To Use It
 
 This rule is a formatting preference and not following it won't negatively affect the quality of your code. If you alphabetizing variables isn't a part of your coding standards, then you can leave this rule off.
 

@@ -3,6 +3,7 @@ title: Rule no-fallthrough
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Case Statement Fallthrough (no-fallthrough)
 
 #禁止case向下通过
@@ -21,7 +22,7 @@ switch(foo) {
 }
 ```
 
-In this example, if `foo` is `1`,then execution will flow through both cases, as the first falls through to the second. You can prevent this by using `break`, as in this example:
+In this example, if `foo` is `1`, then execution will flow through both cases, as the first falls through to the second. You can prevent this by using `break`, as in this example:
 
 在这个例子中，如果`foo`值为`1`，则会执行所有case分支，因为通过第一个分支走向第二个分支。你可以使用`break`阻止这种情况，例如以下例子：
 
@@ -87,7 +88,7 @@ The following patterns are considered problems:
 /*eslint no-fallthrough: 2*/
 
 switch(foo) {
-    case 1:            /*error Expected a "break" statement before "case".*/
+    case 1:
         doSomething();
 
     case 2:

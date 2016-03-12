@@ -3,6 +3,7 @@ title: Rule new-parens
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require Parens for Constructors (new-parens)
 
 # 要求构造函数带括号 (new-parens)
@@ -28,7 +29,7 @@ The following patterns are considered problems:
 ```js
 /*eslint new-parens: 2*/
 
-var person = new Person; /*error Missing '()' invoking a constructor*/
+var person = new Person;
 ```
 
 The following patterns are not considered problems:

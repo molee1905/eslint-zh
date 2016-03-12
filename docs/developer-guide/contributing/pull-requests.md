@@ -22,7 +22,7 @@ If you'd like to work on a pull request and you've never submitted code before, 
 
 1. Sign our [Contributor License Agreement](/cla).
 1. 签署我们的 [贡献者许可协议（Contributor License Agreement）](/cla)。
-1. Setup a [development environment](../development-environment).
+1. Set up a [development environment](../development-environment).
 1. 搭建[开发环境](../development-environment)。
 1. Ensure there's an issue that describes what you're doing. You can create a new issue or just indicate you're [working on an existing issue](working-on-issues).
 1. 确保有一个议题（issue）描述你正在做的事情。你可以新建一个议题（issue）或者表明你正[working on an existing issue](working-on-issues)。

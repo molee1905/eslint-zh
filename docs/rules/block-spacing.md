@@ -3,6 +3,7 @@ title: Rule block-spacing
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow or enforce spaces inside of single line blocks. (block-spacing)
 
 # 禁止或强制在单行代码块中使用空格。 (block-spacing)
@@ -21,6 +22,8 @@ This rule is aimed to flag usage of spacing inside of blocks.
 
 该规则旨在标示代码块中的空格的用法。
 
+## Options
+
 This rule has a option, its value is `"always"` or `"never"`.
 
 该规则有个可选项, 值为 `"always"` 或 `"never"`。
@@ -33,8 +36,7 @@ This rule has a option, its value is `"always"` or `"never"`.
 
 - `"never"` 禁用空格。
 
-
-### always
+### "always"
 
 ```json
 {
@@ -48,8 +50,8 @@ The following patterns are considered problems:
 
 ```js
 /*eslint block-spacing: 2*/
-function foo() {return true;} /*error Requires a space after "{".*/ /*error Requires a space before "}".*/
-if (foo) { bar = 0;}          /*error Requires a space before "}".*/
+function foo() {return true;}
+if (foo) { bar = 0;}
 ```
 
 The following patterns are not considered problems:
@@ -63,7 +65,7 @@ function foo() { return true; }
 if (foo) { bar = 0; }
 ```
 
-### never
+### "never"
 
 ```json
 {
@@ -78,8 +80,8 @@ The following patterns are considered problems:
 ```js
 /*eslint block-spacing: [2, "never"]*/
 
-function foo() { return true; } /*error Unexpected space(s) after "{".*/ /*error Unexpected space(s) before "}".*/
-if (foo) { bar = 0;}            /*error Unexpected space(s) after "{".*/
+function foo() { return true; }
+if (foo) { bar = 0;}
 ```
 
 The following patterns are not considered problems:
@@ -93,7 +95,7 @@ function foo() {return true;}
 if (foo) {bar = 0;}
 ```
 
-## When Not to Use It
+## When Not To Use It
 
 If you don't want to be notified about spacing style inside of blocks, you can safely disable this rule.
 

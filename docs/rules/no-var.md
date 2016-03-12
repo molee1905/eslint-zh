@@ -3,6 +3,7 @@ title: Rule no-var
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # require `let` or `const` instead of `var` (no-var)
 
 # 要求使用 `let` 或 `const` 而不是 `var`
@@ -39,8 +40,8 @@ The following patterns are considered problems:
 ```js
 /*eslint no-var: 2*/
 
-var x = "y";     /*error Unexpected var, use let or const instead.*/
-var CONFIG = {}; /*error Unexpected var, use let or const instead.*/
+var x = "y";
+var CONFIG = {};
 ```
 
 The following patterns are not considered problems:

@@ -3,6 +3,7 @@ title: Rule eol-last
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require file to end with single newline (eol-last)
 
 # 要求文件末尾保留一行空行(eol-last)
@@ -55,7 +56,7 @@ function doSmth() {
 // spaces here
 ```
 
-### Options
+## Options
 
 This rule may take one option which is either `unix` (LF) or `windows` (CRLF). When omitted `unix` is assumed.
 

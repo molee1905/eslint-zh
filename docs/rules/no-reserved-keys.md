@@ -3,6 +3,7 @@ title: Rule no-reserved-keys
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Use of Reserved Words as Keys (no-reserved-keys)
 
 # 禁止使用保留字作为键 (no-reserved-keys)
@@ -66,7 +67,7 @@ var values = {
 };
 ```
 
-## When Not to Use It
+## When Not To Use It
 
 If your code is only going to be executed in an ECMAScript 5 or higher environment, then you can safely leave this rule off.
 

@@ -3,6 +3,7 @@ title: Rule no-multi-str
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Multiline Strings (no-multi-str)
 
 # 禁止多行字符串 (no-multi-str)
@@ -31,9 +32,7 @@ The following generates a warning:
 如下操作将生成警告：
 
 ```js
-/*eslint no-multi-str: 2*/
-
-/*error Multiline support is limited to browsers supporting ES5 only.*/ var x = "Line 1 \
+/*eslint no-multi-str: 2*/ var x = "Line 1 \
          Line 2";
 ```
 

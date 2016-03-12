@@ -3,6 +3,7 @@ title: Rule wrap-regex
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require Regex Literals to be Wrapped (wrap-regex)
 
 # 要求正则表达式被包裹起来 (wrap-regex)
@@ -31,7 +32,7 @@ The following patterns are considered problems:
 /*eslint wrap-regex: 2*/
 
 function a() {
-    return /foo/.test("bar"); /*error Wrap the regexp literal in parens to disambiguate the slash.*/
+    return /foo/.test("bar");
 }
 ```
 

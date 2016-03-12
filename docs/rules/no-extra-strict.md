@@ -3,6 +3,7 @@ title: Rule no-extra-strict
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Unnecessary Strict Pragma (no-extra-strict)
 
 # 禁止不必要的严格语句(no-extra-strict)

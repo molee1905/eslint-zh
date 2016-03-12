@@ -3,6 +3,7 @@ title: Rule no-const-assign
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow modifying variables that are declared using `const` (no-const-assign)
 
 # 不允许改变用`const`声明的变量 (no-const-assign)
@@ -32,7 +33,7 @@ The following patterns are considered problems:
 /*eslint-env es6*/
 
 const a = 0;
-a = 1;       /*error `a` is constant.*/
+a = 1;
 ```
 
 ```js
@@ -40,7 +41,7 @@ a = 1;       /*error `a` is constant.*/
 /*eslint-env es6*/
 
 const a = 0;
-a += 1;      /*error `a` is constant.*/
+a += 1;
 ```
 
 ```js
@@ -48,7 +49,7 @@ a += 1;      /*error `a` is constant.*/
 /*eslint-env es6*/
 
 const a = 0;
-++a;         /*error `a` is constant.*/
+++a;
 ```
 
 The following patterns are not considered problems:
@@ -81,7 +82,7 @@ for (const a of [1, 2, 3]) { // `a` is re-defined (not modified) on each loop st
 }
 ```
 
-## When Not to Use It
+## When Not To Use It
 
 If you don't want to be notified about modifying variables that are declared using `const` keyword, you can safely disable this rule.
 

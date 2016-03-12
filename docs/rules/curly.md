@@ -5,6 +5,7 @@ translator: fengnana
 proofreader: sunshiner
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require Following Curly Brace Conventions (curly)
 # 要求遵循大括号约定 (curly)
 
@@ -45,12 +46,12 @@ The following patterns are considered problems:
 ```js
 /*eslint curly: 2*/
 
-if (foo) foo++; /*error Expected { after 'if' condition.*/
+if (foo) foo++;
 
-while (bar)     /*error Expected { after 'while' condition.*/
+while (bar)
     baz();
 
-if (foo) {      /*error Expected { after 'else'.*/
+if (foo) {
     baz();
 } else qux();
 ```
@@ -77,9 +78,9 @@ if (foo) {
 }
 ```
 
-### Options
+## Options
 
-#### multi
+### "multi"
 
 By default, this rule warns whenever `if`, `else`, `for`, `while`, or `do` are used without block statements as their body. However, you can specify that block statements should be used only when there are multiple statements in the block and warn when there is only one statement in the block. To do so, configure the rule as:
 默认情况下当`if`, `else`, `for`, `while`, 或 `do` 不使用大括号包裹代码时，会给出警告。然而，你可以指定当块中有多条语句时才使用大括号，而当代码块中只有一条语句时只会给出警告。
@@ -96,20 +97,20 @@ With this configuration, the rule will warn for these patterns:
 ```js
 /*eslint curly: [2, "multi"]*/
 
-if (foo) {                             /*error Unnecessary { after 'if' condition.*/
+if (foo) {
     foo++;
 }
 
-if (foo) bar();                        /*error Unnecessary { after 'else'.*/
+if (foo) bar();
 else {
     foo++;
 }
 
-while (true) {                         /*error Unnecessary { after 'while' condition.*/
+while (true) {
     doSomething();
 }
 
-for (var i=0; i < items.length; i++) { /*error Unnecessary { after 'for' condition.*/
+for (var i=0; i < items.length; i++) {
     doSomething();
 }
 ```
@@ -131,7 +132,7 @@ while (true) {
 }
 ```
 
-#### multi-line
+### "multi-line"
 
 Alternatively, you can relax the rule to allow brace-less single-line `if`, `else if`, `else`, `for`, `while`, or `do`, while still enforcing the use of curly braces for other instances. To do so, configure the rule as:
 
@@ -148,12 +149,12 @@ With this configuration, the rule will warn for these patterns:
 ```js
 /*eslint curly: [2, "multi-line"]*/
 
-if (foo)             /*error Expected { after 'if' condition.*/ /*error Expected { after 'else'.*/
+if (foo)
   doSomething();
 else
   doSomethingElse();
 
-if (foo) foo(        /*error Expected { after 'if' condition.*/
+if (foo) foo(
   bar,
   baz);
 ```
@@ -188,7 +189,7 @@ while (true) {
 }
 ```
 
-#### multi-or-nest
+### "multi-or-nest"
 
 You can use another configuration that forces brace-less `if`, `else if`, `else`, `for`, `while`, or `do` if their body contains only one single-line statement. And forces braces in all other cases.
 
@@ -205,27 +206,27 @@ With this configuration, the rule will warn for these patterns:
 ```js
 /*eslint curly: [2, "multi-or-nest"]*/
 
-if (!foo)                   /*error Expected { after 'if' condition.*/
+if (!foo)
     foo = {
         bar: baz,
         qux: foo
     };
 
-while (true)                /*error Expected { after 'while' condition.*/
+while (true)
   if(foo)
       doSomething();
   else
       doSomethingElse();
 
-if (foo) {                  /*error Unnecessary { after 'if' condition.*/
+if (foo) {
     foo++;
 }
 
-while (true) {              /*error Unnecessary { after 'while' condition.*/
+while (true) {
     doSomething();
 }
 
-for (var i = 0; foo; i++) { /*error Unnecessary { after 'for' condition.*/
+for (var i = 0; foo; i++) {
     doSomething();
 }
 ```
@@ -261,7 +262,7 @@ for (var i = 0; foo; i++)
     doSomething();
 ```
 
-#### consistent
+### "consistent"
 
 When using any of the `multi*` option, you can add an option to enforce all bodies of a `if`,
 `else if` and `else` chain to be with or without braces.
@@ -283,12 +284,12 @@ With this configuration, the rule will warn for those patterns:
 if (foo) {
     bar();
     baz();
-} else                      /*error Expected { after 'else'.*/
+} else
     buz();
 
-if (foo)                    /*error Expected { after 'if' condition.*/
+if (foo)
     bar();
-else if (faa)               /*error Expected { after 'if' condition.*/
+else if (faa)
     bor();
 else {
     other();
@@ -297,11 +298,11 @@ else {
 
 if (true)
     foo();
-else {                      /*error Unnecessary { after 'else'.*/
+else {
     baz();
 }
 
-if (foo) {                  /*error Unnecessary { after 'if' condition.*/
+if (foo) {
     foo++;
 }
 ```

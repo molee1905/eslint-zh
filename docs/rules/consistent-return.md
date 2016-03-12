@@ -5,9 +5,10 @@ translator: molee1905
 proofreader: sunshiner
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require Consistent Returns (consistent-return)
 
-#需要一致的返回
+# 需要一致的返回 (consistent-return)
 
 One of the confusing aspects of JavaScript is that any function may or may not return a value at any point in time. When a function exits without any `return` statement executing, the function returns `undefined`. Similarly, calling `return` without specifying any value will cause the function to return `undefined`.Only when `return` is called with a value is there a change in the function's return value.
 
@@ -45,9 +46,12 @@ This rule is aimed at ensuring all `return` statements either specify a value or
 
 此规则目的在于，确保所有的`return`语句指定或者不指定一个值。
 
-The following patterns are considered problems:
+It excludes constructors which, when invoked with the `new` operator, return the instantiated object if another object is not explicitly returned.  This rule treats a function as a constructor if its name starts with an uppercase letter.
 
-以下模式被认为是有问题的：
+
+Examples of **incorrect** code for this rule:
+
+**错误**代码示例：
 
 ```js
 /*eslint consistent-return: 2*/
@@ -57,7 +61,7 @@ function doSomething(condition) {
     if (condition) {
         return true;
     } else {
-        return;      /*error Expected a return value.*/
+        return;
     }
 }
 
@@ -66,14 +70,21 @@ function doSomething(condition) {
     if (condition) {
         return;
     } else {
-        return true; /*error Expected no return value.*/
+        return true;
+    }
+}
+
+function doSomething(condition) {
+
+    if (condition) {
+        return true;
     }
 }
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
-以下模式被认为是没有问题的：
+**正确**代码示例：
 
 ```js
 /*eslint consistent-return: 2*/
@@ -85,6 +96,14 @@ function doSomething(condition) {
     } else {
         return false;
     }
+}
+
+function Foo() {
+    if (!(this instanceof Foo)) {
+        return new Foo();
+    }
+
+    this.a = 0;
 }
 ```
 

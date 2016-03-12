@@ -3,6 +3,7 @@ title: Rule no-inline-comments
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallows comments after code. Comments must come on their own lines (no-inline-comments)
 
 # 代码后面不允许有注释。注释必须单独成行 (no-inline-comments)
@@ -30,16 +31,16 @@ The following patterns are considered problems:
 ```js
 /*eslint no-inline-comments: 2*/
 
-var a = 1; // declaring a to 1                /*error Unexpected comment inline with code.*/
+var a = 1; // declaring a to 1
 
 function getRandomNumber(){
-    return 4; // chosen by fair dice roll.    /*error Unexpected comment inline with code.*/
+    return 4; // chosen by fair dice roll.
               // guaranteed to be random.
 }
 
-/* A block comment before code */ var b = 2;  /*error Unexpected comment inline with code.*/
+/* A block comment before code */ var b = 2;
 
-var c = 3; /* A block comment after code */   /*error Unexpected comment inline with code.*/
+var c = 3; /* A block comment after code */
 ```
 
 The following patterns are not considered problems:

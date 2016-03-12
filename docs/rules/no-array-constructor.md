@@ -3,6 +3,7 @@ title: Rule no-array-constructor
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow creation of dense arrays using the `Array` constructor (no-array-constructor)
 
 # 不允许使用`Array`的构造函数创建稠密数组。
@@ -24,13 +25,13 @@ The following patterns are considered problems:
 ```js
 /*eslint no-array-constructor: 2*/
 
-Array(0, 1, 2)     /*error The array literal notation [] is preferrable.*/
+Array(0, 1, 2)
 ```
 
 ```js
 /*eslint no-array-constructor: 2*/
 
-new Array(0, 1, 2) /*error The array literal notation [] is preferrable.*/
+new Array(0, 1, 2)
 ```
 
 The following patterns are not considered problems:

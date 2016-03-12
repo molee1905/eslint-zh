@@ -5,6 +5,7 @@ translator: fengnana
 proofreader: ILFront-End
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Enforces getter/setter pairs in objects (accessor-pairs)
 
 # 强制getter/setter成对出现在对象中 (accessor-pairs)
@@ -51,8 +52,7 @@ By activating the option `getWithoutSet` it enforces the presence of a setter fo
 
 通过激活 `getWithoutSet` 选项，强制为每个定义了 getter 的属性提供对应的 setter。
 
-
-### Options
+## Options
 
 `getWithoutSet` set to `true` will warn for getters without setters (Default `false`).
 
@@ -62,42 +62,30 @@ By activating the option `getWithoutSet` it enforces the presence of a setter fo
 
 当 `setWithoutGet ` 设置为`true`时，如果只定义 setter 而不定义 getter，该规则将发出警告（默认为 `true`）。
 
-#### Usage
-
-By default `setWithoutGet` option is always set to `true`.
-
-默认情况下，`setWithoutGet` 总是被设置为  `true`。
-
-```json
-{
-    "accessor-pairs": [2, {"getWithoutSet": true}]
-}
-```
-
-The following patterns are considered problems by default:
-
-默认情况下，以下模式被认为是有问题的：
+### setWithoutGet
+ 
+默认选项`{ "setWithoutGet": true }` **不正确**的代码示例
 
 ```js
 /*eslint accessor-pairs: 2*/
 
-var o = {                       /*error Getter is not present*/
+var o = {
     set a(value) {
         this.val = value;
     }
 };
 
 var o = {d: 1};
-Object.defineProperty(o, 'c', { /*error Getter is not present*/
+Object.defineProperty(o, 'c', {
     set: function(value) {
         this.val = value;
     }
 });
 ```
 
-The following patterns are not considered problems by default:
+Examples of **correct** code for the default `{ "setWithoutGet": true }` option:
 
-默认情况下，以下模式被认为是没有问题的：
+默认选项`{ "setWithoutGet": true }` **正确**的代码示例
 
 ```js
 /*eslint accessor-pairs: 2*/
@@ -123,45 +111,45 @@ Object.defineProperty(o, 'c', {
 
 ```
 
-#### getWithoutSet
+### `getWithoutSet`
 
-The following patterns are considered problems with option `getWithoutSet` set:
+Examples of **incorrect** code for the `{ "getWithoutSet": true }` option:
 
-设置 `getWithoutSet` 选项为 `true` 时，以下模式被认为是有问题的：
+`{ "getWithoutSet": true }`选项，**不正确**的代码示例：
 
 ```js
 /*eslint accessor-pairs: [2, { getWithoutSet: true }]*/
 
-var o = {                       /*error Getter is not present*/
+var o = {
     set a(value) {
         this.val = value;
     }
 };
 
-var o = {                       /*error Setter is not present*/
+var o = {
     get a() {
         return this.val;
     }
 };
 
 var o = {d: 1};
-Object.defineProperty(o, 'c', { /*error Getter is not present*/
+Object.defineProperty(o, 'c', {
     set: function(value) {
         this.val = value;
     }
 });
 
 var o = {d: 1};
-Object.defineProperty(o, 'c', { /*error Setter is not present*/
+Object.defineProperty(o, 'c', {
     get: function() {
         return this.val;
     }
 });
 ```
 
-The following patterns are not considered problems with option `getWithoutSet` set:
+Examples of **correct** code for the `{ "getWithoutSet": true }` option:
 
-设置 `getWithoutSet` 选项为 `true` 时，以下模式被认为是没有问题的：
+`{ "getWithoutSet": true }`选项，**正确**的代码示例：
 
 ```js
 /*eslint accessor-pairs: [2, { getWithoutSet: true }]*/

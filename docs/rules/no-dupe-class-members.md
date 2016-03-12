@@ -3,6 +3,7 @@ title: Rule no-dupe-class-members
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow duplicate name in class members (no-dupe-class-members)
 
 # 不允许类成员中有重复的名称 (no-dupe-class-members)
@@ -41,17 +42,17 @@ The following patterns are considered problems:
 
 class Foo {
   bar() { }
-  bar() { }          /*error Duplicate name "bar".*/
+  bar() { }
 }
 
 class Foo {
   bar() { }
-  get bar() { }      /*error Duplicate name "bar".*/
+  get bar() { }
 }
 
 class Foo {
   static bar() { }
-  static bar() { }   /*error Duplicate name "bar".*/
+  static bar() { }
 }
 ```
 
@@ -79,7 +80,7 @@ class Foo {
 }
 ```
 
-## When Not to Use It
+## When Not To Use It
 
 This rule should not be used in ES3/5 environments.
 

@@ -3,6 +3,7 @@ title: Rule eqeqeq
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require === and !== (eqeqeq)
 # 要求使用 === 和 !== (eqeqeq)
 
@@ -29,23 +30,23 @@ This rule is aimed at eliminating the type-unsafe equality operators.
 
 此规则目的在于，消除类型不安全的相等运算。
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
 以下模式被认为是有问题的：
 
 ```js
 /* eslint eqeqeq: 2 */
 
-if (x == 42) { }                     /*error Expected '===' and instead saw '=='.*/
+if (x == 42) { }
 
-if ("" == text) { }                  /*error Expected '===' and instead saw '=='.*/
+if ("" == text) { }
 
-if (obj.getStuff() != undefined) { } /*error Expected '!==' and instead saw '!='.*/
+if (obj.getStuff() != undefined) { }
 ```
 
-### Options
+## Options
 
-* `"smart"`
+### "smart"
 
 This option enforces the use of `===` and `!==` except for these cases:
 
@@ -85,17 +86,17 @@ The following patterns are considered problems with "smart":
 /* eslint eqeqeq: [2, "smart"] */
 
 // comparing two variables requires ===
-a == b              /*error Expected '===' and instead saw '=='.*/
+a == b
 
 // only one side is a literal
-foo == true         /*error Expected '===' and instead saw '=='.*/
-bananas != 1        /*error Expected '!==' and instead saw '!='.*/
+foo == true
+bananas != 1
 
 // comparing to undefined requires ===
-value == undefined  /*error Expected '===' and instead saw '=='.*/
+value == undefined
 ```
 
-* `"allow-null"`
+### "allow-null"
 
 This option will enforce `===` and `!==` in your code with one exception - it permits comparing to `null` to check for `null` or `undefined` in a single expression.
 
@@ -126,11 +127,11 @@ The following patterns are considered problems with "allow-null":
 ```js
 /* eslint eqeqeq: [2, "allow-null"] */
 
-bananas != 1              /*error Expected '!==' and instead saw '!='.*/
-typeof foo == 'undefined' /*error Expected '===' and instead saw '=='.*/
-'hello' != 'world'        /*error Expected '!==' and instead saw '!='.*/
-0 == 0                    /*error Expected '===' and instead saw '=='.*/
-foo == undefined          /*error Expected '===' and instead saw '=='.*/
+bananas != 1
+typeof foo == 'undefined'
+'hello' != 'world'
+0 == 0
+foo == undefined
 ```
 
 ## When Not To Use It

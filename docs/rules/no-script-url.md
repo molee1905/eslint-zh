@@ -3,6 +3,7 @@ title: Rule no-script-url
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Script URLs (no-script-url)
 # 禁止Script URLs (no-script-url)
 
@@ -19,7 +20,7 @@ The following patterns are considered problems:
 ```js
 /*eslint no-script-url: 2*/
 
-location.href = "javascript:void(0)"; /*error Script URL is a form of eval.*/
+location.href = "javascript:void(0)";
 ```
 
 ## Compatibility

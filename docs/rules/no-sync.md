@@ -3,6 +3,7 @@ title: Rule no-sync
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Synchronous Methods (no-sync)
 
 # 不支持的同步方法 (no-sync)
@@ -22,9 +23,9 @@ The following patterns are considered problems:
 ```js
 /*eslint no-sync: 2*/
 
-fs.existsSync(somePath);                             /*error Unexpected sync method: 'existsSync'.*/
+fs.existsSync(somePath);
 
-var contents = fs.readFileSync(somePath).toString(); /*error Unexpected sync method: 'readFileSync'.*/
+var contents = fs.readFileSync(somePath).toString();
 ```
 
 The following patterns are not considered problems:

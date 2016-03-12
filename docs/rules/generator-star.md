@@ -3,6 +3,7 @@ title: Rule generator-star
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Enforce the position of the * in generators (generator-star)
 
 # 强制*在generator函数中的位置(generator-star)

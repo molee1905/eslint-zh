@@ -3,6 +3,7 @@ title: Rule no-alert
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Use of Alert (no-alert)
 # 禁止使用Alert (no-alert)
 
@@ -27,11 +28,11 @@ The following patterns are considered problems:
 ```js
 /*eslint no-alert: 2*/
 
-alert("here!");                          /*error Unexpected alert.*/
+alert("here!");
 
-confirm("Are you sure?");                /*error Unexpected confirm.*/
+confirm("Are you sure?");
 
-prompt("What's your name?", "John Doe"); /*error Unexpected prompt.*/
+prompt("What's your name?", "John Doe");
 ```
 
 The following patterns are not considered problems:
