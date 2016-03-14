@@ -38,7 +38,6 @@ The following rules point out areas where you might have made mistakes.
 * [no-dupe-keys](no-dupe-keys) - 创建对象字面量时，禁止重复的键 (recommended)
 * [no-duplicate-case](no-duplicate-case) - disallow a duplicate case label. (recommended)
 * [no-duplicate-case](no-duplicate-case) - 禁止重复的case标签 (recommended)
-<<<<<<< HEAD
 * [no-empty](no-empty) - disallow empty block statements (recommended)
 * [no-empty](no-empty) - 禁止空语句块 (recommended)
 * [no-empty-character-class](no-empty-character-class) - disallow the use of empty character classes in regular expressions (recommended)
