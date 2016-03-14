@@ -15,7 +15,7 @@ This rule validates string arguments passed to the `RegExp` constructor.
 
 Examples of **incorrect** code for this rule:
 
-**错误** 代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint no-invalid-regexp: 2*/
@@ -29,7 +29,7 @@ new RegExp('\\')
 
 Examples of **correct** code for this rule:
 
-**正确** 代码示例：
+**正确**代码示例：
 
 ```js
 /*eslint no-invalid-regexp: 2*/

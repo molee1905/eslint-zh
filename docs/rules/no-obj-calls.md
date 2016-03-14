@@ -29,7 +29,7 @@ This rule is aimed at preventing the accidental calling of global objects as fun
 
 Examples of **incorrect** code for this rule:
 
-**错误** 代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint no-obj-calls: 2*/
@@ -40,7 +40,7 @@ var y = JSON();
 
 Examples of **correct** code for this rule:
 
-**正确** 代码示例：
+**正确**代码示例：
 
 ```js
 /*eslint no-obj-calls: 2*/

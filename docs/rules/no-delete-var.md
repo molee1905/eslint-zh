@@ -16,7 +16,7 @@ This rule prevents the use of `delete` operator on variables.
 
 Examples of **incorrect** code for this rule:
 
-**错误** 代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint no-delete-var: 2*/

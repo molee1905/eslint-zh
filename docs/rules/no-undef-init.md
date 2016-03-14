@@ -39,7 +39,7 @@ This rule aims to eliminate variable declarations that initialize to `undefined`
 
 Examples of **incorrect** code for this rule:
 
-**错误** 代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint no-undef-init: 2*/
@@ -51,7 +51,7 @@ let bar = undefined;
 
 Examples of **correct** code for this rule:
 
-**正确** 代码示例：
+**正确**代码示例：
 
 ```js
 /*eslint no-undef-init: 2*/

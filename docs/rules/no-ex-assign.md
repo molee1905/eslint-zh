@@ -34,7 +34,7 @@ This rule's purpose is to enforce a convention. Assigning a value to the excepti
 
 Examples of **incorrect** code for this rule:
 
-**错误** 代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint no-ex-assign: 2*/
@@ -48,7 +48,7 @@ try {
 
 Examples of **correct** code for this rule:
 
-**正确** 代码示例：
+**正确**代码示例：
 
 ```js
 /*eslint no-ex-assign: 2*/

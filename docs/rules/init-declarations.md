@@ -93,7 +93,7 @@ Variables must not be initialized at declaration, except in for loops, where it 
 
 Examples of **incorrect** code for the default `"always"` option:
 
-默认选项`"always"`的 **错误** 代码示例：
+默认选项`"always"`的 **错误**代码示例：
 
 ```js
 /*eslint init-declarations: [2, "always"]*/
@@ -107,7 +107,7 @@ function foo() {
 
 Examples of **correct** code for the default `"always"` option:
 
-默认选项`"always"`的 **正确** 代码示例：
+默认选项`"always"`的 **正确**代码示例：
 
 ```js
 /*eslint init-declarations: [2, "always"]*/
@@ -124,7 +124,7 @@ function foo() {
 
 Examples of **incorrect** code for the `"never"` option:
 
-选项`"never"`的 **错误** 代码示例：
+选项`"never"`的 **错误**代码示例：
 
 ```js
 /*eslint init-declarations: [2, "never"]*/
@@ -140,7 +140,7 @@ function foo() {
 
 Examples of **correct** code for the `"never"` option:
 
-选项`"never"`的 **正确** 代码示例：
+选项`"never"`的 **正确**代码示例：
 
 ```js
 /*eslint init-declarations: [2, "never"]*/
@@ -161,7 +161,7 @@ The `"never"` option ignores `const` variable initializations.
 
 Examples of **correct** code for the `"never", { "ignoreForLoopInit": true }` options:
 
-`"never", { "ignoreForLoopInit": true }`的 **正确** 代码示例：
+`"never", { "ignoreForLoopInit": true }`的 **正确**代码示例：
 
 ```js
 /*eslint init-declarations: [2, "never", { "ignoreForLoopInit": true }]*/

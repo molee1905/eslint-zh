@@ -27,7 +27,7 @@ This rule is aimed at eliminating unwanted `console` references from your JavaSc
 
 Examples of **incorrect** code for this rule:
 
-**错误** 代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint no-console: 2*/
@@ -38,7 +38,7 @@ console.error("Something bad happened.");
 
 Examples of **correct** code for this rule:
 
-**正确** 代码示例：
+**正确**代码示例：
 
 ```js
 /*eslint no-console: 2*/

@@ -29,7 +29,7 @@ This rule is aimed at preventing possible errors and unexpected behavior that mi
 
 Examples of **incorrect** code for this rule:
 
-**错误** 代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint no-dupe-keys: 2*/
@@ -52,7 +52,7 @@ var foo = {
 
 Examples of **correct** code for this rule:
 
-**正确** 代码示例：
+**正确**代码示例：
 
 ```js
 /*eslint no-dupe-keys: 2*/

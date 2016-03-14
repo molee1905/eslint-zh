@@ -31,7 +31,7 @@ This rule aims to eliminate shadowed variable declarations.
 
 Examples of **incorrect** code for this rule:
 
-**错误** 代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint no-shadow: 2*/
@@ -77,7 +77,7 @@ If it is `true`, the rule prevents shadowing of built-in global variables: `Obje
 
 Examples of **incorrect** code for the `{ "builtinGlobals": true }` option:
 
-选项`{"builtinGlobals": true}`的 **错误** 代码示例：
+选项`{"builtinGlobals": true}`的 **错误**代码示例：
 
 ```js
 /*eslint no-shadow: [2, { "builtinGlobals": true }]*/

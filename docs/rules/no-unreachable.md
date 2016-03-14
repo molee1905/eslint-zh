@@ -28,7 +28,7 @@ This rule is aimed at detecting unreachable code. It produces an error when a st
  
 Examples of **incorrect** code for this rule:
 
-**错误** 代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint no-unreachable: 2*/
@@ -66,7 +66,7 @@ console.log("done");
 
 Examples of **correct** code for this rule, because of JavaScript function and variable hoisting:
 
-**正确** 代码示例，由于Javascript函数和变量提升：
+**正确**代码示例，由于Javascript函数和变量提升：
 
 ```js
 /*eslint no-unreachable: 2*/

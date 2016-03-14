@@ -20,7 +20,7 @@ This rule is aimed at eliminating potential errors as the result of comparing ag
 
 Examples of **incorrect** code for this rule:
 
-**错误** 代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint use-isnan: 2*/
@@ -36,7 +36,7 @@ if (foo != NaN) {
 
 Examples of **correct** code for this rule:
 
-**正确** 代码示例：
+**正确**代码示例：
 
 ```js
 /*eslint use-isnan: 2*/

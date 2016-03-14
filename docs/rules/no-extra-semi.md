@@ -1,16 +1,18 @@
 ---
 title: Rule no-extra-semi
 layout: doc
+translator: ybbjegj
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Disallow Extra Semicolons (no-extra-semi)
+
 # 禁止冗余分号（no-extra-semi）
 
 JavaScript will more or less let you put semicolons after any statement without complaining. Typos and misunderstandings about where semicolons are required can lead to extra semicolons that are unnecessary.
 
-JavaScript任何语句后有多个或没有分号都不会出错。 书写错误和对哪里需要有分号的误解会导致额外的不必要的分号出现。
-
+JavaScript中，任何语句后有无分号都不会出错。书写错误和对哪里需要有分号的误解会导致额外的不必要的分号出现。
 
 **Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
 
@@ -24,7 +26,7 @@ This rule is aimed at eliminating extra unnecessary semicolons. While not techni
 
 Examples of **incorrect** code for this rule:
 
-**错误** 代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint no-extra-semi: 2*/
@@ -39,7 +41,7 @@ function foo() {
 
 Examples of **correct** code for this rule:
 
-**正确** 代码示例：
+**正确**代码示例：
 
 ```js
 /*eslint no-extra-semi: 2*/
@@ -67,7 +69,7 @@ If you intentionally use extra semicolons then you can disable this rule.
 
 This rule was introduced in ESLint 0.0.9.
 
-该规则是在ESLint 0.0.9 中被引入的。
+该规则是在 ESLint 0.0.9 中被引入的。
 
 ## Resources
 

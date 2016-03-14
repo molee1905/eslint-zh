@@ -112,7 +112,7 @@ The `"always"` option disallows assignment expressions in the test of a conditio
 
 Examples of **incorrect** code for the `"always"` option:
 
-选项`"always"`的 **错误** 代码示例：
+选项`"always"`的 **错误**代码示例：
 
 ```js
 /*eslint no-cond-assign: [2, "always"]*/
@@ -150,7 +150,7 @@ function setHeight(someNode) {
 
 Examples of **correct** code for the `"always"` option:
 
-选项`"always"`的 **正确** 代码示例：
+选项`"always"`的 **正确**代码示例：
 
 ```js
 /*eslint no-cond-assign: [2, "always"]*/

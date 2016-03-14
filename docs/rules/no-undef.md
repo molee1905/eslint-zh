@@ -20,7 +20,7 @@ Any reference to an undeclared variable causes a warning, unless the variable is
 
 Examples of **incorrect** code for this rule:
 
-**错误** 代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint no-undef: 2*/
@@ -31,7 +31,7 @@ b = 10;
 
 Examples of **correct** code with `global` declaration for this rule:
 
-声明`global`情况下，该规则的 **正确** 代码示例：
+声明`global`情况下，该规则的 **正确**代码示例：
 
 ```js
 /*global someFunction b:true*/
@@ -45,7 +45,7 @@ The `b:true` syntax in `/*global */` indicates that assignment to `b` is correct
 
 Examples of **incorrect** code with `global` declaration for this rule:
 
-声明`global`情况下，该规则的 **错误** 代码示例：
+声明`global`情况下，该规则的 **错误**代码示例：
 
 ```js
 /*global b*/
@@ -67,7 +67,7 @@ By default, variables declared in `/*global */` are read-only, therefore assignm
 
 Examples of **correct** code for the default option:
 
-默认选项的 **正确** 代码示例：
+默认选项的 **正确**代码示例：
 
 ```js
 /*eslint no-undef: 2*/
@@ -83,7 +83,7 @@ You can use this option if you want to prevent `typeof` check on a variable whic
 
 Examples of **incorrect** code for the `{ "typeof": true }` option:
 
-选项`{ "typeof": true }`的 **错误** 代码示例：
+选项`{ "typeof": true }`的 **错误**代码示例：
 
 ```js
 /*eslint no-undef: [2, { "typeof": true }] */
@@ -93,7 +93,7 @@ if(typeof a === "string"){}
 
 Examples of **correct** code for the `{ "typeof": true }` option:
 
-选项`{ "typeof": true }`的 **正确** 代码示例：
+选项`{ "typeof": true }`的 **正确**代码示例：
 
 ```js
 /*global a*/

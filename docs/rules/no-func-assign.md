@@ -24,7 +24,7 @@ This rule is aimed at flagging probable mistakes and issues in the form of overw
 
 Examples of **incorrect** code for this rule:
 
-**错误** 代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint no-func-assign: 2*/
@@ -39,7 +39,7 @@ function foo() {
 
 Examples of **incorrect** code for this rule, unlike the corresponding rule in JSHint:
 
-**错误** 代码示例，与JSHint中的规则不同：
+**错误**代码示例，与JSHint中的规则不同：
 
 ```js
 /*eslint no-func-assign: 2*/
@@ -50,7 +50,7 @@ function foo() {}
 
 Examples of **correct** code for this rule:
 
-**正确** 代码示例：
+**正确**代码示例：
 
 ```js
 /*eslint no-func-assign: 2*/

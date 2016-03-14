@@ -26,7 +26,7 @@ This rule prevents duplicate parameter names in a function.
 
 Examples of **incorrect** code for this rule:
 
-**错误** 代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint no-dupe-args: 2*/
@@ -38,7 +38,7 @@ function foo(a, b, a) {
 
 Examples of **correct** code for this rule:
 
-**正确** 代码示例：
+**正确**代码示例：
 
 ```js
 /*eslint no-dupe-args: 2*/

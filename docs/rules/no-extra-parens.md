@@ -45,7 +45,7 @@ The second one is an object for more fine-grained configuration when the first o
 
 Examples of **incorrect** code for the default `"all"` option:
 
-默认选项`"all"`的 **错误** 代码示例：
+默认选项`"all"`的 **错误**代码示例：
 
 ```js
 /*eslint no-extra-parens: 2*/
@@ -61,7 +61,7 @@ typeof (a);
 
 Examples of **correct** code for the default `"all"` option:
 
-默认选项`"all"`的 **正确** 代码示例：
+默认选项`"all"`的 **正确**代码示例：
 
 ```js
 /*eslint no-extra-parens: 2*/
@@ -83,7 +83,7 @@ When setting the first option as `"all"`, an additional option can be added to a
 
 Examples of **correct** code for the `"all"` and `{ "conditionalAssign": true }` options:
 
-当选项为`"all"` 和 `{ "conditionalAssign": true }`时的 **正确** 代码示例：
+当选项为`"all"` 和 `{ "conditionalAssign": true }`时的 **正确**代码示例：
 
 ```js
 /*eslint no-extra-parens: [2, "all", { "conditionalAssign": false }]*/
@@ -101,7 +101,7 @@ for (;(a = b););
 
 Examples of **incorrect** code for the `"functions"` option:
 
-选项`"functions"`的 **错误** 代码示例：
+选项`"functions"`的 **错误**代码示例：
 
 ```js
 /*eslint no-extra-parens: [2, "functions"]*/
@@ -113,7 +113,7 @@ var y = (function () {return 1;});
 
 Examples of **correct** code for the `"functions"` option:
 
-选项`"functions"`的 **正确** 代码示例：
+选项`"functions"`的 **正确**代码示例：
 
 ```js
 /*eslint no-extra-parens: [2, "functions"]*/

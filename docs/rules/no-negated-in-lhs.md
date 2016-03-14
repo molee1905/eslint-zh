@@ -42,7 +42,7 @@ if(('' + !a) in b) {
 
 Examples of **incorrect** code for this rule:
 
-**错误** 代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint no-negated-in-lhs: 2*/
@@ -54,7 +54,7 @@ if(!a in b) {
 
 Examples of **correct** code for this rule:
 
-**正确** 代码示例：
+**正确**代码示例：
 
 ```js
 /*eslint no-negated-in-lhs: 2*/

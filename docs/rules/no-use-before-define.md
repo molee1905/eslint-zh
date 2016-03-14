@@ -24,7 +24,7 @@ This rule will warn when it encounters a reference to an identifier that has not
 
 Examples of **incorrect** code for this rule:
 
-**错误** 代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint no-use-before-define: 2*/
@@ -50,7 +50,7 @@ var b = 1;
 
 Examples of **correct** code for this rule:
 
-**正确** 代码示例：
+**正确**代码示例：
 
 ```js
 /*eslint no-use-before-define: 2*/
@@ -103,7 +103,7 @@ This rule accepts `"nofunc"` string as a option.
 
 Examples of **correct** code for the `{ "functions": false }` option:
 
-选项`{ "functions": false }`的 **正确** 代码示例：
+选项`{ "functions": false }`的 **正确**代码示例：
 
 ```js
 /*eslint no-use-before-define: [2, { "functions": false }]*/
@@ -116,7 +116,7 @@ function f() {}
 
 Examples of **incorrect** code for the `{ "classes": false }` option:
 
-选项`{ "classes": false }`的 **错误** 代码示例：
+选项`{ "classes": false }`的 **错误**代码示例：
 
 ```js
 /*eslint no-use-before-define: [2, { "classes": false }]*/
@@ -129,7 +129,7 @@ class A {
 
 Examples of **correct** code for the `{ "classes": false }` option:
 
-选项`{ "classes": false }`的 **正确** 代码示例：
+选项`{ "classes": false }`的 **正确**代码示例：
 
 ```js
 /*eslint no-use-before-define: [2, { "classes": false }]*/

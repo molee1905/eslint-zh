@@ -89,7 +89,7 @@ You can set the option in configuration like this:
 
 Examples of **incorrect** code for the default `"functions"` option:
 
-默认选项`"functions"`的 **错误** 代码示例：
+默认选项`"functions"`的 **错误**代码示例：
 
 ```js
 /*eslint no-inner-declarations: 2*/
@@ -107,7 +107,7 @@ function doSomethingElse() {
 
 Examples of **correct** code for the default `"functions"` option:
 
-默认选项`"functions"`的 **正确** 代码示例：
+默认选项`"functions"`的 **正确**代码示例：
 
 ```js
 /*eslint no-inner-declarations: 2*/
@@ -132,7 +132,7 @@ if (test) {
 
 Examples of **incorrect** code for the `"both"` option:
 
-选项`"both"`的 **错误** 代码示例：
+选项`"both"`的 **错误**代码示例：
 
 ```js
 /*eslint no-inner-declarations: [2, "both"]*/
@@ -150,7 +150,7 @@ function doAnotherThing() {
 
 Examples of **correct** code for the `"both"` option:
 
-选项`"both"`的 **错误** 代码示例：
+选项`"both"`的 **错误**代码示例：
 
 ```js
 /*eslint no-inner-declarations: 2*/

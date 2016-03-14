@@ -5,7 +5,7 @@ translator: ybbjegj
 proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
-<<<<<<< HEAD
+
 # Disallow Empty Block Statements (no-empty)
 
 # 禁止空块语句 (no-empty)
@@ -23,7 +23,7 @@ This rule is aimed at eliminating empty block statements. A block will not be co
 
 Examples of **incorrect** code for this rule:
 
-**错误** 代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint no-empty: 2*/
@@ -48,7 +48,7 @@ try {
 
 Examples of **correct** code for this rule:
 
-**正确** 代码示例：
+**正确**代码示例：
 
 ```js
 /*eslint no-empty: 2*/

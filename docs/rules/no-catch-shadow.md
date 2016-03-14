@@ -31,7 +31,7 @@ This rule is aimed at preventing unexpected behavior in your program that may ar
 
 Examples of **incorrect** code for this rule:
 
-**错误** 代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint no-catch-shadow: 2*/
@@ -57,7 +57,7 @@ try {
 
 Examples of **correct** code for this rule:
 
-**正确** 代码示例：
+**正确**代码示例：
 
 ```js
 /*eslint no-catch-shadow: 2*/

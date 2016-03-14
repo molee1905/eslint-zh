@@ -36,7 +36,7 @@ This rule aims to eliminate the use of Boolean casts in an already Boolean conte
 
 Examples of **incorrect** code for this rule:
 
-**错误** 代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint no-extra-boolean-cast: 2*/
@@ -72,7 +72,7 @@ for (; !!foo; ) {
 
 Examples of **correct** code for this rule:
 
-**正确** 代码示例：
+**正确**代码示例：
 
 ```js
 /*eslint no-extra-boolean-cast: 2*/

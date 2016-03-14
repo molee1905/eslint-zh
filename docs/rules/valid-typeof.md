@@ -21,7 +21,7 @@ This rule aims to prevent errors from likely typos by ensuring that when the res
 
 Examples of **incorrect** code for this rule:
 
-**错误** 代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint valid-typeof: 2*/
@@ -34,7 +34,7 @@ typeof bar !== "fucntion"
 
 Examples of **correct** code for this rule:
 
-**正确** 代码示例：
+**正确**代码示例：
 
 ```js
 /*eslint valid-typeof: 2*/

@@ -26,7 +26,7 @@ This rule is aimed at highlighting possible typos and unexpected behavior in reg
 
 Examples of **incorrect** code for this rule:
 
-**错误** 代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint no-empty-character-class: 2*/
@@ -40,7 +40,7 @@ bar.match(/^abc[]/);
 
 Examples of **correct** code for this rule:
 
-**正确** 代码示例：
+**正确**代码示例：
 
 ```js
 /*eslint no-empty-character-class: 2*/

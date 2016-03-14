@@ -37,7 +37,7 @@ The rule is aimed at preventing a constant expression in the test of:
 
 Examples of **incorrect** code for this rule:
 
-**错误** 代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint no-constant-condition: 2*/
@@ -79,7 +79,7 @@ do{
 
 Examples of **correct** code for this rule:
 
-**正确** 代码示例：
+**正确**代码示例：
 
 ```js
 /*eslint no-constant-condition: 2*/

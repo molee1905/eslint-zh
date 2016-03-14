@@ -42,7 +42,7 @@ This rule is aimed at ensuring that two unrelated consecutive lines are not acci
 
 Examples of **incorrect** code for this rule:
 
-**错误** 代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint no-unexpected-multiline: 2*/
@@ -63,7 +63,7 @@ x
 
 Examples of **correct** code for this rule:
 
-**正确** 代码示例：
+**正确**代码示例：
 
 ```js
 /*eslint no-unexpected-multiline: 2*/

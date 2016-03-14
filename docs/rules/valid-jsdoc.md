@@ -49,7 +49,7 @@ This rule aims to prevent invalid and incomplete JSDoc comments. It will warn wh
 
 Examples of **incorrect** code for this rule:
 
-**错误** 代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint valid-jsdoc: 2*/
@@ -113,7 +113,7 @@ function foo(a) {
 
 Examples of **correct** code for this rule:
 
-**正确** 代码示例：
+**正确**代码示例：
 
 ```js
 /*eslint valid-jsdoc: 2*/

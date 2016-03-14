@@ -68,7 +68,7 @@ With this rule enabled the following characters will cause warnings outside of s
 
 Examples of **incorrect** code for this rule:
 
-**错误** 代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint no-irregular-whitespace: 2*/
@@ -100,7 +100,7 @@ function thing() {
 
 Examples of **correct** code for this rule:
 
-**正确** 代码示例：
+**正确**代码示例：
 
 ```js
 /*eslint no-irregular-whitespace: 2*/
