@@ -5,6 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # No empty labels (no-empty-label)
+
 # 禁用空标签（no-empty-label）
 
 **Replacement notice**: This rule was removed in ESLint v2.0 and replaced by [no-labels](no-labels) rule.

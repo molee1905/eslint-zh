@@ -5,6 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Disallow `this` keywords outside of classes or class-like objects. (no-invalid-this)
+
 # 禁止`this`关键字在类或者类对象之外出现 (no-invalid-this)
 
 Under the strict mode, `this` keywords outside of classes or class-like objects might be `undefined` and raise a `TypeError`.

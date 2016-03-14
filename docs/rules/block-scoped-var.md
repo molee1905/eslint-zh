@@ -5,6 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Treat var as Block Scoped (block-scoped-var)
+
 # 把 var 语句看作是在块级作用域范围之内 (block-scoped-var)
 
 The `block-scoped-var` rule generates warnings when variables are used outside of the block in which they were defined. This emulates C-style block scope.

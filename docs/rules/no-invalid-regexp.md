@@ -5,6 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Disallow Invalid Regular Expressions (no-invalid-regexp)
+
 # 禁止无效的正则表达式（no-invalid-regexp）
 
 This rule validates string arguments passed to the `RegExp` constructor.
