@@ -1,6 +1,8 @@
 ---
 title: Rule yoda
 layout: doc
+translator: fengnana
+proofreader: qifeigit
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -9,7 +11,7 @@ layout: doc
 
 Yoda conditions are so named because the literal value of the condition comes first while the variable comes second. For example, the following is a Yoda condition:
 
-Yoda条件被如此命名，因为文字条件在先而变量在第二的位置。例如，以下是Yoda条件：
+Yoda条件被如此命名，是因为在条件判断中字面量在先而变量在第二的位置。例如，以下是Yoda条件：
 
 ```js
 if ("red" === color) {
@@ -33,17 +35,17 @@ This typically reads, "color is red", which is arguably a more natural way to de
 
 Proponents of Yoda conditions highlight that it is impossible to mistakenly use `=` instead of `==` because you cannot assign to a literal value. Doing so will cause a syntax error and you will be informed of the mistake early on. This practice was therefore very common in early programming where tools were not yet available.
 
-尤达条件的支持者突出,是不可能错误地使用`=`代替`==`,因为你不能分配给一个文本值。这样做将导致一个语法错误,并且你会在早期被告知。因此这种做法是非常常见的在早期的编程工具尚未提供的时候。
+尤达条件的支持者强调，错误地使用`=`代替`==`是不可能的,因为你不能分配给一个文本值。这样做将导致一个语法错误,并且你会被提早告知。因此在工具尚不可用的早期编程中，这种做法是非常常见的。
 
 Opponents of Yoda conditions point out that tooling has made us better programmers because tools will catch the mistaken use of `=` instead of `==` (ESLint will catch this for you). Therefore, they argue, the utility of the pattern doesn't outweigh the readability hit the code takes while using Yoda conditions.
 
-尤达条件的反对者指出工具使我们成为更好的程序员,因为工具将捕获使用`=`代替`==`的错误(ESLint将为您捕获这个)。因此,他们认为,模式的效用不高于代码的可读性需求当使用尤达条件时。
+尤达条件的反对者指出工具使我们成为更好的程序员,因为工具将捕获使用`=`代替`==`的错误(ESLint将为您捕获这个错误)。因此,他们认为当使用尤达条件时，该模式的实用性并不高于代码的可读性。
 
 ## Rule Details
 
 This rule takes one argument. If it is `"never"` then comparisons must never be a Yoda condition. If `"always"`, then the literal must always come first. The default is `"never"`.
 
-这条规则需要一个参数。如果是`"never"`那么比较绝不能是一个尤达条件。如果是`"always"`,那么文字永远是第一位。默认值是`"never"`。
+这条规则需要一个参数。如果是`"never"`那么比较绝不能是一个尤达条件。如果是`"always"`,那么字面量永远是第一位。默认值是`"never"`。
 
 The following patterns are considered problems:
 
@@ -131,7 +133,7 @@ The `onlyEquality` option is a superset of `exceptRange`, thus both options are 
 
 "Range" comparisons test whether a variable is inside or outside the range between two literals. When configured with the `exceptRange` option, range tests are allowed when the comparison itself is wrapped directly in parentheses, such as those of an `if` or `while` condition.
 
-"Range"比较测试一个变量是否在内部或外部两个文本之间的范围。当配置了`exceptRange`选项时,当直接比较包裹在括号中的自己时，允许范围测试,如这些中的`if`或`while`条件。
+"Range"比较测试一个变量是否在内部或外部两个字面量s之间的范围。当配置了`exceptRange`选项且直接比较包裹在括号中的自己时，允许范围测试，如这些中的`if`或`while`条件。
 
 ```json
 "yoda": [2, "never", { "exceptRange": true }]
@@ -165,7 +167,7 @@ function howLong(arr) {
 
 Some developers might prefer to only enforce the rule for the equality operators `==` and `===`, and not showing any warnings for any code around other operators. With `onlyEquality` option, these patterns will not be considered problems:
 
-一些开发者可能只喜欢对判等运算符`==` 和 `===`强制规则,而不会显示任何代码的任何警告在其他操作符周围。在`onlyEquality`选项下，以下模式被认为是没有问题的：
+一些开发者可能只喜欢对判等运算符`==` 和 `===`强制使用规则,而不会显示任何代码的任何警告在其他操作符周围。在`onlyEquality`选项下，以下模式被认为是没有问题的：
 
 ```js
 /*eslint yoda: [2, "never", { "onlyEquality": true }]*/
@@ -186,7 +188,7 @@ if (x !== 'foo' && 'bar' != x) {
 
 This rule was introduced in ESLint 0.7.1.
 
-此规则在ESLint 0.7.1中被引入。
+此规则在 ESLint 0.7.1 中被引入。
 
 ## Resources
 
