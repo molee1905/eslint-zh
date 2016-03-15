@@ -1,6 +1,8 @@
 ---
 title: Rule block-scoped-var
 layout: doc
+translator: fengnana
+proofreader: qifeigit
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -26,7 +28,7 @@ function doSomething() {
 
 This rule aims to reduce the usage of variables outside of their binding context and emulate traditional block scope from other languages. This is to help newcomers to the language avoid difficult bugs with variable hoisting.
 
-此规则借鉴其他语言的块级作用域概念，用来减少变量跨作用域使用情况的发生。
+此规则借鉴其他语言的块级作用域概念，旨在用来减少变量跨作用域使用情况的发生。此规则可帮助语言初学者避免因变量声明提升而产生的bugs。
 
 The following patterns are considered problems:
 
