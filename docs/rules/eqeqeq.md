@@ -1,6 +1,8 @@
 ---
 title: Rule eqeqeq
 layout: doc
+translator: @fengnana
+proofreader:  @ILFront-End
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Require === and !== (eqeqeq)
@@ -8,12 +10,12 @@ layout: doc
 
 It is considered good practice to use the type-safe equality operators `===` and `!==` instead of their regular counterparts `==` and `!=`.
 
-被认为是最好的实践 使用类型安全的相等运算符`===` 和 `!==` 代替他们的常规同行`==` 和 `!=`。
+使用类型相等的比较操作符 `===` 和 `!==` 代替 `==` 和 `!=` 被认为是最佳实践。
 
 The reason for this is that `==` and `!=` do type coercion which follows the rather obscure [Abstract Equality Comparison Algorithm](http://www.ecma-international.org/ecma-262/5.1/#sec-11.9.3).
 For instance, the following statements are all considered `true`:
 
-这样做的原因是，`==` 和 `!=` 遵循默默无闻的抽象平等比较算法做类型强制。例如，以下语句被认为是`true`。
+这样做的原因是 `==` 和 `!=` 遵循相当模糊的 [Abstract Equality Comparison Algorithm](http://www.ecma-international.org/ecma-262/5.1/#sec-11.9.3) 来强制类型转换。如以下语句都被认为是 `true`。
 
 * `[] == false`
 * `[] == ![]`
@@ -21,17 +23,17 @@ For instance, the following statements are all considered `true`:
 
 If one of those occurs in an innocent-looking statement such as `a == b` the actual problem is very difficult to spot.
 
-这些发生在一个类似`a == b`这样看起来无害的声明中时，实际问题是很难被识别的。
+如果这些运算发生在 `a == b` 这样的看起来无害的声明中，实际存在的问题是非常难于定位的。
 
 ## Rule Details
 
 This rule is aimed at eliminating the type-unsafe equality operators.
 
-此规则目的在于，消除类型不安全的相等运算。
+该规则旨在消除不安全的类型相等的运算。
 
 **Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
 
-**可修复:**此规则通过在命令行中使用`--fix`自动修复。
+**可修复:** 该规则可以通过 `--fix` 命令行自行修正错误。
 
 The following patterns are considered problems:
 
@@ -53,15 +55,18 @@ if (obj.getStuff() != undefined) { } /*error Expected '!==' and instead saw '!='
 
 This option enforces the use of `===` and `!==` except for these cases:
 
-此选项，强制使用`===` 和 `!==`除了以下情况：
+该选项强制使用 `===` 和 `!==`， 除了以下情况：
 
 * Comparing two literal values
+* 比较两个文本值
 * Evaluating the value of `typeof`
+* 评估 `typeof` 运算的值
 * Comparing against `null`
+* 针对 `null` 的比较
 
 You can specify this option using the following configuration:
 
-你可以通过如下配置指定选项：
+你可以通过如下配置指定使用该选项：
 
 ```json
 "eqeqeq": [2, "smart"]
@@ -83,7 +88,7 @@ foo == null
 
 The following patterns are considered problems with "smart":
 
-以下模式在"smart"下被认为是有问题的：
+以下模式在 "smart" 选项开启下被认为是有问题的：
 
 ```js
 /* eslint eqeqeq: [2, "smart"] */
@@ -103,11 +108,11 @@ value == undefined  /*error Expected '===' and instead saw '=='.*/
 
 This option will enforce `===` and `!==` in your code with one exception - it permits comparing to `null` to check for `null` or `undefined` in a single expression.
 
-此选项在你的代码中会强制要求`===` 和 `!==`，有一例外，它允许`null`和`null`或者`undefined`在表达式中做比较。
+该选项强制代码里使用 `===` 和 `!==`，有一例外，该规则允许在单一表达式中和 `null` ，和检测值为 `null` 或者 `undefined` 的值做比较。
 
 You can specify this option using the following configuration:
 
-你可以通过如下配置指定选项。
+你可以通过如下配置指定使用该选项。
 
 ```json
 "eqeqeq": [2, "allow-null"]
@@ -125,7 +130,7 @@ foo == null
 
 The following patterns are considered problems with "allow-null":
 
-如果设置了"allow-null"，以下模式被认为是有问题的：
+如果设置了 "allow-null"，以下模式被认为是有问题的：
 
 ```js
 /* eslint eqeqeq: [2, "allow-null"] */
@@ -141,13 +146,13 @@ foo == undefined          /*error Expected '===' and instead saw '=='.*/
 
 If you don't want to enforce a style for using equality operators, then it's safe to disable this rule.
 
-如果你不想强制使用相等运算的类型，可以安全的禁用此规则。
+如果在使用比较操作时，你不强制使用这个风格，关闭该规则是安全的。
 
 ## Version
 
 This rule was introduced in ESLint 0.0.2.
 
-此规则在ESLint 0.0.2中被引入。
+此规则在 ESLint 0.0.2 中被引入。
 
 ## Resources
 
