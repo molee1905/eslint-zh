@@ -341,7 +341,7 @@ Example:
 
 This option tells ESLint to read and lint source code from STDIN instead files. You can use this to pipe code to ESLint.
 
-这个选项告诉 ESLint 从 STDIN 去读和链接源代码。您可以用管道来使用标准输入输出。
+这个选项告诉 ESLint 从 STDIN 读取源代码并检测。您可以用管道来使用标准输入输出。
 
 Example
 
