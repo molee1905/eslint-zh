@@ -3,6 +3,7 @@ title: Rule generator-star-spacing
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Enforce spacing around the * in generator functions (generator-star-spacing)
 
 # 强制generator函数中*号周围有空格 (generator-star-spacing)
@@ -78,15 +79,11 @@ The rule takes one option, an object, which has two keys `before` and `after` ha
   
   在对象文本的缩写方法中，`*`之前的空格不会被检查，因为它们缺少`function`关键字。
 
-* `after` enforces spacing between the `*` and the function name.
+* `after` enforces spacing between the `*` and the function name (or the opening parenthesis for anonymous generator functions).
   If it is `true`, a space is required, otherwise spaces are disallowed.
 
-  In anonymous function expressions, spacing between the `*` and the opening parenthesis is not checked. This is checked by the [space-before-function-paren](space-before-function-paren) rule.
 
-* `after`强制在`*`和函数名之间有空格。如果设置为`true`，要求有空格，否则不允许有空格。
-
-  在匿名函数表达式中，`*`和左括号之间的空格不会被检查。这个会被[space-before-function-paren](space-before-function-paren)规则检查。
-
+* `after`强制在`*`和函数名之间有空格 (或匿名generator函数的左括号)。如果设置为`true`，要求有空格，否则不允许有空格。
 
 The default is `{"before": true, "after": false}`.
 
@@ -134,7 +131,7 @@ When using `{"before": false, "after": true}` this placement will be enforced:
 
 function* generator() {}
 
-var anonymous = function*() {};
+var anonymous = function* () {};
 
 var shorthand = { * generator() {} };
 ```
@@ -149,7 +146,7 @@ When using `{"before": true, "after": true}` this placement will be enforced:
 
 function * generator() {}
 
-var anonymous = function *() {};
+var anonymous = function * () {};
 
 var shorthand = { * generator() {} };
 ```

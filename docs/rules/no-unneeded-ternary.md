@@ -3,6 +3,7 @@ title: Rule no-unneeded-ternary
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow conditional expressions that can be expressed with simpler constructs (no-unneeded-ternary)
 
 # 禁止可以表达为更简单的结构的条件表达式 (no-unneeded-ternary)
@@ -24,7 +25,7 @@ var isYes = answer === 1;
 var isNo = answer === 1 ? false : true;
 
 // Good
-var isYes = answer !== 1;
+var isNo = answer !== 1;
 ```
 
 This rule disallows the use of 'Boolean' literals inside conditional expressions.
@@ -63,9 +64,9 @@ The following patterns are considered problems:
 ```js
 /*eslint no-unneeded-ternary: 2*/
 
-var a = x === 2 ? true : false; /*error Unnecessary use of boolean literals in conditional expression*/
+var a = x === 2 ? true : false;
 
-var a = x ? true : false;       /*error Unnecessary use of boolean literals in conditional expression*/
+var a = x ? true : false;
 ```
 
 The following pattern is considered a warning when `defaultAssignment` is `false`:
@@ -100,22 +101,22 @@ The following pattern is not considered a warning when `defaultAssignment` is `t
 var a = x ? x : 1;
 ```
 
-## Related Rules
-
-* [no-ternary](no-ternary)
-* [no-nested-ternary](no-nested-ternary)
-
 ## When Not To Use It
 
 You can turn this rule off if you are not concerned with unnecessary complexity in conditional expressions.
 
 如果你不关心条件表达式中不必要的复杂性的话，可以关闭此规则。
 
+## Related Rules
+
+* [no-ternary](no-ternary)
+* [no-nested-ternary](no-nested-ternary)
+
 ## Version
 
 This rule was introduced in ESLint 0.21.0.
 
-该规则在ESLint 0.21.0 中被引入。
+该规则在 ESLint 0.21.0 中被引入。
 
 ## Resources
 

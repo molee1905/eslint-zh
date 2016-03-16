@@ -3,6 +3,7 @@ title: Rule vars-on-top
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require Variable Declarations to be at the top of their scope (vars-on-top)
 
 # 要求将变量声明放在它们作用域的顶部 (vars-on-top)
@@ -20,8 +21,6 @@ Allowing multiple declarations helps promote maintainability and is thus allowed
 
 此规则目的在于保持所有的变量声明在一系列的语句中处于前导地位。允许多行声明有助于提高可维护性因此是被允许的。
 
-### Examples
-
 The following patterns are considered problems:
 
 以下模式被认为是有问题的：
@@ -35,17 +34,17 @@ function doSomething() {
     if (true) {
         first = true;
     }
-    var second;                 /*error All "var" declarations must be at the top of the function scope.*/
+    var second;
 }
 
 // Variable declaration in for initializer:
 function doSomething() {
-    for (var i=0; i<10; i++) {} /*error All "var" declarations must be at the top of the function scope.*/
+    for (var i=0; i<10; i++) {}
 }
 
 // Variables after other statements:
 f();
-var a;                          /*error All "var" declarations must be at the top of the function scope.*/
+var a;
 ```
 
 The following patterns are not considered problems:

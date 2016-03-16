@@ -3,6 +3,7 @@ title: Rule no-ternary
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Ternary Operators (no-ternary)
 
 # 不允许使用三元操作符 (no-ternary)
@@ -28,12 +29,12 @@ The following patterns are considered problems:
 ```js
 /*eslint no-ternary: 2*/
 
-var foo = isBar ? baz : qux; /*error Ternary operator used.*/
+var foo = isBar ? baz : qux;
 
-foo ? bar() : baz();         /*error Ternary operator used.*/
+foo ? bar() : baz();
 
 function quux() {
-  return foo ? bar : baz;    /*error Ternary operator used.*/
+  return foo ? bar : baz;
 }
 ```
 

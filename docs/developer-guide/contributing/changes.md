@@ -35,6 +35,8 @@ Please include as much detail as possible to help us properly address your issue
 
 请包括尽可能的多的细节来帮助我们正确地处理你的议题（issue)。如果我们需要对议题（issue)进行分类而且时常会询问更多的细节，那么实际修复这些问题将需要更多的时间。为了使我们尽可能的高效，请在你的议题（issue）中包含更多的细节。
 
-**Note:** If you just have a question that won't necessarily result in a change to ESLint, such as asking how something works or how to contribute, please use the [mailing list](https://groups.google.com/group/eslint) instead of filing an issue.
+**Note:** If you just have a question that won't necessarily result in a change to ESLint, such as asking how something works or how to contribute, please use the [mailing list](https://groups.google.com/group/eslint) or [chat](https://gitter.im/eslint/eslint) instead of filing an issue.
 
-**注意：** 如果你只是有一个问题，且该问题并不一定会导致 ESLint 发生改变，比如询问一些工作原理或者如何做出贡献，那么请使用 [邮件列表（mailing list）](https://groups.google.com/group/eslint) 而不是提交一个议题（issue）。
+**注意：** 如果你只是有一个问题，且该问题并不一定会导致 ESLint 发生改变，比如询问一些工作原理或者如何做出贡献，那么请使用 [邮件列表（mailing list）](https://groups.google.com/group/eslint) 或[聊天室（chat）](https://gitter.im/eslint/eslint) 而不是提交一个议题（issue）。
+
+

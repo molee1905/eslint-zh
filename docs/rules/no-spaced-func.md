@@ -3,6 +3,7 @@ title: Rule no-spaced-func
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Spaces in Function Calls (no-spaced-func)
 
 # 禁止函数调用的空格
@@ -32,9 +33,9 @@ The following patterns are considered problems:
 ```js
 /*eslint no-spaced-func: 2*/
 
-fn () /*error Unexpected space between function name and paren.*/
+fn ()
 
-fn    /*error Unexpected space between function name and paren.*/
+fn
 ()
 ```
 

@@ -3,6 +3,7 @@ title: Rule no-new-object
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow the use of the Object constructor (no-new-object)
 
 # 禁止使用Object的构造函数 (no-new-object)
@@ -44,9 +45,9 @@ The following patterns are considered problems:
 ```js
 /*eslint no-new-object: 2*/
 
-var myObject = new Object(); /*error The object literal notation {} is preferrable.*/
+var myObject = new Object();
 
-var myObject = new Object;   /*error The object literal notation {} is preferrable.*/
+var myObject = new Object;
 ```
 
 The following patterns are not considered problems:

@@ -3,6 +3,7 @@ title: Rule no-invalid-this
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow `this` keywords outside of classes or class-like objects. (no-invalid-this)
 # 禁止`this`关键字在类或者类对象之外出现 (no-invalid-this)
 
@@ -19,7 +20,6 @@ This rule aims to flag usage of `this` keywords outside of classes or class-like
 Basically this rule checks whether or not a function which are containing `this` keywords is a constructor or a method.
 
 基本上该规则检查一个包含`this`关键字的函数是否是一个构造器或者一个方法。
-
 
 This rule judges from following conditions whether or not the function is a constructor:
 
@@ -58,77 +58,78 @@ And this rule allows `this` keywords in functions below:
 * 函数的 `call/apply/bind` 方法被直接调用。
 
 * The function is a callback of array methods (such as `.forEach()`) if `thisArg` is given.
+
 * 如果给出`thisArg`，函数是数组方法的一个回调（比如`.forEach()`）
+
 * The function has `@this` tag in its JSDoc comment.
+
 * 函数在JSDoc注释标记中有`@this`标签。
 
 Otherwise are considered problems.
 
-其他情况被认为是有问题的：
-
-### The following patterns are considered problems:
+其他情况被认为是有问题的。
+ 
 
 This rule warns below **only** under the strict mode.
 Please note your code in ES2015 Modules/Classes is always the strict mode.
 
 此规则**只**在严格模式下给出警告。请注意你的代码在ES2015模块/类总是严格的模式。
 
+The following patterns are considered problems:
+
+以下模式被认为是有问题的：
+
 ```js
 /*eslint no-invalid-this: 2*/
 /*eslint-env es6*/
 
-this.a = 0;            /*error Unexpected `this`.*/
-baz(() => this);       /*error Unexpected `this`.*/
+this.a = 0;
+baz(() => this);
 
 (function() {
-    this.a = 0;        /*error Unexpected `this`.*/
-    baz(() => this);   /*error Unexpected `this`.*/
+    this.a = 0;
+    baz(() => this);
 })();
 
 function foo() {
-    this.a = 0;        /*error Unexpected `this`.*/
-    baz(() => this);   /*error Unexpected `this`.*/
+    this.a = 0;
+    baz(() => this);
 }
 
 var foo = function() {
-    this.a = 0;        /*error Unexpected `this`.*/
-    baz(() => this);   /*error Unexpected `this`.*/
+    this.a = 0;
+    baz(() => this);
 };
 
 foo(function() {
-    this.a = 0;        /*error Unexpected `this`.*/
-    baz(() => this);   /*error Unexpected `this`.*/
+    this.a = 0;
+    baz(() => this);
 });
 
 obj.foo = () => {
     // `this` of arrow functions is the outer scope's.
-    this.a = 0;        /*error Unexpected `this`.*/
+    this.a = 0;
 };
 
 var obj = {
     aaa: function() {
         return function foo() {
             // There is in a method `aaa`, but `foo` is not a method.
-            this.a = 0;      /*error Unexpected `this`.*/
-            baz(() => this); /*error Unexpected `this`.*/
+            this.a = 0;
+            baz(() => this);
         };
     }
 };
 
-class Foo {
-    static foo() {
-        this.a = 0;      /*error Unexpected `this`.*/
-        baz(() => this); /*error Unexpected `this`.*/
-    }
-}
-
 foo.forEach(function() {
-    this.a = 0;          /*error Unexpected `this`.*/
-    baz(() => this);     /*error Unexpected `this`.*/
+    this.a = 0;
+    baz(() => this);
 });
 ```
 
-### The following patterns are not considered problems:
+The following patterns are not considered problems:
+
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint no-invalid-this: 2*/
@@ -211,6 +212,12 @@ Foo.prototype.foo = function foo() {
 class Foo {
     foo() {
         // OK, this is in a method.
+        this.a = 0;
+        baz(() => this);
+    }
+
+    static foo() {
+        // OK, this is in a method (static methods also have valid this).
         this.a = 0;
         baz(() => this);
     }

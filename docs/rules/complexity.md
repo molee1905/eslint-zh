@@ -5,13 +5,14 @@ translator: fengnana
 proofreader: sunshiner
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Limit Cyclomatic Complexity (complexity)
 # 限制圈复杂度(complexity)
 
 
-Cyclomatic complexity measures the number of linearly independent paths through a program's source code. This rule allows setting a cyclomatic complexity threshold.
+Cyclomatic complexity measures the number of linearly independent paths through a program's source code. This rule allows setting a cyclomatic complexity threshold (default is `20`).
 
-圈复杂度(Cyclomatic Complexity)数量上表现为覆盖所有代码的独立现行路径条数。此规则允许设置圈复杂度阈值。
+圈复杂度(Cyclomatic Complexity)数量上表现为覆盖所有代码的独立现行路径条数。此规则允许设置圈复杂度阈值 (默认是 `20`)。
 
 ```js
 function a(x) {
@@ -27,19 +28,19 @@ function a(x) {
 
 ## Rule Details
 
-This rule is aimed at reducing code complexity by capping the amount of cyclomatic complexity allowed in a program. As such, it will warn when the cyclomatic complexity crosses the configured threshold.
+This rule is aimed at reducing code complexity by capping the amount of cyclomatic complexity allowed in a program. As such, it will warn when the cyclomatic complexity crosses the configured threshold (default is `20`).
 
 此规则目的在于通过在项目中设置圈复杂度阈值来控制代码的复杂度，
-因此，它会在圈复杂度越过配置的阈值时给出警告。
+因此，它会在圈复杂度越过配置的阈值时给出警告 (默认是 `20`)。
 
 The following patterns are considered problems:
 
-错误示例如下：
+以下模式被认为是有问题的：
 
 ```js
 /*eslint complexity: [2, 2]*/
 
-function a(x) {               /*error Function 'a' has a complexity of 3.*/
+function a(x) {
     if (true) {
         return x;
     } else if (false) {
@@ -51,7 +52,8 @@ function a(x) {               /*error Function 'a' has a complexity of 3.*/
 ```
 
 The following patterns are not considered problems:
-正确示例如下：
+
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint complexity: [2, 2]*/
@@ -65,7 +67,23 @@ function a(x) {
 }
 ```
 
-## When Not to Use It
+Optionally, you may specify a `maximum` object property:
+
+你可以指定一个 `maximum` 属性：
+
+```json
+"complexity": [2, 2]
+```
+
+is equivalent to
+
+等同于：
+
+```json
+"complexity": [2, {"maximum": 2}]
+```
+
+## When Not To Use It
 
 If you can't determine an appropriate complexity limit for your code, then it's best to disable this rule.
 

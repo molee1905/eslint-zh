@@ -13,31 +13,26 @@ disablePreview: true
     * [SublimeLinter-eslint](https://github.com/roadhump/SublimeLinter-eslint)
     * [Build Next](https://github.com/albertosantini/sublimetext-buildnext)
 * [Vim](https://github.com/scrooloose/syntastic/tree/master/syntax_checkers/javascript)
-* Emacs: [Flycheck](http://flycheck.readthedocs.org/en/latest/) supports ESLint in recent versions.
+* Emacs: [Flycheck](http://www.flycheck.org/) supports ESLint with the [javascript-eslint](http://www.flycheck.org/manual/latest/Supported-languages.html#Javascript) checker.
 * Eclipse Orion: ESLint is the [default linter](http://dev.eclipse.org/mhonarc/lists/orion-dev/msg02718.html)
+* Eclipse IDE with [Tern ESLint linter](https://github.com/angelozerr/tern.java/wiki/Tern-Linter-ESLint)
 * [TextMate 2](https://github.com/natesilva/javascript-eslint.tmbundle)
 * Atom: [linter-eslint](https://atom.io/packages/linter-eslint)
 * [IntelliJ IDEA, RubyMine, WebStorm, PhpStorm, PyCharm, AppCode, Android Studio, 0xDBE](http://plugins.jetbrains.com/plugin/7494)
-
+* [Visual Studio Code](https://code.visualstudio.com) with the [ESLint Extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
 ## Build Systems
 
-* **Grunt:**
-    * [grunt-eslint](https://npmjs.org/package/grunt-eslint)
-* **Gulp:**
-    * [gulp-eslint](https://npmjs.org/package/gulp-eslint)
-* **Mimosa:**
-    * [mimosa-eslint](https://npmjs.org/package/mimosa-eslint)
-* **Broccoli:**
-    * [broccoli-eslint](https://www.npmjs.org/package/broccoli-eslint)
-* **Browserify**
-    * [eslintify](https://www.npmjs.com/package/eslintify)
-* **Webpack:**
-    * [eslint-loader](https://www.npmjs.org/package/eslint-loader)
-* **Ember-cli**
-    * [ember-cli-eslint](https://www.npmjs.com/package/ember-cli-eslint)
-* **Sails.js**
-    * [sails-hook-eslint](https://www.npmjs.com/package/sails-hook-eslint)
+* Grunt: [grunt-eslint](https://npmjs.org/package/grunt-eslint)
+* Gulp: [gulp-eslint](https://npmjs.org/package/gulp-eslint)
+* Mimosa: [mimosa-eslint](https://npmjs.org/package/mimosa-eslint)
+* Broccoli: [broccoli-eslint](https://www.npmjs.org/package/broccoli-eslint)
+* Browserify: [eslintify](https://www.npmjs.com/package/eslintify)
+* Webpack: [eslint-loader](https://www.npmjs.org/package/eslint-loader)
+* Rollup: [rollup-plugin-eslint](https://www.npmjs.org/package/rollup-plugin-eslint)
+* Ember-cli: [ember-cli-eslint](https://www.npmjs.com/package/ember-cli-eslint)
+* Sails.js: [sails-hook-eslint](https://www.npmjs.com/package/sails-hook-eslint)
+* Start: [start-eslint](https://www.npmjs.com/package/start-eslint)
 
 ## Command Line Tools
 
@@ -52,8 +47,7 @@ disablePreview: true
 
 ## Testing
 
- * **Mocha.js**
-    * [mocha-eslint](https://www.npmjs.com/package/mocha-eslint)
+ * Mocha.js: [mocha-eslint](https://www.npmjs.com/package/mocha-eslint)
 
 ## External ESLint rules
 

@@ -3,6 +3,7 @@ title: Rule no-plusplus
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow ++ and -- (no-plusplus)
 
 # 不允许使用 ++ 和 -- (no-plusplus)
@@ -46,9 +47,9 @@ This rule is aimed at flagging the use of `++` and `--`. Some believe that the u
 该规则标记一元操作符`++` 和 `--`的使用。有些人认为这些一元操作符降低了代码的质量和清晰度。
 也有以下编程语言完全排除这些操作符。
 
-### Options
+## Options
 
-This rule, in it's default state, does not require any arguments. If you would like to enable one or more of the following you may pass an object with the options set as follows:
+This rule, in its default state, does not require any arguments. If you would like to enable one or more of the following you may pass an object with the options set as follows:
 
 该规则，默认情况下，不需要任何参数。如果你想启用下面的一个或多个，你可以传递一个对象，作为可选项，按如下所示进行设置：
 
@@ -63,12 +64,12 @@ The following patterns are considered problems:
 /*eslint no-plusplus: 2*/
 
 var foo = 0;
-foo++;                          /*error Unary operator '++' used.*/
+foo++;
 
 var bar = 42;
-bar--;                          /*error Unary operator '--' used.*/
+bar--;
 
-for (i = 0; i < l; i++) {       /*error Unary operator '++' used.*/
+for (i = 0; i < l; i++) {
     return;
 }
 ```
@@ -96,7 +97,7 @@ The following patterns are not considered problems if `allowForLoopAfterthoughts
 如果 `allowForLoopAfterthoughts` 设置为true, 以下模式被认为是没有问题的：
 
 ```js
-/*eslint no-plusplus: 2, [{ allowForLoopAfterthoughts: true }]*/
+/*eslint no-plusplus: [2, { allowForLoopAfterthoughts: true }]*/
 
 for (i = 0; i < l; i++) {
     return;

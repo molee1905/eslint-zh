@@ -3,6 +3,7 @@ title: Rule semi
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Enforce or Disallow Semicolons (semi)
 
 # 强制或禁止分号 (semi)
@@ -92,7 +93,13 @@ This rule is aimed at ensuring consistent use of semicolons. You can decide whet
 
 该规则旨在保证分号使用的一致性。你可以决定语句末尾是否需要分号。
 
-### Options
+## Options
+
+The rule takes one or two options. The first one is a string, which could be `"always"` or `"never"`. The default is `"always"`. The second one is an object for more fine-grained configuration when the first option is `"always"`.
+
+You can set the option in configuration like this:
+
+### "always"
 
 By using the default option, semicolons must be used any place where they are valid.
 
@@ -109,11 +116,11 @@ The following patterns are considered problems:
 ```js
 /*eslint semi: 2*/
 
-var name = "ESLint"          /*error Missing semicolon.*/
+var name = "ESLint"
 
 object.method = function() {
     // ...
-}                            /*error Missing semicolon.*/
+}
 ```
 
 The following patterns are not considered problems:
@@ -130,6 +137,44 @@ object.method = function() {
 };
 ```
 
+#### Fine-grained control
+
+When setting the first option as `"always"`, an additional option can be added to omit the last semicolon in a one-line block, that is, a block in which its braces (and therefore the content of the block) are in the same line:
+
+当设置第一个选项为`"always"`时，可以添加一个额外的选项以省略单行块中最后的分号，也就是括号（内容也是）都在同一行的块。
+
+```json
+semi: [2, "always", { "omitLastInOneLineBlock": true}]
+```
+
+The following patterns are considered problems:
+
+以下模式被认为是有问题的：
+
+```js
+/*eslint semi: [2, "always", { "omitLastInOneLineBlock": true}] */
+
+if (foo) {
+    bar()
+}
+
+if (foo) { bar(); }
+```
+
+The following patterns are not considered problems:
+
+以下模式被认为是没有问题的：
+
+```js
+/*eslint semi: [2, "always", { "omitLastInOneLineBlock": true}] */
+
+if (foo) { bar() }
+
+if (foo) { bar(); baz() }
+```
+
+### "never"
+
 If you want to enforce that semicolons are never used, switch the configuration to:
 
 如果你想强制不使用分号，配置如下：
@@ -145,11 +190,11 @@ Then, the following patterns are considered problems:
 ```js
 /*eslint semi: [2, "never"]*/
 
-var name = "ESLint";         /*error Extra semicolon.*/
+var name = "ESLint";
 
 object.method = function() {
     // ...
-};                           /*error Extra semicolon.*/
+};
 ```
 
 And the following patterns are not considered problems:

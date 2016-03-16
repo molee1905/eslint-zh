@@ -3,6 +3,7 @@ title: Rule operator-linebreak
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Operator Linebreak (operator-linebreak)
 
 # 操作符、换行符 (operator-linebreak)
@@ -32,10 +33,10 @@ var fullHeight = borderTop
 The `operator-linebreak` rule is aimed at enforcing a particular operator line break style. As such, it warns whenever it sees a binary operator or assignment that does not adhere to a particular style: either placing linebreaks after or before the operators.
 
 该规则旨在强制一个特殊的的换行符风格。因此，如果遇到二元操作符或不遵守特定风格的赋值语句，比如，将换行符放在操作符之前或之后，该规则将发出警告。
+ 
+## Options
 
-### Options
-
-The rule takes two options, a string, which can be `"after"`, `"before"` or `"none"` where the default is "after" and an object for more fine-grained configuration.
+The rule takes two options, a string, which can be `"after"`, `"before"` or `"none"` where the default is `"after"` and an object for more fine-grained configuration.
 
 该规则有两个可选项，一个是字符串，值为`"after"`， `"before"` 或 `"none"`，默认值为`after`，另一个是个对象，可以进行更细粒度的配置。
 
@@ -51,7 +52,7 @@ The default configuration is to enforce line breaks _after_ the operator except 
 
 默认配置是强制换行符在操作符之后，只有三元操作符`?` 和 `:`会紧随它。
 
-#### `"after"`
+### "after"
 
 This is the default setting for this rule. This option requires the line break to be placed after the operator.
 
@@ -65,22 +66,22 @@ While using this setting, the following patterns are considered problems:
 /*eslint operator-linebreak: [2, "after"]*/
 
 foo = 1
-+                        /*error Bad line breaking before and after '+'.*/
++
 2;
 
 foo = 1
-    + 2;                 /*error '+' should be placed at the end of the line.*/
+    + 2;
 
 foo
-    = 5;                 /*error '=' should be placed at the end of the line.*/
+    = 5;
 
 if (someCondition
-    || otherCondition) { /*error '||' should be placed at the end of the line.*/
+    || otherCondition) {
 }
 
 answer = everything
-  ? 42                   /*error '?' should be placed at the end of the line.*/
-  : foo;                 /*error ':' should be placed at the end of the line.*/
+  ? 42
+  : foo;
 ```
 
 The following patterns are not considered problems:
@@ -107,7 +108,7 @@ answer = everything ?
   foo;
 ```
 
-#### `"before"`
+### "before"
 
 This option requires the line break to be placed before the operator.
 
@@ -120,18 +121,18 @@ While using this setting, the following patterns are considered problems:
 ```js
 /*eslint operator-linebreak: [2, "before"]*/
 
-foo = 1 +              /*error '+' should be placed at the beginning of the line.*/
+foo = 1 +
       2;
 
-foo =                  /*error '=' should be placed at the beginning of the line.*/
+foo =
     5;
 
-if (someCondition ||   /*error '||' should be placed at the beginning of the line.*/
+if (someCondition ||
     otherCondition) {
 }
 
-answer = everything ? /*error '?' should be placed at the beginning of the line.*/
-  42 :                /*error ':' should be placed at the beginning of the line.*/
+answer = everything ?
+  42 :
   foo;
 ```
 
@@ -159,7 +160,7 @@ answer = everything
   : foo;
 ```
 
-#### `"none"`
+### "none"
 
 This option disallows line breaks on either side of the operator.
 
@@ -172,26 +173,26 @@ While using this setting, the following patterns are considered problems:
 ```js
 /*eslint operator-linebreak: [2, "none"]*/
 
-foo = 1 +                /*error There should be no line break before or after '+'*/
+foo = 1 +
       2;
 
 foo = 1
-    + 2;                 /*error There should be no line break before or after '+'*/
+    + 2;
 
-if (someCondition ||     /*error There should be no line break before or after '||'*/
+if (someCondition ||
     otherCondition) {
 }
 
 if (someCondition
-    || otherCondition) { /*error There should be no line break before or after '||'*/
+    || otherCondition) {
 }
 
 answer = everything
-  ? 42                   /*error There should be no line break before or after '?'*/
-  : foo;                 /*error There should be no line break before or after ':'*/
+  ? 42
+  : foo;
 
-answer = everything ?    /*error There should be no line break before or after '?'*/
-  42 :                   /*error There should be no line break before or after ':'*/
+answer = everything ?
+  42 :
   foo;
 ```
 
@@ -212,7 +213,7 @@ if (someCondition || otherCondition) {
 answer = everything ? 42 : foo;
 ```
 
-#### Fine-grained control
+### Fine-grained control
 
 The rule allows you to have even finer-grained control over individual operators by specifying an `overrides` dictionary:
 
@@ -225,6 +226,30 @@ The rule allows you to have even finer-grained control over individual operators
 This would override the global setting for that specific operator.
 
 这将覆盖那个指定的操作符的全局设置。
+
+#### "ignore" override
+
+This option is only supported using `overrides` and ignores line breaks on either side of the operator.
+
+该选项在使用`overrides`和忽略操作符两边的换行时有效。
+
+While using this setting, the following patterns are not considered problems:
+
+当使用这个选项时，以下模式被认为是有问题的：
+
+```js
+/*eslint operator-linebreak: [2, "after", { "overrides": { "?": "ignore", ":": "ignore"} }]*/
+
+answer = everything ?
+  42
+  : foo;
+
+answer = everything
+  ?
+  42
+  :
+  foo;
+```
 
 ## When Not To Use It
 

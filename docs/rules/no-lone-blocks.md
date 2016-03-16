@@ -3,6 +3,7 @@ title: Rule no-lone-blocks
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Unnecessary Nested Blocks (no-lone-blocks)
 
 # 禁止不必要的嵌套块 (no-lone-blocks)
@@ -21,7 +22,7 @@ In ES6, code blocks may create a new scope if a block-level binding (`let` and `
 
 在ES6中，代码块可能会创建一个新的作用域如果被块级绑定(`let`和 `const`)，类声明或者函数声明（在严格模式下）就是这样。在这些情况下块不被认为是冗余的。
 
-## Rule details
+## Rule Details
 
 This rule aims to eliminate unnecessary and potentially confusing blocks at the top level of a script or within other blocks.
 
@@ -34,22 +35,22 @@ The following patterns are considered problems:
 ```js
 /*eslint no-lone-blocks: 2*/
 
-{}                    /*error Block is redundant.*/
+{}
 
 if (foo) {
     bar();
-    {                 /*error Nested block is redundant.*/
+    {
         baz();
     }
 }
 
 function bar() {
-    {                 /*error Nested block is redundant.*/
+    {
         baz();
     }
 }
 
-{                     /*error Block is redundant.*/
+{
     function foo() {}
 }
 ```

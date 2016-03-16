@@ -3,6 +3,7 @@ title: Rule no-param-reassign
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Reassignment of Function Parameters (no-param-reassign)
 # 禁止重新分配函数参数值 (no-param-reassign)
 
@@ -16,7 +17,7 @@ This rule aims to prevent unintended behavior caused by overwriting function par
 
 此规则目的在于防止由于重新赋值给函数形参而导致意外的情况发生。
 
-### Options
+## Options
 
 This rule takes one option, an object, with a property `"props"`.
 
@@ -28,24 +29,25 @@ This rule takes one option, an object, with a property `"props"`.
 }
 ```
 
-* `props` (`false` by default) - If `true` is set, this rule warns modifying of properties of parameters.
+### `props`
 
-* `props`(默认为`false`)－ 如果设置为`true`，此规则对修改参数行为给出警告
+It is `false` by default. If it is `true` is set, this rule warns modifying of properties of parameters.
 
+默认为`false`。如果设置为`true`，此规则对修改参数行为给出警告
 
-### The following patterns are considered problems:
+The following patterns are considered problems:
 
-###以下模式被认为是有问题的：
+以下模式被认为是有问题的：
 
 ```js
 /*eslint no-param-reassign: 2*/
 
 function foo(bar) {
-    bar = 13;       /*error Assignment to function parameter 'bar'.*/
+    bar = 13;
 }
 
 function foo(bar) {
-    bar++;          /*error Assignment to function parameter 'bar'.*/
+    bar++;
 }
 ```
 
@@ -57,20 +59,21 @@ When `{"props": true}`:
 /*eslint no-param-reassign: [2, { "props": true }]*/
 
 function foo(bar) {
-    bar.prop = "value"; /*error Assignment to function parameter 'bar'.*/
+    bar.prop = "value";
 }
 
 function foo(bar) {
-    delete bar.aaa;     /*error Assignment to function parameter 'bar'.*/
+    delete bar.aaa;
 }
 
 function foo(bar) {
-    bar.aaa++;          /*error Assignment to function parameter 'bar'.*/
+    bar.aaa++;
 }
 ```
+ 
+The following patterns are not considered problems:
 
-### The following patterns are not considered problems:
-### 以下模式被认为是没有问题的：
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint no-param-reassign: 2*/

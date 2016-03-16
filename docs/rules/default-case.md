@@ -5,6 +5,7 @@ translator: fengnana
 proofreader: sunshiner
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require Default Case in Switch Statements (default-case)
 # 要求switch语句中有default分支 (default-case)
 
@@ -66,7 +67,7 @@ The following pattern is considered a warning:
 ```js
 /*eslint default-case: 2*/
 
-switch (a) {       /*error Expected a default case.*/
+switch (a) {
     case 1:
         /* code */
         break;

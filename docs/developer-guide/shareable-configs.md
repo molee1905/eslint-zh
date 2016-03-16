@@ -5,6 +5,7 @@ translator: maoshuyu
 proofreader: hacke2
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Shareable Configs
 # 可分享配置
 

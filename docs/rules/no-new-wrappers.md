@@ -3,6 +3,7 @@ title: Rule no-new-wrappers
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Primitive Wrapper Instances (no-new-wrappers)
 
 # 禁止原始包装实例 (no-new-wrappers)
@@ -63,13 +64,13 @@ The following patterns are considered problems:
 ```js
 /*eslint no-new-wrappers: 2*/
 
-var stringObject = new String("Hello world"); /*error Do not use String as a constructor.*/
-var numberObject = new Number(33);            /*error Do not use Number as a constructor.*/
-var booleanObject = new Boolean(false);       /*error Do not use Boolean as a constructor.*/
+var stringObject = new String("Hello world");
+var numberObject = new Number(33);
+var booleanObject = new Boolean(false);
 
-var stringObject = new String;                /*error Do not use String as a constructor.*/
-var numberObject = new Number;                /*error Do not use Number as a constructor.*/
-var booleanObject = new Boolean;              /*error Do not use Boolean as a constructor.*/
+var stringObject = new String;
+var numberObject = new Number;
+var booleanObject = new Boolean;
 ```
 
 The following patterns are not considered problems:

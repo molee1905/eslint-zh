@@ -3,6 +3,7 @@ title: Rule no-with
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # No with Statements (no-with)
 
 # 禁用with语句 (no-with)
@@ -23,7 +24,7 @@ The following patterns are considered problems:
 
 ```js
 /*eslint no-with: 2*/
-with (foo) { /*error Unexpected use of 'with' statement.*/
+with (foo) {
     // ...
 }
 ```

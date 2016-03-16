@@ -3,6 +3,7 @@ title: Rule no-floating-decimal
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Floating Decimals (no-floating-decimal)
 
 # 禁止浮点小数 (no-floating-decimal)
@@ -34,9 +35,9 @@ The following patterns are considered problems:
 ```js
 /*eslint no-floating-decimal: 2*/
 
-var num = .5;  /*error A leading decimal point can be confused with a dot.*/
-var num = 2.;  /*error A trailing decimal point can be confused with a dot.*/
-var num = -.7; /*error A leading decimal point can be confused with a dot.*/
+var num = .5;
+var num = 2.;
+var num = -.7;
 ```
 
 The following patterns are not considered problems:
@@ -50,15 +51,15 @@ var num = 0.5;
 var num = 2.0;
 ```
 
-## Compatibility
-
-* **JSHint**: W008
-
 ## When Not To Use It
 
 If you aren't concerned about misinterpreting floating decimal point values, then you can safely turn this rule off.
 
 如果你不认为浮动的小数点会被误读，你可以安全的关闭此规则。
+
+## Compatibility
+
+* **JSHint**: W008
 
 ## Further Reading
 

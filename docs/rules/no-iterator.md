@@ -3,6 +3,7 @@ title: Rule no-iterator
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Iterator (no-iterator)
 # 禁止迭代器 (no-iterator)
 
@@ -33,13 +34,13 @@ The following patterns are considered problems:
 ```js
 /*eslint no-iterator: 2*/
 
-Foo.prototype.__iterator__ = function() { /*error Reserved name '__iterator__'.*/
+Foo.prototype.__iterator__ = function() {
     return new FooIterator(this);
 };
 
-foo.__iterator__ = function () {};        /*error Reserved name '__iterator__'.*/
+foo.__iterator__ = function () {};
 
-foo["__iterator__"] = function () {};     /*error Reserved name '__iterator__'.*/
+foo["__iterator__"] = function () {};
 
 ```
 

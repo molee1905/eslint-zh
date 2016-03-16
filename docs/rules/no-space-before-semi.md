@@ -3,6 +3,7 @@ title: Rule no-space-before-semi
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Spaces Before Semicolon (no-space-before-semi)
 
 # 禁止分号前空格 (no-space-before-semi)

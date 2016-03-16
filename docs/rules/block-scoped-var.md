@@ -3,6 +3,7 @@ title: Rule block-scoped-var
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Treat var as Block Scoped (block-scoped-var)
 # 把 var 语句看作是在块级作用域范围之内 (block-scoped-var)
 
@@ -39,7 +40,7 @@ function doSomething() {
         var build = true;
     }
 
-    console.log(build); /*error "build" used outside of binding context.*/
+    console.log(build);
 }
 ```
 
@@ -48,9 +49,9 @@ function doSomething() {
 
 function doSomething() {
     if (true) {
-        var build = true;  /*error "build" used outside of binding context.*/
+        var build = true;
     } else {
-        var build = false; /*error "build" used outside of binding context.*/
+        var build = false;
     }
 }
 ```
@@ -62,7 +63,7 @@ function doAnother() {
     try {
         var build = 1;
     } catch (e) {
-        var f = build; /*error "build" used outside of binding context.*/
+        var f = build;
     }
 }
 ```

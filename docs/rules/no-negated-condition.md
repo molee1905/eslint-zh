@@ -3,6 +3,7 @@ title: Rule no-negated-condition
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow use of negated expressions in conditions (no-negated-condition)
 
 # 不允许在条件语句中使用否定的表达式 (no-negated-condition)
@@ -50,26 +51,26 @@ The following patterns are considered warnings:
 ```js
 /*eslint no-negated-condition: 2*/
 
-if (!a) {               /*error Unexpected negated condition.*/
+if (!a) {
     doSomething();
 } else {
     doSomethingElse();
 }
 
-if (a != b) {           /*error Unexpected negated condition.*/
+if (a != b) {
     doSomething();
 } else {
     doSomethingElse();
 }
 
-if (a !== b) {          /*error Unexpected negated condition.*/
+if (a !== b) {
     doSomething();
 } else {
     doSomethingElse();
 }
 
 
-!a ? b : c              /*error Unexpected negated condition.*/
+!a ? b : c
 
 ```
 

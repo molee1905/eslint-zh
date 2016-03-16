@@ -3,13 +3,14 @@ title: Rule space-in-brackets
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow or enforce spaces inside of brackets. (space-in-brackets)
 
 # 在括号中禁止或强制空格。(space-in-brackets)
 
 **Replacement notice**: This rule was removed in ESLint v1.0 and replaced by the [object-curly-spacing](object-curly-spacing), [computed-property-spacing](computed-property-spacing) and [array-bracket-spacing](array-bracket-spacing) rules.
 
-**替换声明**: 该规则在 ESLint v1.0 中移除，被 [object-curly-spacing](object-curly-spacing), [computed-property-spacing](computed-property-spacing) 和[array-bracket-spacing](array-bracket-spacing) 规则替换.
+**替换通知**: 该规则在 ESLint v1.0 中移除，被 [object-curly-spacing](object-curly-spacing), [computed-property-spacing](computed-property-spacing) 和[array-bracket-spacing](array-bracket-spacing) 规则替换.
 
 While formatting preferences are very personal, a number of style guides require or disallow spaces between brackets:
 
@@ -31,7 +32,7 @@ This rule aims to maintain consistency around the spacing inside of square brack
 
 该规则旨在在括号中维持空格的一致性，在括号和其他标记之间禁止或强制空格。括号通过换行分离相邻的值对于本规则是个例外，因为这是个常见的模式。对象字面量作为数组的第一个或最后一个元素也被忽略。
 
-### Options
+## Options
 
 There are two options for this rule:
 
@@ -51,7 +52,7 @@ Depending on your coding conventions, you can choose either option by specifying
 "space-in-brackets": [2, "always"]
 ```
 
-#### never
+### "never"
 
 When `"never"` is set, the following patterns are considered problems:
 
@@ -119,7 +120,7 @@ var obj = {
 var obj = {};
 ```
 
-#### always
+### "always"
 
 When `"always"` is used, the following patterns are considered problems:
 
@@ -186,7 +187,7 @@ Note that `"always"` has a special case where `{}` and `[]` are not considered p
 
 注意`"always"`有一种特殊情况，当没有考虑到`{}` 和 `[]`的问题。
 
-#### Exceptions
+### Exceptions
 
 An object literal may be used as a third array item to specify spacing exceptions. These exceptions work in the context of the first option. That is, if `"always"` is set to enforce spacing and an exception is set to `false`, it will disallow spacing for cases matching the exception. Likewise, if `"never"` is set to disallow spacing and an exception is set to `true`, it will enforce spacing for cases matching the exception.
 

@@ -3,6 +3,7 @@ title: Rule no-labels
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Labeled Statements (no-labels)
 # 禁止标签语句 (no-labels)
 
@@ -41,19 +42,35 @@ The following patterns are considered problems:
 ```js
 /*eslint no-labels: 2*/
 
-label:                   /*error Unexpected labeled statement.*/
+label:
     while(true) {
         // ...
     }
 
-label:                   /*error Unexpected labeled statement.*/
+label:
     while(true) {
-        break label;     /*error Unexpected label in break statement.*/
+        break label;
     }
 
-label:                  /*error Unexpected labeled statement.*/
+label:
     while(true) {
-        continue label; /*error Unexpected label in continue statement.*/
+        continue label;
+    }
+
+label:
+    switch (a) {
+    case 0:
+        break label;
+    }
+
+label:
+    {
+        break label;
+    }
+
+label:
+    if (a) {
+        break label;
     }
 ```
 
@@ -77,11 +94,62 @@ while (true) {
 }
 ```
 
+## Options
+
+```json
+{
+    "no-labels": [2, {"allowLoop": false, "allowSwitch": false}]
+}
+```
+
+* `"allowLoop"` (`boolean`, default is `false`) - If this option was set `true`, this rule ignores labels which are sticking to loop statements.
+* `"allowSwitch"` (`boolean`, default is `false`) - If this option was set `true`, this rule ignores labels which are sticking to switch statements.
+
+Actually labeled statements in JavaScript can be used with other than loop and switch statements.
+However, this way is ultra rare, not well-known, so this would be confusing developers.
+
+Those options allow us to use labels only with loop or switch statements.
+
+The following patterns are considered problems when configured `{"allowLoop": true, "allowSwitch": true}`:
+
+```js
+label:
+    {
+        break label;
+    }
+
+label:
+    if (a) {
+        break label;
+    }
+```
+
+The following patterns are not considered problems when configured `{"allowLoop": true, "allowSwitch": true}`:
+
+```js
+label:
+    while (true) {
+        break label;
+    }
+
+label:
+    switch (a) {
+        case 0:
+            break label;
+    }
+```
+
 ## When Not To Use It
 
-If you need to use labeled statements, then you can safely disable this rule.
+If you need to use labeled statements everywhere, then you can safely disable this rule.
 
-如果你需要使用标签语句，你可以安全的禁用此规则。
+如果你需要在任何地方都使用标签语句，你可以安全的禁用此规则。
+
+## Related Rules
+
+* [no-extra-label](./no-extra-label)
+* [no-label-var](./no-label-var)
+* [no-unused-labels](./no-unused-labels)
 
 ## Version
 

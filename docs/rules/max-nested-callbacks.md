@@ -3,6 +3,7 @@ title: Rule max-nested-callbacks
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Set Maximum Depth of Nested Callbacks (max-nested-callbacks)
 
 # 设置回调函数最大嵌套深度 (max-nested-callbacks)
@@ -29,7 +30,7 @@ This rule is aimed at increasing code clarity by discouraging deeply nesting cal
 
 该规则旨在通过阻止深层次的嵌套回调，来提高代码的清晰度。因此，如果回调函数嵌套的深度超过指定的限制，该规则将发出警告。
 
-### Options
+## Options
 
 The default max depth for this rule is 10. You can define the depth as an option by using the second argument in your configuration. For example, this sets the rule as an error (code is 2) with a maximum depth of 3:
 
@@ -37,6 +38,10 @@ The default max depth for this rule is 10. You can define the depth as an option
 
 ```json
 "max-nested-callbacks": [2, 3]
+
+// or you can use an object property
+
+"max-nested-callbacks": [2, {"maximum": 3}]
 ```
 
 The following patterns are considered problems:
@@ -49,7 +54,7 @@ The following patterns are considered problems:
 foo(function () {
     bar(function () {
         baz(function() {
-            qux(function () { /*error Too many nested callbacks (4). Maximum allowed is 3.*/
+            qux(function () {
 
             });
         });

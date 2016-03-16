@@ -3,6 +3,7 @@ title: Rule max-len
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Limit Maximum Length of Line (max-len)
 
 # 限制行的最大长度 (max-len)
@@ -34,7 +35,7 @@ The following patterns are considered problems:
 ```js
 /*eslint max-len: [2, 80, 4]*/ // maximum length of 80 characters
 
-var foo = { "bar": "This is a bar.", "baz": { "qux": "This is a qux" }, "difficult": "to read" }; /*error Line 3 exceeds the maximum line length of 80.*/
+var foo = { "bar": "This is a bar.", "baz": { "qux": "This is a qux" }, "difficult": "to read" };
 ```
 
 The following patterns are not considered problems:
@@ -53,40 +54,55 @@ var foo = {
 };
 ```
 
-### Options
+## Options
 
-The `max-len` rule has two required options:
+The `max-len` rule supports the following options:
 
-该规则有两个必须的选项：
+`max-len`规则支持以下选项：
 
-* The total number of characters allowed on each line of code. This character count includes indentation.
-* 每行代码允许的字符总数。这里的字符计数包含缩进。
-* The character count to use whenever a tab character is encountered.
-* 一个tab字符占用的字符数
+`code`: The total number of characters allowed on each line of code. This character count includes indentation. Defaults to 80.
 
-For example, to specify a maximum line length of 80 characters with each tab counting as 4 characters, use the following configuration:
+`code`: 每一行代码中所允许的字符总数。字符计数包含缩进。 默认是80.
 
-例如，指定行的最大字符数为80，每个tab记为4个字符，使用如下配置：
+`comments`: The total number of characters allowed on a line of comments (e.g. no code on the line). If not specified, `code` is used for comment lines.
+
+`comments`: 一行注释中所允许的字符总数（比如此行中没有代码）。如果没有指定, 使用`code`的值.
+
+`tabWidth`: The character count to use whenever a tab character is encountered. Defaults to 4.
+
+`tabWidth`: 一个tab字符的计数长度。 默认是4。
+
+`ignoreComments`: Ignores all trailing comments and comments on their own line. For example, `function foo(/*string*/ bar) { /* ... */ }` isn't collapsed.
+
+`ignoreComments`: 忽略所有尾部注释和行注释。 例如，`function foo(/*string*/ bar) { /* ... */ }`不被计数。
+
+`ignoreTrailingComments`: Only ignores comments that are trailing source.
+
+`ignoreTrailingComments`: 只忽略末尾注释。
+
+`ignoreUrls`: Ignores lines that contain a URL.
+
+`ignoreUrls`: 忽略包含URL的行。
+
+`ignorePattern`: Ignores lines matching a regular express, such as `^\\s*var\\s.+=\\s*require\\s*\\(`. Be aware that regular expressions can only match a single line and need to be doubly escaped when written in YAML or JSON.
+
+`ignorePattern`: 忽略匹配正则表达的行，比如 `^\\s*var\\s.+=\\s*require\\s*\\(`。注意在写YAML或JSON时，正则表达只能匹配单一的行，而且需要双重转义。
+
+Optionally, you may specify `code` and `tabWidth` as integers before the options object:
+
+你可以指定 `code` 和 `tabWidth` 为一个整数在可选项对象之前：
 
 ```json
-"max-len": [2, 80, 4]
+"max-len": [2, 80, 4, {"ignoreUrls": true}]
 ```
 
-There are additional optional arguments to ignore comments, lines with URLs, or lines matching a regular expression.
+is equivalent to
 
-有额外的可选参数用于忽略注释，包含URL的行或者匹配某个正则表达式的行。
+等效于
 
 ```json
-"max-len": [2, 80, 4, {"ignoreComments": true, "ignoreUrls": true, "ignorePattern": "^\\s*var\\s.+=\\s*require\\s*\\("}]
+"max-len": [2, {"code": 80, "tabWidth": 4, "ignoreUrls": true}]
 ```
-
-The `ignoreComments` option only ignores trailing comments and comments on their own line. For example, `function foo(/*string*/ bar) { /* ... */ }` isn't collapsed.
-
-`ignoreComments`选项值忽略行尾注释和同一行上的注释(之前)。例如，`function foo(/*string*/ bar) { /* ... */ }` 是不折叠的。
-
-Be aware that regular expressions can only match a single line and need to be doubly escaped when written in YAML or JSON.
-
-请注意，正则表达式只能匹配单行，当写在YAML或JSON中时需要双重转义。
 
 
 ## Related Rules

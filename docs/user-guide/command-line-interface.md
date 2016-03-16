@@ -3,7 +3,8 @@ title: Documentation
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
-# Command line Interface
+
+# Command Line Interface
 
 # 命令行界面
 
@@ -76,7 +77,7 @@ Using stdin:
 
 Handling warnings:
   --quiet                    Report errors only - default: false
-  --max-warnings Number      Number of warnings to trigger nonzero exit code -
+  --max-warnings Int         Number of warnings to trigger nonzero exit code -
                              default: -1
 
 Output:
@@ -92,17 +93,18 @@ Miscellaneous:
   -v, --version              Outputs the version number
   --no-inline-config         Prevent comments from changing eslint rules -
                              default: false
+  --print-config             Print the configuration to be used
 ```
 
-Options that accept array values can be specified by repeating the option or with a comma-delimited list.
+Options that accept array values can be specified by repeating the option or with a comma-delimited list (other than `--ignore-pattern` which does not allow the second style).
 
 选项可以用以下两种方式接受多值：
 
 Example:
 
-    eslint --ignore-pattern a.js --ignore-pattern b.js file.js
+    eslint --ext .jsx --ext .js file.js
 
-    eslint --ignore-pattern a.js,b.js file.js
+    eslint --ext .jsx,.js file.js
 
 ### Basic configuration
 
@@ -417,15 +419,17 @@ This option specifies the output format for the console. Possible formats are:
 
 这个选项指定输出到控制台的格式。可用的格式有：
 
-* [stylish](formatters/#stylish) (the default)
 * [checkstyle](formatters/#checkstyle)
 * [compact](formatters/#compact)
 * [html](formatters/#html)
 * [jslint-xml](formatters/#jslint-xml)
 * [json](formatters/#json)
 * [junit](formatters/#junit)
+* [stylish](formatters/#stylish) (the default)
+* [table](formatters/#table)
 * [tap](formatters/#tap)
 * [unix](formatters/#unix)
+* [visualstudio](formatters/#visualstudio)
 
 Example:
 
@@ -525,12 +529,21 @@ config without files modifying it. All inline config comments are ignored, e.g.:
 * `/*eslint*/`
 * `/*eslint-env*/`
 * `// eslint-disable-line`
+* `// eslint-disable-next-line`
 
 Example:
 
 例如：
 
     eslint --no-inline-config file.js
+
+#### `--print-config`
+
+This option outputs the configuration to be used for the file passed. When present, no linting is performed and only config-related options are valid.
+
+Example:
+
+    eslint --print-config file.js
 
 ## Ignoring files from linting
 
@@ -542,3 +555,5 @@ ESLint supports `.eslintignore` files to exclude files from the linting process 
 
     node_modules/*
     **/vendor/*.js
+
+A more detailed breakdown of supported patterns and directories ESLint ignores by default can be found in [Configuring ESLint](http://eslint.org/docs/user-guide/configuring#ignoring-files-and-directories).

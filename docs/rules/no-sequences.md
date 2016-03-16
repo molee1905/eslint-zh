@@ -3,6 +3,7 @@ title: Rule no-sequences
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Use of the Comma Operator (no-sequences)
 
 # 不允许使用逗号操作符 (no-sequences)
@@ -42,19 +43,19 @@ The following patterns are considered problems:
 ```js
 /*eslint no-sequences: 2*/
 
-foo = doSomething, val;              /*error Unexpected use of comma operator.*/
+foo = doSomething, val;
 
-do {} while (doSomething(), !!test); /*error Unexpected use of comma operator.*/
+do {} while (doSomething(), !!test);
 
-for (; doSomething(), !!test; );     /*error Unexpected use of comma operator.*/
+for (; doSomething(), !!test; );
 
-if (doSomething(), !!test);          /*error Unexpected use of comma operator.*/
+if (doSomething(), !!test);
 
-switch (val = foo(), val) {}         /*error Unexpected use of comma operator.*/
+switch (val = foo(), val) {}
 
-while (val = foo(), val < 42);       /*error Unexpected use of comma operator.*/
+while (val = foo(), val < 42);
 
-with (doSomething(), val) {}         /*error Unexpected use of comma operator.*/
+with (doSomething(), val) {}
 ```
 
 The following patterns are not considered problems:

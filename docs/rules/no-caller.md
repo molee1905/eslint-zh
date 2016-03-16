@@ -3,6 +3,7 @@ title: Rule no-caller
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Use of caller/callee (no-caller)
 
 # 禁用caller或callee (no-caller)
@@ -36,11 +37,11 @@ function foo(n) {
         return;
     }
 
-    arguments.callee(n - 1);   /*error Avoid arguments.callee.*/
+    arguments.callee(n - 1);
 }
 
 [1,2,3,4,5].map(function(n) {
-    return !(n > 1) ? 1 : arguments.callee(n - 1) * n; /*error Avoid arguments.callee.*/
+    return !(n > 1) ? 1 : arguments.callee(n - 1) * n;
 });
 ```
 

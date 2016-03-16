@@ -3,6 +3,7 @@ title: Rule padded-blocks
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Enforce padding within blocks (padded-blocks)
 
 # 强制块内填充 (padded-blocks)
@@ -31,10 +32,13 @@ This rule enforces consistent padding within blocks.
 
 该规则强制块内填充的一致性。
 
-This rule takes one argument. If it is `"always"` then blocks must start **and** end with a blank line. If `"never"`
-then all blocks should never start **or** end with a blank line. The default is `"always"`.
+This rule takes one argument, which can be an string or an object. If it is `"always"` (the default) then block statements must start **and** end with a blank line. If `"never"`, then block statements should neither start nor end with a blank line. By default, this rule ignores padding in switch statements and classes.
 
-该规则只有一个参数。如果是`"always"`，块语句必须以空行开始**和**结束。如果为`"never"`，所有的块语句应该永远不以空行开始**或**结束。默认为`"always"`。
+该规则只有一个参数。可以是一个字符串或是一个对象。如果是`"always"`（默认），块语句必须以空行开始 **和** 结束。如果为`"never"`，块语句不应以空行开始 **或** 结束。默认地，该规则忽略 switch 语句和 class 里的填充。
+
+If you want to enforce padding within switches and classes, a configuration object can be passed as the rule argument to configure the cases separately ( e.g. `{ "blocks": "always", "switches": "always", "classes": "always" }` ).
+
+如果你想强制在 switch 语句和 class 使用填充，可以传递一个配置对象，对其进行分别配置 (比如：`{ "blocks": "always", "switches": "always", "classes": "always" }`)。
 
 The following patterns are considered problems when set to `"always"`:
 
@@ -43,28 +47,28 @@ The following patterns are considered problems when set to `"always"`:
 ```js
 /*eslint padded-blocks: [2, "always"]*/
 
-if (a) {         /*error Block must be padded by blank lines.*/
+if (a) {
     b();
-}                /*error Block must be padded by blank lines.*/
+}
 
-if (a) { b(); }  /*error Block must be padded by blank lines.*/
+if (a) { b(); }
 
 if (a)
-{                /*error Block must be padded by blank lines.*/
+{
     b();
-}                /*error Block must be padded by blank lines.*/
+}
 
 if (a) {
 
     b();
-}                /*error Block must be padded by blank lines.*/
+}
 
-if (a) {         /*error Block must be padded by blank lines.*/
+if (a) {
     b();
 
 }
 
-if (a) {         /*error Block must be padded by blank lines.*/
+if (a) {
     // comment
     b();
 
@@ -106,20 +110,20 @@ The following patterns are considered problems when set to `"never"`:
 ```js
 /*eslint padded-blocks: [2, "never"]*/
 
-if (a) {  /*error Block must not be padded by blank lines.*/
+if (a) {
 
     b();
 
-}        /*error Block must not be padded by blank lines.*/
+}
 
 if (a)
-{        /*error Block must not be padded by blank lines.*/
+{
 
     b();
 
-}        /*error Block must not be padded by blank lines.*/
+}
 
-if (a) { /*error Block must not be padded by blank lines.*/
+if (a) {
 
     b();
 }
@@ -127,7 +131,7 @@ if (a) { /*error Block must not be padded by blank lines.*/
 if (a) {
     b();
 
-}        /*error Block must not be padded by blank lines.*/
+}
 ```
 
 The following patterns are not considered problems when set to `"never"`:
@@ -144,6 +148,124 @@ if (a) {
 if (a)
 {
     b();
+}
+```
+
+The following patterns are considered problems when configured `{ "switches": "always" }`:
+
+当配置为`{ "switches": "always" }`，以下模式被认为是有问题的：
+
+```js
+/*eslint padded-blocks: [2, { "switches": "always" }]*/
+
+switch (a) {
+    case 0: foo();
+}
+```
+
+The following patterns are not considered problems when configured `{ "switches": "always" }`:
+
+当配置为`{ "switches": "always" }`，以下模式被认为是没有问题的：
+
+```js
+/*eslint padded-blocks: [2, { "switches": "always" }]*/
+
+switch (a) {
+
+    case 0: foo();
+
+}
+
+if (a) {
+    b();
+}
+```
+
+The following patterns are considered problems when configured `{ "switches": "never" }`:
+
+当配置为`{ "switches": "never" }`，以下模式被认为是有问题的：
+
+```js
+/*eslint padded-blocks: [2, { "switches": "never" }]*/
+
+switch (a) {
+
+    case 0: foo();
+
+}
+```
+
+The following patterns are not considered problems when configured `{ "switches": "never" }`:
+
+当配置为`{ "switches": "never" }`，以下模式被认为是没有问题的：
+
+```js
+/*eslint padded-blocks: [2, { "switches": "never" }]*/
+
+switch (a) {
+    case 0: foo();
+}
+
+if (a) {
+
+    b();
+
+}
+```
+
+The following patterns are considered problems when configured `{ "classes": "always" }`:
+
+当配置为`{ "classes": "always" }`，以下模式被认为是有问题的：
+
+```js
+/*eslint padded-blocks: [2, { "classes": "always" }]*/
+
+class  A {
+    constructor(){
+    }
+}
+```
+
+The following patterns are not considered problems when configured `{ "classes": "always" }`:
+
+当配置为`{ "classes": "always" }`，以下模式被认为是没有问题的：
+
+```js
+/*eslint padded-blocks: [2, { "classes": "always" }]*/
+
+class  A {
+
+    constructor(){
+    }
+
+}
+```
+
+The following patterns are considered problems when configured `{ "classes": "never" }`:
+
+当配置为`{ "classes": "never" }`，以下模式被认为是有问题的：
+
+```js
+/*eslint padded-blocks: [2, { "classes": "never" }]*/
+
+class  A {
+
+    constructor(){
+    }
+
+}
+```
+
+The following patterns are not considered problems when configured `{ "classes": "never" }`:
+
+当配置为`{ "classes": "never" }`，以下模式被认为是没有问题的：
+
+```js
+/*eslint padded-blocks: [2, { "classes": "never" }]*/
+
+class  A {
+    constructor(){
+    }
 }
 ```
 

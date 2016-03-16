@@ -3,6 +3,7 @@ title: Rule jsx-quotes
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Enforce JSX Quote Style (jsx-quotes)
 
 # 强制JSX引号风格 (jsx-quotes)
@@ -29,6 +30,8 @@ If you want to have e.g. a double quote within a JSX attribute value, you have t
 <a b='"' />
 ```
 
+**Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
+
 ## Rule Details
 
 This rule takes one argument.
@@ -50,6 +53,8 @@ The following patterns are considered problems when set to `"prefer-double"`:
 当设置为`"prefer-double"`，以下模式被认为是有问题的：
 
 ```xml
+/*eslint jsx-quotes: [2, "prefer-double"]*/
+
 <a b='c' />
 ```
 
@@ -58,6 +63,8 @@ The following patterns are not considered problems when set to `"prefer-double"`
 当设置为`"prefer-double"`，以下模式被认为是没有问题的：
 
 ```xml
+/*eslint jsx-quotes: [2, "prefer-double"]*/
+
 <a b="c" />
 <a b='"' />
 ```
@@ -67,6 +74,8 @@ The following patterns are considered problems when set to `"prefer-single"`:
 当设置为`"prefer-single"`，以下模式被认为是有问题的：
 
 ```xml
+/*eslint jsx-quotes: [2, "prefer-single"]*/
+
 <a b="c" />
 ```
 
@@ -75,6 +84,8 @@ The following patterns are not considered problems when set to `"prefer-single"`
 当设置为`"prefer-single"`，以下模式被认为是没有问题的：
 
 ```xml
+/*eslint jsx-quotes: [2, "prefer-single"]*/
+
 <a b='c' />
 <a b="'" />
 ```

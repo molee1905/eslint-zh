@@ -3,6 +3,7 @@ title: Rule object-curly-spacing
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow or enforce spaces inside of curly braces in objects. (object-curly-spacing)
 
 # 禁止或强制对象的花括号中有空格。 (object-curly-spacing)
@@ -44,7 +45,7 @@ Braces that are separated from the adjacent value by a new line are exempt from 
 该规则要求或不允许花括号和值之间有空格。
 括号内相邻的值出现折行的，不适用此规则。
 
-### Options
+## Options
 
 There are two main options for the rule:
 
@@ -63,7 +64,7 @@ Depending on your coding conventions, you can choose either option by specifying
 "object-curly-spacing": [2, "always"]
 ```
 
-#### never
+### "never"
 
 When `"never"` is set, the following patterns are considered problems:
 
@@ -72,12 +73,12 @@ When `"never"` is set, the following patterns are considered problems:
 ```
 /*eslint object-curly-spacing: [2, "never"]*/
 
-var obj = { 'foo': 'bar' };            /*error There should be no space after '{'*/ /*error There should be no space before '}'*/
-var obj = {'foo': 'bar' };                                                          /*error There should be no space before '}'*/
-var obj = { baz: {'foo': 'qux'}, bar}; /*error There should be no space after '{'*/
-var obj = {baz: { 'foo': 'qux'}, bar}; /*error There should be no space after '{'*/
-var {x } = y;                                                                       /*error There should be no space before '}'*/
-import { foo } from 'bar';             /*error There should be no space after '{'*/ /*error There should be no space before '}'*/
+var obj = { 'foo': 'bar' };
+var obj = {'foo': 'bar' };
+var obj = { baz: {'foo': 'qux'}, bar};
+var obj = {baz: { 'foo': 'qux'}, bar};
+var {x } = y;
+import { foo } from 'bar';
 ```
 
 The following patterns are not considered problems:
@@ -101,7 +102,7 @@ var {x} = y;
 import {foo} from 'bar';
 ```
 
-#### always
+### "always"
 
 When `"always"` is used, the following patterns are considered problems:
 
@@ -110,16 +111,16 @@ When `"always"` is used, the following patterns are considered problems:
 ```
 /*eslint object-curly-spacing: [2, "always"]*/
 
-var obj = {'foo': 'bar'};               /*error A space is required after '{'*/ /*error A space is required before '}'*/
-var obj = {'foo': 'bar' };              /*error A space is required after '{'*/
-var obj = { baz: {'foo': 'qux'}, bar};  /*error A space is required after '{'*/ /*error A space is required before '}'*/
-var obj = {baz: { 'foo': 'qux' }, bar}; /*error A space is required after '{'*/ /*error A space is required before '}'*/
-var obj = {'foo': 'bar'                 /*error A space is required after '{'*/
+var obj = {'foo': 'bar'};
+var obj = {'foo': 'bar' };
+var obj = { baz: {'foo': 'qux'}, bar};
+var obj = {baz: { 'foo': 'qux' }, bar};
+var obj = {'foo': 'bar'
 };
 var obj = {
-  'foo':'bar'};                                                                 /*error A space is required before '}'*/
-var {x} = y;                            /*error A space is required after '{'*/ /*error A space is required before '}'*/
-import {foo } from 'bar';               /*error A space is required after '{'*/
+  'foo':'bar'};
+var {x} = y;
+import {foo } from 'bar';
 ```
 
 The following patterns are not considered problems:
@@ -143,7 +144,7 @@ Note that `{}` is always exempt from spacing requirements with this rule.
 
 注意，`{}`总是豁免于此规则对空格的要求。
 
-#### Exceptions
+### Exceptions
 
 There are two exceptions you can apply to this rule: `objectsInObjects` and
 `arraysInObjects`. Their values can be set to either `true` or `false` as part
@@ -170,7 +171,7 @@ You can add exceptions like so:
 }]
 ```
 
-##### objectsInObjects
+#### `objectsInObjects`
 
 In the case of the `"always"` option, set `objectsInObjects` exception to `false` to
 enforce the following syntax (notice the `}}` at the end):
@@ -190,7 +191,7 @@ the following style (with a space between the `}` at the end):
 var obj = {"foo": {"baz": 1, "bar": 2} };
 ```
 
-##### arraysInObjects
+#### `arraysInObjects`
 
 In the case of the `"always"` option, set `arraysInObjects` exception to `false` to
 enforce the following syntax (notice the `]}` at the end):

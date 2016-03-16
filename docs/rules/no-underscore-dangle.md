@@ -3,6 +3,7 @@ title: Rule no-underscore-dangle
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Dangling Underscores in Identifiers (no-underscore-dangle)
 
 # 禁止标识符中有悬空下划线 (no-underscore-dangle)
@@ -29,9 +30,9 @@ This rule aims to eliminate the use of dangling underscores in identifiers.
 
 该规则旨在消除标识符中悬空下划线的使用。
 
-### Options
+## Options
 
-#### allow
+### `allow`
 
 ```json
 "no-underscore-dangle": [2, { "allow": [] }]
@@ -41,6 +42,14 @@ Array of variable names that are permitted to be used with underscore. If provid
 
 允许使用下划线的变量名数组。如果提供了该选项，它必须是个`Array`。
 
+### `allowAfterThis`
+
+```json
+"no-underscore-dangle": [2, { "allowAfterThis": true }]
+```
+
+This option allows usage of dangled variables as members of `this`.
+
 The following patterns are considered problems:
 
 以下模式被认为是有问题的：
@@ -48,9 +57,9 @@ The following patterns are considered problems:
 ```js
 /*eslint no-underscore-dangle: 2*/
 
-var foo_;           /*error Unexpected dangling "_" in "foo_".*/
-var __proto__ = {}; /*error Unexpected dangling "_" in "__proto__".*/
-foo._bar();         /*error Unexpected dangling "_" in "_bar".*/
+var foo_;
+var __proto__ = {};
+foo._bar();
 ```
 
 The following patterns are not considered problems:
@@ -72,6 +81,13 @@ var file = __filename;
 
 var foo_;
 foo._bar();
+```
+
+```js
+/*eslint no-underscore-dangle: [2, { "allowAfterThis": true }]*/
+
+var a = this.foo_;
+this._bar();
 ```
 
 ## When Not To Use It

@@ -3,6 +3,7 @@ title: Rule wrap-iife
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require IIFEs to be Wrapped (wrap-iife)
 
 # 需要把立即执行的函数包裹起来 (wrap-iife)
@@ -21,7 +22,7 @@ Since function statements cannot be immediately invoked, and function expression
 
 因为函数语句不能立即被调用，但是函数表达式可以，创建一个立即调用的函数表达式通常的技巧是用括号直接包裹。开括号使得被包含的函数被解析成一个表达式而不是一个声明。
 
-### Options
+## Options
 
 The rule takes one option which can enforce a consistent wrapping style. The default is `outside`.
 
@@ -58,19 +59,19 @@ The following patterns are considered problems:
 ```js
 /*eslint wrap-iife: 2*/
 
-var x = function () { return { y: 1 };}(); /*error Wrap an immediate function invocation in parentheses.*/
+var x = function () { return { y: 1 };}();
 ```
 
 ```js
 /*eslint wrap-iife: [2, "outside"]*/
 
-var x = (function () { return { y: 1 };})(); /*error Move the invocation into the parens that contain the function.*/
+var x = (function () { return { y: 1 };})();
 ```
 
 ```js
 /*eslint wrap-iife: [2, "inside"]*/
 
-var x = (function () { return { y: 1 };}()); /*error Wrap only the function expression in parens.*/
+var x = (function () { return { y: 1 };}());
 ```
 
 The following patterns are not considered problems:

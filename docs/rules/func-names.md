@@ -3,6 +3,7 @@ title: Rule func-names
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require Function Expressions to have a Name (func-names)
 
 # 要求函数表达式有个一名字(func-names)
@@ -28,9 +29,9 @@ The following patterns are considered problems:
 ```js
 /* eslint func-names: 2*/
 
-Foo.prototype.bar = function() {}; /*error Missing function expression name.*/
+Foo.prototype.bar = function() {};
 
-(function() {                      /*error Missing function expression name.*/
+(function() {
     // ...
 }())
 ```

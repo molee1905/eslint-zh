@@ -3,13 +3,14 @@ title: Rule global-strict
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Global Strict Mode (global-strict)
 
 # 全局严格模式(global-strict)
 
 **Replacement notice**: This rule was removed in ESLint v1.0 and replaced by the [strict](strict) rule. `"global"` mode in the strict rule is most similar to this rule.
 
-**替换声明**: 该规则在ESLint v1.0 中被移除并被[strict](strict)规则代替. `"global"`模式在严格规则中与该规则最相似。
+**替换通知**: 该规则在ESLint v1.0 中被移除并被[strict](strict)规则代替. `"global"`模式在严格规则中与该规则最相似。
 
 Strict mode is enabled by using the following pragma in your code:
 
@@ -33,9 +34,9 @@ This rule requires or disallows global strict mode invoked by a `"use strict"` p
 
 该规则通过全局作用域的`"use strict"`语句声明要求或禁止全局严格模式。
 
-The following pattern is under strict mode globally and is considered valid with the "always" option and a warning with the "never" option.
+The following pattern is under strict mode globally and is considered valid with the `"always"` option and a warning with the `"never"` option.
 
-下面的模式运行在全局严格模式下，使用"always"选项认为是有效的，使用"never"选项会有警告。
+下面的模式运行在全局严格模式下，使用`"always"`选项认为是有效的，使用`"never"`选项会有警告。
 
 ```js
 "use strict";
@@ -45,7 +46,7 @@ function foo() {
 }
 ```
 
-The following patterns apply strict mode only to functions so are valid with the "never" option but are problems with the "always" option.
+The following patterns apply strict mode only to functions so are valid with the `"never"` option but are problems with the `"always"` option.
 
 下面的模式严格模式仅仅应用在函数内部，所以使用"never"选项是有效的，但是使用"always"选项就会存在问题。
 
@@ -63,7 +64,7 @@ function foo() {
 }());
 ```
 
-### Options
+## Options
 
 ```json
 "global-strict": [2, "always"]

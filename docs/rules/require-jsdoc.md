@@ -3,6 +3,7 @@ title: Rule require-jsdoc
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require JSDoc comment (require-jsdoc)
 
 # 要求JSDoc注释 (require-jsdoc)
@@ -27,7 +28,7 @@ Some style guides require JSDoc comments for all functions as a way of explainin
 
 一些风格指南要求对所有的函数使用JSDoc注释作为描述函数行为的一种方式。
 
-## Rule details
+## Rule Details
 
 This rule generates warnings for nodes that do not have JSDoc comments when they should. Supported nodes:
 
@@ -37,7 +38,7 @@ This rule generates warnings for nodes that do not have JSDoc comments when they
 * `ClassDeclaration`
 * `MethodDefinition`
 
-### Options
+## Options
 
 This rule accepts a `require` object with its properties as
 
@@ -71,17 +72,17 @@ The following patterns are considered problems:
 /*eslint "require-jsdoc": [2, {
     "require": {
         "FunctionDeclaration": true,
-        "MethodDefinition": false,
-        "ClassDeclaration": false
+        "MethodDefinition": true,
+        "ClassDeclaration": true
     }
 }]*/
 
-function foo() {       /*error Missing JSDoc comment.*/
+function foo() {
     return 10;
 }
 
-class Test{            /*error Missing JSDoc comment.*/
-    getDate(){}        /*error Missing JSDoc comment.*/
+class Test{
+    getDate(){}
 }
 ```
 
@@ -93,8 +94,8 @@ The following patterns are not considered problems:
 /*eslint "require-jsdoc": [2, {
     "require": {
         "FunctionDeclaration": true,
-        "MethodDefinition": false,
-        "ClassDeclaration": false
+        "MethodDefinition": true,
+        "ClassDeclaration": true
     }
 }]*/
 
@@ -128,7 +129,7 @@ class Test{
 }
 ```
 
-## When not to use
+## When Not To Use It
 
 If you do not require JSDoc for your functions, then you can leave this rule off.
 

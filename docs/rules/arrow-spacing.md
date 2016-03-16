@@ -3,6 +3,7 @@ title: Rule arrow-spacing
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require space before/after arrow function's arrow (arrow-spacing)
 
 # 要求箭头函数的箭头之前或之后有空格 (arrow-spacing)
@@ -47,14 +48,14 @@ The following patterns are considered problems if `{ "before": true, "after": tr
 /*eslint arrow-spacing: 2*/
 /*eslint-env es6*/
 
-()=> {};     /*error Missing space before =>*/
-() =>{};     /*error Missing space after =>*/
-(a)=> {};    /*error Missing space before =>*/
-(a) =>{};    /*error Missing space after =>*/
-a =>a;       /*error Missing space after =>*/
-a=> a;       /*error Missing space before =>*/
-()=> {'\n'}; /*error Missing space before =>*/
-() =>{'\n'}; /*error Missing space after =>*/
+()=> {};
+() =>{};
+(a)=> {};
+(a) =>{};
+a =>a;
+a=> a;
+()=> {'\n'};
+() =>{'\n'};
 ```
 
 The following patterns are not considered problems if `{ "before": true, "after": true }`.

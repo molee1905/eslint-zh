@@ -3,6 +3,7 @@ title: Documentation
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Configuring ESLint
 
 # 配置 ESLint
@@ -32,76 +33,38 @@ All of these options give you fine-grained control over how ESLint treats your c
 
 所有这些选项，让你可以细粒度地控制ESLint如何对待你的代码。
 
-## Specifying Language Options
+## Specifying Parser Options
 
 ## 描述语言选项
 
-ESLint allows you to specify the JavaScript language options you want to support. By default, ESLint supports only ECMAScript 5 syntax. You can override that setting to enable support for ECMAScript 6 as well as [JSX](http://facebook.github.io/jsx/) by using configuration settings.
+ESLint allows you to specify the JavaScript language options you want to support. By default, ESLint supports only ECMAScript 5 syntax. You can override that setting to enable support for ECMAScript 6 and 7 as well as [JSX](http://facebook.github.io/jsx/) by using parser options.
 
-ESLint 允许你指定你想要支持的JavaScript语言选项。默认情况下，ESLint支持ES 5语法，但是你可以通过配置让它支持ES 6 或者 [JSX](http://facebook.github.io/jsx/)。
+ESLint 允许你指定你想要支持的JavaScript语言选项。默认情况下，ESLint支持ES 5语法，但是你可以通过使用解析器选项让它支持ES 6 或者 [JSX](http://facebook.github.io/jsx/)。
 
-Configuration settings are set in your `.eslintrc` file by using the `ecmaFeatures` property. The available options are:
+Parser options are set in your `.eslintrc.*` file by using the `parserOptions` property. The available options are:
 
-配置设置在`.eslintrc`文件使用`ecmaFeatures`属性设置。可用的选项有：
+解析器选项在`.eslintrc`文件使用`parserOptions`属性设置。可用的选项有：
 
-* `arrowFunctions` - enable [arrow functions](https://leanpub.com/understandinges6/read#leanpub-auto-arrow-functions)
-* `arrowFunctions` - 开启[arrow functions](https://leanpub.com/understandinges6/read#leanpub-auto-arrow-functions)
-* `binaryLiterals` - enable [binary literals](https://leanpub.com/understandinges6/read#leanpub-auto-octal-and-binary-literals)
-* `binaryLiterals` - 开启 [binary literals](https://leanpub.com/understandinges6/read#leanpub-auto-octal-and-binary-literals)
-* `blockBindings` - enable `let` and `const` (aka [block bindings](https://leanpub.com/understandinges6/read#leanpub-auto-block-bindings))
-* `blockBindings` - 开启 `let` and `const` (aka [block bindings](https://leanpub.com/understandinges6/read#leanpub-auto-block-bindings))
-* `classes` - enable classes
-* `classes` - 开启 classes
-* `defaultParams` - enable [default function parameters](https://leanpub.com/understandinges6/read/#leanpub-auto-default-parameters)
-* `defaultParams` - 开启 [default function parameters](https://leanpub.com/understandinges6/read/#leanpub-auto-default-parameters)
-* `destructuring` - enable [destructuring](https://leanpub.com/understandinges6/read#leanpub-auto-destructuring-assignment)
-* `destructuring` - 开启 [destructuring](https://leanpub.com/understandinges6/read#leanpub-auto-destructuring-assignment)
-* `forOf` - enable [`for-of` loops](https://leanpub.com/understandinges6/read#leanpub-auto-iterables-and-for-of)
-* `forOf` - 开启 [`for-of` loops](https://leanpub.com/understandinges6/read#leanpub-auto-iterables-and-for-of)
-* `generators` - enable [generators](https://leanpub.com/understandinges6/read#leanpub-auto-generators)
-* `generators` - 开启 [generators](https://leanpub.com/understandinges6/read#leanpub-auto-generators)
-* `modules` - enable modules and global strict mode
-* `modules` - 开启 modules 和 global strict mode
-* `objectLiteralComputedProperties` - enable [computed object literal property names](https://leanpub.com/understandinges6/read#leanpub-auto-computed-property-names)
-* `objectLiteralComputedProperties` - 开启 [computed object literal property names](https://leanpub.com/understandinges6/read#leanpub-auto-computed-property-names)
-* `objectLiteralDuplicateProperties` - enable [duplicate object literal properties](https://leanpub.com/understandinges6/read#leanpub-auto-duplicate-object-literal-properties) in strict mode
-* `objectLiteralDuplicateProperties` - 在严格模式开启 [duplicate object literal properties](https://leanpub.com/understandinges6/read#leanpub-auto-duplicate-object-literal-properties)
-* `objectLiteralShorthandMethods` - enable [object literal shorthand methods](https://leanpub.com/understandinges6/read#leanpub-auto-method-initializer-shorthand)
-* `objectLiteralShorthandMethods` - 开启 [object literal shorthand methods](https://leanpub.com/understandinges6/read#leanpub-auto-method-initializer-shorthand)
-* `objectLiteralShorthandProperties` - enable [object literal shorthand properties](https://leanpub.com/understandinges6/read#leanpub-auto-property-initializer-shorthand)
-* `objectLiteralShorthandProperties` - 开启 [object literal shorthand properties](https://leanpub.com/understandinges6/read#leanpub-auto-property-initializer-shorthand)
-* `octalLiterals` - enable [octal literals](https://leanpub.com/understandinges6/read#leanpub-auto-octal-and-binary-literals)
-* `octalLiterals` - 开启 [octal literals](https://leanpub.com/understandinges6/read#leanpub-auto-octal-and-binary-literals)
-* `regexUFlag` - enable the [regular expression `u` flag](https://leanpub.com/understandinges6/read#leanpub-auto-the-regular-expression-u-flag)
-* `regexUFlag` - 开启 [regular expression `u` flag](https://leanpub.com/understandinges6/read#leanpub-auto-the-regular-expression-y-flag)
-* `restParams` - enable the [rest parameters](https://leanpub.com/understandinges6/read#leanpub-auto-rest-parameters)
-* `restParams` - 开启 [rest parameters](https://leanpub.com/understandinges6/read#leanpub-auto-rest-parameters)
-* `spread` - enable the [spread operator](https://leanpub.com/understandinges6/read#leanpub-auto-the-spread-operator) for arrays
-* `spread` - 开启 [spread operator](https://leanpub.com/understandinges6/read#leanpub-auto-the-spread-operator) for arrays
-* `superInFunctions` - enable `super` references inside of functions
-* `superInFunctions` - 在函数里开启 `super` 引用
-* `templateStrings` - enable [template strings](https://leanpub.com/understandinges6/read/#leanpub-auto-template-strings)
-* `templateStrings` - 开启 [template strings](https://leanpub.com/understandinges6/read/#leanpub-auto-template-strings)
-* `unicodeCodePointEscapes` - enable [code point escapes](https://leanpub.com/understandinges6/read/#leanpub-auto-escaping-non-bmp-characters)
-* `unicodeCodePointEscapes` - 开启 [code point escapes](https://leanpub.com/understandinges6/read/#leanpub-auto-escaping-non-bmp-characters)
-* `globalReturn` - allow `return` statements in the global scope
-* `globalReturn` - 在全局作用域中允许声明 `return`
-* `jsx` - 开启 [JSX](http://facebook.github.io/jsx/)
-* `jsx` - enable [JSX](http://facebook.github.io/jsx/)
-* `experimentalObjectRestSpread` - enable support for the experimental [object rest/spread properties](https://github.com/sebmarkbage/ecmascript-rest-spread) (**IMPORTANT:** This is an experimental feature that may change significantly in the future. It's recommended that you do *not* write rules relying on this functionality unless you are willing to incur maintenance cost when it changes.)
-* `experimentalObjectRestSpread` - 开启对实验性属性的支持 [object rest/spread properties](https://github.com/sebmarkbage/ecmascript-rest-spread) (**注意:** 这是一个处于试验阶段的特征，未来有可能会变化。建议你*不*要写依赖这个功能的规则，除非你愿意当其变化时花费精力去维护。
+* `ecmaVersion` - set to 3, 5 (default), 6, or 7 to specify the version of ECMAScript you want to use.
+* `sourceType` - set to `"script"` (default) or `"module"` if your code is in ECMAScript modules.
+* `ecmaFeatures` - an object indicating which additional language features you'd like to use:
+    * `globalReturn` - allow `return` statements in the global scope
+    * `impliedStrict` - enable global [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode) (if `ecmaVersion` is 5 or greater)
+    * `jsx` - enable [JSX](http://facebook.github.io/jsx/)
+    * `experimentalObjectRestSpread` - enable support for the experimental [object rest/spread properties](https://github.com/sebmarkbage/ecmascript-rest-spread) (**IMPORTANT:** This is an experimental feature that may change significantly in the future. It's recommended that you do *not* write rules relying on this functionality unless you are willing to incur maintenance cost when it changes.)
 
-
-Here's an example `.eslintrc` file:
+Here's an example `.eslintrc.json` file:
 
 这里是一个`.eslintrc`文件的例子：
 
 ```json
 {
-    "ecmaFeatures": {
-        "blockBindings": true,
-        "forOf": true,
-        "jsx": true
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        },
     },
     "rules": {
         "semi": 2
@@ -109,9 +72,9 @@ Here's an example `.eslintrc` file:
 }
 ```
 
-Setting language options helps ESLint determine what is a parsing error. All language options are `false` by default.
+Setting parser options helps ESLint determine what is a parsing error. All language options are `false` by default.
 
-设置语言的选项让ESLint知道如何解析，所有语言选项默认都是`false`。
+设置解析器的选项让ESLint知道如何解析，所有语言选项默认都是`false`。
 
 ## Specifying Parser
 
@@ -129,7 +92,6 @@ ESLint默认使用[Espree](https://github.com/eslint/espree)做它的解析器�
 3. 它必须提供兼容Esprima的AST 和 token 对象。
 
 
-
 Note that even with these compatibilities, there are no guarantees that an external parser will work correctly with ESLint and ESLint will not fix bugs related to incompatibilities with other parsers.
 
 注意：即使有这些兼容性，也不能保证一个外部解析器可以很好地和ESLint一起工作，ESLint也不会修复和其它解析器结合产生的兼容性问题。
@@ -142,7 +104,7 @@ To indicate the npm module to use as your parser, specify it using the `parser` 
 {
     "parser": "esprima",
     "rules": {
-        "semi": 2
+        "semi": "error"
     }
 }
 ```
@@ -152,13 +114,11 @@ The following parsers are compatible with ESLint:
 下面的解析器和ELint兼容良好：
 
 * [Esprima](https://npmjs.com/package/esprima)
-* [Esprima-FB](https://npmjs.com/package/esprima-fb) - Facebook's fork of Esprima that includes their proprietary syntax additions.
-* [Esprima-FB](https://npmjs.com/package/esprima-fb) - Facebook基于Esprima的库，另增加了它们专用的语法
+* [Esprima](https://npmjs.com/package/esprima)
 * [Babel-ESLint](https://npmjs.com/package/babel-eslint) - A wrapper around the [Babel](http://babeljs.io) parser that makes it compatible with ESLint.
 * [Babel-ESLint](https://npmjs.com/package/babel-eslint) -[Babel](http://babeljs.io) 解析器的封装，使它和ESLint兼容
 
-
-Note when using a custom parser, the `ecmaFeatures` configuration property is still required for ESLint to work properly with features not in ECMAScript 5 by default. Parsers may or may not also use `ecmaFeatures` to determine which features to enable.
+Note when using a custom parser, the `parserOptions` configuration property is still required for ESLint to work properly with features not in ECMAScript 5 by default. Parsers are all passed `parserOptions` and may or may not use them to determine which features to enable.
 
 请注意：当使用自定义解析器的时候，为了兼容ES5默认不支持的特性，配置属性`ecmaFeatures`依然是必须的。解析器可能会也可能不会使用`ecmaFeatures`去决定开启那个特征。
 
@@ -176,6 +136,10 @@ An environment defines global variables that are predefined. The available envir
 * `node` - Node.js 全局变量和 Node.js 作用域。
 * `commonjs` - CommonJS global variables and CommonJS scoping (use this for browser-only code that uses Browserify/WebPack).
 * `commonjs` - CommonJS 全局变量和 CommonJS 作用域 (为了兼容使用 Browserify/WebPack 的仅支持浏览器的代码)。
+* `shared-node-browser` - Globals common to both Node and Browser.
+* `shared-node-browser` - Globals common to both Node and Browser.
+* `es6` - enable all ECMAScript 6 features except for modules.
+* `es6` - 支持除了modules所有 ECMAScript 6 特性。
 * `worker` - web workers global variables.
 * `worker` - web workers 全局变量。
 * `amd` - defines `require()` and `define()` as global variables as per the [amd](https://github.com/amdjs/amdjs-api/wiki/AMD) spec.
@@ -208,13 +172,14 @@ An environment defines global variables that are predefined. The available envir
 * `nashorn` - Java 8 Nashorn 全局变量。
 * `serviceworker` - Service Worker global variables.
 * `serviceworker` - Service Worker 全局变量。
+* `atomtest` - Atom test helper globals.
+* `atomtest` - Atom test helper globals.
 * `embertest` - Ember test helper globals.
 * `embertest` - Ember test 全局变量。
 * `webextensions` - WebExtensions globals.
 * `webextensions` - WebExtensions 全局变量。
-* `es6` - enable all ECMAScript 6 features except for modules.
-* `es6` - 支持除了modules所有 ECMAScript 6 特性。
-
+* `greasemonkey` - GreaseMonkey globals.
+* `greasemonkey` - GreaseMonkey globals.
 
 These environments are not mutually exclusive, so you can define more than one at a time.
 
@@ -275,6 +240,42 @@ And in YAML:
   env:
     browser: true
     node: true
+```
+
+If you want to use an environment from a plugin, be sure to specify the plugin name in the `plugins` array and the use the unprefixed plugin name, followed by a slash, followed by the environment name. For example:
+
+```json
+{
+    "plugins": ["example"],
+    "env": {
+        "example/custom": true
+    }
+}
+```
+
+Or in a `package.json` file
+
+```json
+{
+    "name": "mypackage",
+    "version": "0.0.1",
+    "eslintConfig": {
+        "plugins": ["example"],
+        "env": {
+            "example/custom": true
+        }
+    }
+}
+```
+
+And in YAML:
+
+```yaml
+---
+  plugins:
+    - example
+  env:
+    example/custom: true
 ```
 
 ## Specifying Globals
@@ -372,31 +373,39 @@ And in YAML:
 ESLint comes with a large number of rules. You can modify which rules your project uses either using configuration comments or configuration files. To change a rule setting, you must set the rule ID equal to one of these values:
 
 ESLint 带来了大量的规则。你可以使用配置文件或者注释修改你要使用哪些规则。修改一个规则的时候，你必须设置下面ID中的一个：
-
-* 0 - turn the rule off
-* 0 - 关闭规则
-* 1 - turn the rule on as a warning (doesn't affect exit code)
-* 1 - 开启规则，使用警告级别的错误：`warn`(不会导致程序退出)
-* 2 - turn the rule on as an error (exit code is 1 when triggered)
-* 2 - 开启规则，使用错误级别的错误：`error`(当被触发的时候，程序会退出)
+ 
+* `"off"` or `0` - turn the rule off
+* `"off"` or `0` - 关闭规则
+* `"warn"` or `1` - turn the rule on as a warning (doesn't affect exit code)
+* `"warn"` or `1` - 开启规则，使用警告级别的错误：`warn`(不会导致程序退出)
+* `"error"` or `2` - turn the rule on as an error (exit code is 1 when triggered)
+* `"error"` or `2` - 开启规则，使用错误级别的错误：`error`(当被触发的时候，程序会退出)
 
 To configure rules inside of a file using configuration comments, use a comment in the following format:
 
 使用以下格式在文件注释里配置规则：
 
 ```js
-/*eslint eqeqeq:0, curly: 2*/
+/*eslint eqeqeq: "off", curly: "error"*/
 ```
 
-In this example, [`eqeqeq`](../rules/eqeqeq) is turned off and [`curly`](../rules/curly) is turned on as an error. If a rule has additional options, you can specify them using array literal syntax, such as:
+In this example, [`eqeqeq`](../rules/eqeqeq) is turned off and [`curly`](../rules/curly) is turned on as an error. You can also use the numeric equivalent for the rule severity:
 
 在这个例子里，[`eqeqeq`](../rules/eqeqeq) 规则被关闭，[`curly`](../rules/curly) 规则被打开，并且会报错。如果一个规则有别的选项，你可以用数组字面量配置它们，比如：
 
 ```js
-/*eslint quotes: [2, "double"], curly: 2*/
+/*eslint eqeqeq: 0, curly: 2*/
 ```
 
-This comment specifies the "double" option for the [`quotes`](../rules/quotes) rule.
+This example is the same as the last example, only it uses the numeric codes instead of the string values. The `eqeqeq` rule is off and the `curly` rule is set to be an error.
+
+If a rule has additional options, you can specify them using array literal syntax, such as:
+
+```js
+/*eslint quotes: ["error", "double"], curly: 2*/
+```
+
+This comment specifies the "double" option for the [`quotes`](../rules/quotes) rule. The first item in the array is always the rule severity (number or string).
 
 这条注释为规则[`quotes`](../rules/quotes)指定了"double"选项。
 
@@ -408,9 +417,9 @@ To configure rules inside of a configuration file, use the `rules` key along wit
 ```json
 {
     "rules": {
-        "eqeqeq": 0,
-        "curly": 2,
-        "quotes": [2, "double"]
+        "eqeqeq": "off",
+        "curly": "error",
+        "quotes": ["error", "double"]
     }
 }
 ```
@@ -421,12 +430,12 @@ And in YAML:
 
 ```yaml
 ---
-  rules:
-    eqeqeq: 0
-    curly: 2
-    quotes:
-      - 2
-      - "double"
+rules:
+  eqeqeq: off
+  curly: error
+  quotes:
+    - error
+    - double
 ```
 
 To configure a rule which is defined within a plugin you have to prefix the rule ID with the plugin name and a `/`. For example:
@@ -439,10 +448,10 @@ To configure a rule which is defined within a plugin you have to prefix the rule
         "plugin1"
     ],
     "rules": {
-        "eqeqeq": 0,
-        "curly": 2,
-        "quotes": [2, "double"],
-        "plugin1/rule1": 2
+        "eqeqeq": "off",
+        "curly": "error",
+        "quotes": ["error", "double"],
+        "plugin1/rule1": "error"
     }
 }
 ```
@@ -453,15 +462,15 @@ And in YAML:
 
 ```yaml
 ---
-  plugins:
-    - plugin1
-  rules:
-    eqeqeq: 0
-    curly: 2
-    quotes:
-      - 2
-      - "double"
-    plugin1/rule1: 2
+plugins:
+  - plugin1
+rules:
+  eqeqeq: 0
+  curly: error
+  quotes:
+    - error
+    - "double"
+  plugin1/rule1: error
 ```
 
 In these configuration files, the rule `plugin1/rule1` comes from the plugin named `plugin1`. You can also use this format with configuration comments, such as:
@@ -469,34 +478,29 @@ In these configuration files, the rule `plugin1/rule1` comes from the plugin nam
 这些配置文件中，规则`plugin1/rule1`表示来自插件`plugin1`的`rule1`规则。你也可以使用注释的格式去配置，比如：
 
 ```js
-/*eslint "plugin1/rule1": 2*/
+/*eslint "plugin1/rule1": "error" */
 ```
 
 **Note:** When specifying rules from plugins, make sure to omit `eslint-plugin-`. ESLint uses only the unprefixed name internally to locate rules.
 
 **注意** 当配置从插件来的规则的时候，确保删除`eslint-plugin-`前缀。因为声明该前缀，ESLint只在内部规则里去寻找。
 
-All rules that are enabled by default are set to 2, so they will cause a non-zero exit code when encountered. You can lower these rules to a warning by setting them to 1, which has the effect of outputting the message onto the console but doesn't affect the exit code.
-
-所有被包含的规则默认错误级别是 2，所以当触发时，它们会报错一个非零错误。你可以通过设置它们错误级别为 1 降低这些规则的级别，这样报错只会在控制台显示，而不会导致程序退出。
-
-To temporary disable warnings in your file use the following format:
+To temporarily disable rule warnings in your file use the following format:
 
 你可以使用下面格式，暂时关闭这些警告错误：
 
 ```js
 /*eslint-disable */
 
-//suppress all warnings between comments
+//Disable all rules between comments
 alert('foo');
 
 /*eslint-enable */
 ```
 
-You can also disable and enable back warnings of specific rules
+You can also disable or enable warnings for specific rules:
 
 你还可以针对具体的规则禁用或者启用警告。
-
 
 ```js
 /*eslint-disable no-alert, no-console */
@@ -507,21 +511,38 @@ console.log('bar');
 /*eslint-enable no-alert */
 ```
 
-To disable warnings on a specific line
+To disable all rules on a specific line:
 
 禁用某个具体的规则
 
 ```js
 alert('foo'); // eslint-disable-line
+
+// eslint-disable-next-line
+alert('foo');
 ```
 
-To disable a specific rule on a specific line
+To disable a specific rule on a specific line:
 
 在某一特定的行禁用某个特定的规则
 
 ```js
 alert('foo'); // eslint-disable-line no-alert
+
+// eslint-disable-next-line no-alert
+alert('foo');
 ```
+
+To disable multiple rules on a specific line:
+
+```js
+alert('foo'); // eslint-disable-line no-alert, quotes, semi
+
+// eslint-disable-next-line no-alert, quotes, semi
+alert('foo');
+```
+
+**Note:** Comments that disable warnings for a portion of a file tell ESLint not to report rule violations for the disabled code. ESLint parses the entire file, so disabled code still needs to be syntactically valid JavaScript.
 
 ## Adding Shared Settings
 
@@ -563,7 +584,7 @@ There are two ways to use configuration files. The first is to save the file whe
 
     eslint -c myconfig.json myfiletotest.js
 
-The second way to use configuration files is via `.eslintrc` and `package.json` files. ESLint will automatically look for them in the directory of the file to be linted, and in successive parent directories all the way up to the root directory of the filesystem. This option is useful when you want different configurations for different parts of a project or when you want others to be able to use ESLint directly without needing to remember to pass in the configuration file.
+The second way to use configuration files is via `.eslintrc.*` and `package.json` files. ESLint will automatically look for them in the directory of the file to be linted, and in successive parent directories all the way up to the root directory of the filesystem. This option is useful when you want different configurations for different parts of a project or when you want others to be able to use ESLint directly without needing to remember to pass in the configuration file.
 
 第二种方式是通过`.eslintrc`和`package.json`。ESLint将自动在文件目录里寻找配置文件，如果存不到它会在连续的父目录一路攀升到文件系统的根目录寻找。当你想对一个项目的不同部分的使用不同配置，或当你希望别人能够直接使用ESLint，而无需记住要通过在配置文件中，此选项很有用。
 
@@ -586,13 +607,12 @@ ESLint 配置文件支持以下几种格式：
 * **YAML** - 使用 `.eslintrc.yaml` 或者 `.eslintrc.yml` 去定义配置的结构
 * **JSON** - use `.eslintrc.json` to define the configuration structure. ESLint's JSON files also allow JavaScript-style comments.
 * **JSON** - 使用 `.eslintrc.json` 去定义配置的结构，ESLint的JSON文件允许js风格的注释
-* **package.json** - create an `eslintConfig` property in your `package.json` file and define your configuration there.
-* **package.json** - 创建一个在`package.json`里创建一个`eslintConfig`属性，在这里定义你的配置。
 * **Deprecated** - use `.eslintrc`, which can be either JSON or YAML.
 * **Deprecated** - 使用 `.eslintrc`可以使JSON 也可以是 YAML
+* **package.json** - create an `eslintConfig` property in your `package.json` file and define your configuration there.
+* **package.json** - 创建一个在`package.json`里创建一个`eslintConfig`属性，在这里定义你的配置。
 
-
-If there are multiple `.eslintrc.*` files in the same directory, ESLint will only use one. The priority order is:
+If there are multiple configuration files in the same directory, ESLint will only use one. The priority order is:
 
 如果同一个文件目录有多个`.eslintrc.*`，ESLint 只会使用一个，优先级是：
 
@@ -601,13 +621,13 @@ If there are multiple `.eslintrc.*` files in the same directory, ESLint will onl
 1. `.eslintrc.yml`
 1. `.eslintrc.json`
 1. `.eslintrc`
-
+1. `package.json`
 
 ## Configuration Cascading and Hierarchy
 
 ## 配置层叠和继承
 
-When using `.eslintrc` and `package.json` files for configuration, you can take advantage of configuration cascading. For instance, suppose you have the following structure:
+When using `.eslintrc.*` and `package.json` files for configuration, you can take advantage of configuration cascading. For instance, suppose you have the following structure:
 
 当使用`.eslintrc` 和 `package.json`配置的时候，你可以利用配置的层叠。例如，加入你有以下文件结构：
 
@@ -641,7 +661,7 @@ your-project
   └── test.js
 ```
 
-If there is an `.eslintrc` and a `package.json` file found in the same directory, both will be used, with the `.eslintrc` having the higher precendence.
+If there is an `.eslintrc` and a `package.json` file found in the same directory, `.eslintrc` will take a priority and `package.json` file will not be used.
 
 如果同一目录下`.eslintrc` 和 `package.json`同时存在，两者都会被使用，`.eslintrc`拥有更高的优先级。
 
@@ -649,7 +669,7 @@ If there is an `.eslintrc` and a `package.json` file found in the same directory
 
 **注意** 如果你家目录下有自定义配置文件(`~/.eslintrc`)，当且仅当没有其它配置文件被发现的时候它才会被使用。因为家目录里的配置系那个会作用于用户的每一个文件，包括第三方的代码，当ESLint运行时会导致问题。
 
-By default, ESLint will look for configuration files in all parent folders up to the root directory. This can be useful if you want all of your projects to follow a certain convention, but can sometimes lead to unexpected results. To limit ESLint to a specific project, place `"root": true` inside the `eslintConfig` field of the `package.json` file or in the `.eslintrc` file at your project's root level.  ESLint will stop looking in parent folders once it finds a configuration with `"root": true`.
+By default, ESLint will look for configuration files in all parent folders up to the root directory. This can be useful if you want all of your projects to follow a certain convention, but can sometimes lead to unexpected results. To limit ESLint to a specific project, place `"root": true` inside the `eslintConfig` field of the `package.json` file or in the `.eslintrc.*` file at your project's root level.  ESLint will stop looking in parent folders once it finds a configuration with `"root": true`.
 
 ESLint 默认会向上寻找父目录里所有配置文件直到根目录。当你想要你所有项目都使用一个特定的代码风格和语法的时候，这将会很有用，但有时候会导致出乎预料的问题。为了使ESLint作用于特定的项目，请在你项目根目录下的`package.json` 或者 `.eslintrc` 里的`eslintConfig`域下配置 `"root": true`。ESLint就会停止向上寻找。
 
@@ -709,8 +729,7 @@ The complete configuration hierarchy, from highest precedence to lowest preceden
     1. `--env`
     1. `-c`, `--config`
 3. Project-level configuration:
-    1. `.eslintrc` file in same directory as linted file
-    1. `package.json` file in same directory as linted file
+    1. `.eslintrc.*` or `package.json` file in same directory as linted file
     1. Continue searching for `.eslintrc` and `package.json` files in ancestor directories (parent has highest precedence, then grandparent, etc.), up to and including the root directory or until a config with `"root": true` is found.
     1. In the absence of any configuration from (1) thru (3), fall back to a personal default configuration in  `~/.eslintrc`.
 
@@ -783,7 +802,7 @@ Configurations may also be provided as an array, with additional files overridin
 
     "rules": {
         // Override any settings from the "parent" configuration
-        "eqeqeq": 1
+        "eqeqeq": "warn"
     }
 }
 ```
@@ -802,7 +821,7 @@ You can also extend configurations using shareable configuration packages. To do
 
     "rules": {
         // Override any settings from the "parent" configuration
-        "eqeqeq": 1
+        "eqeqeq": "warn"
     }
 }
 ```
@@ -814,6 +833,25 @@ In this example, the `eslint-config-myrules` package will be loaded as an object
 **Note:** You can omit `eslint-config-` and ESLint will automatically insert it for you, similar to how plugins work. See [Shareable Configs](../developer-guide/shareable-configs) for more information.
 
 **注意** 你可以删除 `eslint-config-`前缀，ESLint 会自动帮你上的，类似插件的工作。更多资料请查看 [Shareable Configs](../developer-guide/shareable-configs)
+
+ESLint also supports extending configuration from plugins that provide configs:
+
+```js
+{
+    "extends": "plugin:eslint-plugin-myplugin/myConfig",
+
+    "rules": {
+        // Override any settings from the "parent" configuration
+        "eqeqeq": "warn"
+    }
+}
+```
+
+In this example, the `eslint-plugin-myplugin` package contains configuration named `default`.
+
+**Important:** When you are extending from the configuration bundled with plugins, you need to start with `plugin:` prefix as well as specify configuration name after the slash. You may optionally omit the `eslint-plugin-` prefix.
+
+**Note:** For configuration files in your home directory, or in any path that isn't an ancestor to the location of ESLint (either globally or locally), `extends` is resolved from the path of the project using ESLint (typically the current working directory) rather than relative to the file itself.
 
 ## Comments in Configuration Files
 
@@ -830,11 +868,15 @@ JSON和YAML配置文件格式都支持注释(`package.json` 本应该支持但�
     },
     "rules": {
         // Override our default settings just for this directory
-        "eqeqeq": 1,
-        "strict": 0
+        "eqeqeq": "warn",
+        "strict": "off"
     }
 }
 ```
+
+## Specifying File extensions to Lint
+
+Currently the sole method for telling ESLint which file extensions to lint is by specifying a comma separated list of extensions using the [`--ext`](./command-line-interface#ext) command line option.
 
 ## Ignoring Files and Directories
 
@@ -851,40 +893,31 @@ You can tell ESLint to ignore specific files and directories by creating an `.es
 When ESLint is run, it looks in the current working directory to find an `.eslintignore` file before determining which files to lint. If this file is found, then those preferences are applied when traversing directories. Only one `.eslintignore` file can be used at a time, so `.eslintignore` files other than the one in the current working directory will not be used.
 
 当ESLint 运行的时候，它会在决定哪些文件应该被检查之前在当前文件中寻找`.eslintignore`文件。如果找到，这些规则就会在被扫描的时候用上。同一时间只有一个`.eslintignore`会被应用。所以当前工作目录的`.eslintignore`文件不会被使用。
+ 
+Globs are matched using [node-ignore](https://github.com/kaelzhang/node-ignore), so a number of features are available:
 
-Globs are matched using [minimatch](https://github.com/isaacs/minimatch), so a number of features are available:
-
-规律规则使用 [最小匹配](https://github.com/isaacs/minimatch)，所以大量特征都可以被利用：
+规律规则使用 [node-ignore](https://github.com/kaelzhang/node-ignore)，所以大量特征都可以被利用：
 
 * Lines beginning with `#` are treated as comments and do not affect ignore patterns.
+* Paths are relative to `.eslintignore` location or the current working directory. This also influences paths passed via `--ignore-pattern`.
+* Ignore patterns behave according to the `.gitignore` [specification](http://git-scm.com/docs/gitignore)
 * Lines preceded by `!` are negated patterns that re-include a pattern that was ignored by an earlier pattern.
 * Brace expansion can refer to multiple files in a pattern. For example, `file.{js,ts,coffee}` will ignore `file.js`, `file.ts`, and `file.coffee`.
 
-* 以`#`开头的行会被当做注释处理
-* 行前加`!`表示否定模式，不忽略后面匹配的模式
-* 大括号可以在一个模式里一次性指定多个文件。如：`file.{js,ts,coffee}`会忽略`file.js`, `file.ts`, 和 `file.coffee`.
+In addition to any patterns in a `.eslintignore` file, ESLint always ignores files in `/node_modules/**` and `/bower_components/**`.
 
-In addition to any patterns in a `.eslintignore` file, ESLint always ignores files in `node_modules/**`.
-
-此外，文件里的任何模式，ESLint都会忽略`node_modules/**`文件。
-
-For example, placing the following `.eslintignore` file in the current working directory will ignore all of `node_modules`, any files with the extensions `.ts.js` or `.coffee.js` extension that might have been transpiled, and anything in the `build/` directory except `build/index.js`:
+For example, placing the following `.eslintignore` file in the current working directory will ignore all of `node_modules`, `bower_components`, any files with the extensions `.ts.js` or `.coffee.js` extension that might have been transpiled, and anything in the `build/` directory except `build/index.js`:
 
 例如：把下面`.eslintignore`文件放到当前工作目录里，可能会忽略`node_modules`下所有以`.ts.js` 或者 `.coffee.js`结尾的文件，和除了`build/index.js` `build/` 目录下所有文件。
 
 ```text
-# node_modules ignored by default
-
-# 默认 忽略 node_modules
+# /node_modules and /bower_components ignored by default
 
 # Ignore files compiled from TypeScript and CoffeeScript
 
-# 忽略从TypeScript 和 CoffeeScript编译的文件
 **/*.{ts,coffee}.js
 
 # Ignore built files except build/index.js
-
-# 忽略 除了build/index.js 的 built文件
 
 build/
 !build/index.js

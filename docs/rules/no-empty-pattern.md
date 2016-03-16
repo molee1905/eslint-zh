@@ -3,6 +3,7 @@ title: Rule no-empty-pattern
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow empty destructuring patterns (no-empty-pattern)
 # 禁止空的解构模式 (no-empty-pattern)
 

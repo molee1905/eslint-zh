@@ -3,6 +3,7 @@ title: Rule dot-notation
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require Dot Notation (dot-notation)
 
 # 要求使用点号 (dot-notation)
@@ -29,7 +30,7 @@ The following patterns are considered problems:
 ```js
 /*eslint dot-notation: 2*/
 
-var x = foo["bar"]; /*error ["bar"] is better written in dot notation.*/
+var x = foo["bar"];
 ```
 
 The following patterns are not considered problems:
@@ -44,7 +45,7 @@ var x = foo.bar;
 var x = foo[bar];    // Property name is a variable, square-bracket notation required
 ```
 
-### Options
+## Options
 
 This rule accepts a single options argument with the following defaults:
 
@@ -58,7 +59,7 @@ This rule accepts a single options argument with the following defaults:
 }
 ```
 
-#### `allowKeywords`
+### `allowKeywords`
 
 Set the `allowKeywords` option to `false` (default is `true`) to follow ECMAScript version 3 compatible style, avoiding dot notation for reserved word properties.
 
@@ -81,7 +82,7 @@ var foo = { "class": "CS 101" }
 var x = foo["class"]; // Property name is a reserved word, square-bracket notation required
 ```
 
-#### `allowPattern`
+### `allowPattern`
 
 Set the `allowPattern` option to a regular expression string to allow bracket notation for property names that match a pattern (by default, no pattern is tested).
 
@@ -114,10 +115,10 @@ Example code patterns:
 /*eslint dot-notation: [2, {"allowPattern": "^[a-z]+(_[a-z]+)+$"}]*/
 
 var data = {};
-data.foo_bar = 42;    /*error Identifier 'foo_bar' is not in camel case.*/
+data.foo_bar = 42;
 
 var data = {};
-data["fooBar"] = 42;  /*error ["fooBar"] is better written in dot notation.*/
+data["fooBar"] = 42;
 
 var data = {};
 data["foo_bar"] = 42; // no warning

@@ -3,6 +3,7 @@ title: Rule no-octal-escape
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Octal Escapes (no-octal-escape)
 
 # 禁止八进制转义 (no-octal-escape)
@@ -28,7 +29,7 @@ The following patterns are considered problems:
 ```js
 /*eslint no-octal-escape: 2*/
 
-var foo = "Copyright \251"; /*error Don't use octal: '\251'. Use '\u....' instead.*/
+var foo = "Copyright \251";
 ```
 
 The following patterns are not considered problems:

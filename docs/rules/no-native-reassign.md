@@ -3,6 +3,7 @@ title: Rule no-native-reassign
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Reassignment of Native Objects (no-native-reassign)
 
 # 禁止对原生对象赋值 (no-native-reassign)
@@ -28,7 +29,7 @@ The following patterns are considered problems:
 ```js
 /*eslint no-native-reassign: 2*/
 
-String = new Object(); /*error String is a read-only native object.*/
+String = new Object();
 ```
 
 ## Options

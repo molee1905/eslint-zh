@@ -3,6 +3,7 @@ title: Rule no-extend-native
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Extending of Native Objects (no-extend-native)
 # 禁止扩展原生对象 (no-extend-native)
 

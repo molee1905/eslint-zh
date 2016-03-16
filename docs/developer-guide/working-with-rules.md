@@ -3,6 +3,7 @@ title: Documentation
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Working with Rules
 
 Each ESLint rule has two files: a source file in the `lib/rules` directory and a test file in the `tests/lib/rules` directory. Both files should be named with the rule ID (i.e., `no-eval.js` for rule ID `no-eval`) The basic source code format for a rule is:
@@ -92,14 +93,15 @@ The `context` object contains additional functionality that is helpful for rules
 
 `context`对象包含额外的功能，有利于规则完成他们的工作。顾名思义，`context`对象包含与规则上下文相关的信息。`context`对象具有以下属性：
 
-* `ecmaFeatures` - the language feature flags.
-* `ecmaFeatures` - 语言特征标记。
+* `parserOptions` - the parser options configured for this run (more details [here](../user-guide/configuring#specifying-parser-options)).
+* `parserOptions` - 解析器选项 (more details [here](../user-guide/configuring#specifying-parser-options)).
 * `id` - the rule ID.
 * `id` - 规则ID。
 * `options` - an array of rule options.
 * `options` - 一个规则选项数组。
 * `settings` - the `settings` from configuration.
 * `settings` - 配置中的 `settings`。
+* `parserPath` - the full path to the `parser` from configuration.
 
 Additionally, the `context` object has the following methods:
 
@@ -115,8 +117,6 @@ Additionally, the `context` object has the following methods:
 * `getScope()` - 返回当前作用域。
 * `getSourceCode()` - returns a `SourceCode` object that you can use to work with the source that was passed to ESLint
 * `getSourceCode()` - 返回一个 `SourceCode` 对象，你可以在源码中使用并传递给ESLint。
-* `isMarkedAsUsed(name)` - returns true if a given variable name has been marked as used.
-* `isMarkedAsUsed(name)` - 如果给定的变量名已被标记为使用，返回true。
 * `markVariableAsUsed(name)` - marks the named variable in scope as used. This affects the [no-unused-vars](../rules/no-unused-vars) rule.
 * `markVariableAsUsed(name)` - 标记在作用域中使用的已命名的变量。这会影响 [no-unused-vars](../rules/no-unused-vars) 规则.
 * `report(descriptor)` - reports a problem in the code.
@@ -373,8 +373,9 @@ There are also some properties you can access:
 
 也有一些属性可供你访问：
 
-* `text` - the full text of the code being linted.
-* `text` - 被检查的代码全文。
+* `hasBOM` - the flag to indicate whether or not the source code has Unicode BOM.
+* `text` - the full text of the code being linted. Unicode BOM has been stripped from this text.
+* `text` - 被检查的代码全文，Unicode BOM已经从该文本中剥离。
 * `ast` - the `Program` node of the AST for the code being linted.
 * `ast` - AST的 `Program`节点，用于代码检查
 * `lines` - an array of lines, split according to the specification's definition of line breaks.
@@ -474,6 +475,13 @@ Keep in mind that comments are technically not a part of the AST and are only at
 **Note:** One of the libraries adds AST node properties for comments - do not use these properties. Always use `sourceCode.getComments()` as this is the only guaranteed API for accessing comments (we will likely change how comments are handled later).
 
 **注意** 一个类库为注释添加了AST节点属性 - 不要使用这些属性。总是使用`sourceCode.getComments()`如同这是访问注释的唯一有保证的API (稍后我们可能会改变注释的处理方式)。
+
+### Accessing Code Paths
+
+ESLint analyzes code paths while traversing AST.
+You can access that code path objects with five events related to code paths.
+
+[details here](./code-path-analysis)
 
 ## Rule Unit Tests
 
@@ -622,13 +630,52 @@ invalid: [
 ]
 ```
 
+### Specifying Parser Options
+
+Some tests require that a certain parser configuration must be used. This can be specified in test specifications via the `parserOptions` setting.
+
+For example, to set `ecmaVersion` to 6 (in order to use constructs like `for ... of`):
+
+```js
+valid: [
+    {
+        code: "for (x of a) doSomething();",
+        parserOptions: { ecmaVersion: 6 }
+    }
+]
+```
+
+If you are working with ES6 modules:
+
+```js
+valid: [
+    {
+        code: "export default function () {};",
+        parserOptions: { ecmaVersion: 6, sourceType: "module" }
+    }
+]
+```
+
+For non-version specific features such as JSX:
+
+```js
+valid: [
+    {
+        code: "var foo = <div>{bar}</div>",
+        parserOptions: { ecmaFeatures: { jsx: true } }
+    }
+]
+```
+
+The options available and the expected syntax for `parserOptions` is the same as those used in [configuration](../user-guide/configuring#specifying-parser-options).
+
 ### Write Several Tests
 
 ### 写一些测试
 
-You must have at least one valid and one invalid case for the rule tests to pass. Provide as many unit tests as possible. Your pull request will never be turned down for having too many tests submitted with it!
+Provide as many unit tests as possible. Your pull request will never be turned down for having too many tests submitted with it!
 
-你必须有至少一个有效和一个无效的用例，以便规则测试通过。提供尽可能多的单元测试。你的pull request永远不会因为有太多的测试一同被提交而被拒绝。
+提供尽可能多的单元测试。你的pull request永远不会因为有太多的测试一同被提交而被拒绝。
 
 ## Performance Testing
 

@@ -3,6 +3,7 @@ title: Rule operator-assignment
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Operator Assignment Shorthand (operator-assignment)
 
 # 简化赋值操作 (operator-assignment)
@@ -29,11 +30,17 @@ Javascript 为变量赋值和一些简单的数学运算提供了速记运算符
 
 ## Rule Details
 
-This rule enforces use of the shorthand assignment operators by requiring them where possible or prohibiting them entirely. It has two modes: `always` and `never`.
+This rule enforces use of the shorthand assignment operators by requiring them where possible or prohibiting them entirely.
 
-该规则的目的在于，在可能或完全禁止情况下，要求强制简化的赋值操作符的使用。它又两种模式`always` and `never`。
+该规则强制简化的赋值操作符在可能或完全禁止它们的地方的使用。
 
-### always
+## Options
+
+This rule has two options: `always` and `never`. The default is `always`.
+
+该规则有两个可选项：`always` 和 `never`。默认是`always`。
+
+### "always"
 
 `"operator-assignment": [2, "always"]`
 
@@ -64,13 +71,13 @@ The following patterns are considered problems and should be replaced by their s
 ```js
 /*eslint operator-assignment: [2, "always"]*/
 
-x = x + y;        /*error Assignment can be replaced with operator assignment.*/
-x = y * x;        /*error Assignment can be replaced with operator assignment.*/
-x[0] = x[0] / y;  /*error Assignment can be replaced with operator assignment.*/
-x.y = x.y << z;   /*error Assignment can be replaced with operator assignment.*/
+x = x + y;
+x = y * x;
+x[0] = x[0] / y;
+x.y = x.y << z;
 ```
 
-### never
+### "never"
 
 `"operator-assignment": [2, "never"]`
 
@@ -96,8 +103,8 @@ The following patterns are considered problems and should be written out fully w
 ```js
 /*eslint operator-assignment: [2, "never"]*/
 
-x *= y;               /*error Unexpected operator assignment shorthand.*/
-x ^= (y + z) / foo(); /*error Unexpected operator assignment shorthand.*/
+x *= y;
+x ^= (y + z) / foo();
 ```
 
 ## When Not To Use It

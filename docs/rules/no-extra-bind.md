@@ -3,6 +3,7 @@ title: Rule no-extra-bind
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow unnecessary function binding (no-extra-bind)
 # 禁止不必要的函数绑定 (no-extra-bind)
 
@@ -39,7 +40,7 @@ In this code, the reference to `this` has been removed but `bind()` is still use
 
 在代码中，`this`的引用已经被删除但是`bind()`依然在使用。在这种情况下，`bind()`是不必要的开销（和性能损耗）可以安全的移除。
 
-## Rule details
+## Rule Details
 
 This rule is aimed at avoiding the unnecessary use of `bind()` and as such will warn whenever an immediately-invoked function expression (IIFE) is using `bind()` and doesn't have an appropriate `this` value. This rule won't flag usage of `bind()` that includes function argument binding.
 
@@ -57,25 +58,25 @@ The following patterns are considered problems:
 /*eslint no-extra-bind: 2*/
 /*eslint-env es6*/
 
-var x = function () {   /*error The function binding is unnecessary.*/
+var x = function () {
     foo();
 }.bind(bar);
 
-var x = (() => {        /*error The function binding is unnecessary.*/
+var x = (() => {
     foo();
 }).bind(bar);
 
-var x = (() => {        /*error The function binding is unnecessary.*/
+var x = (() => {
     this.foo();
 }).bind(bar);
 
-var x = function () {   /*error The function binding is unnecessary.*/
+var x = function () {
     (function () {
       this.foo();
     }());
 }.bind(bar);
 
-var x = function () {   /*error The function binding is unnecessary.*/
+var x = function () {
     function foo() {
       this.bar();
     }

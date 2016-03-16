@@ -3,6 +3,7 @@ title: Rule indent
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Validate Indentation (indent)
 
 # 验证缩进 (indent)
@@ -47,7 +48,7 @@ It takes an option as the second parameter which can be `"tab"` for tab-based in
 
 它有一个选项做为该规则的第二个参数，可以是`"tab"`，这个主要针对tab缩进，也可以是个正数，这个主要针对空格缩进。
 
-### Options
+## Options
 
 The `indent` rule has two options:
 
@@ -126,10 +127,10 @@ The following patterns are considered problems:
 /*eslint indent: [2, 2]*/
 
 if (a) {
-   b=c;            /*error Expected indentation of 2 space characters but found 3.*/
-function foo(d) {  /*error Expected indentation of 2 space characters but found 0.*/
-       e=f;        /*error Expected indentation of 2 space characters but found 7.*/
-}                  /*error Expected indentation of 6 space characters but found 0.*/
+   b=c;
+function foo(d) {
+       e=f;
+}
 }
 ```
 
@@ -137,9 +138,9 @@ function foo(d) {  /*error Expected indentation of 2 space characters but found 
 /*eslint indent: [2, "tab"]*/
 
 if (a) {
-     b=c;          /*error Expected indentation of 1 tab character but found 0.*/
-function foo(d) {  /*error Expected indentation of 1 tab character but found 0.*/
-           e=f;    /*error Expected indentation of 1 tab character but found 0.*/
+     b=c;
+function foo(d) {
+           e=f;
  }
 }
 ```
@@ -149,23 +150,23 @@ function foo(d) {  /*error Expected indentation of 1 tab character but found 0.*
 /*eslint-env es6*/
 
 var a,
-    b,             /*error Expected indentation of 2 space characters but found 4.*/
-    c;             /*error Expected indentation of 2 space characters but found 4.*/
+    b,
+    c;
 let a,
-    b,             /*error Expected indentation of 2 space characters but found 4.*/
-    c;             /*error Expected indentation of 2 space characters but found 4.*/
+    b,
+    c;
 const a = 1,
-    b = 2,         /*error Expected indentation of 2 space characters but found 4.*/
-    c = 3;         /*error Expected indentation of 2 space characters but found 4.*/
+    b = 2,
+    c = 3;
 ```
 
 ```js
 /*eslint indent: [2, 2, {"SwitchCase": 1}]*/
 
 switch(a){
-case "a":          /*error Expected indentation of 2 space characters but found 0.*/
+case "a":
     break;
-case "b":          /*error Expected indentation of 2 space characters but found 0.*/
+case "b":
     break;
 }
 ```

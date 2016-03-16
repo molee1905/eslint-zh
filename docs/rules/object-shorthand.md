@@ -3,6 +3,7 @@ title: Rule object-shorthand
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Require Object Literal Shorthand Syntax (object-shorthand)
 
 # 要求对象字面量简写语法 (object-shorthand)
@@ -65,9 +66,9 @@ Each of the following properties would warn:
 /*eslint-env es6*/
 
 var foo = {
-    x: function() {},   /*error Expected method shorthand.*/
-    y: function *() {}, /*error Expected method shorthand.*/
-    z: z                /*error Expected property shorthand.*/
+    x: function() {},
+    y: function *() {},
+    z: z
 };
 ```
 
@@ -100,7 +101,7 @@ var foo = {
 };
 ```
 
-### Options
+## Options
 
 The rule takes an option which specifies when it should be applied. It can be set to
 `"always"`, `"properties"`, `"methods"`, or `"never"`. The default is `"always"`.
@@ -121,7 +122,28 @@ You can set the option in configuration like this:
 你可以在配置中这样设置：
 
 ```json
-"object-shorthand": [2, "always"]
+{
+    "object-shorthand": [2, "always"]
+}
+```
+
+While set to `"always"` or `"methods"`, constructor functions can be ignored with the optional parameter `"ignoreConstructors"` enabled. Note: The first parameter must be specified when using this optional parameter.
+
+```json
+{
+    "object-shorthand": [2, "always", { "ignoreConstructors": true }]
+}
+```
+
+The following will *not* warn when `"ignoreConstructors"` is enabled:
+
+```js
+/*eslint object-shorthand: [2, "always", { "ignoreConstructors": true }]*/
+/*eslint-env es6*/
+
+var foo = {
+    ConstructorFunction: function() {}
+};
 ```
 
 ## When Not To Use It
