@@ -74,7 +74,7 @@ This rule accepts an `exceptions` option, which can be used to specify a list of
 
 You may want to disable this rule when working with polyfills that try to patch older versions of JavaScript with the latest spec, such as those that might `Function.prototype.bind` or `Array.prototype.forEach` in a future-friendly way.
 
-当你试图用最新规范填补旧版JavaScript时，比如在未来会得到友好支持的 `Function.prototype.bind` 或 `Array.prototype.forEach`，你可以禁用此规则。
+当你要兼容旧版JavaScript时，比如使用在未来会得到友好支持的 `Function.prototype.bind` 或 `Array.prototype.forEach`，你可以禁用此规则。
 
 ## Related Rules
 
