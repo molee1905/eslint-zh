@@ -107,7 +107,7 @@ If you can't determine an appropriate complexity limit for your code, then it's 
 
 This rule was introduced in ESLint 0.0.9.
 
-此规则在ESLint 0.0.9中被引入。
+该规则在 ESLint 0.0.9 中被引入。
 
 ## Resources
 
