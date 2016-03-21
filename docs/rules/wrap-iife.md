@@ -1,6 +1,8 @@
 ---
 title: Rule wrap-iife
 layout: doc
+translator: fengnana
+proofreader: qifeigit
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -10,7 +12,7 @@ layout: doc
 
 Require immediate function invocation to be wrapped in parentheses.
 
-需要立即执行的函数需要用括号包裹起来。
+需要把立即执行的函数用括号包裹起来。
 
 ```js
 var x = function () { return { y: 1 };}();
@@ -94,7 +96,7 @@ var x = (function () { return { y: 1 };}());
 
 This rule was introduced in ESLint 0.0.9.
 
-此规则在ESLint 0.0.9中被引入。
+此规则在 ESLint 0.0.9 中被引入。
 
 ## Resources
 
