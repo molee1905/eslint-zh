@@ -1,6 +1,8 @@
 ---
 title: Rule space-unary-ops
 layout: doc
+translator: molee1905
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -59,11 +61,14 @@ qux = !!baz;
 
 This rule has two options: `words` and `nonwords`:
 
-该规则有两个可选项：`words` 和 `nonwords`
+该规则有两个可选项：`words` 和 `nonwords`：
 
 * `words` - applies to unary word operators such as: `new`, `delete`, `typeof`, `void`, `yield`
-* `words` - 适用于单词类一元操作符，例如： `new`, `delete`, `typeof`, `void`, `yield`
+
+* `words` - 适用于单词类一元操作符，例如： `new`， `delete`， `typeof`， `void`， `yield`
+
 * `nonwords` - applies to unary operators such as: `-`, `+`, `--`, `++`, `!`, `!!`
+
 * `nonwords` - 适用于这些一元操作符: `-`, `+`, `--`, `++`, `!`, `!!`
 
 Given the default values `words`: `true`, `nonwords`: `false`, the following patterns are considered problems:
@@ -141,7 +146,7 @@ function *foo() {
 
 This rule was introduced in ESLint 0.10.0.
 
-该规则在ESLint 0.10.0 中被引入。
+该规则在 ESLint 0.10.0 中被引入。
 
 ## Resources
 
