@@ -1,6 +1,8 @@
 ---
 title: Rule no-else-return
 layout: doc
+translator: fengnana
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow return before else (no-else-return)
@@ -9,7 +11,7 @@ layout: doc
 
 If an `if` block contains a `return` statement, the `else` block becomes unnecessary. Its contents can be placed outside of the block.
 
-如果`if`区块包含 `return`语句，`else`块就成了多余的了。可以将else中内容移至块外。
+如果`if`块中包含了一个`return`语句，`else`块就成了多余的了。可以将其内容移至块外。
 
 ```js
 function foo() {
@@ -25,7 +27,7 @@ function foo() {
 
 This rule is aimed at highlighting an unnecessary block of code following an `if` containing a return statement. As such, it will warn when it encounters an `else` following a chain of `if`s, all of them containing a `return` statement.
 
-该规则目的在于，突出那些跟随在包含return的`if`语句后的冗余代码。因此，当`else`跟随在每个块都包含`return`语句的`if`链后时，该规则会发出警告。
+该规则旨在突出含有 return 语句的的`if`语句后的不必要的代码。因此，`else`语句出现在含有 return 语句的的`if`语句之后，该规则将发出警告。
 
 The following patterns are considered problems:
 
@@ -116,7 +118,7 @@ function foo() {
 
 This rule was introduced in ESLint 0.0.9.
 
-这条规则在ESLint 0.0.9中被引入。
+该规则在 ESLint 0.0.9 中被引入。
 
 ## Resources
 
