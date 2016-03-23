@@ -1,6 +1,8 @@
 ---
 title: Rule no-catch-shadow
 layout: doc
+translator: ILFront-End
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -10,7 +12,7 @@ layout: doc
 
 In IE 8 and earlier, the catch clause parameter can overwrite the value of a variable in the outer scope, if that variable has the same name as the catch clause parameter.
 
-在IE8及更早的版本，catch语句的参数可以覆盖一个外部同名变量的值。
+在 IE 8 及更早的版本，catch 子句的参数可以覆盖一个外部的同名变量的值。
 
 ```js
 var err = "x";
@@ -28,7 +30,9 @@ console.log(err)    // err is 'problem', not 'x'
 
 This rule is aimed at preventing unexpected behavior in your program that may arise from a bug in IE 8 and earlier, in which the catch clause parameter can leak into outer scopes. This rule will warn whenever it encounters a catch clause parameter that has the same name as a variable in an outer scope.
 
-此规则旨在防止程序中的意外情况引起的IE8以及更早版本中catch语句参数和外部参数同名的bug。每当遇到catch语句参数和外部变量有相同的名字时警告。
+该规则旨在避免可能由 IE 8 及更早版本中的 bug 导致的意外
+
+在 IE 8 及更早版本中，catch 子句的参数会泄露到外部范围，该规则的目的就是避免这种 bug 导致的意外行为。但 catch 子句中的参数与外部范围的变量同名时，该规则将发出警告。
 
 Examples of **incorrect** code for this rule:
 
@@ -86,13 +90,13 @@ try {
 
 If you do not need to support IE 8 and earlier, you should turn this rule off.
 
-如果你并不需要支持IE8及更早的版本，你应该把这个规则了。
+如果你并不需要支持 IE 8 及更早的版本，你应该关闭此规则。
 
 ## Version
 
 This rule was introduced in ESLint 0.0.9.
 
-此规则在ESLint 0.0.9中被引入。
+此规则在 ESLint 0.0.9 中被引入。
 
 ## Resources
 
