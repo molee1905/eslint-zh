@@ -1,6 +1,8 @@
 ---
 title: Rule no-sequences
 layout: doc
+translator: fengnana
+proofreader: xkf521
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -10,7 +12,7 @@ layout: doc
 
 The comma operator includes multiple expressions where only one is expected. It evaluates each operand from left to right and returns the value of the last operand. However, this frequently obscures side effects, and its use is often an accident. Here are some examples of its use:
 
-逗号操作符包含的多个表达式只有一个是预期的。从左到右评估每一个操作数并且返回最后一个操作数的值。然而，它经常引起副作用，并且它的使用经常是个意外。这里有几个使用例子：
+逗号操作符包含多个表达式，其中只有一个是可使用的。它从左到右计算每一个操作数并且返回最后一个操作数的值。然而，这往往掩盖了它的副作用，它的使用经常会发生事故。这里是其使用的一些例子：
 
 ```js
 var a = (3, 5); // a = 5
@@ -30,11 +32,11 @@ This rule forbids the use of the comma operator, with the following exceptions:
 
 * In the initialization or update portions of a `for` statement.
 
-在初始化或者`for`语句更新选项时。
+在初始化或者更新部分`for`语句时。
 
 * If the expression sequence is explicitly wrapped in parentheses.
 
-如果表达式顺序被显示的括号包裹。
+如果表达式序列被明确包裹在括号中。
 
 The following patterns are considered problems:
 

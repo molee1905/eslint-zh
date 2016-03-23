@@ -1,6 +1,8 @@
 ---
 title: Rule no-script-url
 layout: doc
+translator: fengnana
+proofreader: xkf521
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -9,7 +11,7 @@ layout: doc
 
 Using `javascript:` URLs is considered by some as a form of `eval`. Code passed in `javascript:` URLs has to be parsed and evaluated by the browser in the same way that `eval` is processed.
 
-在链接地址中使用`javascript:`被有些人认为是`eval`的一种形式。代码通过`javascript:`链接不得不被浏览器解析和赋值，与`eval`的处理方式一样。
+在链接地址中使用`javascript:`被有些人认为是`eval`的一种形式。代码通过`javascript:`链接不得不被浏览器解析和赋值，其处理方式与`eval`很相似。
 
 ## Rule Details
 
