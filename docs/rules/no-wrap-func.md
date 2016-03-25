@@ -1,6 +1,8 @@
 ---
 title: Rule no-wrap-func
 layout: doc
+translator: yanggao40
+proofreader: coocon 
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -10,12 +12,12 @@ layout: doc
 
 **Replacement notice**: This rule was removed in ESLint v1.0 and replaced by the [no-extra-parens](no-extra-parens) rule, when configured in the `"functions"` mode.
 
-**替换声明**: 该规则在 ESLint v1.0 中移除, 当在`"functions"` 模式下配置时，被 [no-extra-parens](no-extra-parens) 替代。
+**替换声明**: 该规则在 ESLint v1.0 中移除, 当在 `"functions"` 模式下配置时，被 [no-extra-parens](no-extra-parens) 替代。
 
 
 Although it's possible to wrap functions in parentheses, this can be confusing when the code also contains immediately-invoked function expressions (IIFEs) since parentheses are often used to make this distinction. For example:
 
-尽管圆括号包围函数是可能的，当代码同时含有立即执行函数表达式（IIFEs）时会造成混淆,因为圆括号常常被这样使用。例如：
+尽管圆括号包围函数是可能的，当代码同时含有立即执行函数表达式（IIFEs）时会造成混淆，因为圆括号常常被这样使用。例如：
 
 ```js
 var foo = (function() {

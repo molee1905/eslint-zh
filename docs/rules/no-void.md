@@ -1,6 +1,8 @@
 ---
 title: Rule no-void
 layout: doc
+translator: fengnana
+proofreader: coocon 
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -10,11 +12,11 @@ layout: doc
 
 The `void` operator takes an operand and returns `undefined`: `void expression` will evaluate `expression` and return `undefined`. It can be used to ignore any side effects `expression` may produce:
 
-`void`操作符需要一个操作数并且返回`undefined`：`void expression`会计算`expression`并返回`undefined`。它可以用来忽略`expression`产生的任何副作用。
+`void` 操作符需要一个运算对象并且返回 `undefined`：`void expression` 会计算 `expression` 并返回 `undefined`。它可以用来忽略 `expression` 产生的任何副作用。
 
 The common case of using `void` operator is to get a "pure" `undefined` value as prior to ES5 the `undefined` variable was mutable:
 
-使用`void`操作符的通常情况是要得到一个单纯的`undefined`值，因为之前的ES5`undefined`值是可变的。
+使用 `void` 操作符的通常情况是要得到一个单纯的 `undefined` 值，因为之前的ES5 `undefined` 值是可变的:
 
 
 ```js
@@ -38,7 +40,7 @@ The common case of using `void` operator is to get a "pure" `undefined` value as
 
 Another common case is to minify code as `void 0` is shorter than `undefined`:
 
-另外一种情况是缩减代码量因为`void 0`比`undefined`要简短。
+另外一种情况是缩减代码量因为 `void 0` 比 `undefined` 要简短:
 
 ```js
 foo = void 0;
@@ -47,7 +49,7 @@ foo = undefined;
 
 When used with IIFE (immediately-invoked function expression) `void` can be used to force the function keyword to be treated as an expression instead of a declaration:
 
-当在IIFE(立即调用函数表达式)时被使用时,`void`可以用来强制 function关键字被当作成表达式而不是声明。
+当在 IIFE (立即调用函数表达式)时被使用时,`void` 可以用来强制 function 关键字被当作成表达式而不是声明:
 
 ```js
 var foo = 1;
@@ -61,13 +63,13 @@ function(){ foo = 1; }() // will throw SyntaxError
 
 Some code styles prohibit `void` operator marking it as non-obvious and hard to read.
 
-一些代码风格禁止使用`void`操作符，把他标记为不明显的，难以阅读的。
+一些代码风格禁止使用 `void` 操作符，把它标记为不明显的，难以阅读的。
 
 ## Rule Details
 
 This rule aims to eliminate use of void operator.
 
-此规则目的在于排除使用void操作符。
+此规则目的在于排除使用 void 操作符。
 
 The following patterns are considered problems:
 
@@ -85,7 +87,7 @@ var foo = void bar();
 
 If you intentionally use the `void` operator then you can disable this rule.
 
-如果你有意使用`void`操作符，可以禁用此规则。
+如果你有意使用 `void` 操作符，可以禁用此规则。
 
 ## Further Reading
 
@@ -101,7 +103,7 @@ If you intentionally use the `void` operator then you can disable this rule.
 
 This rule was introduced in ESLint 0.8.0.
 
-此规则在ESLint 0.8.0中被引入。
+此规则在 ESLint 0.8.0 中被引入。
 
 ## Resources
 

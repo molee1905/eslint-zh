@@ -1,23 +1,25 @@
 ---
 title: Rule no-useless-call
 layout: doc
+translator: fengnana
+proofreader: coocon 
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Disallow unnecessary `.call()` and `.apply()`. (no-useless-call)
 
-# 禁止不必要的`.call()`和 `.apply()`（no-useless-call）
+# 禁止不必要的 `.call()` 和 `.apply()`（no-useless-call）
 
 The function invocation can be written by `Function.prototype.call()` and `Function.prototype.apply()`.
 But `Function.prototype.call()` and `Function.prototype.apply()` are slower than the normal function invocation.
 
-函数的调用可以写成`Function.prototype.call()` 和 `Function.prototype.apply()`，但是`Function.prototype.call()` 和 `Function.prototype.apply()`比正常的函数调用效率低。
+函数的调用可以写成 `Function.prototype.call()` 和 `Function.prototype.apply()`，但是 `Function.prototype.call()` 和 `Function.prototype.apply()` 比正常的函数调用效率低。
 
 ## Rule Details
 
 This rule is aimed to flag usage of `Function.prototype.call()` and `Function.prototype.apply()` that can be replaced with the normal function invocation.
 
-此规则的目的在于标记出可以被正常函数调用所替代的`Function.prototype.call()` 和 `Function.prototype.apply()`的使用，
+此规则的目的在于标记出可以被正常函数调用所替代的`Function.prototype.call()` 和 `Function.prototype.apply()`的使用。
 
 The following patterns are considered problems:
 
@@ -65,7 +67,7 @@ So if the code about `thisArg` is a dynamic expression, this rule cannot judge c
 
 已知的限制：
 
-此规则通过静态的对比代码检测`thisArg`是否被改变。所以如果`thisArg`是动态表达式，此规则不能正确的判断。
+此规则通过静态的对比代码检测 `thisArg` 是否被改变。所以如果 `thisArg` 是动态表达式，此规则不能正确的判断。
 
 ```js
 /*eslint no-useless-call: 2*/
@@ -87,7 +89,7 @@ If you don't want to be notified about unnecessary `.call()` and `.apply()`, you
 
 This rule was introduced in ESLint 1.0.0-rc-1.
 
-此规则在ESLint 1.0.0-rc-1中被引入。
+此规则在 ESLint 1.0.0-rc-1 中被引入。
 
 ## Resources
 

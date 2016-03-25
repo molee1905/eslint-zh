@@ -1,6 +1,8 @@
 ---
 title: Rule no-useless-concat
 layout: doc
+translator: fengnana
+proofreader: coocon 
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 # Disallow unnecessary concatenation of strings (no-useless-concat)
@@ -17,7 +19,7 @@ var foo = "a" + "b";
 
 This code is likely the result of refactoring where a variable was removed from the concatenation (such as `"a" + b + "b"`). In such a case, the concatenation isn't important and the code can be rewritten as:
 
-上面的代码像是把一个变量从拼接中移除来重构结构，在这种情况下，拼接不是重要的，代码可以被写成如下形式。
+上面的代码像是把一个变量从拼接中移除来重构结构，在这种情况下，拼接不是重要的，代码可以被写成如下形式:
 
 ```js
 var foo = "ab";
@@ -27,7 +29,7 @@ var foo = "ab";
 
 This rule aims to flag the concatenation of 2 literals when they could be combined into a single literal. Literals can be strings or template literals.
 
-此规则目的在于标记2个文本的拼接，当他们可以组合成一个单一的文本时。文本可以是字符文本或者模版文本。
+此规则目的在于标记2个字面量的拼接，当他们可以组合成一个单一的文本时。字面量可以是字符串或者模板字面量。
 
 The following patterns are considered problems:
 
@@ -72,7 +74,7 @@ If you don't want to be notified about unnecessary string concatenation, you can
 
 This rule was introduced in ESLint 1.3.0.
 
-此规则在ESLint 1.3.0中被引入。
+此规则在 ESLint 1.3.0 中被引入。
 
 ## Resources
 
