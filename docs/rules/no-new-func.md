@@ -1,16 +1,18 @@
 ---
 title: Rule no-new-func
 layout: doc
+translator: fengnana
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Disallow Function Constructor (no-new-func)
 
-# 禁止Function构造函数 (no-new-func)
+# 禁用Function构造函数 (no-new-func)
 
 It's possible to create functions in JavaScript using the `Function` constructor, such as:
 
-在JavaScript中可以使用`Function`构造函数创建一个函数，例如：
+在 JavaScript 中可以使用`Function`构造函数创建一个函数，例如：
 
 ```js
 var x = new Function("a", "b", "return a + b");
@@ -18,13 +20,13 @@ var x = new Function("a", "b", "return a + b");
 
 This is considered by many to be a bad practice due to the difficult in debugging and reading these types of functions.
 
-大多数人认为这是一个不好的实践，由于在调试和阅读这种类型函数上的困难。
+由于在调试和阅读这种类型函数上的困难，许多人认为这并不是一个好的做法，
 
 ## Rule Details
 
 This error is raised to highlight the use of a bad practice. By passing a string to the Function constructor, you are requiring the engine to parse that string much in the way it has to when you call the eval function.
 
-错误被引发用来标记不好实践的使用。通过将一个字符串传递到 Function 构造函数，当你调用 eval 函数，你要求引擎不得不过多的解析该字符串。
+该规则用来标记`Function`构造函数的使用。把一个字符串传给 Function 构造函数，你需要引擎解析该字符串大致同调用eval函数一样。
 
 ```js
 /*eslint no-new-func: 2*/
@@ -59,7 +61,7 @@ In more advanced cases where you really need to use the `Function` constructor.
 
 This rule was introduced in ESLint 0.0.7.
 
-此规则在ESLint 0.0.7中被引入。
+此规则在 ESLint 0.0.7 中被引入。
 
 ## Resources
 
