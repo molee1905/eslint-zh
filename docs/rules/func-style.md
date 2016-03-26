@@ -1,6 +1,8 @@
 ---
 title: Rule func-style
 layout: doc
+translator: molee1905
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -10,7 +12,7 @@ layout: doc
 
 There are two ways of defining functions in JavaScript: function declarations and function expressions. Declarations have the `function` keyword first, followed by a name, followed by its arguments and the function body, such as:
 
-在Javascript中，有两种方法定义函数：函数声明和函数表达式。函数声明是以`function`关键字开头，然后是函数的名字，其次是它的参数和函数主体，例如：
+在 Javascript 中，有两种方式定义函数：函数声明和函数表达式。函数声明是以`function`关键字开头，然后是函数的名字，其次是它的参数和函数主体，例如：
 
 ```js
 function doSomething() {
@@ -42,11 +44,11 @@ function doSomething() {
 
 Although this code might seem like an error, it actually works fine because JavaScript engines hoist the function declarations to the top of the scope. That means this code is treated as if the declaration came before the invocation.
 
-虽然这段代码可能看起来像一个错误，但实际上由于Javascript引擎将函数声明提升到了作用域顶部，这段代码是可以运行的。这就意味着这段代码被视为在调用之前进行了声明。
+虽然这段代码可能看起来像一个错误，但实际上由于 Javascript 引擎将函数声明提升到了作用域顶部，这段代码是可以运行的。这就意味着这段代码被视为在调用之前进行了声明。
 
 For function expressions, you must define the function before it is used, otherwise it causes an error. Example:
 
-对于函数表达式，必须在使用它之进行定义，否则将会导致错误。例如：
+对于函数表达式，必须在使用它之前进行定义，否则将会导致错误。例如：
 
 ```js
 doSomething();  // error!
@@ -60,7 +62,6 @@ In this case, `doSomething()` is undefined at the time of invocation and so caus
 
 在这个例子中，`doSomething()`在调用时是没有定义的，所以导致运行时错误。
 
-
 Due to these different behaviors, it is common to have guidelines as to which style of function should be used. There is really no correct or incorrect choice here, it is just a preference.
 
 由于这些不同的行为，关于应该使用哪种类型的函数，一般要制定一些准则。这种选择没有正确或错误之分，只是一种偏好而已。
@@ -69,13 +70,15 @@ Due to these different behaviors, it is common to have guidelines as to which st
 
 This rule is aimed at enforcing a particular type of function style throughout a JavaScript file, either declarations or expressions. You can specify which you prefer in the configuration.
 
-该规则目的在于在一个Javascript文件中强制使用一种特定的函数风格，函数声明或函数表达式。你可以在配置文件中指定你喜欢的。
+该规则目的在于在一个 Javascript 文件中强制使用一种特定的函数风格，函数声明或函数表达式。你可以在配置文件中指定你喜欢的。
 
 ## Options
 
 ### "expression"
 
-This is the default configuration.  It reports an error when function declarations are used instead of function expressions.
+This is the default configuration. It reports an error when function declarations are used instead of function expressions.
+
+这是默认配置。当应使用函数表达式却使用了函数声明时，它将报告一个错误。
 
 ```json
 "func-style": [2, "expression"]
@@ -83,7 +86,7 @@ This is the default configuration.  It reports an error when function declaratio
 
 The following patterns are considered problems:
 
-以下模式本认为是没有问题的：
+以下模式被认为是有问题的：
 
 ```js
 /*eslint func-style: [2, "expression"]*/
@@ -94,6 +97,8 @@ function foo() {
 ```
 
 The following patterns are not considered problems:
+
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint func-style: [2, "expression"]*/
@@ -107,7 +112,7 @@ var foo = function() {
 
 This reports an error if any function expressions are used where function declarations are expected. You can specify to use expressions instead:
 
-在函数声明的地方使用了函数表达式，将会导致错误。你可以指定函数表达式来代替：
+在应使用函数声明的地方使用了函数表达式，它将会报告一个错误。你可以指定函数表达式来代替：
 
 ```json
 "func-style": [2, "declaration"]
@@ -115,7 +120,7 @@ This reports an error if any function expressions are used where function declar
 
 An additional option object can be added with a property `"allowArrowFunctions"`.  Setting this to `true` will allow arrow functions.
 
-可以添加一个额外的选项对象，属性值为`"allowArrowFunctions"`。当设置为`true`时，将允许箭头函数。
+可以添加一个额外的选项对象，属性值为`"allowArrowFunctions"`。当设置为`true`时，将允许使用箭头函数。
 
 ```json
 "func-style": [2, "declaration", { "allowArrowFunctions": true }]
@@ -177,7 +182,7 @@ If you want to allow developers to each decide how they want to write functions 
 
 This rule was introduced in ESLint 0.2.0.
 
-该规则在ESLint 0.2.0 被引入。
+该规则在 ESLint 0.2.0 被引入。
 
 ## Resources
 
