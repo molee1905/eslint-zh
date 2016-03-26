@@ -1,6 +1,8 @@
 ---
 title: Rule no-negated-in-lhs
 layout: doc
+translator: molee1905
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -80,7 +82,7 @@ None.
 
 This rule was introduced in ESLint 0.1.2.
 
-该规则在ESLint 0.1.2中被引入。
+该规则在 ESLint 0.1.2 中被引入。
 
 ## Resources
 
