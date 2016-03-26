@@ -1,16 +1,18 @@
 ---
 title: Rule require-jsdoc
 layout: doc
+translator: molee1905
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Require JSDoc comment (require-jsdoc)
 
-# 要求JSDoc注释 (require-jsdoc)
+# 要求使用 JSDoc 注释 (require-jsdoc)
 
 [JSDoc](http://usejsdoc.org) is a JavaScript API documentation generator. It uses specially-formatted comments inside of code to generate API documentation automatically. For example, this is what a JSDoc comment looks like for a function:
 
-[JSDoc](http://usejsdoc.org)是一个JavaScript API 文档生成器。它通过在代码中使用指定格式的注释自动生成API文档。例如，以下这个就是函数的JSDoc注释：
+[JSDoc](http://usejsdoc.org)是一个 JavaScript API 文档生成器。它通过在代码中使用指定格式的注释自动生成 API 文档。例如，以下这个就是函数的JSDoc注释：
 
 ```js
 /**
@@ -26,13 +28,13 @@ function sum(num1, num2) {
 
 Some style guides require JSDoc comments for all functions as a way of explaining function behavior.
 
-一些风格指南要求对所有的函数使用JSDoc注释作为描述函数行为的一种方式。
+一些风格指南要求对所有的函数使用 JSDoc 注释作为描述函数行为的一种方式。
 
 ## Rule Details
 
 This rule generates warnings for nodes that do not have JSDoc comments when they should. Supported nodes:
 
-如果某些节点应该使用JSDoc注释的而没有使用，该规则将会发出警告。支持的节点：
+如果某些节点应该使用 JSDoc 注释的而没有使用，该规则将会发出警告。支持的节点：
 
 * `FunctionDeclaration`
 * `ClassDeclaration`
@@ -143,7 +145,7 @@ If you do not require JSDoc for your functions, then you can leave this rule off
 
 This rule was introduced in ESLint 1.4.0.
 
-该规则在ESLint 1.4.0 中被引入。
+该规则在 ESLint 1.4.0 中被引入。
 
 ## Resources
 
