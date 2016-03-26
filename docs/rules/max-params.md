@@ -1,6 +1,8 @@
 ---
 title: Rule max-params
 layout: doc
+translator: molee1905
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -22,7 +24,7 @@ function foo (bar, baz, qux, qxx) { // four parameters, may be too many
 
 This rule is aimed at making functions easier to read and write by capping the number of formal arguments a function can accept. As such it will warn when it encounters a function that accepts more than the configured maximum number of parameters.
 
-该规则旨在通过限制函数中可接受的形参个数来使函数更有阅读和书写。因此，如果一个函数接收了超过配置的最大参数个数，该规则将发出警告。
+该规则旨在通过限制函数中可接受的形参个数来使函数更容易阅读和书写。因此，如果一个函数接收了超过配置的最大参数个数，该规则将发出警告。
 
 The following patterns are considered problems:
 
@@ -50,6 +52,8 @@ function foo (bar, baz, qux) {
 
 Optionally, you may specify a `maximum` object property:
 
+你可以指定一个`maximum`属性：
+
 ```json
 "max-params": [2, 2]
 ```
@@ -73,7 +77,7 @@ is equivalent to
 
 This rule was introduced in ESLint 0.0.9.
 
-该规则在ESLint 0.0.9 中被引入。
+该规则在 ESLint 0.0.9 中被引入。
 
 ## Resources
 
