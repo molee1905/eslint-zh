@@ -32,7 +32,7 @@ var thing = function () {
 
 This rule prevents the use of spaces before a semicolon in expressions.
 
-该规则可以防止在表达式分号前使用空格。
+该规则防止在表达式分号前使用空格。
 
 The following patterns are considered problems:
 

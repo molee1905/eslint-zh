@@ -1,6 +1,8 @@
 ---
 title: Rule no-sparse-arrays
 layout: doc
+translator: molee1905
+proofreader: xkf521
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
