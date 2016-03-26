@@ -1,16 +1,18 @@
 ---
 title: Rule no-invalid-this
 layout: doc
+translator: fengnana
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Disallow `this` keywords outside of classes or class-like objects. (no-invalid-this)
 
-# 禁止`this`关键字在类或者类对象之外出现 (no-invalid-this)
+# 禁止`this`关键字在类或类对象之外出现 (no-invalid-this)
 
 Under the strict mode, `this` keywords outside of classes or class-like objects might be `undefined` and raise a `TypeError`.
 
-在严格模式下，类或者类似类对象之外的`this`关键字也许会是`undefined`并且引起一个`TypeError`。
+在严格模式下，类或者类似类对象之外的`this`关键字可能是`undefined`并且引起一个`TypeError`。
 
 ## Rule Details
 
@@ -20,61 +22,60 @@ This rule aims to flag usage of `this` keywords outside of classes or class-like
 
 Basically this rule checks whether or not a function which are containing `this` keywords is a constructor or a method.
 
-基本上该规则检查一个包含`this`关键字的函数是否是一个构造器或者一个方法。
+基本上该规则检查一个包含`this`关键字的函数是否是一个构造函数或方法。
 
 This rule judges from following conditions whether or not the function is a constructor:
 
-此规则从以下条件中判断函数是否是一个构造函数。
+此规则从以下条件中判断函数是否是一个构造函数：
 
 * The name of the function starts with uppercase.
 
-* 函数的名字以大写字母开头。
+* 该函数的名字以大写字母开头。
 
 * The function is a constructor of ES2015 Classes.
 
-* 函数是ES2015类构造函数。
+* 该函数是 ES2015 类构造函数。
 
 This rule judges from following conditions whether or not the function is a method:
 
-此规则从以下条件中判断函数是否是一个方法。
+此规则从以下条件中判断函数是否是一个方法：
 
 * The function is on an object literal.
 
-* 函数在对象字面量上
+* 该函数在对象字面量上
 
 * The function assigns to a property.
 
-* 函数作为属性
+* 该函数赋值给一个属性
 
 * The function is a method/getter/setter of ES2015 Classes. (excepts static methods)
 
-* 函数是一个ES2015类的 方法/getter/setter.(除静态方法)
+* 该函数是一个 ES2015 类的方法、getter或setter。(除静态方法)
 
 And this rule allows `this` keywords in functions below:
 
-此规则允许以下函数中的`this`关键字：
+此规则允许在以下函数中出现`this`关键字：
 
 * The `call/apply/bind` method of the function is called directly.
 
-* 函数的 `call/apply/bind` 方法被直接调用。
+* 该函数的 `call/apply/bind` 方法被直接调用。
 
 * The function is a callback of array methods (such as `.forEach()`) if `thisArg` is given.
 
-* 如果给出`thisArg`，函数是数组方法的一个回调（比如`.forEach()`）
+* 如果给出`thisArg`，该函数是数组方法的一个回调（比如`.forEach()`）。
 
 * The function has `@this` tag in its JSDoc comment.
 
-* 函数在JSDoc注释标记中有`@this`标签。
+* 函数在 JSDoc 注释标记中有`@this`标签。
 
 Otherwise are considered problems.
 
 其他情况被认为是有问题的。
- 
 
 This rule warns below **only** under the strict mode.
 Please note your code in ES2015 Modules/Classes is always the strict mode.
 
-此规则**只**在严格模式下给出警告。请注意你的代码在ES2015模块/类总是严格的模式。
+此规则**只**在严格模式下给出警告。请注意你的代码在 ES2015 模块/类 中总是处于严格的模式下。
 
 The following patterns are considered problems:
 
@@ -246,13 +247,13 @@ function foo() {
 
 If you don't want to be notified about usage of `this` keyword outside of classes or class-like objects, you can safely disable this rule.
 
-如果你不想得到通知，关于`this`关键字在类或者类似类对象之外使用，你可以安全的关闭此规则。
+如果你不想收到`this`关键字在类或者类似类对象之外使用的通知，你可以关闭此规则。
 
 ## Version
 
 This rule was introduced in ESLint 1.0.0-rc-2.
 
-此规则在ESLint 1.0.0-rc-2中被引入。
+此规则在 ESLint 1.0.0-rc-2中被引入。
 
 ## Resources
 
