@@ -1,16 +1,18 @@
 ---
 title: Rule no-labels
 layout: doc
+translator: fengnana
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Disallow Labeled Statements (no-labels)
 
-# 禁止标签语句 (no-labels)
+# 禁用标签语句 (no-labels)
 
 Labeled statements in JavaScript are used in conjunction with `break` and `continue` to control flow around multiple loops. For example:
 
-JavaScript中的标签语句用来连同`break` 和 `continue` 控制多个绕流循环。例如：
+JavaScript 中的标签语句连同`break`和`continue`一样用来控制循环流程。例如：
 
 ```js
 outer:
@@ -24,17 +26,17 @@ outer:
 
 The `break outer` statement ensures that this code will not result in an infinite loop because control is returned to the next statement after the `outer` label was applied. If this statement was changed to be just `break`, control would flow back to the outer `while` statement and an infinite loop would result.
 
-`break outer`语句确保代码不会无限循环,因为在被引用的`outer`标签之后控制被返回至下一个语句。如果这个语句的改变只为`break`，控制会回流到外部的`while`语句并导致无限循环。
+`break outer`语句确保代码不会无限循环，因为应用`outer`标签之后，将会进入下一条语句。如果这个语句变为`break`，控制流程会回到外层`while`语句，并会导致无限循环。
 
 While convenient in some cases, labels tend to be used only rarely and are frowned upon by some as a remedial form of flow control that is more error prone and harder to understand.
 
-然而方便在某些情况下，标签往往只有很少使用，而被一些人视为是更多的错误倾向和难以理解的流量控制补救形式会被唾弃。
+虽然在某些情况下很方便，标签往往很少使用，很多人不赞成将标签作为一种复杂流程控制的补救措施。
 
 ## Rule Details
 
 This rule aims to eliminate the use of labeled statements in JavaScript. It will warn whenever a labeled statement is encountered and whenever `break` or `continue` are used with a label.
 
-此规则目的在于消除JavaScript中标签的使用。它会给出警告每当遇到一个标签语句和`break` 或者 `continue` 在标签中被使用时。
+此规则旨在消除 JavaScript 中标签的使用。当遇到标签语句时，该规则将发出警告。
 
 The following patterns are considered problems:
 
@@ -104,14 +106,25 @@ while (true) {
 ```
 
 * `"allowLoop"` (`boolean`, default is `false`) - If this option was set `true`, this rule ignores labels which are sticking to loop statements.
+
+* `"allowLoop"` (`boolean`，默认是 `false`) - 如果这个选项被设置为 `true`，该规则忽略循环语句中的标签。
+
 * `"allowSwitch"` (`boolean`, default is `false`) - If this option was set `true`, this rule ignores labels which are sticking to switch statements.
+
+* `"allowSwitch"` (`boolean`，默认是`false`) - 如果这个选项被设置为 `true`，该规则忽略 switch 语句中的标签。
 
 Actually labeled statements in JavaScript can be used with other than loop and switch statements.
 However, this way is ultra rare, not well-known, so this would be confusing developers.
 
+事实上，在 JavaScript 中，标签不仅仅被用于循环语句和 switch 语句中。然而，这非常罕见，会给开发者造成困惑。
+
 Those options allow us to use labels only with loop or switch statements.
 
+这些选项允许我们只在循环语句和 switch 语句中使用标签。
+
 The following patterns are considered problems when configured `{"allowLoop": true, "allowSwitch": true}`:
+
+当设置`{"allowLoop": true, "allowSwitch": true}`，以下模式被认为是有问题的：
 
 ```js
 label:
@@ -126,6 +139,8 @@ label:
 ```
 
 The following patterns are not considered problems when configured `{"allowLoop": true, "allowSwitch": true}`:
+
+当设置`{"allowLoop": true, "allowSwitch": true}`，以下模式被认为是没有问题的：
 
 ```js
 label:
@@ -144,7 +159,7 @@ label:
 
 If you need to use labeled statements everywhere, then you can safely disable this rule.
 
-如果你需要在任何地方都使用标签语句，你可以安全的禁用此规则。
+如果你需要在任何地方都使用标签语句，你可以禁用此规则。
 
 ## Related Rules
 
@@ -156,7 +171,7 @@ If you need to use labeled statements everywhere, then you can safely disable th
 
 This rule was introduced in ESLint 0.4.0.
 
-此规则在ESLint 0.4.0中被引入。
+此规则在 ESLint 0.4.0 中被引入。
 
 ## Resources
 
