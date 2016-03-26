@@ -1,6 +1,8 @@
 ---
 title: Rule space-before-function-parentheses
 layout: doc
+translator: yanggao40
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -32,17 +34,17 @@ var anonymousWithSpace = function () {};
 
 Style guides may require a space after the `function` keyword for anonymous functions, while others specify no whitespace. Similarly, the space after a function name may or may not be required.
 
-风格指南可能要求匿名函数在`function`关键字后使用一个空格，其他的指定不使用空格。相似的，函数名称后的空格可要求也可不要求。
+一些风格指南可能要求匿名函数在`function`关键字后使用一个空格，其它的指定不使用空格。类似的，函数名称后的空格可要求也可不要求。
 
 ## Rule Details
 
 This rule aims to enforce consistent spacing before function parentheses and as such, will warn whenever whitespace doesn't match the preferences specified.
 
-该规则旨在在函数的括号前强制一致的空格，这样当空格没有匹配喜好规格会警告。
+该规则旨在在函数的括号前强制一致的空格，这样当空格没有匹配喜好规格时，该规则将会发出警告。
 
 This rule takes one argument. If it is `"always"` then all named functions and anonymous functions must have space before function parentheses. If `"never"` then all named functions and anonymous functions must not have space before function parentheses. If you want different spacing for named and anonymous functions you can pass an configuration object as the rule argument to configure those separately (e. g. `{"anonymous": "always", "named": "never"}`).
 
-该规则携带一个参数。如果是`"always"`则所有的命名函数和匿名函数在括号前必须使用空格。如果是`"never"`则所有的命名函数和匿名函数在函数括号前都不允许空格。如果你想区分开命名函数和匿名函数，可以传递一个配置对象作为规则参数来分开配置（例如 `{"anonymous": "always", "named": "never"}`)。
+该规则只有一个参数。如果是`"always"`则所有的命名函数和匿名函数在括号前必须使用空格。如果是`"never"`则所有的命名函数和匿名函数在函数括号前都不允许空格。如果你想区分开命名函数和匿名函数，可以传递一个配置对象作为规则参数来分开配置（例如 `{"anonymous": "always", "named": "never"}`)。
 
 The default configuration is `"always"`.
 
@@ -50,7 +52,7 @@ The default configuration is `"always"`.
 
 The following patterns are considered problems when configured `"always"`:
 
-当配置为`"always"`时以下的模式被认为有问题的：
+当配置为`"always"`时，以下模式被认为有问题的：
 
 ```js
 /*eslint-env es6*/
@@ -83,7 +85,7 @@ var foo = {
 The following patterns are not considered problems when configured 
 `"always"`:
 
-当配置为`"always"`时下面的模式被认为是正确的：
+当配置为`"always"`时，以下模式被认为是没有问题的：
 
 ```js
 /*eslint-env es6*/
@@ -115,7 +117,7 @@ var foo = {
 
 The following patterns are considered problems when configured `"never"`:
 
-当配置为`"never"`时下面的模式被认为是有问题的：
+当配置为`"never"`时，以下模式被认为是有问题的：
 
 ```js
 /*eslint-env es6*/
@@ -147,7 +149,7 @@ var foo = {
 
 The following patterns are not considered problems when configured `"never"`:
 
-当配置为`"never"`时下面的模式被认为是正确的：
+当配置为`"never"`时，以下模式被认为是没有问题的：
 
 ```js
 /*eslint-env es6*/
@@ -179,7 +181,7 @@ var foo = {
 
 The following patterns are considered problems when configured `{"anonymous": "always", "named": "never"}`:
 
-当配置为`{"anonymous": "always", "named": "never"}`时下面的模式被认为是有问题的：
+当配置为`{"anonymous": "always", "named": "never"}`时，以下模式被认为是有问题的：
 
 ```js
 /*eslint-env es6*/
@@ -207,7 +209,7 @@ var foo = {
 
 The following patterns are not considered problems when configured `{"anonymous": "always", "named": "never"}`:
 
-当配置为`{"anonymous": "always", "named": "never"}`时下面的模式被认为是正确的：
+当配置为`{"anonymous": "always", "named": "never"}`时，以下模式被认为是没有问题的：
 
 ```js
 /*eslint-env es6*/
@@ -235,7 +237,7 @@ var foo = {
 
 The following patterns are considered problems when configured `{"anonymous": "never", "named": "always"}`:
 
-当配置为`{"anonymous": "never", "named": "always"}`时下面的模式被认为是有问题的：
+当配置为`{"anonymous": "never", "named": "always"}`时，以下模式被认为是有问题的：
 
 ```js
 /*eslint-env es6*/
@@ -263,7 +265,7 @@ var foo = {
 
 The following patterns are not considered problems when configured `{"anonymous": "never", "named": "always"}`:
 
-当配置为`{"anonymous": "never", "named": "always"}`时下面的模式被认为是正确的：
+当配置为`{"anonymous": "never", "named": "always"}`时，以下模式被认为是没有问题的：
 
 ```js
 /*eslint-env es6*/
@@ -293,7 +295,7 @@ var foo = {
 
 You can turn this rule off if you are not concerned with the consistency of spacing before function parenthesis.
 
-如果你不担心函数括号前空格的一致性，可以将此规则关闭。
+如果你不关心函数括号前空格的一致性，可以关闭此规则。
 
 ## Related Rules
 
@@ -304,7 +306,7 @@ You can turn this rule off if you are not concerned with the consistency of spac
 
 This rule was introduced in ESLint 0.15.0 and removed in 1.0.0-rc-1.
 
-该规则在 ESLint 0.15.0 中引入， 在 1.0.0-rc-1 中移除。
+该规则在 ESLint 0.15.0 中被引入，在 1.0.0-rc-1 中被移除。
 
 ## Resources
 
