@@ -1,6 +1,9 @@
 ---
 title: Rule space-before-keywords
 layout: doc
+translator: molee1905
+proofreader: freeyiyi1993
+
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -13,7 +16,7 @@ layout: doc
 
 Keywords are syntax elements of JavaScript, such as `function` and `if`. These identifiers have special meaning to the language and so often appear in a different color in code editors. As an important part of the language, style guides often refer to the spacing that should be used around keywords. For example, you might have a style guide that says keywords should be always be preceded by spaces, which would mean `if-else` statements must look like this:
 
-关键字是Javascript中的语法元素，比如`function` 和 `if`。这些标识符对该语言有特殊意义，因此经常在代码编辑器中以不同的颜色出现。作为Javascript语言的重要组成部分，风格指南经常提到关键字周围应该使用空格。例如，你可能有一个风格指南说关键字应该总是有前置空格，这意味着`if-else`语句必须看起来像下面这样：
+关键字是 Javascript 中的语法元素，比如`function` 和 `if`。这些标识符对该语言有特殊意义，因此经常在代码编辑器中以不同的颜色出现。作为 Javascript 语言的重要组成部分，风格指南经常提到关键字周围应该使用空格。例如，你可能有一个风格指南说关键字之后应该总是有空格，这意味着`if-else`语句必须看起来像下面这样：
 
 
 ```js
@@ -50,7 +53,7 @@ the keywords `else`, `while` (do...while), `finally` and `catch`. The default va
 This rule will allow keywords to be preceded by an opening curly brace (`{`). If you wish to alter
 this behaviour, consider using the [block-spacing](block-spacing) rule.
 
-该规则将允许关键字之前有一个左花括号(`{`)。如果你想改变这种行为，考虑使用 [block-spacing](block-spacing)规则。
+该规则将允许关键字之后有一个左花括号(`{`)。如果你想改变这种行为，考虑使用 [block-spacing](block-spacing)规则。
 
 The following patterns are considered errors when configured `"never"`:
 
