@@ -1,6 +1,8 @@
 ---
 title: Rule no-undef-init
 layout: doc
+translator: ILFront-End
+proofreader: coocon 
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -10,7 +12,7 @@ layout: doc
 
 In JavaScript, a variable that is declared and not initialized to any value automatically gets the value of `undefined`. For example:
 
-在JavaScript中，申明一个变量但未初始化，变量会自动获得`undefined`作为初始值。比如：
+在 JavaScript 中，声明一个变量但未初始化，变量会自动获得 `undefined` 作为初始值。比如：
 
 
 ```js
@@ -21,7 +23,7 @@ console.log(foo === undefined);     // true
 
 It's therefore unnecessary to initialize a variable to `undefined`, such as:
 
-因此，初始化变量值为`undefined`是多余的，如：
+因此，初始化变量值为 `undefined` 是多余的，如：
 
 ```js
 var foo = undefined;
@@ -29,13 +31,13 @@ var foo = undefined;
 
 It's considered a best practice to avoid initializing variables to `undefined`.
 
-最好的做法是避免初始化变量值为`undefined`.
+最好的做法是避免初始化变量值为 `undefined`。
 
 ## Rule Details
 
 This rule aims to eliminate variable declarations that initialize to `undefined`.
 
-此规则旨在限制变量申明明后被初始化为`undefined`.
+此规则旨在限制变量声明后被初始化为 `undefined`。
 
 Examples of **incorrect** code for this rule:
 
@@ -66,7 +68,7 @@ const baz = undefined;
 
 There is one situation where initializing to `undefined` behaves differently than omitting the initialization, and that's when a `var` declaration occurs inside of a loop. For example:
 
-初始化变量值为`undefined`的行为不同于在循环语句申明变量并省略初始值而导致变量值为`undefined`.
+当在一个循环中用 `var` 声明一个变量的时候，这种情况下给变量赋值为 `undefined` 与省略初始化的结果不同。比如：
 
 ```js
 for (i = 0; i < 10; i++) {
@@ -78,7 +80,7 @@ for (i = 0; i < 10; i++) {
 
 In this case, the `var x` is hoisted out of the loop, effectively creating:
 
-在这种情况下，`var x`被提到循环外。
+在这种情况下，`var x` 被提升到循环外。
 
 ```js
 var x;
@@ -92,7 +94,7 @@ for (i = 0; i < 10; i++) {
 
 If you were to remove the initialization, then the behavior of the loop changes:
 
-如果删除初始化语句，循环语句的行为要改变：
+如果删除初始化语句，循环语句的行为会改变：
 
 ```js
 for (i = 0; i < 10; i++) {
@@ -117,11 +119,11 @@ for (i = 0; i < 10; i++) {
 
 This produces a different outcome than defining `var x = undefined` in the loop, as `x` is no longer reset to `undefined` each time through the loop.
 
-这带来一个结局，在循环语句中使用`var x = undefined`，每次循环后`x`不在是`undefined`.
+于在循环语句中使用 `var x = undefined` 相比，这样产生了一个不同结果 ，因为每次循环后 `x` 不在赋值为 `undefined`。
 
 If you're using such an initialization inside of a loop, then you should disable this rule.
 
-如果你在循环语句中初始化变量，你可以忽略此规则。
+如果你有在循环语句中初始化变量，你应该禁用此规则。
 
 ## Related Rules
 
@@ -132,7 +134,7 @@ If you're using such an initialization inside of a loop, then you should disable
 
 This rule was introduced in ESLint 0.0.6.
 
-此规则在ESLint 0.0.6中被引入。
+此规则在 ESLint 0.0.6 中被引入。
 
 ## Resources
 

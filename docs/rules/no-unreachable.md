@@ -1,6 +1,8 @@
 ---
 title: Rule no-unreachable
 layout: doc
+translator: molee1905
+proofreader: coocon 
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -24,7 +26,7 @@ function fn() {
 
 This rule is aimed at detecting unreachable code. It produces an error when a statements exist after a `return`, `throw`, `break`, or `continue` statement.
 
-该规则旨在检测不可达代码。当一个块中某个语句出现在`return`，`throw`，`break`，或 `continue`语句之后，它将产生一个错误。 
+该规则旨在检测不可达代码。当一个块中某个语句出现在 `return`，`throw`，`break`，或 `continue` 语句之后，它将产生一个错误。 
  
 Examples of **incorrect** code for this rule:
 
@@ -94,7 +96,7 @@ switch (foo) {
 
 This rule was introduced in ESLint 0.0.6.
 
-该规则在ESLint 0.0.6中被引入。
+该规则在 ESLint 0.0.6 中被引入。
 
 ## Resources
 
