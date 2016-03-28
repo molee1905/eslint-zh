@@ -1,6 +1,8 @@
 ---
 title: Rule prefer-const
 layout: doc
+translator: molee1905
+proofreader: summart
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -10,11 +12,11 @@ layout: doc
 
 If a variable is never modified, using the `const` declaration is better.
 
-如果一个变量从没有被修改过，最好使用`const`进行声明。
+如果一个变量不会被修改，最好使用`const`进行声明。
 
 `const` declaration tells readers, "this variable is never modified," reducing cognitive load and improving maintainability.
 
-`const`声明告诉读者，”这个变量从没有被修改过“，可以减少了认知负荷，提高可维护性。
+`const`声明告诉读者，“这个变量从不会被修改”，从而减少认知负荷，提高可维护性。
 
 ## Rule Details
 

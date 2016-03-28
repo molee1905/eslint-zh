@@ -1,6 +1,8 @@
 ---
 title: Rule prefer-spread
 layout: doc
+translator: molee1905
+proofreader: summart
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -10,7 +12,7 @@ layout: doc
 
 Before ES2015, one must use `Function.prototype.apply()` to call variadic functions.
 
-在ES2015之前，必须使用“Function.prototype.apply()调用可变函数。
+在ES2015之前，必须使用“Function.prototype.apply()调用可变参数函数。
 
 ```js
 var args = [1, 2, 3, 4];
@@ -19,7 +21,7 @@ Math.max.apply(Math, args);
 
 In ES2015, one can use the spread operator to call variadic functions.
 
-在ES2015中，可以使用扩展运算符调用可变函数。
+在ES2015中，可以使用扩展运算符调用可变参数函数。
 
 ```js
 /*eslint-env es6*/
@@ -73,11 +75,11 @@ Known limitations:
 
 This rule analyzes code statically to check whether or not the `this` argument is changed.
 
-该规则分析代码静态的检查`this`参数是否有改变。
+该规则通过静态分析代码的方式检查`this`参数是否有改变。
 
 So if the `this` argument is computed in a dynamic expression, this rule cannot detect a violation.
 
-如果在动态表达式中`this`是就计算出来的，该规则无法检检测到。
+如果`this`是在动态表达式中就被计算出来的，该规则便无法检测到。
 
 ```js
 /*eslint prefer-spread: 2*/
