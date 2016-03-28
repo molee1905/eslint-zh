@@ -1,6 +1,8 @@
 ---
 title: Rule space-after-function-name
 layout: doc
+translator: yanggao40
+proofreader: maomaoking
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 

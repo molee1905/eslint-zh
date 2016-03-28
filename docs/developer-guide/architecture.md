@@ -1,6 +1,8 @@
 ---
 title: Architecture
 layout: doc
+translator: molee1905
+proofreader: maomaoking
 ---
 
 # Architecture
@@ -19,8 +21,6 @@ ESLint有几个关键部分：
 * `lib/eslint.js` - 这个是核心的`eslint`对象，负责根据配置选项进行代码验证。这个文件没有文件I/O操作，也不与`console`打交道。对于其他需要验证Javascript文本的Node.js程序而已，它们可以直接使用这个接口。
 
 ## The `cli` object
-
-## `cli`对象
 
 The `cli` object is the API for the command line interface. Literally, the `bin/eslint.js` file simply passes arguments to the `cli` object and then calls `process.exit()` with the returned exit code.
 
@@ -58,8 +58,6 @@ This object may not:
 
 ## The `CLIEngine` object
 
-## `CLIEngine` 对象
-
 The `CLIEngine` type represents the core functionality of the CLI except that it reads nothing from the command line and doesn't output anything by default. Instead, it accepts many (but not all) of the arguments that are passed into the CLI. It reads both configuration and source files as well as managing the environment that is passed into the `eslint` object.
 
 `CLIEngine`类型代表CLI的核心功能，除了在默认情况下它不从命令行读取任何内容，也不输出任何内容。相反，它接受很多（不是全部）传递给CLI的参数。它读取配置文件和源码文件，同时也管理传递到`eslint`对象的环境。
@@ -96,11 +94,9 @@ This object may not:
 
 ## The `eslint` object
 
-## `eslint` 对象
-
 The main method of the `eslint` object is `verify()` and accepts two arguments: the source text to verify and a configuration object (the baked configuration of the given configuration file plus command line options). The method first parses the given text with Esprima and retrieves the AST. The AST is produced with both line/column and range locations which are useful for reporting location of issues and retrieving the source text related to an AST node, respectively.
 
-`eslint`对象的主要方法是`verify()`，接收两个参数：要验证的源码文本和一个配置对象（）。该方法首先使用Esprima解析获取的文本，检索AST。AST用来产生行/列和范围的位置，对报告问题的位置和检索与AST节点有关的源文本很有帮助。
+`eslint`对象的主要方法是`verify()`，接收两个参数：要验证的源码文本和一个配置对象（通过准备好的配置文件加命令行操作会生成配置）。该方法首先使用Esprima解析获取的文本，检索AST。AST用来产生行/列和范围的位置，对报告问题的位置和检索与AST节点有关的源文本很有帮助。
 
 Once the AST is available, `estraverse` is used to traverse the AST from top to bottom. At each node, the `eslint` object emits an event that has the same name as the node type (i.e., "Identifier", "WithStatement", etc.). On the way back up the subtree, an event is emitted with the AST type name and suffixed with ":after", such as "Identifier:after" - this allows rules to take action both on the way down and on the way up in the traversal. Each event is emitted with the appropriate AST node available.
 
@@ -135,8 +131,6 @@ This object may not:
 * 调用 `console.log()` 或其他任何类似方法
 
 ## Rules
-
-## 规则
 
 Individual rules are the most specialized part of the ESLint architecture. Rules can do very little, they are simply a set of instructions executed against an AST that is provided. They do get some context information passed in, but the primary responsibility of a rule is to inspect the AST and report warnings.
 

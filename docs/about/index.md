@@ -2,9 +2,12 @@
 title: About
 layout: doc
 translator: sunshiner
+proofreader: maomaoking
 ---
 
 # About
+
+# 关于
 
 ESLint is an open source JavaScript linting utility originally created by Nicholas C. Zakas in June 2013. Code [linting][] is a type of static analysis that is frequently used to find problematic patterns or code that doesn't adhere to certain style guidelines. There are code linters for most programming languages, and compilers sometimes incorporate linting into the compilation process.
 
@@ -19,13 +22,13 @@ The primary reason ESLint was created was to allow developers to create their ow
 ESLint的初衷是为了让程序员可以创建自己的检测规则。ESLint的所有规则都被设计成可插入的。ESLint的默认规则与其他的插件并没有什么区别，规则本身和测试可以依赖于同样的模式。为了便于人们使用，ESLint内置了一些规则，当然，你可以在使用过程中自定义规则。
 
 ESLint is written using Node.js to provide a fast runtime environment and easy installation via [npm][].
+
 ESLint使用Node.js编写，这样既可以有一个快速的运行环境的同时也便于安装。
+
 [linting]: http://en.wikipedia.org/wiki/Lint_(software)
 [npm]: http://npmjs.org/
 
 ## Philosophy
-
-## 设计思想
 
 Everything is pluggable:
 

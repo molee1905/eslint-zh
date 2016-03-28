@@ -1,28 +1,49 @@
 ---
 title: Documentation
 layout: doc
+translator: maomaoking
+proofreader: maomaoking
 ---
 # ESLint Formatters
 
+# ESLint 格式化工具
+
 ESLint comes with several built-in formatters to control the appearance of the linting results, and supports third-party formatters as well.
+
+ESLint 由几种内置的格式化工具组成，以便控制检查结果的样式和支持第三方格式化工具。
 
 The built-in formatter options are:
 
+内置的格式化工具列举如下：
+
+* [checkstyle](#checkstyle)
 * [checkstyle](#checkstyle)
 * [compact](#compact)
+* [compact](#compact)
+* [html](#html)
 * [html](#html)
 * [jslint-xml](#jslint-xml)
+* [jslint-xml](#jslint-xml)
+* [json](#json)
 * [json](#json)
 * [junit](#junit)
+* [junit](#junit)
+* [stylish](#stylish)
 * [stylish](#stylish)
 * [table](#table)
+* [table](#table)
+* [tap](#tap)
 * [tap](#tap)
 * [unix](#unix)
+* [unix](#unix)
+* [visualstudio](#visualstudio)
 * [visualstudio](#visualstudio)
 
 ## Example Source
 
 Examples of each formatter were created from linting `fullOfProblems.js` using the `.eslintrc` configuration shown below.
+
+每一种格式化工具从`fullOfProblems.js`使用`.eslintrc`例如如下配置
 
 ### `fullOfProblems.js`
 
