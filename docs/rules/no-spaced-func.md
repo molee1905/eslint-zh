@@ -1,12 +1,14 @@
 ---
 title: Rule no-spaced-func
 layout: doc
+translator: molee1905
+proofreader: xkf521
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Disallow Spaces in Function Calls (no-spaced-func)
 
-# 禁止函数调用的空格
+# 禁止在函数调用时使用空格
 
 While it's possible to have whitespace between the name of a function and the parentheses that execute it, such patterns tend to look more like errors.
 

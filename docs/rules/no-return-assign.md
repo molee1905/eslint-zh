@@ -1,16 +1,18 @@
 ---
 title: Rule no-return-assign
 layout: doc
+translator: fengnana
+proofreader: xkf521
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Disallow Assignment in return Statement (no-return-assign)
 
-# 禁止给返回语句赋值 (no-return-assign)
+# 禁止在返回语句中赋值 (no-return-assign)
 
 One of the interesting, and sometimes confusing, aspects of JavaScript is that assignment can happen at almost any point. Because of this, an errant equals sign can end up causing assignment when the true intent was to do a comparison. This is especially true when using a `return` statement. For example:
 
-JavaScript有趣的，有时又是困惑的是，赋值可以发生在任何位置。正因如此，错误的等于号会最终导致赋值当真正的目的是做比较时。尤其是当使用`return`语句时，例如：
+JavaScript中一个有趣的，时而又令人困惑的语法规则是：可在任意位置赋值。这导致在写比较语句时，由于误写了一个等号，变成了赋值操作，从而引发了bug。这样的错误在使用`return`语句时最为常见,例如：
 
 ```js
 function doSomething() {
@@ -20,7 +22,7 @@ function doSomething() {
 
 It is difficult to tell the intent of the `return` statement here. It's possible that the function is meant to return the result of `bar + 2`, but then why is it assigning to `foo`? It's also possible that the intent was to use a comparison operator such as `==` and that this code is an error.
 
-很难表述这里的`return`语句的意图。这是可能的,函数是为了返回`bar + 2`的结果,但是为什么赋值`foo`呢?也有可能目的是使用比较运算符比如`==`,如果是这样的话代码是错误的。
+从例子中，我们很难表述`return`语句的意图。可能意图一：函数是为了返回`bar + 2`,但是如果是这样的话，为什么赋值给`foo`呢?可能意图二：使用比较运算符比如`==`,如果是这样的话代码是错误的。
 
 Because of this ambiguity, it's considered a best practice to not use assignment in `return` statements.
 
@@ -31,7 +33,7 @@ Because of this ambiguity, it's considered a best practice to not use assignment
 
 This rule aims to eliminate assignments from `return` statements. As such, it will warn whenever an assignment is found as part of `return`.
 
-此规则目的在于从`return`语句中移除赋值。因此，每当在`return`中发现赋值它会给出警告。
+此规则目的在于从`return`语句中移除赋值。因此，每当在`return`中发现赋值ESLint会给出警告。
 
 ## Options
 
@@ -49,7 +51,7 @@ The rule takes one option, a string, which must contain one of the following val
 This is the default option.
 It disallows assignments unless they are enclosed in parentheses.
 
-这是默认的选项。它不允许赋值,除非他们被包围在圆括号中。
+这是默认的选项。除非赋值语句放在圆括号中，否则不允许在返回语句中赋值。
 
 The following patterns are considered problems:
 
@@ -92,7 +94,7 @@ function doSomething() {
 This option disallows all assignments in `return` statements.
 All assignments are treated as problems.
 
-此选项禁止`return`中所有的赋值。所有的赋值都被认为是有问题的。
+此选项禁止`return`中所有的赋值。所有的赋值均被认为是有问题的。
 
 The following patterns are considered problems:
 
@@ -134,7 +136,7 @@ function doSomething() {
 
 If you want to allow the use of assignment operators in a `return` statement, then you can safely disable this rule.
 
-如果你想允许`return`语句中赋值操作符的使用，你可以安全的关闭此规则。
+如果你想允许`return`语句中赋值操作符的使用，你可以关闭此规则。
 
 ## Version
 

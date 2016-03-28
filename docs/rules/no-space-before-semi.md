@@ -1,6 +1,8 @@
 ---
 title: Rule no-space-before-semi
 layout: doc
+translator: yanggao40
+proofreader: xkf521
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -18,7 +20,7 @@ JavaScript 允许在表达式和结尾的分号间使用不必要的空格。
 
 Space issues can also cause code to look inconsistent and harder to read.
 
-空格问题也会导致代码看上去不一致并且难以阅读。
+但空格问题会导致代码看上去不一致并且难以阅读。
 
 ```js
 var thing = function () {
@@ -30,7 +32,7 @@ var thing = function () {
 
 This rule prevents the use of spaces before a semicolon in expressions.
 
-该规则阻止在表达式的分号前使用空格。
+该规则防止在表达式分号前使用空格。
 
 The following patterns are considered problems:
 

@@ -1,6 +1,8 @@
 ---
 title: Rule no-ternary
 layout: doc
+translator: molee1905
+proofreader: xkf521
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -10,7 +12,7 @@ layout: doc
 
 The ternary operator is used to conditionally assign a value to a variable. Some believe that the use of ternary operators leads to unclear code.
 
-三元操作符用于有条件的为一个变量赋值。一些人认为使用三元操作符会导致代码不清晰。
+三元操作符通过条件操作为一个变量赋值。一些人认为使用三元操作符会导致代码不清晰。
 
 ```js
 var foo = isBar ? baz : qux;
