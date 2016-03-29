@@ -10,10 +10,10 @@ Using `javascript:` URLs is considered by some as a form of `eval`. Code passed 
 
 ## Rule Details
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
 ```js
-/*eslint no-script-url: 2*/
+/*eslint no-script-url: "error"*/
 
 location.href = "javascript:void(0)";
 ```

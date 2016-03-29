@@ -59,19 +59,13 @@ This rule is aimed at enforcing a particular type of function style throughout a
 This is the default configuration.  It reports an error when function declarations are used instead of function expressions.
 
 ```json
-"func-style": [2, "expression"]
-```
-
-An additional option object can be added with a property `"allowArrowFunctions"`.  Setting this to `true` will allow arrow functions.
-
-```json
-"func-style": [2, "expression", { "allowArrowFunctions": true }]
+"func-style": ["error", "expression"]
 ```
 
 The following patterns are considered problems:
 
 ```js
-/*eslint func-style: [2, "expression"]*/
+/*eslint func-style: ["error", "expression"]*/
 
 function foo() {
     // ...
@@ -81,17 +75,11 @@ function foo() {
 The following patterns are not considered problems:
 
 ```js
-/*eslint func-style: [2, "expression"]*/
+/*eslint func-style: ["error", "expression"]*/
 
 var foo = function() {
     // ...
 };
-```
-
-```js
-/*eslint func-style: [2, "declaration", { "allowArrowFunctions": true }]*/
-
-var foo = () => {};
 ```
 
 ### "declaration"
@@ -99,13 +87,19 @@ var foo = () => {};
 This reports an error if any function expressions are used where function declarations are expected. You can specify to use expressions instead:
 
 ```json
-"func-style": [2, "declaration"]
+"func-style": ["error", "declaration"]
+```
+
+An additional option object can be added with a property `"allowArrowFunctions"`.  Setting this to `true` will allow arrow functions.
+
+```json
+"func-style": ["error", "declaration", { "allowArrowFunctions": true }]
 ```
 
 The following patterns are considered problems:
 
 ```js
-/*eslint func-style: [2, "declaration"]*/
+/*eslint func-style: ["error", "declaration"]*/
 
 var foo = function() {
     // ...
@@ -113,7 +107,7 @@ var foo = function() {
 ```
 
 ```js
-/*eslint func-style: [2, "declaration"]*/
+/*eslint func-style: ["error", "declaration"]*/
 
 var foo = () => {};
 ```
@@ -121,7 +115,7 @@ var foo = () => {};
 The following patterns are not considered problems:
 
 ```js
-/*eslint func-style: [2, "declaration"]*/
+/*eslint func-style: ["error", "declaration"]*/
 
 function foo() {
     // ...
@@ -131,6 +125,12 @@ function foo() {
 SomeObject.foo = function() {
     // ...
 };
+```
+
+```js
+/*eslint func-style: ["error", "declaration", { "allowArrowFunctions": true }]*/
+
+var foo = () => {};
 ```
 
 

@@ -10,7 +10,7 @@ Variables that are declared and not used anywhere in the code are most likely an
 
 ## Rule Details
 
-This rule is aimed at eliminating unused variables, functions and variables in parameters of functions, as such, warns when one is found.
+This rule is aimed at eliminating unused variables, functions, and parameters of functions.
 
 A variable is considered to be used if any of the following are true:
 
@@ -23,8 +23,8 @@ A variable is *not* considered to be used if it is only ever assigned to (`var x
 Examples of **incorrect** code for this rule:
 
 ```js
-/*eslint no-unused-vars: 2*/
-/*global some_unused_var */
+/*eslint no-unused-vars: "error"*/
+/*global some_unused_var*/
 
 //It checks variables you have defined as global
 some_unused_var = 42;
@@ -49,7 +49,7 @@ function fact(n) {
 Examples of **correct** code for this rule:
 
 ```js
-/*eslint no-unused-vars: 2*/
+/*eslint no-unused-vars: "error"*/
 
 var x = 10;
 alert(x);
@@ -64,20 +64,26 @@ myFunc(function foo() {
 })();
 ```
 
-### Exporting Variables
+### exported
 
-In environments outside of CommonJS or ECMAScript modules, you may use `var` to create a global variable that may be used by other scripts. You can use the `/* exported variableName */` comment block to indicate that this variable is being exported and therefore should not be considered unused. Note that `/* exported */` has no effect when used with the `node` or `commonjs` environments or when `ecmaFeatures.modules` or `ecmaFeatures.globalReturn` are true.
+In environments outside of CommonJS or ECMAScript modules, you may use `var` to create a global variable that may be used by other scripts. You can use the `/* exported variableName */` comment block to indicate that this variable is being exported and therefore should not be considered unused.
+
+Note that `/* exported */` has no effect for any of the following:
+
+* when the environment is `node` or `commonjs`
+* when `parserOptions.sourceType` is `module`
+* when `ecmaFeatures.globalReturn` is `true`
 
 ## Options
 
-This rule takes one argument which can be an string or an object. The string settings are the same as those of the `vars` property (explained below).
+This rule takes one argument which can be a string or an object. The string settings are the same as those of the `vars` property (explained below).
 
 By default this rule is enabled with `all` option for variables and `after-used` for arguments.
 
 ```json
 {
     "rules": {
-        "no-unused-vars": [2, { "vars": "all", "args": "after-used" }]
+        "no-unused-vars": ["error", { "vars": "all", "args": "after-used" }]
     }
 }
 ```
@@ -89,6 +95,17 @@ The `vars` option has two settings:
 * `all` checks all variables for usage, including those in the global scope. This is the default setting.
 * `local` checks only that locally-declared variables are used but will allow global variables to be unused.
 
+#### vars: local
+
+Examples of **correct** code for the `{ "vars": "local" }` option:
+
+```js
+/*eslint no-unused-vars: ["error", { "vars": "local" }]*/
+/*global some_unused_var */
+
+some_unused_var = 42;
+```
+
 ### varsIgnorePattern
 
 The `varsIgnorePattern` option specifies exceptions not to check for usage: variables whose names match a regexp pattern. For example, variables whose names contain `ignored` or `Ignored`.
@@ -96,7 +113,7 @@ The `varsIgnorePattern` option specifies exceptions not to check for usage: vari
 Examples of **correct** code for the `{ "varsIgnorePattern": "[iI]gnored" }` option:
 
 ```js
-/*eslint no-unused-vars: [2, { "varsIgnorePattern": "[iI]gnored" }]*/
+/*eslint no-unused-vars: ["error", { "varsIgnorePattern": "[iI]gnored" }]*/
 
 var firstVarIgnored = 1;
 var secondVar = 2;
@@ -116,7 +133,7 @@ The `args` option has three settings:
 Examples of **incorrect** code for the default `{ "args": "after-used" }` option:
 
 ```js
-/*eslint no-unused-vars: [2, { "args": "after-used" }]*/
+/*eslint no-unused-vars: ["error", { "args": "after-used" }]*/
 
 // 1 error
 // "baz" is defined but never used
@@ -128,7 +145,7 @@ Examples of **incorrect** code for the default `{ "args": "after-used" }` option
 Examples of **correct** code for the default `{ "args": "after-used" }` option:
 
 ```js
-/*eslint no-unused-vars: [2, {"args": "after-used"}]*/
+/*eslint no-unused-vars: ["error", {"args": "after-used"}]*/
 
 (function(foo, bar, baz) {
     return baz;
@@ -140,7 +157,7 @@ Examples of **correct** code for the default `{ "args": "after-used" }` option:
 Examples of **incorrect** code for the `{ "args": "all" }` option:
 
 ```js
-/*eslint no-unused-vars: [2, { "args": "all" }]*/
+/*eslint no-unused-vars: ["error", { "args": "all" }]*/
 
 // 2 errors
 // "foo" is defined but never used
@@ -155,7 +172,7 @@ Examples of **incorrect** code for the `{ "args": "all" }` option:
 Examples of **correct** code for the `{ "args": "none" }` option:
 
 ```js
-/*eslint no-unused-vars: [2, { "args": "none" }]*/
+/*eslint no-unused-vars: ["error", { "args": "none" }]*/
 
 (function(foo, bar, baz) {
     return bar;
@@ -169,12 +186,69 @@ The `argsIgnorePattern` option specifies exceptions not to check for usage: argu
 Examples of **correct** code for the `{ "argsIgnorePattern": "^_" }` option:
 
 ```js
-/*eslint no-unused-vars: [2, { "argsIgnorePattern": "^_" }]*/
+/*eslint no-unused-vars: ["error", { "argsIgnorePattern": "^_" }]*/
 
 function foo(x, _y) {
     return x + 1;
 }
 foo();
+```
+
+### caughtErrors
+
+The `caughtErrors` option is used for `catch` block arguments validation.
+
+It has two settings:
+
+* `none` - do not check error objects. This is the default setting.
+* `all` - all named arguments must be used.
+
+#### caughtErrors: none
+
+Not specifying this rule is equivalent of assigning it to `none`.
+
+Examples of **correct** code for the `{ "caughtErrors": "none" }` option:
+
+```js
+/*eslint no-unused-vars: ["error", { "caughtErrors": "none" }]*/
+
+try {
+    //...
+} catch (err) {
+    console.error("errors");
+}
+```
+
+#### caughtErrors: all
+
+Examples of **incorrect** code for the `{ "caughtErrors": "all" }` option:
+
+```js
+/*eslint no-unused-vars: ["error", { "caughtErrors": "all" }]*/
+
+// 1 error
+// "err" is defined but never used
+try {
+    //...
+} catch (err) {
+    console.error("errors");
+}
+```
+
+### caughtErrorsIgnorePattern
+
+The `caughtErrorsIgnorePattern` option specifies exceptions not to check for usage: catch arguments whose names match a regexp pattern. For example, variables whose names begin with a string 'ignore'.
+
+Examples of **correct** code for the `{ "caughtErrorsIgnorePattern": "^ignore" }` option:
+
+```js
+/*eslint no-unused-vars: ["error", { "caughtErrorsIgnorePattern": "^ignore" }]*/
+
+try {
+    //...
+} catch (ignoreErr) {
+    console.error("errors");
+}
 ```
 
 

@@ -16,18 +16,18 @@ var foo = "Copyright \251";
 
 The rule is aimed at preventing the use of a deprecated JavaScript feature, the use of octal escape sequences. As such it will warn whenever an octal escape sequence is found in a string literal.
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
 ```js
-/*eslint no-octal-escape: 2*/
+/*eslint no-octal-escape: "error"*/
 
 var foo = "Copyright \251";
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
 ```js
-/*eslint no-octal-escape: 2*/
+/*eslint no-octal-escape: "error"*/
 
 var foo = "Copyright \u00A9";   // unicode
 

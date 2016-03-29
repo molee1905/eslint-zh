@@ -26,10 +26,14 @@ There are, however, some who prefer to only use braces when there is more than o
 
 This rule is aimed at preventing bugs and increasing code clarity by ensuring that block statements are wrapped in curly braces. It will warn when it encounters blocks that omit curly braces.
 
-The following patterns are considered problems:
+## Options
+
+### all
+
+Examples of **incorrect** code for the default `"all"` option:
 
 ```js
-/*eslint curly: 2*/
+/*eslint curly: "error"*/
 
 if (foo) foo++;
 
@@ -41,10 +45,10 @@ if (foo) {
 } else qux();
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for the default `"all"` option:
 
 ```js
-/*eslint curly: 2*/
+/*eslint curly: "error"*/
 
 if (foo) {
     foo++;
@@ -61,20 +65,14 @@ if (foo) {
 }
 ```
 
-## Options
+### multi
 
-### "multi"
+By default, this rule warns whenever `if`, `else`, `for`, `while`, or `do` are used without block statements as their body. However, you can specify that block statements should be used only when there are multiple statements in the block and warn when there is only one statement in the block.
 
-By default, this rule warns whenever `if`, `else`, `for`, `while`, or `do` are used without block statements as their body. However, you can specify that block statements should be used only when there are multiple statements in the block and warn when there is only one statement in the block. To do so, configure the rule as:
-
-```json
-curly: [2, "multi"]
-```
-
-With this configuration, the rule will warn for these patterns:
+Examples of **incorrect** code for the `"multi"` option:
 
 ```js
-/*eslint curly: [2, "multi"]*/
+/*eslint curly: ["error", "multi"]*/
 
 if (foo) {
     foo++;
@@ -94,10 +92,10 @@ for (var i=0; i < items.length; i++) {
 }
 ```
 
-It will not warn for these patterns:
+Examples of **correct** code for the `"multi"` option:
 
 ```js
-/*eslint curly: [2, "multi"]*/
+/*eslint curly: ["error", "multi"]*/
 
 if (foo) foo++;
 
@@ -109,18 +107,14 @@ while (true) {
 }
 ```
 
-### "multi-line"
+### multi-line
 
-Alternatively, you can relax the rule to allow brace-less single-line `if`, `else if`, `else`, `for`, `while`, or `do`, while still enforcing the use of curly braces for other instances. To do so, configure the rule as:
+Alternatively, you can relax the rule to allow brace-less single-line `if`, `else if`, `else`, `for`, `while`, or `do`, while still enforcing the use of curly braces for other instances.
 
-```json
-curly: [2, "multi-line"]
-```
-
-With this configuration, the rule will warn for these patterns:
+Examples of **incorrect** code for the `"multi-line"` option:
 
 ```js
-/*eslint curly: [2, "multi-line"]*/
+/*eslint curly: ["error", "multi-line"]*/
 
 if (foo)
   doSomething();
@@ -132,10 +126,10 @@ if (foo) foo(
   baz);
 ```
 
-It will not warn for these patterns:
+Examples of **correct** code for the `"multi-line"` option:
 
 ```js
-/*eslint curly: [2, "multi-line"]*/
+/*eslint curly: ["error", "multi-line"]*/
 
 if (foo) foo++; else doSomething();
 
@@ -161,18 +155,14 @@ while (true) {
 }
 ```
 
-### "multi-or-nest"
+### multi-or-nest
 
 You can use another configuration that forces brace-less `if`, `else if`, `else`, `for`, `while`, or `do` if their body contains only one single-line statement. And forces braces in all other cases.
 
-```json
-curly: [2, "multi-or-nest"]
-```
-
-With this configuration, the rule will warn for these patterns:
+Examples of **incorrect** code for the `"multi-or-nest"` option:
 
 ```js
-/*eslint curly: [2, "multi-or-nest"]*/
+/*eslint curly: ["error", "multi-or-nest"]*/
 
 if (!foo)
     foo = {
@@ -199,10 +189,10 @@ for (var i = 0; foo; i++) {
 }
 ```
 
-It will not warn for these patterns:
+Examples of **correct** code for the `"multi-or-nest"` option:
 
 ```js
-/*eslint curly: [2, "multi-or-nest"]*/
+/*eslint curly: ["error", "multi-or-nest"]*/
 
 if (!foo) {
     foo = {
@@ -228,19 +218,15 @@ for (var i = 0; foo; i++)
     doSomething();
 ```
 
-### "consistent"
+### consistent
 
-When using any of the `multi*` option, you can add an option to enforce all bodies of a `if`,
+When using any of the `multi*` options, you can add an option to enforce all bodies of a `if`,
 `else if` and `else` chain to be with or without braces.
 
-```json
-curly: [2, "multi", "consistent"]
-```
-
-With this configuration, the rule will warn for those patterns:
+Examples of **incorrect** code for the `"multi", "consistent"` options:
 
 ```js
-/*eslint curly: [2, "multi", "consistent"]*/
+/*eslint curly: ["error", "multi", "consistent"]*/
 
 if (foo) {
     bar();
@@ -268,10 +254,10 @@ if (foo) {
 }
 ```
 
-It will not warn for these patterns:
+Examples of **correct** code for the `"multi", "consistent"` options:
 
 ```js
-/*eslint curly: [2, "multi", "consistent"]*/
+/*eslint curly: ["error", "multi", "consistent"]*/
 
 if (foo) {
     bar();
@@ -297,12 +283,6 @@ else
 if (foo)
     foo++;
 
-```
-
-The default configuration is:
-
-```json
-curly: [2, "all"]
 ```
 
 ## When Not To Use It

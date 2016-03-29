@@ -21,10 +21,10 @@ If one of those occurs in an innocent-looking statement such as `a == b` the act
 
 This rule is aimed at eliminating the type-unsafe equality operators.
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
 ```js
-/* eslint eqeqeq: 2 */
+/*eslint eqeqeq: "error"*/
 
 if (x == 42) { }
 
@@ -35,36 +35,18 @@ if (obj.getStuff() != undefined) { }
 
 ## Options
 
-### "smart"
+### smart
 
-This option enforces the use of `===` and `!==` except for these cases:
+The `"smart"` option enforces the use of `===` and `!==` except for these cases:
 
 * Comparing two literal values
 * Evaluating the value of `typeof`
 * Comparing against `null`
 
-You can specify this option using the following configuration:
-
-```json
-"eqeqeq": [2, "smart"]
-```
-
-The following patterns are not considered problems:
+Examples of **incorrect** code for the `"smart"` option:
 
 ```js
-/* eslint eqeqeq: [2, "smart"] */
-
-typeof foo == 'undefined'
-'hello' != 'world'
-0 == 0
-true == true
-foo == null
-```
-
-The following patterns are considered problems with "smart":
-
-```js
-/* eslint eqeqeq: [2, "smart"] */
+/*eslint eqeqeq: ["error", "smart"]*/
 
 // comparing two variables requires ===
 a == b
@@ -77,34 +59,40 @@ bananas != 1
 value == undefined
 ```
 
-### "allow-null"
-
-This option will enforce `===` and `!==` in your code with one exception - it permits comparing to `null` to check for `null` or `undefined` in a single expression.
-
-You can specify this option using the following configuration:
-
-```json
-"eqeqeq": [2, "allow-null"]
-```
-
-The following patterns are not considered problems:
+Examples of **correct** code for the `"smart"` option:
 
 ```js
-/* eslint eqeqeq: [2, "allow-null"] */
+/*eslint eqeqeq: ["error", "smart"]*/
 
+typeof foo == 'undefined'
+'hello' != 'world'
+0 == 0
+true == true
 foo == null
 ```
 
-The following patterns are considered problems with "allow-null":
+### allow-null
+
+The `"allow-null"` option will enforce `===` and `!==` in your code with one exception - it permits comparing to `null` to check for `null` or `undefined` in a single expression.
+
+Examples of **incorrect** code for the `"allow-null"` option:
 
 ```js
-/* eslint eqeqeq: [2, "allow-null"] */
+/*eslint eqeqeq: ["error", "allow-null"]*/
 
 bananas != 1
 typeof foo == 'undefined'
 'hello' != 'world'
 0 == 0
 foo == undefined
+```
+
+Examples of **correct** code for the `"allow-null"` option:
+
+```js
+/*eslint eqeqeq: ["error", "allow-null"]*/
+
+foo == null
 ```
 
 ## When Not To Use It

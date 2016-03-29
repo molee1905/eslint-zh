@@ -47,10 +47,10 @@ Once again, the intent here is to show that the developer intended for there to 
 
 This rule aims to require `default` case in `switch` statements. You may optionally include a `// no default` after the last `case` if there is no `default` case.
 
-The following pattern is considered a warning:
+Examples of **incorrect** code for this rule:
 
 ```js
-/*eslint default-case: 2*/
+/*eslint default-case: "error"*/
 
 switch (a) {
     case 1:
@@ -60,10 +60,10 @@ switch (a) {
 
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
 ```js
-/*eslint default-case: 2*/
+/*eslint default-case: "error"*/
 
 switch (a) {
     case 1:

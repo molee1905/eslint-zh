@@ -37,6 +37,7 @@ Basic configuration:
   --ext [String]             Specify JavaScript file extensions - default: .js
   --global [String]          Define global variables
   --parser String            Specify the parser to be used - default: espree
+  --parser-options Object    Specify parser options
 
 Caching:
   --cache                    Only check changed files - default: false
@@ -127,18 +128,22 @@ Examples:
 
 #### `--ext`
 
-This option allows you to specify which file extensions ESLint will use when searching for JavaScript files. By default, it uses `.js` as the only file extension.
+This option allows you to specify which file extensions ESLint will use when searching for JavaScript files in the directories you specify.
+By default, it uses `.js` as the only file extension.
 
 Examples:
 
     # Use only .js2 extension
-    eslint --ext .js2
+    eslint . --ext .js2
 
     # Use both .js and .js2
-    eslint --ext .js --ext .js2
+    eslint . --ext .js --ext .js2
 
     # Also use both .js and .js2
-    eslint --ext .js,.js2
+    eslint . --ext .js,.js2
+
+**Note:** If you use a glob pattern, then `--ext` is ignored
+For example, `eslint lib/* --ext .js` will match all files within the `lib/` directory, regardless of extension.
 
 #### `--global`
 
@@ -152,6 +157,15 @@ Examples:
 #### `--parser`
 
 This option allows you to specify a parser to be used by eslint. By default, `espree` will be used.
+
+#### `--parser-options`
+
+This option allows you to specify parser options to be used by eslint.
+
+Examples:
+
+    echo '3 ** 4' | eslint --stdin --parser-options=ecmaVersion:6 # will fail with a parsing error
+    echo '3 ** 4' | eslint --stdin --parser-options=ecmaVersion:7 # succeeds, yay!
 
 ### Caching
 

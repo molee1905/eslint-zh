@@ -24,10 +24,10 @@ function a(x) {
 
 This rule is aimed at reducing code complexity by capping the amount of cyclomatic complexity allowed in a program. As such, it will warn when the cyclomatic complexity crosses the configured threshold (default is `20`).
 
-The following patterns are considered problems:
+Examples of **incorrect** code for a maximum of 2:
 
 ```js
-/*eslint complexity: [2, 2]*/
+/*eslint complexity: ["error", 2]*/
 
 function a(x) {
     if (true) {
@@ -40,10 +40,10 @@ function a(x) {
 }
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for a maximum of 2:
 
 ```js
-/*eslint complexity: [2, 2]*/
+/*eslint complexity: ["error", 2]*/
 
 function a(x) {
     if (true) {
@@ -54,16 +54,18 @@ function a(x) {
 }
 ```
 
+## Options
+
 Optionally, you may specify a `maximum` object property:
 
 ```json
-"complexity": [2, 2]
+"complexity": ["error", 2]
 ```
 
 is equivalent to
 
 ```json
-"complexity": [2, {"maximum": 2}]
+"complexity": ["error", { "maximum": 2 }]
 ```
 
 ## When Not To Use It

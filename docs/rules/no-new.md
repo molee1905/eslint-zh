@@ -24,18 +24,18 @@ In this case, the created object is thrown away because its reference isn't stor
 
 This rule is aimed at maintaining consistency and convention by disallowing constructor calls using the `new` keyword that do not assign the resulting object to a variable.
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
 ```js
-/*eslint no-new: 2*/
+/*eslint no-new: "error"*/
 
 new Thing();
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
 ```js
-/*eslint no-new: 2*/
+/*eslint no-new: "error"*/
 
 var thing = new Thing();
 

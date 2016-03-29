@@ -18,10 +18,10 @@ function foo() {
 
 This rule is aimed at discouraging the use of deprecated and sub-optimal code, but disallowing the use of `arguments.caller` and `arguments.callee`. As such, it will warn when `arguments.caller` and `arguments.callee` are used.
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
 ```js
-/*eslint no-caller: 2*/
+/*eslint no-caller: "error"*/
 
 function foo(n) {
     if (n <= 0) {
@@ -36,10 +36,10 @@ function foo(n) {
 });
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
 ```js
-/*eslint no-caller: 2*/
+/*eslint no-caller: "error"*/
 
 function foo(n) {
     if (n <= 0) {
