@@ -1,16 +1,18 @@
 ---
 title: Rule require-yield
 layout: doc
+translator: molee1905
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Disallow generator functions that do not have `yield` (require-yield)
 
-# 禁用函数内没有`yield`的generator函数
+# 禁用函数内没有`yield`的 generator 函数
 
 This rule generates warnings for generator functions that do not have the `yield` keyword.
 
-如果generator函数内部没有`yield`关键字，该规则将发出警告。
+如果 generator 函数内部没有`yield`关键字，该规则将发出警告。
 
 ## Rule Details
 
@@ -52,7 +54,7 @@ function* foo() { }
 
 This rule was introduced in ESLint 1.0.0-rc-1.
 
-该规则在ESLint 1.0.0-rc-1 中被引入。
+该规则在 ESLint 1.0.0-rc-1 中被引入。
 
 ## Resources
 

@@ -24,8 +24,8 @@ The following rules point out areas where you might have made mistakes.
 * [comma-dangle](comma-dangle) - 禁止或强化末尾逗号 (recommended)
 * [no-cond-assign](no-cond-assign) - disallow assignment in conditional expressions (recommended)
 * [no-cond-assign](no-cond-assign) - 禁止条件表示中赋值(recommended)
-* [no-console](no-console) - 禁止node环境下使用 `console`(recommended)
 * [no-console](no-console) - disallow use of `console` (recommended)
+* [no-console](no-console) - 禁止node环境下使用 `console`(recommended)
 * [no-constant-condition](no-constant-condition) - disallow use of constant expressions in conditions (recommended)
 * [no-constant-condition](no-constant-condition) - 禁止在条件中使用常量表达式 (recommended)
 * [no-control-regex](no-control-regex) - disallow control characters in regular expressions (recommended)
@@ -86,6 +86,7 @@ These are rules designed to prevent you from making mistakes. They either prescr
 * [accessor-pairs](accessor-pairs) - Enforces getter/setter pairs in objects
 * [accessor-pairs](accessor-pairs) - 强制 getter/setter成对出现在对象中
 * [array-callback-return](array-callback-return) - Enforces return statements in callbacks of array's methods
+* [array-callback-return](array-callback-return) - Enforces return statements in callbacks of array's methods
 * [block-scoped-var](block-scoped-var) - treat `var` statements as if they were block scoped
 * [block-scoped-var](block-scoped-var) - 把 `var` 语句看作是在块级作用域范围之内
 * [complexity](complexity) - specify the maximum cyclomatic complexity allowed in a program
@@ -127,6 +128,7 @@ These are rules designed to prevent you from making mistakes. They either prescr
 * [no-extra-bind](no-extra-bind) - disallow unnecessary function binding
 * [no-extra-bind](no-extra-bind) - 禁止不必要的函数绑定
 * [no-extra-label](no-extra-label) - disallow unnecessary labels
+* [no-extra-label](no-extra-label) - disallow unnecessary labels
 * [no-fallthrough](no-fallthrough) - disallow fallthrough of `case` statements (recommended)
 * [no-fallthrough](no-fallthrough) - disallow fallthrough of `case` statements (recommended)
 * [no-floating-decimal](no-floating-decimal) - disallow the use of leading or trailing decimal points in numeric literals
@@ -161,7 +163,6 @@ These are rules designed to prevent you from making mistakes. They either prescr
 * [no-new-func](no-new-func) - 禁止对`Function`对象使用new操作符
 * [no-new-wrappers](no-new-wrappers) - disallows creating new instances of `String`,`Number`, and `Boolean`
 * [no-new-wrappers](no-new-wrappers) - 禁止创建`String`，`Number`和 `Boolean`的新实例
-<<<<<<< HEAD
 * [no-octal](no-octal) - disallow use of octal literals (recommended)
 * [no-octal](no-octal) - 禁用八进制字面量 (recommended)
 * [no-octal-escape](no-octal-escape) - disallow use of octal escape sequences in string literals, such as `var foo = "Copyright \251";`
@@ -235,6 +236,7 @@ These rules have to do with variable declarations.
 * [no-label-var](no-label-var) - disallow labels that share a name with a variable
 * [no-label-var](no-label-var) - 不允许标签与变量同名
 * [no-restricted-globals](no-restricted-globals) - restrict usage of specified global variables
+* [no-restricted-globals](no-restricted-globals) - restrict usage of specified global variables
 * [no-shadow](no-shadow) - disallow declaration of variables already declared in the outer scope
 * [no-shadow](no-shadow) - 不允许声明在外层作用域下已声明过的变量
 * [no-shadow-restricted-names](no-shadow-restricted-names) - disallow shadowing of names such as `arguments`
@@ -270,6 +272,7 @@ These rules are specific to JavaScript running on Node.js or using CommonJS in t
 * [no-path-concat](no-path-concat) - 禁止同`__dirname` 和 `__filename`进行字符串明教
 * [no-process-exit](no-process-exit) - disallow `process.exit()`
 * [no-process-exit](no-process-exit) - 禁用 `process.exit()`
+* [no-restricted-imports](no-restricted-imports) - restrict usage of specified node imports
 * [no-restricted-imports](no-restricted-imports) - restrict usage of specified node imports
 * [no-restricted-modules](no-restricted-modules) - restrict usage of specified node modules
 * [no-restricted-modules](no-restricted-modules) - 限制指定的node模块的使用
@@ -318,8 +321,8 @@ These rules are purely matters of style and are quite subjective.
 * [key-spacing](key-spacing) - 强制对象字面量属性中键和值之间的间距
 * [keyword-spacing](keyword-spacing) - enforce spacing before and after keywords (fixable)
 * [keyword-spacing](keyword-spacing) - enforce spacing before and after keywords (fixable)
-* [linebreak-style](linebreak-style) - disallow mixed 'LF' and 'CRLF' as linebreaks
-* [linebreak-style](linebreak-style) - 禁止混合使用行分隔符'LF'和回车换行'CRLF'作为换行符
+* [linebreak-style](linebreak-style) - enforce linebreak style (fixable)
+* [linebreak-style](linebreak-style) - 强制换行风格 (fixable)
 * [lines-around-comment](lines-around-comment) - enforce empty lines around comments
 * [lines-around-comment](lines-around-comment) - 强制注释周围有空行
 * [max-depth](max-depth) - specify the maximum depth that blocks can be nested
@@ -339,6 +342,8 @@ These rules are purely matters of style and are quite subjective.
 * [newline-after-var](newline-after-var) - require or disallow an empty newline after variable declarations
 * [newline-after-var](newline-after-var) - require or disallow an empty newline after variable declarations
 * [newline-before-return](newline-before-return) - require newline before `return` statement
+* [newline-before-return](newline-before-return) - require newline before `return` statement
+* [newline-per-chained-call](newline-per-chained-call) - enforce newline after each call when chaining the calls
 * [newline-per-chained-call](newline-per-chained-call) - enforce newline after each call when chaining the calls
 * [no-array-constructor](no-array-constructor) - 要求或禁止变量声明语句后有空行
 * [no-array-constructor](no-array-constructor) - disallow use of the `Array` constructor
@@ -441,6 +446,7 @@ These rules are only relevant to ES6 environments.
 * [no-const-assign](no-const-assign) - 不允许改变用`const`声明的变量 (recommended)
 * [no-dupe-class-members](no-dupe-class-members) - disallow duplicate name in class members (recommended)
 * [no-dupe-class-members](no-dupe-class-members) - 不允许类成员中有重复的名称 (recommended)
+* [no-new-symbol](no-new-symbol) - disallow use of the `new` operator with the `Symbol` object (recommended)
 * [no-new-symbol](no-new-symbol) - disallow use of the `new` operator with the `Symbol` object (recommended)
 * [no-this-before-super](no-this-before-super) - disallow use of `this`/`super` before calling `super()` in constructors (recommended)
 * [no-this-before-super](no-this-before-super) - 在构造函数中禁止在调用`super()`之前使用`this`或`super` (recommended)

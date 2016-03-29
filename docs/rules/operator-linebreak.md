@@ -1,6 +1,8 @@
 ---
 title: Rule operator-linebreak
 layout: doc
+translator: molee1905
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -32,13 +34,13 @@ var fullHeight = borderTop
 
 The `operator-linebreak` rule is aimed at enforcing a particular operator line break style. As such, it warns whenever it sees a binary operator or assignment that does not adhere to a particular style: either placing linebreaks after or before the operators.
 
-该规则旨在强制一个特殊的的换行符风格。因此，如果遇到二元操作符或不遵守特定风格的赋值语句，比如，将换行符放在操作符之前或之后，该规则将发出警告。
+该规则旨在强制一个特定的换行符风格。因此，如果遇到二元操作符或不遵守特定风格的赋值语句，比如，将换行符放在操作符之前或之后，该规则将发出警告。
  
 ## Options
 
 The rule takes two options, a string, which can be `"after"`, `"before"` or `"none"` where the default is `"after"` and an object for more fine-grained configuration.
 
-该规则有两个可选项，一个是字符串，值为`"after"`， `"before"` 或 `"none"`，默认值为`after`，另一个是个对象，可以进行更细粒度的配置。
+该规则有两个可选项，一个是字符串，值为`"after"`，`"before"`或`"none"`，默认值为`after`，另一个是个对象，可以进行更细粒度的配置。
 
 You can set the style in configuration like this:
 
@@ -50,7 +52,7 @@ You can set the style in configuration like this:
 
 The default configuration is to enforce line breaks _after_ the operator except for the ternary operator `?` and `:` following that.
 
-默认配置是强制换行符在操作符之后，只有三元操作符`?` 和 `:`会紧随它。
+默认配置是强制换行符在操作符之后，除了三元操作符`?`和 `:`会紧随它。
 
 ### "after"
 
@@ -217,7 +219,7 @@ answer = everything ? 42 : foo;
 
 The rule allows you to have even finer-grained control over individual operators by specifying an `overrides` dictionary:
 
-该规则允许你通过指定一个`overrides`字典来来覆盖个别的操作符，来实现更细粒度的控制。
+该规则允许你通过指定一个`overrides`字典来覆盖个别的操作符，以实现更细粒度的控制。
 
 ```json
 "operator-linebreak": [2, "before", { "overrides": { "?": "after", "+=": "none" } }]
@@ -231,11 +233,11 @@ This would override the global setting for that specific operator.
 
 This option is only supported using `overrides` and ignores line breaks on either side of the operator.
 
-该选项在使用`overrides`和忽略操作符两边的换行时有效。
+该选项在使用`overrides`时有效，并且忽略操作符两边的换行。
 
 While using this setting, the following patterns are not considered problems:
 
-当使用这个选项时，以下模式被认为是有问题的：
+当使用这个选项时，以下模式被认为是没有问题的：
 
 ```js
 /*eslint operator-linebreak: [2, "after", { "overrides": { "?": "ignore", ":": "ignore"} }]*/
@@ -255,7 +257,7 @@ answer = everything
 
 If your project will not be using a common operator line break style, turn this rule off.
 
-如果你的项目将不使用一种通用的换行符风格，可以关闭此规则。
+如果你的项目不使用一种通用的换行符风格，可以关闭此规则。
 
 ## Related Rules
 
@@ -265,7 +267,7 @@ If your project will not be using a common operator line break style, turn this 
 
 This rule was introduced in ESLint 0.19.0.
 
-该规则在ESLint 0.19.0 中被引入。
+该规则在 ESLint 0.19.0 中被引入。
 
 ## Resources
 

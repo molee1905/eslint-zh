@@ -1,6 +1,8 @@
 ---
 title: Rule no-dupe-class-members
 layout: doc
+translator: molee1905
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -11,8 +13,8 @@ layout: doc
 If there are declarations of the same name in class members, the last declaration overwrites other declarations silently.
 It can cause unexpected behaviors.
 
-如果有同名的类成员中的声明，最后一个声明将会默默地覆盖其他的声明。
-它可以导致意外的行为。
+如果类成员中有同名的声明，最后一个声明将会默默地覆盖其它声明。
+它可能导致意外的行为。
 
 ```js
 /*eslint-env es6*/
@@ -84,7 +86,7 @@ class Foo {
 
 This rule should not be used in ES3/5 environments.
 
-该规则不应在ES3/5环境下使用。
+该规则不应在 ES3/5 环境下使用。
 
 In ES2015 (ES6) or later, if you don't want to be notified about duplicate names in class members, you can safely disable this rule.
 
@@ -94,7 +96,7 @@ In ES2015 (ES6) or later, if you don't want to be notified about duplicate names
 
 This rule was introduced in ESLint 1.2.0.
 
-该规则在ESLint 1.2.0 中被引入。
+该规则在 ESLint 1.2.0 中被引入。
 
 ## Resources
 

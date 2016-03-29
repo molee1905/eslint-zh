@@ -1,6 +1,8 @@
 ---
 title: Rule semi-spacing
 layout: doc
+translator: molee1905
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -10,11 +12,11 @@ layout: doc
 
 JavaScript allows you to place unnecessary spaces before or after a semicolon.
 
-Javascript允许你在分号之前或之后放置不必要的空格。
+Javascript 允许你在分号之前或之后放置不必要的空格。
 
 Disallowing or enforcing space around a semicolon can improve the readability of your program.
 
-禁止或强制分号周围的空格可以提供你程序的可读性。
+禁止或强制分号周围的空格可以提高你程序的可读性。
 
 ```js
 var a = "b" ;
@@ -23,6 +25,8 @@ var c = "d";var e = "f";
 ```
 
 **Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
+
+**Fixable:** 该规则可以通过`--fix`命令行进行自动修复。
 
 ## Rule Details
 
@@ -44,7 +48,7 @@ This rule doesn't check spacing in the following cases:
 
 * The spacing around the semicolon in a for loop with an empty condition (`for(;;)`).
 
-* 空条件的for循环语句中分号周围的空格。
+* 空条件(`for(;;)`)的 for 循环语句中分号周围的空格。
 
 ## Options
 
@@ -53,8 +57,7 @@ If `before` is `true`, space is enforced before semicolons and if it's `false`, 
 If `after` is `true`, space is enforced after semicolons and if it's `false`, space is disallowed after semicolons.
 The `after` option will be only applied if a semicolon is not at the end of line.
 
-该规则有一个可选项，是个对象，有两个键`before` 和 `after`对应的值为布尔类型的值`true` 或 `false`。
-
+该规则有一个可选项，是个对象，有两个键`before` 和 `after`对应的值为布尔类型的值`true`或`false`。
 如果设置`before`为`true`，分号之前强制有空格，如果设置为`false`，分号之前禁止有空格。
 如果设置`after`为`true`，分号之后强制有空格，如果设置为`false`，分号之后禁止有空格。
 `after`选项只在分号不是行尾时起作用。
@@ -158,7 +161,7 @@ You can turn this rule off if you are not concerned with the consistency of spac
 
 This rule was introduced in ESLint 0.16.0.
 
-该规则在ESLint 0.16.0 中被引入。
+该规则在 ESLint 0.16.0 中被引入。
 
 ## Resources
 

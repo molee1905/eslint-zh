@@ -1,6 +1,8 @@
 ---
 title: Rule arrow-spacing
 layout: doc
+translator: molee1905
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -10,7 +12,7 @@ layout: doc
 
 This rule normalize style of spacing before/after an arrow function's arrow(`=>`).
 
-该该规则规范箭头函数的箭头(`=>`)之前或之后的空格风格。
+该该规则规范化箭头函数的箭头(`=>`)之前或之后的空格风格。
 
 ```js
 /*eslint-env es6*/
@@ -38,7 +40,7 @@ The default configuration is `{ "before": true, "after": true }`.
 
 `true` means there should be **one or more spaces** and `false` means **no spaces**.
 
-`true` 意味着应该有**一个或多个空格**，`false`意味着**没有空格**。
+`true` 意味着应该有 **一个或多个空格**，`false`意味着 **没有空格**。
 
 The following patterns are considered problems if `{ "before": true, "after": true }`.
 
@@ -102,7 +104,7 @@ a =>a;
 
 The following patterns are not considered problems if `{ "before": false, "after": true }`.
 
-如果设置为 `{ "before": false, "after": true }`，以下模式被认为是没有问题的：
+如果设置为`{ "before": false, "after": true }`，以下模式被认为是没有问题的：
 
 ```js
 /*eslint arrow-spacing: [2, { "before": false, "after": true }]*/
@@ -118,7 +120,7 @@ a=> a;
 
 This rule was introduced in ESLint 1.0.0-rc-1.
 
-该规则在ESLint 1.0.0-rc-1 中被引入。
+该规则在 ESLint 1.0.0-rc-1 中被引入。
 
 ## Resources
 

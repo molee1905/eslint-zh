@@ -1,6 +1,8 @@
 ---
 title: Rule spaced-line-comment
 layout: doc
+translator: yanggao40
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -19,7 +21,7 @@ Some style guides require or disallow a whitespace immediately after the initial
 Whitespace after the `//` makes it easier to read text in comments.
 On the other hand, commenting out code is easier without having to put a whitespace right after the `//`.
 
-`//`后的空白使注释的文本更易阅读。另一方面，不用在`//`后加一个空白使注释掉代码更加容易。
+`//`后的空白使注释的文本更易阅读。另一方面，`//`后面不加空白的话，给代码添加注释会变得更容易。
 
 
 ## Rule Details
@@ -69,7 +71,7 @@ var foo = 5;
 
 The following patterns are not considered problems:
 
-下面的模式被认为是正确的：
+下面的模式被认为是没有问题的：
 
 ```js
 // When ["always"]

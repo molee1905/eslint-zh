@@ -1,6 +1,8 @@
 ---
 title: Rule new-parens
 layout: doc
+translator: molee1905
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -10,7 +12,7 @@ layout: doc
 
 JavaScript allows the omission of parentheses when invoking a function via the `new` keyword and the constructor has no arguments. However, some coders believe that omitting the parentheses is inconsistent with the rest of the language and thus makes code less clear.
 
-在Javascript中，如果不给构造函数传参，则可以省略后面的那一对圆括号。然后，一些程序员认为省略圆括号与整体不一致，从而使代码不清晰。
+在 Javascript 中，如果通过`new`关键调用一个函数而且它的构造函数不带参数，则可以省略后面圆括号。然而，一些程序员认为省略圆括号与整体不一致，从而使代码不清晰。
 
 ```js
 var person = new Person;
@@ -46,7 +48,7 @@ var person = new Person();
 
 This rule was introduced in ESLint 0.0.6.
 
-该规则在ESLint 0.0.6 中被引入。
+该规则在 ESLint 0.0.6 中被引入。
 
 ## Resources
 

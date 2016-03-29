@@ -1,16 +1,18 @@
 ---
 title: Rule no-new-object
 layout: doc
+translator: molee1905
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Disallow the use of the Object constructor (no-new-object)
 
-# 禁止使用Object的构造函数 (no-new-object)
+# 禁止使用 Object 的构造函数 (no-new-object)
 
 The `Object` constructor is used to create new generic objects in JavaScript, such as:
 
-在Javascript中`Object`的构造函数用来创建新的通用对象，例如：
+在 Javascript 中`Object`的构造函数用来创建新的通用对象，例如：
 
 ```js
 var myObject = new Object();
@@ -30,13 +32,13 @@ For this reason, many prefer to always use the object literal syntax and never u
 
 While there are no performance differences between the two approaches, the byte savings and conciseness of the object literal form is what has made it the de facto way of creating new objects.
 
-虽然这两种方式没有性能上的差别，对象字面量节省字节、简洁的特点，让它成为事实上的创建新对象的方式。
+虽然这两种方式没有性能上的差别，当对象字面量节省字节、简洁的特点，让它成为事实上的创建新对象的方式。
 
 ## Rule Details
 
 This rule aims to eliminate use of the `Object` constructor. As such, it warns whenever `new Object` is found in code.
 
-该规则旨在消除`Object`构造函数的使用。因此，当在代码中遇到`new Object`，该规则将发出提醒。
+该规则旨在消除`Object`构造函数的使用。因此，当在代码中遇到`new Object`，该规则将发出警告。
 
 The following patterns are considered problems:
 
@@ -77,7 +79,7 @@ If you wish to allow the use of the `Object` constructor, you can safely turn th
 
 This rule was introduced in ESLint 0.0.9.
 
-该规则在ESLint 0.0.9 中被引入。
+该规则在 ESLint 0.0.9 中被引入。
 
 ## Resources
 

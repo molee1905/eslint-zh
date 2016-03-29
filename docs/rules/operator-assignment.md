@@ -1,6 +1,8 @@
 ---
 title: Rule operator-assignment
 layout: doc
+translator: molee1905
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -32,7 +34,7 @@ Javascript 为变量赋值和一些简单的数学运算提供了速记运算符
 
 This rule enforces use of the shorthand assignment operators by requiring them where possible or prohibiting them entirely.
 
-该规则强制简化的赋值操作符在可能或完全禁止它们的地方的使用。
+该规则强制简化的赋值操作符在可能的地方的使用或完全禁止它们。
 
 ## Options
 
@@ -98,7 +100,7 @@ x.y = x.y / a.b;
 
 The following patterns are considered problems and should be written out fully without the shorthand assignments:
 
-以下模式被认为是有问题的，不应该使用它们的简化版：
+以下模式被认为是有问题的，不应该使用它们的简写：
 
 ```js
 /*eslint operator-assignment: [2, "never"]*/
@@ -117,7 +119,7 @@ Use of operator assignment shorthand is a stylistic choice. Leaving this rule tu
 
 This rule was introduced in ESLint 0.10.0.
 
-该规则在ESLint 0.10.0 中被引入。
+该规则在 ESLint 0.10.0 中被引入。
 
 ## Resources
 

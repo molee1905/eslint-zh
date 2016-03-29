@@ -1,6 +1,8 @@
 ---
 title: Rule space-unary-word-ops
 layout: doc
+translator: yanggao40
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -14,7 +16,7 @@ layout: doc
 
 Require spaces following unary word operators.
 
-一元操作符后要求空格
+要求一元操作符后有空格
 
 ## Rule Details
 
@@ -40,7 +42,7 @@ delete(a.b)
 
 The following patterns are not considered problems:
 
-下面的模式被认为是正确的：
+下面的模式被认为是没有问题的：
 
 ```js
 delete a.b

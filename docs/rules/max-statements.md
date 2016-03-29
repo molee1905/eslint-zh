@@ -1,6 +1,8 @@
 ---
 title: Rule max-statements
 layout: doc
+translator: molee1905
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -30,7 +32,7 @@ This rule allows you to configure the maximum number of statements allowed in a 
 
 There is an additional optional argument to ignore top level functions.
 
-有一个额外的可选参数忽略顶层函数。
+有一个额外的可选参数可以忽略顶层函数。
 
 ```json
 "max-statements": [2, 10, {"ignoreTopLevelFunctions": true}]
@@ -42,7 +44,7 @@ There is an additional optional argument to ignore top level functions.
 
 The following patterns are considered problems:
 
-以下模式被认为是没有问题的：
+以下模式被认为是有问题的：
 
 ```js
 /*eslint max-statements: [2, 2]*/  // Maximum of 2 statements.
@@ -94,7 +96,7 @@ function foo() {
 
 This rule was introduced in ESLint 0.0.9.
 
-该规则在ESLint 0.0.9 中被引入。
+该规则在 ESLint 0.0.9 中被引入。
 
 ## Resources
 

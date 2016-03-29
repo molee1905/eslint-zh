@@ -1,12 +1,14 @@
 ---
 title: Rule no-continue
 layout: doc
+translator: molee1905
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Disallow continue (no-continue)
 
-# 禁用continue (no-continue)
+# 禁用 continue (no-continue)
 
 The `continue` statement terminates execution of the statements in the current iteration of the current or labeled loop, and continues execution of the loop with the next iteration. When used incorrectly it makes code less testable, less readable and less maintainable. Structured control flow statements such as `if` should be used instead.
 
@@ -30,7 +32,7 @@ for(i = 0; i < 10; i++) {
 This rule is aimed at preventing the use of `continue` statement.
 As such it warns whenever it sees `continue` statement.
 
-该规则旨在防止`continue`语句的使用。因此，当遇到`continue`语句时，该规则将发出提醒。
+该规则旨在防止`continue`语句的使用。因此，当遇到`continue`语句时，该规则将发出警告。
 
 The following patterns are considered problems:
 
@@ -91,7 +93,7 @@ for(i = 0; i < 10; i++) {
 
 This rule was introduced in ESLint 0.19.0.
 
-该规则在ESLint 0.19.0 被引入。
+该规则在 ESLint 0.19.0 被引入。
 
 ## Resources
 

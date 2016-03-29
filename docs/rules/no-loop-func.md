@@ -1,14 +1,18 @@
 ---
 title: Rule no-loop-func
 layout: doc
+translator: fengnana
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Disallow Functions in Loops (no-loop-func)
 
+# 禁止循环中存在函数 (no-loop-func)
+
 Writing functions within loops tends to result in errors due to the way the function creates a closure around the loop. For example:
 
-在循环中编写函数会导致结果错误，是由于函数在循环中创建了一个闭包。例如：
+在循环中创建函数往往会出现错误，因为这种情况下，函数会创建一个闭包。例如：
 
 ```js
 for (var i = 0; i < 10; i++) {
@@ -20,11 +24,11 @@ for (var i = 0; i < 10; i++) {
 
 In this case, you would expect each function created within the loop to return a different number. In reality, each function returns 10, because that was the last value of `i` in the scope.
 
-在例子中，你预期在循环中创建的各个函数返回不同的数字。实际上，各个函数都返回10，因为那是`i`在作用域中的最后值。
+在这个例子中，你希望在循环中创建的每个函数返回一个不同的数字。实际上，每个函数都返回作用域中`i`的最后一个值 10。
 
 `let` or `const` mitigate this problem.
 
-`let` 或者 `const`缓解此问题。 
+`let` 或 `const`规避了这个问题。 
 
 ```js
 /*eslint-env es6*/
@@ -38,14 +42,14 @@ for (let i = 0; i < 10; i++) {
 
 In this case, each function created within the loop returns a different number as expected.
 
-在此例子中，在循环中创建的各个函数按预期返回不同的数字。
-
+在这个例子中，在循环中创建的每一个函数会如你期望的那样返回一个不同的数字。
 
 ## Rule Details
 
 This error is raised to highlight a piece of code that may not work as you expect it to and could also indicate a misunderstanding of how the language works. Your code may run without any problems if you do not fix this error, but in some situations it could behave unexpectedly.
 
-引入错误来标记出不按你预期执行的代码片段，也能指出对代码如何运行的误解。如果不修复此错误，你的代码运行是不会有任何错误的，但是在一些情况下，它会有意想不到的行为。
+这个错误的出现会导致代码不能如你期望的那样运行，也表明你对 JavaScript 这门语言存在误解。
+如果你不修复这个错误，你的代码可能会正常运行，带在某些情况下，可能会出现意想不到的行为。
 
 The following patterns are considered problems:
 
@@ -117,7 +121,7 @@ for (let i=10; i; i--) {
 
 This rule was introduced in ESLint 0.0.9.
 
-此规则在ESLint 0.0.9中被引入。
+此规则在 ESLint 0.0.9 中被引入。
 
 ## Resources
 

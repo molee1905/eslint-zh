@@ -1,6 +1,8 @@
 ---
 title: Rule arrow-parens
 layout: doc
+translator: molee1905
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -11,7 +13,7 @@ layout: doc
 Arrow functions can omit parentheses when they have exactly one parameter. In all other cases the parameter(s) must
 be wrapped in parentheses. This rule enforces the consistent use of parentheses in arrow functions.
 
-箭头函数体只有一个参数时，可以省略圆括号。其他任何情况，参数都应被圆括号括起来。该规则强制箭头函数中圆括号的使用的一致性。
+箭头函数体只有一个参数时，可以省略圆括号。其它任何情况，参数都应被圆括号括起来。该规则强制箭头函数中圆括号的使用的一致性。
 
 ## Rule Details
 
@@ -32,8 +34,7 @@ a => {}
 Following this style will help you find arrow functions (`=>`) which may be mistakenly included in a condition
 when a comparison such as `>=` was the intent.
 
-跟随此风格，将帮助你找到本想在条件语句中使用比较语句比如`>=`，却将箭头函数 (`=>`)错误地包含进来这样情况。
-
+这种风格将帮助你找到被错误地包含到条件语句中的箭头函数(`=>`)，其本意是想使用比较语句的，比如`>=`
 
 ```js
 /*eslint-env es6*/
@@ -49,7 +50,7 @@ if (a >= 2) {
 
 The rule can also be configured to discourage the use of parens when they are not required:
 
-可以配置该规则在不需要使用圆括号时，阻止圆括号的使用。
+该规则可以配置在不需要使用圆括号时，阻止圆括号的使用。
 
 ```js
 /*eslint-env es6*/
@@ -93,7 +94,7 @@ a(foo => { if (true) {}; });
 
 The following patterns are not considered problems:
 
-以下模式被认为是有问题的：
+以下模式被认为是没有问题的：
 
 ```js
 /*eslint arrow-parens: [2, "always"]*/
@@ -164,7 +165,7 @@ var f = a => b ? c: d;
 
 This should be rewritten like so:
 
-应该被重新为这样：
+应该被重新为：
 
 ```js
 /*eslint-env es6*/
@@ -216,7 +217,7 @@ a.then(foo => { if (true) {}; });
 
 This rule was introduced in ESLint 1.0.0-rc-1.
 
-该规则在ESLint 1.0.0-rc-1 中被引入。
+该规则在 ESLint 1.0.0-rc-1 中被引入。
 
 ## Resources
 

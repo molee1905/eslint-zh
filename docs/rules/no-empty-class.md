@@ -1,6 +1,8 @@
 ---
 title: Rule no-empty-class
 layout: doc
+translator: yanggao40
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -14,7 +16,7 @@ layout: doc
 
 Empty character classes in regular expressions do not match anything and can result in code that may not work as intended.
 
-空字符类在正则表达式中什么都不会匹配并且会导致代码不会按照预期执行。
+在正则表达式中，空字符类不会匹配任何东西，并且可能会导致代码不会按照预期工作。
 
 ```js
 var foo = /^abc[]/;
@@ -24,7 +26,7 @@ var foo = /^abc[]/;
 
 This rule is aimed at highlighting possible typos and unexpected behavior in regular expressions which may arise from the use of empty character classes.
 
-此规则旨在在正则表达式中高亮显示由空字符类引起的可能的拼写错误和异常的行为。
+此规则目的在于高亮显示在正则表达式中由空字符类引起的可能的拼写错误和异常的行为。
 
 The following patterns are considered problems:
 
@@ -40,7 +42,7 @@ bar.match(/^abc[]/);
 
 The following patterns are not considered problems:
 
-下面的模式被认为是正确的：
+下面的模式被认为是没有问题的：
 
 ```js
 var foo = /^abc/;

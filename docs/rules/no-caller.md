@@ -1,17 +1,18 @@
 ---
 title: Rule no-caller
 layout: doc
+translator: fengnana
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Disallow Use of caller/callee (no-caller)
 
-# 禁用caller或callee (no-caller)
+# 禁用 caller 或 callee (no-caller)
 
 The use of `arguments.caller` and `arguments.callee` make several code optimizations impossible. They have been deprecated in future versions of JavaScript and their use is forbidden in ECMAScript 5 while in strict mode.
 
-`arguments.caller` 和 `arguments.callee`的使用使一些代码优化变得不可能。在JavaScript的未来版本中他们已被弃用，同时在ECMAScript 5的严格模式下，也是被禁用的。
-
+`arguments.caller` 和 `arguments.callee`的使用使一些代码优化变得不可能。在 JavaScript 的未来版本中它们已被弃用，同时在 ECMAScript 5 的严格模式下，它们也是被禁用的。
 
 ```js
 function foo() {
@@ -23,7 +24,7 @@ function foo() {
 
 This rule is aimed at discouraging the use of deprecated and sub-optimal code, but disallowing the use of `arguments.caller` and `arguments.callee`. As such, it will warn when `arguments.caller` and `arguments.callee` are used.
 
-此规则目的在于，阻止使用已弃用的代码和次优的代码，而且禁止使用`arguments.caller` 和 `arguments.callee`。因此，当`arguments.caller` 和 `arguments.callee`被使用时会给出警告。
+此规则目的在于阻止使用已弃用的代码和次优的代码，而且禁止使用`arguments.caller` 和 `arguments.callee`。因此，当`arguments.caller` 和 `arguments.callee`被使用时，该规则将会发出警告。
 
 The following patterns are considered problems:
 
@@ -69,7 +70,7 @@ function foo(n) {
 
 This rule was introduced in ESLint 0.0.6.
 
-此规则在ESLint 0.0.6中被引入。
+此规则在 ESLint 0.0.6 中被引入。
 
 ## Resources
 

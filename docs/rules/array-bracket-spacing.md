@@ -5,6 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Disallow or enforce spaces inside of brackets. (array-bracket-spacing)
+
 # 禁止或强制在括号内使用空格。 (array-bracket-spacing)
 
 A number of style guides require or disallow spaces between array brackets. This rule

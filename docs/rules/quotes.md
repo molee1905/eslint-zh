@@ -1,6 +1,8 @@
 ---
 title: Rule quotes
 layout: doc
+translator: molee1905
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -10,7 +12,7 @@ layout: doc
 
 JavaScript allows you to define strings in one of three ways: double quotes, single quotes, and backticks (as of ECMAScript 6). For example:
 
-Javascript允许你用三种方式定义字符串：双引号，单引号和反勾号(在ECMAScript 6中)。例如：
+Javascript 允许你用三种方式定义字符串：双引号，单引号和反勾号(在 ECMAScript 6 中)。例如：
 
 ```js
 /*eslint-env es6*/
@@ -22,7 +24,7 @@ var backtick = `backtick`;    // ES6 only
 
 Each of these lines creates a string and, in some cases, can be used interchangeably. The choice of how to define strings in a codebase is a stylistic one outside of template literals (which allow embedded of expressions to be interpreted).
 
-每一行创建了一个字符串，在某些情况下，可替换使用。在代码库中，如何定义字符串是个模板文本(允许嵌入的表达式被解释执行)之外的格式上的问题。
+每一行创建了一个字符串，在某些情况下，可替换使用。在代码库中，如何定义字符串是模板文本(允许嵌入的表达式被解释执行)之外的风格上的问题。
 
 Many codebases require strings to be defined in a consistent manner.
 
@@ -36,20 +38,23 @@ Many codebases require strings to be defined in a consistent manner.
 
 This rule is aimed at ensuring consistency of string quotes and as such will report a problem when an inconsistent style is found.
 
-该规则知道保证字符串引号的一致性，因此，如果发现不一致的风格，该规则将会报告问题。
+该规则旨在保证字符串引号的一致性，因此，如果发现不一致的风格，该规则将会报告问题。
 
 The rule configuration takes up to two options:
 
 该规则配置有两个可选项。
 
 1. The first option is `"double"`, `"single"` or `"backtick"` for double-quotes, single-quotes or backticks respectively. The default is `"double"`.
-1. 第一个选项是`"double"`，`"single"` 或 `"backtick"`对应双引号，单引号或反勾号。默认是`"double"`。
+
+1. 第一个选项是`"double"`，`"single"` 或 `"backtick"`分别对应双引号，单引号或反勾号。默认是`"double"`。
+
 2. The second option is the `"avoid-escape"` flag. When using `"avoid-escape"`, this rule will not report a problem when a string is using single-quotes or double-quotes so long as the string contains a quote that would have to be escaped otherwise. For example, if you specify `"double"` and `"avoid-escape"`, the string `'He said, "hi!"'` is not considered a problem because using double quotes for that string would require escaping the double quotes inside of the string. This option is off by default.
-2. 第二个选项是`"avoid-escape"`标记。当使用`"avoid-escape"`时，如果一个字符串使用了单引号或双引号，只要这个字符串包含需要转义的引号，该规则就不会报告问题。例如，如果你指定`"double"` 和 `"avoid-escape"`，字符串`'He said, "hi!"'`不被认为是个问题，因为，该字符串使用双引号要求转义该字符串内的双引号。该选项默认是关闭的。
+
+2. 第二个选项是`"avoid-escape"`。当使用`"avoid-escape"`时，如果一个字符串使用了单引号或双引号，只要这个字符串包含需要转义的引号，该规则就不会报告问题。例如，如果你指定`"double"` 和 `"avoid-escape"`，字符串`'He said, "hi!"'`不被认为是个问题，因为，该字符串使用双引号要求将该字符串内的双引号进行转义。该选项默认是关闭的。
 
 When using `"single"` or `"double"`, template literals that don't contain a substitution, don't contain a line break and aren't tagged templates, are flagged as problems, even with the `"avoid-escape"` option.
 
-当使用`"single"` 或 `"double"`，模板字面量不包含一个替代，不包含一个换行符和不是被标记的模板，都将被标记为是问题，即使有`"avoid-escape"`选项。
+当使用`"single"` 或 `"double"`，不包含一个替代文本、换行符和不被标记的模板的模板字面量，都被认为是问题，即使有`"avoid-escape"`选项。
 
 Configuration looks like this:
 
@@ -156,13 +161,13 @@ var double = "a string containing `backtick` quotes"
 
 If you do not need consistency in your string styles, you can safely disable this rule.
 
-如果你不需要字符串风格的一致性，可以关闭此规则。
+如果你不需要字符串风格保持一致，可以关闭此规则。
 
 ## Version
 
 This rule was introduced in ESLint 0.0.7.
 
-该规则在ESLint 0.0.7 被引入。
+该规则在 ESLint 0.0.7 被引入。
 
 ## Resources
 
