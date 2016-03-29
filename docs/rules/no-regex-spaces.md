@@ -1,6 +1,8 @@
 ---
 title: Rule no-regex-spaces
 layout: doc
+translator: molee1905
+proofreader: yanggao40
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -10,7 +12,7 @@ layout: doc
 
 Regular expressions can be very complex and difficult to understand, which is why it's important to keep them as simple as possible in order to avoid mistakes. One of the more error-prone things you can do with a regular expression is to use more than one space, such as:
 
-正则表达式可以很复杂，很难理解，这就是为什么要保持它们尽可能的简单，以避免错误。你在使用正则表达式时最容易出错的是使用了不止一个空格，例如：
+正则表达式可以很复杂和难以理解，这就是为什么要保持它们尽可能的简单，以避免错误。你在使用正则表达式时最容易出错的是使用了不止一个空格，例如：
 
 ```js
 var re = /foo   bar/;
@@ -26,7 +28,7 @@ var re = /foo {3}bar/;
 
 Now it is very clear that three spaces are expected to be matched.
 
-现在非常清楚，需要匹配3个空格。
+现在非常清楚需要匹配3个空格。
 
 ## Rule Details
 
@@ -60,7 +62,7 @@ var re = new RegExp("foo   bar");
 
 If you want to allow multiple spaces in a regular expression, then you can safely turn this rule off.
 
-如果你允许多个空格出现在正则表达式中，你可以关闭此规则。
+如果你允许多个空格出现在正则表达式中，你可以安全地关闭此规则。
 
 ## Further Reading
 
