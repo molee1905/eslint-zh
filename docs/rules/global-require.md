@@ -1,6 +1,8 @@
 ---
 title: Rule global-require
 layout: doc
+translator: ILFront-End
+proofreader: sunshiner
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -19,7 +21,7 @@ var fs = require("fs");
 
 While `require()` may be called anywhere in code, some style guides prescribe that it should be called only in the top level of a module to make it easier to identify dependencies. For instance, it's arguably harder to identify dependencies when they are deeply nested inside of functions and other statements:
 
-然而`require()`可以在代码的任何地方被调用，一些编码规范规定`require()`被调用仅仅在模块范围内的头部，使其更加易于识别依赖。举个例子：这很难识别依赖，当它在多层函数嵌套里和其他申明里。
+然而`require()`可以在代码的任何地方被调用，一些编码规范规定必须在模块的最外层作用域调用`require()`函数以便于于识别依赖。举个例子：下面的代码里在函数里面调用`require()`方法，这样就不便于识别依赖。
 
 ```js
 function foo() {
@@ -32,7 +34,7 @@ function foo() {
 
 Since `require()` does a synchronous load, it can cause performance problems when used in other locations.
 
-因为`require()`是同步加载的，他能导致性能问题，当在其他位置使用。
+因为`require()`是同步加载的，当在其他位置使用时会导致性能问题。
 
 Further, ES6 modules mandate that `import` and `export` statements can only occur in the top level of the module's body.
 

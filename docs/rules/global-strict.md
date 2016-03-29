@@ -1,6 +1,8 @@
 ---
 title: Rule global-strict
 layout: doc
+translator: yanggao40
+proofreader: sunshiner
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -14,7 +16,7 @@ layout: doc
 
 Strict mode is enabled by using the following pragma in your code:
 
-在代码中使用加入如下语句严格模式将被启用：
+在代码中使用如下语句后会开启严格模式：
 
 ```js
 "use strict";
@@ -22,7 +24,7 @@ Strict mode is enabled by using the following pragma in your code:
 
 When used globally, as in this example, the strict mode pragma applies to all code within a single file. This can be dangerous if you concatenate scripts together before serving them to a browser. For instance, if you have a file running in strict mode and you concatenate that file with jQuery, the strict mode now also applies to jQuery and may cause errors.
 
-像本例一样使用严格模式时, 此严格模式语句将在当前文件中的所有代码中都起着作用。如果在将脚本提供到浏览器之前把它们连接在一起是不安全的。例如，如果有一个文件在严格模式下运行，并将此文件与jQuery连接在一起，严格模式也将应用到jQuery中，这样可能引起错误。
+当使用全局严格模式时, 严格模式将作用域当前文件中的所有代码。如果从服务器发送到浏览器之前将代码拼接可能会出现问题。例如，如果有一个文件在严格模式下运行，并将此文件与jQuery连接在一起，严格模式也将应用到jQuery中，这样可能引起错误。
 
 However, if you're using Node.js, you may want to turn strict mode on globally. Files are typically not concatenated together in Node.js projects and therefore the risk of applying strict mode accidentally is minimal. Further, since every file in Node.js has its own scope, global strict mode only effects the single file in which it is placed.
 
@@ -48,7 +50,7 @@ function foo() {
 
 The following patterns apply strict mode only to functions so are valid with the `"never"` option but are problems with the `"always"` option.
 
-下面的模式严格模式仅仅应用在函数内部，所以使用"never"选项是有效的，但是使用"always"选项就会存在问题。
+下面的代码严格模式仅仅应用在函数内部，所以使用"never"选项是有效的，但是使用"always"选项就会存在问题。
 
 ```js
 function foo() {

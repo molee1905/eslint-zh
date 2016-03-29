@@ -1,6 +1,8 @@
 ---
 title: Rule handle-callback-err
 layout: doc
+translator: ILFront-End
+proofreader: sunshiner
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -12,7 +14,7 @@ In node, a common pattern for dealing with asynchronous behavior is called the c
 This pattern expects an `Error` object or `null` as the first argument of the callback.
 Forgetting to handle these errors can lead to some really strange behavior in your application.
 
-在node中，一普通的模式为了处理异步行为被叫做回调模式。这个模式期望一个`Error`对象和`null`作为回调的第一个参数。忘记处理这个错误能导致奇怪的行为在你的应用中。
+在node中，最普遍的处理异步行为是回调模式。这个模式期望一个`Error`对象或`null`作为回调的第一个参数。如果忘记处理这些错误会在应用导致错误。
 
 ```js
 function loadData (err, data) {
@@ -25,7 +27,7 @@ function loadData (err, data) {
 This rule expects that when you're using the callback pattern in node you'll handle the error and
 requires that you specify the name of your error object. The name of the argument will default to `err`.
 
-此规则期待当你在node中使用回调形式，你将处理这个错误并要求指定错误对象的名称。参数名称默认是`err`。
+此规则要求在node中使用回调时要处理错误，并要求指定错误对象的名称。参数名称默认是`err`。
 
 The following are considered problems:
 
@@ -110,7 +112,7 @@ Examples for valid configurations:
 
 3. Rule configured to warn if an unhandled error is detected where the name of the error variable matches any string that contains `err` or `Err` (e. g. `err`, `error`, `anyError`, `some_err` will match).
 
-1. 规则配置如下将报警告，如果发现一个未处理错误，错误变量名匹配中包含`err`或则`Err`。
+1. 规则配置如下，如果发现未处理的错误的命名包含`err`或则`Err`将会警告。
 
     ```json
     // ...
@@ -123,7 +125,7 @@ Examples for valid configurations:
 There are cases where it may be safe for your application to ignore errors, however only ignore errors if you are
 confident that some other form of monitoring will help you catch the problem.
 
-有些情况可能是安全为你的应用程序去忽略错误，也就仅仅可忽略此错误，如果你相信一些其他形式的监督将帮助你发现问题。
+如果一些情况下忽略错误处理并不影响应用的安全，并且你相信一些其他形式的监督将帮助你发现问题，这时可以不使用此规则。
 
 ## Further Reading
 
