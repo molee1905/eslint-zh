@@ -1,6 +1,8 @@
 ---
 title: Rule no-new-wrappers
 layout: doc
+translator: fengnana
+proofreader: yanggao40
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -10,7 +12,7 @@ layout: doc
 
 There are three primitive types in JavaScript that have wrapper objects: string, number, and boolean. These are represented by the constructors `String`, `Number`, and `Boolean`, respectively. The primitive wrapper types are used whenever one of these primitive values is read, providing them with object-like capabilities such as methods. Behind the scenes, an object of the associated wrapper type is created and then destroyed, which is why you can call methods on primitive values, such as:
 
-在JavaScript中有3种原始类型包装对象：字符，数字，和布尔值。它们所代表的构造器分别为`String`, `Number`, and `Boolean`。使用原始包装器类型只要读取一个原始值,为他们提供对象等功能的方法。在幕后,相关包装器类型的一个对象被创建,然后毁灭,这就是为什么你可以在原始值上调用方法,例如：
+在JavaScript中有3种原始类型包装对象：字符串，数字，和布尔值。它们所代表的构造器分别为`String`, `Number`, and `Boolean`。当读取原始类型的值或者为它们提供如方法等类似对象的功能时，原始包装类型将被使用。在幕后,相关包装器类型的一个对象被创建,然后销毁,这就是为什么你可以在原始值上调用方法,例如：
 
 ```js
 var text = "Hello world".substring(2);
@@ -18,7 +20,7 @@ var text = "Hello world".substring(2);
 
 Behind the scenes in this example, a `String` object is constructed. The `substring()` method exists on `String.prototype` and so is accessible to the string instance.
 
-在本例中,一个`String`对象。`substring()`方法存在于`String.prototype`中所以可以访问字符实例。
+在本例中幕后,一个`String`对象被创建。`substring()`方法存在于`String.prototype`中所以可以访问字符实例。
 
 It's also possible to manually create a new wrapper instance:
 
@@ -49,13 +51,17 @@ if (booleanObject) {    // all objects are truthy!
 
 The first problem is that primitive wrapper objects are, in fact, objects. That means `typeof` will return `"object"` instead of `"string"`, `"number"`, or `"boolean"`. The second problem comes with boolean objects. Every object is truthy, that means an instance of `Boolean` always resolves to `true` even when its actual value is `false`.
 
+原始包装类型的第一个问题是，实际上是对象。这意味着`typeod`将返回 `"object"`而不是`"string"`, `"number"`, 或者`"boolean"`。第二个问题伴随着布尔型对象。每个对象都是真，这以为着每个`Boolean` 的实例都会返回`true`，甚至它们实际的值是 `false`。
+
 For these reasons, it's considered a best practice to avoid using primitive wrapper types with `new`.
+
+由于这些原因，最佳实践认为使用 `new`来避免使用原始包装类型。
 
 ## Rule Details
 
 This rule aims to eliminate the use of `String`, `Number`, and `Boolean` with the `new` operator. As such, it warns whenever it sees `new String`, `new Number`, or `new Boolean`.
 
-此规则目的在于消除使用`new`操作符操作`String`, `Number`, 和 `Boolean`。因此,它会给出警告,每当它遇到`new String`, `new Number`, 或者 `new Boolean`。
+此规则目的在于消除通过`new`操作符使用`String`, `Number`, 和 `Boolean`。因此,每当它遇到`new String`, `new Number`, 或者 `new Boolean`都会给出警告。
 
 The following patterns are considered problems:
 
