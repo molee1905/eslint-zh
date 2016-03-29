@@ -1,6 +1,8 @@
 ---
 title: Rule eqeqeq
 layout: doc
+translator: fengnana
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -10,12 +12,12 @@ layout: doc
 
 It is considered good practice to use the type-safe equality operators `===` and `!==` instead of their regular counterparts `==` and `!=`.
 
-被认为是最好的实践 使用类型安全的相等运算符`===` 和 `!==` 代替他们的常规同行`==` 和 `!=`。
+使用类型安全的`===`和`!==`操作符代替`==`和`!=`操作符是一个很好的实践。
 
 The reason for this is that `==` and `!=` do type coercion which follows the rather obscure [Abstract Equality Comparison Algorithm](http://www.ecma-international.org/ecma-262/5.1/#sec-11.9.3).
 For instance, the following statements are all considered `true`:
 
-这样做的原因是，`==` 和 `!=` 遵循默默无闻的抽象平等比较算法做类型强制。例如，以下语句被认为是`true`。
+这样做的原因是，`==` 和 `!=` 遵循[Abstract Equality Comparison Algorithm](http://www.ecma-international.org/ecma-262/5.1/#sec-11.9.3)作强制转型。例如，以下语句被认为是`true`。
 
 * `[] == false`
 * `[] == ![]`
@@ -23,17 +25,17 @@ For instance, the following statements are all considered `true`:
 
 If one of those occurs in an innocent-looking statement such as `a == b` the actual problem is very difficult to spot.
 
-这些发生在一个类似`a == b`这样看起来无害的声明中时，实际问题是很难被识别的。
+如果它们中的任何一个出现在一个看上去无害的语句中，比如`a == b`，那么实际的问题是很难被发现的。
 
 ## Rule Details
 
 This rule is aimed at eliminating the type-unsafe equality operators.
 
-此规则目的在于，消除类型不安全的相等运算。
+该规则旨在消除非类型安全的相等操作符。
 
 Examples of **incorrect** code for this rule:
 
-以下模式被认为是有问题的：
+**错误**代码示例：
 
 ```js
 /* eslint eqeqeq: 2 */
@@ -51,15 +53,23 @@ if (obj.getStuff() != undefined) { }
 
 This option enforces the use of `===` and `!==` except for these cases:
 
-此选项，强制使用`===` 和 `!==`除了以下情况：
+该选项强制使用`===` 和 `!==`，以下情况除外：
 
 * Comparing two literal values
+
+* 比较两个字面量的值
+
 * Evaluating the value of `typeof`
+
+* 比较`typeof`的值
+
 * Comparing against `null`
+
+* 与`null`进行比较
 
 You can specify this option using the following configuration:
 
-你可以通过如下配置指定选项：
+你可以通过下面的配置指定该选项：
 
 ```json
 "eqeqeq": [2, "smart"]
@@ -101,11 +111,11 @@ value == undefined
 
 This option will enforce `===` and `!==` in your code with one exception - it permits comparing to `null` to check for `null` or `undefined` in a single expression.
 
-此选项在你的代码中会强制要求`===` 和 `!==`，有一例外，它允许`null`和`null`或者`undefined`在表达式中做比较。
+该选项会强制要求在你的代码中使用`===` 和 `!==`，有一个例外，它允许`null`和`null`或者`undefined`在表达式中做比较。
 
 You can specify this option using the following configuration:
 
-你可以通过如下配置指定选项。
+你可以通过下面的配置指定该选项：
 
 ```json
 "eqeqeq": [2, "allow-null"]
@@ -123,7 +133,7 @@ foo == null
 
 The following patterns are considered problems with "allow-null":
 
-如果设置了"allow-null"，以下模式被认为是有问题的：
+以下模式在"allow-null"下被认为是有问题的：
 
 ```js
 /* eslint eqeqeq: [2, "allow-null"] */
@@ -139,13 +149,13 @@ foo == undefined
 
 If you don't want to enforce a style for using equality operators, then it's safe to disable this rule.
 
-如果你不想强制使用相等运算的类型，可以安全的禁用此规则。
+如果你不想强制使用相等操作符，可以禁用此规则。
 
 ## Version
 
 This rule was introduced in ESLint 0.0.2.
 
-此规则在ESLint 0.0.2中被引入。
+此规则在 ESLint 0.0.2 中被引入。
 
 ## Resources
 
