@@ -1,16 +1,18 @@
 ---
 title: Rule no-process-exit
 layout: doc
+translator: ILFront-End
+proofreader: yanggao40
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Disallow process.exit() (no-process-exit)
 
-# 不允许process.exit() (no-process-exit)
+# 禁止process.exit() (no-process-exit)
 
 The `process.exit()` method in Node.js is used to immediately stop the Node.js process and exit. This is a dangerous operation because it can occur in any method at any point in time, potentially stopping a Node.js application completely when an error occurs. For example:
 
-`process.exit()`方法在Node.js中被用于立即终止Node.js进程且退出。这是非常危险的操作，因为他能在任何方法任何时候出现，当错误出现时阻止Node.js应用。如：
+`process.exit()`方法在Node.js中被用于立即终止Node.js进程且退出。这是非常危险的操作，因为他能在任何方法任何时候出现，当发生错误时可能完全停止Node.js应用。如：
 
 ```js
 if (somethingBadHappened) {
@@ -21,7 +23,7 @@ if (somethingBadHappened) {
 
 This code could appear in any module and will stop the entire application when `somethingBadHappened` is truthy. This doesn't give the application any chance to respond to the error. It's usually better to throw an error and allow the application to handle it appropriately:
 
-这段代码能出现在任何模块中，当`somethingBadHappened`为true时，将阻止整个应用。不给应用任何反应错误的机会。通常较好地做法是抛出一个错误，允许应用妥善处理这个错误。
+这段代码能出现在任何模块中，当`somethingBadHappened`为true时，将停止整个应用。不给应用任何相应错误的机会。通常较好地做法是抛出一个错误，允许应用妥善处理这个错误。
 
 ```js
 if (somethingBadHappened) {
@@ -31,7 +33,7 @@ if (somethingBadHappened) {
 
 By throwing an error in this way, other parts of the application have an opportunity to handle the error rather than stopping the application altogether. If the error bubbles all the way up to the process without being handled, then the process will exit and a non-zero exit code will returned, so the end result is the same.
 
-在这里通过抛出错误，应用程序的其他部分有机会处理错误，而不是全部终止程序。如果这个错误向上回退到进程顶部而未被处理，进程将退出并返回异常退出的错误码，所以最终的结果是一样的。
+以这种方式抛出错误，应用程序的其他部分有机会处理错误，而不是全部终止程序。如果这个错误向上回退到进程顶部而未被处理，进程将退出并返回异常退出的错误码，所以最终的结果是一样的。
 
 ## Rule Details
 
@@ -65,7 +67,7 @@ var exit = process.exit;
 
 There may be a part of a Node.js application that is responsible for determining the correct exit code to return upon exiting. In that case, you should turn this rule off to allow proper handling of the exit code.
 
-这可能是Node.js应用的一部分，负责根据退出，决定出正确的退出码，并返回退出码。在这种情况下，你应该关闭规则来允许适当处理退出码。
+这可能是Node.js应用的一部分，负责正确的退出码并回退的决策。在这种情况下，你应该关闭规则来允许适当处理退出码。
 
 ## Version
 
