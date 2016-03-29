@@ -86,7 +86,6 @@ The most important method on `linter` is `verify()`, which initiates linting of 
 `linter`最重要的方法为`verify()`，它对给的的文本的lint进行初始化。这个方法接受4个参数：
 
 * `code` - the source code to lint (a string or instance of `SourceCode`).
-<<<<<<< HEAD
 * `code`- 要lint的源代码（字符串或者`SourceCode`的实例）。
 * `config` - a configuration object that is equivalent to an eslintrc file.
 * `config` - 一个配置对象，相当于一个eslintrc文件。
@@ -100,7 +99,6 @@ The most important method on `linter` is `verify()`, which initiates linting of 
     * `allowInLinrConfig` - (可选的)设置为`false`来从改变 eslint 规则禁用行内注释。
 * `saveState` - (optional) set to true to maintain the internal state of `linter` after linting (mostly used for testing purposes)
 * `saveState` - (可选的)设置为true来保持lint后`linter`的内部状态（主要用来测试）。
-
 
 You can call `verify()` like this:
 
@@ -457,7 +455,6 @@ var isIgnored = cli.isPathIgnored("foo/bar.js");
 
 Retrieves a formatter, which you can then use to format a report object. The argument is either the name of a built-in formatter:
 
-<<<<<<< HEAD
 获取一个格式化工具，可以用它格式报告对象。参数或者是内建格式化工具的名字：
 
 * "[checkstyle](./user-guide/formatters#checkstyle)"

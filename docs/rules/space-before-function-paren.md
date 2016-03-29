@@ -50,13 +50,9 @@ This rule takes one argument. If it is `"always"` then all named functions and a
 
 The default configuration is `"always"`.
 
-<<<<<<< HEAD
 默认配置为`"always"`。
 
-### `"always"`
-=======
 ### "always"
->>>>>>> eslint/master
 
 The following patterns are considered problems:
 
