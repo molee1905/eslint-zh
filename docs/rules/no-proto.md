@@ -1,6 +1,8 @@
 ---
 title: Rule no-proto
 layout: doc
+translator: fengnana
+proofreader: yanggao40
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -10,13 +12,13 @@ layout: doc
 
 `__proto__` property has been deprecated as of ECMAScript 3.1 and shouldn't be used in the code.Use `getPrototypeOf` method instead.
 
-`__proto__`属性在ECMAScript 3.1中已经被弃用并且不会在代码中被使用。使用`getPrototypeOf`方法替代`__proto__`。
+`__proto__`属性在ECMAScript 3.1中已经被弃用并且不应在代码中被使用。使用`getPrototypeOf`方法替代`__proto__`。
 
 ## Rule Details
 
 When an object is created `__proto__` is set to the original prototype property of the object’s constructor function. `getPrototypeOf` is the preferred method of getting "the prototype".
 
-当一个对象被创建时，`__proto__`被设置为对象的原始原型属性构造方法。`getPrototypeOf`是获取"the prototype"的首选方法。
+当一个对象被创建，`__proto__`被设置为对象构造方法的原始原型属性。`getPrototypeOf`是获取"the prototype"的首选方法。
 
 The following patterns are considered problems:
 
