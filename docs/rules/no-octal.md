@@ -1,6 +1,8 @@
 ---
 title: Rule no-octal
 layout: doc
+translator: fengnana
+proofreader: yanggao40
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -18,7 +20,7 @@ var num = 071;      // 57
 
 The leading zero to identify an octal literal has been a source of confusion and error in JavaScript. ECMAScript 5 deprecates the use of octal numeric literals in JavaScript and octal literals cause syntax errors in strict mode.
 
-在JavaScript中，前导数字0来识别八进制字面量已经成为困惑和错误。ECMAScript 5弃用了八进制字面量在JavaScript中的使用并且八进制字面量在严格模式下会导致语法错误。
+在JavaScript中，前导数字0来识别八进制字面量已经成为困惑和错误。ECMAScript 5弃用了在JavaScript中使用八进制字面量，并且八进制字面量在严格模式下会导致语法错误。
 
 It's therefore recommended to avoid using octal literals in JavaScript code.
 
@@ -28,7 +30,7 @@ It's therefore recommended to avoid using octal literals in JavaScript code.
 
 The rule is aimed at preventing the use of a deprecated JavaScript feature, the use of octal literals. As such it will warn whenever an octal literal is found.
 
-此规则目的在于防止使用弃用的JavaScript特性，使用八进制字面量。因此它会随时给出警告当八进制字面量被发现时。
+此规则目旨在防止使用弃用的JavaScript特性，使用八进制字面量。因此当发现八进制字面量时会发出警告。
 
 The following patterns are considered problems:
 
