@@ -1,6 +1,8 @@
 ---
 title: Rule use-isnan
 layout: doc
+translator: molee1905
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -10,7 +12,7 @@ layout: doc
 
 In JavaScript, `NaN` is a special value of the `Number` type. It's used to represent any of the "not-a-number" values represented by the double-precision 64-bit format as specified by the IEEE Standard for Binary Floating-Point Arithmetic. `NaN` has the unique property of not being equal to anything, including itself. That is to say, that the condition `NaN !== NaN` evaluates to true.
 
-在Javascript中，`NaN`是`Number`类型的一个特殊的值。It's used to represent any of the "not-a-number" values represented by the double-precision 64-bit format as specified by the IEEE Standard for Binary Floating-Point Arithmetic。`NaN`是唯一一个不等于任何东西都不相等的属性，包括它本身。这就是说，`NaN !== NaN`等于true。
+在 Javascript 中，`NaN`是`Number`类型的一个特殊的值。它是用来表示任何“不是一个数字”的值。`NaN`有一个唯一的特性就是不等于任何东西，包括它本身。这就是说，`NaN !== NaN` 等于 true。
 
 ## Rule Details
 
@@ -58,7 +60,7 @@ if (isNaN(NaN)) {
 
 This rule was introduced in ESLint 0.0.6.
 
-该规则在ESLint 0.0.6中被引入。
+该规则在 ESLint 0.0.6 中被引入。
 
 ## Resources
 

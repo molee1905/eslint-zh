@@ -1,6 +1,8 @@
 ---
 title: Rule no-multi-str
 layout: doc
+translator: fengnana
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -10,7 +12,7 @@ layout: doc
 
 It's possible to create multiline strings in JavaScript by using a slash before a newline, such as:
 
-在JavaScript中，在新行前面使用斜线可以创建多行字符串，例如：
+在 JavaScript 中，可以在新行之前使用斜线创建多行字符串，例如：
 
 ```js
 var x = "Line 1 \
@@ -19,26 +21,27 @@ var x = "Line 1 \
 
 Some consider this to be a bad practice as it was an undocumented feature of JavaScript that was only formalized later.
 
-有些人认为这是一个不好的实践，正如后来序列化之后，他是JavaScript中一个无法证实的使用。
+一些人认为这不是一个好的做法，因为它是 JavaScript 中的一个非正式的特性。
 
 ## Rule Details
 
 This rule is aimed at preventing the use of multiline strings.
 
-此规则目的在于防止多行字符串的使用：
+该规则是为了防止多行字符串的使用。
 
 The following generates a warning:
 
-如下操作将生成警告：
+下面的模式会发出一个警告：
 
 ```js
-/*eslint no-multi-str: 2*/ var x = "Line 1 \
+/*eslint no-multi-str: 2*/ 
+var x = "Line 1 \
          Line 2";
 ```
 
 The following does not generate a warning:
 
-如下不会生成警告：
+下面的模式不会发出警告：
 
 ```js
 /*eslint no-multi-str: 2*/
@@ -46,7 +49,6 @@ The following does not generate a warning:
 var x = "Line 1\n" +
         "Line 2";
 ```
-
 
 
 ## Further Reading
@@ -57,7 +59,7 @@ var x = "Line 1\n" +
 
 This rule was introduced in ESLint 0.0.9.
 
-此规则在ESLint 0.0.9中被引入。
+此规则在 ESLint 0.0.9 中被引入。
 
 ## Resources
 

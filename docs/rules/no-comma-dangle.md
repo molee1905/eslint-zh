@@ -1,6 +1,8 @@
 ---
 title: Rule no-comma-dangle
 layout: doc
+translator: yanggao40
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -14,7 +16,7 @@ layout: doc
 
 Trailing commas in object literals are valid according to the ECMAScript 5 (and ECMAScript 3!) spec, however IE8 (when not in IE8 document mode) and below will throw an error when it encounters trailing commas in JavaScript.
 
-根据ECMAScript 5 (and ECMAScript 3!)规则，尾部逗号在对象字面量中是有效的，但是在IE8（当不是在IE8文档模式中）及以下在JavaScript遇到尾部逗号会抛出错误。
+根据 ECMAScript 5 (和 ECMAScript 3!)规范，对象字面量中的尾部逗号是有效的，但是IE8（非 IE8 文档模式）及以下版本，在 JavaScript 中遇到尾部逗号会抛出错误。
 
 ```js
 var foo = {
@@ -27,11 +29,11 @@ var foo = {
 
 This rule is aimed at detecting trailing commas in object literals. As such, it will warn whenever it encounters a trailing comma in an object literal.
 
-该规则旨在在对象字面量中检查尾部逗号。这样，无论何时在对象字面量中遇到尾部逗号都会警告。
+该规则旨在检测在对象字面量中的尾部逗号。这样，无论何时在对象字面量中遇到尾部逗号，该规则将会发出警告。
 
 The following are considered problems:
 
-下面被认为是有问题的：
+以下模式被认为是有问题的：
 
 ```js
 var foo = {
@@ -49,7 +51,7 @@ foo({
 
 The following patterns are not considered problems:
 
-下面的模式被认为是正确的：
+以下模式被认为是没有问题的：
 
 ```js
 var foo = {
@@ -69,7 +71,7 @@ foo({
 
 If your code will not be run in IE8 or below (a NodeJS application, for example) and you'd prefer to allow trailing commas, turn this rule off.
 
-如果你的代码不会在IE8及以下版本中（例如Node.js应用）运行，并且你倾向于允许尾部逗号，就关闭该规则。
+如果你的代码不会在 IE8 及以下版本中（例如Node.js应用）运行，并且你倾向于允许尾部逗号，关闭此规则即可。
 
 ## Version
 

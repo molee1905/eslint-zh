@@ -1,15 +1,18 @@
 ---
 title: Rule no-func-assign
 layout: doc
+translator: ybbjegj
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Disallow Function Assignment (no-func-assign)
+
 # 禁止函数赋值（no-func-assign）
 
 JavaScript functions can be written as a FunctionDeclaration `function foo() { ... }` or as a FunctionExpression `var foo = function() { ... };`. While a JavaScript interpreter might tolerate it, overwriting/reassigning a function written as a FunctionDeclaration is often indicative of a mistake or issue.
 
-Javascript函数能以函数声明 `function foo() { ... }` 或者函数表达式 `var foo = function() { ... }`的形式书写。尽管Javascript编译器接受对函数的重写和再指定，但是作为函数声明通常认为是个错误或问题。
+Javascript函数能以函数声明 `function foo() { ... }` 或者函数表达式 `var foo = function() { ... }`的形式书写。对一个函数进行覆盖或再指定，尽管Javascript解释器可以接受，但通常是个错误或问题。
 
 ```js
 function foo() {}

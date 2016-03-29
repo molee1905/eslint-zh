@@ -1,18 +1,20 @@
 ---
 title: Rule no-label-var
 layout: doc
+translator: ILFront-End
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Disallow Labels That Are Variables Names (no-label-var)
 
-# 不允许标签是变量名 (no-label-var)
+# 禁用于变量同名的标签 (no-label-var)
 
 ## Rule Details
 
 This rule aims to create clearer code by disallowing the bad practice of creating a label that shares a name with a variable that is in scope.
 
-此规则希望创建更清晰的代码，通过不允许同一作用域中变量名和标记名相同。
+该规则旨在通过禁止使用同一作用域下的同名的变量做为标签来创建更清晰的代码。
 
 Examples of **incorrect** code for this rule:
 
@@ -55,7 +57,7 @@ q:
 
 If you don't want to be notified about usage of labels, then it's safe to disable this rule.
 
-如果你想被通知标题的使用情况，可以禁用此规则。
+如果你不想收到标签的使用情况的通知，可以关闭此规则。
 
 ## Further Reading
 
@@ -71,7 +73,7 @@ If you don't want to be notified about usage of labels, then it's safe to disabl
 
 This rule was introduced in ESLint 0.0.9.
 
-此规则在ESLint 0.0.9中被引入。
+此规则在 ESLint 0.0.9 中被引入。
 
 ## Resources
 

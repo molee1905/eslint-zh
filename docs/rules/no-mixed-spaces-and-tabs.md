@@ -1,6 +1,8 @@
 ---
 title: Rule no-mixed-spaces-and-tabs
 layout: doc
+translator: molee1905
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -15,7 +17,8 @@ Most code conventions require either tabs or spaces be used for indentation. As 
 ## Rule Details
 
 The `no-mixed-spaces-and-tabs` rule is aimed at flagging any lines of code that are indented with a mixture of tabs and spaces.
-`no-mixed-spaces-and-tabs` 规则旨在标记同时有tab缩进和space缩进任何一行代码。
+
+该规则旨在标记同时有 tab 缩进和 space 缩进任何一行代码。
 
 ## Options
 
@@ -23,7 +26,7 @@ The `no-mixed-spaces-and-tabs` rule is aimed at flagging any lines of code that 
 
 This option suppresses warnings about mixed tabs and spaces when the latter are used for alignment only. This technique is called [SmartTabs](http://www.emacswiki.org/emacs/SmartTabs). The option is turned off by default.
 
-该选项取消混合使用tab缩进和空格缩进时的警告，前提是后使用的仅仅是为了对齐。这中技术被称为[SmartTabs](http://www.emacswiki.org/emacs/SmartTabs)。该选项默认是关闭的。
+该选项取消混合使用tab缩进和空格缩进时的警告，前提是后者的仅仅是为了对齐。这种技术被称为[SmartTabs](http://www.emacswiki.org/emacs/SmartTabs)。该选项默认是关闭的。
 
 You can enable this option by using the following configuration:
 
@@ -70,7 +73,7 @@ function add(x, y) {
 
 When the SmartTabs option is enabled the following does not produce a warning:
 
-当SmartTabs选项启用时，以下模式不会发出警告：
+当 SmartTabs 选项启用时，以下模式不会发出警告：
 
 ```js
 /*eslint no-mixed-spaces-and-tabs: [2, "smart-tabs"]*/
@@ -93,7 +96,7 @@ function main() {
 
 This rule was introduced in ESLint 0.7.1.
 
-该规则在ESLint 0.7.1 中被引入。
+该规则在 ESLint 0.7.1 中被引入。
 
 ## Resources
 

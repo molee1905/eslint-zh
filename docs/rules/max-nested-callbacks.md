@@ -1,6 +1,8 @@
 ---
 title: Rule max-nested-callbacks
 layout: doc
+translator: molee1905
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -10,7 +12,7 @@ layout: doc
 
 Many JavaScript libraries use the callback pattern to manage asynchronous operations. A program of any complexity will most likely need to manage several asynchronous operations at various levels of concurrency. A common pitfall that is easy to fall into is nesting callbacks, which makes code more difficult to read the deeper the callbacks are nested.
 
-很多Javascript类库是使用回调模式处理异步操作。任何复杂的程序都将最有可能在不同级别的并发性下处理多个异步回调操作。一个最长见的隐患就是嵌套的回调，使得代码嵌套层级越深越难以阅读。
+很多 Javascript 类库是使用回调模式处理异步操作。任何复杂的程序都将最有可能在不同级别的并发性下处理多个异步回调操作。一个最长见的隐患就是嵌套的回调，使得代码嵌套层级越深越难以阅读。
 
 ```js
 foo(function () {
@@ -34,7 +36,7 @@ This rule is aimed at increasing code clarity by discouraging deeply nesting cal
 
 The default max depth for this rule is 10. You can define the depth as an option by using the second argument in your configuration. For example, this sets the rule as an error (code is 2) with a maximum depth of 3:
 
-该规则默认的最大深度是10。你可以通过在你的配置中使用第二个参数作为一个选项定义这个深度值。例如，以下将设置规则为错误(代码为2)，最大深度为3：     
+该规则默认的最大深度是10。你可以通过在你的配置中使用第二个参数作为一个选项定义这个深度值。例如，以下将设置规则为错误级别(代码为2)，最大深度为3：     
 
 ```json
 "max-nested-callbacks": [2, 3]
@@ -106,7 +108,7 @@ function handleQux() {
 
 This rule was introduced in ESLint 0.2.0.
 
-该规则在ESLint 0.2.0 中被引入。
+该规则在 ESLint 0.2.0 中被引入。
 
 ## Resources
 

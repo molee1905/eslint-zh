@@ -1,22 +1,24 @@
 ---
 title: Rule linebreak-style
 layout: doc
+translator: molee1905
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Disallow mixing CRLF and LF linebreaks (linebreak-style)
 
-# 禁止混合回车换行和换行 (linebreak-style)
+# 禁止混合使用回车换行和换行 (linebreak-style)
 
 When developing with a lot of people all having different editors, VCS applications and operating systems it may occur that
 different line endings are written by either of the mentioned (might especially happen when using the windows and mac versions of SourceTree together).
 
-当于很多人协同开发时，会用到不同的编辑器，在VCS应用程序和操作系统中可能会出现不同的编辑器行结束方式也不同(尤其是同时使用windows和mac版本的源码)。
+当很多人协同开发时，会用到不同的编辑器，在 VCS 应用程序和操作系统中可能会出现不同的编辑器行结束方式也不同(尤其是同时使用 windows 和 mac 版本的源码)。
 
 The linebreaks (new lines) used in windows operating system are usually _carriage returns_ (CR) followed by a _line feed_ (LF) making it a _carriage return line feed_ (CRLF)
 whereas Linux and Unix use a simple _line feed_ (LF). The corresponding _control sequences_ are `"\n"` (for LF) and `"\r\n"` for (CRLF).
 
-在windows操作系统中换行(新行)通常是回车(CR)加换行分隔符(LF)，也就是回车换行(CRLF)，然而在Linux和Unix中使用简单的换行分隔符(LF)。对应的控制字符为`"\n"` (LF) 和 `"\r\n"`(CRLF)。
+在 windows 操作系统中换行(新行)通常是回车(CR)加换行分隔符(LF)，也就是回车换行(CRLF)，然而在Linux和Unix中只使用简单的换行分隔符(LF)。对应的控制字符为`"\n"` (LF) 和 `"\r\n"`(CRLF)。
 
 Many versioning systems (like git and subversion) can automatically ensure the correct ending. However to cover all contingencies you can activate this rule.
 
@@ -26,7 +28,7 @@ Many versioning systems (like git and subversion) can automatically ensure the c
 
 This rule aims to ensure having consistent line endings independent of operating system, VCS or editor used.
 
-该规则旨在保证不论是在操作系统，VCS还是编辑器，都使用一致的行尾。
+该规则旨在保证不论是在操作系统，VCS 还是编辑器，都使用一致的行尾。
 
 The following patterns are considered problems:
 
@@ -99,7 +101,7 @@ If you aren't concerned about having different line endings within you code, the
 
 This rule was introduced in ESLint 0.21.0.
 
-该规则在ESLint 0.21.0 中被引入。
+该规则在 ESLint 0.21.0 中被引入。
 
 ## Resources
 

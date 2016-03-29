@@ -7,6 +7,7 @@ proofreader: sunshiner
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Require Following Curly Brace Conventions (curly)
+
 # 要求遵循大括号约定 (curly)
 
 JavaScript allows the omission of curly braces when a block contains only one statement.

@@ -5,6 +5,7 @@ layout: doc
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Require or disallow Yoda Conditions (yoda)
+
 # 需要或者禁止Yoda条件 (yoda)
 
 Yoda conditions are so named because the literal value of the condition comes first while the variable comes second. For example, the following is a Yoda condition:

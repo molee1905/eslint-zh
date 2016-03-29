@@ -1,6 +1,8 @@
 ---
 title: Rule no-lonely-if
 layout: doc
+translator: molee1905
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -38,7 +40,7 @@ if (foo) {
 
 This rule warns when an `if` statement's `else` block contains only another `if` statement.
 
-如果`if`语句的`else`块中只包含另一个`if`语句，该规则将会发出提醒。
+如果`if`语句的`else`块中只包含另一个`if`语句，该规则将会发出警告。
 
 The following patterns are considered problems:
 
@@ -107,7 +109,7 @@ Disable this rule if the code is clearer without requiring the `else if` form.
 
 This rule was introduced in ESLint 0.6.0.
 
-该规则在ESLint 0.6.0 中被引入。
+该规则在 ESLint 0.6.0 中被引入。
 
 ## Resources
 

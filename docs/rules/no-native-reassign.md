@@ -1,6 +1,8 @@
 ---
 title: Rule no-native-reassign
 layout: doc
+translator: fengnana
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -10,7 +12,9 @@ layout: doc
 
 Reports an error when they encounter an attempt to assign a value to built-in native object.
 
-当他们遇到试图分配一个内置对象时，会报告错误。
+当他们遇到试图分配一个原生对象时，会报告错误。
+
+当试图给内置的原生对象赋值时，该规则将会报告错误。
 
 ```js
 String = "hello world";
@@ -20,7 +24,7 @@ String = "hello world";
 
 The native objects reported by this rule are the `builtin` variables from [globals](https://github.com/sindresorhus/globals/).
 
-此规则报告的内置对象是从全局`内建`的变量。 
+此规则报告的原生对象是来自[globals](https://github.com/sindresorhus/globals/)的`内置`变量。 
 
 The following patterns are considered problems:
 
@@ -36,7 +40,7 @@ String = new Object();
 
 This rule accepts an `exceptions` option, which can be used to specify a list of builtins for which reassignments will be allowed:
 
-此规则接受一个`exceptions`选项，可以用来指定一个可以被分配的内建列表。
+此规则有一个`exceptions`选项，可以用来指定一个允许被赋值的内建变量列表。
 
 ```json
 {
@@ -50,7 +54,7 @@ This rule accepts an `exceptions` option, which can be used to specify a list of
 
 If you are trying to override one of the native objects.
 
-如果你想尝试覆盖其中一个内置对象。
+如果你想尝试覆盖一个原生对象。
 
 ## Related Rules
 
@@ -62,7 +66,7 @@ If you are trying to override one of the native objects.
 
 This rule was introduced in ESLint 0.0.9.
 
-此规则在ESLint 0.0.9中被引入。
+此规则在 ESLint 0.0.9 中被引入。
 
 ## Resources
 

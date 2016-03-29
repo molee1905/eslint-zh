@@ -1,6 +1,8 @@
 ---
 title: Rule no-multiple-empty-lines
 layout: doc
+translator: molee1905
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -25,14 +27,18 @@ The second argument can be used to configure this rule:
 第二个参数被用来配置该规则：
 
 * `max` sets the maximum number of consecutive blank lines.
-* `max` 设置连续的空行的最大数量。
+
+* `max` 设置最大连续的空行数。
+
 * `maxEOF` can be used to set a different number for the end of file. The last
   blank lines will then be treated differently. If omitted, the `max` option is
   applied at the end of the file.
+
 * `maxEOF` 用来设置文件末尾空行数。最后的空行将被区分对待。如果省略，`max`选项被应用到文件末尾。
 
 * `maxBOF` can be used to set a different number for the beginning of the file.
   If omitted, the 'max' option is applied at the beginning of the file.
+
 * `maxBOF` 用来设置文件开始空行数。如果省略，`max`选项被应用到文件开始。
 
 ### max
@@ -40,7 +46,7 @@ The second argument can be used to configure this rule:
 In the following example, the first 2 is the code for an error
 and the second 2 is the maximum number of empty lines:
 
-例如：设置规则为错误级别，最大可允许的空行数为2(整个文件)：
+例如：设置规则为错误级别 2，最大空行数为 2：
 
 ```json
 "no-multiple-empty-lines": [2, {"max": 2}]
@@ -52,7 +58,6 @@ The following patterns are considered problems:
 
 ```js
 /*eslint no-multiple-empty-lines: [2, {max: 2}]*/
->>>>>>> eslint/master
 
 
 var foo = 5;
@@ -163,7 +168,7 @@ If you do not care about extra blank lines, turn this off.
 
 This rule was introduced in ESLint 0.9.0.
 
-该规则在ESLint 0.9.0 中被引入。
+该规则在 ESLint 0.9.0 中被引入。
 
 ## Resources
 

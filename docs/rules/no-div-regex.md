@@ -1,6 +1,8 @@
 ---
 title: Rule no-div-regex
 layout: doc
+translator: fengnana
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -10,8 +12,7 @@ layout: doc
 
 Require regex literals to escape division operators.
 
-需要将正则表达式避开除法运算符
-
+要求正则表达式字面量避开除法操作符。
 
 ```js
 function bar() { return /=foo/; }
@@ -21,7 +22,7 @@ function bar() { return /=foo/; }
 
 This is used to disambiguate the division operator to not confuse users.
 
-此规则用来消除除法符号的歧义使用户不产生疑惑。
+此规则用来消除除法操作符的歧义。
 
 The following patterns are considered problems:
 
@@ -52,7 +53,7 @@ function bar() { return /\=foo/; }
 
 This rule was introduced in ESLint 0.1.0.
 
-此规则在ESLint 0.1.0中被引入。
+该规则在 ESLint 0.1.0 中被引入。
 
 ## Resources
 

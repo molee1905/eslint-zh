@@ -1,6 +1,8 @@
 ---
 title: Rule no-array-constructor
 layout: doc
+translator: molee1905
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -66,7 +68,7 @@ rule may be disabled if the constructor style is preferred.
 
 This rule was introduced in ESLint 0.4.0.
 
-该规则在ESLint 0.4.0 中被引入。
+该规则在 ESLint 0.4.0 中被引入。
 
 ## Resources
 

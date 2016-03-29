@@ -7,7 +7,8 @@ proofreader: sunshiner
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Limit Cyclomatic Complexity (complexity)
-# 限制圈复杂度(complexity)
+
+# 限制圈复杂度 (complexity)
 
 
 Cyclomatic complexity measures the number of linearly independent paths through a program's source code. This rule allows setting a cyclomatic complexity threshold (default is `20`).
@@ -106,7 +107,7 @@ If you can't determine an appropriate complexity limit for your code, then it's 
 
 This rule was introduced in ESLint 0.0.9.
 
-此规则在ESLint 0.0.9中被引入。
+该规则在 ESLint 0.0.9 中被引入。
 
 ## Resources
 

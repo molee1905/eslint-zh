@@ -1,6 +1,8 @@
 ---
 title: Rule no-class-assign
 layout: doc
+translator: molee1905
+proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -116,7 +118,7 @@ If you don't want to be notified about modifying variables of class declarations
 
 This rule was introduced in ESLint 1.0.0-rc-1.
 
-该规则在ESLint 1.0.0-rc-1 中被引入。
+该规则在 ESLint 1.0.0-rc-1 中被引入。
 
 ## Resources
 
