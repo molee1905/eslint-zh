@@ -1,6 +1,8 @@
 ---
 title: Rule id-match
 layout: doc
+translator: molee1905
+proofreader: sunshiner
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -15,7 +17,7 @@ When done right, it can save your team hours of unnecessary head scratching and 
 This rule allows you to precisely define and enforce the variables and function names on your team should use.
 No more limiting yourself to camelCase, snake_case, PascalCase or oHungarianNotation. Id-match has all your needs covered!
 
-在一个项目中，一致的命名是代码创建经常被低估的一方面。使用得当时，它可以为你的团队节省不必要的时间避免乱抓乱挠和误导。该规则允许你精确地定义和强制使用你的团队应该用的变量和方法名。不再将你自己局限于camelCase、 snake_case、 PascalCase或 oHungarianNotation。Id-match覆盖了您所有的需求!
+在一个项目中，一致的命名是代码创建经常被低估的一方面。使用得当时，它可以为你的团队节省掉因为不必要纠结和误导浪费的时间。该规则允许你精确地定义和强制使用你的团队应该用的变量和方法名。不再将你自己局限于camelCase、 snake_case、 PascalCase或 oHungarianNotation。Id-match覆盖了您所有的需求!
 
 
 ## Rule Details
