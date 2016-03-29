@@ -1,6 +1,8 @@
 ---
 title: Rule no-plusplus
 layout: doc
+translator: molee1905
+proofreader: yanggao40
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -44,8 +46,7 @@ j
 
 This rule is aimed at flagging the use of `++` and `--`. Some believe that the use of these unary operators reduces code quality and clarity. There are some programming languages that completely exclude these operators.
 
-该规则标记一元操作符`++` 和 `--`的使用。有些人认为这些一元操作符降低了代码的质量和清晰度。
-也有以下编程语言完全排除这些操作符。
+该规则旨在标记一元操作符`++` 和 `--`的使用。有些人认为这些一元操作符降低了代码的质量和清晰度。也有一些编程语言完全排除这些操作符。
 
 ## Options
 
@@ -54,6 +55,7 @@ This rule, in its default state, does not require any arguments. If you would li
 该规则，默认情况下，不需要任何参数。如果你想启用下面的一个或多个，你可以传递一个对象，作为可选项，按如下所示进行设置：
 
 * `allowForLoopAfterthoughts` set to `true` will allow you to use the unary operators `++` and `--` in the afterthought (final expression) of a `for` loop.
+
 * `allowForLoopAfterthoughts` 设置为 `true` 将允许你在`for`循环的中(最后面的表达式)使用一元操作符 `++` 和 `--`。
 
 The following patterns are considered problems:
