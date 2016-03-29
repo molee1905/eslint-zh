@@ -1,6 +1,8 @@
 ---
 title: Rule no-redeclare
 layout: doc
+translator: fengnana
+proofreader: yanggao40
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -10,13 +12,13 @@ layout: doc
 
 In JavaScript, it's possible to redeclare the same variable name using `var`. This can lead to confusion as to where the variable is actually declared and initialized.
 
-在JavaScript中，使用`var`可以对同一个变量重定义。这会导致混乱，在变量重定义和初始化的地方。
+在JavaScript中，使用`var`可以对同一个变量重定义。这会导致混乱变量在哪里和初始化。
 
 ## Rule Details
 
 This rule is aimed at eliminating variables that have multiple declarations in the same scope.
 
-此规则目的在于禁止在同一作用域中多次重定义变量。
+此规则目旨在消除同一作用域中多次重定义变量。
 
 The following patterns are considered problems:
 
@@ -58,9 +60,11 @@ This rule takes one option, an object, with a property `"builtinGlobals"`.
 `false` by default.
 If this is `true`, this rule checks with built-in global variables such as `Object`, `Array`, `Number`, ...
 
-默认是`false`。如果为`true`，此规则检查内置全局变量如`Object`, `Array`, `Number`, ...
+默认是`false`。如果为`true`，此规则检查内建全局变量如`Object`, `Array`, `Number`, ...
 
 When `{"builtinGlobals": true}`, the following patterns are considered problems:
+
+当 `{"builtinGlobals": true}`时，以下模式被认为是有问题的：
 
 ```js
 /*eslint no-redeclare: [2, { "builtinGlobals": true }]*/

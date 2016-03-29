@@ -1,22 +1,23 @@
 ---
 title: Rule no-param-reassign
 layout: doc
+translator: fengnana
+proofreader: yanggao40
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Disallow Reassignment of Function Parameters (no-param-reassign)
-
 # 禁止重新分配函数参数值 (no-param-reassign)
 
 Assignment to variables declared as function parameters can be misleading and lead to confusing behavior, as modifying function parameters will also mutate the `arguments` object. Often, assignment to function parameters is unintended and indicative of a mistake or programmer error.
 
-赋值给做为函数形参的变量可能会误导或者导致混乱，修改函数参数也会使`arguments`对象变异。通常，分配函数参数是意想不到的行为，表明一个错误或者程序员的错误。
+赋值给做为函数参数的变量可能会误导或者导致混乱，修改函数参数也会改变`arguments`对象。通常，赋值给函数参数是无意识的，表明一个错误或者程序员的错误。
 
 ## Rule Details
 
 This rule aims to prevent unintended behavior caused by overwriting function parameters.
 
-此规则目的在于防止由于重新赋值给函数形参而导致意外的情况发生。
+此规则旨在防止无意识地重写函数参数。
 
 ## Options
 
@@ -108,7 +109,7 @@ function foo(bar) {
 
 If you want to allow assignment to function parameters, then you can safely disable this rule.
 
-如果你想允许对函数形参重新分配，你可以安全的禁用此规则。
+如果你想允许对函数参数重新赋值，你可以安全地禁用此规则。
 
 ## Further Reading
 

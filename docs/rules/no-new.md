@@ -1,6 +1,8 @@
 ---
 title: Rule no-new
 layout: doc
+translator: fengnana
+proofreader: yanggao40
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -31,7 +33,7 @@ In this case, the created object is thrown away because its reference isn't stor
 
 This rule is aimed at maintaining consistency and convention by disallowing constructor calls using the `new` keyword that do not assign the resulting object to a variable.
 
-此规则目的在于维持一致性和公约，通过禁止使用`new`关键字调用构造函数但确不将结果分配给一个变量
+此规则旨在通过禁止使用`new`关键字调用构造函数但确不将结果分配给一个变量来维持一致性和公约。
 
 The following patterns are considered problems:
 

@@ -1,24 +1,25 @@
 ---
 title: Rule no-restricted-modules
 layout: doc
+translator: ILFront-End
+proofreader: yanggao40
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Disallow Node modules (no-restricted-modules)
 
-# 不支持的节点模块 (no-restricted-modules)
-
+# 禁止节点模块 (no-restricted-modules)
 
 Disallowing usage of specific node modules can be useful if you want to control the available methods, a developer can
 use, to implement a feature.
 
-不使用特殊的节点模块会使所方法变得可控，但是开发者可以在后续支持特殊节点这一特性。
+如果你想控制可用的放大，禁止使用特殊的节点是有用的，开发者可以使用实现一个特征。
 
 This way you can block usage of the `fs` module if you want disallow file system access.
 Blocking the `os` module can be useful if you don't want to allow any operating system specific code.
 
-如果您不想支持文件系统使用可以禁用`fs`模块的使用。
-如果您不想支持一些特殊的系统操作，禁用`os`模块将会起作用。
+如果您想禁止访问文件系统，可以禁用`fs`模块的使用。
+如果您想禁止一些特殊的系统操作，禁用`os`模块将会起作用。
 
 ## Rule Details
 
@@ -76,7 +77,7 @@ var crypto = require('crypto');
 
 This rule was introduced in ESLint 0.6.0.
 
-此规则在ESlint 0.6.0中被引用
+此规则在 ESlint 0.6.0 中被引用
 
 ## Resources
 
