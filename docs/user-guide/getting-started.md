@@ -4,6 +4,7 @@ layout: doc
 ---
 
 # Getting Started with ESLint
+
 # 开始使用 ESLint
 
 ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, with the goal of making code more consistent and avoiding bugs. In many ways, it is similar to JSLint and JSHint with a few exceptions:
@@ -18,6 +19,7 @@ ESLint 是在ECMAScript/JavaScript代码中识别和报告模式匹配的工具�
 * ESLint 是完全插件化的。每一个规则都是一个插件并且你可以在运行时添加更多的规则。
 
 ## Installation
+
 ## 安装
 
 You can install ESLint using npm:
@@ -27,6 +29,7 @@ You can install ESLint using npm:
     npm install -g eslint
 
 ## Usage
+
 ## 使用
 
 If it's your first time using ESLint, you should set up a config file using `--init`:
@@ -42,6 +45,7 @@ After that, you can run ESLint on any JavaScript file:
     eslint test.js test2.js
 
 ## Configuration
+
 ## 配置
 
 **Note:** If you are coming from a version before 1.0.0 please see the [migration guide](http://eslint.org/docs/user-guide/migrating-to-1.0.0).
@@ -92,6 +96,7 @@ Because of this this line, all of the rules marked "(recommended)" on the [rules
 ---
 
 ## Next Steps
+
 ## 下一步
 
 * Learn about [advanced configuration](http://eslint.org/docs/user-guide/configuring) of ESLint.
