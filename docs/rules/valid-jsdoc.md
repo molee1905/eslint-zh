@@ -1,6 +1,8 @@
 ---
 title: Rule valid-jsdoc
 layout: doc
+translator: molee1905
+proofreader: qifeigit
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -32,7 +34,7 @@ JSDoc注释有自己的语法，它很容易错误书写一个注释，因为编
 
 This rule aims to prevent invalid and incomplete JSDoc comments. It will warn when any of the following is true:
 
-该规则旨在防止无效的和不完整的JSDoc注释。这样做，它将发出警告，当：
+该规则旨在防止无效的和不完整的JSDoc注释。有以下情况发生时，它将发出警告：
 
 * There is a JSDoc syntax error
 * 有JSDoc语法错误
@@ -179,9 +181,9 @@ With this configuration, ESLint will warn when it finds `@return` and recommend 
 
 #### requireReturn
 
-By default ESLint requires you to document every function with a `@return` tag regardless of whether there is anything returned by the function. If instead you want to enforce that only functions with a `return` statement are documented with a `@return` tag, set the `requireReturn` option to `false`.  When `requireReturn` is `false`, every function documented with a `@return` tag must have a `return` statement, and every function with a `return` statement must have a `@return` tag.
+By default ESLint requires you to specify `@return` for every documented function regardless of whether there is anything returned by the function. While using `@return {void}` or `@return {undefined}` stops it from asking for a description of the return value using the `requireReturn` option and setting it to `false` prevents an error from being logged unless there is a return in the function. Note that with this option set to `false`, if there is a return in the function, an error will still be logged and if there is a `@return` specified and there are no `return` statements in the function an error will also be logged. This option is purely to prevent the forced addition of `@return {void}` to an entire codebase not to turn off JSDoc return checking.
 
-默认情况下，ESLint要求你使用`@return`记录每个函数，不管该函数中是否有返回值。如果你想强制要求含有`return`语句的函数使用`@return`标记，设置`requireReturn`为`false`。当`requireReturn`为`false`时，每个有`@return`的函数都必须有一个`return`语句，而且每个有`return`语句的函数都必须有一个`@return`标记。
+默认情况下，ESLint要求你为每个documented函数指定`@return`，不管该函数中是否有返回值。当使用`@return {void}` 或 `@return {undefined}`不再要求返回值有描述，使用`requireReturn`并设置它为`false`, 防止一个错误被记入日志，除非函数中有一个返回语句。注意，该选项设置为`false`时，如果函数中有一个返回语句，一个错误仍将被记入日志。如果有个指定的`@return`，并且函数中没有`return`语句一个错误仍将被记入日志。这个选项纯粹是为了防止不关掉JSDoc返回检查的情况下强制添加`@return {void}`到整个代码库。
 
 ```json
 "valid-jsdoc": [2, {
@@ -242,6 +244,8 @@ By default ESLint requires you to specify `type` for `@return` tag for every doc
 It will validate all the types from jsdoc with the options setup by the user. Inside the options, key should be what the type you want to check and the value of it should be what the expected type should be. Note that we don't check for spelling mistakes with this option.
 In the example below, it will expect the "object" to start with an uppercase and all the "string" type to start with a lowercase.
 
+用户可以通过配置的选项的方式来使得所有选项有效。在这些选项中，键应该是你想检测的类型，而值是你所期待的类型。注意，我们不会检测这些选项的拼写错误。在下面的例子中，它希望"object"以大写字母开头，而所有的"string"类型以小写字母开头。
+
 ```json
 "valid-jsdoc": [2, {
     "preferType": {
@@ -253,6 +257,8 @@ In the example below, it will expect the "object" to start with an uppercase and
 ```
 
 Examples of **incorrect** code for a sample of `"preferType"` options:
+
+`"preferType"` 选项 **不正确** 的代码示例 :
 
 ```js
 /*eslint valid-jsdoc: [2, { "preferType": { "String": "string", "object": "Object", "test": "TesT" } }]*/
@@ -287,6 +293,8 @@ function foo(param1) {
 ```
 
 Examples of **correct** code for a sample of `"preferType"` options:
+
+`"preferType"` 选项 **正确** 的代码示例 :
 
 ```js
 /*eslint valid-jsdoc: [2, { "preferType": { "String": "string", "object": "Object", "test": "TesT" } }]*/
