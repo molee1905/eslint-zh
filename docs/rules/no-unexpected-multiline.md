@@ -18,21 +18,21 @@ The rules for ASI are relatively straightforward: In short, as once described by
 
 ASI 的规则是相对简单的：简而言之，正如Isaac Schlueter 曾经描述的那样，一个 `\n` 字符总是一个语句的结尾(像分号一样)，除非下面之一为true
 
-1. The statement has an unclosed paren, array literal, or object literal or ends in some other way that is not a valid way to end a statement. (For instance, ending with `.` or `,`.)
+* The statement has an unclosed paren, array literal, or object literal or ends in some other way that is not a valid way to end a statement. (For instance, ending with `.` or `,`.)
 
-1. 该语句有一个没有闭合的括号，数组字面量或对象字面量或其他某种方式，不是有效结束一个语句的方式。（比如，以`.` 或 `,`结尾）
+* 该语句有一个没有闭合的括号，数组字面量或对象字面量或其他某种方式，不是有效结束一个语句的方式。（比如，以`.` 或 `,`结尾）
 
-2. The line is `--` or `++` (in which case it will decrement/increment the next token.)
+* The line is `--` or `++` (in which case it will decrement/increment the next token.)
 
-2. 该行是 `--` 或 `++`（在这种情况下它将减量/增量的下一个标记）
+* 该行是 `--` 或 `++`（在这种情况下它将减量/增量的下一个标记）
 
-3. It is a `for()`, `while()`, `do`, `if()`, or `else`, and there is no `{`
+* It is a `for()`, `while()`, `do`, `if()`, or `else`, and there is no `{`
 
-3. 它是个 `for()`， `while()`，`do`， `if()`，或 `else`，并且没有 `{`
+* 它是个 `for()`， `while()`，`do`， `if()`，或 `else`，并且没有 `{`
 
-4. The next line starts with `[`, `(`, `+`, `*`, `/`, `-`, `,`, `.`, or some other binary operator that can only be found between two tokens in a single expression.
+* The next line starts with `[`, `(`, `+`, `*`, `/`, `-`, `,`, `.`, or some other binary operator that can only be found between two tokens in a single expression.
 
-4. 下一行以 `[`，`(`， `+`， `*`， `/`， `-`， `,`， `.` 或一些其它在单个表达式中两个标记之间的二元操作符。
+* 下一行以 `[`，`(`， `+`， `*`， `/`， `-`， `,`， `.` 或一些其它在单个表达式中两个标记之间的二元操作符。
 
 This particular rule aims to spot scenarios where a newline looks like it is ending a statement, but is not.
 
@@ -47,7 +47,7 @@ Examples of **incorrect** code for this rule:
 **错误**代码示例：
 
 ```js
-/*eslint no-unexpected-multiline: 2*/
+/*eslint no-unexpected-multiline: "error"*/
 
 var foo = bar
 (1 || 2).baz();
@@ -68,7 +68,7 @@ Examples of **correct** code for this rule:
 **正确**代码示例：
 
 ```js
-/*eslint no-unexpected-multiline: 2*/
+/*eslint no-unexpected-multiline: "error"*/
 
 var foo = bar;
 (1 || 2).baz();

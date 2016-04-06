@@ -25,7 +25,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint no-trailing-spaces: 2*/
+/*eslint no-trailing-spaces: "error"*/
 
 // spaces, tabs and unicode whitespaces
 // are not allowed at the end of lines
@@ -38,7 +38,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint no-trailing-spaces: 2*/
+/*eslint no-trailing-spaces: "error"*/
 
 var foo = 0;
 
@@ -57,7 +57,7 @@ You can enable this option in your config like this:
 
 ```json
 {
-    "no-trailing-spaces": [2, { "skipBlankLines": true }]
+    "no-trailing-spaces": ["error", { "skipBlankLines": true }]
 }
 ```
 
@@ -66,7 +66,7 @@ With this option enabled, The following patterns are not considered problems:
 当该选项启用后，以下模式被认为是没有问题的：
 
 ```js
-/*eslint no-trailing-spaces: [2, { "skipBlankLines": true }]*/
+/*eslint no-trailing-spaces: ["error", { "skipBlankLines": true }]*/
 
 var foo = 0;
 //••••

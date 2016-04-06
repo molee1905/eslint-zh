@@ -18,25 +18,25 @@ In Node.js, most I/O is done through asynchronous methods. However, there are of
 
 This rule is aimed at preventing synchronous methods from being called in Node.js. It looks specifically for the method suffix "`Sync`" (as is the convention with Node.js operations).
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
 这条规则旨在阻止使用这些Node.js中的同步方法。这些方法看起来比较特别，会在后缀加`Sync`(这是Node.js中的约定)
 
 ```js
-/*eslint no-sync: 2*/
+/*eslint no-sync: "error"*/
 
 fs.existsSync(somePath);
 
 var contents = fs.readFileSync(somePath).toString();
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
 以下得模式被认为是没有问题：
 
 
 ```js
-/*eslint no-sync: 2*/
+/*eslint no-sync: "error"*/
 
 obj.sync();
 
@@ -49,13 +49,13 @@ async(function() {
 
 If you want to allow synchronous operations in your script.
 
-如果你想在你的脚本中使用同步操作
+如果你想在你的脚本中使用同步操作。
 
 ## Version
 
 This rule was introduced in ESLint 0.0.9.
 
-此规则在ESlint 0.0.9中被引用
+此规则在 ESlint 0.0.9 中被引用
 
 ## Resources
 

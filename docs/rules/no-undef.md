@@ -5,7 +5,6 @@ translator: ILFront-End
 proofreader: coocon 
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
-
 # Disallow Undeclared Variables (no-undef)
 
 # 不允许使用未申明变量 (no-undef)
@@ -25,19 +24,19 @@ Examples of **incorrect** code for this rule:
 **错误**代码示例：
 
 ```js
-/*eslint no-undef: 2*/
+/*eslint no-undef: "error"*/
 
 var a = someFunction();
 b = 10;
 ```
 
-Examples of **correct** code with `global` declaration for this rule:
+Examples of **correct** code for this rule with `global` declaration:
 
-使用 `global` 声明的规则， **正确**代码示例：
+有`global`声明时，该规则的 **正确**代码示例：
 
 ```js
 /*global someFunction b:true*/
-/*eslint no-undef: 2*/
+/*eslint no-undef: "error"*/
 
 var a = someFunction();
 b = 10;
@@ -45,13 +44,13 @@ b = 10;
 
 The `b:true` syntax in `/*global */` indicates that assignment to `b` is correct.
 
-Examples of **incorrect** code with `global` declaration for this rule:
+Examples of **incorrect** code for this rule with `global` declaration:
 
-使用 `global` 声明的规则， **错误**代码示例：
+有`global`声明时，该规则的 **错误**代码示例：
 
 ```js
 /*global b*/
-/*eslint no-undef: 2*/
+/*eslint no-undef: "error"*/
 
 b = 10;
 ```
@@ -67,12 +66,12 @@ By default, variables declared in `/*global */` are read-only, therefore assignm
 
 ### typeof
 
-Examples of **correct** code for the default option:
+Examples of **correct** code for the default `{ "typeof": false }` option:
 
-默认选项的 **正确**代码示例：
+默认选项`{ "typeof": false }`的 **正确**代码示例：
 
 ```js
-/*eslint no-undef: 2*/
+/*eslint no-undef: "error"*/
 
 if (typeof UndefinedIdentifier === "undefined") {
     // do something ...
@@ -88,18 +87,18 @@ Examples of **incorrect** code for the `{ "typeof": true }` option:
 选项`{ "typeof": true }`的 **错误**代码示例：
 
 ```js
-/*eslint no-undef: [2, { "typeof": true }] */
+/*eslint no-undef: ["error", { "typeof": true }] */
 
 if(typeof a === "string"){}
 ```
 
-Examples of **correct** code for the `{ "typeof": true }` option:
+Examples of **correct** code for the `{ "typeof": true }` option with `global` declaration:
 
-选项`{ "typeof": true }`的 **正确**代码示例：
+在`global`声明下，选项`{ "typeof": true }`的 **正确**代码示例：
 
 ```js
 /*global a*/
-/*eslint no-undef: [2, { "typeof": true }] */
+/*eslint no-undef: ["error", { "typeof": true }] */
 
 if(typeof a === "string"){}
 ```
@@ -112,11 +111,12 @@ For convenience, ESLint provides shortcuts that pre-define global variables expo
 
 ### browser
 
-Defines common browser globals.
+Examples of **correct** code for this rule with `browser` environment:
 
 普通浏览器中使用全局变量。
 
 ```js
+/*eslint no-undef: "error"*/
 /*eslint-env browser*/
 
 setTimeout(function() {
@@ -126,11 +126,12 @@ setTimeout(function() {
 
 ### node
 
-Defines globals for Node.js development.
+Examples of **correct** code for this rule with `node` environment:
 
 Node.js 中全局变量。
 
 ```js
+/*eslint no-undef: "error"*/
 /*eslint-env node*/
 
 var fs = require("fs");

@@ -8,7 +8,7 @@ proofreader: xkf521
 
 # Disallow Spaces in Function Calls (no-spaced-func)
 
-# 禁止在函数调用时使用空格
+# 禁止在函数调用时使用空格 (no-spaced-func)
 
 While it's possible to have whitespace between the name of a function and the parentheses that execute it, such patterns tend to look more like errors.
 
@@ -33,7 +33,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint no-spaced-func: 2*/
+/*eslint no-spaced-func: "error"*/
 
 fn ()
 
@@ -46,17 +46,16 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint no-spaced-func: 2*/
+/*eslint no-spaced-func: "error"*/
 
 fn()
 ```
-
 
 ## Version
 
 This rule was introduced in ESLint 0.1.2.
 
-该规则在ESLint 0.1.2 中被引入。
+该规则在 ESLint 0.1.2 中被引入。
 
 ## Resources
 
