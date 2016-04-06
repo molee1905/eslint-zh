@@ -30,7 +30,7 @@ Examples of **incorrect** code for this rule:
 **错误**代码示例：
 
 ```js
-/*eslint no-console: 2*/
+/*eslint no-console: "error"*/
 
 console.log("Hello world!");
 console.error("Something bad happened.");
@@ -41,7 +41,7 @@ Examples of **correct** code for this rule:
 **正确**代码示例：
 
 ```js
-/*eslint no-console: 2*/
+/*eslint no-console: "error"*/
 
 // custom console
 Console.log("Hello world!");
@@ -55,14 +55,14 @@ This rule supports the following options:
 
 `allow`: The list of console operations to be used as exceptions to the rule. 
 
-`allow`: console操作的列表作为该规则的例外情况。 
+`allow`: console 操作的列表作为该规则的例外情况。 
 
 For example:
 
 例如: 
 
 ```js
-/*eslint no-console: [2, { allow: ["warn", "error"] }] */
+/*eslint no-console: ["error", { allow: ["warn", "error"] }] */
 
 console.log("this will be considered a problem");
 console.warn("this will not be considered a problem");

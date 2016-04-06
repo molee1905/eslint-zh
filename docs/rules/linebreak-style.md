@@ -6,9 +6,9 @@ proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
-# Disallow mixing CRLF and LF linebreaks (linebreak-style)
+# Enforce linebreak style (linebreak-style)
 
-# 禁止混合使用回车换行和换行 (linebreak-style)
+# 强制换行风格 (linebreak-style)
 
 When developing with a lot of people all having different editors, VCS applications and operating systems it may occur that
 different line endings are written by either of the mentioned (might especially happen when using the windows and mac versions of SourceTree together).
@@ -24,9 +24,13 @@ Many versioning systems (like git and subversion) can automatically ensure the c
 
 很多版本控制系统（如git和subversion）可以自动的保证正确的结尾。然而如果要涵盖所有情况，你可以激活此规则。
 
+**Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
+
+**Fixable：** 该规则可以通过`--fix`命令行进行自动修复。
+
 ## Rule Details
 
-This rule aims to ensure having consistent line endings independent of operating system, VCS or editor used.
+This rule aims to ensure having consistent line endings independent of operating system, VCS or editor used across your codebase.
 
 该规则旨在保证不论是在操作系统，VCS 还是编辑器，都使用一致的行尾。
 
@@ -35,24 +39,22 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint linebreak-style: 2*/
+/*eslint linebreak-style: "error"*/
 
-var a = 'a', // \r\n
-    b = 'b'; // \n
+var a = 'a'; // \r\n
 ```
 
 ```js
-/*eslint linebreak-style: [2, "unix"]*/
+/*eslint linebreak-style: ["error", "unix"]*/
 
 var a = 'a'; // \r\n
 
 ```
 
 ```js
-/*eslint linebreak-style: [2, "windows"]*/
+/*eslint linebreak-style: ["error", "windows"]*/
 
 var a = 'a';// \n
-
 ```
 
 The following patterns are not considered problems:
@@ -60,7 +62,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint linebreak-style: [2, "unix"]*/
+/*eslint linebreak-style: ["error", "unix"]*/
 
 var a = 'a', // \n
     b = 'b'; // \n
@@ -71,7 +73,7 @@ function foo(params) {// \n
 ```
 
 ```js
-/*eslint linebreak-style: [2, "windows"]*/
+/*eslint linebreak-style: ["error", "windows"]*/
 
 var a = 'a', // \r\n
     b = 'b'; // \r\n

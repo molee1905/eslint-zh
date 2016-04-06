@@ -94,7 +94,7 @@ Level of indentation denotes the multiple of the indent specified. Example:
 2个空格缩进，同时开启switch cases缩进
 
 ```json
- "indent": [2, 2, {"SwitchCase": 1}]
+ "indent": ["error", 2, {"SwitchCase": 1}]
 ```
 
 4 space indention
@@ -102,7 +102,7 @@ Level of indentation denotes the multiple of the indent specified. Example:
 4个空格缩进
 
 ```json
-"indent": 2
+"indent": "error"
 ```
 
 2 space indentation
@@ -110,7 +110,7 @@ Level of indentation denotes the multiple of the indent specified. Example:
 2个空格缩进
 
 ```json
-"indent": [2, 2]
+"indent": ["error", 2]
 ```
 
 tabbed indentation
@@ -118,7 +118,7 @@ tabbed indentation
 tab缩进
 
 ```json
-"indent": [2, "tab"]
+"indent": ["error", "tab"]
 ```
 
 The following patterns are considered problems:
@@ -126,7 +126,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint indent: [2, 2]*/
+/*eslint indent: ["error", 2]*/
 
 if (a) {
    b=c;
@@ -137,7 +137,7 @@ function foo(d) {
 ```
 
 ```js
-/*eslint indent: [2, "tab"]*/
+/*eslint indent: ["error", "tab"]*/
 
 if (a) {
      b=c;
@@ -148,7 +148,7 @@ function foo(d) {
 ```
 
 ```js
-/*eslint indent: [2, 2, {"VariableDeclarator": 1}]*/
+/*eslint indent: ["error", 2, {"VariableDeclarator": 1}]*/
 /*eslint-env es6*/
 
 var a,
@@ -163,7 +163,7 @@ const a = 1,
 ```
 
 ```js
-/*eslint indent: [2, 2, {"SwitchCase": 1}]*/
+/*eslint indent: ["error", 2, {"SwitchCase": 1}]*/
 
 switch(a){
 case "a":
@@ -178,7 +178,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint indent: [2, 2]*/
+/*eslint indent: ["error", 2]*/
 
 if (a) {
   b=c;
@@ -189,7 +189,7 @@ if (a) {
 ```
 
 ```js
-/*indent: [2, "tab"]*/
+/*indent: ["error", "tab"]*/
 
 if (a) {
 /*tab*/b=c;
@@ -200,7 +200,7 @@ if (a) {
 ```
 
 ```js
-/*eslint indent: [2, 2, {"VariableDeclarator": 2}]*/
+/*eslint indent: ["error", 2, {"VariableDeclarator": 2}]*/
 /*eslint-env es6*/
 
 var a,
@@ -215,7 +215,7 @@ const a = 1,
 ```
 
 ```js
-/*eslint indent: [2, 2, {"VariableDeclarator": { "var": 2, "let": 2, "const": 3}}]*/
+/*eslint indent: ["error", 2, {"VariableDeclarator": { "var": 2, "let": 2, "const": 3}}]*/
 /*eslint-env es6*/
 
 var a,
@@ -230,7 +230,7 @@ const a = 1,
 ```
 
 ```js
-/*eslint indent: [2, 4, {"SwitchCase": 1}]*/
+/*eslint indent: ["error", 4, {"SwitchCase": 1}]*/
 
 switch(a){
     case "a":
@@ -250,7 +250,7 @@ switch(a){
 
 This rule was introduced in ESLint 0.14.0.
 
-该规则在ESLint 0.14.0 被引入。
+该规则在 ESLint 0.14.0 被引入。
 
 ## Resources
 

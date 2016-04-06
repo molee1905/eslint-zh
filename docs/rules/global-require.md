@@ -6,7 +6,7 @@ proofreader: sunshiner
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
-# Enforce require() on the top-level module scope. (global-require)
+# Enforce require() on the top-level module scope (global-require)
 
 # 强制在顶部加载模块 (global-require)
 
@@ -46,20 +46,12 @@ This rule requires all calls to `require()` to be at the top level of the module
 
 此规则要求所有调用`require()`必须在模块范围顶部，与ES6中`import` 和 `export` 语句相同，也只能放在顶部。
 
-You can enable this rule with the following syntax:
+Examples of **incorrect** code for this rule:
 
-你能启动这个规则通过下面的语法：
-
-```json
-"global-require": 2
-```
-
-The following patterns are considered problems:
-
-以下模式被认为有问题：
+**错误**的代码示例：
 
 ```js
-/*eslint global-require: 2*/
+/*eslint global-require: "error"*/
 /*eslint-env es6*/
 
 // calling require() inside of a function is not allowed
@@ -88,12 +80,12 @@ try {
 }
 ```
 
-The following patterns are not considered problems:、
+Examples of **correct** code for this rule:
 
-以下模式被认为没问题：
+**正确**的代码示例：
 
 ```js
-/*eslint global-require: 2*/
+/*eslint global-require: "error"*/
 
 // all these variations of require() are ok
 require('x');
@@ -127,7 +119,7 @@ If you have a module that must be initialized with information that comes from t
 
 This rule was introduced in ESLint 1.4.0.
 
-此规则在ESLint 1.4.0中被引入。
+此规则在 ESLint 1.4.0 中被引入。
 
 ## Resources
 

@@ -39,11 +39,11 @@ The default max depth for this rule is 10. You can define the depth as an option
 该规则默认的最大深度是10。你可以通过在你的配置中使用第二个参数作为一个选项定义这个深度值。例如，以下将设置规则为错误级别(代码为2)，最大深度为3：     
 
 ```json
-"max-nested-callbacks": [2, 3]
+"max-nested-callbacks": ["error", 3]
 
 // or you can use an object property
 
-"max-nested-callbacks": [2, {"maximum": 3}]
+"max-nested-callbacks": ["error", {"maximum": 3}]
 ```
 
 The following patterns are considered problems:
@@ -51,7 +51,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint max-nested-callbacks: [2, 3]*/
+/*eslint max-nested-callbacks: ["error", 3]*/
 
 foo(function () {
     bar(function () {
@@ -69,7 +69,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的
 
 ```js
-/*eslint max-nested-callbacks: [2, 3]*/
+/*eslint max-nested-callbacks: ["error", 3]*/
 
 foo(handleFoo);
 

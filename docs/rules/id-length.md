@@ -27,13 +27,12 @@ This rule is aimed at increasing code readability and maintainability by enforci
 
 It allows the programmers to silently by-pass this check by using `"quoted"` property names or calculated property access to allow potential server-side data requirements.
 
-
 The following patterns are considered problems:
 
 以下模式被认为是有问题的：
 
 ```js
-/*eslint id-length: 2*/     // default is minimum 2-chars ({ min: 2})
+/*eslint id-length: "error"*/     // default is minimum 2-chars ({ min: 2})
 /*eslint-env es6*/
 
 var x = 5;
@@ -82,7 +81,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint id-length: 2*/     // default is minimum 2-chars ({ min: 2})
+/*eslint id-length: "error"*/     // default is minimum 2-chars ({ min: 2})
 /*eslint-env es6*/
 
 var num = 5;
@@ -162,7 +161,7 @@ For example, to specify a minimum identifier length of 3, a maximum of 10, ignor
 例如，指定最小长度为3，最大长度为10，忽略属性名称，将`x`加入到例外列表中，使用如下配置：
 
 ```json
-"id-length": [2, {"min": 3, "max": 10, "properties": "never", "exceptions": ["x"]}]
+"id-length": ["error", {"min": 3, "max": 10, "properties": "never", "exceptions": ["x"]}]
 ```
 
 The following patterns will not be considered problems
@@ -170,7 +169,7 @@ The following patterns will not be considered problems
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint id-length: [2, {"properties": "never"}]*/
+/*eslint id-length: ["error", {"properties": "never"}]*/
 /*eslint-env es6*/
 
 var myObj = { a: 1 };

@@ -29,7 +29,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint no-empty-label: 2*/
+/*eslint no-empty-label: "error"*/
 
 labeled:
 var x = 10;
@@ -40,7 +40,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint no-empty-label: 2*/
+/*eslint no-empty-label: "error"*/
 
 labeled:
 for (var i=10; i; i--) {

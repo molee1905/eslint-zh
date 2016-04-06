@@ -47,7 +47,7 @@ The following patterns are considered problems if `{ "before": true, "after": tr
 如果设置为`{ "before": true, "after": true }`，以下模式被认为是有问题的：
 
 ```js
-/*eslint arrow-spacing: 2*/
+/*eslint arrow-spacing: "error"*/
 /*eslint-env es6*/
 
 ()=> {};
@@ -65,7 +65,7 @@ The following patterns are not considered problems if `{ "before": true, "after"
 如果设置为`{ "before": true, "after": true }`，以下模式被认为是没有问题的：
 
 ```js
-/*eslint arrow-spacing: 2*/
+/*eslint arrow-spacing: "error"*/
 /*eslint-env es6*/
 
 () => {};
@@ -79,7 +79,7 @@ The following patterns are not considered problems if `{ "before": false, "after
 如果设置为`{ "before": false, "after": false }`，以下模式被认为是没有问题的：
 
 ```js
-/*eslint arrow-spacing: [2, { "before": false, "after": false }]*/
+/*eslint arrow-spacing: ["error", { "before": false, "after": false }]*/
 /*eslint-env es6*/
 
 ()=>{};
@@ -93,7 +93,7 @@ The following patterns are not considered problems if `{ "before": true, "after"
 如果设置为`{ "before": true, "after": false }`，以下模式被认为是没有问题的：
 
 ```js
-/*eslint arrow-spacing: [2, { "before": true, "after": false }]*/
+/*eslint arrow-spacing: ["error", { "before": true, "after": false }]*/
 /*eslint-env es6*/
 
 () =>{};
@@ -107,7 +107,7 @@ The following patterns are not considered problems if `{ "before": false, "after
 如果设置为`{ "before": false, "after": true }`，以下模式被认为是没有问题的：
 
 ```js
-/*eslint arrow-spacing: [2, { "before": false, "after": true }]*/
+/*eslint arrow-spacing: ["error", { "before": false, "after": true }]*/
 /*eslint-env es6*/
 
 ()=> {};

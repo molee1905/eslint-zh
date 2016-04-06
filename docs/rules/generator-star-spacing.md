@@ -86,12 +86,13 @@ The rule takes one option, an object, which has two keys `before` and `after` ha
 
 * `after`强制在`*`和函数名之间有空格 (或匿名 generator 函数的左括号)。如果设置为`true`，要求有空格，否则不允许有空格。
 
+ 
 The default is `{"before": true, "after": false}`.
 
 默认为`{"before": true, "after": false}`。
 
 ```json
-"generator-star-spacing": [2, {"before": false, "after": true}]
+"generator-star-spacing": ["error", {"before": false, "after": true}]
 ```
 
 And the option has shorthand as a string keyword:
@@ -104,7 +105,7 @@ And the option has shorthand as a string keyword:
 * `{"before": false, "after": false}` → `"neither"`
 
 ```json
-"generator-star-spacing": [2, "after"]
+"generator-star-spacing": ["error", "after"]
 ```
 
 When using `{"before": true, "after": false}` this placement will be enforced:
@@ -112,7 +113,7 @@ When using `{"before": true, "after": false}` this placement will be enforced:
 当使用`{"before": true, "after": false}`时：
 
 ```js
-/*eslint generator-star-spacing: [2, {"before": true, "after": false}]*/
+/*eslint generator-star-spacing: ["error", {"before": true, "after": false}]*/
 /*eslint-env es6*/
 
 function *generator() {}
@@ -127,7 +128,7 @@ When using `{"before": false, "after": true}` this placement will be enforced:
 当使用`{"before": false, "after": true}`时：
 
 ```js
-/*eslint generator-star-spacing: [2, {"before": false, "after": true}]*/
+/*eslint generator-star-spacing: ["error", {"before": false, "after": true}]*/
 /*eslint-env es6*/
 
 function* generator() {}
@@ -142,7 +143,7 @@ When using `{"before": true, "after": true}` this placement will be enforced:
 当使用`{"before": true, "after": true}`时：
 
 ```js
-/*eslint generator-star-spacing: [2, {"before": true, "after": true}]*/
+/*eslint generator-star-spacing: ["error", {"before": true, "after": true}]*/
 /*eslint-env es6*/
 
 function * generator() {}
@@ -157,7 +158,7 @@ When using `{"before": false, "after": false}` this placement will be enforced:
 当使用`{"before": false, "after": false}`时：
 
 ```js
-/*eslint generator-star-spacing: [2, {"before": false, "after": false}]*/
+/*eslint generator-star-spacing: ["error", {"before": false, "after": false}]*/
 /*eslint-env es6*/
 
 function*generator() {}

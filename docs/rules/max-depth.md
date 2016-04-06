@@ -39,11 +39,11 @@ The default depth above which this rule will warn is `4`.  You can configure the
 默认最大深度为`4`。你可以将这个深度作为一个选项进行配置，在你的配置中将它作为第二个参数。例如，以下设置规则为错误级别，最大深度为10：
 
 ```json
-"max-depth": [2, 10]
+"max-depth": ["error", 10]
 
 // or you can use an object property
 
-"max-depth": [2, {"maximum": 10}]
+"max-depth": ["error", {"maximum": 10}]
 ```
 
 The following patterns are considered problems:
@@ -51,7 +51,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint max-depth: [2, 2]*/
+/*eslint max-depth: ["error", 2]*/
 
 function foo() {
   for (;;) {
@@ -69,7 +69,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint max-depth: [2, 2]*/
+/*eslint max-depth: ["error", 2]*/
 
 function foo() {
   for (;;) {

@@ -69,7 +69,7 @@ function foo() {
 ## Options
 
 ```json
-"global-strict": [2, "always"]
+"global-strict": ["error", "always"]
 ```
 
 Requires that every file have a top-level `"use strict"` statement.
@@ -77,7 +77,7 @@ Requires that every file have a top-level `"use strict"` statement.
 要求每个文件有一个顶层的`"use strict"`语句。
 
 ```json
-"global-strict": [2, "never"]
+"global-strict": ["error", "never"]
 ```
 
 Warns whenever `"use strict"` is used in the global scope such that it could contaminate concatenated files.

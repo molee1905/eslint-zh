@@ -12,7 +12,7 @@ proofreader: sunshiner
 
 One of the confusing aspects of JavaScript is that any function may or may not return a value at any point in time. When a function exits without any `return` statement executing, the function returns `undefined`. Similarly, calling `return` without specifying any value will cause the function to return `undefined`.Only when `return` is called with a value is there a change in the function's return value.
 
-JavaScript代码容易让人混乱的一点就是任何函数在执行过程中都可能返回值或者不返回值。
+JavaScript 代码容易让人混乱的一点就是任何函数在执行过程中都可能返回值或者不返回值。
 当函数中没有任何`return`语句执行时，函数返回`undefined`。
 同样的，调用没有指定任何返回值的`return`，函数也会返回`undefined`。
 只有当调用带有返回值的`return`，才会改变函数的返回值。
@@ -48,13 +48,12 @@ This rule is aimed at ensuring all `return` statements either specify a value or
 
 It excludes constructors which, when invoked with the `new` operator, return the instantiated object if another object is not explicitly returned.  This rule treats a function as a constructor if its name starts with an uppercase letter.
 
-
 Examples of **incorrect** code for this rule:
 
 **错误**代码示例：
 
 ```js
-/*eslint consistent-return: 2*/
+/*eslint consistent-return: "error"*/
 
 function doSomething(condition) {
 
@@ -87,7 +86,7 @@ Examples of **correct** code for this rule:
 **正确**代码示例：
 
 ```js
-/*eslint consistent-return: 2*/
+/*eslint consistent-return: "error"*/
 
 function doSomething(condition) {
 
@@ -111,13 +110,13 @@ function Foo() {
 
 If you want to allow functions to have different `return` behavior depending on code branching, then it is safe to disable this rule.
 
-如果你想要允许函数根据代码分支有不同的`return`行为，可以安全的禁用此规则。
+如果你想要允许函数根据代码分支有不同的`return`行为，可以禁用此规则。
 
 ## Version
 
 This rule was introduced in ESLint 0.4.0.
 
-此规则在ESLint 0.4.0中被引入。
+此规则在 ESLint 0.4.0 中被引入。
 
 ## Resources
 

@@ -35,11 +35,11 @@ There is an additional optional argument to ignore top level functions.
 有一个额外的可选参数可以忽略顶层函数。
 
 ```json
-"max-statements": [2, 10, {"ignoreTopLevelFunctions": true}]
+"max-statements": ["error", 10, {"ignoreTopLevelFunctions": true}]
 
 // or you can use an object property to set the maximum
 
-"max-statements": [2, {"maximum": 10}, {"ignoreTopLevelFunctions": true}]
+"max-statements": ["error", {"maximum": 10}, {"ignoreTopLevelFunctions": true}]
 ```
 
 The following patterns are considered problems:
@@ -47,7 +47,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint max-statements: [2, 2]*/  // Maximum of 2 statements.
+/*eslint max-statements: ["error", 2]*/  // Maximum of 2 statements.
 function foo() {
   var bar = 1;
   var baz = 2;
@@ -61,7 +61,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint max-statements: [2, 2]*/  // Maximum of 2 statements.
+/*eslint max-statements: ["error", 2]*/  // Maximum of 2 statements.
 function foo() {
   var bar = 1;
   return function () {
@@ -75,7 +75,7 @@ function foo() {
 ```
 
 ```js
-/*eslint max-statements: [2, 1, {ignoreTopLevelFunctions: true}]*/  // Maximum of 1 statement.
+/*eslint max-statements: ["error", 1, {ignoreTopLevelFunctions: true}]*/  // Maximum of 1 statement.
 (function() {
   var bar = 1;
   return function () {

@@ -62,7 +62,7 @@ Depending on your coding conventions, you can choose either option by specifying
 根据您的编码约定，您可以在您的配置中选择使用任一选项：
 
 ```json
-"computed-property-spacing": [2, "never"]
+"computed-property-spacing": ["error", "never"]
 ```
 
 ### "never"
@@ -72,7 +72,7 @@ When `"never"` is set, the following patterns will give a warning:
 当`"never"`被设置，以下模式将给出一个警告：
 
 ```js
-/*eslint computed-property-spacing: [2, "never"]*/
+/*eslint computed-property-spacing: ["error", "never"]*/
 /*eslint-env es6*/
 
 obj[foo ]
@@ -86,7 +86,7 @@ The following patterns are considered correct:
 以下模式被认为是正确的：
 
 ```js
-/*eslint computed-property-spacing: [2, "never"]*/
+/*eslint computed-property-spacing: ["error", "never"]*/
 /*eslint-env es6*/
 
 obj[foo]
@@ -102,7 +102,7 @@ When `"always"` is used, the following patterns will give a warning:
 当`"always"`被设置，以下模式将给出一个警告：
 
 ```js
-/*eslint computed-property-spacing: [2, "always"]*/
+/*eslint computed-property-spacing: ["error", "always"]*/
 /*eslint-env es6*/
 
 obj[foo]
@@ -119,7 +119,7 @@ The following patterns are considered correct:
 以下模式被认为是正确的：
 
 ```js
-/*eslint computed-property-spacing: [2, "always"]*/
+/*eslint computed-property-spacing: ["error", "always"]*/
 /*eslint-env es6*/
 
 obj[ foo ]

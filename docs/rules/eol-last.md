@@ -36,7 +36,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint eol-last: 2*/
+/*eslint eol-last: "error"*/
 
 function doSmth() {
   var foo = 2;
@@ -48,7 +48,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint eol-last: 2*/
+/*eslint eol-last: "error"*/
 
 function doSmth() {
   var foo = 2;

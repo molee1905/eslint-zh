@@ -29,7 +29,7 @@ Examples of **incorrect** code for this rule:
 **错误**代码示例：
 
 ```js
-/*eslint no-extra-semi: 2*/
+/*eslint no-extra-semi: "error"*/
 
 var x = 5;;
 
@@ -44,7 +44,7 @@ Examples of **correct** code for this rule:
 **正确**代码示例：
 
 ```js
-/*eslint no-extra-semi: 2*/
+/*eslint no-extra-semi: "error"*/
 
 var x = 5;
 

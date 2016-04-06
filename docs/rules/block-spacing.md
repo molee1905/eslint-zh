@@ -31,18 +31,15 @@ This rule has a option, its value is `"always"` or `"never"`.
 该规则有一个选项, 值为 `"always"` 或 `"never"`。
 
 - `"always"` (by default) enforces one or more spaces.
-
 - `"always"` (默认) 强制是使用一个或多个空格。
-
 - `"never"` disallows space(s).
-
 - `"never"` 禁用空格。
 
 ### "always"
 
 ```json
 {
-  "block-spacing": [2, "always"]
+  "block-spacing": ["error", "always"]
 }
 ```
 
@@ -51,7 +48,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint block-spacing: 2*/
+/*eslint block-spacing: "error"*/
 function foo() {return true;}
 if (foo) { bar = 0;}
 ```
@@ -61,7 +58,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint block-spacing: 2*/
+/*eslint block-spacing: "error"*/
 
 function foo() { return true; }
 if (foo) { bar = 0; }
@@ -71,7 +68,7 @@ if (foo) { bar = 0; }
 
 ```json
 {
-  "block-spacing": [2, "never"]
+  "block-spacing": ["error", "never"]
 }
 ```
 
@@ -80,7 +77,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint block-spacing: [2, "never"]*/
+/*eslint block-spacing: ["error", "never"]*/
 
 function foo() { return true; }
 if (foo) { bar = 0;}
@@ -91,7 +88,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint block-spacing: [2, "never"]*/
+/*eslint block-spacing: ["error", "never"]*/
 
 function foo() {return true;}
 if (foo) {bar = 0;}

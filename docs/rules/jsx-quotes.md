@@ -57,7 +57,7 @@ The following patterns are considered problems when set to `"prefer-double"`:
 当设置为`"prefer-double"`，以下模式被认为是有问题的：
 
 ```xml
-/*eslint jsx-quotes: [2, "prefer-double"]*/
+/*eslint jsx-quotes: ["error", "prefer-double"]*/
 
 <a b='c' />
 ```
@@ -67,7 +67,7 @@ The following patterns are not considered problems when set to `"prefer-double"`
 当设置为`"prefer-double"`，以下模式被认为是没有问题的：
 
 ```xml
-/*eslint jsx-quotes: [2, "prefer-double"]*/
+/*eslint jsx-quotes: ["error", "prefer-double"]*/
 
 <a b="c" />
 <a b='"' />
@@ -78,7 +78,7 @@ The following patterns are considered problems when set to `"prefer-single"`:
 当设置为`"prefer-single"`，以下模式被认为是有问题的：
 
 ```xml
-/*eslint jsx-quotes: [2, "prefer-single"]*/
+/*eslint jsx-quotes: ["error", "prefer-single"]*/
 
 <a b="c" />
 ```
@@ -88,7 +88,7 @@ The following patterns are not considered problems when set to `"prefer-single"`
 当设置为`"prefer-single"`，以下模式被认为是没有问题的：
 
 ```xml
-/*eslint jsx-quotes: [2, "prefer-single"]*/
+/*eslint jsx-quotes: ["error", "prefer-single"]*/
 
 <a b='c' />
 <a b="'" />

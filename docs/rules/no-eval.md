@@ -8,7 +8,7 @@ proofreader: molee1905
 
 # Disallow eval() (no-eval)
 
-# 禁止使用eval()（no-eval）
+# 禁用 eval()（no-eval）
 
 JavaScript's `eval()` function is potentially dangerous and is often misused. Using `eval()` on untrusted code can open a program up to several different injection attacks. The use of `eval()` in most contexts can be substituted for a better, alternative approach to a problem.
 
@@ -26,12 +26,12 @@ This rule is aimed at preventing potentially dangerous, unnecessary, and slow co
 
 此规则目的在于通过禁止使用`eval()`函数来避免潜在地危险的，不必要的和运行效率低下的代码。这样，当时用`eval()`时，该规则将发出警告。
 
-The following patterns are considered problems:
+Examples of **incorrect** code for this rule:
 
-以下模式被认为是有问题的：
+**错误**代码示例：
 
 ```js
-/*eslint no-eval: 2*/
+/*eslint no-eval: "error"*/
 
 var obj = { x: "foo" },
     key = "x",
@@ -47,25 +47,26 @@ this.eval("var a = 0");
 ```
 
 ```js
-/*eslint no-eval: 2*/
+/*eslint no-eval: "error"*/
 /*eslint-env browser*/
 
 window.eval("var a = 0");
 ```
 
 ```js
-/*eslint no-eval: 2*/
+/*eslint no-eval: "error"*/
 /*eslint-env node*/
 
 global.eval("var a = 0");
 ```
 
-The following patterns are not considered problems:
+Examples of **correct** code for this rule:
 
-以下模式被认为是没有问题的：
+**正确**代码示例：
 
 ```js
-/*eslint no-eval: 2*/
+/*eslint no-eval: "error"*/
+/*eslint-env es6*/
 
 var obj = { x: "foo" },
     key = "x",
@@ -91,7 +92,7 @@ Indirect calls to `eval` are less dangerous than direct calls to `eval` because 
 
 ```js
 {
-    "no-eval": [2, {"allowIndirect": true}] // default is false
+    "no-eval": ["error", {"allowIndirect": true}] // default is false
 }
 ```
 
@@ -100,7 +101,7 @@ With this option the following patterns are considered problems:
 使用此选项，以下模式被认为是有问题的：
 
 ```js
-/*eslint no-eval: 2*/
+/*eslint no-eval: "error"*/
 
 var obj = { x: "foo" },
     key = "x",
@@ -112,7 +113,7 @@ With this option the following patterns are not considered problems:
 使用此选项，以下模式被认为是没有问题的：
 
 ```js
-/*eslint no-eval: 2*/
+/*eslint no-eval: "error"*/
 
 (0, eval)("var a = 0");
 
@@ -123,14 +124,14 @@ this.eval("var a = 0");
 ```
 
 ```js
-/*eslint no-eval: 2*/
+/*eslint no-eval: "error"*/
 /*eslint-env browser*/
 
 window.eval("var a = 0");
 ```
 
 ```js
-/*eslint no-eval: 2*/
+/*eslint no-eval: "error"*/
 /*eslint-env node*/
 
 global.eval("var a = 0");

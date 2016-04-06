@@ -24,7 +24,7 @@ Examples of **incorrect** code for this rule:
 **错误**代码示例：
 
 ```js
-/*eslint no-duplicate-case: 2*/
+/*eslint no-duplicate-case: "error"*/
 
 var a = 1,
     one = 1;
@@ -68,7 +68,7 @@ Examples of **correct** code for this rule:
 **正确**代码示例：
 
 ```js
-/*eslint no-duplicate-case: 2*/
+/*eslint no-duplicate-case: "error"*/
 
 var a = 1,
     one = 1;
