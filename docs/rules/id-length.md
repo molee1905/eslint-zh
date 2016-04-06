@@ -190,7 +190,7 @@ var myObj = { a: 1 };
 
 This rule was introduced in ESLint 1.0.0.
 
-该规则在ESLint 1.0.0 被引入。
+该规则在 ESLint 1.0.0 被引入。
 
 ## Resources
 
