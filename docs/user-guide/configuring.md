@@ -85,7 +85,7 @@ Parser options are set in your `.eslintrc.*` file by using the `parserOptions` p
 
 Here's an example `.eslintrc.json` file:
 
-`.eslintrc`文件示例：
+`.eslintrc.json`文件示例：
 
 ```json
 {
@@ -94,7 +94,7 @@ Here's an example `.eslintrc.json` file:
         "sourceType": "module",
         "ecmaFeatures": {
             "jsx": true
-        },
+        }
     },
     "rules": {
         "semi": 2
@@ -148,11 +148,8 @@ The following parsers are compatible with ESLint:
 以下解析器与 ESLint 兼容：
 
 * [Esprima](https://npmjs.com/package/esprima)
-
 * [Esprima](https://npmjs.com/package/esprima)
-
 * [Babel-ESLint](https://npmjs.com/package/babel-eslint) - A wrapper around the [Babel](http://babeljs.io)parser that makes it compatible with ESLint.
-
 * [Babel-ESLint](https://npmjs.com/package/babel-eslint) - 对[Babel](http://babeljs.io)解析器的包装使其与 ESLint 兼容。
 
 Note when using a custom parser, the `parserOptions` configuration property is still required for ESLint to work properly with features not in ECMAScript 5 by default. Parsers are all passed `parserOptions` and may or may not use them to determine which features to enable.
@@ -588,6 +585,7 @@ In these configuration files, the rule `plugin1/rule1` comes from the plugin nam
 To temporarily disable rule warnings in your file use the following format:
 
 在你文件中临时禁用规则警告，可以使用下面的格式：
+ 
 
 ```js
 /*eslint-disable */
@@ -718,11 +716,14 @@ ESLint 支持几种格式的配置文件：
 
 * **Deprecated** - use `.eslintrc`, which can be either JSON or YAML.
 
+* **Deprecated** - use `.eslintrc`, which can be either JSON or YAML.
+
 * **Deprecated** - 使用 `.eslintrc`，可以使 JSON 也可以是 YAML。
 
 * **package.json** - create an `eslintConfig` property in your `package.json` file and define your configuration there.
 
 * **package.json** - 在`package.json`里创建一个`eslintConfig`属性，在那里定义你的配置。
+
 
 If there are multiple configuration files in the same directory, ESLint will only use one. The priority order is:
 
@@ -839,8 +840,8 @@ The complete configuration hierarchy, from highest precedence to lowest preceden
 
     1. `.eslintrc.*` or `package.json` file in same directory as linted file
 
-    2. 与要检测的文件在同一目录下的`.eslintrc.*` 或 `package.json` 文件 
-
+    1. 与要检测的文件在同一目录下的`.eslintrc.*` 或 `package.json` 文件 
+ 
     1. Continue searching for `.eslintrc` and `package.json` files in ancestor directories (parent has highest precedence, then grandparent, etc.), up to and including the root directory or until a config with `"root": true` is found.
     
     1. 继续在父级目录寻找`.eslintrc` 或 `package.json` 文件，直到根目录（包括根目录）或直到发现一个有`"root": true`的配置。
@@ -945,7 +946,7 @@ In this example, the `eslint-config-myrules` package will be loaded as an object
 ESLint also supports extending configuration from plugins that provide configs:
 
 ESLint 还支持从配置的插件中来扩展配置：
-
+ 
 ```js
 {
     "extends": "plugin:eslint-plugin-myplugin/myConfig",
@@ -1049,10 +1050,6 @@ For example, placing the following `.eslintignore` file in the current working d
 ```text
 # /node_modules and /bower_components ignored by default
 
-# Ignore files compiled from TypeScript and CoffeeScript
-
-**/*.{ts,coffee}.js
-
 # Ignore built files except build/index.js
 
 build/
@@ -1075,9 +1072,9 @@ You can also use your `.gitignore` file:
 
     eslint --ignore-path .gitignore file.js
 
-Any file that follows the standard ignore file format can be used. Keep in mind that specifying `--ignore-path` means that any existing `.eslintignore` file will not be used. Note that globbing rules in `.eslintignore` are more strict than in `.gitignore`. See all supported patterns in [minimatch docs](https://github.com/isaacs/minimatch)
+Any file that follows the standard ignore file format can be used. Keep in mind that specifying `--ignore-path` means that any existing `.eslintignore` file will not be used. Note that globbing rules in `.eslintignore` are more strict than in `.gitignore`.
 
-任何文件只要满足标准忽略文件格式都可以用。记住，指定`--ignore-path`意味着任何现有的`.eslintignore`文件将不被使用。请注意，`.eslintignore`中的匹配规则比`.gitignore`中的更严格。查看所有支持的模式[minimatch docs](https://github.com/isaacs/minimatch)
+任何文件只要满足标准忽略文件格式都可以用。记住，指定`--ignore-path`意味着任何现有的`.eslintignore`文件将不被使用。请注意，`.eslintignore`中的匹配规则比`.gitignore`中的更严格。
 
 ### Ignored File Warnings
 
@@ -1110,8 +1107,6 @@ foo.js
 ```
 
 This message occurs because ESLint is unsure if you wanted to actually lint the file or not. As the message indicates, you can use `--no-ignore` to omit using the ignored rules.
-
-这种警告会发生是因为ESLint不知道你是否真的希望这个文件被忽略。就像错误信息所表示的你可以使用`--no-ignore`去删除这个忽略规则。
 
 这种消息出现是因为 ESLint 不确定你是否想检测文件。正如这个消息表明的那样，你可以使用`--no-ignore`覆盖忽略的规则。
 

@@ -57,7 +57,7 @@ The rule takes two options.
     请注意，如果第一个参数是`"never"`，例外情况会被忽略。
 
     ```json
-    "spaced-comment": [2, "always", { "exceptions": ["-", "+"] }]
+    "spaced-comment": ["error", "always", { "exceptions": ["-", "+"] }]
     ```
 
     * The `"markers"` value is an array of string patterns which are considered markers for docblock-style comments,such as an additional `/`, used to denote documentation read by doxygen, vsdoc, etc. which must have additional characters.The `"markers"` array will apply regardless of the value of the first argument, e.g. `"always"` or `"never"`.
@@ -65,7 +65,7 @@ The rule takes two options.
     * `"markers"`的值是一个字符串形式的数组，这些字符串也就是块级注释的标记，例如一个额外的`/`，被用来表示是由 doxygen、vsdoc 等系统读取的文档，这些系统必须有额外的字符。不管第一个参数是`"always"` 还是 `"never"`，`"markers"`数组都会起作用。
 
     ```json
-    "spaced-comment": [2, "always", { "markers": ["/"] }]
+    "spaced-comment": ["error", "always", { "markers": ["/"] }]
     ```
 
 The difference between a marker and an exception is that a marker only appears at the beginning of the comment whereas
@@ -78,7 +78,7 @@ You can also define separate exceptions and markers for block and line comments:
 你可以为块级注释和单行注释定义不同的例外和标记：
 
 ```json
-"spaced-comment": [2, "always", {
+"spaced-comment": ["error", "always", {
     "line": {
         "markers": ["/"],
         "exceptions": ["-", "+"]
@@ -97,7 +97,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint spaced-comment: [2, "always"]*/
+/*eslint spaced-comment: ["error", "always"]*/
 
 //This is a comment with no whitespace at the beginning
 
@@ -109,7 +109,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/* eslint spaced-comment: [2, "always"] */
+/* eslint spaced-comment: ["error", "always"] */
 
 // This is a comment with a whitespace at the beginning
 
@@ -125,7 +125,7 @@ This comment has a newline
 ```
 
 ```js
-/* eslint spaced-comment: [2, "always"] */
+/* eslint spaced-comment: ["error", "always"] */
 
 /**
 * I am jsdoc
@@ -139,7 +139,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint spaced-comment: [2, "never"]*/
+/*eslint spaced-comment: ["error", "never"]*/
 
 // This is a comment with a whitespace at the beginning
 
@@ -153,13 +153,13 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint spaced-comment: [2, "never"]*/
+/*eslint spaced-comment: ["error", "never"]*/
 
 /*This is a comment with no whitespace at the beginning */
 ```
 
 ```js
-/*eslint spaced-comment: [2, "never"]*/
+/*eslint spaced-comment: ["error", "never"]*/
 
 /**
 * I am jsdoc
@@ -173,7 +173,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/* eslint spaced-comment: [2, "always", { "block": { "exceptions": ["-"] } }] */
+/* eslint spaced-comment: ["error", "always", { "block": { "exceptions": ["-"] } }] */
 
 //--------------
 // Comment block
@@ -181,7 +181,7 @@ The following patterns are considered problems:
 ```
 
 ```js
-/* eslint spaced-comment: [2, "always", { "exceptions": ["-", "+"] }] */
+/* eslint spaced-comment: ["error", "always", { "exceptions": ["-", "+"] }] */
 
 //------++++++++
 // Comment block
@@ -189,7 +189,7 @@ The following patterns are considered problems:
 ```
 
 ```js
-/* eslint spaced-comment: [2, "always", { "exceptions": ["-", "+"] }] */
+/* eslint spaced-comment: ["error", "always", { "exceptions": ["-", "+"] }] */
 
 /*------++++++++*/
 /* Comment block */
@@ -197,7 +197,7 @@ The following patterns are considered problems:
 ```
 
 ```js
-/* eslint spaced-comment: [2, "always", { "line": { "exceptions": ["-+"] } }] */
+/* eslint spaced-comment: ["error", "always", { "line": { "exceptions": ["-+"] } }] */
 
 /*-+-+-+-+-+-+-+*/
 // Comment block
@@ -209,7 +209,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/* eslint spaced-comment: [2, "always", { "exceptions": ["-"] }] */
+/* eslint spaced-comment: ["error", "always", { "exceptions": ["-"] }] */
 
 //--------------
 // Comment block
@@ -217,7 +217,7 @@ The following patterns are not considered problems:
 ```
 
 ```js
-/* eslint spaced-comment: [2, "always", { "line": { "exceptions": ["-"] } }] */
+/* eslint spaced-comment: ["error", "always", { "line": { "exceptions": ["-"] } }] */
 
 //--------------
 // Comment block
@@ -225,7 +225,7 @@ The following patterns are not considered problems:
 ```
 
 ```js
-/* eslint spaced-comment: [2, "always", { "exceptions": ["*"] }] */
+/* eslint spaced-comment: ["error", "always", { "exceptions": ["*"] }] */
 
 /****************
  * Comment block
@@ -233,7 +233,7 @@ The following patterns are not considered problems:
 ```
 
 ```js
-/* eslint spaced-comment: [2, "always", { "exceptions": ["-+"] }] */
+/* eslint spaced-comment: ["error", "always", { "exceptions": ["-+"] }] */
 
 //-+-+-+-+-+-+-+
 // Comment block
@@ -245,7 +245,7 @@ The following patterns are not considered problems:
 ```
 
 ```js
-/* eslint spaced-comment: [2, "always", { "block": { "exceptions": ["-+"] } }] */
+/* eslint spaced-comment: ["error", "always", { "block": { "exceptions": ["-+"] } }] */
 
 /*-+-+-+-+-+-+-+*/
 // Comment block
@@ -259,7 +259,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/* eslint spaced-comment: [2, "always", { "markers": ["/"] }] */
+/* eslint spaced-comment: ["error", "always", { "markers": ["/"] }] */
 
 ///This is a comment with a marker but without whitespace
 ```
@@ -269,13 +269,13 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/* eslint spaced-comment: [2, "always", { "markers": ["/"] }] */
+/* eslint spaced-comment: ["error", "always", { "markers": ["/"] }] */
 
 /// This is a comment with a marker
 ```
 
 ```js
-/*eslint spaced-comment: [2, "never", { "markers": ["!<"] }]*/
+/*eslint spaced-comment: ["error", "never", { "markers": ["!<"] }]*/
 
 //!<This is a line comment with a marker
 
@@ -285,7 +285,7 @@ subsequent lines are ignored
 ```
 
 ```js
-/* eslint spaced-comment: [2, "always", { "markers": ["global"] }] */
+/* eslint spaced-comment: ["error", "always", { "markers": ["global"] }] */
 
 /*global ABC*/
 ```

@@ -10,13 +10,13 @@ proofreader: summart
 
 # 建议使用`const` (prefer-const)
 
-If a variable is never modified, using the `const` declaration is better.
+If a variable is never reassigned, using the `const` declaration is better.
 
-如果一个变量不会被修改，最好使用`const`进行声明。
+如果一个变量不会被重新赋值，最好使用`const`进行声明。
 
-`const` declaration tells readers, "this variable is never modified," reducing cognitive load and improving maintainability.
+`const` declaration tells readers, "this variable is never reassigned," reducing cognitive load and improving maintainability.
 
-`const`声明告诉读者，“这个变量从不会被修改”，从而减少认知负荷，提高可维护性。
+`const`声明告诉读者，“这个变量从不会被重新赋值”，从而减少认知负荷，提高可维护性。
 
 ## Rule Details
 
@@ -29,7 +29,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint prefer-const: 2*/
+/*eslint prefer-const: "error"*/
 /*eslint-env es6*/
 
 let a = 3;
@@ -44,6 +44,11 @@ for (let i in [1,2,3]) {
 for (let a of [1,2,3]) {
     console.log(a);
 }
+
+// the initializer is separated.
+let a;
+a = 0;
+console.log(a);
 ```
 
 The following patterns are not considered problems:
@@ -51,7 +56,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint prefer-const: 2*/
+/*eslint prefer-const: "error"*/
 /*eslint-env es6*/
 
 let a; // there is no initialization.
@@ -72,6 +77,13 @@ for (let i = 0, end = 10; i < end; ++i) {
     console.log(a);
 }
 
+// the initializer is located at another block.
+let a;
+if (true) {
+    a = 0;
+}
+console.log(a);
+
 // suggest to use `no-var` rule.
 var b = 3;
 console.log(b);
@@ -91,7 +103,7 @@ If you don't want to be notified about variables that are never reassigned after
 
 This rule was introduced in ESLint 0.23.0.
 
-该规则在ESLint 0.23.0 中被引入。
+该规则在 ESLint 0.23.0 中被引入。
 
 ## Resources
 

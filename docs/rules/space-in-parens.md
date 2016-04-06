@@ -48,7 +48,7 @@ Depending on your coding conventions, you can choose either option by specifying
 根据您的编码约定，您可以在您的配置中选择使用任一选项：
 
 ```json
-"space-in-parens": [2, "always"]
+"space-in-parens": ["error", "always"]
 ```
 
 ### "always"
@@ -58,7 +58,7 @@ When `"always"` is set, the following patterns are considered problems:
 当设置为`"always"`，以下模式被认为是有问题的：
 
 ```js
-/*eslint space-in-parens: [2, "always"]*/
+/*eslint space-in-parens: ["error", "always"]*/
 
 foo( 'bar');
 foo('bar' );
@@ -73,7 +73,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint space-in-parens: [2, "always"]*/
+/*eslint space-in-parens: ["error", "always"]*/
 
 foo();
 
@@ -90,7 +90,7 @@ When `"never"` is used, the following patterns are considered problems:
 当设置为`"never"`，以下模式被认为是有问题的：
 
 ```js
-/*eslint space-in-parens: [2, "never"]*/
+/*eslint space-in-parens: ["error", "never"]*/
 
 foo( 'bar');
 foo('bar' );
@@ -105,7 +105,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint space-in-parens: [2, "never"]*/
+/*eslint space-in-parens: ["error", "never"]*/
 
 foo();
 
@@ -125,12 +125,12 @@ The following exceptions are available: `["{}", "[]", "()", "empty"]`.
 
 以下例外情况是有效的：`["{}", "[]", "()", "empty"]`.
 
-For example, given `"space-in-parens": [2, "always", { "exceptions": ["{}"] }]`, the following patterns are considered problems:
+For example, given `"space-in-parens": ["error", "always", { "exceptions": ["{}"] }]`, the following patterns are considered problems:
 
 例如，配置为`"space-in-parens": [2, "always", { "exceptions": ["{}"] }]`，以下模式被认为是有问题的：
 
 ```js
-/*eslint space-in-parens: [2, "always", { "exceptions": ["{}"] }]*/
+/*eslint space-in-parens: ["error", "always", { "exceptions": ["{}"] }]*/
 
 foo( {bar: 'baz'} );
 foo( 1, {bar: 'baz'} );
@@ -141,18 +141,18 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint space-in-parens: [2, "always", { "exceptions": ["{}"] }]*/
+/*eslint space-in-parens: ["error", "always", { "exceptions": ["{}"] }]*/
 
 foo({bar: 'baz'});
 foo( 1, {bar: 'baz'});
 ```
 
-Or, given `"space-in-parens": [2, "never", { "exceptions": ["{}"] }]`, the following patterns are considered problems:
+Or, given `"space-in-parens": ["error", "never", { "exceptions": ["{}"] }]`, the following patterns are considered problems:
 
 或者，配置为`"space-in-parens": [2, "never", { "exceptions": ["{}"] }]`，以下模式被认为是有问题的：
 
 ```js
-/*eslint space-in-parens: [2, "never", { "exceptions": ["{}"] }]*/
+/*eslint space-in-parens: ["error", "never", { "exceptions": ["{}"] }]*/
 
 foo({bar: 'baz'});
 foo(1, {bar: 'baz'});
@@ -163,18 +163,18 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint space-in-parens: [2, "never", { "exceptions": ["{}"] }]*/
+/*eslint space-in-parens: ["error", "never", { "exceptions": ["{}"] }]*/
 
 foo( {bar: 'baz'} );
 foo(1, {bar: 'baz'} );
 ```
 
-Given `"space-in-parens": [2, "always", { "exceptions": ["[]"] }]`, the following patterns are considered problems:
+Given `"space-in-parens": ["error", "always", { "exceptions": ["[]"] }]`, the following patterns are considered problems:
 
 配置为`"space-in-parens": [2, "always", { "exceptions": ["[]"] }]`，以下模式被认为是有问题的：
 
 ```js
-/*eslint space-in-parens: [2, "always", { "exceptions": ["[]"] }]*/
+/*eslint space-in-parens: ["error", "always", { "exceptions": ["[]"] }]*/
 
 foo( [bar, baz] );
 foo( [bar, baz], 1 );
@@ -185,18 +185,18 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint space-in-parens: [2, "always", { "exceptions": ["[]"] }]*/
+/*eslint space-in-parens: ["error", "always", { "exceptions": ["[]"] }]*/
 
 foo([bar, baz]);
 foo([bar, baz], 1 );
 ```
 
-Or, given `"space-in-parens": [2, "never", { "exceptions": ["[]"] }]`, the following patterns are considered problems:
+Or, given `"space-in-parens": ["error", "never", { "exceptions": ["[]"] }]`, the following patterns are considered problems:
 
 或者，配置为`"space-in-parens": [2, "never", { "exceptions": ["[]"] }]`，以下模式被认为是有问题的：
 
 ```js
-/*eslint space-in-parens: [2, "never", { "exceptions": ["[]"] }]*/
+/*eslint space-in-parens: ["error", "never", { "exceptions": ["[]"] }]*/
 
 foo([bar, baz]);
 foo([bar, baz], 1);
@@ -207,18 +207,18 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint space-in-parens: [2, "never", { "exceptions": ["[]"] }]*/
+/*eslint space-in-parens: ["error", "never", { "exceptions": ["[]"] }]*/
 
 foo( [bar, baz] );
 foo( [bar, baz], 1);
 ```
 
-Given `"space-in-parens": [2, "always", { "exceptions": ["()"] }]`, the following patterns are considered problems:
+Given `"space-in-parens": ["error", "always", { "exceptions": ["()"] }]`, the following patterns are considered problems:
 
 配置为`"space-in-parens": [2, "always", { "exceptions": ["()"] }]`，以下模式被认为是有问题的：
 
 ```js
-/*eslint space-in-parens: [2, "always", { "exceptions": ["()"] }]*/
+/*eslint space-in-parens: ["error", "always", { "exceptions": ["()"] }]*/
 
 foo( ( 1 + 2 ) );
 foo( ( 1 + 2 ), 1 );
@@ -229,18 +229,18 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint space-in-parens: [2, "always", { "exceptions": ["()"] }]*/
+/*eslint space-in-parens: ["error", "always", { "exceptions": ["()"] }]*/
 
 foo(( 1 + 2 ));
 foo(( 1 + 2 ), 1 );
 ```
 
-Or, given `"space-in-parens": [2, "never", { "exceptions": ["()"] }]`, the following patterns are considered problems:
+Or, given `"space-in-parens": ["error", "never", { "exceptions": ["()"] }]`, the following patterns are considered problems:
 
 或者配置为`"space-in-parens": [2, "never", { "exceptions": ["()"] }]`，以下模式被认为是有问题的：
 
 ```js
-/*eslint space-in-parens: [2, "never", { "exceptions": ["()"] }]*/
+/*eslint space-in-parens: ["error", "never", { "exceptions": ["()"] }]*/
 
 foo((1 + 2));
 foo((1 + 2), 1);
@@ -251,7 +251,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint space-in-parens: [2, "never", { "exceptions": ["()"] }]*/
+/*eslint space-in-parens: ["error", "never", { "exceptions": ["()"] }]*/
 
 foo( (1 + 2) );
 foo( (1 + 2), 1);
@@ -261,12 +261,12 @@ The `"empty"` exception concerns empty parentheses, and works the same way as th
 
 `"empty"`例外关注空括号，与其他例外作用一样，与第一个选项相反。
 
-For example, given `"space-in-parens": [2, "always", { "exceptions": ["empty"] }]`, the following patterns are considered problems:
+For example, given `"space-in-parens": ["error", "always", { "exceptions": ["empty"] }]`, the following patterns are considered problems:
 
-例如，配置为`"space-in-parens": [2, "always", { "exceptions": ["empty"] }]`，以下模式被认为是有问题的：
+例如，配置为`"space-in-parens": ["error", "always", { "exceptions": ["empty"] }]`，以下模式被认为是有问题的：
 
 ```js
-/*eslint space-in-parens: [2, "always", { "exceptions": ["empty"] }]*/
+/*eslint space-in-parens: ["error", "always", { "exceptions": ["empty"] }]*/
 
 foo( );
 ```
@@ -276,18 +276,18 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint space-in-parens: [2, "always", { "exceptions": ["empty"] }]*/
+/*eslint space-in-parens: ["error", "always", { "exceptions": ["empty"] }]*/
 
 foo();
 ```
 
-Or, given `"space-in-parens": [2, "never", { "exceptions": ["empty"] }]`, the following patterns are considered problems:
+Or, given `"space-in-parens": ["error", "never", { "exceptions": ["empty"] }]`, the following patterns are considered problems:
 
-或者，配置为`"space-in-parens": [2, "never", { "exceptions": ["empty"] }]`，
+或者，配置为`"space-in-parens": ["error", "never", { "exceptions": ["empty"] }]`，
 以下模式被认为是有问题的：
 
 ```js
-/*eslint space-in-parens: [2, "never", { "exceptions": ["empty"] }]*/
+/*eslint space-in-parens: ["error", "never", { "exceptions": ["empty"] }]*/
 
 foo();
 ```
@@ -297,17 +297,17 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint space-in-parens: [2, "never", { "exceptions": ["empty"] }]*/
+/*eslint space-in-parens: ["error", "never", { "exceptions": ["empty"] }]*/
 
 foo( );
 ```
 
-You can include multiple entries in the `"exceptions"` array. For example, given `"space-in-parens": [2, "always", { "exceptions": ["{}", "[]"] }]`, the following patterns are considered problems:
+You can include multiple entries in the `"exceptions"` array. For example, given `"space-in-parens": ["error", "always", { "exceptions": ["{}", "[]"] }]`, the following patterns are considered problems:
 
-你可以在`"exceptions"`数组中包含多个项。例如，配置`"space-in-parens": [2, "always", { "exceptions": ["{}", "[]"] }]`，以下模式被认为是有问题的：
+你可以在`"exceptions"`数组中包含多个项。例如，配置`"space-in-parens": ["error", "always", { "exceptions": ["{}", "[]"] }]`，以下模式被认为是有问题的：
 
 ```js
-/*eslint space-in-parens: [2, "always", { "exceptions": ["{}", "[]"] }]*/
+/*eslint space-in-parens: ["error", "always", { "exceptions": ["{}", "[]"] }]*/
 
 bar( {bar:'baz'} );
 baz( 1, [1,2] );
@@ -319,7 +319,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint space-in-parens: [2, "always", { "exceptions": ["{}", "[]"] }]*/
+/*eslint space-in-parens: ["error", "always", { "exceptions": ["{}", "[]"] }]*/
 
 bar({bar:'baz'});
 baz( 1, [1,2]);

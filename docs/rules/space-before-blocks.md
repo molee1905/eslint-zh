@@ -53,7 +53,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint space-before-blocks: 2*/
+/*eslint space-before-blocks: "error"*/
 
 if (a){
     b();
@@ -77,7 +77,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint space-before-blocks: 2*/
+/*eslint space-before-blocks: "error"*/
 
 if (a) {
     b();
@@ -88,7 +88,6 @@ if (a) {
 } else{ /*no error. this is checked by `keyword-spacing` rule.*/
     c();
 }
-
 
 function a() {}
 
@@ -106,7 +105,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint space-before-blocks: [2, "never"]*/
+/*eslint space-before-blocks: ["error", "never"]*/
 
 if (a) {
     b();
@@ -126,7 +125,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint space-before-blocks: [2, "never"]*/
+/*eslint space-before-blocks: ["error", "never"]*/
 
 if (a){
     b();
@@ -150,7 +149,7 @@ The following patterns are considered problems when configured `{ "functions": "
 当配置为`{ "functions": "never", "keywords": "always", classes: "never" }`，以下模式被认为是有问题的：
 
 ```js
-/*eslint space-before-blocks: [2, { "functions": "never", "keywords": "always", classes: "never" }]*/
+/*eslint space-before-blocks: ["error", { "functions": "never", "keywords": "always", classes: "never" }]*/
 /*eslint-env es6*/
 
 function a() {}
@@ -168,7 +167,7 @@ The following patterns are not considered problems when configured `{ "functions
 当配置为`{ "functions": "never", "keywords": "always", classes: "never" }`，以下模式被认为是没有问题的：
 
 ```js
-/*eslint space-before-blocks: [2, { "functions": "never", "keywords": "always", classes: "never" }]*/
+/*eslint space-before-blocks: ["error", { "functions": "never", "keywords": "always", classes: "never" }]*/
 /*eslint-env es6*/
 
 for (;;) {
@@ -189,7 +188,7 @@ The following patterns are considered problems when configured `{ "functions": "
 当配置为`{ "functions": "always", "keywords": "never", classes: "never" }`，以下模式被认为是有问题的：
 
 ```js
-/*eslint space-before-blocks: [2, { "functions": "always", "keywords": "never", classes: "never" }]*/
+/*eslint space-before-blocks: ["error", { "functions": "always", "keywords": "never", classes: "never" }]*/
 /*eslint-env es6*/
 
 function a(){}
@@ -206,8 +205,9 @@ The following patterns are not considered problems when configured `{ "functions
 
 当配置为`{ "functions": "always", "keywords": "never", classes: "never" }`，以下模式被认为是没有问题的：
 
+
 ```js
-/*eslint space-before-blocks: [2, { "functions": "always", "keywords": "never", classes: "never" }]*/
+/*eslint space-before-blocks: ["error", { "functions": "always", "keywords": "never", classes: "never" }]*/
 /*eslint-env es6*/
 
 if (a){
@@ -226,7 +226,7 @@ The following patterns are considered problems when configured `{ "functions": "
 当配置为`{ "functions": "never", "keywords": "never", classes: "always" }`， 以下模式被认为是有问题的：
 
 ```js
-/*eslint space-before-blocks: [2, { "functions": "never", "keywords": "never", classes: "always" }]*/
+/*eslint space-before-blocks: ["error", { "functions": "never", "keywords": "never", classes: "always" }]*/
 /*eslint-env es6*/
 
 class Foo{
@@ -240,7 +240,7 @@ The following patterns are not considered problems when configured `{ "functions
 当配置为`{ "functions": "never", "keywords": "never", classes: "always" }`，以下模式被认为是没有问题的：
 
 ```js
-/*eslint space-before-blocks: [2, { "functions": "never", "keywords": "never", classes: "always" }]*/
+/*eslint space-before-blocks: ["error", { "functions": "never", "keywords": "never", classes: "always" }]*/
 /*eslint-env es6*/
 
 class Foo {

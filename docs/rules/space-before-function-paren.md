@@ -59,7 +59,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint space-before-function-paren: 2*/
+/*eslint space-before-function-paren: "error"*/
 /*eslint-env es6*/
 
 function foo() {
@@ -92,7 +92,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint space-before-function-paren: 2*/
+/*eslint space-before-function-paren: "error"*/
 /*eslint-env es6*/
 
 function foo () {
@@ -127,7 +127,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint space-before-function-paren: [2, "never"]*/
+/*eslint space-before-function-paren: ["error", "never"]*/
 /*eslint-env es6*/
 
 function foo () {
@@ -160,7 +160,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint space-before-function-paren: [2, "never"]*/
+/*eslint space-before-function-paren: ["error", "never"]*/
 /*eslint-env es6*/
 
 function foo() {
@@ -195,7 +195,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint space-before-function-paren: [2, { "anonymous": "always", "named": "never" }]*/
+/*eslint space-before-function-paren: ["error", { "anonymous": "always", "named": "never" }]*/
 /*eslint-env es6*/
 
 function foo () {
@@ -224,7 +224,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint space-before-function-paren: [2, { "anonymous": "always", "named": "never" }]*/
+/*eslint space-before-function-paren: ["error", { "anonymous": "always", "named": "never" }]*/
 /*eslint-env es6*/
 
 function foo() {
@@ -255,7 +255,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint space-before-function-paren: [2, { "anonymous": "never", "named": "always" }]*/
+/*eslint space-before-function-paren: ["error", { "anonymous": "never", "named": "always" }]*/
 /*eslint-env es6*/
 
 function foo() {
@@ -284,7 +284,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint space-before-function-paren: [2, { "anonymous": "never", "named": "always" }]*/
+/*eslint space-before-function-paren: ["error", { "anonymous": "never", "named": "always" }]*/
 /*eslint-env es6*/
 
 function foo () {
@@ -323,7 +323,7 @@ You can turn this rule off if you are not concerned with the consistency of spac
 
 This rule was introduced in ESLint 0.18.0.
 
-该规则在ESLint 0.18.0 中被引入。
+该规则在 ESLint 0.18.0 中被引入。
 
 ## Resources
 

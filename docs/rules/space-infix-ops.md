@@ -47,7 +47,7 @@ This rule accepts a single options argument with the following defaults:
 该规则接收唯一一个可选项参数，具有以下默认值：
 
 ```json
-"space-infix-ops": [2, {"int32Hint": false}]
+"space-infix-ops": ["error", {"int32Hint": false}]
 ```
 
 ### `int32Hint`
@@ -65,7 +65,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint space-infix-ops: 2*/
+/*eslint space-infix-ops: "error"*/
 /*eslint-env es6*/
 
 a+b
@@ -88,7 +88,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint space-infix-ops: 2*/
+/*eslint space-infix-ops: "error"*/
 /*eslint-env es6*/
 
 a + b

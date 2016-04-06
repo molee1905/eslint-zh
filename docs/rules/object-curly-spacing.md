@@ -66,7 +66,7 @@ Depending on your coding conventions, you can choose either option by specifying
 根据你的代码约定，你可以在你的配置中指定任一选项：
 
 ```json
-"object-curly-spacing": [2, "always"]
+"object-curly-spacing": ["error", "always"]
 ```
 
 ### "never"
@@ -76,7 +76,7 @@ When `"never"` is set, the following patterns are considered problems:
 当设置为`"never"`时，以下模式被认为是有问题的：
 
 ```
-/*eslint object-curly-spacing: [2, "never"]*/
+/*eslint object-curly-spacing: ["error", "never"]*/
 
 var obj = { 'foo': 'bar' };
 var obj = {'foo': 'bar' };
@@ -91,7 +91,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```
-/*eslint object-curly-spacing: [2, "never"]*/
+/*eslint object-curly-spacing: ["error", "never"]*/
 
 var obj = {'foo': 'bar'};
 var obj = {'foo': {'bar': 'baz'}, 'qux': 'quxx'};
@@ -114,7 +114,7 @@ When `"always"` is used, the following patterns are considered problems:
 当设置为`"always"`时，以下模式被认为是有问题的：
 
 ```
-/*eslint object-curly-spacing: [2, "always"]*/
+/*eslint object-curly-spacing: ["error", "always"]*/
 
 var obj = {'foo': 'bar'};
 var obj = {'foo': 'bar' };
@@ -133,7 +133,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```
-/*eslint object-curly-spacing: [2, "always"]*/
+/*eslint object-curly-spacing: ["error", "always"]*/
 
 var obj = {};
 var obj = { 'foo': 'bar' };
@@ -170,7 +170,7 @@ You can add exceptions like so:
 你可以像这样添加例外情况：
 
 ```json
-"object-curly-spacing": [2, "always", {
+"object-curly-spacing": ["error", "always", {
   "objectsInObjects": false,
   "arraysInObjects": false
 }]

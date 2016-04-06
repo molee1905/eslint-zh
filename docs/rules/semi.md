@@ -119,7 +119,7 @@ By using the default option, semicolons must be used any place where they are va
 使用默认设置，分号将被用到任何合适的位置。
 
 ```json
-semi: [2, "always"]
+semi: ["error", "always"]
 ```
 
 The following patterns are considered problems:
@@ -127,7 +127,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint semi: 2*/
+/*eslint semi: "error"*/
 
 var name = "ESLint"
 
@@ -141,7 +141,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint semi: 2*/
+/*eslint semi: "error"*/
 
 var name = "ESLint";
 
@@ -157,15 +157,15 @@ When setting the first option as `"always"`, an additional option can be added t
 当设置第一个选项为`"always"`时，可以添加一个额外的选项以省略单行块中最后的分号，也就是括号（内容也是）都在同一行的块。
 
 ```json
-semi: [2, "always", { "omitLastInOneLineBlock": true}]
+semi: ["error", "always", { "omitLastInOneLineBlock": true}]
 ```
 
 The following patterns are considered problems:
 
 以下模式被认为是有问题的：
-
+ 
 ```js
-/*eslint semi: [2, "always", { "omitLastInOneLineBlock": true}] */
+/*eslint semi: ["error", "always", { "omitLastInOneLineBlock": true}] */
 
 if (foo) {
     bar()
@@ -179,7 +179,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint semi: [2, "always", { "omitLastInOneLineBlock": true}] */
+/*eslint semi: ["error", "always", { "omitLastInOneLineBlock": true}] */
 
 if (foo) { bar() }
 
@@ -201,7 +201,7 @@ Then, the following patterns are considered problems:
 这时，以下模式被认为是有问题的：
 
 ```js
-/*eslint semi: [2, "never"]*/
+/*eslint semi: ["error", "never"]*/
 
 var name = "ESLint";
 
@@ -215,7 +215,7 @@ And the following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint semi: [2, "never"]*/
+/*eslint semi: ["error", "never"]*/
 
 var name = "ESLint"
 
@@ -229,7 +229,7 @@ Even in `"never"` mode, semicolons are still allowed to disambiguate statements 
 即使是在`"never"`方式下，分号仍然是被允许的，用来消除以`[`，`(`，`/`，`+`或`-`开头的语句的歧义：
 
 ```js
-/*eslint semi: [2, "never"]*/
+/*eslint semi: ["error", "never"]*/
 
 var name = "ESLint"
 

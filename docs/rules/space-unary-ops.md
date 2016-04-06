@@ -59,24 +59,41 @@ qux = !!baz;
 
 ## Options
 
-This rule has two options: `words` and `nonwords`:
+This rule has three options:
 
-该规则有两个可选项：`words` 和 `nonwords`：
+该规则有三个可选项：
 
 * `words` - applies to unary word operators such as: `new`, `delete`, `typeof`, `void`, `yield`
-
 * `words` - 适用于单词类一元操作符，例如： `new`， `delete`， `typeof`， `void`， `yield`
-
 * `nonwords` - applies to unary operators such as: `-`, `+`, `--`, `++`, `!`, `!!`
-
 * `nonwords` - 适用于这些一元操作符: `-`, `+`, `--`, `++`, `!`, `!!`
+* `overrides` - specifies overwriting usage of spacing for each
+  operator, word or non word. This is empty by default, but can be used
+  to enforce or disallow spacing around operators. For example:
+* `overrides` - 覆盖操作符周围空格的用法。默认为空，但可用来强制或禁止操作符周围有空格。例如：
+
+```js
+    "space-unary-ops": [
+        2, {
+          "words": true,
+          "nonwords": false,
+          "overrides": {
+            "new": false,
+            "++": true
+          }
+    }]
+```
+
+In this case, spacing will be disallowed after a `new` operator and required before/after a `++` operator.
+
+在这个例子中，`new`操作符之后禁用空格，`++`操作左右要求有空格。
 
 Given the default values `words`: `true`, `nonwords`: `false`, the following patterns are considered problems:
 
 使用默认设置 `words`: `true`, `nonwords`: `false`， 以下模式被认为是有问题的：
 
 ```js
-/*eslint space-unary-ops: 2*/
+/*eslint space-unary-ops: "error"*/
 
 typeof!foo;
 
@@ -96,7 +113,7 @@ foo --;
 ```
 
 ```js
-/*eslint space-unary-ops: 2*/
+/*eslint space-unary-ops: "error"*/
 /*eslint-env es6*/
 
 function *foo() {
@@ -109,7 +126,7 @@ Given the default values `words`: `true`, `nonwords`: `false`, the following pat
 使用默认设置 `words`: `true`, `nonwords`: `false`， 以下模式被认为是没有问题的：
 
 ```js
-/*eslint space-unary-ops: 2*/
+/*eslint space-unary-ops: "error"*/
 
 // Word unary operator "delete" is followed by a whitespace.
 delete foo.bar;
@@ -134,7 +151,7 @@ foo--;
 ```
 
 ```js
-/*eslint space-unary-ops: 2*/
+/*eslint space-unary-ops: "error"*/
 /*eslint-env es6*/
 
 function *foo() {

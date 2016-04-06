@@ -67,7 +67,7 @@ The default is `{"before": false, "after": true}`.
 默认为 `{"before": false, "after": true}`。
 
 ```json
-    "semi-spacing": [2, {"before": false, "after": true}]
+    "semi-spacing": ["error", {"before": false, "after": true}]
 ```
 
 ### `{"before": false, "after": true}`
@@ -81,7 +81,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint semi-spacing: 2*/
+/*eslint semi-spacing: "error"*/
 
 var foo ;
 var foo;var bar;
@@ -96,7 +96,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint semi-spacing: 2*/
+/*eslint semi-spacing: "error"*/
 
 var foo;
 var foo; var bar;
@@ -119,7 +119,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint semi-spacing: [2, { "before": true, "after": false }]*/
+/*eslint semi-spacing: ["error", { "before": true, "after": false }]*/
 
 var foo;
 var foo ; var bar;
@@ -134,7 +134,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint semi-spacing: [2, { "before": true, "after": false }]*/
+/*eslint semi-spacing: ["error", { "before": true, "after": false }]*/
 
 var foo ;
 var foo ;var bar ;

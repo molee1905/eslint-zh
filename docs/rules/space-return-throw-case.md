@@ -29,7 +29,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint space-return-throw-case: 2*/
+/*eslint space-return-throw-case: "error"*/
 
 throw{a:0}
 
@@ -43,7 +43,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint space-return-throw-case: 2*/
+/*eslint space-return-throw-case: "error"*/
 
 throw {a: 0};
 
@@ -56,7 +56,7 @@ switch(a){ case 'a': break; }
 
 This rule was introduced in ESLint 0.1.4 and removed in 2.0.0-beta.3.
 
-该规则在ESLint 0.1.4 中被引入，在 2.0.0-beta.3 被移除。
+该规则在 ESLint 0.1.4 中被引入，在 2.0.0-beta.3 被移除。
 
 ## Resources
 

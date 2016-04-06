@@ -2,7 +2,6 @@
     <hr>
 
     <div class="container">
-
       <footer>
         <ul class="list-inline">
           <li><a href="https://groups.google.com/group/eslint">Mailing List</a></li>
@@ -10,13 +9,6 @@
           <li><a href="https://twitter.com/geteslint">Twitter</a></li>
           <li>Copyright &copy; 2013-2016 Nicholas C. Zakas. All rights reserved.</li>
         </ul>
-        {% if page.disablePreview != true %}
-        <div class="preview-panel">
-          <label class="radio-inline"><input type="radio" name="lang-type" value="lang-mixed" checked><span class="outer"><span class="inner"></span></span>中英文</label>
-          <label class="radio-inline"><input type="radio" name="lang-type" value="lang-zh"><span class="outer"><span class="inner"></span></span>中文</label>
-          <label class="radio-inline"><input type="radio" name="lang-type" value="lang-en"><span class="outer"><span class="inner"></span></span>英文</label>
-        </div>
-        {% endif %}
       </footer>
     </div><!-- /.container -->
 
@@ -54,10 +46,11 @@
       }
 
       var logos = [{% for logo in site.data.logos %}{ url: '{{ logo.url }}', src: '{{ logo.src }}', name: '{{ logo.name }}' }{% unless forloop.last %},{% endunless %}{% endfor %}];
+      
       logos = shuffleArray(logos);
       for (var i = 0, l = logos.length; i<l; i++) {
         var logo = $('<div class="slide col-sm-4"><a href="' + logos[i].url + '"><img src="' + logos[i].src + '" alt="' + logos[i].name + '"></a></div>');
-        $('.logos').append(logo);
+          $('.logos').append(logo);
       }
 
       $('.expender').click(function() {
@@ -69,14 +62,33 @@
           $('.expender').html('收起 <span class="dropup"><span class="caret"></span></span>');
         }
       });
-      {% endif %}
-      {% if page.disablePreview != true %}
-        $('input[name=lang-type]').on('click', function() {
-            var type = $(this).val();
 
+      {% endif %}
+
+      {% if page.disablePreview != true %}
+        var langs = {mixed: '中英文',zh: '中文',en: '英文'};
+        var last = localStorage.getItem('lang');
+
+        if (last in langs) {
+          $('.lang-chooser').html(langs[last]); 
+          $('.doc').removeClass(function(index,clz){
+              return clz.slice(3);
+          }).addClass('lang-' + last);
+        }
+
+        $('.navbar-left').show();
+
+        $('.lang-type').on('click', function() {
+            var $this = $(this),
+                type = $this.data('lang'),
+                lang = $this.html();
+
+            localStorage.setItem('lang', type);
+
+            $('.lang-chooser').html(lang); 
             $('.doc').removeClass(function(index,clz){
                 return clz.slice(3);
-            }).addClass(type);
+            }).addClass('lang-' + type);
         });
       {% endif %}
     });

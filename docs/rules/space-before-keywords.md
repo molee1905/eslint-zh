@@ -60,7 +60,7 @@ The following patterns are considered errors when configured `"never"`:
 当配置为`"never"`，以下模式被认为是有错误的：
 
 ```js
-/*eslint space-before-keywords: [2, "never"]*/
+/*eslint space-before-keywords: ["error", "never"]*/
 
 if (foo) {
     // ...
@@ -81,7 +81,7 @@ The following patterns are not considered errors when configured `"never"`:
 当配置为`"never"`，以下模式被认为是没有错误的：
 
 ```js
-/*eslint space-before-keywords: [2, "never"]*/
+/*eslint space-before-keywords: ["error", "never"]*/
 
 if (foo) {
     // ...
@@ -99,7 +99,7 @@ The following patterns are considered errors when configured `"always"`:
 当配置为`"always"`，以下模式被认为是有错误的：
 
 ```js
-/*eslint space-before-keywords: [2, "always"]*/
+/*eslint space-before-keywords: ["error", "always"]*/
 /*eslint-env es6*/
 
 if (foo) {
@@ -120,7 +120,7 @@ The following patterns are not considered errors when configured `"always"`:
 当配置为`"always"`，以下模式被认为是没有错误的：
 
 ```js
-/*eslint space-before-keywords: [2, "always"]*/
+/*eslint space-before-keywords: ["error", "always"]*/
 /*eslint-env es6*/
 
 if (foo) {
@@ -152,7 +152,7 @@ If you do not wish to enforce consistency on keyword spacing.
 
 This rule was introduced in ESLint 1.4.0 and removed in 2.0.0-beta.3.
 
-该规则在ESLint 1.4.0 中被引入，在 2.0.0-beta.3 被移除。
+该规则在 ESLint 1.4.0 中被引入，在 2.0.0-beta.3 被移除。
 
 ## Resources
 

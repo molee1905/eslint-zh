@@ -35,7 +35,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint prefer-template: 2*/
+/*eslint prefer-template: "error"*/
 
 var str = "Hello, " + name + "!";
 var str = "Time: " + (12 * 60 * 60 * 1000);
@@ -46,12 +46,12 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint prefer-template: 2*/
+/*eslint prefer-template: "error"*/
 /*eslint-env es6*/
 
 var str = "Hello World!";
 var str = `Hello, ${name}!`;
-var str = `Time: ${12 * 60 * 60}`;
+var str = `Time: ${12 * 60 * 60 * 1000}`;
 
 // This is reported by `no-useless-concat`.
 var str = "Hello, " + "World!";
@@ -75,7 +75,7 @@ In ES2015 (ES6) or later, if you don't want to be notified about string concaten
 
 This rule was introduced in ESLint 1.2.0.
 
-该规则在ESLint 1.2.0 中被引入。
+该规则在 ESLint 1.2.0 中被引入。
 
 ## Resources
 
