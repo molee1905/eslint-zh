@@ -50,6 +50,8 @@ var x = foo[bar];    // Property name is a variable, square-bracket notation req
 
 This rule accepts a single options argument:
 
+该规则值接受一个选项：
+
 * Set the `allowKeywords` option to `false` (default is `true`) to follow ECMAScript version 3 compatible style, avoiding dot notation for reserved word properties.
 * 为了兼容 ECMAScript 3，设置`allowKeywords`为`false`（默认为`true`），避免对属性是保留字的使用点号。
 * Set the `allowPattern` option to a regular expression string to allow bracket notation for property names that match a pattern (by default, no pattern is tested).

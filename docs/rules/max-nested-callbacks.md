@@ -43,8 +43,12 @@ The default max depth for this rule is 10. You can define the depth as an option
 
 // or you can use an object property
 
-"max-nested-callbacks": ["error", {"maximum": 3}]
+"max-nested-callbacks": ["error", {"max": 3}]
 ```
+
+**Deprecated:** the object property `maximum` is deprecated. Please use the property `max` instead.
+
+**弃用：**属性`maximum`已弃用。请使用`max`属性。
 
 The following patterns are considered problems:
 

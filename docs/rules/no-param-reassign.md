@@ -14,11 +14,11 @@ Assignment to variables declared as function parameters can be misleading and le
 
 赋值给做为函数参数的变量可能会误导或者导致混乱，修改函数参数也会改变`arguments`对象。通常，赋值给函数参数是无意识的，表明一个错误或者程序员的错误。
 
+This rule can be also configured to fail when function parameters are modified. Side effects on parameters can cause counter-intuitive execution flow and make errors difficult to track down.
+
 ## Rule Details
 
-This rule aims to prevent unintended behavior caused by overwriting function parameters.
-
-此规则旨在防止无意识地重写函数参数。
+This rule aims to prevent unintended behavior caused by modification or reassignment of function parameters.
 
 Examples of **incorrect** code for this rule:
 

@@ -8,11 +8,13 @@ proofreader: molee1905
 
 # Command Line Interface
 
+# Command Line Interface
+
 # 命令行界面
 
 To run ESLint on Node.js, you must have npm installed. If npm is not installed, follow the instructions here: [https://www.npmjs.com/](https://www.npmjs.com/).
 
-为了在 Node.js 上运行 ESLint ，你必须先安装 npm。如果还没有安装 npm ，按照这里的说明进行安装: [https://www.npmjs.com/](https://www.npmjs.com/)。
+为了在 Node.js 上运行 ESLint，你必须先安装 npm。如果还没有安装 npm ，按照这里的说明进行安装：[https://www.npmjs.com/](https://www.npmjs.com/)。
 
 Once npm is installed, run the following:
 
@@ -221,6 +223,15 @@ Examples:
 This option allows you to specify a parser to be used by ESLint. By default, `espree` will be used.
 
 该选项允许你为 ESLint 指定一个解析器。默认情况下，使用`espree`。
+
+#### `--parser-options`
+
+This option allows you to specify parser options to be used by eslint.
+
+Examples:
+
+    echo '3 ** 4' | eslint --stdin --parser-options=ecmaVersion:6 # will fail with a parsing error
+    echo '3 ** 4' | eslint --stdin --parser-options=ecmaVersion:7 # succeeds, yay!
 
 #### `--parser-options`
 

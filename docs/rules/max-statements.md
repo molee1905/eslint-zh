@@ -24,7 +24,7 @@ function foo() {
 
 ## Rule Details
 
-This rule allows you to configure the maximum number of statements allowed in a function.  The default is 10.
+This rule allows you to configure the maximum number of statements allowed in a function. The default is 10.
 
 该规则允许配置函数中允许的最大语句数量。默认为10。
 
@@ -39,8 +39,12 @@ There is an additional optional argument to ignore top level functions.
 
 // or you can use an object property to set the maximum
 
-"max-statements": ["error", {"maximum": 10}, {"ignoreTopLevelFunctions": true}]
+"max-statements": ["error", {"max": 10}, {"ignoreTopLevelFunctions": true}]
 ```
+
+**Deprecated:** the object property `maximum` is deprecated. Please use the property `max` instead.
+
+**弃用：**属性`maximum`已弃用。请使用`max`属性。
 
 The following patterns are considered problems:
 

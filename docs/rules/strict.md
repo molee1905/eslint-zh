@@ -10,9 +10,9 @@ proofreader: molee1905
 
 # 严格模式 (strict)
  
-A strict mode directive at the beginning of a script or function body enables strict mode semantics:
+A strict mode directive at the beginning of a script or function body enables strict mode semantics.
 
-在脚本或方法体的开始位置使用严格模式指令开启严格模式语义：
+在脚本或方法体的开始位置使用严格模式指令开启严格模式语义。ß
 
 When used globally, the entire script, including all contained functions, are strict mode code:
 
@@ -204,7 +204,6 @@ Examples of **correct** code for the `"function"` option:
 
 ```js
 /*eslint strict: ["error", "function"]*/
->>>>>>> master
 
 function foo() {
     "use strict";

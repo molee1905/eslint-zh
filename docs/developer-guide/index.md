@@ -90,4 +90,3 @@ If you're interested in writing a tool that uses ESLint, then you can use the No
 Once you've made changes that you want to share with the community, the next step is to submit those changes back via a pull request.
 
 一旦你做出改变，想分享到社区，下一步就是通过发送请求提交这些改变。
- 

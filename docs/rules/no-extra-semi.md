@@ -10,13 +10,13 @@ proofreader: molee1905
 
 # 禁止冗余分号（no-extra-semi）
 
+(fixable) The --fix option on the [command line](../user-guide/command-line-interface#fix) automatically fixes problems reported by this rule.
+
+(fixable)[command line](../user-guide/command-line-interface#fix)中的`--fix`选项可以自动修复该规则报告的问题。
+
 JavaScript will more or less let you put semicolons after any statement without complaining. Typos and misunderstandings about where semicolons are required can lead to extra semicolons that are unnecessary.
 
-JavaScript中，任何语句后有无分号都不会出错。书写错误和对哪里需要有分号的误解会导致额外的不必要的分号出现。
-
-**Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
-
-**Fixable:** 该规则可以通过`--fix`命令行进行自动修复。
+JavaScript 中，任何语句后有无分号都不会出错。书写错误和对哪里需要有分号的误解会导致额外的不必要的分号出现。
 
 ## Rule Details
 

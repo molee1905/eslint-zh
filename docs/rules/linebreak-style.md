@@ -10,6 +10,10 @@ proofreader: molee1905
 
 # 强制换行风格 (linebreak-style)
 
+(fixable) The --fix option on the [command line](../user-guide/command-line-interface#fix) automatically fixes problems reported by this rule.
+
+(fixable)[command line](../user-guide/command-line-interface#fix)中的`--fix`选项可以自动修复该规则报告的问题。
+
 When developing with a lot of people all having different editors, VCS applications and operating systems it may occur that
 different line endings are written by either of the mentioned (might especially happen when using the windows and mac versions of SourceTree together).
 
@@ -23,10 +27,6 @@ whereas Linux and Unix use a simple _line feed_ (LF). The corresponding _control
 Many versioning systems (like git and subversion) can automatically ensure the correct ending. However to cover all contingencies you can activate this rule.
 
 很多版本控制系统（如git和subversion）可以自动的保证正确的结尾。然而如果要涵盖所有情况，你可以激活此规则。
-
-**Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
-
-**Fixable:** 该规则可以通过`--fix`命令行进行自动修复。
 
 ## Rule Details
 

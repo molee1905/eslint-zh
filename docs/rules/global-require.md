@@ -10,10 +10,9 @@ proofreader: sunshiner
 
 # 强制在顶部加载模块 (global-require)
 
-
 In Node.js, module dependencies are included using the `require()` function, such as:
 
-在Node.js中，引入模块依赖使用`require()`函数，例如：
+在 Node.js 中，引入模块依赖使用`require()`函数，例如：
 
 ```js
 var fs = require("fs");
@@ -38,7 +37,7 @@ Since `require()` does a synchronous load, it can cause performance problems whe
 
 Further, ES6 modules mandate that `import` and `export` statements can only occur in the top level of the module's body.
 
-此外，ES6模块要求`import` 和 `export` 语句只能放在模块顶部。
+此外，ES6 模块要求`import` 和 `export` 语句只能放在模块顶部。
 
 ## Rule Details
 

@@ -70,7 +70,7 @@ There is one situation where initializing to `undefined` behaves differently tha
 
 Example of **incorrect** code for this rule:
 
-**错误代码** 示例：
+**错误**代码示例：
 
 ```js
 for (i = 0; i < 10; i++) {
@@ -140,7 +140,6 @@ for (i = 0; i < 10; i++) {
     x = i;
 }
 ```
-
 
 ## Related Rules
 

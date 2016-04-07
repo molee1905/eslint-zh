@@ -10,6 +10,10 @@ proofreader: molee1905
 
 # 要求或禁止在注释前有空白 (space 或 tab)
 
+(fixable) The --fix option on the [command line](../user-guide/command-line-interface#fix) automatically fixes problems reported by this rule.
+
+(fixable)[command line](../user-guide/command-line-interface#fix)中的`--fix`选项可以自动修复该规则报告的问题。
+
 Some style guides require or disallow a whitespace immediately after the initial `//` or `/*` of a comment.
 
 一些风格指南要求或禁止注释`//` 或 `/*`后的空白。
@@ -18,10 +22,6 @@ Whitespace after the `//` or `/*` makes it easier to read text in comments.
 On the other hand, commenting out code is easier without having to put a whitespace right after the `//` or `/*`.
 
 `//` 或 `/*`后的空白使注释中的文本更容易阅读。另一方面，`//` 或 `/*`后面不加空白的话，给代码添加注释会变得更容易。
-
-**Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
-
-**Fixable:** 该规则可以通过`--fix`命令行进行自动修复。
 
 ## Rule Details
 
@@ -61,7 +61,7 @@ The rule takes two options.
     ```
 
     * The `"markers"` value is an array of string patterns which are considered markers for docblock-style comments,such as an additional `/`, used to denote documentation read by doxygen, vsdoc, etc. which must have additional characters.The `"markers"` array will apply regardless of the value of the first argument, e.g. `"always"` or `"never"`.
-   
+     
     * `"markers"`的值是一个字符串形式的数组，这些字符串也就是块级注释的标记，例如一个额外的`/`，被用来表示是由 doxygen、vsdoc 等系统读取的文档，这些系统必须有额外的字符。不管第一个参数是`"always"` 还是 `"never"`，`"markers"`数组都会起作用。
 
     ```json

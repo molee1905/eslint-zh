@@ -42,7 +42,7 @@ function foo() {
 
 Examples of **incorrect** code for this rule, unlike the corresponding rule in JSHint:
 
-**错误**代码示例，与JSHint中的规则不同：
+**错误**代码示例，与 JSHint 中的规则不同：
 
 ```js
 /*eslint no-func-assign: "error"*/

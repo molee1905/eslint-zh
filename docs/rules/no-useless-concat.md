@@ -5,6 +5,7 @@ translator: fengnana
 proofreader: coocon 
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow unnecessary concatenation of strings (no-useless-concat)
 
 # 禁止没有必要的字符拼接 (no-useless-concat)

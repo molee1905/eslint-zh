@@ -54,7 +54,6 @@ This rule, in its default state, does not require any arguments. If you would li
 
 该规则，默认情况下，不需要任何参数。如果你想启用下面的一个或多个，你可以传递一个对象，作为可选项，按如下所示进行设置：
  
-
 * `allowForLoopAfterthoughts` set to `true` will allow you to use the unary operators `++` and `--` in the afterthought (final expression) of a `for` loop.
 
 * `allowForLoopAfterthoughts` 设置为 `true` 将允许你在`for`循环的中(最后面的表达式)使用一元操作符 `++` 和 `--`。

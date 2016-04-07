@@ -104,7 +104,7 @@ throw foo.bar;
 
 This rule was introduced in ESLint 0.15.0.
 
-此规则在 ESLint 0.15.0中被引入。
+此规则在 ESLint 0.15.0 中被引入。
 
 ## Resources
 

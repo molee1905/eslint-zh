@@ -12,7 +12,7 @@ proofreader: yanggao40
 
 ECMAScript provides several global objects that are intended to be used as-is. Some of these objects look as if they could be constructors due their capitalization (such as `Math` and `JSON`) but will throw an error if you try to execute them as functions.
 
-ECMAScript提供了几个全局对象，旨在直接调用。这些对象由于是大写的（比如`Math` 和 `JSON`）看起来好像是构造函数，但是如果你尝试像函数一致执行它们，将会抛出错误。
+ECMAScript 提供了几个全局对象，旨在直接调用。这些对象由于是大写的（比如`Math` 和 `JSON`）看起来好像是构造函数，但是如果你尝试像函数一致执行它们，将会抛出错误。
 
 The [ECMAScript 5 specification](http://es5.github.io/#x15.8) makes it clear that both `Math` and `JSON` cannot be invoked:
 

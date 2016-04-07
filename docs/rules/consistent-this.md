@@ -24,7 +24,7 @@ jQuery('li').click(function (event) {
 
 There are many commonly used aliases for `this` such as `that`, `self` or `me`. It is desirable to ensure that whichever alias the team agrees upon is used consistently throughout the application.
 
-`this`有多常用的别名例如`self`, `that` 或 `me`。所以在整个项目中确保团队成员使用同样的别名是一个很有必要的事情。
+`this`有多常用的别名例如`self`，`that`或`me`。所以在整个项目中确保团队成员使用同样的别名是一个很有必要的事情。
 
 ## Rule Details
 

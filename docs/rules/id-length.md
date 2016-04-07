@@ -12,7 +12,7 @@ proofreader: sunshiner
 
 Very short identifier names like `e`, `x`, `_t` or very long ones like `hashGeneratorResultOutputContainerObject` usually make the code harder to read and potentially less maintainable. To prevent this, one may enforce a minimum and/or maximum identifier length. (usually min 2-chars)
 
-非常短的标识符名称像`e`, `x`, `_t`或非常长的名称像`hashGeneratorResultOutputContainerObject`通常使代码难以阅读和潜在的不可维护性。为了防止这种情况出现，应该限制标识符的最大和/或最小长度。（一般最小2个字符）
+非常短的标识符名称像`e`，`x`，`_t`或非常长的名称像`hashGeneratorResultOutputContainerObject`通常使代码难以阅读和潜在的不可维护性。为了防止这种情况出现，应该限制标识符的最大和/或最小长度。（一般最小2个字符）
 
 ```js
 // id-length: 1  // default is minimum 2-chars ({ min: 2})

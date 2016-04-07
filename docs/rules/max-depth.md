@@ -43,8 +43,12 @@ The default depth above which this rule will warn is `4`.  You can configure the
 
 // or you can use an object property
 
-"max-depth": ["error", {"maximum": 10}]
+"max-depth": ["error", {"max": 10}]
 ```
+
+**Deprecated:** the object property `maximum` is deprecated. Please use the property `max` instead.
+
+**弃用：**属性`maximum`已弃用。请使用`max`属性。
 
 The following patterns are considered problems:
 

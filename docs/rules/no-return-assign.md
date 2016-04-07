@@ -28,7 +28,6 @@ Because of this ambiguity, it's considered a best practice to not use assignment
 
 由于这种模棱两可,在返回语句中不使用赋值，被认为是一个最佳实践。
 
-
 ## Rule Details
 
 This rule aims to eliminate assignments from `return` statements. As such, it will warn whenever an assignment is found as part of `return`.

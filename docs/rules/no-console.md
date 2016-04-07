@@ -73,7 +73,7 @@ console.error("this will not be considered a problem");
 
 If you're using Node.js, however, `console` is used to output information to the user and so is not strictly used for debugging purposes. If you are developing for Node.js then you most likely do not want this rule enabled.
 
-如果你正在使用 Node.js, `console` 主要用于向用户输出信息，而不是严格用于调试目的。如果你正在开发 Node.js ，最好不要启用该规则。
+如果你正在使用 Node.js，`console`主要用于向用户输出信息，而不是严格用于调试目的。如果你正在开发 Node.js，最好不要启用该规则。
 
 ## Related Rules
 

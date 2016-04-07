@@ -28,7 +28,7 @@ function sum(num1, num2) {
 
 The JSDoc comments have a syntax all their own, and it is easy to mistakenly mistype a comment because comments aren't often checked for correctness in editors. Further, it's very easy for the function definition to get out of sync with the comments, making the comments a source of confusion and error.
 
-JSDoc注释有自己的语法，它很容易错误书写一个注释，因为编辑器不检查注释的正确性。此外，它很容易造成函数定义和注释的不同步，使得注释是混乱和错误的。
+JSDoc 注释有自己的语法，它很容易错误书写一个注释，因为编辑器不检查注释的正确性。此外，它很容易造成函数定义和注释的不同步，使得注释是混乱和错误的。
 
 ## Rule Details
 
@@ -37,7 +37,7 @@ This rule aims to prevent invalid and incomplete JSDoc comments. It will warn wh
 该规则旨在防止无效的和不完整的 JSDoc 注释。有以下情况发生时，它将发出警告：
 
 * There is a JSDoc syntax error
-* 有JSDoc语法错误
+* 有 JSDoc 语法错误
 * A `@param` or `@returns` is used without a type specified
 * `@param` 或 `@returns` 没有指定类型
 * A `@param` or `@returns` is used without a description
@@ -45,7 +45,7 @@ This rule aims to prevent invalid and incomplete JSDoc comments. It will warn wh
 * A comment for a function is missing `@returns`
 * 函数的注释缺少 `@returns`
 * A parameter has no associated `@param` in the JSDoc comment
-* 一个参数在JSDoc注释中没有对应的`@param`
+* 一个参数在 JSDoc 注释中没有对应的`@param`
 * `@param`s are out of order with named arguments
 * `@param`与命名的参数顺序不对应
 
@@ -54,7 +54,7 @@ Examples of **incorrect** code for this rule:
 **错误**代码示例：
 
 ```js
-/*eslint valid-jsdoc: 2*/
+/*eslint valid-jsdoc: "error"*/
 
 // missing type for @param and missing @returns
 /**                                 // 2 errors
@@ -114,11 +114,14 @@ function foo(a) {
 ```
 
 Examples of **correct** code for this rule:
+<<<<<<< HEAD
 
 **正确**代码示例：
+=======
+>>>>>>> eslint/master
 
 ```js
-/*eslint valid-jsdoc: 2*/
+/*eslint valid-jsdoc: "error"*/
 
 /**
  * Adds two numbers together.
@@ -168,7 +171,7 @@ JSDoc offers a lot of tags with overlapping meaning. For example, both `@return`
 JSDoc提供了很多有重叠的标签.例如，`@return` 和 `@returns`都是可接受的，用来指定一个函数的返回值。然而，你可能想强制使用一个特定的标签而不是其他的。你可以通过在规则配置中提供一个`prefer`映射，指定你关于标签的替代的首选项。例如，指定必须使用`@returns`而不是`@return`，你可以使用如下配置：
 
 ```json
-"valid-jsdoc": [2, {
+"valid-jsdoc": ["error", {
     "prefer": {
         "return": "returns"
     }
@@ -179,14 +182,12 @@ With this configuration, ESLint will warn when it finds `@return` and recommend 
 
 在这个配置中，当ESLint发现`@return`，它将发出警告，并推荐使用`@returns`代替。
 
-#### requireReturn
+### requireReturn
 
-By default ESLint requires you to specify `@return` for every documented function regardless of whether there is anything returned by the function. While using `@return {void}` or `@return {undefined}` stops it from asking for a description of the return value using the `requireReturn` option and setting it to `false` prevents an error from being logged unless there is a return in the function. Note that with this option set to `false`, if there is a return in the function, an error will still be logged and if there is a `@return` specified and there are no `return` statements in the function an error will also be logged. This option is purely to prevent the forced addition of `@return {void}` to an entire codebase not to turn off JSDoc return checking.
-
-默认情况下，ESLint要求你为每个documented函数指定`@return`，不管该函数中是否有返回值。当使用`@return {void}` 或 `@return {undefined}`不再要求返回值有描述，使用`requireReturn`并设置它为`false`, 防止一个错误被记入日志，除非函数中有一个返回语句。注意，该选项设置为`false`时，如果函数中有一个返回语句，一个错误仍将被记入日志。如果有个指定的`@return`，并且函数中没有`return`语句一个错误仍将被记入日志。这个选项纯粹是为了防止不关掉JSDoc返回检查的情况下强制添加`@return {void}`到整个代码库。
+By default ESLint requires you to document every function with a `@return` tag regardless of whether there is anything returned by the function. If instead you want to enforce that only functions with a `return` statement are documented with a `@return` tag, set the `requireReturn` option to `false`.  When `requireReturn` is `false`, every function documented with a `@return` tag must have a `return` statement, and every function with a `return` statement must have a `@return` tag.
 
 ```json
-"valid-jsdoc": [2, {
+"valid-jsdoc": ["error", {
     "requireReturn": false
 }]
 ```
@@ -198,7 +199,7 @@ By default ESLint requires you to specify a description for each `@param`. You c
 默认情况下，ESLint要求你为每个`@param`指定一个描述。你可以通过设置`requireParamDescription`为`false`选择不要求`@param`有描述。
 
 ```json
-"valid-jsdoc": [2, {
+"valid-jsdoc": ["error", {
     "requireParamDescription": false
 }]
 ```
@@ -210,7 +211,7 @@ By default ESLint requires you to specify a description for each `@return`. You 
 默认情况下，ESLint要求你为每个`@reutrn`指定一个描述。你可以通过设置`requireReturnDescription`为`false`选择不要求`@return`有描述。
 
 ```json
-"valid-jsdoc": [2, {
+"valid-jsdoc": ["error", {
     "requireReturnDescription": false
 }]
 ```
@@ -222,7 +223,7 @@ Specify a regular expression to validate JSDoc comment block description against
 指定一个正则表达式验证JSDoc注释块的描述。
 
 ```json
-"valid-jsdoc": [2, {
+"valid-jsdoc": ["error", {
     "matchDescription": "^[A-Z][A-Za-z0-9\\s]*[.]$"
 }]
 ```
@@ -234,7 +235,7 @@ By default ESLint requires you to specify `type` for `@return` tag for every doc
 默认情况下，ESLint要求你为每个documented函数的`@return`标签指定`type`。
 
 ```json
-"valid-jsdoc": [2, {
+"valid-jsdoc": ["error", {
     "requireReturnType": false
 }]
 ```
@@ -247,7 +248,7 @@ In the example below, it will expect the "object" to start with an uppercase and
 用户可以通过配置的选项的方式来使得所有选项有效。在这些选项中，键应该是你想检测的类型，而值是你所期待的类型。注意，我们不会检测这些选项的拼写错误。在下面的例子中，它希望"object"以大写字母开头，而所有的"string"类型以小写字母开头。
 
 ```json
-"valid-jsdoc": [2, {
+"valid-jsdoc": ["error", {
     "preferType": {
         "String": "string",
         "object": "Object",
@@ -261,7 +262,7 @@ Examples of **incorrect** code for a sample of `"preferType"` options:
 `"preferType"`选项的 **错误**代码示例：
 
 ```js
-/*eslint valid-jsdoc: [2, { "preferType": { "String": "string", "object": "Object", "test": "TesT" } }]*/
+/*eslint valid-jsdoc: ["error", { "preferType": { "String": "string", "object": "Object", "test": "TesT" } }]*/
 
 /**
  * Adds two numbers together.
@@ -297,7 +298,7 @@ Examples of **correct** code for a sample of `"preferType"` options:
 `"preferType"`选项的 **正确**代码示例：
 
 ```js
-/*eslint valid-jsdoc: [2, { "preferType": { "String": "string", "object": "Object", "test": "TesT" } }]*/
+/*eslint valid-jsdoc: ["error", { "preferType": { "String": "string", "object": "Object", "test": "TesT" } }]*/
 
 /**
  * Adds two numbers together.

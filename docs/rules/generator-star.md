@@ -160,7 +160,7 @@ var generator = function*() {
 
 The shortened object literal syntax for generators is not affected by this rule.
 
-对于generator函数缩短的对象字面量语法不会被此规则影响。
+对于 generator 函数缩短的对象字面量语法不会被此规则影响。
 
 ## When Not To Use It
 

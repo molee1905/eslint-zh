@@ -8,6 +8,10 @@ layout: doc
 
 # 禁止或强制在括号内使用空格 (array-bracket-spacing)
 
+(fixable) The --fix option on the [command line](../user-guide/command-line-interface#fix) automatically fixes problems reported by this rule.
+
+(fixable)[command line](../user-guide/command-line-interface#fix)中的`--fix`选项可以自动修复该规则报告的问题。
+
 A number of style guides require or disallow spaces between array brackets. This rule
 applies to both array literals and destructuring assignment (EcmaScript 6) using arrays.
 
@@ -22,10 +26,6 @@ var [ x, y ] = z;
 var arr = ['foo', 'bar'];
 var [x,y] = z;
 ```
-
-**Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
-
-**Fixable:** 该规则可以通过`--fix`命令行进行自动修复。
 
 ## Rule Details
 
@@ -69,7 +69,7 @@ var arr = [ 'foo', 'bar' ];
 var arr = ['foo', 'bar' ];
 var arr = [ ['foo'], 'bar'];
 var arr = [[ 'foo' ], 'bar'];
-var arr = ['foo',
+var arr = [ 'foo',
   'bar'
 ];
 var [ x, y ] = z;
@@ -93,6 +93,9 @@ var arr = [
   'foo',
   'bar',
   'baz'
+];
+var arr = ['foo',
+  'bar'
 ];
 var arr = [
   'foo',
@@ -141,6 +144,12 @@ The following patterns are not considered problems:
 var arr = [];
 var arr = [ 'foo', 'bar', 'baz' ];
 var arr = [ [ 'foo' ], 'bar', 'baz' ];
+var arr = [ 'foo',
+  'bar'
+];
+var arr = [
+  'foo',
+  'bar' ];
 var arr = [
   'foo',
   'bar',

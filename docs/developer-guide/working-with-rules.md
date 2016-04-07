@@ -38,7 +38,7 @@ module.exports.schema = [
 
 **Important:** Rule submissions will not be accepted unless they are in this format.
 
-**重要的:** 非此格式的规则的提交，将不会被接受。
+**重要的：**非此格式的规则的提交，将不会被接受。
 
 ## Rule Basics
 

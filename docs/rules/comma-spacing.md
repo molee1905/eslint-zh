@@ -10,9 +10,9 @@ proofreader: sunshiner
 
 # 强制在逗号周围使用空格 (comma-spacing)
 
-**Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
+(fixable) The --fix option on the [command line](../user-guide/command-line-interface#fix) automatically fixes problems reported by this rule.
 
-**Fixable:** 该规则可以通过`--fix`命令行进行自动修复。
+(fixable)[command line](../user-guide/command-line-interface#fix)中的`--fix`选项可以自动修复该规则报告的问题。
 
 Spacing around commas improve readability of a list of items. Although most of the style guidelines for languages prescribe adding a space after a comma and not before it, it is subjective to the preferences of a project.
 

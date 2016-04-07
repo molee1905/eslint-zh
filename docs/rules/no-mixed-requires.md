@@ -125,7 +125,6 @@ Examples of **incorrect** code for this rule with the `{ "grouping": true }` opt
 
 ```js
 /*eslint no-mixed-requires: ["error", { "grouping": true }]*/
->>>>>>> master
 
 // invalid because of mixed types "core" and "file"
 var fs = require('fs'),

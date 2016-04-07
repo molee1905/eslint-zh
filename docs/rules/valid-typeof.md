@@ -10,10 +10,9 @@ proofreader: qifeigit
 
 # 确保typeof的结果和一个有效的字符串相比较 (valid-typeof)
 
- 
 For a vast majority of use-cases, the only valid results of the `typeof` operator will be one of the following: `"undefined"`, `"object"`, `"boolean"`, `"number"`, `"string"`, `"function"` and `"symbol"`. When the result of a `typeof` operation is compared against a string that is not one of these strings, it is usually a typo. This rule ensures that when the result of a `typeof` operation is compared against a string, that string is in the aforementioned set.
 
-对于大多数用例，`typeof`操作唯一有效的结果将是下列之一：`"undefined"`， `"object"`， `"boolean"`， `"number"`， `"string"`， `"function"`和`"symbol"`。当`typeof`操作结果不是这些字符串中的一个相比较，通常是个书写错误。该规则确保`typeof`操作的结果是与一个字符串比较，这个字符串是在前面提及的字符串之一。
+对于大多数用例，`typeof`操作唯一有效的结果将是下列之一：`"undefined"`， `"object"`， `"boolean"`，`"number"`，`"string"`，`"function"`和`"symbol"`。当`typeof`操作结果不是这些字符串中的一个相比较，通常是个书写错误。该规则确保`typeof`操作的结果是与一个字符串比较，这个字符串是在前面提及的字符串之一。
 
 ## Rule Details
 
@@ -26,7 +25,7 @@ Examples of **incorrect** code for this rule:
 **错误**代码示例：
 
 ```js
-/*eslint valid-typeof: 2*/
+/*eslint valid-typeof: "error"*/
 
 typeof foo === "strnig"
 typeof foo == "undefimed"
@@ -39,7 +38,7 @@ Examples of **correct** code for this rule:
 **正确**代码示例：
 
 ```js
-/*eslint valid-typeof: 2*/
+/*eslint valid-typeof: "error"*/
 
 typeof foo === "string"
 typeof bar == "undefined"

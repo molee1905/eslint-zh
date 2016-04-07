@@ -10,9 +10,9 @@ Rules in ESLint are divided into several categories to help you better understan
 
 为了让你有个更好的理解，ESLint对其规则分门别类。所有的规则默认都是禁用的。针对一些常见的问题，ESLint 给出了一些推荐规则，你可以在你的配置文件中通过添加`extends: "eslint:recommended"`来使用它们。当你的规则继承自`eslint:recommended`时，以下被标记为 "(recommended)" 的规则将被启用。有关如何配置规则和使用`extends`的更多信息，请参见[configuration documentation](../user-guide/configuring)。
 
-Some rules are fixable using the `--fix` command line flag. Those rules are marked as "(fixable)" below. Currently these fixes are limited only to whitespace fixes.
+Some rules are fixable using the `--fix` command line flag. Those rules are marked as "(fixable)" below. Currently these fixes are mostly limited only to whitespace fixes.
 
-一些规则是可以通过`--fix`命令行进行修复的。这些规则被标记为 "(fixable)"。目前只对空白进行修复。
+一些规则是可以通过`--fix`命令行进行修复的。这些规则被标记为 "(fixable)"。目前这些修复大部分只限于对空白的修复。
 
 ## Possible Errors
 
@@ -135,6 +135,8 @@ These are rules designed to prevent you from making mistakes. They either prescr
 * [no-floating-decimal](no-floating-decimal): 禁止数字字面量中使用前导和末尾小数点
 * [no-implicit-coercion](no-implicit-coercion): disallow the type conversions with shorter notations
 * [no-implicit-coercion](no-implicit-coercion): 禁止是用短符号进行类型转换
+* [no-implicit-globals](no-implicit-globals): disallow `var` and named functions in global scope
+* [no-implicit-globals](no-implicit-globals): disallow `var` and named functions in global scope
 * [no-implied-eval](no-implied-eval): disallow use of `eval()`-like methods
 * [no-implied-eval](no-implied-eval): 禁止使用隐式`eval()`
 * [no-invalid-this](no-invalid-this): disallow `this` keywords outside of classes or class-like objects
@@ -419,8 +421,8 @@ These rules are purely matters of style and are quite subjective.
 * [space-infix-ops](space-infix-ops): 要求操作符周围有空格 (fixable)
 * [space-unary-ops](space-unary-ops): require or disallow spaces before/after unary operators (fixable)
 * [space-unary-ops](space-unary-ops): 要求或禁止在一元操作符之前或之后存在空格 (fixable)
-* [spaced-comment](spaced-comment): require or disallow a space immediately following the `//` or `/*` in a comment
-* [spaced-comment](spaced-comment): 要求或禁止注释中`//` 或 `/*`紧跟一个空格
+* [spaced-comment](spaced-comment): require or disallow a space immediately following the `//` or `/*` in a comment (fixable)
+* [spaced-comment](spaced-comment): 要求或禁止注释中`//` 或 `/*`紧跟一个空格 (fixable)
 * [wrap-regex](wrap-regex): require regex literals to be wrapped in parentheses
 * [wrap-regex](wrap-regex): 要求正则表达式被括号括起来
 

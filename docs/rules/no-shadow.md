@@ -73,7 +73,7 @@ This rule takes one option, an object, with properties `"builtinGlobals"`, `"hoi
 The `builtinGlobals` option is `false` by default.
 If it is `true`, the rule prevents shadowing of built-in global variables: `Object`, `Array`, `Number`, and so on.
 
-默认值是`false`，如果builtinGlobals是`true`，会检测内置对象如`Object`,`Array`,`Number`, ...
+默认值是`false`，如果builtinGlobals是`true`，会检测内置对象如`Object`，`Array`，`Number`等等。
 
 Examples of **incorrect** code for the `{ "builtinGlobals": true }` option:
 

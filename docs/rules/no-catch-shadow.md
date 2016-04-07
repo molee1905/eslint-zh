@@ -64,7 +64,6 @@ Examples of **correct** code for this rule:
 
 ```js
 /*eslint no-catch-shadow: "error"*/
->>>>>>> master
 
 var err = "x";
 

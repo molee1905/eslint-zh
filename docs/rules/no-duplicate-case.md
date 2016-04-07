@@ -5,6 +5,7 @@ translator: ybbjegj
 proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Rule to disallow a duplicate case label (no-duplicate-case)
 
 # 禁止重复 case 标签（no-duplicate-case）

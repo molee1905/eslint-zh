@@ -12,7 +12,7 @@ proofreader: sunshiner
 
 JavaScript allows you to place newlines before or after a dot in a member expression.
 
-JavaScript允许你在成员表达式中的点操作符的前面或者后面放置一个换行符
+JavaScript 允许你在成员表达式中的点操作符的前面或者后面放置一个换行符
 
 Consistency in placing a newline before or after the dot can greatly increase readability.
 
@@ -50,7 +50,7 @@ The rule takes one option, a string:
 
 The default `"object"` option requires the dot to be on the same line as the object.
 
-这是默认选项，它需要点操作符和对象部分放在同一行.
+这是默认选项，它需要点操作符和对象部分放在同一行。
 
 Examples of **incorrect** code for the default `"object"` option:
 
@@ -108,7 +108,7 @@ var bar = object.property;
 
 You can turn this rule off if you are not concerned with the consistency of newlines before or after dots in member expressions.
 
-如果你不关心成员表达式中点操作符换行符前后的一致性，可以关掉此规则
+如果你不关心成员表达式中点操作符换行符前后的一致性，可以关掉此规则。
 
 ## Related Rules
 

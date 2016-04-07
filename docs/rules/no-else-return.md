@@ -5,6 +5,7 @@ translator: fengnana
 proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow return before else (no-else-return)
 
 # 禁止在else前有return (no-else-return)

@@ -87,6 +87,8 @@ A boolean to specify if numbers used as array indexes are considered okay. `fals
 
 Examples of **correct** code for the `{ "ignoreArrayIndexes": true }` option:
 
+`{ "ignoreArrayIndexes": true }`选项的 **正确**代码示例：
+
 ```js
 /*eslint no-magic-numbers: ["error", { "ignoreArrayIndexes": true }]*/
 

@@ -22,7 +22,7 @@ var foo = "Copyright \251";
 
 The rule is aimed at preventing the use of a deprecated JavaScript feature, the use of octal escape sequences. As such it will warn whenever an octal escape sequence is found in a string literal.
 
-此规则旨在防止使用弃用的JavaScript特性，八进制转义序列的使用。因此每当在字符串中发现八进制转义序列时会发出警告。
+此规则旨在防止使用弃用的 JavaScript 特性，八进制转义序列的使用。因此每当在字符串中发现八进制转义序列时会发出警告。
 
 Examples of **incorrect** code for this rule:
 

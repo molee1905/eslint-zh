@@ -6,9 +6,13 @@ proofreader: sunshiner
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
-# Disallow or enforce spaces inside of computed properties. (computed-property-spacing)
+# Disallow or enforce spaces inside of computed properties (computed-property-spacing)
 
-# 禁止或强制在计算属性中使用空格。(computed-property-spacing)
+# 禁止或强制在计算属性中使用空格 (computed-property-spacing)
+
+(fixable) The --fix option on the [command line](../user-guide/command-line-interface#fix) automatically fixes problems reported by this rule.
+
+(fixable)[command line](../user-guide/command-line-interface#fix)中的`--fix`选项可以自动修复该规则报告的问题。
 
 While formatting preferences are very personal, a number of style guides require
 or disallow spaces between computed properties in the following situations:
@@ -27,10 +31,6 @@ var x = obj[a];
 var a = "prop";
 var obj = { [a]: "value" };
 ```
-
-**Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
-
-**Fixable:** 该规则可以通过`--fix`命令行进行自动修复。
 
 ## Rule Details
 
@@ -147,7 +147,7 @@ You can turn this rule off if you are not concerned with the consistency of comp
 
 This rule was introduced in ESLint 0.23.0.
 
-该规则在ESLint 0.23.0 被引入。
+该规则在 ESLint 0.23.0 被引入。
 
 ## Resources
 

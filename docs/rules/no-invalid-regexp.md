@@ -70,7 +70,6 @@ new RegExp('.', 'y')
 new RegExp('.', 'yu')
 ```
 
-
 ## Further Reading
 
 * [Annotated ES5 §7.8.5 - Regular Expression Literals](http://es5.github.io/#x7.8.5)

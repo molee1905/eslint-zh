@@ -35,7 +35,7 @@ This rule is aimed at reducing code complexity by capping the amount of cyclomat
 
 Examples of **incorrect** code for a maximum of 2:
 
-最大阈值为2的 **错误**代码示例：
+最大阈值为 2 的 **错误**代码示例：
 
 ```js
 /*eslint complexity: ["error", 2]*/
@@ -53,7 +53,7 @@ function a(x) {
 
 Examples of **correct** code for a maximum of 2:
 
-最大阈值为2的 **正确**代码示例：
+最大阈值为 2 的 **正确**代码示例：
 
 ```js
 /*eslint complexity: ["error", 2]*/
@@ -69,9 +69,9 @@ function a(x) {
 
 ## Options
 
-Optionally, you may specify a `maximum` object property:
+Optionally, you may specify a `max` object property:
 
-你可以指定一个 `maximum` 属性：
+你可以指定一个 `max` 属性：
 
 ```json
 "complexity": ["error", 2]
@@ -82,8 +82,12 @@ is equivalent to
 等同于：
 
 ```json
-"complexity": ["error", { "maximum": 2 }]
+"complexity": ["error", { "max": 2 }]
 ```
+
+**Deprecated:** the object property `maximum` is deprecated. Please use the property `max` instead.
+
+**弃用：**属性`maximum`已弃用。请使用`max`属性。
 
 ## When Not To Use It
 

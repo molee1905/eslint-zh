@@ -13,13 +13,11 @@ proofreader: sunshiner
 One of the confusing aspects of JavaScript is that any function may or may not return a value at any point in time. When a function exits without any `return` statement executing, the function returns `undefined`. Similarly, calling `return` without specifying any value will cause the function to return `undefined`.Only when `return` is called with a value is there a change in the function's return value.
 
 JavaScript 代码容易让人混乱的一点就是任何函数在执行过程中都可能返回值或者不返回值。
-当函数中没有任何`return`语句执行时，函数返回`undefined`。
-同样的，调用没有指定任何返回值的`return`，函数也会返回`undefined`。
-只有当调用带有返回值的`return`，才会改变函数的返回值。
+当函数中没有任何`return`语句执行时，函数返回`undefined`。同样的，调用没有指定任何返回值的`return`，函数也会返回`undefined`。只有当调用带有返回值的`return`，才会改变函数的返回值。
 
 Unlike statically-typed languages that will catch when a function doesn't return the type of data expected, JavaScript has no such checks, meaning that it's easy to make mistakes such as this:
 
-对于静态类型语言来说，当函数没有返回期望的数据类型时程序会捕获到，但是JavaScript没有类似的检测，意味着它很容易引起如下的错误：
+对于静态类型语言来说，当函数没有返回期望的数据类型时程序会捕获到，但是 JavaScript 没有类似的检测，意味着它很容易引起如下的错误：
 
 ```js
 function doSomething(condition) {

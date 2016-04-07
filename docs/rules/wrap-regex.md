@@ -31,7 +31,7 @@ The following patterns are considered problems:
 以下模式被认为是有问题的：
 
 ```js
-/*eslint wrap-regex: 2*/
+/*eslint wrap-regex: "error"*/
 
 function a() {
     return /foo/.test("bar");
@@ -43,7 +43,7 @@ The following patterns are not considered problems:
 以下模式被认为是没有问题的：
 
 ```js
-/*eslint wrap-regex: 2*/
+/*eslint wrap-regex: "error"*/
 
 function a() {
     return (/foo/).test("bar");

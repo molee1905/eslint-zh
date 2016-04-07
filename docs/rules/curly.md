@@ -12,9 +12,10 @@ proofreader: sunshiner
 
 JavaScript allows the omission of curly braces when a block contains only one statement.
 
-当代码块只有一条语句时，JavaScript允许省略大括号。
+当代码块只有一条语句时，JavaScript 允许省略大括号。
 
 However, it is considered by many to be best practice to _never_ omit curly braces around blocks, even when they are optional, because it can lead to bugs and reduces code clarity. So the following:
+
 然而，很多人认为，在块区域前后时刻保留大括号是一种最佳实践，即使他们是可有可无的，因为省略大括号会导致错误，并且降低代码的清晰度。所以以下模式：
 
 ```js
@@ -259,8 +260,7 @@ for (var i = 0; foo; i++)
 When using any of the `multi*` options, you can add an option to enforce all bodies of a `if`,
 `else if` and `else` chain to be with or without braces.
 
-当在使用任何`multi*`选项时，你可以添加一个参数来强制`if`,
-`else if` and `else`中所有的代码块使用或者不使用大括号。
+当在使用任何`multi*`选项时，你可以添加一个参数来强制`if`，`else if` and `else`中所有的代码块使用或者不使用大括号。
 
 Examples of **incorrect** code for the `"multi", "consistent"` options:
 

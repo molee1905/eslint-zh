@@ -12,7 +12,7 @@ proofreader: sunshiner
 
 Some code conventions require that all `switch` statements have a `default` case, even if the default case is empty, such as:
 
-一些编码规范中，要求所有的`switch` 语句中必须包含`default`分支，即使 default 分支中没有任何代码，如下所示：
+一些编码规范中，要求所有的`switch`语句中必须包含`default`分支，即使 default 分支中没有任何代码，如下所示：
 
 ```js
 switch (foo) {

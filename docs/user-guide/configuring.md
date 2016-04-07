@@ -488,14 +488,6 @@ In this example, [`eqeqeq`](../rules/eqeqeq) is turned off and [`curly`](../rule
 在这个例子里，[`eqeqeq`](../rules/eqeqeq) 规则被关闭，[`curly`](../rules/curly) 规则被打开，定义为错误级别。你也可以使用对应的数字定义规则严重程度：
 
 ```js
-/*eslint eqeqeq: "off", curly: "error"*/
-```
-
-In this example, [`eqeqeq`](../rules/eqeqeq) is turned off and [`curly`](../rules/curly) is turned on as an error. You can also use the numeric equivalent for the rule severity:
-
-在这个例子里，[`eqeqeq`](../rules/eqeqeq) 规则被关闭，[`curly`](../rules/curly) 规则被打开，定义为错误级别。你也可以使用对应的数字定义规则严重程度：
-
-```js
 /*eslint eqeqeq: 0, curly: 2*/
 ```
 
@@ -946,7 +938,7 @@ In this example, the `eslint-config-myrules` package will be loaded as an object
 
 **Note:** You can omit `eslint-config-` and ESLint will automatically insert it for you, similar to how plugins work. See [Shareable Configs](../developer-guide/shareable-configs) for more information.
 
-**注意：** 你可以省略 `eslint-config-`前缀，ESLint 会为你自动插入该前缀，类似于插件是如何工作的。更多信息请查看 [Shareable Configs](../developer-guide/shareable-configs)
+**注意：**你可以省略 `eslint-config-`前缀，ESLint 会为你自动插入该前缀，类似于插件是如何工作的。更多信息请查看 [Shareable Configs](../developer-guide/shareable-configs)
 
 ESLint also supports extending configuration from plugins that provide configs:
 
