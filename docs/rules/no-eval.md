@@ -85,10 +85,9 @@ class A {
 
 ## Options
 
-This rule has an option to allow indirect calls to `eval`.
-Indirect calls to `eval` are less dangerous than direct calls to `eval` because they cannot dynamically change the scope. Because of this, they also will not negatively impact performance to the degree of direct `eval`.
+This rule has an option to allow indirect calls to `eval`.Indirect calls to `eval` are less dangerous than direct calls to `eval` because they cannot dynamically change the scope. Because of this, they also will not negatively impact performance to the degree of direct `eval`.
 
-该规则有一个选择允许间接调用`eval`。间接调用 `eval`比直接调用危险性要低，因为它们不是动态的改变作用域。正因为如此，相对于直接调用`eval`，它们不会对性能产生负面影响。
+该规则有一个选择允许间接调用`eval`。间接调用`eval`比直接调用危险性要低，因为它们不是动态的改变作用域。正因为如此，相对于直接调用`eval`，它们不会对性能产生负面影响。
 
 ```js
 {
@@ -154,7 +153,7 @@ global.eval("var a = 0");
 
 * This rule cannot catch renaming the global object. Such as:
 
-* 该规则不会捕捉全局对象上的`eval`。比如
+* 该规则不会捕捉全局对象上的`eval`。比如：
 
   ```js
   var foo = window;

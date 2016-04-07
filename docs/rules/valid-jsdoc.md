@@ -12,7 +12,7 @@ proofreader: qifeigit
 
 [JSDoc](http://usejsdoc.org) is a JavaScript API documentation generator. It uses specially-formatted comments inside of code to generate API documentation automatically. For example, this is what a JSDoc comment looks like for a function:
 
-[JSDoc](http://usejsdoc.org)是一个Javascript API 文档生成器。它在代码中使用特殊格式的注释来自动生成API文档。例如，这就是一个函数的JSDoc注释的样子：
+[JSDoc](http://usejsdoc.org)是一个 Javascript API 文档生成器。它在代码中使用特殊格式的注释来自动生成API文档。例如，这就是一个函数的 JSDoc 注释的例子：
 
 ```js
 /**
@@ -34,7 +34,7 @@ JSDoc注释有自己的语法，它很容易错误书写一个注释，因为编
 
 This rule aims to prevent invalid and incomplete JSDoc comments. It will warn when any of the following is true:
 
-该规则旨在防止无效的和不完整的JSDoc注释。有以下情况发生时，它将发出警告：
+该规则旨在防止无效的和不完整的 JSDoc 注释。有以下情况发生时，它将发出警告：
 
 * There is a JSDoc syntax error
 * 有JSDoc语法错误
@@ -258,7 +258,7 @@ In the example below, it will expect the "object" to start with an uppercase and
 
 Examples of **incorrect** code for a sample of `"preferType"` options:
 
-`"preferType"` 选项 **不正确** 的代码示例 :
+`"preferType"`选项的 **错误**代码示例：
 
 ```js
 /*eslint valid-jsdoc: [2, { "preferType": { "String": "string", "object": "Object", "test": "TesT" } }]*/
@@ -294,7 +294,7 @@ function foo(param1) {
 
 Examples of **correct** code for a sample of `"preferType"` options:
 
-`"preferType"` 选项 **正确** 的代码示例 :
+`"preferType"`选项的 **正确**代码示例：
 
 ```js
 /*eslint valid-jsdoc: [2, { "preferType": { "String": "string", "object": "Object", "test": "TesT" } }]*/
@@ -332,7 +332,7 @@ function foo(param1) {
 
 If you aren't using JSDoc, then you can safely turn this rule off.
 
-如果你不使用JSDoc，你可以关闭此规则。
+如果你不使用 JSDoc，你可以关闭此规则。
 
 ## Further Reading
 
@@ -342,7 +342,7 @@ If you aren't using JSDoc, then you can safely turn this rule off.
 
 This rule was introduced in ESLint 0.4.0.
 
-该规则在ESLint 0.4.0中被引入。
+该规则在 ESLint 0.4.0 中被引入。
 
 ## Resources
 

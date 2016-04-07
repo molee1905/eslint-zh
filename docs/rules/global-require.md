@@ -48,7 +48,7 @@ This rule requires all calls to `require()` to be at the top level of the module
 
 Examples of **incorrect** code for this rule:
 
-**错误**的代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint global-require: "error"*/
@@ -82,7 +82,7 @@ try {
 
 Examples of **correct** code for this rule:
 
-**正确**的代码示例：
+**正确**代码示例：
 
 ```js
 /*eslint global-require: "error"*/

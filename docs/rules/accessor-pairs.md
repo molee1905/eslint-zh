@@ -63,7 +63,7 @@ By activating the option `getWithoutSet` it enforces the presence of a setter fo
 
 Examples of **incorrect** code for the default `{ "setWithoutGet": true }` option:
 
-默认选项`{ "setWithoutGet": true }` **不正确**的代码示例:
+默认选项`{ "setWithoutGet": true }`的 **错误**代码示例：
 
 ```js
 /*eslint accessor-pairs: "error"*/
@@ -84,7 +84,7 @@ Object.defineProperty(o, 'c', {
 
 Examples of **correct** code for the default `{ "setWithoutGet": true }` option:
 
-默认选项`{ "setWithoutGet": true }` **正确**的代码示例
+默认选项`{ "setWithoutGet": true }`的 **正确**代码示例：
 
 ```js
 /*eslint accessor-pairs: "error"*/
@@ -114,7 +114,7 @@ Object.defineProperty(o, 'c', {
 
 Examples of **incorrect** code for the `{ "getWithoutSet": true }` option:
 
-`{ "getWithoutSet": true }`选项，**不正确**的代码示例：
+`{ "getWithoutSet": true }`选项的 **错误**代码示例：
 
 ```js
 /*eslint accessor-pairs: ["error", { "getWithoutSet": true }]*/
@@ -148,7 +148,7 @@ Object.defineProperty(o, 'c', {
 
 Examples of **correct** code for the `{ "getWithoutSet": true }` option:
 
-`{ "getWithoutSet": true }`选项，**正确**的代码示例：
+`{ "getWithoutSet": true }`选项的 **正确**代码示例：
 
 ```js
 /*eslint accessor-pairs: ["error", { "getWithoutSet": true }]*/

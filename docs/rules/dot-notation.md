@@ -26,7 +26,7 @@ This rule is aimed at maintaining code consistency and improving code readabilit
 
 Examples of **incorrect** code for this rule:
 
-**错误**的代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint dot-notation: "error"*/
@@ -36,7 +36,7 @@ var x = foo["bar"];
 
 Examples of **correct** code for this rule:
 
-**正确**的代码示例：
+**正确**代码示例：
 
 ```js
 /*eslint dot-notation: "error"*/

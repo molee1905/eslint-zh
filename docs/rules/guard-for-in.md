@@ -28,7 +28,7 @@ This rule is aimed at preventing unexpected behavior that could arise from using
 
 Examples of **incorrect** code for this rule:
 
-**错误**的代码示例：
+**错误**代码示例：
 
 ```js
 /*eslint guard-for-in: "error"*/
@@ -40,7 +40,7 @@ for (key in foo) {
 
 Examples of **correct** code for this rule:
 
-**正确**的代码示例：
+**正确**代码示例：
 
 ```js
 /*eslint guard-for-in: "error"*/

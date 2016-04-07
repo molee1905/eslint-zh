@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="/styles/main.936b04d2.css"/>
   <link rel="stylesheet" href="/styles/search.css"/>
   <link rel="stylesheet" href="/styles/overrides.css"/>
-  {% if page.disablePreview != true %}
+  {% if include.multi == "true" and page.exceptMulti != true %}
   <link rel="stylesheet" href="/styles/mixed.css"/>
   {% endif %}
   <link rel="icon" href="/img/favicon.512x512.png">
