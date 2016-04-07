@@ -203,8 +203,6 @@ For example, `eslint lib/* --ext .js` will match all files within the `lib/` dir
 
 #### `--global`
 
-#### `--global`
-
 This option defines global variables so that they will not be flagged as undefined by the `no-undef` rule. Global variables are read-only by default, but appending `:true` to a variable's name makes it writable. To define multiple variables, separate them using commas, or use the flag multiple times.
 
 这个选项定义了全局变量，这样它们就不会被`no-undef`规则标记为未定义了。全局变量默认是只读的，但是在变量名字后加上`:true`后会使它变得可写。要定义多个变量，使用逗号分隔它们，或多次使用这个标记。
@@ -223,6 +221,15 @@ Examples:
 This option allows you to specify a parser to be used by ESLint. By default, `espree` will be used.
 
 该选项允许你为 ESLint 指定一个解析器。默认情况下，使用`espree`。
+
+#### `--parser-options`
+
+This option allows you to specify parser options to be used by eslint.
+
+Examples:
+
+    echo '3 ** 4' | eslint --stdin --parser-options=ecmaVersion:6 # will fail with a parsing error
+    echo '3 ** 4' | eslint --stdin --parser-options=ecmaVersion:7 # succeeds, yay!
 
 #### `--parser-options`
 
@@ -566,7 +573,7 @@ This option outputs the configuration to be used for the file passed. When prese
 Example:
 
 示例：
- 
+
     eslint --print-config file.js
 
 ## Ignoring files from linting

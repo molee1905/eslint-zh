@@ -70,10 +70,15 @@ The names `"semi"` and `"quotes"` are the names of [rules](http://eslint.org/doc
 `"semi"` 和 `"quotes"` 是 ESLint 中 [规则](http://eslint.org/docs/rules) 的名称。数字是规则的错误级别，它有 3 个取值：
 
 * `"off"` or `0` - turn the rule off
+
 * `"off"` or `0` - 关闭规则
+
 * `"warn"` or `1` - turn the rule on as a warning (doesn't affect exit code)
+
 * `"warn"` or `1` - 将规则视为一个警告（不会影响退出码）
+
 * `"error"` or `2` - turn the rule on as an error (exit code will be 1)
+
 * `"error"` or `2` - 将规则视为一个错误 (退出码为1)
 
 The three error levels allow you fine-grained control over how ESLint applies rules (for more configuration options and details, see the [configuration docs](http://eslint.org/docs/user-guide/configuring)).

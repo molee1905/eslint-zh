@@ -149,7 +149,7 @@ The following parsers are compatible with ESLint:
 
 * [Esprima](https://npmjs.com/package/esprima)
 * [Esprima](https://npmjs.com/package/esprima)
-* [Babel-ESLint](https://npmjs.com/package/babel-eslint) - A wrapper around the [Babel](http://babeljs.io)parser that makes it compatible with ESLint.
+* [Babel-ESLint](https://npmjs.com/package/babel-eslint) - A wrapper around the [Babel](http://babeljs.io) parser that makes it compatible with ESLint.
 * [Babel-ESLint](https://npmjs.com/package/babel-eslint) - 对[Babel](http://babeljs.io)解析器的包装使其与 ESLint 兼容。
 
 Note when using a custom parser, the `parserOptions` configuration property is still required for ESLint to work properly with features not in ECMAScript 5 by default. Parsers are all passed `parserOptions` and may or may not use them to determine which features to enable.
@@ -488,6 +488,14 @@ In this example, [`eqeqeq`](../rules/eqeqeq) is turned off and [`curly`](../rule
 在这个例子里，[`eqeqeq`](../rules/eqeqeq) 规则被关闭，[`curly`](../rules/curly) 规则被打开，定义为错误级别。你也可以使用对应的数字定义规则严重程度：
 
 ```js
+/*eslint eqeqeq: "off", curly: "error"*/
+```
+
+In this example, [`eqeqeq`](../rules/eqeqeq) is turned off and [`curly`](../rules/curly) is turned on as an error. You can also use the numeric equivalent for the rule severity:
+
+在这个例子里，[`eqeqeq`](../rules/eqeqeq) 规则被关闭，[`curly`](../rules/curly) 规则被打开，定义为错误级别。你也可以使用对应的数字定义规则严重程度：
+
+```js
 /*eslint eqeqeq: 0, curly: 2*/
 ```
 
@@ -505,7 +513,7 @@ If a rule has additional options, you can specify them using array literal synta
 
 This comment specifies the "double" option for the [`quotes`](../rules/quotes) rule. The first item in the array is always the rule severity (number or string).
 
-这条注释为规则[`quotes`](../rules/quotes)指定了 "double" 选项。数组的第一项总是规则的严重程度（数字或字符串）。
+这条注释为规则[`quotes`](../rules/quotes)指定了"double"选项。数组的第一项总是规则的严重程度（数字或字符串）。
 
 To configure rules inside of a configuration file, use the `rules` key along with an error level and any options you want to use. For example:
 
@@ -586,7 +594,6 @@ To temporarily disable rule warnings in your file use the following format:
 
 在你文件中临时禁用规则警告，可以使用下面的格式：
  
-
 ```js
 /*eslint-disable */
 
@@ -713,8 +720,6 @@ ESLint 支持几种格式的配置文件：
 * **JSON** - use `.eslintrc.json` to define the configuration structure. ESLint's JSON files also allow JavaScript-style comments.
 
 * **JSON** - 使用 `.eslintrc.json` 去定义配置的结构，ESLint 的 JSON 文件允许 JavaScript 风格的注释。
-
-* **Deprecated** - use `.eslintrc`, which can be either JSON or YAML.
 
 * **Deprecated** - use `.eslintrc`, which can be either JSON or YAML.
 
@@ -1072,7 +1077,7 @@ You can also use your `.gitignore` file:
 
     eslint --ignore-path .gitignore file.js
 
-Any file that follows the standard ignore file format can be used. Keep in mind that specifying `--ignore-path` means that any existing `.eslintignore` file will not be used. Note that globbing rules in `.eslintignore` are more strict than in `.gitignore`.
+Any file that follows the standard ignore file format can be used. Keep in mind that specifying `--ignore-path` means that any existing `.eslintignore` file will not be used. Note that globbing rules in `.eslintignore` follow those of `.gitignore`.
 
 任何文件只要满足标准忽略文件格式都可以用。记住，指定`--ignore-path`意味着任何现有的`.eslintignore`文件将不被使用。请注意，`.eslintignore`中的匹配规则比`.gitignore`中的更严格。
 

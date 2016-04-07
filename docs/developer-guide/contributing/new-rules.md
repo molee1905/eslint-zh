@@ -14,6 +14,8 @@ ESLint 的核心就是规则。在该项目的生命周期的大部分时间里�
 
 **Note:** As of 2016, we accept only rules that are deemed extremely important for inclusion. We prefer that new rules be implemented in plugins.
 
+**注意** 在2016年，我们只接受被认为是极其重要的规则。我们希望新的规则以插件的形式实现的。
+
 ## Core Rule Guidelines
 
 ## 核心规则指南

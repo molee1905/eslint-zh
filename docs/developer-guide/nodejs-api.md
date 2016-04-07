@@ -51,7 +51,7 @@ assert(code.text === "var foo = bar;");
 ### splitLines()
 
 This is a static function on `SourceCode` that is used to split the source code text into an array of lines.
- 
+
 ```js
 var SourceCode = require("eslint").SourceCode;
 
@@ -68,7 +68,7 @@ var codeLines = SourceCode.splitLines(code);
     ]
  */
 ```
- 
+
 ## linter
 
 The `linter` object does the actual evaluation of the JavaScript code. It doesn't do any filesystem operations, it simply parses and reports on the code. You can retrieve `linter` like this:
@@ -239,6 +239,7 @@ The `CLIEngine` is a constructor, and you can create a new instance by passing i
 * `cacheFile` - 存放缓存的文件名。（默认为`.eslintcache`）。对应于`--cache-file`。已经过时，用`cacheLocation`代替。
 * `cacheLocation` - Name of the file or directory where the cache will be stored (default: `.eslintcache`). Correspond to `--cache-location`
 * `cacheLocation` - 存放缓存的文件或者目录名。（默认为`.eslintcache`）。 对应于--cache-location`。
+* `cwd` - Path to a directory that should be considered as the current working directory.
 * `cwd` - Path to a directory that should be considered as the current working directory.
 
 For example:
@@ -457,14 +458,22 @@ Retrieves a formatter, which you can then use to format a report object. The arg
 * "[checkstyle](./user-guide/formatters#checkstyle)"
 * "[checkstyle](../user-guide/formatters#checkstyle)"
 * "[compact](../user-guide/formatters#compact)"
+* "[compact](../user-guide/formatters#compact)"
+* "[html](../user-guide/formatters#html)"
 * "[html](../user-guide/formatters#html)"
 * "[jslint-xml](../user-guide/formatters#jslint-xml)"
+* "[jslint-xml](../user-guide/formatters#jslint-xml)"
 * "[json](../user-guide/formatters#json)"
+* "[json](../user-guide/formatters#json)"
+* "[junit](../user-guide/formatters#junit)"
 * "[junit](../user-guide/formatters#junit)"
 * "[stylish](../user-guide/formatters#stylish)" (the default)
 * "[stylish](../user-guide/formatters#stylish)" (默认)
 * "[table](../user-guide/formatters#table)"
+* "[table](../user-guide/formatters#table)"
 * "[tap](../user-guide/formatters#tap)"
+* "[tap](../user-guide/formatters#tap)"
+* "[unix](../user-guide/formatters#unix)"
 * "[unix](../user-guide/formatters#unix)"
 
 or the full path to a JavaScript file containing a custom formatter. You can also omit the argument to retrieve the default formatter.
