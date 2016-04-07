@@ -215,11 +215,7 @@ When `"singleValue"` is set to `false`, the following patterns are considered pr
 当`"singleValue"`被设置为`false`，以下模式被认为是有问题的：
 
 ```js
-<<<<<<< HEAD
-/*eslint array-bracket-spacing: [2, "always", { singleValue: false }]*/
-=======
 /*eslint array-bracket-spacing: ["error", "always", { singleValue: false }]*/
->>>>>>> master
 
 var foo = [ 'foo' ];
 var foo = [ 'foo'];
