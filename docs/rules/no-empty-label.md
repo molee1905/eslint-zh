@@ -12,7 +12,7 @@ proofreader: molee1905
 
 **Replacement notice**: This rule was removed in ESLint v2.0 and replaced by [no-labels](no-labels) rule.
 
-**替换声明**: 该规则在 ESLint v2.0 中移除并被[no-labels](no-labels)规则代替。
+**替换声明：**该规则在 ESLint v2.0 中移除并被[no-labels](no-labels)规则代替。
 
 Labeled statements are only used in conjunction with labeled break and continue statements. ECMAScript has no goto statement.
 

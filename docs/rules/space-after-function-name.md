@@ -12,7 +12,7 @@ proofreader: maomaoking
 
 **Replacement notice**: This rule was removed in ESLint v1.0 and replaced by the [space-before-function-paren](space-before-function-paren) rule.
 
-**替换声明**: 该规则在 ESLint v1.0 中移除，被[space-before-function-paren](space-before-function-paren) 规则替代。
+**替换声明：**该规则在 ESLint v1.0 中移除，被[space-before-function-paren](space-before-function-paren)规则替代。
 
 Whitespace between a function name and its parameter list is optional.
 

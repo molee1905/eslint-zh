@@ -26,7 +26,7 @@ Many versioning systems (like git and subversion) can automatically ensure the c
 
 **Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
 
-**Fixable：** 该规则可以通过`--fix`命令行进行自动修复。
+**Fixable:** 该规则可以通过`--fix`命令行进行自动修复。
 
 ## Rule Details
 

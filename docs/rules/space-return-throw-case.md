@@ -8,7 +8,7 @@ proofreader: maomaoking
 
 # Require spaces following `return`, `throw`, and `case` (space-return-throw-case)
 
-# 要求`return`, `throw`, 和 `case`后紧跟空格 (space-return-throw-case)
+# 要求`return`，`throw`和`case`后紧跟空格 (space-return-throw-case)
 
 **Replacement notice**: This rule was removed in ESLint v2.0 and replaced by [keyword-spacing](keyword-spacing) rule.
 
@@ -16,7 +16,7 @@ proofreader: maomaoking
 
 Require spaces following `return`, `throw`, and `case`.
 
-要求`return`, `throw`, 和 `case`后紧跟空格。
+要求`return`，`throw`和`case`后紧跟空格。
 
 **Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
 

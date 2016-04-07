@@ -16,7 +16,7 @@ JavaScript中，任何语句后有无分号都不会出错。书写错误和对�
 
 **Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
 
-**Fixable:** 在命令行中使用 `--fix` 标志可以进行自动修复。
+**Fixable:** 该规则可以通过`--fix`命令行进行自动修复。
 
 ## Rule Details
 
