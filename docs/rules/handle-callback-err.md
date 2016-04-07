@@ -32,11 +32,13 @@ function loadData (err, data) {
 
 This rule expects that when you're using the callback pattern in Node.js you'll handle the error.
 
+该规则期望当你在 Node.js 中使用回调模式时，你将处理错误。
+
 ## Options
 
 The rule takes a single string option: the name of the error parameter. The default is `"err"`.
 
-此规则要求在node中使用回调时要处理错误，并要求指定错误对象的名称。参数名称默认是`err`。
+该规则只有一个字符串选项：错误参数的名称。默认是`err`。
 
 Examples of **incorrect** code for this rule with the default `"err"` parameter name:
 
@@ -97,8 +99,16 @@ If the configured name of the error variable begins with a `^` it is considered 
 如果错误变量的配置名以`^`开头被认为是一个正则模式。
  
 * If the option is `"^(err|error|anySpecificError)$"`, the rule reports unhandled errors where the parameter name can be `err`, `error` or `anySpecificError`.
+
+* 如果这个选项是`"^(err|error|anySpecificError)$"`，当参数名为`err`, `error` or `anySpecificError`时，该规则会报告有未处理的错误。
+
 * If the option is `"^.+Error$"`, the rule reports unhandled errors where the parameter name ends with `Error` (for example, `connectionError` or `validationError` will match).
+
+* 如果这个选项是`"^.+Error$"`，当参数名以`Error`结尾时（例如，`connectionError`或`validationError`），该规则会报告有未处理的错误。
+
 * If the option is `"^.*(e|E)rr"`, the rule reports unhandled errors where the parameter name matches any string that contains `err` or `Err` (for example, `err`, `error`, `anyError`, `some_err` will match).
+
+* 如果这个选项是`"^.*(e|E)rr"`，当参数名匹配任何字符串中含有`err`或`Err`的（例如，err`，`error`，`anyError`，`some_err`）该规则会报告有未处理的错误。
 
 ## When Not To Use It
 
@@ -116,7 +126,7 @@ confident that some other form of monitoring will help you catch the problem.
 
 This rule was introduced in ESLint 0.4.5.
 
-此规则在ESLint 0.4.5被引入。
+此规则在 ESLint 0.4.5 被引入。
 
 ## Resources
 

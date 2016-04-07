@@ -38,7 +38,7 @@ if(foo === "bar") {}
 
 This rule aims to disallow multiple whitespace around logical expressions, conditional expressions, declarations, array elements, object properties, sequences and function parameters.
 
-此规则目的在于禁止在逻辑表达式、 条件表达式、 声明、 数组元素、 对象属性、 序列和函数参数周围使用多个空格。
+此规则目的在于禁止在逻辑表达式、条件表达式、声明、数组元素、对象属性、序列和函数参数周围使用多个空格。
 
 Examples of **incorrect** code for this rule:
 
@@ -80,11 +80,17 @@ a ? b: c
 
 To avoid contradictions if some other rules require multiple spaces, this rule has an option to ignore certain node types in the abstract syntax tree (AST) of JavaScript code.
 
+为了避免与有些需要多个空格的规则冲突，该规则有一个选项可以忽略 JavaScript 代码的语法抽象树 (AST) 中特定的节点类型。
+
 ### exceptions
 
 The `exceptions` object expects property names to be AST node types as defined by [ESTree](https://github.com/estree/estree). The easiest way to determine the node types for `exceptions` is to use the [online demo](http://eslint.org/parser).
 
+`exceptions`对象属性名是 AST 节点类型，这些类型被定义在[ESTree](https://github.com/estree/estree)。确定节点类型的最简单的方法是使用[online demo](http://eslint.org/parser)。
+
 Only the `Property` node type is ignored by default, because for the [key-spacing](key-spacing) rule some alignment options require multiple spaces in properties of object literals.
+
+默认情况下，只忽略`Property`节点类型，因为[key-spacing](key-spacing)规则的对其选项要求对象中的属性有多个空格。
 
 Examples of **correct** code for the default `"exceptions": { "Property": true }` option:
 

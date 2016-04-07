@@ -48,6 +48,8 @@ This rule is aimed at ensuring all `return` statements either specify a value or
 
 It excludes constructors which, when invoked with the `new` operator, return the instantiated object if another object is not explicitly returned.  This rule treats a function as a constructor if its name starts with an uppercase letter.
 
+该规则排除了这样的构造函数：当使用`new`操作符调用时，如果一个对象没有显式地返回，该构造函数就返回一个实例化的对象。如果一个函数的名称是以大写字母开头的，该规则会把它当做是一个构造函数。
+
 Examples of **incorrect** code for this rule:
 
 **错误**代码示例：
