@@ -34,15 +34,8 @@ if (foo) {
 
 Of course, you could also have a style guide that disallows spaces before keywords.
 
-<<<<<<< HEAD
 当然，你也可以有一个风格指南禁止关键字之前有空格。
 
-**Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
-
-**Fixable:** 该规则可以通过`--fix`命令行进行自动修复。
-
-=======
->>>>>>> eslint/master
 ## Rule Details
 
 This rule will enforce consistency of spacing before the keywords `if`, `else`, `for`,

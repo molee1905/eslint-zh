@@ -84,7 +84,6 @@ myFunc(function foo() {
 ```
 
 ### exported
-<<<<<<< HEAD
 
 In environments outside of CommonJS or ECMAScript modules, you may use `var` to create a global variable that may be used by other scripts. You can use the `/* exported variableName */` comment block to indicate that this variable is being exported and therefore should not be considered unused. 
 
@@ -242,7 +241,6 @@ Examples of **correct** code for the `{ "args": "none" }` option:
 
 The `argsIgnorePattern` option specifies exceptions not to check for usage: arguments whose names match a regexp pattern. For example, variables whose names begin with an underscore.
 
-<<<<<<< HEAD
 `argsIgnorePattern`选项指定排除不需要检测：这些参数的名字符合正则匹配。例如，下划线开头的变量。
 
 Examples of **correct** code for the `{ "argsIgnorePattern": "^_" }` option:

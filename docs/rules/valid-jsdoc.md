@@ -114,11 +114,8 @@ function foo(a) {
 ```
 
 Examples of **correct** code for this rule:
-<<<<<<< HEAD
 
 **正确**代码示例：
-=======
->>>>>>> eslint/master
 
 ```js
 /*eslint valid-jsdoc: "error"*/
