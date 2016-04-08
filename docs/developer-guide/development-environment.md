@@ -135,7 +135,7 @@ Be sure to run this after making changes and before sending a pull request with 
 
 **Note:** The full code coverage report is output into `/coverage`.
 
-**Note:** 完整的代码覆盖率报告输出到 `/coverage`。
+**注意：**完整的代码覆盖率报告输出到 `/coverage`。
 
 ### npm run lint
 
@@ -160,6 +160,8 @@ Generates `build/eslint.js`, a version of ESLint for use in the browser
 Generates JSDoc documentation and places it into `/jsdoc`.
 
 生成 JSDoc 文档并放在 `/jsdoc`。
+
+### npm run profile
 
 ### npm run profile
 

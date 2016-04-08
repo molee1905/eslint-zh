@@ -6,6 +6,8 @@ layout: doc
 
 # Rules
 
+# 规则
+
 Rules in ESLint are divided into several categories to help you better understand their value. All rules are disabled by default. ESLint recommends some rules to catch common problems, and you can use these recommended rules by including `extends: "eslint:recommended"` in your configuration file. The rules that will be enabled when you inherit from `eslint:recommended` are indicated below as "(recommended)". For more information on how to configure rules and use `extends`, please see the [configuration documentation](../user-guide/configuring).
 
 为了让你有个更好的理解，ESLint对其规则分门别类。所有的规则默认都是禁用的。针对一些常见的问题，ESLint 给出了一些推荐规则，你可以在你的配置文件中通过添加`extends: "eslint:recommended"`来使用它们。当你的规则继承自`eslint:recommended`时，以下被标记为 "(recommended)" 的规则将被启用。有关如何配置规则和使用`extends`的更多信息，请参见[configuration documentation](../user-guide/configuring)。
@@ -15,6 +17,8 @@ Some rules are fixable using the `--fix` command line flag. Those rules are mark
 一些规则是可以通过`--fix`命令行进行修复的。这些规则被标记为 "(fixable)"。目前这些修复大部分只限于对空白的修复。
 
 ## Possible Errors
+
+## 可能的错误
 
 The following rules point out areas where you might have made mistakes.
 
@@ -78,6 +82,8 @@ The following rules point out areas where you might have made mistakes.
 * [valid-typeof](valid-typeof): 确保typeof结果与一个有效的字符串相比较 (recommended)
 
 ## Best Practices
+
+## 最佳实践
 
 These are rules designed to prevent you from making mistakes. They either prescribe a better way of doing something or help you avoid footguns.
 
@@ -216,6 +222,8 @@ These are rules designed to prevent you from making mistakes. They either prescr
 
 ## Strict Mode
 
+## 严格模式
+
 These rules relate to using strict mode and strict mode directives.
 
 该规则与使用strict模式有关。
@@ -224,6 +232,8 @@ These rules relate to using strict mode and strict mode directives.
 * [strict](strict): 要求有效地使用严格模式指令
 
 ## Variables
+
+## 变量
 
 These rules have to do with variable declarations.
 
@@ -256,6 +266,8 @@ These rules have to do with variable declarations.
 
 ## Node.js and CommonJS
 
+## Node.js 和 CommonJS
+
 These rules are specific to JavaScript running on Node.js or using CommonJS in the browser.
 
 这些规则是对 JavaScript 来时是特殊，它们运行在 Node.js 上或者在浏览器中使用 CommonJS。
@@ -282,6 +294,8 @@ These rules are specific to JavaScript running on Node.js or using CommonJS in t
 * [no-sync](no-sync): 禁用同步方法
 
 ## Stylistic Issues
+
+## 风格问题
 
 These rules are purely matters of style and are quite subjective.
 
@@ -428,6 +442,8 @@ These rules are purely matters of style and are quite subjective.
 
 ## ECMAScript 6
 
+## ECMAScript 6
+
 These rules are only relevant to ES6 environments.
 
 这些规则只与ES6环境有关。
@@ -485,9 +501,11 @@ These rules are only relevant to ES6 environments.
 
 ## Removed
 
+## 已移除
+
 These rules existed in a previous version of ESLint but have since been replaced by newer rules.
 
-以下规则只存在于旧版的ESLint中，并已被新规则所取代。
+以下规则只存在于旧版的 ESLint 中，并已被新规则所取代。
 
 * [generator-star](generator-star): enforce the position of the `*` in generator functions (replaced by [generator-star-spacing](generator-star-spacing))
 * [generator-star](generator-star): 强制`*`在generator函数中的位置 (替换为 [generator-star-spacing](generator-star-spacing))
