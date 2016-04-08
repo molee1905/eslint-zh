@@ -3,8 +3,8 @@
 
 @mixin mixed-default {
     opacity: 0.36;
-    -webkit-transition: all 300ms ease;
-    transition: all 300ms ease;
+    -webkit-transition: opacity 200ms ease;
+    transition: opacity 200ms ease;
 }
 .glyphicon-ok:before {
     color: #37ab00;
@@ -42,6 +42,11 @@
     p:only-of-type,
     li:nth-of-type(2n+1):hover {
         opacity: 1;
+    }
+    li:nth-of-type(2n+1):hover {
+        p:only-of-type {
+            opacity: 1;
+        }
     }
 
     #further-reading + ul,
