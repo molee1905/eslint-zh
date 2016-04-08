@@ -12,15 +12,15 @@ proofreader: maomaoking
 
 **Replacement notice**: This rule was removed in ESLint v2.0 and replaced by [keyword-spacing](keyword-spacing) rule.
 
-**替代通知**: 该规则在 ESLint v2.0 中被移除，被[keyword-spacing](keyword-spacing) 替代。
+**替代通知：**该规则在 ESLint v2.0 中被移除，被[keyword-spacing](keyword-spacing) 替代。
+
+(fixable) The --fix option on the [command line](../user-guide/command-line-interface#fix) automatically fixed problems reported by this rule.
+
+(fixable)[command line](../user-guide/command-line-interface#fix)中的`--fix`选项可以自动修复该规则报告的问题。
 
 Require spaces following `return`, `throw`, and `case`.
 
 要求`return`，`throw`和`case`后紧跟空格。
-
-**Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
-
-**Fixable:** 该规则可以通过`--fix`命令行进行自动修复。
 
 ## Rule Details
 

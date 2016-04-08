@@ -5,6 +5,7 @@ translator: ILFront-End
 proofreader: coocon 
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Disallow Undeclared Variables (no-undef)
 
 # 不允许使用未申明变量 (no-undef)
@@ -94,7 +95,7 @@ if(typeof a === "string"){}
 
 Examples of **correct** code for the `{ "typeof": true }` option with `global` declaration:
 
-在`global`声明下，选项`{ "typeof": true }`的 **正确**代码示例：
+有`global`声明时，选项`{ "typeof": true }`的 **正确**代码示例：
 
 ```js
 /*global a*/
@@ -113,7 +114,7 @@ For convenience, ESLint provides shortcuts that pre-define global variables expo
 
 Examples of **correct** code for this rule with `browser` environment:
 
-普通浏览器中使用全局变量。
+`browser`环境下的 **正确**代码示例：
 
 ```js
 /*eslint no-undef: "error"*/
@@ -128,7 +129,7 @@ setTimeout(function() {
 
 Examples of **correct** code for this rule with `node` environment:
 
-Node.js 中全局变量。
+`node`环境下的 **正确**代码示例：
 
 ```js
 /*eslint no-undef: "error"*/

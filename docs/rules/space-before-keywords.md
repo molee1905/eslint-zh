@@ -15,6 +15,10 @@ proofreader: freeyiyi1993
 
 **替代通知**: 该规则在 ESLint v2.0 中被移除，被[keyword-spacing](keyword-spacing) 替代。
 
+(fixable) The --fix option on the [command line](../user-guide/command-line-interface#fix) automatically fixed problems reported by this rule.
+
+(fixable)[command line](../user-guide/command-line-interface#fix)中的`--fix`选项可以自动修复该规则报告的问题。
+
 Keywords are syntax elements of JavaScript, such as `function` and `if`. These identifiers have special meaning to the language and so often appear in a different color in code editors. As an important part of the language, style guides often refer to the spacing that should be used around keywords. For example, you might have a style guide that says keywords should be always be preceded by spaces, which would mean `if-else` statements must look like this:
 
 关键字是 Javascript 中的语法元素，比如`function` 和 `if`。这些标识符对该语言有特殊意义，因此经常在代码编辑器中以不同的颜色出现。作为 Javascript 语言的重要组成部分，风格指南经常提到关键字周围应该使用空格。例如，你可能有一个风格指南说关键字之后应该总是有空格，这意味着`if-else`语句必须看起来像下面这样：
@@ -30,12 +34,15 @@ if (foo) {
 
 Of course, you could also have a style guide that disallows spaces before keywords.
 
+<<<<<<< HEAD
 当然，你也可以有一个风格指南禁止关键字之前有空格。
 
 **Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
 
 **Fixable:** 该规则可以通过`--fix`命令行进行自动修复。
 
+=======
+>>>>>>> eslint/master
 ## Rule Details
 
 This rule will enforce consistency of spacing before the keywords `if`, `else`, `for`,

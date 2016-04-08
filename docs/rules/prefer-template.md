@@ -12,7 +12,7 @@ proofreader: summart
 
 In ES2015 (ES6), we can use template literals instead of string concatenation.
 
-在ES2015 (ES6)中，我们可以使用模板而非字符串连接。
+在 ES2015 (ES6) 中，我们可以使用模板而非字符串连接。
 
 ```js
 var str = "Hello, " + name + "!";
@@ -65,7 +65,7 @@ This rule should not be used in ES3/5 environments.
 
 In ES2015 (ES6) or later, if you don't want to be notified about string concatenation, you can safely disable this rule.
 
-在ES2015 (ES6)或以后的版本，如果你不希望收到关于字符串连接的通知，关闭此规则即可。
+在 ES2015 (ES6) 或以后的版本，如果你不希望收到关于字符串连接的通知，关闭此规则即可。
 
 ## Related Rules
 

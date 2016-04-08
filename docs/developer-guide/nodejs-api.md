@@ -14,7 +14,7 @@ ESLint 被设计为在命令行中运行，所以通过 Node.js API 使用ESLint
 
 **Note:** Use undocumented parts of the API at your own risk. Only those parts that are specifically mentioned in this document are approved for use and will remain stable and reliable. Anything left undocumented is unstable and may change or be removed at any point.
 
-**注意:** 使用文档中没有的API的风险需自己承担。只有文档中声明的部分是赞成使用且可保持稳定可靠。文档中未声明的部分是不稳定的且可能随时被移除。
+**注意：**使用文档中没有的API的风险需自己承担。只有文档中声明的部分是赞成使用且可保持稳定可靠。文档中未声明的部分是不稳定的且可能随时被移除。
 
 ## SourceCode
 
@@ -507,7 +507,7 @@ console.log(formatter(report.results));
 
 **Note:** Also available as a static function on `CLIEngine`.
 
-**注意:** `CLIEngine`的静态方法也是适用的。
+**注意：**`CLIEngine`的静态方法也是适用的。
 
 ```js
 // get the default formatter by calling the static function
@@ -516,7 +516,7 @@ var formatter = CLIEngine.getFormatter();
 
 **Important:** You must pass in the `results` property of the report. Passing in `report` directly will result in an error.
 
-**重要:** 你必须传递报告的 `results`。直接传递 `report` 会引起错误。
+**重要：**你必须传递报告的 `results`。直接传递 `report` 会引起错误。
 
 ### getErrorResults()
 
@@ -572,7 +572,7 @@ CLIEngine.outputFixes(report);
 
 ## Deprecated APIs
 
-## 启用的API
+## 弃用的API
 
 * `cli` - the `cli` object has been deprecated in favor of `CLIEngine`. As of v1.0.0, `cli` is no longer exported and should not be used by external tools.
 

@@ -10,6 +10,10 @@ proofreader: molee1905
 
 # 强制或禁止分号 (semi)
 
+(fixable) The --fix option on the [command line](../user-guide/command-line-interface#fix) automatically fixes problems reported by this rule.
+
+(fixable)[command line](../user-guide/command-line-interface#fix)中的`--fix`选项可以自动修复该规则报告的问题。
+
 JavaScript is unique amongst the C-like languages in that it doesn't require semicolons at the end of each statement. In many cases, the JavaScript engine can determine that a semicolon should be in a certain spot and will automatically add it. This feature is known as **automatic semicolon insertion (ASI)** and is considered one of the more controversial features of JavaScript. For example, the following lines are both valid:
 
 Javascript 在所有类C语言中是比较独特的，它不需要在每个语句的末尾有分号。在很多情况下，Javascript 引擎可以确定一个分号应该在什么位置然后自动添加它。此特征被称为**自动分号插入 (ASI)**，被认为是 Javascript 中较为有争议的特征。例如，以下各行均有效：

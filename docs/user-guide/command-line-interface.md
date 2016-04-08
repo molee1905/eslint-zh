@@ -119,8 +119,6 @@ Example:
 
 #### `-c`, `--config`
 
-#### `-c`, `--config`
-
 This option allows you to specify an additional configuration file for ESLint (see [Configuring ESLint](configuring) for more).
 
 该选项允许你为 ESLint (查看 [Configuring ESLint](configuring) 了解更多)指定一个额外的配置文件。
@@ -151,8 +149,6 @@ This example directly uses the sharable config `eslint-config-myconfig`.
 
 #### `--no-eslintrc`
 
-#### `--no-eslintrc`
-
 Disables use of configuration from `.eslintrc` and `package.json` files.
 
 禁用`.eslintrc`和`package.json`文件中的配置。
@@ -162,8 +158,6 @@ Example:
 示例：
 
     eslint --no-eslintrc file.js
-
-#### `--env`
 
 #### `--env`
 
@@ -177,8 +171,6 @@ Examples:
 
     eslint --env browser,node file.js
     eslint --env browser --env node file.js
-
-#### `--ext`
 
 #### `--ext`
 
@@ -200,8 +192,13 @@ Examples:
     # Also use both .js and .js2
     eslint . --ext .js,.js2
 
-**Note:** If you use a glob pattern, then `--ext` is ignored
+**Note:** If you use a glob pattern, then `--ext` is ignored.
+
+**注意：**如果你使用了 glob 模式，则`--ext`被忽略。
+
 For example, `eslint lib/* --ext .js` will match all files within the `lib/` directory, regardless of extension.
+
+例如，`eslint lib/* --ext .js`将匹配`lib/`下的所有文件，忽略扩展名。
 
 #### `--global`
 
@@ -218,8 +215,6 @@ Examples:
 
 #### `--parser`
 
-#### `--parser`
-
 This option allows you to specify a parser to be used by ESLint. By default, `espree` will be used.
 
 该选项允许你为 ESLint 指定一个解析器。默认情况下，使用`espree`。
@@ -228,25 +223,11 @@ This option allows you to specify a parser to be used by ESLint. By default, `es
 
 This option allows you to specify parser options to be used by eslint.
 
-Examples:
-
-    echo '3 ** 4' | eslint --stdin --parser-options=ecmaVersion:6 # will fail with a parsing error
-    echo '3 ** 4' | eslint --stdin --parser-options=ecmaVersion:7 # succeeds, yay!
-
-#### `--parser-options`
-
-This option allows you to specify parser options to be used by eslint.
+该选项允许你指定 ESLint 要使用的解析器选项。
 
 Examples:
 
-    echo '3 ** 4' | eslint --stdin --parser-options=ecmaVersion:6 # will fail with a parsing error
-    echo '3 ** 4' | eslint --stdin --parser-options=ecmaVersion:7 # succeeds, yay!
-
-#### `--parser-options`
-
-This option allows you to specify parser options to be used by eslint.
-
-Examples:
+示例：
 
     echo '3 ** 4' | eslint --stdin --parser-options=ecmaVersion:6 # will fail with a parsing error
     echo '3 ** 4' | eslint --stdin --parser-options=ecmaVersion:7 # succeeds, yay!
@@ -263,10 +244,13 @@ Store the info about processed files in order to only operate on the changed one
 
 #### `--cache-file`
 
-Path to the cache file. If none specified `.eslintcache` will be used. The file will be created in the directory where the `eslint` command is executed. **Deprecated：** Use `--cache-location` instead.
+Path to the cache file. If none specified `.eslintcache` will be used. The file will be created in the directory where the `eslint` command is executed. 
 
 缓存文件的路径。如果没有指定，则使用`.eslintcache`。这个文件会在 `eslint` 命令行被执行的文件目录中被创建。
-**弃用：**: 使用`--cache-location`代替。
+
+**Deprecated：** Use `--cache-location` instead.
+
+**弃用：**使用`--cache-location`代替。
 
 #### `--cache-location`
 

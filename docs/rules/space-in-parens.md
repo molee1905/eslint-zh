@@ -10,6 +10,10 @@ proofreader: maomaoking
 
 # 禁止或强制圆括号内的空格 (space-in-parens)
 
+(fixable) The --fix option on the [command line](../user-guide/command-line-interface#fix) automatically fixes problems reported by this rule.
+
+(fixable)[command line](../user-guide/command-line-interface#fix)中的`--fix`选项可以自动修复该规则报告的问题。
+
 Some style guides require or disallow spaces inside of parentheses:
 
 一些风格指南禁止或强制圆括号内有空格：
@@ -21,10 +25,6 @@ var x = ( 1 + 2 ) * 3;
 foo('bar');
 var x = (1 + 2) * 3;
 ```
-
-**Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
-
-**Fixable:** 该规则可以通过--fix命令行进行自动修复。
 
 ## Rule Details
 
@@ -340,7 +340,7 @@ You can turn this rule off if you are not concerned with the consistency of spac
 
 This rule was introduced in ESLint 0.8.0.
 
-该规则在ESLint 0.8.0 中被引入。
+该规则在 ESLint 0.8.0 中被引入。
 
 ## Resources
 

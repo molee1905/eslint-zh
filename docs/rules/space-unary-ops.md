@@ -10,20 +10,20 @@ proofreader: molee1905
 
 # 要求或禁止在一元操作符之前或之后存在空格 (space-unary-ops)
 
+
+(fixable) The --fix option on the [command line](../user-guide/command-line-interface#fix) automatically fixes problems reported by this rule.
+
+(fixable)[command line](../user-guide/command-line-interface#fix)中的`--fix`选项可以自动修复该规则报告的问题。
+
 Some style guides require or disallow spaces before or after unary operators. This is mainly a stylistic issue, however, some JavaScript expressions can be written without spacing which makes it harder to read and maintain.
 
 一些风格指南要求或禁止在一元操作符之前或之后存在空格。这主要是一个风格问题，然而，一些Javascript表达式如果不写空格将会使其难以阅读和维护。
-
-**Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
-
-**Fixable:** 该规则可以通过`--fix`命令行进行自动修复。
 
 ## Rule Details
 
 This rule enforces consistency regarding the spaces after `words` unary operators and after/before `nonwords` unary operators.
 
 该规则强制`words`一元操作符后空格和`nonwords`一元操作符之前或之后的空格的一致性。
-
 Examples of unary `words` operators:
 
 一元`words`操作符的例子：

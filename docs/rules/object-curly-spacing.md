@@ -10,12 +10,16 @@ proofreader: molee1905
 
 # 禁止或强制对象的花括号中有空格。 (object-curly-spacing)
 
+(fixable) The --fix option on the [command line](../user-guide/command-line-interface#fix) automatically fixes problems reported by this rule.
+
+(fixable)[command line](../user-guide/command-line-interface#fix)中的`--fix`选项可以自动修复该规则报告的问题。
+
 While formatting preferences are very personal, a number of style guides require
 or disallow spaces between curly braces in the following situations:
 
 虽然格式化首选项都非常个人化，大量的风格指南要求或禁止在下列情况下的花括号之间有空格：
 
-```
+```js
 // simple object literals
 var obj = { foo: "bar" };
 
@@ -30,10 +34,6 @@ import { foo } from "bar";
 export { foo };
 ```
 
-**Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
-
-**Fixable:** 该规则可以通过`--fix`命令行进行自动修复。
-
 ## Rule Details
 
 This rule aims to maintain consistency around the spacing inside of object literals. It also
@@ -42,9 +42,11 @@ applies to EcmaScript 6 destructured assignment and import/export specifiers.
 该规则旨在维持对象文本中空格的一致性。它同样适用于 EcmaScript 6 的解构赋值和import/export 说明符。
 
 It either requires or disallows spaces between those braces and the values inside of them.
-Braces that are separated from the adjacent value by a new line are exempt from this rule.
 
 该规则要求或禁止花括号和值之间有空格。
+
+Braces that are separated from the adjacent value by a new line are exempt from this rule.
+
 括号内相邻的值出现折行的，不适用此规则。
 
 ## Options
@@ -75,7 +77,7 @@ When `"never"` is set, the following patterns are considered problems:
 
 当设置为`"never"`时，以下模式被认为是有问题的：
 
-```
+```js
 /*eslint object-curly-spacing: ["error", "never"]*/
 
 var obj = { 'foo': 'bar' };
@@ -90,7 +92,7 @@ The following patterns are not considered problems:
 
 以下模式被认为是没有问题的：
 
-```
+```js
 /*eslint object-curly-spacing: ["error", "never"]*/
 
 var obj = {'foo': 'bar'};
@@ -113,7 +115,7 @@ When `"always"` is used, the following patterns are considered problems:
 
 当设置为`"always"`时，以下模式被认为是有问题的：
 
-```
+```js
 /*eslint object-curly-spacing: ["error", "always"]*/
 
 var obj = {'foo': 'bar'};
@@ -132,7 +134,7 @@ The following patterns are not considered problems:
 
 以下模式被认为是没有问题的：
 
-```
+```js
 /*eslint object-curly-spacing: ["error", "always"]*/
 
 var obj = {};

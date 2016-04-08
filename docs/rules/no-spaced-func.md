@@ -10,13 +10,13 @@ proofreader: xkf521
 
 # 禁止在函数调用时使用空格 (no-spaced-func)
 
+(fixable) The --fix option on the [command line](../user-guide/command-line-interface#fix) automatically fixes problems reported by this rule.
+
+(fixable)[command line](../user-guide/command-line-interface#fix)中的`--fix`选项可以自动修复该规则报告的问题。
+
 While it's possible to have whitespace between the name of a function and the parentheses that execute it, such patterns tend to look more like errors.
 
 虽然在函数名和执行它的圆括号之间有空格是合理的，但这种模式往往看起来更像错误。
-
-**Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
-
-**Fixable:** 该规则可以通过`--fix`命令行进行自动修复。
 
 ## Rule Details
 

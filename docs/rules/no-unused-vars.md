@@ -20,20 +20,15 @@ This rule is aimed at eliminating unused variables, functions, and parameters of
 
 此规则旨在消除未使用过的变量，方法和方法中的参数名，当发现这些存在，发出警告。
 
-A variable is considered to be used when it:
+A variable is considered to be used if any of the following are true:
 
 符合下面条件的变量被认为是可以使用的:
 
-* Represents a function that is called (`doSomething()`)
-
+* It represents a function that is called (`doSomething()`)
 * 作为回调函数
-
-* Is read (`var y = x`)
-
+* It is read (`var y = x`)
 * 可读 (`var y = x`)
-
-* Is passed into a function as an argument (`doSomething(x)`)
-
+* It is passed into a function as an argument (`doSomething(x)`)
 * 传入函数中作为argument对象(`doSomething(x)`)
 
 A variable is *not* considered to be used if it is only ever assigned to (`var x = 5`) or declared.
@@ -45,8 +40,8 @@ Examples of **incorrect** code for this rule:
 **错误**代码示例：
 
 ```js
-/*eslint no-unused-vars: error*/
-/*global some_unused_var */
+/*eslint no-unused-vars: "error"*/
+/*global some_unused_var*/
 
 //It checks variables you have defined as global
 some_unused_var = 42;
@@ -89,6 +84,7 @@ myFunc(function foo() {
 ```
 
 ### exported
+<<<<<<< HEAD
 
 In environments outside of CommonJS or ECMAScript modules, you may use `var` to create a global variable that may be used by other scripts. You can use the `/* exported variableName */` comment block to indicate that this variable is being exported and therefore should not be considered unused. 
 
@@ -99,18 +95,15 @@ Note that `/* exported */` has no effect for any of the following:
 需要注意的是`/* exported */`在下列情况下是无效的：
 
 * when the environment is `node` or `commonjs`
-
 * `node`或`commonjs`环境
-
 * when `parserOptions.sourceType` is `module`
-
 * `parserOptions.sourceType`是`module`
-
 * when `ecmaFeatures.globalReturn` is `true`
-
 * `ecmaFeatures.globalReturn`为`true`
 
-### Options
+## Options
+
+This rule takes one argument which can be a string or an object. The string settings are the same as those of the `vars` property (explained below).
 
 This rule takes one argument which can be a string or an object. The string settings are the same as those of the `vars` property (explained below).
 
@@ -135,11 +128,8 @@ The `vars` option has two settings:
 此配置项有两个值：
 
 * `all` checks all variables for usage, including those in the global scope. This is the default setting.
-
 * `all` 检测所有变量，包括全局环境中的变量。这是默认值。
-
 * `local` checks only that locally-declared variables are used but will allow global variables to be unused.
-
 * `local` 仅仅检测本作用域中声明的变量是否使用，允许不使用全局环境中的变量。
 
 #### vars: local
@@ -177,18 +167,13 @@ console.log(secondVar);
 
 The `args` option has three settings:
 
-此配置项有三个值：
+`args`选项有三个值：
 
 * `after-used` - only the last argument must be used. This allows you, for instance, to have two named parameters to a function and as long as you use the second argument, ESLint will not warn you about the first. This is the default setting.
-
 * `after-used` - 最后一个参数必须使用。如：一个函数有两个参数，你使用了第二个参数，ESLint 不会报警告。
-
 * `all` - all named arguments must be used.
-
 * `all` - 所有命名参数必须使用。
-
 * `none` - do not check arguments.
-
 * `none` - 不检查参数。
 
 #### args: after-used
@@ -257,6 +242,7 @@ Examples of **correct** code for the `{ "args": "none" }` option:
 
 The `argsIgnorePattern` option specifies exceptions not to check for usage: arguments whose names match a regexp pattern. For example, variables whose names begin with an underscore.
 
+<<<<<<< HEAD
 `argsIgnorePattern`选项指定排除不需要检测：这些参数的名字符合正则匹配。例如，下划线开头的变量。
 
 Examples of **correct** code for the `{ "argsIgnorePattern": "^_" }` option:
@@ -283,11 +269,8 @@ It has two settings:
 它有两个设置：
 
 * `none` - do not check error objects. This is the default setting.
-
 * `none` - 不检查错误对象。这是默认设置。
-
 * `all` - all named arguments must be used.
-
 * `all` - 所有参数必须被使用。
 
 #### caughtErrors: none
@@ -347,7 +330,6 @@ try {
     console.error("errors");
 }
 ```
-
 
 ## When Not To Use It
 

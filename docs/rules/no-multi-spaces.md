@@ -10,6 +10,10 @@ proofreader: molee1905
 
 # 禁止出现多个空格 (no-multi-spaces)
 
+(fixable) The --fix option on the [command line](../user-guide/command-line-interface#fix) automatically fixes problems reported by this rule.
+
+(fixable)[command line](../user-guide/command-line-interface#fix)中的`--fix`选项可以自动修复该规则报告的问题。
+
 Multiple spaces in a row that are not used for indentation are typically mistakes. For example:
 
 在某行中，出现多个空格而且不是用来作缩进的，通常是个错误。例如：
@@ -29,10 +33,6 @@ It's hard to tell, but there are two spaces between `foo` and `===`. Multiple sp
 if(foo === "bar") {}
 
 ```
-
-**Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
-
-**Fixable:** 该规则可以通过`--fix`命令行进行自动修复。
 
 ## Rule Details
 

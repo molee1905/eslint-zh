@@ -7,6 +7,7 @@ proofreader: hacke2
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Shareable Configs
+
 # 可分享配置
 
 The configuration that you have in your `.eslintrc` file is an important part of your project, and as such, you may want to share it with other projects or people. Shareable configs allow you to publish your configuration settings on [npm](https://npmjs.com) and have others download and use it in their ESLint projects.

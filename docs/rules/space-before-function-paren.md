@@ -10,6 +10,10 @@ proofreader: freeyiyi1993
 
 # 要求或禁止函数圆括号之前有一个空格 (space-before-function-paren)
 
+(fixable) The --fix option on the [command line](../user-guide/command-line-interface#fix) automatically fixes problems reported by this rule.
+
+(fixable)[command line](../user-guide/command-line-interface#fix)中的`--fix`选项可以自动修复该规则报告的问题。
+
 When formatting a function, whitespace is allowed between the function name or `function` keyword and the opening paren. Named functions also require a space between the `function` keyword and the function name, but anonymous functions require no whitespace. For example:
 
 当格式化一个函数，函数名或`function`关键字与左括号之间允许有空白。命名函数要求函数名和`function`关键字之间有空格，但是匿名函数要求不加空格。例如：
@@ -31,10 +35,6 @@ var anonymousWithSpace = function () {};
 Style guides may require a space after the `function` keyword for anonymous functions, while others specify no whitespace. Similarly, the space after a function name may or may not be required.
 
 一些风格指南可能要求匿名函数的`function`关键字后面有一个空格，而其他函数指定不要空格。同样的，函数名后可能会也可能不会要求有空格。
-
-**Fixable:** This rule is automatically fixable using the `--fix` flag on the command line.
-
-**Fixable:** 该规则可以通过`--fix`命令行进行自动修复。
 
 ## Rule Details
 
