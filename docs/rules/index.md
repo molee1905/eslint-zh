@@ -256,7 +256,7 @@ These rules have to do with variable declarations.
 * [no-undef](no-undef): disallow use of undeclared variables unless mentioned in a `/*global */` block (recommended)
 * [no-undef](no-undef): 禁用未声明的变量，除非它们在`/*global */`块中被提到(recommended)
 * [no-undef-init](no-undef-init): disallow use of undefined when initializing variables
-* [no-undef-init](no-undef-init): 不允许变量初始化为undefined
+* [no-undef-init](no-undef-init): 不允许变量初始化为 undefined
 * [no-undefined](no-undefined): disallow use of `undefined` variable
 * [no-undefined](no-undefined): 不允许使用 `undefined` 变量
 * [no-unused-vars](no-unused-vars): disallow declaration of variables that are not used in the code (recommended)
