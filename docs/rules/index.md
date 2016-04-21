@@ -10,7 +10,7 @@ layout: doc
 
 Rules in ESLint are divided into several categories to help you better understand their value. All rules are disabled by default. ESLint recommends some rules to catch common problems, and you can use these recommended rules by including `extends: "eslint:recommended"` in your configuration file. The rules that will be enabled when you inherit from `eslint:recommended` are indicated below as "(recommended)". For more information on how to configure rules and use `extends`, please see the [configuration documentation](../user-guide/configuring).
 
-为了让你有个更好的理解，ESLint对其规则分门别类。所有的规则默认都是禁用的。针对一些常见的问题，ESLint 给出了一些推荐规则，你可以在你的配置文件中通过添加`extends: "eslint:recommended"`来使用它们。当你的规则继承自`eslint:recommended`时，以下被标记为 "(recommended)" 的规则将被启用。有关如何配置规则和使用`extends`的更多信息，请参见[configuration documentation](../user-guide/configuring)。
+为了让你有个更好的理解，ESLint 对其规则分门别类。所有的规则默认都是禁用的。针对一些常见的问题，ESLint 给出了一些推荐规则，你可以在你的配置文件中通过添加`extends: "eslint:recommended"`来使用它们。当你的规则继承自`eslint:recommended`时，以下被标记为 "(recommended)" 的规则将被启用。有关如何配置规则和使用`extends`的更多信息，请参见[configuration documentation](../user-guide/configuring)。
 
 Some rules are fixable using the `--fix` command line flag. Those rules are marked as "(fixable)" below. Currently these fixes are mostly limited only to whitespace fixes.
 
@@ -90,7 +90,7 @@ These are rules designed to prevent you from making mistakes. They either prescr
 这些规则是为了阻止你犯错误。它们要么为你指明了更好的做事方法，要么可以帮助你绕开雷区。
 
 * [accessor-pairs](accessor-pairs): enforce getter/setter pairs in objects
-* [accessor-pairs](accessor-pairs): 强制 getter/setter成对出现在对象中
+* [accessor-pairs](accessor-pairs): 强制 getter/setter 成对出现在对象中
 * [array-callback-return](array-callback-return): enforce return statements in callbacks of array's methods
 * [array-callback-return](array-callback-return): enforce return statements in callbacks of array's methods
 * [block-scoped-var](block-scoped-var): treat `var` statements as if they were block scoped
@@ -165,8 +165,8 @@ These are rules designed to prevent you from making mistakes. They either prescr
 * [no-native-reassign](no-native-reassign): 禁止对原生对象赋值
 * [no-new](no-new): disallow use of the `new` operator when not part of an assignment or comparison
 * [no-new](no-new): 非赋值或条件语句禁止使用`new`操作符
-* [no-new-func](no-new-func): disallow use of new operator for `Function` object
-* [no-new-func](no-new-func): 禁止对`Function`对象使用new操作符
+* [no-new-func](no-new-func): disallow use of `new` operator for `Function` object
+* [no-new-func](no-new-func): 禁止对`Function`对象使用`new`操作符
 * [no-new-wrappers](no-new-wrappers): disallow creating new instances of `String`,`Number`, and `Boolean`
 * [no-new-wrappers](no-new-wrappers): 禁止创建`String`，`Number`和 `Boolean`的新实例
 * [no-octal](no-octal): disallow use of octal literals (recommended)
@@ -184,7 +184,7 @@ These are rules designed to prevent you from making mistakes. They either prescr
 * [no-return-assign](no-return-assign): disallow use of assignment in `return` statement
 * [no-return-assign](no-return-assign): 禁止在`return`语句中使用赋值语句
 * [no-script-url](no-script-url): disallow use of `javascript:` urls.
-* [no-script-url](no-script-url): 禁止使用`javascript:`url.
+* [no-script-url](no-script-url): 禁止使用`javascript:` url.
 * [no-self-assign](no-self-assign): disallow assignments where both sides are exactly the same (recommended)
 * [no-self-assign](no-self-assign): disallow assignments where both sides are exactly the same (recommended)
 * [no-self-compare](no-self-compare): disallow comparisons where both sides are exactly the same
@@ -226,7 +226,7 @@ These are rules designed to prevent you from making mistakes. They either prescr
 
 These rules relate to using strict mode and strict mode directives.
 
-该规则与使用strict模式有关。
+该规则与使用严格模式有关。
 
 * [strict](strict): require effective use of strict mode directives
 * [strict](strict): 要求有效地使用严格模式指令
@@ -242,7 +242,7 @@ These rules have to do with variable declarations.
 * [init-declarations](init-declarations): enforce or disallow variable initializations at definition
 * [init-declarations](init-declarations): 强制或禁止在变量声明时进行初始化
 * [no-catch-shadow](no-catch-shadow): disallow the catch clause parameter name being the same as a variable in the outer scope
-* [no-catch-shadow](no-catch-shadow): 不允许catch子句的参数名与外层作用域中的变量同名
+* [no-catch-shadow](no-catch-shadow): 不允许 catch 子句的参数名与外层作用域中的变量同名
 * [no-delete-var](no-delete-var): disallow deletion of variables (recommended)
 * [no-delete-var](no-delete-var): 不允许删除变量 (recommended)
 * [no-label-var](no-label-var): disallow labels that share a name with a variable
@@ -283,7 +283,7 @@ These rules are specific to JavaScript running on Node.js or using CommonJS in t
 * [no-new-require](no-new-require): disallow use of `new` operator with the `require` function
 * [no-new-require](no-new-require): 禁止对`require`函数使用`new` 操作符
 * [no-path-concat](no-path-concat): disallow string concatenation with `__dirname` and `__filename`
-* [no-path-concat](no-path-concat): 禁止同`__dirname` 和 `__filename`进行字符串明教
+* [no-path-concat](no-path-concat): 禁止对`__dirname` 和 `__filename`进行字符串连接
 * [no-process-exit](no-process-exit): disallow `process.exit()`
 * [no-process-exit](no-process-exit): 禁用 `process.exit()`
 * [no-restricted-imports](no-restricted-imports): restrict usage of specified node imports
@@ -330,9 +330,9 @@ These rules are purely matters of style and are quite subjective.
 * [id-match](id-match): require identifiers to match the provided regular expression
 * [id-match](id-match): 要求标识符匹配所提供的正则表达式
 * [indent](indent): specify tab or space width for your code (fixable)
-* [indent](indent): 为你的代码指定tab或空格缩进宽度 (fixable)
+* [indent](indent): 为你的代码指定 tab 或空格缩进宽度 (fixable)
 * [jsx-quotes](jsx-quotes): specify whether double or single quotes should be used in JSX attributes (fixable)
-* [jsx-quotes](jsx-quotes): 指定应该在JSX属性中使用双引号还是单引号 (fixable)
+* [jsx-quotes](jsx-quotes): 指定应该在 JSX 属性中使用双引号还是单引号 (fixable)
 * [key-spacing](key-spacing): enforce spacing between keys and values in object literal properties
 * [key-spacing](key-spacing): 强制对象字面量属性中键和值之间的间距
 * [keyword-spacing](keyword-spacing): enforce spacing before and after keywords (fixable)
@@ -388,7 +388,7 @@ These rules are purely matters of style and are quite subjective.
 * [no-restricted-syntax](no-restricted-syntax): disallow use of certain syntax in code
 * [no-restricted-syntax](no-restricted-syntax): 不允许在代码中使用特定的语法
 * [no-spaced-func](no-spaced-func): disallow space between function identifier and application (fixable)
-* [no-spaced-func](no-spaced-func): 不允许函数调用时，function标识符和括号之间有空格 (fixable)
+* [no-spaced-func](no-spaced-func): 不允许函数调用时，function 标识符和括号之间有空格 (fixable)
 * [no-ternary](no-ternary): disallow the use of ternary operators
 * [no-ternary](no-ternary): 不允许使用三元操作符
 * [no-trailing-spaces](no-trailing-spaces): disallow trailing whitespace at the end of lines (fixable)
@@ -418,7 +418,7 @@ These rules are purely matters of style and are quite subjective.
 * [require-jsdoc](require-jsdoc): Require JSDoc comment
 * [require-jsdoc](require-jsdoc): 要求使用 JSDoc 注释
 * [semi](semi): require or disallow use of semicolons instead of ASI (fixable)
-* [semi](semi): 要求或禁止使用分号而不是ASI (fixable)
+* [semi](semi): 要求或禁止使用分号而不是 ASI (fixable)
 * [semi-spacing](semi-spacing): enforce spacing before and after semicolons (fixable)
 * [semi-spacing](semi-spacing): 强制分号之前和之后有空格 (fixable)
 * [sort-imports](sort-imports): enforce sorting import declarations within module
@@ -446,7 +446,7 @@ These rules are purely matters of style and are quite subjective.
 
 These rules are only relevant to ES6 environments.
 
-这些规则只与ES6环境有关。
+这些规则只与 ES6 环境有关。
 
 * [arrow-body-style](arrow-body-style): require braces in arrow function body
 * [arrow-body-style](arrow-body-style): 要求箭头函数体使用大括号
