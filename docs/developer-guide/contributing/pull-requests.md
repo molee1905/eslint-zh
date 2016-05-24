@@ -2,6 +2,8 @@
 title: Pull Requests
 layout: doc
 ---
+<!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
+
 # Pull Requests
 
 If you want to contribute to an ESLint repo, please use a GitHub pull request. This is the fastest way for us to evaluate your code and to merge it into the code base. Please don't file an issue with snippets of code. Doing so means that we need to manually merge the changes in and update any appropriate tests. That decreases the likelihood that your code is going to get included in a timely manner. Please use pull requests.
@@ -10,10 +12,10 @@ If you want to contribute to an ESLint repo, please use a GitHub pull request. T
 
 If you'd like to work on a pull request and you've never submitted code before, follow these steps:
 
-1. Sign our [Contributor License Agreement](/cla).
+1. Sign our [Contributor License Agreement](https://contribute.jquery.org/cla).
 1. Set up a [development environment](../development-environment).
 1. Ensure there's an issue that describes what you're doing. You can create a new issue or just indicate you're [working on an existing issue](working-on-issues).
-  * Exception: documentation-only changes do not require an issue.
+    * Exception: documentation-only changes do not require an issue.
 
 After that, you're ready to start working on code.
 
@@ -71,6 +73,7 @@ The `Tag` is one of the following:
 * `Docs` - changes to documentation only.
 * `Build` - changes to build process only.
 * `Upgrade` - for a dependency upgrade.
+* `Chore` - for refactoring, adding tests, etc. (anything that isn't user-facing).
 
 Use the [labels of the issue you are working on](working-on-issues#issue-labels) to determine the best tag.
 

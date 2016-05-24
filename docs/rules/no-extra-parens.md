@@ -4,32 +4,36 @@ layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
-# Disallow Extra Parens (no-extra-parens)
+# disallow unnecessary parentheses (no-extra-parens)
 
-This rule restricts the use of parentheses to only where they are necessary. It may be restricted to report only function expressions.
+This rule restricts the use of parentheses to only where they are necessary.
 
 ## Rule Details
 
-A few cases of redundant parentheses are always allowed:
+This rule always ignores extra parentheses around the following:
 
-* RegExp literals: `(/abc/).test(var)` is always valid.
-* IIFEs: `var x = (function () {})();`, `((function foo() {return 1;})())` are always valid.
+* RegExp literals such as `(/abc/).test(var)` to avoid conflicts with the [wrap-regex](wrap-regex) rule
+* immediately-invokes function expressions (also known as IIFEs) such as `var x = (function () {})();` and `((function foo() {return 1;})())` to avoid conflicts with the [wrap-iife](wrap-iife) rule
 
 ## Options
 
-This rule takes 1 or 2 arguments. The first one is a string which must be one of the following:
+This rule has a string option:
 
-* `"all"` (default): it will report unnecessary parentheses around any expression.
-* `"functions"`: only function expressions will be checked for unnecessary parentheses.
+* `"all"` (default) disallows unnecessary parentheses around *any* expression
+* `"functions"` disallows unnecessary parentheses *only* around function expressions
 
-The second one is an object for more fine-grained configuration when the first option is `"all"`.
+This rule has an object option for exceptions to the `"all"` option:
+
+* `"conditionalAssign": false` allows extra parentheses around assignments in conditional test expressions
+* `"returnAssign": false` allows extra parentheses around assignments in `return` statements
+* `"nestedBinaryExpressions": false` allows extra parentheses in nested binary expressions
 
 ### all
 
-Examples of **incorrect** code for the default `"all"` option:
+Examples of **incorrect** code for this rule with the default `"all"` option:
 
 ```js
-/*eslint no-extra-parens: "error"*/
+/* eslint no-extra-parens: "error" */
 
 a = (b * c);
 
@@ -40,10 +44,10 @@ typeof (a);
 (function(){} ? a() : b());
 ```
 
-Examples of **correct** code for the default `"all"` option:
+Examples of **correct** code for this rule with the default `"all"` option:
 
 ```js
-/*eslint no-extra-parens: "error"*/
+/* eslint no-extra-parens: "error" */
 
 (0).toString();
 
@@ -56,12 +60,10 @@ Examples of **correct** code for the default `"all"` option:
 
 ### conditionalAssign
 
-When setting the first option as `"all"`, an additional option can be added to allow extra parens for assignment in conditional statements.
-
-Examples of **correct** code for the `"all"` and `{ "conditionalAssign": true }` options:
+Examples of **correct** code for this rule with the `"all"` and `{ "conditionalAssign": false }` options:
 
 ```js
-/*eslint no-extra-parens: ["error", "all", { "conditionalAssign": false }]*/
+/* eslint no-extra-parens: ["error", "all", { "conditionalAssign": false }] */
 
 while ((foo = bar())) {}
 
@@ -72,22 +74,54 @@ do; while ((foo = bar()))
 for (;(a = b););
 ```
 
-### functions
+### returnAssign
 
-Examples of **incorrect** code for the `"functions"` option:
+Examples of **correct** code for this rule with the `"all"` and `{ "returnAssign": false }` options:
 
 ```js
-/*eslint no-extra-parens: ["error", "functions"]*/
+/* eslint no-extra-parens: ["error", "all", { "returnAssign": false }] */
+
+function a(b) {
+  return (b = 1);
+}
+
+function a(b) {
+  return b ? (c = d) : (c = e);
+}
+
+b => (b = 1);
+
+b => b ? (c = d) : (c = e);
+```
+
+### nestedBinaryExpressions
+
+Examples of **correct** for this rule with the `"all"` and `{ "nestedBinaryExpressions": false }` options:
+
+```js
+/* eslint no-extra-parens: ["error", "all", { "nestedBinaryExpressions": false }] */
+
+x = a || (b && c);
+x = a + (b * c);
+x = (a * b) / c;
+```
+
+### functions
+
+Examples of **incorrect** code for this rule with the `"functions"` option:
+
+```js
+/* eslint no-extra-parens: ["error", "functions"] */
 
 ((function foo() {}))();
 
 var y = (function () {return 1;});
 ```
 
-Examples of **correct** code for the `"functions"` option:
+Examples of **correct** code for this rule with the `"functions"` option:
 
 ```js
-/*eslint no-extra-parens: ["error", "functions"]*/
+/* eslint no-extra-parens: ["error", "functions"] */
 
 (0).toString();
 
@@ -104,7 +138,6 @@ a = (b * c);
 typeof (a);
 ```
 
-
 ## Further Reading
 
 * [MDN: Operator Precedence](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
@@ -112,6 +145,7 @@ typeof (a);
 ## Related Rules
 
 * [no-cond-assign](no-cond-assign)
+* [no-return-assign](no-return-assign)
 
 ## Version
 

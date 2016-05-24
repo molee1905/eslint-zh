@@ -1,5 +1,5 @@
 ---
-title: Documentation
+title: Command Line Interface
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
@@ -23,6 +23,10 @@ Such as:
 or:
 
     eslint lib/**
+
+Please note that when passing a glob as a parameter, it will be expanded by your shell. The results of the expansion can vary depending on your shell, and its configuration. If you want to use node `glob` syntax, you have to quote your parameter (using double quotes if you need it to run in Windows), as follows:
+
+    eslint "lib/**"
 
 ## Options
 
@@ -68,7 +72,7 @@ Handling warnings:
 Output:
   -o, --output-file path::String  Specify file to write report to
   -f, --format String        Use a specific output format - default: stylish
-  --no-color                 Disable color in piped output
+  --color, --no-color        Force enabling/disabling of color
 
 Miscellaneous:
   --init                     Run config initialization wizard - default: false
@@ -76,7 +80,7 @@ Miscellaneous:
   --debug                    Output debugging information
   -h, --help                 Show help
   -v, --version              Outputs the version number
-  --no-inline-config         Prevent comments from changing eslint rules -
+  --no-inline-config         Prevent comments from changing config or rules -
                              default: false
   --print-config             Print the configuration to be used
 ```
@@ -187,7 +191,7 @@ In case a directory is specified a cache file will be created inside the specifi
 
 Example:
 
-    eslint 'src/**/*.js' --cache --cache-location '/Users/user/.eslintcache/'
+    eslint "src/**/*.js" --cache --cache-location "/Users/user/.eslintcache/"
 
 ### Specifying rules and plugins
 
@@ -242,6 +246,15 @@ Disables excluding of files from `.eslintignore` and `--ignore-path` files.
 Example:
 
     eslint --no-ignore file.js
+
+#### `--ignore-pattern`
+
+This option allows you to specify patterns of files to ignore (in addition to those in `.eslintignore`). You can repeat the option to provide multiple patterns. The supported syntax is the same as in the `.eslintignore` file.
+
+Example:
+
+    eslint --ignore-pattern '/lib/' --ignore-pattern '/src/vendor/*' .
+
 
 ### Using stdin
 
@@ -325,12 +338,13 @@ When specified, the given format is output to the console. If you'd like to save
 
 This saves the output into the `results.txt` file.
 
-#### `--no-color`
+#### `--color`, `--no-color`
 
-Disable color in piped output.
+This option forces the enabling/disabling of colorized output. You can use this to override the default behavior, which is to enable colorized output unless no TTY is detected, such as when when piping `eslint` through `cat` or `less`.
 
-Example:
+Examples:
 
+    eslint --color file.js | cat
     eslint --no-color file.js
 
 ### Miscellaneous
