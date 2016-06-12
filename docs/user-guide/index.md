@@ -1,13 +1,10 @@
 ---
 title: User Guide
 layout: doc
-translator: maomaoking
-proofreader: maomaoking
 ---
+<!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # User Guide
-
-# 用户 指导
 
 This guide is intended for those who wish to use ESLint as an end-user. If you're looking for how to extend ESLint or work with the ESLint source code, please see the [Developer Guide](../developer-guide).
 
@@ -42,6 +39,9 @@ ESLint有很多命令行标识，这一章将介绍它们都是干什么的。
 Wondering if ESLint will work with your favorite editor or build system? This section has a list of all known integrations (submitted by their authors).
 
 不知ESLint是否能够兼容你最爱的编辑器或构建系统，这个章节列举了所有已知的集成方法。（通过原作者提交）
+## [Rule Deprecation](rule-deprecation)
+
+The ESLint team is committed to making upgrading as easy and painless as possible. This section outlines the guidelines the team has set in place for the deprecation of rules in future releases.
 
 ## [Migrating to 1.0.0](migrating-to-1.0.0)
 

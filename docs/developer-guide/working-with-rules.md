@@ -1,22 +1,28 @@
 ---
-title: Documentation
+title: Working with Rules
 layout: doc
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Working with Rules
 
-Each ESLint rule has two files: a source file in the `lib/rules` directory and a test file in the `tests/lib/rules` directory. Both files should be named with the rule ID (i.e., `no-eval.js` for rule ID `no-eval`) The basic source code format for a rule is:
+Each rule in ESLint has two files named with its identifier (for example, `no-extra-semi`).
+
+* in the `lib/rules` directory: a source file (for example, `no-extra-semi.js`)
+* in the `tests/lib/rules` directory: a test file (for example, `no-extra-semi.js`)
+
+**Important:** If you submit a **core** rule to the ESLint repository, you **must** follow some conventions explained below.
+
+Here is the basic format of the source file for a rule:
 
 每个 ESLint 规则有两个文件：`lib/rules`目录下的一个源文件和`tests/lib/rules`目录下的一个测试文件。两个文件都要以规则的 ID 命名（即`no-eval.js`的规则 ID 为`no-eval`）。
 
 ```js
 /**
- * @fileoverview Rule to flag use of an empty block statement
+ * @fileoverview Rule to disallow unnecessary semicolons
  * @author Nicholas C. Zakas
- * @copyright 2014 Nicholas C. Zakas. All rights reserved.
- * See LICENSE in root directory for full license.
  */
+
 "use strict";
 
 //------------------------------------------------------------------------------
@@ -24,72 +30,57 @@ Each ESLint rule has two files: a source file in the `lib/rules` directory and a
 //------------------------------------------------------------------------------
 
 module.exports = function(context) {
-
     return {
-        // properties go here
+        // callback functions
     };
-
 };
 
-module.exports.schema = [
-    // JSON Schema for rule options goes here
-];
+module.exports.schema = []; // no options
 ```
-
-**Important:** Rule submissions will not be accepted unless they are in this format.
-
-**重要的：**非此格式的规则的提交，将不会被接受。
 
 ## Rule Basics
 
-## 规则概要
+`schema` (array) specifies the [options](#options-schemas) so ESLint can prevent invalid [rule configurations](../user-guide/configuring#configuring-rules)
 
-Each rule is represented by a single object with several properties. The properties are equivalent to AST node types from [ESTree](https://github.com/estree/estree). For example, if your rule wants to know when an identifier is found in the AST, then add a method called "Identifier", such as:
+`create` (function) returns an object with methods that ESLint calls to "visit" nodes while traversing the abstract syntax tree (AST as defined by [ESTree](https://github.com/estree/estree)) of JavaScript code:
 
-每个规则都表现为一个非空对象。它的属性相当于 [ESTree](https://github.com/estree/estree) 中的 AST 节点类型。例如，如果你的规则想知道一个标识符什么时候在 AST 中被发现，添加一个叫做 "Identifier" 的方法，比如：
+* if a key is a node type, ESLint calls that **visitor** function while going **down** the tree
+* if a key is a node type plus `:exit`, ESLint calls that **visitor** function while going **up** the tree
+* if a key is an event name, ESLint calls that **handler** function for [code path analysis](./code-path-analysis)
 
-```js
-module.exports = function(context) {
+A rule can use the current node and its surrounding tree to report or fix problems.
 
-    return {
-
-        "Identifier": function(node) {
-            // do something with node
-        }
-    };
-
-};
-```
-
-Each method that matches a node in the AST will be passed the corresponding node. You can then evaluate the node and its surrounding tree to determine whether or not an issue needs reporting.
-
-每个与 AST 中节点相匹配的方法将被传递到对应的节点。你可以评估这个节点和它周围的树来决定是否有需要报告的问题。
-
-By default, the method matching a node name is called during the traversal when the node is first encountered, on the way down the AST. You can also specify to visit the node on the other side of the traversal, as it comes back up the tree, by adding `:exit` to the end of the node type, such as:
+Here are methods for the [array-callback-return](../rules/array-callback-return) rule:
 
 默认情况下，与节点名相匹配的方法在 AST 的向下遍历过程中第一次遇到该节点时调用。你也可以指定在向上遍历时访问节点，通过添加`:exit`到节点的末尾，例如：
 
 ```js
+function checkLastSegment (node) {
+    // report problem for function if last code path segment is reachable
+}
+
 module.exports = function(context) {
-
+    // declare the state of the rule
     return {
-
-        "Identifier:exit": function(node) {
-            // do something with node
+        ReturnStatement: function(node) {
+            // at a ReturnStatement node while going down
+        },
+        // at a function expression node while going up:
+        "FunctionExpression:exit": checkLastSegment,
+        "ArrowFunctionExpression:exit": checkLastSegment,
+        onCodePathStart: function (codePath, node) {
+            // at the start of analyzing a code path
+        },
+        onCodePathEnd: function(codePath, node) {
+            // at the end of analyzing a code path
         }
     };
-
 };
 ```
-
-In this code, `"Identifier:exit"` is called on the way up the AST. This capability allows you to keep track as the traversal enters and exits specific parts of the AST.
-
-在这段代码中，`"Identifier:exit"`在 AST 的向上回溯过程中被调用。这一功能允许你跟踪遍历进入和退出 AST 的特定部分。
 
 ## The Context Object
 
 The `context` object contains additional functionality that is helpful for rules to do their jobs. As the name implies, the `context` object contains information that is relevant to the context of the rule. The `context` object has the following properties:
-
 `context`对象包含额外的功能，有利于规则完成他们的工作。顾名思义，`context`对象包含与规则上下文相关的信息。`context`对象具有以下属性：
 
 * `parserOptions` - the parser options configured for this run (more details [here](../user-guide/configuring#specifying-parser-options)).
@@ -176,9 +167,9 @@ The main method you'll use is `context.report()`, which publishes a warning or e
 * `loc` - (optional) an object specifying the location of the problem. If both `loc` and `node` are specified, then the location is used from `loc` instead of `node`.
 * `loc` - (可选的) 用来指定问题位置的一个对象。如果同时指定的了`loc`和`node`，那么位置将从`loc`获取而非`node`。
     * `line` - the 1-based line number at which the problem occurred.
-    * `line` - 问题发生的行号，从1开始
-    * `col` - the 0-based column number at which the problem occurred.
-    * `col` - 问题发生的列号，从0开始
+    * `line` - 问题发生的行号，从1开始。
+    * `column` - the 0-based column number at which the problem occurred.
+    * `column` - 问题发生的列号，从0开始。
 * `data` - (optional) placeholder data for `message`.
 * `data` - (可选的) `message`的占位符.
 * `fix` - (optional) a function that applies a fix to resolve the problem.
@@ -228,8 +219,6 @@ The node contains all of the information necessary to figure out the line and co
 该节点包含所有必要的信息，用来找出违规文本的行列号作为该节点的源文本。
 
 ### Applying Fixes
-
-### 修复
 
 If you'd like ESLint to attempt to fix the problem you're reporting, you can do so by specifying the `fix` function when using `context.report()`. The `fix` function receives a single argument, a `fixer` object, that you can use to apply a fix. For example:
 
@@ -388,8 +377,6 @@ You should use a `SourceCode` object whenever you need to get more information a
 
 ### Options Schemas
 
-### 选项模式
-
 Rules may export a `schema` property, which is a [JSON schema](http://json-schema.org/) format description of a rule's options which will be used by ESLint to validate configuration options and prevent invalid or unexpected inputs before they are passed to the rule in `context.options`.
 
 规则可能输入一个`schema`属性，which is a [JSON schema](http://json-schema.org/) format description of a rule's options which will be used by ESLint to validate configuration options and prevent invalid or unexpected inputs before they are passed to the rule in `context.options`.
@@ -430,8 +417,6 @@ To learn more about JSON Schema, we recommend looking at some [examples](http://
 
 ### Getting the Source
 
-### 获取源
-
 If your rule needs to get the actual JavaScript source to work with, then use the `sourceCode.getText()` method. This method works as follows:
 
 如果你的规则需要获取实际的 JavaScript 的源，那么使用`sourceCode.getText()`方法。该方法运行如下：
@@ -456,8 +441,6 @@ In this way, you can look for patterns in the JavaScript text itself when the AS
 通过这种方式，当 AST 没有提供合适的数据（比如逗号、分号、括号的位置等），你可以寻找 JavaScript 文本中的模式本身。
 
 ### Accessing comments
-
-### 可访问的注释
 
 If you need to access comments for a specific node you can use `sourceCode.getComments(node)`:
 
@@ -490,8 +473,6 @@ ESLint 遍历 AST 时，会分析代码路径。你也可以使用与代码路�
 
 ## Rule Unit Tests
 
-## 规则单元测试
-
 Each rule must have a set of unit tests submitted with it to be accepted. The test file is named the same as the source file but lives in `tests/lib/`. For example, if your rule source file is `lib/rules/foo.js` then your test file should be `tests/lib/rules/foo.js`.
 
 每个提交的规则如果想被接受，都应该有一组单元测试。测试文件命名与源文件一样，但放置在`tests/lib/`下。例如，如果你的规则源文件是`lib/rules/foo.js`，那么你的测试文件应该是`tests/lib/rules/foo.js`。
@@ -513,8 +494,11 @@ The basic pattern for a rule unit test file is:
 /**
  * @fileoverview Tests for no-with rule.
  * @author Nicholas C. Zakas
+<<<<<<< HEAD
  * @copyright 2015 Nicholas C. Zakas. All rights reserved.
  * See LICENSE in root directory for full license.
+=======
+>>>>>>> eslint/master
  */
 
 "use strict";
@@ -676,23 +660,17 @@ The options available and the expected syntax for `parserOptions` is the same as
 
 ### Write Several Tests
 
-### 写一些测试
-
 Provide as many unit tests as possible. Your pull request will never be turned down for having too many tests submitted with it!
 
 提供尽可能多的单元测试。你的 pull request 永远不会因为有太多的测试一同被提交而被拒绝。
 
 ## Performance Testing
 
-## 性能测试
-
 To keep the linting process efficient and unobtrusive, it is useful to verify the performance impact of new rules or modifications to existing rules.
 
 为了保持检查过程高效、unobtrusive，验证新规则或现有规则的修改的性能影响是非常有用的。
 
 ### Overall Performance
-
-### 整体性能
 
 The `npm run perf` command gives a high-level overview of ESLint running time with default rules (`eslint:recommended`) enabled.
 
@@ -725,8 +703,6 @@ Performance budget ok:  1443.736547ms (limit: 3409.090909090909ms)
 ```
 
 ### Per-rule Performance
-
-### 每条规则性能
 
 ESLint has a built-in method to track performance of individual rules. Setting the `TIMING` environment variable will trigger the display, upon linting completion, of the ten longest-running rules, along with their individual running time and relative performance impact as a percentage of total rule processing time.
 
@@ -761,8 +737,6 @@ quotes |    18.066 |   100.0%
 
 ## Rule Naming Conventions
 
-## 规则命名约定
-
 The rule naming conventions for ESLint are fairly simple:
 
 ESLint 的规则命名约定相当简单：
@@ -777,8 +751,6 @@ ESLint 的规则命名约定相当简单：
 * 在单词之间使用连字符
 
 ## Rule Acceptance Criteria
-
-## 规则验收标准
 
 Because rules are highly personal (and therefore very contentious), accepted rules should:
 
@@ -796,8 +768,6 @@ Because rules are highly personal (and therefore very contentious), accepted rul
 * 不与现有规则重叠
 
 ## Runtime Rules
-
-## 运行时规则
 
 The thing that makes ESLint different from other linters is the ability to define custom rules at runtime. This is perfect for rules that are specific to your project or company and wouldn't make sense for ESLint to ship with. With runtime rules, you don't have to wait for the next version of ESLint or be disappointed that your rule isn't general enough to apply to the larger JavaScript community, just write your rules and include them at runtime.
 

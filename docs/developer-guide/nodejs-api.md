@@ -1,8 +1,6 @@
 ---
-title: Documentation
+title: Node.js API
 layout: doc
-translator: yanggao40
-proofreader: hacke2
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -17,8 +15,6 @@ ESLint 被设计为在命令行中运行，所以通过 Node.js API 使用ESLint
 **注意：**使用文档中没有的API的风险需自己承担。只有文档中声明的部分是赞成使用且可保持稳定可靠。文档中未声明的部分是不稳定的且可能随时被移除。
 
 ## SourceCode
-
-## 源代码
 
 The `SourceCode` type represents the parsed source code that ESLint executes on. It's used internally in ESLint and is also available so that already-parsed code can be used. You can create a new instance of `SourceCode` by passing in the text string representing the code and an abstract syntax tree (AST) in [ESTree](https://github.com/estree/estree) format (including location information, range information, comments, and tokens):
 
@@ -217,8 +213,8 @@ The `CLIEngine` is a constructor, and you can create a new instance by passing i
 * `globals` - 要声明为全局变量的数组（默认为空数组）。对应于`--global`。
 * `fix` - True indicates that fixes should be applied to the text when possible.
 * `fix` - True代表可能时修改应用到文本。
-* `ignore` - False disables use of `.eslintignore` (default: true). Corresponds to `--no-ignore`.
-* `ignore`- 值为false时禁用`.eslintignore`(默认为true)。对应于 `--no-ignore`。
+* `ignore` - False disables use of `.eslintignore`, `ignorePath` and `ignorePattern` (default: true). Corresponds to `--no-ignore`.
+* `ignore`- 值为false时禁用`.eslintignore`，`ignorePath` 和 `ignorePattern` (默认为true)。对应于 `--no-ignore`。
 * `ignorePath` - The ignore file to use instead of `.eslintignore` (default: null). Corresponds to `--ignore-path`.
 * `ignorePath` - 要使用的忽略文件不是`.eslintignore` (默认为null)。对应于`--ignore-path`。
 * `ignorePattern` - Glob patterns for paths to ignore. String or array of strings.
@@ -237,9 +233,10 @@ The `CLIEngine` is a constructor, and you can create a new instance by passing i
 * `cache` - 仅操作改变的文件(默认为 `false`)。对应于`--cache`.
 * `cacheFile` - Name of the file where the cache will be stored (default: `.eslintcache`). Corresponds to `--cache-file`. Deprecated: use `cacheLocation` instead.
 * `cacheFile` - 存放缓存的文件名。（默认为`.eslintcache`）。对应于`--cache-file`。已经过时，用`cacheLocation`代替。
-* `cacheLocation` - Name of the file or directory where the cache will be stored (default: `.eslintcache`). Correspond to `--cache-location`
+* `cacheLocation` - Name of the file or directory where the cache will be stored (default: `.eslintcache`). Corresponds to `--cache-location`.
 * `cacheLocation` - 存放缓存的文件或者目录名。（默认为`.eslintcache`）。 对应于--cache-location`。
 * `cwd` - Path to a directory that should be considered as the current working directory.
+
 * `cwd` - Path to a directory that should be considered as the current working directory.
 
 For example:
@@ -455,6 +452,7 @@ Retrieves a formatter, which you can then use to format a report object. The arg
  
 获取一个格式化工具，可以用它格式报告对象。参数或者是内建格式化工具的名字：
 
+
 * "[checkstyle](./user-guide/formatters#checkstyle)"
 * "[checkstyle](../user-guide/formatters#checkstyle)"
 * "[compact](../user-guide/formatters#compact)"
@@ -474,6 +472,7 @@ Retrieves a formatter, which you can then use to format a report object. The arg
 * "[tap](../user-guide/formatters#tap)"
 * "[tap](../user-guide/formatters#tap)"
 * "[unix](../user-guide/formatters#unix)"
+
 * "[unix](../user-guide/formatters#unix)"
 
 or the full path to a JavaScript file containing a custom formatter. You can also omit the argument to retrieve the default formatter.
@@ -571,8 +570,6 @@ CLIEngine.outputFixes(report);
 ```
 
 ## Deprecated APIs
-
-## 弃用的API
 
 * `cli` - the `cli` object has been deprecated in favor of `CLIEngine`. As of v1.0.0, `cli` is no longer exported and should not be used by external tools.
 

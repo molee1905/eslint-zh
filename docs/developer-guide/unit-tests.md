@@ -1,13 +1,10 @@
 ---
-title: Unit tests
+title: Unit Tests
 layout: doc
-translator: molee1905
-proofreader: hacke2
 ---
+<!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Unit Tests
-
-# 单元测试
 
 Most parts of ESLint have unit tests associated with them. Unit tests are written using [Mocha](http://mochajs.org/) and are required when making contributions to ESLint. You'll find all of the unit tests in the `tests` directory.
 
@@ -25,14 +22,12 @@ This automatically starts Mocha and runs all tests in the `tests` directory. You
 
 ## Running Individual Tests
 
-## 运行单个测试
-
 If you want to quickly run just one test, you can do so by running Mocha directly and passing in the filename. For example:
 
 如果你想快速的运行一个测试，可以通过直接运行Mocha，传递一个文件名来做到。例如：
 
     ./node_modules/.bin/mocha tests/lib/rules/no-wrap-func.js
-    
+
 Running individual tests is useful when you're working on a specific bug and iterating on the solution. You should be sure to run `npm test` before submitting a pull request.
 
 当你工作在一个特定的bug和重复性的解决方案时，运行单个测试是很有用的。在提交请求之前，你应该确保运行了`npm test`。

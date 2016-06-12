@@ -2,19 +2,15 @@
 title: Code Conventions
 layout: doc
 ---
+<!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Code Conventions
 
-# 代码 约定
-
 Programming language style guides are important for the long-term maintainability of software. This guide is based on the [Code Conventions for the Java Programming Language](http://java.sun.com/docs/codeconv/) and [Douglas Crockford's Code Conventions for the JavaScript Programming Language](http://javascript.crockford.com/code.html). Modifications have been made due to my personal experience and preferences.
 
-编程语言的格式指导对于软件的长期可维护性至关重要，这个指导是基于 [java编程语言代码规范](http://java.sun.com/docs/codeconv/) 和 [Douglas Crockford所写的 javascript编程语言代码规范](http://javascript.crockford.com/code.html). 并根据我的经验和个人风格进行了修改。
-
+编程语言的格式指导对于软件的长期可维护性至关重要，这个指导是基于 [Java 编程语言代码规范](http://java.sun.com/docs/codeconv/) 和 [Douglas Crockford所写的 JavaScript 编程语言代码规范](http://javascript.crockford.com/code.html)。并根据我的经验和个人风格进行了修改。
 
 ## File Format
-
-## 文件 格式
 
 Each file has this same basic format:
 
@@ -24,8 +20,6 @@ Each file has this same basic format:
 /**
  * @fileoverview Description of the file
  * @author Your Name
- * @copyright 2016 Your Name. All rights reserved.
- * See LICENSE file in root directory for full license.
  */
 
 "use strict";
@@ -56,23 +50,7 @@ The `@author` field gives you credit for having created the file. The `@copyrigh
 
 `@author` 区域填写创建文件的作者，`@copyright`区域说明了你拥有这个文件的版权
 
-Your submission may touch other parts of the ESLint code that you did not write. In that case, you are welcome to add a copyright notice to the top of the file if you have done any amount of significant work on the file (we leave it up to you to decide what "significant" means - if you aren't sure, just ask). You should never change the `@author` field, but you can add another `@copyright` field on top of the existing ones, such as:
-
-你有可能提交并不是你写的ESLint代码。这种情况下，你只需在头部增加一个版权标注就可以了，前提是你认为你的修改是重要的（你可以自己把握‘重要’的意义，如果你不确定，尽管来问）。你不能修改`@author`这个区域，但是你可以在原有的`@copyright`前 再增加一个,如下：
-
-```js
-/**
- * @fileoverview Description of the file
- * @author Author's Name
- * @copyright 2015 Your Name. All rights reserved.
- * @copyright 2014 Author's Name. All rights reserved.
- * See LICENSE file in root directory for full license.
- */
-```
-
 ## Indentation
-
-## 缩进
 
 Each indentation level is made up of four spaces. Do not use tabs.
 
@@ -84,8 +62,6 @@ Each indentation level is made up of four spaces. Do not use tabs.
     }
 
 ## Primitive Literals
-
-## 基本数据类型
 
 Strings should always use double quotes (never single quotes) and should always appear on a single line. Never use a slash to create a new line in a string.
 
@@ -193,8 +169,6 @@ Never use the special value `undefined`. To see if a variable has been defined, 
 
 ## Operator Spacing
 
-## 操作符 间距
-
 Operators with two operands must be preceded and followed by a single space to make the expression clear. Operators include assignments and logical operators.
 
 双目操作符 必须在 前后分别有1个空格使得表达式清晰。操作符包含赋值运算符和逻辑操作符
@@ -227,8 +201,6 @@ Operators with two operands must be preceded and followed by a single space to m
 
 ## Parentheses Spacing
 
-## 括号 间距
-
 When parentheses are used, there should be no white space immediately after the opening paren or immediately before the closing paren.
 
 当使用括号的时候，在开括号后或闭括号前 不应该有空格。
@@ -260,8 +232,6 @@ When parentheses are used, there should be no white space immediately after the 
     }
 
 ## Object Literals
-
-## 对象数据类型
 
 Object literals should have the following format:
 
@@ -329,8 +299,6 @@ When an object literal is passed to a function, the opening brace should be on t
 
 ## Comments
 
-## 注释
-
 Make frequent use of comments to aid others in understanding your code. Use comments when:
 
 多用注释帮助别人理解你的代码。在以下情况使用：
@@ -344,10 +312,7 @@ Make frequent use of comments to aid others in understanding your code. Use comm
 * Documentation generation is necessary for an object, method, or property (use appropriate documentation comments).
 * 为一个对象、方法、属性生成一个文档是必要的（使用一个恰当文件注释）
 
-
 ### Single-Line Comments
-
-### 单行注释
 
 Single-line comments should be used to documentation one line of code or a group of related lines of code. A single-line comment may be used in three ways:
 
@@ -417,8 +382,6 @@ The only acceptable time to have multiple single-line comments on successive lin
 
 ### Multi-Line Comments
 
-### 多行注释
-
 Multi-line comments should be used to document code that requires more explanation. Each multi-line comment should have at least three lines:
 
 多行注释应该在需要更详细解释的时候被使用，每个多行注释至少应注意以下三点
@@ -478,8 +441,6 @@ The first line of multi-comments should be indented to the same level as the cod
 
 ### Comment Annotations
 
-### 注释 批注
-
 Comments may be used to annotate pieces of code with additional information. These annotations take the form of a single word followed by a colon. The acceptable annotations are:
 
 注释有可能被使用去注释一段代码的额外信息，这些注释使用一个单词后跟着冒号的形式。可被接受的注释包含：
@@ -532,8 +493,6 @@ These annotations may be used with either single-line or multi-line comments and
 
 ## Variable Declarations
 
-## 变量声明
-
 All variables should be declared before they are used. Variable declarations should take place at the beginning of a function using a single `var` statement with one variable per line. All lines after the first should be indented one level so the variable names line up. Variables should be initialized when declared if applicable and the equals operator should be at a consistent indentation level. Initialized variables should come first followed by uninitialized variables.
 
 所有的变量在使用前都要被声明，变量声明应该发生在函数的开始，并使用一个`var`声明，每行一个变量。第一行后的每行应保持同一个缩进排列。声明变量的时候要进行初始化。尽可能将赋值保持在同一个缩进水平。先书写初始化的变量，再写为初始化的变量声明
@@ -578,8 +537,6 @@ Always declare variables. Implied globals should not be used.
 保持变量声明，全局变量不应该被使用
 
 ## Function Declarations
-
-## 函数声明
 
 Functions should be declared before they are used. When a function is not a method (not attached to an object) it should be defined using function declaration format (not function expression format nor using the `Function` constructor). There should be no space between the function name and the opening parentheses. There should be one space between the closing parentheses and the right brace. The right brace should be on the same line as the `function` keyword. There should be no space after the opening parentheses or before the closing parentheses. Named arguments should have a space after the comma but not before it. The function body should be indented one level.
 
@@ -791,47 +748,36 @@ Object properties follow the same naming conventions as variables. Object method
 
 ## Strict Mode
 
-## 严格模式
-
-Strict mode should be used only inside of functions and never globally.
+Strict mode should be used in all modules, specified below the file overview comment and above everything else:
 
 严格模式应该被使用在函数内部而不是全局使用
 
-    // Bad: Global strict mode
+    // Bad: Strict mode in functions
+    function doSomething() {
+        "use strict";
+
+        // code
+    }
+
+    // Bad: Strict mode in global scope and redundant strict mode directive in function
+    "use strict";       // This one is good
+
+    function doSomething() {
+        "use strict";   // This one is bad
+
+        // code
+    }
+
+    // Good: Global strict mode
     "use strict";
 
     function doSomething() {
-        // code
-    }
-
-    // Good
-    function doSomething() {
-        "use strict";
+        // no "use strict" here
 
         // code
     }
-
-If you want strict mode to apply to multiple functions without needing to write `"use strict"` multiple times, use immediate function invocation:
-
-如果你想对多个函数应用严格模式，你不需要写`"use strict"`多次，使用一个立即执行函数调用。
-
-    // Good
-    (function() {
-        "use strict";
-
-        function doSomething() {
-            // code
-        }
-
-        function doSomethingElse() {
-            // code
-        }
-
-    }());
 
 ## Assignments
-
-## 赋值
 
 When assigning a value to a variable, use parentheses around a right-side expression that contains a comparison.
 
@@ -845,8 +791,6 @@ When assigning a value to a variable, use parentheses around a right-side expres
 
 ## Equality Operators
 
-## 相等比较
-
 Use `===` and `!==` instead of `==` and `!=`. This avoids type coercion errors.
 
 使用 `===` 和 `!==` 替代 `==` 和 `!=`. 这将避免强制类型转换错误
@@ -858,8 +802,6 @@ Use `===` and `!==` instead of `==` and `!=`. This avoids type coercion errors.
     var same = (a == b);
 
 ## Ternary Operator
-
-## 三目运算符 
 
 The ternary operator should be used only for assigning values conditionally and never as a shortcut for an `if` statement.
 
@@ -873,11 +815,7 @@ The ternary operator should be used only for assigning values conditionally and 
 
 ## Statements
 
-## 语句
-
 ### Simple Statements
-
-### 简易语句
 
 Each line should contain at most one statement. All simple statements should end with a semicolon (`;`).
 
@@ -892,8 +830,6 @@ Each line should contain at most one statement. All simple statements should end
 
 ### return Statement
 
-### 返回语句
-
 A return statement with a value should not use parentheses unless they make the return value more obvious in some way. Example:
 
 一个带值返回语句不应该使用括号，除非返回值明显符合以下情况，例如：
@@ -905,8 +841,6 @@ A return statement with a value should not use parentheses unless they make the 
     return (size > 0 ? size : defaultSize);
 
 ### Compound Statements
-
-### 复合语句
 
 Compound statements are lists of statements enclosed inside of braces.
 
@@ -922,8 +856,6 @@ Compound statements are lists of statements enclosed inside of braces.
 * 语句的开始关键词，例如`if`，应该在左括号前 和 左大括号与右括号间留有一个空格
 
 ### if Statement
-
-### if 语句
 
 The `if` class of statements should have the following form:
 
@@ -973,8 +905,6 @@ It is never permissible to omit the braces in any part of an `if` statement.
 
 ### for Statement
 
-### for 语句
-
 The `for` class of statements should have the following form:
 
 `for` 类型语句应该遵守如下的格式：
@@ -1015,8 +945,6 @@ When using a `for-in` statement, double-check whether or not you need to use `ha
 
 ### while Statement
 
-### while 语句
-
 The `while` class of statements should have the following form:
 
 `while` 类型语句应该遵守如下的格式：
@@ -1026,8 +954,6 @@ The `while` class of statements should have the following form:
     }
 
 ### do Statement
-
-### do 语句
 
 The `do` class of statements should have the following form:
 
@@ -1042,8 +968,6 @@ Note the use of a semicolon as the final part of this statement. There should be
 注意语句最终部分要加分号，在`while`的前后都要加一个空格
 
 ### switch Statement
-
-### switch 语句
 
 The `switch` class of statements should have the following form:
 
@@ -1102,8 +1026,6 @@ If a `switch` doesn't have a `default` case, then it should be indicated with a 
 
 ### try Statement
 
-### try 语句
-
 The `try` class of statements should have the following form:
 
 `try` 类型语句应该遵守如下的格式：
@@ -1123,8 +1045,6 @@ The `try` class of statements should have the following form:
     }
 
 ## White Space
-
-## 空格
 
 Blank lines improve readability by setting off sections of code that are logically related.
 
@@ -1162,12 +1082,10 @@ Blank spaces should be used in the following circumstances:
 * 在参数列表的逗号后应该跟一个空格
 * All binary operators except dot (`.`) should be separated from their operands by spaces. Blank spaces should never separate unary operators such as unary minus, increment (`++`), and decrement (`--`) from their operands.
 * 所有的二元运算符不包括 点(`.`)应该被空格分隔操作符，空格不能分隔一元操作符比如负号，自增(`++`)和自减(`--`)
-* The expressions in a `for` statement should be separated by blank spaces.
-* 在`for` 语句的表达式应该被空格分隔
+* The expressions in a `for` statement should be separated by blank spaces. Blank spaces should only be used after semicolons, not before.
+* 在 `for` 语句的表达式应该被空格分隔。空格应该只在分号之后使用，而不是之前。
 
 ## Things to Avoid
-
-## 要避免做的事
 
 * Never use the primitive wrapper types, such as `String`, to create new objects.
 * 不要使用原始的包装类型例如`String`，要创建一个新的对象

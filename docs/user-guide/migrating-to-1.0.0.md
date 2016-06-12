@@ -1,5 +1,5 @@
 ---
-title: Documentation
+title: Migrating to v1.0.0
 layout: doc
 exceptMulti: true
 ---
@@ -12,8 +12,6 @@ ESLint v1.0.0 is the first major version release. As a result, there are some si
 v1.0.0 是 ESLint 第一个主要的发行版本。结果是，在 0.x 版本 ESLint 是如何工作的和今后 ESLint 如何工作之间有一些显著的更改。这些更改是 ESLint 社区中的用户和 were not made without due consideration for the upgrade path 的反馈的直接结果。我们相信这些更改会令 ESLint 变得更好，同时有一些升级是必须要完成的工作。我们希望这次升级的痛苦是足够小的，你会看到升级的好处。
 
 ## All Rules Off by Default
-
-## 所有的规则默认被关闭
 
 The most important difference in v1.0.0 is that all rules are off by default. We made this change after numerous requests to allow turning off the default rules from within configuration files. While that wasn't technically feasible, it was feasible to have all rules off by default and then re-enable rules in configuration files using `extends`. As such, we've made the `--reset` behavior the default and removed this command line option.
 
@@ -170,7 +168,6 @@ Here's a configuration file with the closest equivalent of the old defaults:
 ```
 
 ## Removed Rules
-## 移除的规则
 
 Over the past several releases, we have been deprecating rules and introducing new rules to take their place. The following is a list of the removed rules and their replacements:
 

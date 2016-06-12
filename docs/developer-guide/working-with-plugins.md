@@ -1,14 +1,10 @@
 ---
-title: Documentation
+title: Working with Plugins
 layout: doc
-translator: molee1905
-proofreader: fengnana
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Working with Plugins
-
-# 使用插件
 
 Each plugin is an npm module with a name in the format of `eslint-plugin-<plugin-name>`, such as `eslint-plugin-jquery`. You can also use scoped packages in the format of `@<scope>/eslint-plugin-<plugin-name>` such as `@jquery/eslint-plugin-jquery`.
 
@@ -16,15 +12,11 @@ Each plugin is an npm module with a name in the format of `eslint-plugin-<plugin
 
 ## Create a Plugin
 
-## 创建一个插件
-
 The easiest way to start creating a plugin is to use the [Yeoman generator](https://npmjs.com/package/generator-eslint). The generator will guide you through setting up the skeleton of a plugin.
 
 创建一个插件最简单的方式是使用[Yeoman generator](https://npmjs.com/package/generator-eslint)。它将引导你完成插件框架的设置。
 
 ### Rules in Plugins
-
-### 插件中的规则
 
 Plugins can expose additional rules for use in ESLint. To do so, the plugin must export a `rules` object containing a key-value mapping of rule ID to rule. The rule ID does not have to follow any naming convention (so it can just be `dollar-sign`, for instance).
 
@@ -66,8 +58,6 @@ Plugin environments can define the following objects:
 1. `parserOptions` - acts the same as `parserOptions` in a configuration file.
 
 ### Processors in Plugins
-
-### 插件中的处理器
 
 You can also create plugins that would tell ESLint how to process files other than JavaScript. In order to create a processor, object that is exported from your module has to conform to the following interface:
 
@@ -117,8 +107,6 @@ To support multiple extensions, add each one to the `processors` element and poi
 
 ### Configs in Plugins
 
-### 插件配置
-
 You can bundle configurations inside a plugin. This can be useful when you want to provide not just code style, but also some custom rules to support it. You can specify configurations under `configs` key. Please note that when exposing configurations, you have to name each one, and there is no default. So your users will have to specify the name of the configuration they want to use.
 
 你可以在插件中包含配置。但你想提供不止代码风格，还有一些自定义规则时，这会非常有用。你可以在`configs`键下指定配置。请注意，当暴露配置时，你需要对它们进行命名，而且是没有默认的。所以，你的用户将需要指定他们想使用的配置的名称。
@@ -128,7 +116,9 @@ configs: {
     myConfig: {
         env: ["browser"],
         rules: {
-            semi: 2
+            semi: 2,
+            "myPlugin/my-rule": 2,
+            "eslint-plugin-myPlugin/another-rule": 2
         }
     }
 }
@@ -137,8 +127,6 @@ configs: {
 **Note:** Please note that configuration will not automatically attach your rules and you have to specify your plugin name and any rules you want to enable that are part of the plugin. See [Configuring Plugins](../user-guide/configuring#configuring-plugins)
 
 ### Peer Dependency
-
-### peer 依赖
 
 To make clear that the plugin requires ESLint to work correctly you have to declare ESLint as a `peerDependency` in your `package.json`.
 The plugin support was introduced in ESLint version `0.8.0`. Ensure the `peerDependency` points to ESLint `0.8.0` or later.
@@ -155,9 +143,7 @@ The plugin support was introduced in ESLint version `0.8.0`. Ensure the `peerDep
 
 ### Testing
 
-### 测试
-
-You can test the rules of your plugin [the same way as bundled ESLint rules](working-with-rules) using [`ESLintTester`](https://github.com/eslint/eslint-tester).
+You can test the rules of your plugin [the same way as bundled ESLint rules](working-with-rules) using RuleTester.
 
 你可以使用[`ESLintTester`](https://github.com/eslint/eslint-tester)测试你插件中的规则[同测试 ESLint 规则一样](working-with-rules)。
 
@@ -185,6 +171,31 @@ ruleTester.run("custom-plugin-rule", rule, {
     ]
 });
 ```
+
+#### Customizing RuleTester
+
+To create tests for each valid and invalid case, `RuleTester` internally uses `describe` and `it` methods from the Mocha test framework when it is available. If you use another test framework, you can override `RuleTester.describe` and `RuleTester.it` to make `RuleTester` compatible with it and have proper individual tests and feedback.
+
+Example:
+
+```js
+"use strict";
+
+var RuleTester = require("eslint").RuleTester;
+var test = require("my-test-runner");
+
+RuleTester.describe = function(text, method) {
+    RuleTester.it.title = text;
+    return method.apply(this);
+};
+
+RuleTester.it = function(text, method) {
+    test(RuleTester.it.title + ": " + text, method);
+};
+
+// then use RuleTester as documented
+```
+
 
 ## Share Plugins
 

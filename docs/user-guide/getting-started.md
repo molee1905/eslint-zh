@@ -1,11 +1,10 @@
 ---
-title: Getting Started
+title: Getting Started with ESLint
 layout: doc
 ---
+<!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Getting Started with ESLint
-
-# 开始使用 ESLint
 
 ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, with the goal of making code more consistent and avoiding bugs. In many ways, it is similar to JSLint and JSHint with a few exceptions:
 
@@ -20,8 +19,6 @@ ESLint 是在ECMAScript/JavaScript代码中识别和报告模式匹配的工具�
 
 ## Installation
 
-## 安装
-
 You can install ESLint using npm:
 
 你可以使用 npm 安装 ESLint
@@ -29,8 +26,6 @@ You can install ESLint using npm:
     npm install -g eslint
 
 ## Usage
-
-## 使用
 
 If it's your first time using ESLint, you should set up a config file using `--init`:
 
@@ -44,9 +39,9 @@ After that, you can run ESLint on any JavaScript file:
 
     eslint test.js test2.js
 
-## Configuration
+**Note:** `eslint --init` is intended for setting up and configuring ESLint on a per-project basis and will perform a local installation of ESLint and its plugins in the directory in which it is run. If you prefer using a global installation of ESLint, any plugins used in your configuration must also be installed globally.
 
-## 配置
+## Configuration
 
 **Note:** If you are coming from a version before 1.0.0 please see the [migration guide](http://eslint.org/docs/user-guide/migrating-to-1.0.0).
 
@@ -55,6 +50,7 @@ After that, you can run ESLint on any JavaScript file:
 After running `eslint --init`, you'll have a `.eslintrc.*` file in your directory. In it, you'll see some rules configured like this:
 
 运行 `eslint --init` 之后，`.eslintrc.*` 文件会在你的文件夹中自动创建。你可以在 `.eslintrc` 文件中看到许多像这样的规则：
+
 
 ```json
 {
@@ -70,15 +66,10 @@ The names `"semi"` and `"quotes"` are the names of [rules](http://eslint.org/doc
 `"semi"` 和 `"quotes"` 是 ESLint 中 [规则](http://eslint.org/docs/rules) 的名称。数字是规则的错误级别，它有 3 个取值：
 
 * `"off"` or `0` - turn the rule off
-
 * `"off"` or `0` - 关闭规则
-
 * `"warn"` or `1` - turn the rule on as a warning (doesn't affect exit code)
-
 * `"warn"` or `1` - 将规则视为一个警告（不会影响退出码）
-
 * `"error"` or `2` - turn the rule on as an error (exit code will be 1)
-
 * `"error"` or `2` - 将规则视为一个错误 (退出码为1)
 
 The three error levels allow you fine-grained control over how ESLint applies rules (for more configuration options and details, see the [configuration docs](http://eslint.org/docs/user-guide/configuring)).
@@ -100,8 +91,6 @@ Because of this this line, all of the rules marked "(recommended)" on the [rules
 ---
 
 ## Next Steps
-
-## 下一步
 
 * Learn about [advanced configuration](http://eslint.org/docs/user-guide/configuring) of ESLint.
 

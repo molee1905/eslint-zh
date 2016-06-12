@@ -85,6 +85,7 @@ These rules relate to possible syntax or logic errors in JavaScript code:
 * [valid-typeof](valid-typeof): enforce comparing `typeof` expressions against valid strings (recommended)
 * [valid-typeof](valid-typeof): 强制 `typeof` 表达式与有效的字符串进行比较 (recommended)
 
+
 ## Best Practices
 
 These rules relate to better ways of doing things to help you avoid problems:
@@ -145,7 +146,7 @@ These rules relate to better ways of doing things to help you avoid problems:
 * [no-implicit-coercion](no-implicit-coercion): 禁止使用短符号进行类型转换
 * [no-implicit-globals](no-implicit-globals): disallow `var` and named `function` declarations in the global scope
 * [no-implicit-globals](no-implicit-globals): 禁止在全局范围内使用 `var` 和命名的 `function` 声明
-* [no-implied-eval](no-implied-eval): disallow the use of `eval()` -like methods
+* [no-implied-eval](no-implied-eval): disallow the use of `eval()`-like methods
 * [no-implied-eval](no-implied-eval): 禁止使用类似 `eval()` 的方法
 * [no-invalid-this](no-invalid-this): disallow `this` keywords outside of classes or class-like objects
 * [no-invalid-this](no-invalid-this): 禁止 `this` 关键字出现在类和类对象之外
@@ -220,6 +221,7 @@ These rules relate to better ways of doing things to help you avoid problems:
 * [yoda](yoda): require or disallow "Yoda" conditions
 * [yoda](yoda): 要求或禁止 "Yoda" 条件
 
+
 ## Strict Mode
 These rules relate to strict mode directives:
 
@@ -227,6 +229,7 @@ These rules relate to strict mode directives:
 
 * [strict](strict): require or disallow strict mode directives
 * [strict](strict): 要求或禁止使用严格模式指令
+
 
 ## Variables
 
@@ -259,9 +262,11 @@ These rules relate to variable declarations:
 * [no-use-before-define](no-use-before-define): disallow the use of variables before they are defined
 * [no-use-before-define](no-use-before-define): 不允许在变量定义之前使用它们
 
+
 ## Node.js and CommonJS
 
 These rules relate to code running in Node.js, or in browsers with CommonJS:
+
 
 这些规则是关于Node.js 或 在浏览器中使用CommonJS 的：
 
@@ -286,9 +291,11 @@ These rules relate to code running in Node.js, or in browsers with CommonJS:
 * [no-sync](no-sync): disallow synchronous methods
 * [no-sync](no-sync): 禁用同步方法
 
+
 ## Stylistic Issues
 
 These rules relate to style guidelines, and are therefore quite subjective:
+
 
 这些规则是关于风格指南的，而且是非常主观的：
 
@@ -336,6 +343,8 @@ These rules relate to style guidelines, and are therefore quite subjective:
 * [max-depth](max-depth): 强制可嵌套的块的最大深度
 * [max-len](max-len): enforce a maximum line length
 * [max-len](max-len): 强制一行的最大长度
+* [max-lines](max-lines): enforce a maximum file length
+* [max-lines](max-lines): enforce a maximum file length
 * [max-nested-callbacks](max-nested-callbacks): enforce a maximum depth that callbacks can be nested
 * [max-nested-callbacks](max-nested-callbacks): 强制回调函数最大嵌套深度
 * [max-params](max-params): enforce a maximum number of parameters in `function` definitions
@@ -364,6 +373,8 @@ These rules relate to style guidelines, and are therefore quite subjective:
 * [no-inline-comments](no-inline-comments): 禁止在代码行后使用内联注释
 * [no-lonely-if](no-lonely-if): disallow `if` statements as the only statement in `else` blocks
 * [no-lonely-if](no-lonely-if): 禁止 `if` 作为唯一的语句出现在 `else` 语句中
+* [no-mixed-operators](no-mixed-operators): disallow mixes of different operators
+* [no-mixed-operators](no-mixed-operators): disallow mixes of different operators
 * [no-mixed-spaces-and-tabs](no-mixed-spaces-and-tabs): disallow mixed spaces and tabs for indentation (recommended)
 * [no-mixed-spaces-and-tabs](no-mixed-spaces-and-tabs): 不允许空格和 tab 混合缩进 (recommended)
 * [no-multiple-empty-lines](no-multiple-empty-lines): disallow multiple empty lines
@@ -390,6 +401,8 @@ These rules relate to style guidelines, and are therefore quite subjective:
 * [no-unneeded-ternary](no-unneeded-ternary): 禁止可以在有更简单的可替代的表达式时使用三元操作符
 * [no-whitespace-before-property](no-whitespace-before-property): disallow whitespace before properties (fixable)
 * [no-whitespace-before-property](no-whitespace-before-property): 禁止属性前有空白 (fixable)
+* [object-curly-newline](object-curly-newline): enforce consistent line breaks inside braces (fixable)
+* [object-curly-newline](object-curly-newline): enforce consistent line breaks inside braces (fixable)
 * [object-curly-spacing](object-curly-spacing): enforce consistent spacing inside braces (fixable)
 * [object-curly-spacing](object-curly-spacing): 强制在花括号中使用一致的空格 (fixable)
 * [object-property-newline](object-property-newline): enforce placing object properties on separate lines
@@ -433,6 +446,7 @@ These rules relate to style guidelines, and are therefore quite subjective:
 * [wrap-regex](wrap-regex): require parenthesis around regex literals
 * [wrap-regex](wrap-regex): 要求正则表达式被括号括起来
 
+
 ## ECMAScript 6
 
 These rules relate to ES6, also known as ES2015:
@@ -469,8 +483,8 @@ These rules relate to ES6, also known as ES2015:
 * [no-useless-computed-key](no-useless-computed-key): disallow unnecessary computed property keys in object literals
 * [no-useless-constructor](no-useless-constructor): disallow unnecessary constructors
 * [no-useless-constructor](no-useless-constructor): 禁用不必要的构造函数
-* [no-useless-rename](no-useless-rename): disallow renaming import, export, and destructured assignments to the same name
-* [no-useless-rename](no-useless-rename): disallow renaming import, export, and destructured assignments to the same name
+* [no-useless-rename](no-useless-rename): disallow renaming import, export, and destructured assignments to the same name (fixable)
+* [no-useless-rename](no-useless-rename): disallow renaming import, export, and destructured assignments to the same name (fixable)
 * [no-var](no-var): require `let` or `const` instead of `var`
 * [no-var](no-var): 要求使用 `let` 或 `const` 而不是 `var`
 * [object-shorthand](object-shorthand): require or disallow method and property shorthand syntax for object literals
@@ -489,6 +503,8 @@ These rules relate to ES6, also known as ES2015:
 * [prefer-template](prefer-template): 要求使用模板字面量而非字符串连接
 * [require-yield](require-yield): require generator functions to contain `yield`
 * [require-yield](require-yield): 要求generator 函数内有 `yield`
+* [rest-spread-spacing](rest-spread-spacing): enforce spacing between rest and spread operators and their expressions (fixable)
+* [rest-spread-spacing](rest-spread-spacing): enforce spacing between rest and spread operators and their expressions (fixable)
 * [sort-imports](sort-imports): enforce sorted import declarations within modules
 * [sort-imports](sort-imports): enforce sorted import declarations within modules
 * [template-curly-spacing](template-curly-spacing): require or disallow spacing around embedded expressions of template strings (fixable)

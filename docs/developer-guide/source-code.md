@@ -1,13 +1,10 @@
 ---
-title: Getting source code
+title: Source Code
 layout: doc
-translator: maoshuyu
-proofreader: hacke2
 ---
+<!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Source Code
-
-# 源码
 
 ESLint is hosted at [GitHub](https://github.com/eslint/eslint) and uses [Git](http://git-scm.com/) for source control. In order to obtain the source code, you must first install Git on your system. Instructions for installing and setting up Git can be found at [http://help.github.com/set-up-git-redirect](http://help.github.com/set-up-git-redirect).
 
@@ -28,8 +25,6 @@ If you're planning on contributing to ESLint, then it's a good idea to fork the 
 当你 fork ESLint 仓库后，可以拷贝你的 fork 到本地。
 
 ## Start Developing
-
-## 开始开发
 
 Before you can get started developing, you'll need to have a couple of things installed:
 
@@ -54,8 +49,6 @@ Now when you run `eslint`, it will be running your local copy and showing your c
 **注意：** 当你从主仓库上 pull 代码后，最好重新运行 `npm install` 命令，以确保安装了最新的开发依赖。
 
 ## Directory structure
-
-## 目录结构
 
 The ESLint directory and file structure is as follows:
 

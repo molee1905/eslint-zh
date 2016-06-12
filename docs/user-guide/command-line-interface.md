@@ -1,24 +1,18 @@
 ---
-title: Documentation
+title: Command Line Interface
 layout: doc
-translator: freeyiyi1993
-proofreader: molee1905
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Command Line Interface
 
-# Command Line Interface
-
-# 命令行界面
-
-To run ESLint on Node.js, you must have npm installed. If npm is not installed, follow the instructions here: [https://www.npmjs.com/](https://www.npmjs.com/).
+To run ESLint on Node.js, you must have npm installed. If npm is not installed, follow the instructions here: https://www.npmjs.com/
 
 为了在 Node.js 上运行 ESLint，你必须先安装 npm。如果还没有安装 npm ，按照这里的说明进行安装：[https://www.npmjs.com/](https://www.npmjs.com/)。
 
-Once npm is installed, run the following:
+Once npm is installed, run the following
 
-一旦安装了 npm，运行下面的命令：
+一旦安装了 npm，运行下面的命令
 
     npm i -g eslint
 
@@ -40,9 +34,11 @@ or:
 
     eslint lib/**
 
-## Options
+Please note that when passing a glob as a parameter, it will be expanded by your shell. The results of the expansion can vary depending on your shell, and its configuration. If you want to use node `glob` syntax, you have to quote your parameter (using double quotes if you need it to run in Windows), as follows:
 
-## 选项
+    eslint "lib/**"
+
+## Options
 
 The command line utility has several options. You can view the options by running `eslint -h`.
 
@@ -72,7 +68,7 @@ Specifying rules and plugins:
 
 Ignoring files:
   --ignore-path path::String  Specify path of ignore file
-  --no-ignore                Disable use of .eslintignore
+  --no-ignore                Disable use of ignore files and patterns
   --ignore-pattern [String]  Patterns of files to ignore (in addition to those
                              in .eslintignore)
 
@@ -88,7 +84,7 @@ Handling warnings:
 Output:
   -o, --output-file path::String  Specify file to write report to
   -f, --format String        Use a specific output format - default: stylish
-  --no-color                 Disable color in piped output
+  --color, --no-color        Force enabling/disabling of color
 
 Miscellaneous:
   --init                     Run config initialization wizard - default: false
@@ -96,7 +92,7 @@ Miscellaneous:
   --debug                    Output debugging information
   -h, --help                 Show help
   -v, --version              Outputs the version number
-  --no-inline-config         Prevent comments from changing eslint rules -
+  --no-inline-config         Prevent comments from changing config or rules -
                              default: false
   --print-config             Print the configuration to be used
 ```
@@ -114,8 +110,6 @@ Example:
     eslint --ext .jsx,.js file.js
 
 ### Basic configuration
-
-### 基本配置
 
 #### `-c`, `--config`
 
@@ -176,7 +170,6 @@ Examples:
 
 This option allows you to specify which file extensions ESLint will use when searching for JavaScript files in the directories you specify.
 By default, it uses `.js` as the only file extension.
-
 这个选项允许你指定 ESLint 在指定的目录下查找 JavaScript 文件时要使用的文件扩展名。默认情况下，它使用`.js`作为唯一性文件扩展名。
 
 Examples:
@@ -192,13 +185,14 @@ Examples:
     # Also use both .js and .js2
     eslint . --ext .js,.js2
 
-**Note:** If you use a glob pattern, then `--ext` is ignored.
+**Note:** If you use a glob pattern, then `--ext` is ignored
 
-**注意：**如果你使用了 glob 模式，则`--ext`被忽略。
+**注意：**如果你使用了 glob 模式，则`--ext`被忽略
 
 For example, `eslint lib/* --ext .js` will match all files within the `lib/` directory, regardless of extension.
 
 例如，`eslint lib/* --ext .js`将匹配`lib/`下的所有文件，忽略扩展名。
+
 
 #### `--global`
 
@@ -234,8 +228,6 @@ Examples:
 
 ### Caching
 
-### 缓存
-
 #### `--cache`
 
 Store the info about processed files in order to only operate on the changed ones.
@@ -244,9 +236,9 @@ Store the info about processed files in order to only operate on the changed one
 
 #### `--cache-file`
 
-Path to the cache file. If none specified `.eslintcache` will be used. The file will be created in the directory where the `eslint` command is executed. 
+Path to the cache file. If none specified `.eslintcache` will be used. The file will be created in the directory where the `eslint` command is executed. **Deprecated**: Use `--cache-location` instead.
 
-缓存文件的路径。如果没有指定，则使用`.eslintcache`。这个文件会在 `eslint` 命令行被执行的文件目录中被创建。
+缓存文件的路径。如果没有指定，则使用`.eslintcache`。这个文件会在 `eslint` 命令行被执行的文件目录中被创建。**弃用：**请使用 `--cache-location`。
 
 **Deprecated：** Use `--cache-location` instead.
 
@@ -270,11 +262,9 @@ Example:
 
 示例：
 
-    eslint 'src/**/*.js' --cache --cache-location '/Users/user/.eslintcache/'
+    eslint "src/**/*.js" --cache --cache-location "/Users/user/.eslintcache/"
 
 ### Specifying rules and plugins
-
-### 指定规则和插件
 
 #### `--rulesdir`
 
@@ -343,9 +333,9 @@ Example:
 
 #### `--no-ignore`
 
-Disables excluding of files from `.eslintignore` and `--ignore-path` files.
+Disables excluding of files from `.eslintignore`, `--ignore-path` and `--ignore-pattern`.
 
-禁止排除`.eslintignore` 和 `--ignore-path`文件中指定的文件。
+禁止排除`.eslintignore`，`--ignore-path` 和 `--ignore-pattern`文件中指定的文件。
 
 Example:
 
@@ -353,9 +343,16 @@ Example:
 
     eslint --no-ignore file.js
 
-### Using stdin
+#### `--ignore-pattern`
 
-### 使用stdin
+This option allows you to specify patterns of files to ignore (in addition to those in `.eslintignore`). You can repeat the option to provide multiple patterns. The supported syntax is the same as in the `.eslintignore` file.
+
+Example:
+
+    eslint --ignore-pattern '/lib/' --ignore-pattern '/src/vendor/*' .
+
+
+### Using stdin
 
 #### `--stdin`
 
@@ -382,8 +379,6 @@ Example
     cat myfile.js | eslint --stdin --stdin-filename=myfile.js
 
 ### Handling warnings
-
-### 处理警告
 
 #### `--quiet`
 
@@ -415,8 +410,6 @@ Example:
 
 ### Output
 
-### 输出
-
 #### `-o`, `--output-file`
 
 Enable report to be written to a file.
@@ -436,6 +429,7 @@ When specified, the given format is output into the provided file name.
 #### `-f`, `--format`
 
 This option specifies the output format for the console. Possible formats are:
+
 
 这个选项指定了控制台的输出格式。可用的格式是：
  
@@ -477,25 +471,25 @@ This saves the output into the `results.txt` file.
 
 这会将输出保存到`results.txt`文件。
 
-#### `--no-color`
+#### `--color`, `--no-color`
 
-Disable color in piped output.
+
+This option forces the enabling/disabling of colorized output. You can use this to override the default behavior, which is to enable colorized output unless no TTY is detected, such as when when piping `eslint` through `cat` or `less`.
 
 在管道输出中禁用颜色。
 
-Example:
+Examples:
 
 示例：
 
+    eslint --color file.js | cat
     eslint --no-color file.js
 
 ### Miscellaneous
 
-### 其他
-
 #### `--init`
 
-This option will start config initialization wizard. It's designed to help new users quickly create `.eslintrc` file by answering a few questions. File will be created in current directory.
+This option will start config initialization wizard. It's designed to help new users quickly create .eslintrc file by answering a few questions. File will be created in current directory.
 
 这个选项将会配置初始化向导。用户通过回答一些问题，它就可以帮助用户快速地在当前工作目录下创建`.eslintrc`文件。
 
@@ -572,8 +566,6 @@ Example:
     eslint --print-config file.js
 
 ## Ignoring files from linting
-
-## 忽略检查的文件
 
 ESLint supports `.eslintignore` files to exclude files from the linting process when ESLint operates on a directory. Files given as individual CLI arguments will be exempt from exclusion. The `.eslintignore` file is a plain text file containing one pattern per line. It can be located in any of the target directory's ancestors; it will affect files in its containing directory as well as all sub-directories. Here's a simple example of a `.eslintignore` file:
 
