@@ -65,9 +65,9 @@ These rules relate to possible syntax or logic errors in JavaScript code:
 * [no-negated-in-lhs](no-negated-in-lhs): disallow negating the left operand in `in` expressions (recommended)
 * [no-negated-in-lhs](no-negated-in-lhs): 禁止在 `in` 表达式中出现否定的左操作数 (recommended)
 * [no-obj-calls](no-obj-calls): disallow calling global object properties as functions (recommended)
-* [no-obj-calls](no-obj-calls): 禁止把全局对象(`Math` 和 `JSON`)作为函数调用 (recommended)
+* [no-obj-calls](no-obj-calls): 禁止把全局对象 (`Math` 和 `JSON`) 作为函数调用 (recommended)
 * [no-prototype-builtins](no-prototype-builtins): Disallow use of `Object.prototypes` builtins directly
-* [no-prototype-builtins](no-prototype-builtins): Disallow use of `Object.prototypes` builtins directly
+* [no-prototype-builtins](no-prototype-builtins): 禁止直接使用 `Object.prototypes` 的内置属性
 * [no-regex-spaces](no-regex-spaces): disallow multiple spaces in regular expression literals (recommended)
 * [no-regex-spaces](no-regex-spaces): 禁止正则表达式字面量中出现多个空格 (recommended)
 * [no-sparse-arrays](no-sparse-arrays): disallow sparse arrays (recommended)
@@ -75,9 +75,9 @@ These rules relate to possible syntax or logic errors in JavaScript code:
 * [no-unexpected-multiline](no-unexpected-multiline): disallow confusing multiline expressions (recommended)
 * [no-unexpected-multiline](no-unexpected-multiline): 禁止出现令人困惑的多行表达式 (recommended)
 * [no-unreachable](no-unreachable): disallow unreachable code after `return`, `throw`, `continue`, and `break` statements (recommended)
-* [no-unreachable](no-unreachable): 禁止在 `return`，`throw`，`continue` 和 `break` 语句之后出现不可达代码 (recommended)
+* [no-unreachable](no-unreachable): 禁止在`return`、`throw`、`continue` 和 `break`语句之后出现不可达代码 (recommended)
 * [no-unsafe-finally](no-unsafe-finally): disallow control flow statements in `finally` blocks
-* [no-unsafe-finally](no-unsafe-finally): disallow control flow statements in `finally` blocks
+* [no-unsafe-finally](no-unsafe-finally): 禁止在 `finally` 语句块中出现控制流语句
 * [use-isnan](use-isnan): require calls to `isNaN()` when checking for `NaN` (recommended)
 * [use-isnan](use-isnan): 要求使用 `isNaN()` 检查 `NaN` (recommended)
 * [valid-jsdoc](valid-jsdoc): enforce valid JSDoc comments
@@ -115,7 +115,7 @@ These rules relate to better ways of doing things to help you avoid problems:
 * [guard-for-in](guard-for-in): require `for-in` loops to include an `if` statement
 * [guard-for-in](guard-for-in): 要求 `for-in` 循环中有一个 `if` 语句
 * [no-alert](no-alert): disallow the use of `alert`, `confirm`, and `prompt`
-* [no-alert](no-alert): 禁用 `alert`，`confirm` 和 `prompt`
+* [no-alert](no-alert): 禁用 `alert`、`confirm` 和 `prompt`
 * [no-caller](no-caller): disallow the use of `arguments.caller` or `arguments.callee`
 * [no-caller](no-caller): 禁用 `arguments.caller` 或 `arguments.callee`
 * [no-case-declarations](no-case-declarations): disallow lexical declarations in case clauses (recommended)
@@ -125,7 +125,7 @@ These rules relate to better ways of doing things to help you avoid problems:
 * [no-else-return](no-else-return): disallow `else` blocks after `return` statements in `if` statements
 * [no-else-return](no-else-return): 禁止 `if` 语句中有 `return` 之后有 `else`
 * [no-empty-function](no-empty-function): disallow empty functions
-* [no-empty-function](no-empty-function): 禁用空函数
+* [no-empty-function](no-empty-function): 禁止出现空函数
 * [no-empty-pattern](no-empty-pattern): disallow empty destructuring patterns (recommended)
 * [no-empty-pattern](no-empty-pattern): 禁止使用空解构模式 (recommended)
 * [no-eq-null](no-eq-null): disallow `null` comparisons without type-checking operators
@@ -221,8 +221,8 @@ These rules relate to better ways of doing things to help you avoid problems:
 * [yoda](yoda): require or disallow "Yoda" conditions
 * [yoda](yoda): 要求或禁止 "Yoda" 条件
 
-
 ## Strict Mode
+
 These rules relate to strict mode directives:
 
 该规则与使用严格模式和严格模式指令有关：
@@ -246,7 +246,7 @@ These rules relate to variable declarations:
 * [no-label-var](no-label-var): disallow labels that share a name with a variable
 * [no-label-var](no-label-var): 不允许标签与变量同名
 * [no-restricted-globals](no-restricted-globals): disallow specified global variables
-* [no-restricted-globals](no-restricted-globals): 禁用指定的全局变量
+* [no-restricted-globals](no-restricted-globals): 禁用特定的全局变量
 * [no-shadow](no-shadow): disallow `var` declarations from shadowing variables in the outer scope
 * [no-shadow](no-shadow): 禁止 `var` 声明 与外层作用域的变量同名
 * [no-shadow-restricted-names](no-shadow-restricted-names): disallow identifiers from shadowing restricted names
@@ -266,7 +266,6 @@ These rules relate to variable declarations:
 ## Node.js and CommonJS
 
 These rules relate to code running in Node.js, or in browsers with CommonJS:
-
 
 这些规则是关于Node.js 或 在浏览器中使用CommonJS 的：
 
@@ -296,7 +295,6 @@ These rules relate to code running in Node.js, or in browsers with CommonJS:
 
 These rules relate to style guidelines, and are therefore quite subjective:
 
-
 这些规则是关于风格指南的，而且是非常主观的：
 
 * [array-bracket-spacing](array-bracket-spacing): enforce consistent spacing inside array brackets (fixable)
@@ -322,7 +320,7 @@ These rules relate to style guidelines, and are therefore quite subjective:
 * [func-style](func-style): enforce the consistent use of either `function` declarations or expressions
 * [func-style](func-style): 强制一致地使用函数声明或函数表达式
 * [id-blacklist](id-blacklist): disallow specified identifiers
-* [id-blacklist](id-blacklist): disallow specified identifiers
+* [id-blacklist](id-blacklist): 禁止使用指定的标识符
 * [id-length](id-length): enforce minimum and maximum identifier lengths
 * [id-length](id-length): 强制标识符的最新和最大长度
 * [id-match](id-match): require identifiers to match a specified regular expression
@@ -344,7 +342,7 @@ These rules relate to style guidelines, and are therefore quite subjective:
 * [max-len](max-len): enforce a maximum line length
 * [max-len](max-len): 强制一行的最大长度
 * [max-lines](max-lines): enforce a maximum file length
-* [max-lines](max-lines): enforce a maximum file length
+* [max-lines](max-lines): 强制最大行数
 * [max-nested-callbacks](max-nested-callbacks): enforce a maximum depth that callbacks can be nested
 * [max-nested-callbacks](max-nested-callbacks): 强制回调函数最大嵌套深度
 * [max-params](max-params): enforce a maximum number of parameters in `function` definitions
@@ -352,17 +350,17 @@ These rules relate to style guidelines, and are therefore quite subjective:
 * [max-statements](max-statements): enforce a maximum number of statements allowed in `function` blocks
 * [max-statements](max-statements): 强制 `function` 块最多允许的的语句数量
 * [max-statements-per-line](max-statements-per-line): enforce a maximum number of statements allowed per line
-* [max-statements-per-line](max-statements-per-line): enforce a maximum number of statements allowed per line
+* [max-statements-per-line](max-statements-per-line): 强制每一行中所允许的最大语句数量 
 * [new-cap](new-cap): require constructor `function` names to begin with a capital letter
 * [new-cap](new-cap): 要求构造函数首字母大写
 * [new-parens](new-parens): require parentheses when invoking a constructor with no arguments
 * [new-parens](new-parens): 要求调用无参构造函数时有圆括号
 * [newline-after-var](newline-after-var): require or disallow an empty line after `var` declarations
-* [newline-after-var](newline-after-var): require or disallow an empty line after `var` declarations
+* [newline-after-var](newline-after-var): 要求或禁止 `var` 声明语句后有一行空行
 * [newline-before-return](newline-before-return): require an empty line before `return` statements
-* [newline-before-return](newline-before-return): require an empty line before `return` statements
+* [newline-before-return](newline-before-return): 要求 `return` 语句之前有一空行
 * [newline-per-chained-call](newline-per-chained-call): require a newline after each call in a method chain
-* [newline-per-chained-call](newline-per-chained-call): require a newline after each call in a method chain
+* [newline-per-chained-call](newline-per-chained-call): 要求方法链中每个调用都有一个换行符
 * [no-array-constructor](no-array-constructor): disallow `Array` constructors
 * [no-array-constructor](no-array-constructor): 禁止使用 `Array` 构造函数
 * [no-bitwise](no-bitwise): disallow bitwise operators
@@ -374,7 +372,7 @@ These rules relate to style guidelines, and are therefore quite subjective:
 * [no-lonely-if](no-lonely-if): disallow `if` statements as the only statement in `else` blocks
 * [no-lonely-if](no-lonely-if): 禁止 `if` 作为唯一的语句出现在 `else` 语句中
 * [no-mixed-operators](no-mixed-operators): disallow mixes of different operators
-* [no-mixed-operators](no-mixed-operators): disallow mixes of different operators
+* [no-mixed-operators](no-mixed-operators): 禁止混合使用不同的操作符
 * [no-mixed-spaces-and-tabs](no-mixed-spaces-and-tabs): disallow mixed spaces and tabs for indentation (recommended)
 * [no-mixed-spaces-and-tabs](no-mixed-spaces-and-tabs): 不允许空格和 tab 混合缩进 (recommended)
 * [no-multiple-empty-lines](no-multiple-empty-lines): disallow multiple empty lines
@@ -402,15 +400,15 @@ These rules relate to style guidelines, and are therefore quite subjective:
 * [no-whitespace-before-property](no-whitespace-before-property): disallow whitespace before properties (fixable)
 * [no-whitespace-before-property](no-whitespace-before-property): 禁止属性前有空白 (fixable)
 * [object-curly-newline](object-curly-newline): enforce consistent line breaks inside braces (fixable)
-* [object-curly-newline](object-curly-newline): enforce consistent line breaks inside braces (fixable)
+* [object-curly-newline](object-curly-newline): 强制花括号内换行符的一致性 (fixable)
 * [object-curly-spacing](object-curly-spacing): enforce consistent spacing inside braces (fixable)
 * [object-curly-spacing](object-curly-spacing): 强制在花括号中使用一致的空格 (fixable)
 * [object-property-newline](object-property-newline): enforce placing object properties on separate lines
-* [object-property-newline](object-property-newline): enforce placing object properties on separate lines
+* [object-property-newline](object-property-newline): 强制将对象的属性放在不同的行上 
 * [one-var](one-var): enforce variables to be declared either together or separately in functions
 * [one-var](one-var): 强制函数中的变量要么一起声明要么分开声明
 * [one-var-declaration-per-line](one-var-declaration-per-line): require or disallow newlines around `var` declarations
-* [one-var-declaration-per-line](one-var-declaration-per-line): require or disallow newlines around `var` declarations
+* [one-var-declaration-per-line](one-var-declaration-per-line): 要求或禁止在 `var` 声明周围换行
 * [operator-assignment](operator-assignment): require or disallow assignment operator shorthand where possible
 * [operator-assignment](operator-assignment): 要求或禁止在可能的情况下要求使用简化的赋值操作符
 * [operator-linebreak](operator-linebreak): enforce consistent linebreak style for operators
@@ -442,7 +440,7 @@ These rules relate to style guidelines, and are therefore quite subjective:
 * [spaced-comment](spaced-comment): enforce consistent spacing after the `//` or `/*` in a comment (fixable)
 * [spaced-comment](spaced-comment): 强制在注释中 `//` 或 `/*` 使用一致的空格 (fixable)
 * [unicode-bom](unicode-bom): require or disallow the Unicode BOM (fixable)
-* [unicode-bom](unicode-bom): require or disallow the Unicode BOM (fixable)
+* [unicode-bom](unicode-bom): 要求或禁止 Unicode BOM (fixable)
 * [wrap-regex](wrap-regex): require parenthesis around regex literals
 * [wrap-regex](wrap-regex): 要求正则表达式被括号括起来
 
@@ -506,11 +504,11 @@ These rules relate to ES6, also known as ES2015:
 * [rest-spread-spacing](rest-spread-spacing): enforce spacing between rest and spread operators and their expressions (fixable)
 * [rest-spread-spacing](rest-spread-spacing): enforce spacing between rest and spread operators and their expressions (fixable)
 * [sort-imports](sort-imports): enforce sorted import declarations within modules
-* [sort-imports](sort-imports): enforce sorted import declarations within modules
+* [sort-imports](sort-imports): 强制模块内的 import 排序
 * [template-curly-spacing](template-curly-spacing): require or disallow spacing around embedded expressions of template strings (fixable)
-* [template-curly-spacing](template-curly-spacing): require or disallow spacing around embedded expressions of template strings (fixable)
+* [template-curly-spacing](template-curly-spacing): 要求或禁止模板字符串中的嵌入表达式周围空格的使用 (fixable)
 * [yield-star-spacing](yield-star-spacing): require or disallow spacing around the `*` in `yield*` expressions (fixable)
-* [yield-star-spacing](yield-star-spacing): require or disallow spacing around the `*` in `yield*` expressions (fixable)
+* [yield-star-spacing](yield-star-spacing): 强制在 `yield*` 表达式中 `*` 周围使用空格 (fixable)
 
 ## Removed
 

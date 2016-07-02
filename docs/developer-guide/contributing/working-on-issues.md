@@ -8,7 +8,7 @@ layout: doc
 
 Our public [issues tracker](https://github.com/eslint/eslint/issues) lists all of the things we plan on doing as well as suggestions from the community. Before starting to work on an issue, be sure you read through the rest of this page.
 
-我们公共的[issues tracker](https://github.com/eslint/eslint/issues)列出了所有我们计划做的事情以及社区的建议。开始在议题（issue）上工作之前，确保你已经阅读了这个页面的其余部分。
+我们公共的 [issues tracker](https://github.com/eslint/eslint/issues) 列出了所有我们计划做的事情以及社区的建议。开始在议题（issue）上工作之前，确保你已经阅读了这个页面的其余部分。
 
 ## Issue Labels
 

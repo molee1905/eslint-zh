@@ -12,10 +12,9 @@ ESLint 的核心就是规则。在该项目的生命周期的大部分时间里�
 
 **Note:** As of 2016, we accept only rules that are deemed extremely important for inclusion. We prefer that new rules be implemented in plugins.
 
-**注意：** 在2016年，我们只接受被认为是极其重要的规则。我们希望新的规则以插件的形式实现的。
+**注意：**在2016年，我们只接受被认为是极其重要的规则。我们希望新的规则以插件的形式实现的。
 
 ## Core Rule Guidelines
-
 
 In general, ESLint core rules must be:
 
@@ -61,18 +60,27 @@ We need all of this information in order to determine whether or not the rule is
 
 In order for a rule to be accepted in the ESLint core, it must:
 
+为了让一个规则被 ESLint 核心接受，它必须：
+
 1. Fulfill all the criteria listed in the "Core Rule Guidelines" section
+1. 满足 "Core Rule Guidelines" 章节列出的所有标准
 1. Have an ESLint team member champion inclusion of the rule
+1. 规则的内容得到一位 ESLint 团队成员的用户
 1. Be very important for ESLint users because it either catches a serious problem or allows styling of code in accordance with a popular style guide
+1. 对 ESLint 用户非常重要，因为它捕捉了一个非常严重的问题或允许代码与一个流行的风格指南保持风格上一致
 
 Keep in mind that we have over 200 rules, and that is daunting both for end users and the ESLint team (who has to maintain them). As such, any new rules must be deemed of high importance to be considered for inclusion in ESLint.
+
+我们有超过 200 条规则，对 ESLint 用户和 团队（维护者）来说都是不可思议的。因此，任何新的规则必须被认为为非常有价值，才能被 ESLint 接受。
 
 ## Implementation is Your Responsibility
 
 The ESLint team doesn't implement new rules that are suggested by users because we have a limited number of people and need to focus on the overall roadmap. Once a rule is accepted, you are responsible for implementing and documenting the rule. You may, alternately, recruit another person to help you implement the rule. The ESLint team member who championed the rule is your resource to help guide you through the rest of this process.
 
+ESLint 团队不会去实现用户提议的新规则，因为我们人数有限，需要集中精力在整体路线图上。一旦一条规则被接受，你有责任实现它并且提供相应文档。你可能会招募另一个人来帮你实现这条规则。ESLint 团队中支持这条规则的成员将指引你完成这一过程的其余部分。
+
 ## Alternative: Creating Your Own Rules
 
 Remember that ESLint is completely pluggable, which means you can create your own rules and distribute them using plugins. We did this on purpose because we don't want to be the gatekeepers for all possible rules. Even if we don't accept a rule into the core, that doesn't mean you can't have the exact rule that you want. See the [working with rules](../working-with-rules) and [working with plugins](../working-with-plugins) documentation for more information.
 
-ESLint 是完全插件化的，这意味着你可以创建自己的规则，然后以插件的方式进行发布。我们之所以这么做是因为我们不想给所有可能的规则都设置一个门槛。即使这条规则不能成为为核心规则，那也并不意味着你不能拥有自己想要的规则。你可以从[working with rules](../working-with-rules) 和[working with plugins](../working-with-plugins) 的文档中查看更多相关信息。
+ESLint 是完全插件化的，这意味着你可以创建自己的规则，然后以插件的方式进行发布。我们之所以这么做是因为我们不想给所有可能的规则都设置一个门槛。即使这条规则不能成为为核心规则，那也并不意味着你不能拥有自己想要的规则。你可以从 [working with rules](../working-with-rules) 和 [working with plugins](../working-with-plugins) 的文档中查看更多相关信息。

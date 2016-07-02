@@ -189,7 +189,7 @@ module.exports = {
 
 Despite being in an entirely different directory, you'll see that all `extends` must use the full package path to the config file you wish to extend.
 
-尽管在一个完全不同的目录中，你会看到所有的 `extends`  都必须使用你希望扩展的配置文件的完整包路径。
+尽管在一个完全不同的目录中，你会看到所有的 `extends` 都必须使用你希望扩展的配置文件的完整包路径。
 
 Now inside your `/lib/ci/backend.js`
 

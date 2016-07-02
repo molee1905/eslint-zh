@@ -46,7 +46,7 @@ Now when you run `eslint`, it will be running your local copy and showing your c
 
 **Note:** It's a good idea to re-rerun `npm install` whenever you pull from the main repository to ensure you have the latest development dependencies.
 
-**注意：** 当你从主仓库上 pull 代码后，最好重新运行 `npm install` 命令，以确保安装了最新的开发依赖。
+**注意：**当你从主仓库上 pull 代码后，最好重新运行 `npm install` 命令，以确保安装了最新的开发依赖。
 
 ## Directory structure
 

@@ -39,7 +39,7 @@ The built-in formatter options are:
 
 Examples of each formatter were created from linting `fullOfProblems.js` using the `.eslintrc` configuration shown below.
 
-每一种格式化工具从`fullOfProblems.js`使用`.eslintrc`例如如下配置
+每一种格式化工具从 `fullOfProblems.js z` 使用 `.eslintrc` 例如如下配置
 
 ### `fullOfProblems.js`
 

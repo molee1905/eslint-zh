@@ -6,7 +6,11 @@ layout: doc
 
 # disallow control flow statements in `finally` blocks (no-unsafe-finally)
 
+# 禁止在 `finally` 语句块中出现控制流语句 (no-unsafe-finally)
+
 JavaScript suspends the control flow statements of `try` and `catch` blocks until the execution of `finally` block finishes. So, when `return`, `throw`, `break`, or `continue` is used in `finally`, control flow statements inside `try` and `catch` are overwritten, which is considered as unexpected behavior. Such as:
+
+JavaScript 暂停 `try` 和 `catch` 语句块中的控制流语句，直到 `finally` 语句块执行完毕。所以，当 `return`、`throw`、`break` 和 `continue` 出现在 `finally`  中时， `try` 和 `catch` 语句块中的控制流语句将被覆盖，这被认为是意外的行为。比如：
 
 ```js
 // We expect this function to return 1;
@@ -69,7 +73,11 @@ JavaScript suspends the control flow statements of `try` and `catch` blocks unti
 
 This rule disallows `return`, `throw`, `break`, and `continue` statements inside `finally` blocks. It allows indirect usages, such as in `function` or `class` definitions.
 
+该规则禁止在 `finally` 语句块中出现 `return`、`throw`、`break` 和 `continue` 语句。它允许间接使用，比如在 `function` 或 `class` 的定义中。
+
 Examples of **incorrect** code for this rule:
+
+**错误** 代码示例：
 
 ```js
 /*eslint no-unsafe-finally: "error"*/
@@ -98,6 +106,8 @@ let foo = function() {
 ```
 
 Examples of **correct** code for this rule:
+
+**正确** 代码示例：
 
 ```js
 /*eslint no-unsafe-finally: "error"*/
@@ -149,9 +159,13 @@ let foo = function(a) {
 
 If you want to allow control flow operations in `finally` blocks, you can turn this rule off.
 
+如果你想允许在 `finally` 语句块中出现控制流语操作，你可以关闭此规则。
+
 ## Version
 
 This rule was introduced in ESLint 2.9.0.
+
+该规则在 ESLint 2.9.0 中被引入。
 
 ## Resources
 

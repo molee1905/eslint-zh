@@ -66,9 +66,9 @@
 
       {% endif %}
 
-      {% if include.multi == "true" and page.exceptMulti != true %}
+      {% if include.multi == "true" %}
         var langs = {mixed: '中英文',zh: '中文',en: '英文'};
-        var last = localStorage.getItem('lang') || 'mixed';
+        var last = localStorage.getItem('lang') || 'zh';
 
         if (last in langs) {
           $('.lang-chooser').html(langs[last]); 

@@ -129,7 +129,7 @@ The message summary should be a one-sentence description of the change, and it m
 
 描述变更的摘要信息应该是一句话，并且它不能超过72个字符。议题（issue）编号应该展示在最后。如果提交的变更没能彻底修复问题，请使用`(refs #1234)`而不是 `(fixes #1234)`。
 
-Here are some good commit message summary examples
+Here are some good commit message summary examples:
 
 这里有几个比较好的提交信息摘要的例子：
 

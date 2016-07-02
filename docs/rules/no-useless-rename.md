@@ -1,6 +1,6 @@
 ---
 title: Rule no-useless-rename
-layout: doc
+layout: doc_en
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
