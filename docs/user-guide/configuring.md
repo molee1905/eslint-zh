@@ -800,9 +800,9 @@ An `extends` property value `"eslint:recommended"` enables a subset of core rule
 
 值为 `"eslint:recommended"` 的 `extends` 属性启用一系列核心规则，这些规则报告一些常见问题，在 [规则页面](../rules/) 中被标记为 (recommended) 。这个推荐的子集只能在 ESLint 主要版本进行更新。
 
-If your configuration extends the recommended rules: after you upgrade to a newer major version of ESLint, review the reported problems before you use the `--fix` option on the [command line](../command-line-interface#fix), so you know if a new fixable recommended rule will make changes to the code.
+If your configuration extends the recommended rules: after you upgrade to a newer major version of ESLint, review the reported problems before you use the `--fix` option on the [command line](./command-line-interface#fix), so you know if a new fixable recommended rule will make changes to the code.
 
-如果你的配置集成了推荐的规则：在你升级到 ESLint 新的主版本之后，在你使用[命令行](../command-line-interface#fix)的 `--fix` 选项之前，检查一下报告的问题，这样你就知道一个新的可修复的推荐的规则将更改代码。
+如果你的配置集成了推荐的规则：在你升级到 ESLint 新的主版本之后，在你使用[命令行](./command-line-interface#fix)的 `--fix` 选项之前，检查一下报告的问题，这样你就知道一个新的可修复的推荐的规则将更改代码。
 
 The `eslint --init` command can create a configuration so you can extend the recommended rules.
 
@@ -946,9 +946,9 @@ You might enable all core rules as a shortcut to explore rules and options while
 
 当你决定在一个项目上使用的规则和选项，尤其是如果你很少覆盖选项或禁用规则，你可能启用所有核心规则作为一种快捷方式使用。规则的默认选项并不是 ESLint 推荐的（例如，`quotes` 规则的默认选项并不意味着双引号要比单引号好）。
 
-If your configuration extends all core rules: after you upgrade to a newer major or minor version of ESLint, review the reported problems before you use the `--fix` option on the [command line](../command-line-interface#fix), so you know if a new fixable rule will make changes to the code.
+If your configuration extends all core rules: after you upgrade to a newer major or minor version of ESLint, review the reported problems before you use the `--fix` option on the [command line](./command-line-interface#fix), so you know if a new fixable rule will make changes to the code.
 
-如果你的配置扩展了所有的核心规则：在你升级到一个新的大或小的 ESLint 版本，在你使用[命令行](../command-line-interface#fix)的 `--fix` 选项之前，检查一下报告的问题，这样你就知道一个新的可修复的规则将更改代码。
+如果你的配置扩展了所有的核心规则：在你升级到一个新的大或小的 ESLint 版本，在你使用[命令行](./command-line-interface#fix)的 `--fix` 选项之前，检查一下报告的问题，这样你就知道一个新的可修复的规则将更改代码。
 
 Example of a configuration file in JavaScript format:
 
