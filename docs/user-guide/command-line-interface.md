@@ -370,7 +370,7 @@ This option tells ESLint to read and lint source code from STDIN instead of from
 
 这个选项告诉 ESLint 从 STDIN 而不是从文件中读取和检测源码。你可以使用该选项向 ESLint 来输入代码。
 
-Example
+Example:
 
 示例：
 
@@ -548,11 +548,6 @@ This option outputs the current ESLint version onto the console. All other optio
 
 这个选项在控制台输出当前 ESlint 的版本。当有这个标记时，忽略其他所有标记。
 
-Example:
-
-示例：
-
-    eslint -v
 
 #### `--no-inline-config`
 
