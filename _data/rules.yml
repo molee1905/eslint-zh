@@ -6,19 +6,22 @@ categories:
       - description: >-
           enforce "for" loop update clause moving the counter in the right
           direction.
-        description_zh: >-
-          enforce "for" loop update clause moving the counter in the right
-          direction.
+        description_zh: 强制 “for” 循环中更新子句的计数器朝着正确的方向移动 
         fixable: false
         name: for-direction
         recommended: false
+      - description: enforce `return` statements in getters
+        description_zh: 强制 getter 函数中出现 `return` 语句
+        fixable: false
+        name: getter-return
+        recommended: false
       - description: disallow `await` inside of loops
-        description_zh: disallow `await` inside of loops
+        description_zh: 禁止在循环中出现 `await`
         fixable: false
         name: no-await-in-loop
         recommended: false
       - description: disallow comparing against -0
-        description_zh: disallow comparing against -0
+        description_zh: 禁止与 -0 进行比较
         fixable: false
         name: no-compare-neg-zero
         recommended: true
@@ -134,7 +137,7 @@ categories:
         name: no-sparse-arrays
         recommended: true
       - description: disallow template literal placeholder syntax in regular strings
-        description_zh: disallow template literal placeholder syntax in regular strings
+        description_zh: 禁止在常规字符串中出现模板字面量占位符语法
         fixable: false
         name: no-template-curly-in-string
         recommended: false
@@ -157,7 +160,7 @@ categories:
         name: no-unsafe-finally
         recommended: true
       - description: disallow negating the left operand of relational operators
-        description_zh: disallow negating the left operand of relational operators
+        description_zh: 禁止对关系运算符的左操作数使用否定操作符
         fixable: true
         name: no-unsafe-negation
         recommended: true
@@ -199,7 +202,7 @@ categories:
         name: block-scoped-var
         recommended: false
       - description: enforce that class methods utilize `this`
-        description_zh: enforce that class methods utilize `this`
+        description_zh: 强制类方法使用 `this`
         fixable: false
         name: class-methods-use-this
         recommended: false
@@ -317,7 +320,7 @@ categories:
         name: no-floating-decimal
         recommended: false
       - description: disallow assignments to native objects or read-only global variables
-        description_zh: disallow assignments to native objects or read-only global variables
+        description_zh: 禁止对原生对象或只读的全局对象进行赋值
         fixable: false
         name: no-global-assign
         recommended: true
@@ -423,7 +426,7 @@ categories:
         name: no-redeclare
         recommended: true
       - description: disallow certain properties on certain objects
-        description_zh: disallow certain properties on certain objects
+        description_zh: 禁止使用对象的某些属性
         fixable: false
         name: no-restricted-properties
         recommended: false
@@ -433,7 +436,7 @@ categories:
         name: no-return-assign
         recommended: false
       - description: disallow unnecessary `return await`
-        description_zh: disallow unnecessary `return await`
+        description_zh: 禁用不必要的 `return await`
         fixable: false
         name: no-return-await
         recommended: false
@@ -513,7 +516,7 @@ categories:
         name: no-with
         recommended: false
       - description: require using Error objects as Promise rejection reasons
-        description_zh: require using Error objects as Promise rejection reasons
+        description_zh: 要求使用 Error 对象作为 Promise 拒绝的原因
         fixable: false
         name: prefer-promise-reject-errors
         recommended: false
@@ -526,7 +529,7 @@ categories:
         name: radix
         recommended: false
       - description: disallow async functions which have no `await` expression
-        description_zh: disallow async functions which have no `await` expression
+        description_zh: 禁止使用不带 `await` 表达式的 async 函数
         fixable: false
         name: require-await
         recommended: false
@@ -611,7 +614,7 @@ categories:
         name: no-undef
         recommended: true
       - description: disallow initializing variables to `undefined`
-        description_zh: disallow initializing variables to `undefined`
+        description_zh: 禁止将变量初始化为 `undefined`
         fixable: true
         name: no-undef-init
         recommended: false
@@ -653,6 +656,7 @@ categories:
         name: handle-callback-err
         recommended: false
       - description: disallow use of the Buffer() constructor
+        description_zh: 禁用 Buffer() 构造函数
         fixable: false
         name: no-buffer-constructor
         recommended: false
@@ -712,12 +716,14 @@ categories:
         name: array-bracket-spacing
         recommended: false
       - description: enforce line breaks after each array element
-        description_zh: enforce line breaks after each array element
+        description_zh: 强制数组元素间出现换行
         fixable: true
         name: array-element-newline
         recommended: false
-      - description: enforce consistent spacing inside single-line blocks
-        description_zh: 强制在单行代码块中使用一致的空格
+      - description: >-
+          disallow or enforce spaces inside of blocks after opening block and
+          before closing block
+        description_zh: 禁止或强制在代码块中开括号前和闭括号后有空格
         fixable: true
         name: block-spacing
         recommended: false
@@ -797,6 +803,11 @@ categories:
         fixable: false
         name: func-style
         recommended: false
+      - description: enforce consistent line breaks inside function parentheses
+        description_zh: enforce consistent line breaks inside function parentheses
+        fixable: true
+        name: function-paren-newline
+        recommended: false
       - description: disallow specified identifiers
         description_zh: 禁用指定的标识符
         fixable: false
@@ -811,6 +822,11 @@ categories:
         description_zh: 要求标识符匹配一个指定的正则表达式
         fixable: false
         name: id-match
+        recommended: false
+      - description: enforce the location of arrow function bodies
+        description_zh: 强制隐式返回的箭头函数体的位置
+        fixable: true
+        name: implicit-arrow-linebreak
         recommended: false
       - description: enforce consistent indentation
         description_zh: 强制使用一致的缩进
@@ -839,7 +855,7 @@ categories:
         name: keyword-spacing
         recommended: false
       - description: enforce position of line comments
-        description_zh: enforce position of line comments
+        description_zh: 强制行注释的位置
         fixable: false
         name: line-comment-position
         recommended: false
@@ -852,6 +868,11 @@ categories:
         description_zh: 要求在注释周围有空行
         fixable: true
         name: lines-around-comment
+        recommended: false
+      - description: require or disallow an empty line between class members
+        description_zh: 要求或禁止类成员之间出现空行
+        fixable: true
+        name: lines-between-class-members
         recommended: false
       - description: enforce a maximum depth that blocks can be nested
         description_zh: 强制可嵌套的块的最大深度
@@ -888,6 +909,11 @@ categories:
         fixable: false
         name: max-statements-per-line
         recommended: false
+      - description: enforce a particular style for multiline comments
+        description_zh: enforce a particular style for multiline comments
+        fixable: true
+        name: multiline-comment-style
+        recommended: false
       - description: enforce newlines between operands of ternary expressions
         description_zh: enforce newlines between operands of ternary expressions
         fixable: false
@@ -905,7 +931,7 @@ categories:
         recommended: false
       - description: require a newline after each call in a method chain
         description_zh: 要求方法链中每个调用都有一个换行符
-        fixable: false
+        fixable: true
         name: newline-per-chained-call
         recommended: false
       - description: disallow `Array` constructors
@@ -1101,7 +1127,7 @@ categories:
         recommended: false
       - description: require variables within the same declaration block to be sorted
         description_zh: 要求同一个声明块中的变量按顺序排列
-        fixable: false
+        fixable: true
         name: sort-vars
         recommended: false
       - description: enforce consistent spacing before blocks
@@ -1261,8 +1287,8 @@ categories:
         fixable: true
         name: object-shorthand
         recommended: false
-      - description: require arrow functions as callbacks
-        description_zh: 要求使用箭头函数作为回调
+      - description: require using arrow functions for callbacks
+        description_zh: 要求回调函数使用箭头函数
         fixable: true
         name: prefer-arrow-callback
         recommended: false
@@ -1280,11 +1306,11 @@ categories:
         name: prefer-destructuring
         recommended: false
       - description: >-
-          disallow `parseInt()` in favor of binary, octal, and hexadecimal
-          literals
+          disallow `parseInt()` and `Number.parseInt()` in favor of binary,
+          octal, and hexadecimal literals
         description_zh: >-
-          disallow `parseInt()` in favor of binary, octal, and hexadecimal
-          literals
+          disallow `parseInt()` and `Number.parseInt()` in favor of binary,
+          octal, and hexadecimal literals
         fixable: true
         name: prefer-numeric-literals
         recommended: false
@@ -1341,7 +1367,9 @@ categories:
         name: yield-star-spacing
         recommended: false
 deprecated:
-  description: 'These rules have been deprecated and replaced by newer rules:'
+  description: >-
+    These rules have been deprecated in accordance with the [deprecation
+    policy](/docs/user-guide/rule-deprecation), and replaced by newer rules:
   name: Deprecated
   rules:
     - name: indent-legacy
@@ -1368,7 +1396,10 @@ deprecated:
     - name: prefer-reflect
       replacedBy: []
 removed:
-  description: 'These rules from older versions of ESLint have been replaced by newer rules:'
+  description: >-
+    These rules from older versions of ESLint (before the [deprecation
+    policy](/docs/user-guide/rule-deprecation) existed) have been replaced by
+    newer rules:
   name: Removed
   rules:
     - removed: generator-star

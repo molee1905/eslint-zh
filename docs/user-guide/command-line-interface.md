@@ -1,6 +1,7 @@
 ---
 title: Command Line Interface
 layout: doc
+edit_link: https://github.com/eslint/eslint/edit/master/docs/user-guide/command-line-interface.md
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -187,9 +188,9 @@ Examples:
     # Also use both .js and .js2
     eslint . --ext .js,.js2
 
-**Note:** If you use a glob pattern, then `--ext` is ignored
+**Note:** `--ext` is only used when the arguments are directories. If you use glob patterns or file names, then `--ext` is ignored.
 
-**注意：**如果你使用了 glob 模式，则 `--ext` 被忽略
+**注意：**`--ext` 只有在参数为目录时，才生效。如果你使用 glob 模式或文件名，`--ext` 将被忽略
 
 For example, `eslint lib/* --ext .js` will match all files within the `lib/` directory, regardless of extension.
 
@@ -210,9 +211,9 @@ Examples:
 
 #### `--parser`
 
-This option allows you to specify a parser to be used by ESLint. By default, `espree` will be used.
+This option allows you to specify a parser to be used by eslint. By default, `espree` will be used.
 
-该选项允许你为 ESLint 指定一个解析器。默认情况下，使用 `espree`。
+该选项允许你为 eslint 指定一个解析器。默认情况下，使用 `espree`。
 
 #### `--parser-options`
 
@@ -494,7 +495,7 @@ This saves the output into the `results.txt` file.
 
 #### `--color`, `--no-color`
 
-This option forces the enabling/disabling of colorized output. You can use this to override the default behavior, which is to enable colorized output unless no TTY is detected, such as when when piping `eslint` through `cat` or `less`.
+This option forces the enabling/disabling of colorized output. You can use this to override the default behavior, which is to enable colorized output unless no TTY is detected, such as when piping `eslint` through `cat` or `less`.
 
 在管道输出中禁用颜色。
 
@@ -509,7 +510,7 @@ Examples:
 
 #### `--init`
 
-This option will start config initialization wizard. It’s designed to help new users quickly create .eslintrc file by answering a few questions, choosing a popular style guide, or inspecting your source files and attempting to automatically generate a suitable configuration.
+This option will start config initialization wizard. It's designed to help new users quickly create .eslintrc file by answering a few questions, choosing a popular style guide, or inspecting your source files and attempting to automatically generate a suitable configuration.
 
 这个选项将会配置初始化向导。它被用来帮助新用户快速地创建 `.eslintrc` 文件，用户通过回答一些问题，选择一个流行的风格指南，或检查你的源文件，自动生成一个合适的配置。
 
