@@ -1,6 +1,7 @@
 ---
 title: Node.js API
 layout: doc
+edit_link: https://github.com/eslint/eslint/edit/master/docs/developer-guide/nodejs-api.md
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -78,9 +79,11 @@ var Linter = require("eslint").Linter;
 var linter = new Linter();
 ```
 
-The most important method on `Linter` is `verify()`, which initiates linting of the given text. This method accepts four arguments:
+### Linter#verify
 
-`Linter` 最重要的方法为 `verify()`，它对给出的文本进行检测。这个方法接受4个参数：
+The most important method on `Linter` is `verify()`, which initiates linting of the given text. This method accepts three arguments:
+
+`Linter` 最重要的方法为 `verify()`，它对给出的文本进行检测。这个方法接受3个参数：
 
 * `code` - the source code to lint (a string or instance of `SourceCode`).
 * `code`- 要检测的源代码（字符串或者 `SourceCode` 的实例）。
@@ -88,16 +91,19 @@ The most important method on `Linter` is `verify()`, which initiates linting of 
 * `config` - 一个配置对象，被 CLIEngine 用来处理和规范，使用 eslintrc 文件和/或其它配置参数。
     * **Note**: If you want to lint text and have your configuration be read and processed, use CLIEngine's [`executeOnFiles`](#executeonfiles) or [`executeOnText`](#executeontext) instead.
     * **注意：**如果你想检测文本，读取和处理你的配置，使用 CLIEngine's [`executeOnFiles`](#executeonfiles) 或 [`executeOnText`](#executeontext)。
-* `optionsOrFilename` - (optional) Additional options for this run or a string representing the filename to associate with the code being linted.
-* `optionsOrFilename` - (可选的)运行的额外选项或与要检查的代码有关的文件名。
+* `options` - (optional) Additional options for this run.
     * `filename` - (optional) the filename to associate with the source code.
     * `filename` - (可选的)与源代码关联的文件名。
-    * `saveState` - (optional) see below. This will override any value passed as the fourth argument if an options object is used here instead of the filename.
-    * `saveState` - (可选的) 这里如果是个对象而不是文件名，它将覆盖第四个参数的值。
+    * `preprocess` - (optional) A function that accepts a string containing source text, and returns an array of strings containing blocks of code to lint. Also see: [Processors in Plugins](/docs/developer-guide/working-with-plugins#processors-in-plugins)
+    * `preprocess` - (可选的) 该方法接受一个包含源码文本的字符串，返回一个要检测的代码块的字符串数组。查看：[Processors in Plugins](/docs/developer-guide/working-with-plugins#processors-in-plugins)
+    * `postprocess` - (optional) A function that accepts an array of problem lists (one list of problems for each block of code from `preprocess`), and returns a one-dimensional array of problems containing problems for the original, unprocessed text. Also see: [Processors in Plugins](/docs/developer-guide/working-with-plugins#processors-in-plugins)
+    * `postprocess` - (可选的) A function that accepts an array of problem lists (one list of problems for each block of code from `preprocess`), and returns a one-dimensional array of problems containing problems for the original, unprocessed text. Also see: [Processors in Plugins](/docs/developer-guide/working-with-plugins#processors-in-plugins)
+    * `allowInlineConfig` - (optional) set to `false` to disable inline comments from changing eslint rules.
     * `allowInlineConfig` - (optional) set to `false` to disable inline comments from changing eslint rules.
     * `allowInLinrConfig` - (可选的)设置为 `false` 来从改变 eslint 规则禁用行内注释。
-* `saveState` - (optional) set to true to maintain the internal state of `linter` after linting (mostly used for testing purposes)
-* `saveState` - (可选的)设置为 true 来保持检测后 `linter` 的内部状态（主要用来测试）。
+    * `reportUnusedDisableDirectives` - (optional) when set to `true`, adds reported errors for unused `eslint-disable` directives when no problems would be reported in the disabled area anyway.
+
+If the third argument is a string, it is interpreted as the `filename`.
 
 You can call `verify()` like this:
 
@@ -199,7 +205,8 @@ console.log(code.text);     // "var foo = bar;"
 In this way, you can retrieve the text and AST used for the last run of `linter.verify()`.
 
 通过这种方式，你可以获取用作 `linter.verify()` 最终返回值的文本和 AST。
-### verifyAndFix()
+
+### Linter#verifyAndFix()
 
 This method is similar to `verify()` except that it also runs autofixing logic, similar to the `--fix` flag on the command line. The result object will contain the autofixed code, along with any remaining linting messages for the code that were not autofixed.
 
@@ -213,7 +220,7 @@ var messages = linter.verifyAndFix("var foo", {
     rules: {
         semi: 2
     }
-}, { filename: "foo.js" });
+});
 ```
 
 Output object from this method:
@@ -223,7 +230,7 @@ Output object from this method:
 ```js
 {
     fixed: true,
-    text: "var foo;",
+    output: "var foo;",
     messages: []
 }
 ```
@@ -234,10 +241,86 @@ The information available is:
 
 * `fixed` - True, if the code was fixed.
 * `fixed` - 如果代码已修复，则为 true。
-* `text` - Fixed code text (might be the same as input if no fixes were applied).
-* `text` - 修复的代码文本 (如果没有应用任何修复，该文本可能同输入时的一样).
+* `output` - Fixed code text (might be the same as input if no fixes were applied).
+* `output` - 修复的代码文本 (如果没有应用任何修复，该文本可能同输入时的一样).
 * `messages` - Collection of all messages for the given code (It has the same information as explained above under `verify` block).
 * `messages` - 给定代码的消息集合 (同上面的 `verify` 中介绍的一样).
+
+### Linter#defineRule
+
+Each `Linter` instance holds a map of rule names to loaded rule objects. By default, all ESLint core rules are loaded. If you want to use `Linter` with custom rules, you should use the `defineRule` method to register your rules by ID.
+
+```js
+const Linter = require("eslint").Linter;
+const linter = new Linter();
+
+linter.defineRule("my-custom-rule", {
+    // (an ESLint rule)
+
+    create(context) {
+        // ...
+    }
+});
+
+const results = linter.verify("// some source text", { rules: { "my-custom-rule": "error" } });
+```
+
+### Linter#defineRules
+
+This is a convenience method similar to `Linter#defineRule`, except that it allows you to define many rules at once using an object.
+
+这是一个类似于 `Linter#defineRule` 的便利方法，只不过它允许你使用一个对象定义多个规则。
+
+```js
+const Linter = require("eslint").Linter;
+const linter = new Linter();
+
+linter.defineRules({
+    "my-custom-rule": { /* an ESLint rule */ create() {} },
+    "another-custom-rule": { /* an ESLint rule */ create() {} }
+});
+
+const results = linter.verify("// some source text", {
+    rules: {
+        "my-custom-rule": "error",
+        "another-custom-rule": "warn"
+    }
+});
+```
+
+### Linter#getRules
+
+This method returns a map of all loaded rules.
+
+该方法返回所有的已加载的规则。
+
+```js
+const Linter = require("eslint").Linter;
+const linter = new Linter();
+
+linter.getRules();
+
+/*
+Map {
+  'accessor-pairs' => { meta: { docs: [Object], schema: [Array] }, create: [Function: create] },
+  'array-bracket-newline' => { meta: { docs: [Object], schema: [Array] }, create: [Function: create] },
+  ...
+}
+*/
+```
+
+### Linter#version
+
+Each instance of `Linter` has a `version` property containing the semantic version number of ESLint that the `Linter` instance is from.
+
+每个 `Linter` 的实例有一个 `version` 属性，包含了 `Linter` 实例的版本号。
+
+```js
+const Linter = require("eslint").Linter;
+const linter = new Linter();
+
+linter.version; // => '4.5.0'
+```
 
 ## linter
 
@@ -277,7 +360,7 @@ The `CLIEngine` is a constructor, and you can create a new instance by passing i
 
 `CLIEngine` 是一个构造器，你可以通过传递想用的选项创建一个实例。下面是可以的选项：
 
-* `allowInlineConfig` - Set to false to disable the use of configuration comments (such as `/*eslint-disable*/`). Corresponds to `--no-inline-config`.
+* `allowInlineConfig` - Set to `false` to disable the use of configuration comments (such as `/*eslint-disable*/`). Corresponds to `--no-inline-config`.
 * `allowInlineConfig` - 设置为 false 来禁止使用配置中的注释 (比如 `/*eslint-disable*/`)。对应 `--no-inline-config`。
 * `baseConfig` - Set to false to disable use of base config. Could be set to an object to override default base config as well.
 * `baseConfig` - 设置为 false 禁用基本配置。 也可以设置为一个对象来重写基本配置。
@@ -295,8 +378,8 @@ The `CLIEngine` is a constructor, and you can create a new instance by passing i
 * `envs` - 需要加载的环境的数组（默认为空数组）。对应于 `--env`。
 * `extensions` - An array of filename extensions that should be checked for code. The default is an array containing just `".js"`. Corresponds to `--ext`. It is only used in conjunction with directories, not with filenames or glob patterns.
 * `extensions`- 要检查的文件扩展名的数组。默认为仅包含 `".js"` 的数组。对应于 `--ext`。它只和目录配合使用，而不是与 文件名或 glob 模式配合使用。
-* `fix` - True indicates that fixes should be included with the output report, and that errors and warnings should not be listed if they can be fixed. However, the files on disk will not be changed. To persist changes to disk, call [`outputFixes()`](#outputfixes).
-* `fix` - True 表示修复应该包含在输出报告中，错误和警告如果可以修复，就不应该再列出。然而，磁盘上的文件不会被改变。调用[`outputFixes()`](#outputfixes)，来改变。
+* `fix` - This can be a boolean or a function which will be provided each linting message and should return a boolean. True indicates that fixes should be included with the output report, and that errors and warnings should not be listed if they can be fixed. However, the files on disk will not be changed. To persist changes to disk, call [`outputFixes()`](#outputfixes).
+* `fix` - 可以是个布尔类型的值，或者是返回布尔值的一个函数。True 表示修复应该包含在输出报告中，错误和警告如果可以修复，就不应该再列出。然而，磁盘上的文件不会被改变。调用[`outputFixes()`](#outputfixes)，来改变。
 * `globals` - An array of global variables to declare (default: empty array). Corresponds to `--global`.
 * `globals` - 要声明为全局变量的数组（默认为空数组）。对应于 `--global`。
 * `ignore` - False disables use of `.eslintignore`, `ignorePath` and `ignorePattern` (default: true). Corresponds to `--no-ignore`.
@@ -311,6 +394,8 @@ The `CLIEngine` is a constructor, and you can create a new instance by passing i
 * `parserOptions` - 一个包含解析器选项的对象 (默认: 空对象)。对应 `--parser-options`。
 * `plugins` - An array of plugins to load (default: empty array). Corresponds to `--plugin`.
 * `plugins` - 要加载的插件数组 (默认: 空数组)。对应 `--plugin`。
+* `reportUnusedDisableDirectives` - When set to `true`, adds reported errors for unused `eslint-disable` directives when no problems would be reported in the disabled area anyway (default: false). Corresponds to `--report-unused-disable-directives`.
+* `reportUnusedDisableDirectives` - When set to `true`, adds reported errors for unused `eslint-disable` directives when no problems would be reported in the disabled area anyway (default: false). Corresponds to `--report-unused-disable-directives`.
 * `rulePaths` - An array of directories to load custom rules from (default: empty array). Corresponds to `--rulesdir`.
 * `rulePaths` - 加载自定义规则的目录的数组。(默认：空数组)。对应于 `--rulesdir`。
 * `rules` - An object of rules to use (default: null). Corresponds to `--rule`.
@@ -767,6 +852,133 @@ var report = cli.executeOnFiles(["myfile.js", "lib/"]);
 
 // output fixes to disk
 CLIEngine.outputFixes(report);
+```
+
+### CLIEngine.version
+
+`CLIEngine` has a static `version` property containing the semantic version number of ESLint that it comes from.
+
+```js
+require("eslint").CLIEngine.version; // '4.5.0'
+```
+
+## RuleTester
+
+`eslint.RuleTester` is a utility to write tests for ESLint rules. It is used internally for the bundled rules that come with ESLint, and it can also be used by plugins.
+
+Example usage:
+
+```js
+"use strict";
+
+const rule = require("../../../lib/rules/my-rule");
+const RuleTester = require("eslint").RuleTester;
+
+const ruleTester = new RuleTester();
+
+ruleTester.run("my-rule", rule, {
+    valid: [
+        {
+            code: "var foo = true",
+            options: [{ allowFoo: true }]
+        }
+    ],
+
+    invalid: [
+        {
+            code: "var invalidVariable = true",
+            errors: [{ message: "Unexpected invalid variable." }]
+        },
+        {
+            code: "var invalidVariable = true",
+            errors: [{ message: /^Unexpected.+variable/ }]
+        }
+    ]
+});
+```
+
+The `RuleTester` constructor accepts an optional object argument, which can be used to specify defaults for your test cases. For example, if all of your test cases use ES2015, you can set it as a default:
+
+```js
+const ruleTester = new RuleTester({ parserOptions: { ecmaVersion: 2015 } });
+```
+
+The `RuleTester#run()` method is used to run the tests. It should be passed the following arguments:
+
+* The name of the rule (string)
+* The rule object itself (see ["working with rules"](./working-with-rules))
+* An object containing `valid` and `invalid` properties, each of which is an array containing test cases.
+
+A test case is an object with the following properties:
+
+* `code` (string, required): The source code that the rule should be run on
+* `options` (array, optional): The options passed to the rule. The rule severity should not be included in this list.
+* `filename` (string, optional): The filename for the given case (useful for rules that make assertions about filenames).
+
+In addition to the properties above, invalid test cases can also have the following properties:
+
+* `errors` (number or array, required): Asserts some properties of the errors that the rule is expected to produce when run on this code. If this is a number, asserts the number of errors produced. Otherwise, this should be a list of objects, each containing information about a single reported error. The following properties can be used for an error (all are optional):
+    * `message` (string/regexp): The message for the error
+    * `type` (string): The type of the reported AST node
+    * `line` (number): The 1-based line number of the reported location
+    * `column` (number): The 0-based column number of the reported location
+    * `endLine` (number): The 1-based line number of the end of the reported location
+    * `endColumn` (number): The 0-based column number of the end of the reported location
+
+    If a string is provided as an error instead of an object, the string is used to assert the `message` of the error.
+* `output` (string, optional): Asserts the output that will be produced when using this rule for a single pass of autofixing (e.g. with the `--fix` command line flag). If this is `null`, asserts that none of the reported problems suggest autofixes.
+
+Any additional properties of a test case will be passed directly to the linter as config options. For example, a test case can have a `parserOptions` property to configure parser behavior:
+
+```js
+{
+    code: "let foo;",
+    parserOptions: { ecmaVersion: 2015 }
+}
+```
+
+If a valid test case only uses the `code` property, it can optionally be provided as a string containing the code, rather than an object with a `code` key.
+
+### Customizing RuleTester
+
+`RuleTester` depends on two functions to run tests: `describe` and `it`. These functions can come from various places:
+
+1. If `RuleTester.describe` and `RuleTester.it` have been set to function values, `RuleTester` will use `RuleTester.describe` and `RuleTester.it` to run tests. You can use this to customize the behavior of `RuleTester` to match a test framework that you're using.
+1. Otherwise, if `describe` and `it` are present as globals, `RuleTester` will use `global.describe` and `global.it` to run tests. This allows `RuleTester` to work when using frameworks like [Mocha](https://mochajs.org/) without any additional configuration.
+1. Otherwise, `RuleTester#run` will simply execute all of the tests in sequence, and will throw an error if one of them fails. This means you can simply execute a test file that calls `RuleTester.run` using `node`, without needing a testing framework.
+
+`RuleTester#run` calls the `describe` function with two arguments: a string describing the rule, and a callback function. The callback calls the `it` function with a string describing the test case, and a test function. The test function will return successfully if the test passes, and throw an error if the test fails. (Note that this is the standard behavior for test suites when using frameworks like [Mocha](https://mochajs.org/); this information is only relevant if you plan to customize `RuleTester.it` and `RuleTester.describe`.)
+
+Example of customizing `RuleTester`:
+
+```js
+"use strict";
+
+const RuleTester = require("eslint").RuleTester;
+const test = require("my-test-runner");
+const myRule = require("../../../lib/rules/my-rule");
+
+RuleTester.describe = function(text, method) {
+    RuleTester.it.title = text;
+    return method.call(this);
+};
+
+RuleTester.it = function(text, method) {
+    test(RuleTester.it.title + ": " + text, method);
+};
+
+// then use RuleTester as documented
+
+const ruleTester = new RuleTester();
+
+ruleTester.run("my-rule", myRule, {
+    valid: [
+        // valid test cases
+    ],
+    invalid: [
+        // invalid test cases
+    ]
+})
 ```
 
 ## Deprecated APIs

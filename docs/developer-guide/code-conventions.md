@@ -1,6 +1,7 @@
 ---
 title: Code Conventions
 layout: doc
+edit_link: https://github.com/eslint/eslint/edit/master/docs/developer-guide/code-conventions.md
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -312,7 +313,7 @@ Make frequent use of comments to aid others in understanding your code. Use comm
 
 ### Single-Line Comments
 
-Single-line comments should be used to documentation one line of code or a group of related lines of code. A single-line comment may be used in three ways:
+Single-line comments should be used to document one line of code or a group of related lines of code. A single-line comment may be used in three ways:
 
 单行注释应该适用于文件的一行或一组多行间有联系的代码，单行注释使用于以下三个途径：
 
