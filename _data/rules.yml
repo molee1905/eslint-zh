@@ -706,7 +706,7 @@ categories:
     name: Stylistic Issues
     rules:
       - description: enforce linebreaks after opening and before closing array brackets
-        description_zh: enforce linebreaks after opening and before closing array brackets
+        description_zh: 强制在数组开括号后和闭括号前出现换行
         fixable: true
         name: array-bracket-newline
         recommended: false
@@ -738,7 +738,7 @@ categories:
         name: camelcase
         recommended: false
       - description: enforce or disallow capitalization of the first letter of a comment
-        description_zh: enforce or disallow capitalization of the first letter of a comment
+        description_zh: 强制或禁止对注释的第一个字母大写
         fixable: true
         name: capitalized-comments
         recommended: false
@@ -775,18 +775,14 @@ categories:
       - description: >-
           require or disallow spacing between function identifiers and their
           invocations
-        description_zh: >-
-          require or disallow spacing between function identifiers and their
-          invocations
+        description_zh: 要求或禁止在函数标识符和其调用之间有空格
         fixable: true
         name: func-call-spacing
         recommended: false
       - description: >-
           require function names to match the name of the variable or property
           to which they are assigned
-        description_zh: >-
-          require function names to match the name of the variable or property
-          to which they are assigned
+        description_zh: 要求函数名与赋值给它们的变量名或属性名相匹配
         fixable: false
         name: func-name-matching
         recommended: false
@@ -804,7 +800,7 @@ categories:
         name: func-style
         recommended: false
       - description: enforce consistent line breaks inside function parentheses
-        description_zh: enforce consistent line breaks inside function parentheses
+        description_zh: 强制在函数括号内使用一致的换行
         fixable: true
         name: function-paren-newline
         recommended: false
@@ -1005,7 +1001,7 @@ categories:
         name: no-restricted-syntax
         recommended: false
       - description: disallow all tabs
-        description_zh: disallow all tabs
+        description_zh: 禁用 tab
         fixable: false
         name: no-tabs
         recommended: false
