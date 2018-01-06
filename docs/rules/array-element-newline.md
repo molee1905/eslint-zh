@@ -40,7 +40,7 @@ Or an object option (Requires line breaks if any of properties is satisfied. Oth
 * `"multiline": <boolean>` requires line breaks if there are line breaks inside elements. If this is false, this condition is disabled.
 * `"multiline": <boolean>` 如果数组元素间有换行，则要求换行。如果为 false，该条件不生效。
 * `"minItems": <number>` requires line breaks if the number of elements is at least the given integer. If this is 0, this condition will act the same as the option `"always"`. If this is `null` (the default), this condition is disabled.
-* `"minItems": <number>` 如果数组元素的个数至少为给定的数字，则要求换行。如果为 0，则该条件将和选项 `"always"` 一样。如果为 `null` (默认)，该条件不生效。
+* `"minItems": <number>` 如果数组元素的个数大于等于给定的整数，则要求换行。如果为 0，则该条件将和选项 `"always"` 一样。如果为 `null` (默认)，该条件不生效。
 
 ### always
 

@@ -46,7 +46,17 @@ async function foo() {
   const x = await bar();
   return x;
 }
+
+async function foo() {
+  try {
+    return await bar();
+  } catch (error) {}
+}
 ```
+
+In the last example the `await` is necessary to be able to catch errors thrown from `bar()`.
+
+在最后一个例子中，`await` 是必须的，可以捕获从 `bar()` 抛出的错误。
 
 ## When Not To Use It
 

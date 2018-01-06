@@ -147,6 +147,11 @@ class A {
 }
 ```
 
+## Further Reading
+
+* [Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
+* [Static Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static)
+
 ## Version
 
 This rule was introduced in ESLint 3.4.0.

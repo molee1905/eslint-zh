@@ -13,13 +13,13 @@ ESLint 有一个让更新代码非常快速简单而且非常轻量级的开发�
 
 ## Step 1: Install Node.js
 
-Go to <http://nodejs.org/> to download and install the latest stable version for your operating system.
+Go to <https://nodejs.org/> to download and install the latest stable version for your operating system.
 
-到 <http://nodejs.org/> 为你的操作系统下载并安装最新的稳定版。
+到 <https://nodejs.org/> 为你的操作系统下载并安装最新的稳定版。
 
-Most of the installers come with [npm](http://npmjs.org/) already installed, but if for some reason it doesn't work on your system, you can install it manually using the instructions on the website.
+Most of the installers come with [npm](https://www.npmjs.com/) already installed, but if for some reason it doesn't work on your system, you can install it manually using the instructions on the site.
 
-大多数的安装都会自动安装 [npm](http://npmjs.org/)，但是由于某些原因它不能在你的系统中工作，你可以根据网站上的说明手动安装。
+大多数的安装都会自动安装 [npm](http://www.npmjs.com/)，但是由于某些原因它不能在你的系统中工作，你可以根据网站上的说明手动安装。
 
 ## Step 2: Fork and checkout your own ESLint repository
 

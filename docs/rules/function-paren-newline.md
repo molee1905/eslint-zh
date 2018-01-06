@@ -37,7 +37,7 @@ This rule has a single option, which can either be a string or an object.
 * `"consistent"` requires consistent usage of linebreaks for each pair of parentheses. It reports an error if one parenthesis in the pair has a linebreak inside it and the other parenthesis does not.
 * `"consistent"` 要求每个括号使用一致的换行。如果一个括号有换行，另一个括号没有换行，则报错。
 * `{ "minItems": value }` requires linebreaks inside function parentheses if the number of parameters/arguments is at least `value`. Otherwise, it disallows linebreaks.
-* `{ "minItems": value }` 只要参数的个数至少为指定的 `value`，则要求在函数括号内换行。否则，禁止换行。
+* `{ "minItems": value }` 只要参数的个数大于等于指定的 `value`，则要求在函数括号内换行。否则，禁止换行。
 
 Example configurations:
 

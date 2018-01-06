@@ -85,13 +85,13 @@ new Promise(function(resolve, reject) {
 
 ## Known Limitations
 
-Due to the limits of static analysis, this rule cannot guarantee that you will only reject Promises with `Error` objects. While the rule will report cases where it can guarantee that the rejection reason is clearly not an `Error`, it will not report cases where there is uncertainty about whether a given reason is an `Error`. For more information on this caveat, see the [similar limitations](no-throw-literal#known-limitations) in the `no-throw-literal` rule.
+Due to the limits of static analysis, this rule cannot guarantee that you will only reject Promises with `Error` objects. While the rule will report cases where it can guarantee that the rejection reason is clearly not an `Error`, it will not report cases where there is uncertainty about whether a given reason is an `Error`. For more information on this caveat, see the [similar limitations](/docs/rules/no-throw-literal) in the `no-throw-literal` rule.
 
-由于静态分析的限制，该规则不能保证你只使用 `Error` 对象作为 Promise 拒绝的原因。虽然该规则可以报告拒绝的原因明显不是一个 `Error`，但它不能报告那些不确定给定的原因是否是一个 `Error` 对象的情况。更多信息请查看 `no-throw-literal` 规则中的 [similar limitations](no-throw-literal#known-limitations)
+由于静态分析的限制，该规则不能保证你只使用 `Error` 对象作为 Promise 拒绝的原因。虽然该规则可以报告拒绝的原因明显不是一个 `Error`，但它不能报告那些不确定给定的原因是否是一个 `Error` 对象的情况。更多信息请查看 `no-throw-literal` 规则中的 [similar limitations](/docs/rules/no-throw-literal)
 
-To avoid conflicts between rules, this rule does not report non-error values used in `throw` statements in async functions, even though these lead to Promise rejections. To lint for these cases, use the [`no-throw-literal`](http://eslint.org/docs/rules/no-throw-literal) rule.
+To avoid conflicts between rules, this rule does not report non-error values used in `throw` statements in async functions, even though these lead to Promise rejections. To lint for these cases, use the [`no-throw-literal`](/docs/rules/no-throw-literal) rule.
 
-为了避免规则之间的冲突，该规则不会报告在异步函数的 `throw` 语句中的非 `Error` 值，即使这些值会导致 Promise 拒绝。检测这些情况，请使用 [`no-throw-literal`](http://eslint.org/docs/rules/no-throw-literal) 规则。
+为了避免规则之间的冲突，该规则不会报告在异步函数的 `throw` 语句中的非 `Error` 值，即使这些值会导致 Promise 拒绝。检测这些情况，请使用 [`no-throw-literal`](/docs/rules/no-throw-literal) 规则。
 
 ## When Not To Use It
 
@@ -101,7 +101,7 @@ If you're using custom non-error values as Promise rejection reasons, you can tu
 
 ## Further Reading
 
-* [`no-throw-literal`](http://eslint.org/docs/rules/no-throw-literal)
+* [`no-throw-literal`](https://eslint.org/docs/rules/no-throw-literal)
 * [Warning: a promise was rejected with a non-error](http://bluebirdjs.com/docs/warning-explanations.html#warning-a-promise-was-rejected-with-a-non-error)
 
 ## Version

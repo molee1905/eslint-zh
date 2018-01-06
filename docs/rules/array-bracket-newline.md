@@ -6,7 +6,7 @@ layout: doc
 
 # enforce line breaks after opening and before closing array brackets (array-bracket-newline)
 
-# 强制在数组开括号后和闭括号前出现换行 (array-bracket-newline)
+# 在数组开括号后和闭括号前强制换行 (array-bracket-newline)
 
 (fixable) The `--fix` option on the [command line](../user-guide/command-line-interface#fix) can automatically fix some of the problems reported by this rule.
 
@@ -28,10 +28,12 @@ This rule has either a string option:
 
 该规则有一个字符串选项：
 
-* `"always"` requires line breaks inside braces
-* `"always"` 要求括号内换行
-* `"never"` disallows line breaks inside braces
-* `"never"` 禁止括号内换行
+* `"always"` requires line breaks inside brackets
+* `"always"` 要求在括号之间换行
+* `"never"` disallows line breaks inside brackets
+* `"never"` 禁止在括号之间换行
+* `"consistent"` requires consistent usage of linebreaks for each pair of brackets. It reports an error if one bracket in the pair has a linebreak inside it and the other bracket does not.
+* `"consistent"` 对每个括号要求使用一致的换行符。如果一个括号有换行符，另一个没有，则会报错。
 
 Or an object option (Requires line breaks if any of properties is satisfied. Otherwise, disallows line breaks):
 
@@ -40,7 +42,7 @@ Or an object option (Requires line breaks if any of properties is satisfied. Oth
 * `"multiline": true` (default) requires line breaks if there are line breaks inside elements or between elements. If this is false, this condition is disabled.
 * `"multiline": true` (默认) 如果数组元素内或元素间有换行，则要求换行。如果为 false，该条件不生效。
 * `"minItems": null` (default) requires line breaks if the number of elements is at least the given integer. If this is 0, this condition will act the same as the option `"always"`. If this is `null` (the default), this condition is disabled.
-* `"minItems": null` (默认) 如果数组元素的个数至少为给定的数字，则要求换行。如果为 0，则该条件将和选项 `"always"` 一样。如果为 `null` (默认)，该条件不生效。
+* `"minItems": null` (默认) 如果数组元素的个数大于等于给定的整数，则要求换行。如果为 0，则等同于 `"always"` 选项。如果为 `null` (默认)，该条件不生效。
 
 ### always
 
@@ -130,6 +132,53 @@ var d = [1,
 var e = [function foo() {
     dosomething();
 }];
+```
+
+### consistent
+
+Examples of **incorrect** code for this rule with the `"consistent"` option:
+
+选项 `"consistent"` 的 **错误** 代码示例：
+
+```js
+/*eslint array-bracket-newline: ["error", "consistent"]*/
+
+var a = [1
+];
+var b = [
+    1];
+var c = [function foo() {
+    dosomething();
+}
+]
+var d = [
+    function foo() {
+        dosomething();
+    }]
+```
+
+Examples of **correct** code for this rule with the `"consistent"` option:
+
+选项 `"consistent"` 的 **正确** 代码示例：
+
+```js
+/*eslint array-bracket-newline: ["error", "consistent"]*/
+
+var a = [];
+var b = [
+];
+var c = [1];
+var d = [
+    1
+];
+var e = [function foo() {
+    dosomething();
+}];
+var f = [
+    function foo() {
+        dosomething();
+    }
+];
 ```
 
 ### multiline
@@ -272,7 +321,7 @@ var e = [
 
 If you don't want to enforce line breaks after opening and before closing array brackets, don't enable this rule.
 
-如果你不想强制在数组开括号后和闭括号前出现换行，不要启用此规则。
+如果你不想在数组开括号后和闭括号前强制换行，不要启用此规则。
 
 ## Compatibility
 
