@@ -1,0 +1,16 @@
+---
+title: Translators
+layout: contact
+---
+<ul>
+{% for member in site.data.members %}
+    <li>
+    <a href="https://github.com/{{ member.github }}">
+        <figure>
+            <figcaption>{{ member.name }}</figcaption>
+            <img src="{{ member.avatar }}" width="150" height="150" />
+        </figure>
+    </a>
+    </li>
+{% endfor %}
+</ul>
