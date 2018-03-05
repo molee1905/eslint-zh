@@ -2,15 +2,37 @@
 title: Translators
 layout: contact
 ---
-<ul>
-{% for member in site.data.members %}
-    <li>
-    <a href="https://github.com/{{ member.github }}">
-        <figure>
-            <figcaption>{{ member.name }}</figcaption>
-            <img src="{{ member.avatar }}" width="150" height="150" />
-        </figure>
-    </a>
-    </li>
-{% endfor %}
-</ul>
+
+<ul class="member-list"></ul>
+
+<script>
+$(document).ready(function() {
+    function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+        return array;
+    }
+
+    var members = {{site.data.members | jsonify}};
+
+    members = members.slice(0, 1).concat(shuffleArray(members.slice(1)));
+
+    var fragment = '';
+    for (var i = 0, l = members.length; i<l; i++) {
+        fragment += '<li class="member-item">' +
+            '<a class="member-wrapper'+ (members[i].isOnline ? ' online': '') +'" href="https://github.com/'+ members[i].github+'">' +
+                '<span class="member-avatar" style="background-image:url(' + members[i].avatar + ');"></span>' +
+                '<div class="member-name">' + members[i].name + '</div>' +
+            '</a>' +
+        '</li>';
+    }
+
+    if (fragment) {
+        $('.member-list').html(fragment);
+    }
+});
+</script>
