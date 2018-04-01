@@ -1,6 +1,6 @@
 ---
 title: Documentation
-layout: doc
+layout: doc_en
 ---
 # ESLint Formatters
 
