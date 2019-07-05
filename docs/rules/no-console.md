@@ -1,16 +1,14 @@
 ---
 title: no-console - Rules
 layout: doc
+edit_link: https://github.com/eslint/eslint/edit/master/docs/rules/no-console.md
+rule_type: suggestion
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # disallow the use of `console` (no-console)
 
 # 禁用 `console` (no-console)
-
-(recommended) The `"extends": "eslint:recommended"` property in a configuration file enables this rule.
-
-(recommended) 配置文件中的 `"extends": "eslint:recommended"` 属性启用了此规则。
 
 In JavaScript that is designed to be executed in the browser, it's considered a best practice to avoid using methods on `console`. Such messages are considered to be for debugging purposes and therefore not suitable to ship to the client. In general, calls using `console` should be stripped before being pushed to production.
 
@@ -113,10 +111,11 @@ However, you might not want to manually add `eslint-disable-next-line` or `eslin
 ```json
 {
     "rules": {
+        "no-console": "off",
         "no-restricted-syntax": [
             "error",
             {
-                "selector": "CallExpression[callee.object.name='console'][callee.property.name=/^(log|warn|error|info|trace)$/]",
+                "selector": "CallExpression[callee.object.name='console'][callee.property.name!=/^(log|warn|error|info|trace)$/]",
                 "message": "Unexpected property on console object was called"
             }
         ]

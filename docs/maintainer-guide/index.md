@@ -2,6 +2,7 @@
 title: Maintainer Guide
 layout: doc_en
 edit_link: https://github.com/eslint/eslint/edit/master/docs/maintainer-guide/README.md
+
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -9,18 +10,22 @@ edit_link: https://github.com/eslint/eslint/edit/master/docs/maintainer-guide/RE
 
 This guide is intended for those who work as part of the ESLint project team.
 
-## [Managing Issues](issues.html)
+## [Managing Issues](issues)
 
 Describes how to deal with issues when they're opened, when interacting with users, and how to close them effectively.
 
-## [Reviewing Pull Requests](pullrequests.html)
+## [Reviewing Pull Requests](pullrequests)
 
 Describes how to review incoming pull requests.
 
-## [Managing Releases](releases.html)
+## [Managing Releases](releases)
 
 Describes how to do an ESLint project release.
 
-## [Governance](governance.html)
+## [Governance](governance)
 
 Describes the governance policy for ESLint, including the rights and privileges of individuals inside the project.
+
+## [Working Groups](working-groups)
+
+Describes how working groups are created and how they function within the ESLint project.

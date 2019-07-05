@@ -1,6 +1,8 @@
 ---
 title: Working with Rules
 layout: doc
+edit_link: https://github.com/eslint/eslint/edit/master/docs/developer-guide/working-with-rules.md
+
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -18,7 +20,7 @@ ESLint 中的每个规则都有三个文件，以它的 ID 命名（例如，`no
 * `lib/rules` 目录：源码文件 (例如，`no-extra-semi.js`)
 * in the `tests/lib/rules` directory: a test file (for example, `no-extra-semi.js`)
 * `tests/lib/rules` 目录：测试文件 (例如，`no-extra-semi.js`)
-* in the `docs/rules` directory: a Markdown documentation file (for example, `no-extra-semi)
+* in the `docs/rules` directory: a Markdown documentation file (for example, `no-extra-semi`)
 
 **Important:** If you submit a **core** rule to the ESLint repository, you **must** follow some conventions explained below.
 
@@ -42,6 +44,8 @@ Here is the basic format of the source file for a rule:
 
 module.exports = {
     meta: {
+        type: "suggestion",
+
         docs: {
             description: "disallow unnecessary semicolons",
             category: "Possible Errors",
@@ -69,33 +73,42 @@ The source file for a rule exports an object with the following properties.
 
 `meta`（对象）包含规则的元数据：
 
+* `type` (string) indicates the type of rule, which is one of `"problem"`, `"suggestion"`, or `"layout"`:
+* `type` (string) 指示规则的类型，值为 `"problem"`、`"suggestion"` 或 `"layout"`：
+    * `"problem"` means the rule is identifying code that either will cause an error or may cause a confusing behavior. Developers should consider this a high priority to resolve.
+    * `"problem"` 指的是该规则识别的代码要么会导致错误，要么可能会导致令人困惑的行为。开发人员应该优先考虑解决这个问题。
+    * `"suggestion"` means the rule is identifying something that could be done in a better way but no errors will occur if the code isn't changed.
+    * `"suggestion"` 意味着规则确定了一些可以用更好的方法来完成的事情，但是如果代码没有更改，就不会发生错误。
+    * `"layout"` means the rule cares primarily about whitespace, semicolons, commas, and parentheses, all the parts of the program that determine how the code looks rather than how it executes. These rules work on parts of the code that aren't specified in the AST.
+    * `"layout"` 意味着规则主要关心空格、分号、逗号和括号，以及程序中决定代码外观而不是执行方式的所有部分。这些规则适用于AST中没有指定的代码部分。
 * `docs` (object) is required for core rules of ESLint:
 * `docs` (object) 对 ESLint 核心规则来说是必需的:
-> - `description` (string) provides the short description of the rule in the [rules index](../rules/)
-> - `description` (字符串) 提供规则的简短描述在[规则首页](../rules/)展示
-> - `category` (string) specifies the heading under which the rule is listed in the [rules index](../rules/)
-> - `category` (string) 指定规则在[规则首页](../rules/)处于的分类
-> - `recommended` (boolean) is whether the `"extends": "eslint:recommended"` property in a [configuration file](../user-guide/configuring) enables the rule
-> - `recommended` (boolean) [配置文件](../user-guide/configuring)中的 `"extends": "eslint:recommended"`属性是否启用该规则
-> - `url` (string) specifies the URL at which the full documentation can be accessed
+    * `description` (string) provides the short description of the rule in the [rules index](../rules/)
+    * `description` (字符串) 提供规则的简短描述在[规则首页](../rules/)展示
+    * `category` (string) specifies the heading under which the rule is listed in the [rules index](../rules/)
+    * `category` (string) 指定规则在[规则首页](../rules/)处于的分类
+    * `recommended` (boolean) is whether the `"extends": "eslint:recommended"` property in a [configuration file](../user-guide/configuring#extending-configuration-files) enables the rule
+    * `recommended` (boolean) [配置文件](../user-guide/configuring#extending-configuration-files)中的 `"extends": "eslint:recommended"`属性是否启用该规则
+    * `url` (string) specifies the URL at which the full documentation can be accessed
+    * `url` (string) 指定可以访问完整文档的 url。
     
-    In a custom rule or plugin, you can omit `docs` or include any properties that you need in it.    
+    In a custom rule or plugin, you can omit `docs` or include any properties that you need in it.
 
     在自定义的规则或插件中，你可以省略 `docs` 或包含你需要的任何属性。
 
-* `fixable` (string) is either `"code"` or `"whitespace"` if the `--fix` option on the [command line](../user-guide/command-line-interface) automatically fixes problems reported by the rule
+* `fixable` (string) is either `"code"` or `"whitespace"` if the `--fix` option on the [command line](../user-guide/command-line-interface#fix) automatically fixes problems reported by the rule
 
-* `fixable` (string) 标示[命令行](../user-guide/command-line-interface) 选项 `--fix` 自动修复规则报告的问题。
-	
-**Important:** Without the `fixable` property, ESLint does not [apply fixes](#applying-fixes) even if the rule implements `fix` functions. Omit the `fixable` property if the rule is not fixable.
+* `fixable` (string) 标示[命令行](../user-guide/command-line-interface#fix) 选项 `--fix` 自动修复规则报告的问题。
 
-**重要：**如果没有 `fixable` 属性，即使规则实现了 `fix` 功能，ESLint 也不会[进行修复](#applying-fixes)。如果规则不是可修复的，就省略 `fixable` 属性。
+    **Important:** Without the `fixable` property, ESLint does not [apply fixes](#applying-fixes) even if the rule implements `fix` functions. Omit the `fixable` property if the rule is not fixable.
+    **重要：**如果没有 `fixable` 属性，即使规则实现了 `fix` 功能，ESLint 也不会[进行修复](#applying-fixes)。如果规则不是可修复的，就省略 `fixable` 属性。
 
-* `schema` (array) specifies the [options](#options-schemas) so ESLint can prevent invalid [rule configurations](../user-guide/configuring)
-* `schema` (array) 指定该[选项](#options-schemas) 这样的 ESLint 可以避免无效的[规则配置](../user-guide/configuring#configuring-rules)
-
+* `schema` (array) specifies the [options](#options-schemas) so ESLint can prevent invalid [rule configurations](../user-guide/configuring#configuring-rules)
+* `schema` (array) 指定该[选项](#options-schemas) 这样的 ESLint 可以避免无效的[规则配置](../user-guide/configuring#configuring-rules#configuring-rules)
 * `deprecated` (boolean) indicates whether the rule has been deprecated.  You may omit the `deprecated` property if the rule has not been deprecated.
 * `deprecated` (boolean) 表明规则是已被弃用。如果规则尚未被弃用，你可以省略 `deprecated` 属性。
+* `replacedBy` (array) in the case of a deprecated rule, specifies replacement rule(s)
+* `replacedBy` (array) 在不支持规则的情况下，指定替换的规则
 
 `create` (function) returns an object with methods that ESLint calls to "visit" nodes while traversing the abstract syntax tree (AST as defined by [ESTree](https://github.com/estree/estree)) of JavaScript code:
 
@@ -149,37 +162,92 @@ The `context` object contains additional functionality that is helpful for rules
 
 `context` 对象包含额外的功能，有利于规则完成他们的工作。顾名思义，`context`对象包含与规则上下文相关的信息。`context` 对象具有以下属性：
 
-* `parserOptions` - the parser options configured for this run (more details [here](../user-guide/configuring)).
-* `parserOptions` - 解析器选项 (more details [here](../user-guide/configuring#specifying-parser-options)).
+* `parserOptions` - the parser options configured for this run (more details [here](../user-guide/configuring#specifying-parser-options)).
+* `parserOptions` - 解析器选项 (more details [here](../user-guide/configuring#specifying-parser-options#specifying-parser-options)).
 * `id` - the rule ID.
-* `options` - an array of the [configured options](/docs/user-guide/configuring) for this rule. This array does not include the rule severity. For more information, see [here](#contextoptions).
-* `settings` - the [shared settings](/docs/user-guide/configuring) from configuration.
+* `id` - 规则 ID。
+* `options` - an array of the [configured options](/docs/user-guide/configuring#configuring-rules) for this rule. This array does not include the rule severity. For more information, see [here](#contextoptions).
+* `options` - 此规则的 [已配置的选项](/docs/user-guide/configuring#configuring-rules) 数组。此数组不包含规则严重性。有关更多信息，请参见[此处](#contextoptions)。
+* `settings` - the [shared settings](/docs/user-guide/configuring#adding-shared-settings) from configuration.
+* `settings` - 配置中的[共享的设置](/docs/user-guide/configuring#adding-shared-settings)。
 * `parserPath` - the name of the `parser` from configuration.
+* `parserPath` - 配置中的 `parser` 的名称。
 * `parserServices` - an object containing parser-provided services for rules. The default parser does not provide any services. However, if a rule is intended to be used with a custom parser, it could use `parserServices` to access anything provided by that parser. (For example, a TypeScript parser could provide the ability to get the computed type of a given node.)
+* `parserServices` - 包含由解析器为规则提供的服务的对象。默认解析器不提供任何服务。然而，如果规则打算与自定义解析器一起使用，则可以使用 `parserServices` 访问该解析器提供的任何内容。(例如，TypeScript 解析器可以提供获取给定节点的计算类型的能力。)。
 
 Additionally, the `context` object has the following methods:
 
+此外， `context` 对象有以下方法：
+
 * `getAncestors()` - returns an array of the ancestors of the currently-traversed node, starting at the root of the AST and continuing through the direct parent of the current node. This array does not include the currently-traversed node itself.
-* `getDeclaredVariables(node)` - returns a list of [variables](./scope-manager-interface) declared by the given node. This information can be used to track references to variables.
-> - If the node is a `VariableDeclaration`, all variables declared in the declaration are returned.
-> - If the node is a `VariableDeclarator`, all variables declared in the declarator are returned.
-> - If the node is a `FunctionDeclaration` or `FunctionExpression`, the variable for the function name is returned, in addition to variables for the function parameters.
-> - If the node is an `ArrowFunctionExpression`, variables for the parameters are returned.
-> - If the node is a `ClassDeclaration` or a `ClassExpression`, the variable for the class name is returned.
-> - If the node is a `CatchClause`, the variable for the exception is returned.
-> - If the node is an `ImportDeclaration`, variables for all of its specifiers are returned.
-> - If the node is an `ImportSpecifier`, `ImportDefaultSpecifier`, or `ImportNamespaceSpecifier`, the declared variable is returned.
-> - Otherwise, if the node does not declare any variables, an empty array is returned.
+* `getAncestors()` - 返回当前遍历节点的祖先数组，从 AST 的根节点开始，一直到当前节点的直接父节点。这个数组不包括当前遍历的节点本身。
+* `getDeclaredVariables(node)` - returns a list of [variables](./scope-manager-interface#variable-interface) declared by the given node. This information can be used to track references to variables.
+* `getDeclaredVariables(node)` - 返回由给定节点声明的[变量](.、scope-manager-interface#variable-interface) 列表。此信息可用于跟踪对变量的引用。
+    * If the node is a `VariableDeclaration`, all variables declared in the declaration are returned.
+    * 如果节点是 `VariableDeclaration`，则返回声明中声明的所有变量。
+    * If the node is a `VariableDeclarator`, all variables declared in the declarator are returned.
+    * 如果节点是一个 `VariableDeclarator`，则返回 declarator 中声明的所有变量。
+    * If the node is a `FunctionDeclaration` or `FunctionExpression`, the variable for the function name is returned, in addition to variables for the function parameters.
+    * 如果节点是 `FunctionDeclaration` 或 `FunctionExpression`，除了函数参数的变量外，还返回函数名的变量。
+    * If the node is an `ArrowFunctionExpression`, variables for the parameters are returned.
+    * 如果节点是一个 `ArrowFunctionExpression`，则返回参数的变量。
+    * If the node is a `ClassDeclaration` or a `ClassExpression`, the variable for the class name is returned.
+    * 如果节点是 `ClassDeclaration` 或 `ClassExpression`，则返回类名的变量。
+    * If the node is a `CatchClause`, the variable for the exception is returned.
+    * 如果节点是一个 `CatchClause` 子句，则返回异常的变量。
+    * If the node is an `ImportDeclaration`, variables for all of its specifiers are returned.
+    * 如果节点是 `ImportDeclaration`，则返回其所有说明符的变量。
+    * If the node is an `ImportSpecifier`, `ImportDefaultSpecifier`, or `ImportNamespaceSpecifier`, the declared variable is returned.
+    * 如果节点是 `ImportSpecifier`，`ImportDefaultSpecifier` 或 `ImportNamespaceSpecifier`，则返回声明的变量。
+    * Otherwise, if the node does not declare any variables, an empty array is returned.
+    * 否则，如果节点没有声明任何变量，则返回一个空数组。
 
 * `getFilename()` - returns the filename associated with the source.
-* `getScope()` - returns the [scope](./scope-manager-interface) of the currently-traversed node. This information can be used track references to variables.
+* `getFilename()` - 返回与源文件关联的文件名。
+* `getScope()` - returns the [scope](./scope-manager-interface#scope-interface) of the currently-traversed node. This information can be used track references to variables.
+* `getScope()` - 返回当前遍历节点的 [scope](./scope-manager-interface#scope-interface)。此信息可用于跟踪对变量的引用。
 * `getSourceCode()` - returns a [`SourceCode`](#contextgetsourcecode) object that you can use to work with the source that was passed to ESLint.
+* `getSourceCode()` - 返回一个[`SourceCode`](#contextgetsourcecode)对象，你可以使用该对象处理传递给 ESLint 的源代码。
 * `markVariableAsUsed(name)` - marks a variable with the given name in the current scope as used. This affects the [no-unused-vars](../rules/no-unused-vars) rule. Returns `true` if a variable with the given name was found and marked as used, otherwise `false`.
+* `markVariableAsUsed(name)` - 在当前作用域内用给定的名称标记一个变量。这将影响 [no-unused-vars](../rules/no-unused-vars)规则。如果找到一个具有给定名称的变量并将其标记为已使用，则返回 `true`，否则返回 `false`。
 * `report(descriptor)` - reports a problem in the code (see the [dedicated section](#contextreport)).
+* `report(descriptor)` - 报告问题的代码 (参见 [dedicated section](#contextreport))。
 
 **Note:** Earlier versions of ESLint supported additional methods on the `context` object. Those methods were removed in the new format and should not be relied upon.
 
 **注意：**ESLint 的早期版本支持 `context` 对象的额外的方法。这些方法在新的格式中已被移除，不应该再使用。
+
+### context.getScope()
+
+This method returns the scope which has the following types:
+
+该方法返回的作用域具有以下类型：
+
+| AST Node Type             | Scope Type |
+|:--------------------------|:-----------|
+| `Program`                 | `global`   |
+| `FunctionDeclaration`     | `function` |
+| `FunctionExpression`      | `function` |
+| `ArrowFunctionExpression` | `function` |
+| `ClassDeclaration`        | `class`    |
+| `ClassExpression`         | `class`    |
+| `BlockStatement` ※1      | `block`    |
+| `SwitchStatement` ※1     | `switch`   |
+| `ForStatement` ※2        | `for`      |
+| `ForInStatement` ※2      | `for`      |
+| `ForOfStatement` ※2      | `for`      |
+| `WithStatement`           | `with`     |
+| `CatchClause`             | `catch`    |
+| others                    | ※3        |
+
+**※1** Only if the configured parser provided the block-scope feature. The default parser provides the block-scope feature if `parserOptions.ecmaVersion` is not less than `6`.<br>
+**※2** Only if the `for` statement defines the iteration variable as a block-scoped variable (E.g., `for (let i = 0;;) {}`).<br>
+**※3** The scope of the closest ancestor node which has own scope. If the closest ancestor node has multiple scopes then it chooses the innermost scope (E.g., the `Program` node has a `global` scope and a `module` scope if `Program#sourceType` is `"module"`. The innermost scope is the `module` scope.).<br>
+
+
+**※1** 仅当配置的解析器提供块作用域特性时才使用。默认的解析器提供块范围特性，如果`parserOptions.ecmaVersion`不小于 `6` 。<br>
+**※2** 只有当 `for` 语句将迭代变量定义为块作用域的变量时 (例如，`for (let i = 0;;) {}`)。<br>
+**※3** 具有自己作用域的最近祖先节点的作用域。如果最近的祖先节点有多个作用域，那么它选择最内部的作用域（例如，如果`Program#sourceType` 是 `"module"`，则 `Program` 节点有一个 `global` 作用域和一个 `module` 作用域。最内层的作用域是 `"module"` 作用域。）。
 
 ### context.report()
 
@@ -259,7 +327,11 @@ The node contains all of the information necessary to figure out the line and co
 
 Instead of typing out messages in both the `context.report()` call and your tests, you can use `messageId`s instead.
 
+你可以使用 `messageId`s 来代替在 `context.report()` 调用和测试中键入消息。
+
 This allows you to avoid retyping error messages. It also prevents errors reported in different sections of your rule from having out-of-date messages.
+
+这允许你避免重新键入错误消息。它还可以防止在规则的不同部分中报告的错误出现过期消息。
 
 ```js
 {% raw %}
@@ -299,16 +371,12 @@ var RuleTester = require("eslint").RuleTester;
 var ruleTester = new RuleTester();
 ruleTester.run("my-rule", rule, {
     valid: ["bar", "baz"],
-
     invalid: [
         {
             code: "foo",
             errors: [
                 {
-                    messageId: "avoidName",
-                    data: {
-                        name: "foo"
-                    }
+                    messageId: "avoidName"
                 }
             ]
         }
@@ -407,6 +475,7 @@ Best practices for fixes:
 
         ({ "foo": 1 })
         ```
+
     * This fixer can just select a quote type arbitrarily. If it guesses wrong, the resulting code will be automatically reported and fixed by the [`quotes`](/docs/rules/quotes) rule.
     * 修复程序将可以随意选择一种引号类型。如果猜错了，[`quotes`](/docs/rules/quotes) 规则将会自动报告和修复。
 
@@ -521,26 +590,34 @@ describe for parameters above:
 
 参数描述：
 
-> `skipOptions` is an object which has 3 properties; `skip`, `includeComments`, and `filter`. Default is `{skip: 0, includeComments: false, filter: null}`.
-> `skipOptions` 是个对象，包含三个属性；`skip`、`includeComments` 和 `filter`。默认是 `{skip: 0, includeComments: false, filter: null}`。
-> - `skip` is a positive integer, the number of skipping tokens. If `filter` option is given at the same time, it doesn't count filtered tokens as skipped.
-> - `skip` 是个正整数，表示要跳过的 token 的数量。如果同时给出了 `filter` 选项，过滤掉的 token 不计入此值。
-> - `includeComments` is a boolean value, the flag to include comment tokens into the result.
-> - `includeComments` 是个布尔值，标记是否把注释 token 包含进返回结果中。
-> - `filter` is a function which gets a token as the first argument, if the function returns `false` then the result excludes the token.
-> - `filter` 是个函数，用一个 token 作为第一个参数，如果该函数返回 `false`，那么返回的结果将不包含那个 token。
-> `countOptions` is an object which has 3 properties; `count`, `includeComments`, and `filter`. Default is `{count: 0, includeComments: false, filter: null}`.
-> `countOptions` 是个对象包含三个属性；`count`、`includeComments` 和 `filter`。默认为 `{count: 0, includeComments: false, filter: null}`。
-> - `count` is a positive integer, the maximum number of returning tokens.
-> - `count` 是个正整数，返回的 token 的最大数量。
-> - `includeComments` is a boolean value, the flag to include comment tokens into the result.
-> - `includeComments` 是个布尔值，标记是否把注释 token 包含进返回结果中。
-> - `filter` is a function which gets a token as the first argument, if the function returns `false` then the result excludes the token.
-> - `filter` 是个函数，用一个 token 作为第一个参数，如果该函数返回 `false`，那么返回的结果将不包含那个 token。
-> `rangeOptions` is an object which has 1 property: `includeComments`.
-> `rangeOptions` 是个对象，包含一个属性: `includeComments`。
-> - `includeComments` is a boolean value, the flag to include comment tokens into the result.
-> - `includeComments` 是个布尔值，标记是否把注释 token 包含进返回结果中。
+`skipOptions` is an object which has 3 properties; `skip`, `includeComments`, and `filter`. Default is `{skip: 0, includeComments: false, filter: null}`.
+
+`skipOptions` 是个对象，包含三个属性；`skip`、`includeComments` 和 `filter`。默认是 `{skip: 0, includeComments: false, filter: null}`。
+
+* `skip` is a positive integer, the number of skipping tokens. If `filter` option is given at the same time, it doesn't count filtered tokens as skipped.
+* `skip` 是个正整数，表示要跳过的 token 的数量。如果同时给出了 `filter` 选项，过滤掉的 token 不计入此值。
+* `includeComments` is a boolean value, the flag to include comment tokens into the result.
+* `includeComments` 是个布尔值，标记是否把注释 token 包含进返回结果中。
+* `filter` is a function which gets a token as the first argument, if the function returns `false` then the result excludes the token.
+* `filter` 是个函数，用一个 token 作为第一个参数，如果该函数返回 `false`，那么返回的结果将不包含那个 token。
+
+`countOptions` is an object which has 3 properties; `count`, `includeComments`, and `filter`. Default is `{count: 0, includeComments: false, filter: null}`.
+
+`countOptions` 是个对象包含三个属性；`count`、`includeComments` 和 `filter`。默认为 `{count: 0, includeComments: false, filter: null}`。
+
+* `count` is a positive integer, the maximum number of returning tokens.
+* `count` 是个正整数，返回的 token 的最大数量。
+* `includeComments` is a boolean value, the flag to include comment tokens into the result.
+* `includeComments` 是个布尔值，标记是否把注释 token 包含进返回结果中。
+* `filter` is a function which gets a token as the first argument, if the function returns `false` then the result excludes the token.
+* `filter` 是个函数，用一个 token 作为第一个参数，如果该函数返回 `false`，那么返回的结果将不包含那个 token。
+
+`rangeOptions` is an object which has 1 property: `includeComments`.
+
+`rangeOptions` 是个对象，包含一个属性: `includeComments`。
+
+* `includeComments` is a boolean value, the flag to include comment tokens into the result.
+* `includeComments` 是个布尔值，标记是否把注释 token 包含进返回结果中。
 
 There are also some properties you can access:
 
@@ -552,7 +629,7 @@ There are also some properties you can access:
 * `text` - 被检查的代码全文，Unicode BOM 已经从该文本中剥离。
 * `ast` - the `Program` node of the AST for the code being linted.
 * `ast` - AST 的 `Program` 节点，用于代码检查
-* `scopeManager` - the [ScopeManager](./scope-manager-interface) object of the code.
+* `scopeManager` - the [ScopeManager](./scope-manager-interface#scopemanager-interface) object of the code.
 * `visitorKeys` - the visitor keys to traverse this AST.
 * `lines` - an array of lines, split according to the specification's definition of line breaks.
 * `lines` - 一个包含所有行的数组，是根据规范中的换行符的定义划分的。
@@ -605,7 +682,7 @@ module.exports = {
                 },
                 "additionalProperties": false
             }
-        ];
+        ]
     },
 };
 ```
@@ -614,12 +691,13 @@ In the preceding example, the error level is assumed to be the first argument. I
 
 在之前的例子中，错误级别被假定为第一个参数。后面跟着第一个可选参数，是个字符串，可以是`"always"` 或 `"never"`。最后的可选参数是个对象，可以有一个布尔类型的属性，名为`exceptRange`。
 
-To learn more about JSON Schema, we recommend looking at some [examples](http://json-schema.org/examples.html) to start, and also reading [Understanding JSON Schema](http://spacetelescope.github.io/understanding-json-schema/) (a free ebook).
+To learn more about JSON Schema, we recommend looking at some examples in [website](http://json-schema.org/learn/) to start, and also reading [Understanding JSON Schema](http://spacetelescope.github.io/understanding-json-schema/) (a free ebook).
 
-了解更多 JSON 模式，我们建议从这些[示例](http://json-schema.org/examples.html)开始，也阅读一下[Understanding JSON Schema](http://spacetelescope.github.io/understanding-json-schema/)(一个免费的电子书)。
+了解更多 JSON 模式，我们建议从[网站](http://json-schema.org/learn/)中的一些示例开始，并阅读[Understanding JSON Schema](http://spacetelescope.github.io/understanding-json-schema/)(一个免费的电子书)。
 
 **Note:** Currently you need to use full JSON Schema object rather than array in case your schema has references ($ref), because in case of array format ESLint transforms this array into a single schema without updating references that makes them incorrect (they are ignored).
 
+**注意：**目前，如果你的模式有引用 ($ref)，你需要使用完整的 JSON Schema 对象而不是数组，因为在数组格式的情况下，ESLint 将该数组转换为单个模式，而不更新其引用，导致错误(它们将被忽略)。
 
 ### Getting the Source
 
@@ -695,7 +773,7 @@ ESLint 遍历 AST 时，会分析代码路径。你也可以使用与代码路�
 
 Each bundled rule for ESLint core must have a set of unit tests submitted with it to be accepted. The test file is named the same as the source file but lives in `tests/lib/`. For example, if the rule source file is `lib/rules/foo.js` then the test file should be `tests/lib/rules/foo.js`.
 
-ESLint provides the [`RuleTester`](/docs/developer-guide/nodejs-api) utility to make it easy to write tests for rules.
+ESLint provides the [`RuleTester`](/docs/developer-guide/nodejs-api#ruletester) utility to make it easy to write tests for rules.
 
 ## Performance Testing
 
@@ -706,6 +784,8 @@ To keep the linting process efficient and unobtrusive, it is useful to verify th
 ### Overall Performance
 
 When developing in the ESLint core repository, the `npm run perf` command gives a high-level overview of ESLint running time with all core rules enabled.
+
+在 ESLint 核心库中进行开发时，`npm run perf` 命令提供了启用所有核心规则的 ESLint 运行时间的高级概览。
 
 ```bash
 $ git checkout master
@@ -776,8 +856,6 @@ ESLint 的规则命名约定相当简单：
 * 如果你的规则是禁止什么，加前缀 `no-`，比如 `no-eval` 禁用 `eval()`，`no-debugger`禁用`debugger`
 * If your rule is enforcing the inclusion of something, use a short name without a special prefix.
 * 如果你规则是强制包含什么，使用一个简短的名称，不带特殊的前缀。
-* Keep your rule names as short as possible, use abbreviations where appropriate, and no more than four words.
-* 保持你的规则名尽可能得简短，在适当的地方使用缩写，不要超过四个单词。
 * Use dashes between words.
 * 在单词之间使用连字符
 

@@ -1,6 +1,6 @@
 "use strict";
 
-define(["react", "jsx!editor", "jsx!messages", "jsx!fixedCode", "jsx!configuration", "eslint", "unicode"], function(React, Editor, Messages, FixedCode, Configuration, Linter, Unicode) {
+define(["react", "jsx!editor", "jsx!messages", "jsx!fixedCode", "jsx!configuration", "eslint", "unicode"], function(React, Editor, Messages, FixedCode, Configuration, linterModule, Unicode) {
     var hasLocalStorage = (function() {
         try {
             window.localStorage.setItem("localStorageTest", "foo");
@@ -11,7 +11,7 @@ define(["react", "jsx!editor", "jsx!messages", "jsx!fixedCode", "jsx!configurati
         }
     }());
 
-    var linter = new Linter();
+    var linter = new linterModule.Linter();
     var rules = linter.getRules();
     var ruleNames = Array.from(rules.keys());
     var docs = (function() {
@@ -89,6 +89,18 @@ define(["react", "jsx!editor", "jsx!messages", "jsx!fixedCode", "jsx!configurati
                 }
             );
 
+            if (
+                initialState &&
+                initialState.options &&
+                initialState.options.parserOptions &&
+                initialState.options.parserOptions.ecmaFeatures &&
+                initialState.options.parserOptions.ecmaFeatures.experimentalObjectRestSpread
+            ) {
+
+                // Delete the `experimentalObjectRestSpread` option from old states created when the demo supported the option.
+                delete initialState.options.parserOptions.ecmaFeatures.experimentalObjectRestSpread;
+            }
+
             this.initialText = initialState.text;
             return initialState;
         },
@@ -110,10 +122,12 @@ define(["react", "jsx!editor", "jsx!messages", "jsx!fixedCode", "jsx!configurati
             }
             window.location.hash = Unicode.encodeToBase64(serializedState);
         },
-        enableFixMode: function() {
+        enableFixMode: function(event) {
+            event.preventDefault();
             this.setState({ fix: true });
         },
-        disableFixMode: function() {
+        disableFixMode: function(event) {
+            event.preventDefault();
             this.setState({ fix: false });
         },
         render: function App() {

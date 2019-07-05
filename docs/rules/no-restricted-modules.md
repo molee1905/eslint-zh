@@ -1,6 +1,8 @@
 ---
 title: no-restricted-modules - Rules
 layout: doc
+edit_link: https://github.com/eslint/eslint/edit/master/docs/rules/no-restricted-modules.md
+rule_type: suggestion
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -57,10 +59,10 @@ You may also specify a custom message for any paths you want to restrict as foll
 你还可以为您想要限制的路径指定一个自定义消息:
 
 ```json
-"no-restricted-modules": ["error", [{
+"no-restricted-modules": ["error", {
   "name": "foo-module",
   "message": "Please use bar-module instead."
-  }]
+  }
 ]
 ```
 

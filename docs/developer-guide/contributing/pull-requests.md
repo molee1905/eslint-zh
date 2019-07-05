@@ -2,6 +2,7 @@
 title: Pull Requests
 layout: doc
 edit_link: https://github.com/eslint/eslint/edit/master/docs/developer-guide/contributing/pull-requests.md
+
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -103,8 +104,8 @@ The `Tag` is one of the following:
 
 * `Fix` - for a bug fix.
 * `Fix` - 针对一个 bug 的修复。
-* `Update` - for a backwards-compatible enhancement or a change to a rule that increases the number of reported problems.
-* `Update` - 用于向后兼容的增强 或 a change to a rule that increases the number of reported problems.
+* `Update` - either for a backwards-compatible enhancement or for a rule change that adds reported problems.
+* `Update` - 用于向后兼容的增强或针对已报告的问题需要对某条规则进行更改
 * `New` - implemented a new feature.
 * `New` - 实现一个新特性。
 * `Breaking` - for a backwards-incompatible enhancement or feature.
@@ -133,7 +134,7 @@ Here are some good commit message summary examples:
 ```
 Build: Update Travis to only test Node 0.10 (refs #734)
 Fix: Semi rule incorrectly flagging extra semicolon (fixes #840)
-Upgrade: Esprima to 1.2, switch to using Esprima comment attachment (fixes #730)
+Upgrade: Esprima to 1.2, switch to using comment attachment (fixes #730)
 ```
 
 The commit message format is important because these messages are used to create a changelog for each release. The tag and issue number help to create more consistent and useful changelogs.
@@ -171,12 +172,8 @@ With your code ready to go, this is a good time to double-check your submission 
 
 在你准备提交代码之前，请仔细检查你的提交是否遵循我们的约定。下面是一些要检查的事情：
 
-* Run `npm run check-commit` to double-check that your commit is formatted correctly.
-* 运行 `npm run check-commit` 命令来再次检查你的提交格式是否正确。
-* Make sure there is an issue for any pull request you send.
-* 确保你发出的合并请求（pull request）有一个对应的议题（issue）。
-    * The only exception is for documentation changes.
-    * 唯一的例外是文档的修改，不需要有一个议题（issue）。
+* Make sure your commit is formatted correctly.
+* 请确保你的 commit 格式正确。
 * The pull request must have a description. The description should explain what you did and how its effects can be seen.
 * 合并请求（pull request）必须包含一个描述。 这个描述应该解释你做了什么和怎样显示它的效果。
 * The commit message is properly formatted.

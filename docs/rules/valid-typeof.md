@@ -1,6 +1,8 @@
 ---
 title: valid-typeof - Rules
 layout: doc
+edit_link: https://github.com/eslint/eslint/edit/master/docs/rules/valid-typeof.md
+rule_type: problem
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -12,9 +14,9 @@ layout: doc
 
 (recommended) 配置文件中的 `"extends": "eslint:recommended"` 属性启用了此规则。
 
-For a vast majority of use cases, the result of the `typeof` operator is one of the following string literals: `"undefined"`, `"object"`, `"boolean"`, `"number"`, `"string"`, `"function"` and `"symbol"`. It is usually a typing mistake to compare the result of a `typeof` operator to other string literals.
+For a vast majority of use cases, the result of the `typeof` operator is one of the following string literals: `"undefined"`, `"object"`, `"boolean"`, `"number"`, `"string"`, `"function"`, `"symbol"`, and `"bigint"`. It is usually a typing mistake to compare the result of a `typeof` operator to other string literals.
 
-对于绝大多数用例而言，`typeof` 操作符的结果是以下字符串字面量中的一个：`"undefined"`、`"object"`、`"boolean"`、`"number"`、`"string"`、`"function"` 和 `"symbol"`。把 `typeof` 操作符的结果与其它字符串进行比较，通常是个书写错误。
+对于绝大多数用例而言，`typeof` 操作符的结果是以下字符串字面量中的一个：`"undefined"`、`"object"`、`"boolean"`、`"number"`、`"string"`、`"function"`、`"symbol"` 和 `"bigint"`。把 `typeof` 操作符的结果与其它字符串进行比较，通常是个书写错误。
 
 ## Rule Details
 
@@ -41,7 +43,7 @@ Examples of **incorrect** code for this rule:
 typeof foo === "strnig"
 typeof foo == "undefimed"
 typeof bar != "nunber"
-typeof bar !== "function"
+typeof bar !== "fucntion"
 ```
 
 Examples of **correct** code for this rule:
@@ -86,6 +88,10 @@ typeof bar === typeof qux
 You may want to turn this rule off if you will be using the `typeof` operator on host objects.
 
 如果你将在宿主对象上使用 `typeof` 操作符，你可以关闭此规则。
+
+## Further Reading
+
+* [MDN: `typeof` documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof)
 
 ## Version
 

@@ -1,12 +1,18 @@
 ---
 title: one-var - Rules
 layout: doc
+edit_link: https://github.com/eslint/eslint/edit/master/docs/rules/one-var.md
+rule_type: suggestion
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # enforce variables to be declared either together or separately in functions (one-var)
 
 # 强制函数中的变量在一起声明或分开声明 (one-var)
+
+(fixable) The `--fix` option on the [command line](../user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+
+(fixable) [命令行](../user-guide/command-line-interface#fixing-problems)中的 `--fix` 选项可以自动修复一些该规则报告的问题。
 
 Variables can be declared at any point in JavaScript code using `var`, `let`, or `const`. There are many styles and preferences related to the declaration of variables, and one of those is deciding on how many variable declarations should be allowed in a single function.
 
@@ -396,7 +402,9 @@ Examples of **correct** code for this rule with the `{ separateRequires: true }`
 
 var foo = require("foo");
 var bar = "bar";
+```
 
+```js
 var foo = require("foo"),
     bar = require("bar");
 ```
@@ -632,8 +640,8 @@ function foo() {
 ## Compatibility
 
 * **JSHint**: This rule maps to the `onevar` JSHint rule, but allows `let` and `const` to be configured separately.
-* **JSCS**: This rule roughly maps to [disallowMultipleVarDecl](http://jscs.info/rule/disallowMultipleVarDecl).
-* **JSCS**: This rule option `separateRequires` roughly maps to [requireMultipleVarDecl](http://jscs.info/rule/requireMultipleVarDecl).
+* **JSCS**: This rule roughly maps to [disallowMultipleVarDecl](https://jscs-dev.github.io/rule/disallowMultipleVarDecl).
+* **JSCS**: This rule option `separateRequires` roughly maps to [requireMultipleVarDecl](https://jscs-dev.github.io/rule/requireMultipleVarDecl).
 
 ## Version
 

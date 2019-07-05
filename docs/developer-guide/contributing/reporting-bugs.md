@@ -2,14 +2,15 @@
 title: Reporting Bugs
 layout: doc
 edit_link: https://github.com/eslint/eslint/edit/master/docs/developer-guide/contributing/reporting-bugs.md
+
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Reporting Bugs
 
-If you think you've found a bug in ESLint, please [create a new issue](https://github.com/eslint/eslint/issues/new) or a [pull request](/docs/developer-guide/contributing/pull-requests) on GitHub. Be sure to copy the questions from the [bug report template](https://github.com/eslint/eslint/blob/master/templates/bug-report.md).
+If you think you've found a bug in ESLint, please [create a new issue](https://github.com/eslint/eslint/issues/new) or a [pull request](/docs/developer-guide/contributing/pull-requests) on GitHub.
 
-如果你认为你发现了 ESLint 的一个 bug，请在 GitHub 上[create a new issue](/docs/developer-guide/contributing/pull-requests)。要确保覆盖 [bug 报告模板](https://github.com/eslint/eslint/blob/master/templates/bug-report.md)中的所有问题。
+如果你认为你发现了 ESLint 的一个 bug，请在 GitHub 上[创建一个 issue](/docs/developer-guide/contributing/pull-requests) 或 [提交一个 pull request](/docs/developer-guide/contributing/pull-requests)。
 
 Please include as much detail as possible to help us properly address your issue. If we need to triage issues and constantly ask people for more detail, that's time taken away from actually fixing issues. Help us be as efficient as possible by including a lot of detail in your issues.
 

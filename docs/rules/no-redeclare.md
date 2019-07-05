@@ -1,6 +1,8 @@
 ---
 title: no-redeclare - Rules
 layout: doc
+edit_link: https://github.com/eslint/eslint/edit/master/docs/rules/no-redeclare.md
+rule_type: suggestion
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -47,9 +49,9 @@ a = 10;
 
 ## Options
 
-This rule takes one optional argument, an object with a boolean property `"builtinGlobals"`. It defaults to `false`.
+This rule takes one optional argument, an object with a boolean property `"builtinGlobals"`. It defaults to `true`.
 
-该规则有一个选项参数，是个对象，该对象有个布尔属性为 `"builtinGlobals"`。默认为`false`。
+该规则有一个选项参数，是个对象，该对象有个布尔属性为 `"builtinGlobals"`。默认为`true`。
 
 If set to `true`, this rule also checks redeclaration of built-in globals, such as `Object`, `Array`, `Number`...
 

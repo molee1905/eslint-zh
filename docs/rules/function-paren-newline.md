@@ -1,6 +1,8 @@
 ---
 title: function-paren-newline - Rules
 layout: doc
+edit_link: https://github.com/eslint/eslint/edit/master/docs/rules/function-paren-newline.md
+rule_type: layout
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -8,9 +10,9 @@ layout: doc
 
 # 强制在函数括号内使用一致的换行 (function-paren-newline)
 
-(fixable) The `--fix` option on the [command line](../user-guide/command-line-interface#fix) can automatically fix some of the problems reported by this rule.
+(fixable) The `--fix` option on the [command line](../user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
 
-(fixable) [命令行](../user-guide/command-line-interface#fix)中的 `--fix` 选项可以自动修复一些该规则报告的问题。
+(fixable) [命令行](../user-guide/command-line-interface#fixing-problems)中的 `--fix` 选项可以自动修复一些该规则报告的问题。
 
 Many style guides require or disallow newlines inside of function parentheses.
 
@@ -34,6 +36,8 @@ This rule has a single option, which can either be a string or an object.
 * `"never"` 禁止在所有的函数括号内换行。
 * `"multiline"` (default) requires linebreaks inside function parentheses if any of the parameters/arguments have a line break between them. Otherwise, it disallows linebreaks.
 * `"multiline"` (默认) 如果函数的任一参数有换行，则要求在函数括号内换行。否则禁止换行。
+* `"multiline-arguments"` works like `multiline` but allows linebreaks inside function parentheses if there is only one parameter/argument.
+* `"multiline-arguments"` 类似于 `multiline`，但如果只有一个参数/参数，则允许在函数括号内使用换行符。
 * `"consistent"` requires consistent usage of linebreaks for each pair of parentheses. It reports an error if one parenthesis in the pair has a linebreak inside it and the other parenthesis does not.
 * `"consistent"` 要求每个括号使用一致的换行。如果一个括号有换行，另一个括号没有换行，则报错。
 * `{ "minItems": value }` requires linebreaks inside function parentheses if the number of parameters/arguments is at least `value`. Otherwise, it disallows linebreaks.
@@ -258,6 +262,60 @@ var foo = (
 foo(
   bar, baz
 );
+
+foo(
+  function() {
+    return baz;
+  }
+);
+```
+
+Examples of **incorrect** code for this rule with the `"multiline-arguments"` option:
+
+选项 `"multiline-arguments"` 的 **错误** 代码示例：
+
+```js
+/* eslint function-paren-newline: ["error", "multiline-arguments"] */
+
+function foo(bar,
+  baz
+) {}
+
+var foo = function(bar,
+  baz
+) {};
+
+var foo = (
+  bar,
+  baz) => {};
+
+foo(
+  bar,
+  baz);
+
+foo(
+  bar, qux,
+  baz
+);
+```
+
+Examples of **correct** code for this rule with the consistent `"multiline-arguments"` option:
+
+选项 `"multiline-arguments"` 的 **正确** 代码示例：
+
+```js
+/* eslint function-paren-newline: ["error", "multiline-arguments"] */
+
+function foo(
+  bar,
+  baz
+) {}
+
+var foo = function(bar, baz) {};
+
+var foo = (
+  bar
+) => {};
 
 foo(
   function() {

@@ -1,6 +1,8 @@
 ---
 title: no-restricted-imports - Rules
 layout: doc
+edit_link: https://github.com/eslint/eslint/edit/master/docs/rules/no-restricted-imports.md
+rule_type: suggestion
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -8,9 +10,9 @@ layout: doc
 
 # 禁用特定的 import (no-restricted-imports)
 
-Imports are an ES6/ES2015 standard for making the functionality of other modules available in your current module. In CommonJS this is implemented through the require() call which makes this ESLint rule roughly equivalent to its CommonJS counterpart `no-restricted-modules`.
+Imports are an ES6/ES2015 standard for making the functionality of other modules available in your current module. In CommonJS this is implemented through the `require()` call which makes this ESLint rule roughly equivalent to its CommonJS counterpart `no-restricted-modules`.
 
-import 是 ES6/ES2015 的一个标准，用来在你的当前模块引入其他模块。这在 CommonJS 中是通过调用 require() 来实现的，使得该规则大致相当于 CommonJS 对应的 `no-restricted-modules` 规则。
+import 是 ES6/ES2015 的一个标准，用来在当前模块引入其他模块。在 CommonJS 中是通过调用 `require()` 来实现的，使得该规则大致相当于 CommonJS 对应的 `no-restricted-modules` 规则。
 
 Why would you want to restrict imports?
 
@@ -119,6 +121,18 @@ import fs from 'fs';
 ```
 
 ```js
+/*eslint no-restricted-imports: ["error", "fs"]*/
+
+export { fs } from 'fs';
+```
+
+```js
+/*eslint no-restricted-imports: ["error", "fs"]*/
+
+export * from 'fs';
+```
+
+```js
 /*eslint no-restricted-imports: ["error", { "paths": ["cluster"] }]*/
 
 import cluster from 'cluster';
@@ -168,6 +182,7 @@ Examples of **correct** code for this rule:
 /*eslint no-restricted-imports: ["error", "fs"]*/
 
 import crypto from 'crypto';
+export { foo } from "bar";
 ```
 
 ```js
@@ -175,6 +190,7 @@ import crypto from 'crypto';
 
 import crypto from 'crypto';
 import eslint from 'eslint';
+export * from "path";
 ```
 
 ```js

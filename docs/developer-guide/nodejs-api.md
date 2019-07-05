@@ -2,6 +2,7 @@
 title: Node.js API
 layout: doc
 edit_link: https://github.com/eslint/eslint/edit/master/docs/developer-guide/nodejs-api.md
+
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -123,10 +124,10 @@ The most important method on `Linter` is `verify()`, which initiates linting of 
 * `options` - (optional) Additional options for this run.
     * `filename` - (optional) the filename to associate with the source code.
     * `filename` - (可选的)与源代码关联的文件名。
-    * `preprocess` - (optional) A function that accepts a string containing source text, and returns an array of strings containing blocks of code to lint. Also see: [Processors in Plugins](/docs/developer-guide/working-with-plugins)
-    * `preprocess` - (可选的) 该方法接受一个包含源码文本的字符串，返回一个要检测的代码块的字符串数组。查看：[Processors in Plugins](/docs/developer-guide/working-with-plugins)
-    * `postprocess` - (optional) A function that accepts an array of problem lists (one list of problems for each block of code from `preprocess`), and returns a one-dimensional array of problems containing problems for the original, unprocessed text. Also see: [Processors in Plugins](/docs/developer-guide/working-with-plugins)
-    * `postprocess` - (可选的) A function that accepts an array of problem lists (one list of problems for each block of code from `preprocess`), and returns a one-dimensional array of problems containing problems for the original, unprocessed text. Also see: [Processors in Plugins](/docs/developer-guide/working-with-plugins)
+    * `preprocess` - (optional) A function that accepts a string containing source text, and returns an array of strings containing blocks of code to lint. Also see: [Processors in Plugins](/docs/developer-guide/working-with-plugins#processors-in-plugins)
+    * `preprocess` - (可选的) 该方法接受一个包含源码文本的字符串，返回一个要检测的代码块的字符串数组。查看：[Processors in Plugins](/docs/developer-guide/working-with-plugins#processors-in-plugins)
+    * `postprocess` - (optional) A function that accepts an array of problem lists (one list of problems for each block of code from `preprocess`), and returns a one-dimensional array of problems containing problems for the original, unprocessed text. Also see: [Processors in Plugins](/docs/developer-guide/working-with-plugins#processors-in-plugins)
+    * `postprocess` - (可选的) A function that accepts an array of problem lists (one list of problems for each block of code from `preprocess`), and returns a one-dimensional array of problems containing problems for the original, unprocessed text. Also see: [Processors in Plugins](/docs/developer-guide/working-with-plugins#processors-in-plugins)
     * `allowInlineConfig` - (optional) set to `false` to disable inline comments from changing ESLint rules.
     * `allowInlineConfig` - (optional) set to `false` to disable inline comments from changing ESLint rules.
     * `allowInLinrConfig` - (可选的)设置为 `false` 来从改变 eslint 规则禁用行内注释。
@@ -150,7 +151,8 @@ var messages = linter.verify("var foo;", {
 
 // or using SourceCode
 
-var linter = require("eslint").linter,
+var Linter = require("eslint").Linter,
+    linter = new Linter(),
     SourceCode = require("eslint").SourceCode;
 
 var code = new SourceCode("var foo = bar;", ast);
@@ -199,8 +201,6 @@ The information available for each linting message is:
 * `ruleId` - 触发该消息的规则的 ID (如果 `fatal` 为true则此值为null)。
 * `severity` - either 1 or 2, depending on your configuration.
 * `serverity` - 根据你的配置，值为1或2。
-* `source` - the line of code where the problem is (or empty string if it can't be found).
-* `source` - 引起问的的代码的所在行（如果找不到的话就为空）。
 * `endColumn` - the end column of the range on which the error occurred (this property is omitted if it's not range).
 * `endColumn` - 错误发生的范围的结束列 (如果不是范围，这个属性会被省略)。
 * `endLine` - the end line of the range on which the error occurred (this property is omitted if it's not range).
@@ -235,9 +235,9 @@ In this way, you can retrieve the text and AST used for the last run of `linter.
 
 ### Linter#verifyAndFix()
 
-This method is similar to `verify()` except that it also runs autofixing logic, similar to the `--fix` flag on the command line. The result object will contain the autofixed code, along with any remaining linting messages for the code that were not autofixed.
+This method is similar to verify except that it also runs autofixing logic, similar to the `--fix` flag on the command line. The result object will contain the autofixed code, along with any remaining linting messages for the code that were not autofixed.
 
-该方法类似于 `verify()`，它还有运行自动修复的逻辑，类似于命令行中的 `--fix` 标记。返回的结果对象将包含自动修复后的代码，和其他没有自动修复过的代码的检测消息。
+该方法类似于 `verify`，它还有运行自动修复的逻辑，类似于命令行中的 `--fix` 标记。返回的结果对象将包含自动修复后的代码，和其他没有自动修复过的代码的检测消息。
 
 ```js
 var Linter = require("eslint").Linter;
@@ -276,6 +276,8 @@ The information available is:
 ### Linter#defineRule
 
 Each `Linter` instance holds a map of rule names to loaded rule objects. By default, all ESLint core rules are loaded. If you want to use `Linter` with custom rules, you should use the `defineRule` method to register your rules by ID.
+
+每个 `Linter` 实例都持有一个规则名称到加载的规则对象的映射。默认情况下，将加载所有 ESLint 核心规则。如果你想使用自定义规则的 `Linter`，你应该使用 `defineRule` 方法通过 ID 注册规则。
 
 ```js
 const Linter = require("eslint").Linter;
@@ -339,9 +341,13 @@ Map {
 ### Linter#defineParser
 
 Each instance of `Linter` holds a map of custom parsers. If you want to define a parser programmatically you can add this function
-with the name of the parser as first argument and the [parser object](/docs/developer-guide/working-with-plugins) as second argument.
+with the name of the parser as first argument and the [parser object](/docs/developer-guide/working-with-plugins#working-with-custom-parsers) as second argument.
+
+`Linter` 的每个实例都有一个定制解析器的映射。如果你希望以编程方式定义解析器，可以添加此函数第一个参数是解析器的名称，第二个参数是[解析器对象](/docs/developer-guide/working-with-plugins#working-with-custom-parsers)。
 
 If during linting the parser is not found, it will fallback to `require(parserId)`.
+
+如果在检测过程中没有找到解析器，它将回退到 `require(parserId)`。
 
 ```js
 const Linter = require("eslint").Linter;
@@ -356,7 +362,7 @@ linter.defineParser("my-custom-parser", {
 const results = linter.verify("// some source text", { parser: "my-custom-parser" });
 ```
 
-### Linter#version
+### Linter#version/Linter.version
 
 Each instance of `Linter` has a `version` property containing the semantic version number of ESLint that the `Linter` instance is from.
 
@@ -367,6 +373,16 @@ const Linter = require("eslint").Linter;
 const linter = new Linter();
 
 linter.version; // => '4.5.0'
+```
+
+There is also a `Linter.version` property that you can read without instantiating `Linter`:
+
+还有一个 `Linter.version` 属性，你可以在不实例化 `Linter` 的情况下读取它：
+
+```js
+const Linter = require("eslint").Linter;
+
+Linter.version; // => '4.5.0'
 ```
 
 ## linter
@@ -409,8 +425,8 @@ The `CLIEngine` is a constructor, and you can create a new instance by passing i
 
 * `allowInlineConfig` - Set to `false` to disable the use of configuration comments (such as `/*eslint-disable*/`). Corresponds to `--no-inline-config`.
 * `allowInlineConfig` - 设置为 false 来禁止使用配置中的注释 (比如 `/*eslint-disable*/`)。对应 `--no-inline-config`。
-* `baseConfig` - Set to false to disable use of base config. Could be set to an object to override default base config as well.
-* `baseConfig` - 设置为 false 禁用基本配置。 也可以设置为一个对象来重写基本配置。
+* `baseConfig` - Can optionally be set to a config object that has the same schema as `.eslintrc.*`. This will used as a default config, and will be merged with any configuration defined in `.eslintrc.*` files, with the `.eslintrc.*` files having precedence.
+* `baseConfig` - 可以选择将其设置为与 `.eslintrc.*` 模式相同的配置对象。这将作为默认配置，并与 `.eslintrc.*` 中的任何配置进行合并，其中 `.eslintrc.*` 文件的配置优先。
 * `cache` - Operate only on changed files (default: `false`). Corresponds to `--cache`.
 * `cache` - 仅操作改变的文件(默认为 `false`)。对应于 `--cache`.
 * `cacheFile` - Name of the file where the cache will be stored (default: `.eslintcache`). Corresponds to `--cache-file`. Deprecated: use `cacheLocation` instead.
@@ -421,14 +437,16 @@ The `CLIEngine` is a constructor, and you can create a new instance by passing i
 * `configFile` - 要使用的配置文件（默认：null）。如果 `useEslintrc` 为 true 或没有指定，则该配置将于在 `.eslintrc.*` 文件中的任何配置进行合并，且该配置具有优先权。对应于 `-c`。
 * `cwd` - Path to a directory that should be considered as the current working directory.
 * `cwd` - 当前工作目录路径
-* `envs` - An array of environments to load (default: empty array). Corresponds to `--env`.
-* `envs` - 需要加载的环境的数组（默认为空数组）。对应于 `--env`。
-* `extensions` - An array of filename extensions that should be checked for code. The default is an array containing just `".js"`. Corresponds to `--ext`. It is only used in conjunction with directories, not with filenames or glob patterns.
-* `extensions`- 要检查的文件扩展名的数组。默认为仅包含 `".js"` 的数组。对应于 `--ext`。它只和目录配合使用，而不是与 文件名或 glob 模式配合使用。
-* `fix` - This can be a boolean or a function which will be provided each linting message and should return a boolean. True indicates that fixes should be included with the output report, and that errors and warnings should not be listed if they can be fixed. However, the files on disk will not be changed. To persist changes to disk, call [`outputFixes()`](#cliengineoutputfixes).
-* `fix` - 可以是个布尔类型的值，或者是返回布尔值的一个函数。True 表示修复应该包含在输出报告中，错误和警告如果可以修复，就不应该再列出。然而，磁盘上的文件不会被改变。调用[`outputFixes()`](#cliengineoutputfixes)，来改变。
-* `globals` - An array of global variables to declare (default: empty array). Corresponds to `--global`.
-* `globals` - 要声明为全局变量的数组（默认为空数组）。对应于 `--global`。
+* `envs` - An array of environments to load (default: empty array). Corresponds to `--env`. Note: This differs from `.eslintrc.*` / `baseConfig`, where instead the option is called `env` and is an object.
+* `envs` - 需要加载的环境数组（默认为空数组）。对应于 `--env`。注意：这与 `.eslintrc.*` / `baseConfig` 不同，后者是名为 `env` 的选项，是一个对象。
+* `extensions` - An array of filename extensions that should be checked for code. The default is an array containing just `".js"`. Corresponds to `--ext`. It is only used in conjunction with directories, not with filenames, glob patterns or when using `executeOnText()`.
+* `extensions`- 要检查的文件扩展名的数组。默认值是一个仅包含 `".js"` 的数组。对应于 `--ext`。它只和目录配合使用，而不是与 文件名或 glob 模式或使用 `executeOnText()` 时一起使用。
+* `fix` - A boolean or a function (default: `false`). If a function, it will be passed each linting message and should return a boolean indicating whether the fix should be included with the output report (errors and warnings will not be listed if fixed). Files on disk are never changed regardless of the value of `fix`. To persist changes to disk, call [`outputFixes()`](#cliengineoutputfixes).
+* `fix` - 布尔值或函数（默认：`false`）。如果是一个函数，它将传递每一个检测的消息，并且返回一个布尔值指示是否应该将修复包含在输出报告中（如果可修复，将不会再列出错误和警告）。无论 `fix` 的值是什么，磁盘上的文件不会更改。要将更改持久化到磁盘上，需调用[`outputFixes()`](#cliengineoutputfixes)。
+* `fixTypes` - An array of rule types for which fixes should be applied (default: `null`). This array acts like a filter, only allowing rules of the given types to apply fixes. Possible array values are `"problem"`, `"suggestion"`, and `"layout"`.
+* `fixTypes` - 需要应用修复的规则类型数组（默认为 `null`）。此数组的作用类似于过滤器，只允许对给定类型的规则应用修复。可能的数组值为 `"problem"`，`"suggestion"` 和 `"layout"`。
+* `globals` - An array of global variables to declare (default: empty array). Corresponds to `--global`, and similarly supports passing `'name:true'` to denote a writeable global. Note: This differs from `.eslintrc.*` / `baseConfig`, where `globals` is an object.
+* `globals` - 要声明的全局变量数组（默认为空数组）。对应于 `--global`，并且同样地支持传递 `'name:true'` 来表示一个可写的全局变量。注意：这不同于 `.eslintrc.*` / `baseConfig`，其中 `globals` 是一个对象。
 * `ignore` - False disables use of `.eslintignore`, `ignorePath` and `ignorePattern` (default: true). Corresponds to `--no-ignore`.
 * `ignore`- 值为 false 时禁用 `.eslintignore`、`ignorePath` 和 `ignorePattern` (默认为true)。对应于 `--no-ignore`。
 * `ignorePath` - The ignore file to use instead of `.eslintignore` (default: null). Corresponds to `--ignore-path`.
@@ -449,8 +467,13 @@ The `CLIEngine` is a constructor, and you can create a new instance by passing i
 * `rules` - 要使用的规则的对象 (默认为null)。 对应于 `--rule`。
 * `useEslintrc` - Set to false to disable use of `.eslintrc` files (default: true). Corresponds to `--no-eslintrc`.
 * `useEslintrc` - 设置为 false 时禁用 `.eslintrc` 文件(默认为true)。对应于`--no-eslintrc`。
+* `globInputPaths` - Set to false to skip glob resolution of input file paths to lint (default: true). If false, each input file paths is assumed to be a non-glob path to an existing file.
+* `globInputPaths` - 设置为 `false` 将 glob 匹配的输入文件路径跳过检测（默认为 `true`）。如果为 `false`，则假定每个输入文件路径都是现有文件的非 glob 路径。
 
+To programmatically set `.eslintrc.*` options not supported above (such as `extends`,
+`overrides` and `settings`), define them in a config object passed to `baseConfig` instead.
 
+以编程方式设置 `.eslintrc.*` 选项不支持上面 (比如 `extends`、`overrides` 和 `settings`)，在传递给 `baseConfig` 配置对象中定义它们。
 
 For example:
 
@@ -460,6 +483,12 @@ For example:
 var CLIEngine = require("eslint").CLIEngine;
 
 var cli = new CLIEngine({
+    baseConfig: {
+        extends: ["eslint-config-shared"],
+        settings: {
+            sharedData: "Hello"
+        }
+    },
     envs: ["browser", "mocha"],
     useEslintrc: false,
     rules: {
@@ -468,9 +497,17 @@ var cli = new CLIEngine({
 });
 ```
 
-In this code, a new `CLIEngine` instance is created that sets two environments, `"browser"` and `"mocha"`, disables loading of `.eslintrc` and `package.json` files, and enables the `semi` rule as an error. You can then call methods on `cli` and these options will be used to perform the correct action.
+In this example, a new `CLIEngine` instance is created that extends a configuration called
+`"eslint-config-shared"`, a setting named `"sharedData"` and two environments (`"browser"`
+and `"mocha"`) are defined, loading of `.eslintrc` and `package.json` files are disabled,
+and the `semi` rule enabled as an error. You can then call methods on `cli` and these options
+will be used to perform the correct action.
 
-在上面的代码中，创建了一个 `CLIEngine` 实例，设置两种环境，`"browser"` 和 `"mocha"`,禁止加载 `.eslintrc` 和 `package.json` 文件，开启 `semi` 规则作为错误。你可以在 `cli` 调用，然后这些选项将被应用并正确运行。
+在本例中，创建了一个新的 `CLIEngine` 实例，它扩展了一个名为 `"eslint-config-shared"` 的配置，一个名为  `"sharedData"` 的设置和定义了两个环境变量 (`"browser"` 和 `"mocha"`)，禁止加载 `.eslintrc` 和 `package.json` 文件，启用了 `semi` 规则，被设置为 error 级别。你可以在调用 `cli` 的方法，这些选项将被应用并正确运行。
+
+Note: Currently `CLIEngine` does not validate options passed to it, but may start doing so in the future.
+
+注意：当前，`CLIEngine` 不会验证传递给它的选项，但将来可能会做验证。
 
 ### CLIEngine#executeOnFiles()
 
@@ -522,7 +559,8 @@ The return value is an object containing the results of the linting operation. H
     errorCount: 1,
     warningCount: 0,
     fixableErrorCount: 1,
-    fixableWarningCount: 0
+    fixableWarningCount: 0,
+    usedDeprecatedRules: []
 }
 ```
 
@@ -582,6 +620,7 @@ var report = cli.executeOnFiles(["myfile.js", "lib/"]);
     warningCount: 0,
     fixableErrorCount: 1,
     fixableWarningCount: 0,
+    usedDeprecatedRules: []
 }
 ```
 
@@ -615,6 +654,7 @@ If the operation ends with a parsing error, you will get a single message for th
     warningCount: 0,
     fixableErrorCount: 0,
     fixableWarningCount: 0,
+    usedDeprecatedRules: []
 }
 ```
 
@@ -633,11 +673,14 @@ The top-level report object has a `results` array containing all linting results
 * `output` - The source code for the given file with as many fixes applied as possible, so you can use that to rewrite the files if necessary. This property is omitted if no fix is available.
 * `output` - 给定的文件应用尽可能多的修复之后的源码，如果有必要，你可以使用它对文件进行重写。如果没有可用的修复，这个属性将被省略。
 
-The top-level report object also has `errorCount` and `warningCount` which give the exact number of errors and warnings respectively on all the files.
+The top-level report object also has `errorCount` and `warningCount` which give the exact number of errors and warnings respectively on all the files. Additionally, `usedDeprecatedRules` signals any deprecated rules used and their replacement (if available). Specifically, it is array of objects with properties like so:
 
-顶层报告对象也有 `errorCount` 和 `warningCount`，分别给出所有文件的错误和警告具体数量。
+顶层报告对象也有 `errorCount` 和 `warningCount`，分别给出所有文件的错误和警告具体数量。此外，`usedDeprecatedRules` 表示所使用的任何废弃的规则及其替换（如果可用）。具体来说，它是具有以下属性的对象数据：
 
-Report message objects have a deprecated `source` property. This property **will be removed** from the linting messages returned in `messages` in an upcoming breaking release. If you depend on this property, you should now use the top-level `source` or `output` properties instead.
+* `ruleId` - The name of the rule (e.g. `indent-legacy`).
+* `ruleId` - 规则名 (比如 `indent-legacy`)。
+* `replacedBy` - An array of rules that replace the deprecated rule (e.g. `["indent"]`).
+* `replacedBy` - 替换已废弃的规则数组 (比如 `["indent"]`)。
 
 Once you get a report object, it's up to you to determine how to output the results. Fixes will not be automatically applied to the files, even if you set `fix: true` when constructing the `CLIEngine` instance. To apply fixes to the files, call [`outputFixes`](#cliengineoutputfixes).
 
@@ -801,6 +844,8 @@ Retrieves a formatter, which you can then use to format a report object. The arg
 * "[tap](../user-guide/formatters#tap)"
 * "[unix](../user-guide/formatters#unix)"
 * "[unix](../user-guide/formatters#unix)"
+* "[visualstudio](../user-guide/formatters#visualstudio)"
+* "[visualstudio](../user-guide/formatters#visualstudio)"
 
 or the full path to a JavaScript file containing a custom formatter. You can also omit the argument to retrieve the default formatter.
 

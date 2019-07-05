@@ -1,12 +1,18 @@
 ---
 title: no-with - Rules
 layout: doc
+edit_link: https://github.com/eslint/eslint/edit/master/docs/rules/no-with.md
+rule_type: suggestion
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # disallow `with` statements (no-with)
 
 # 禁用 `with` 语句 (no-with)
+
+(recommended) The `"extends": "eslint:recommended"` property in a configuration file enables this rule.
+
+(recommended) 配置文件中的 `"extends": "eslint:recommended"` 属性启用了此规则。
 
 The `with` statement is potentially problematic because it adds members of an object to the current scope, making it impossible to tell what a variable inside the block actually refers to.
 

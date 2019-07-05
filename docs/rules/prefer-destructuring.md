@@ -1,12 +1,18 @@
 ---
 title: prefer-destructuring - Rules
 layout: doc
+edit_link: https://github.com/eslint/eslint/edit/master/docs/rules/prefer-destructuring.md
+rule_type: suggestion
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
 # Prefer destructuring from arrays and objects (prefer-destructuring)
 
 # 优先使用数组和对象解构 (prefer-destructuring)
+
+(fixable) The `--fix` option on the [command line](../user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
+
+(fixable) [命令行](../user-guide/command-line-interface#fixing-problems)中的 `--fix` 选项可以自动修复一些该规则报告的问题。
 
 With JavaScript ES6, a new syntax was added for creating variables from an array index or object property, called [destructuring](#further-reading).  This rule enforces usage of destructuring instead of accessing a property through a member expression.
 
@@ -35,6 +41,15 @@ One key is `VariableDeclarator` and the other is `AssignmentExpression`, which c
 The rule has a second object with a single key, `enforceForRenamedProperties`, which determines whether the `object` destructuring applies to renamed variables.
 
 该规则有一个第二对象，包含一个键，`enforceForRenamedProperties` 用来决定 `object` 解构是否应用于重命名的变量。
+
+**Note**: It is not possible to determine if a variable will be referring to an object or an array at runtime. This rule therefore guesses the assignment type by checking whether the key being accessed is an integer. This can lead to the following possibly confusing situations:
+
+**注意**：不可能在运行时确定变量是否引用对象或数组。因此，该规则通过检查被访问的键是否是整数来猜测赋值类型。这可能导致以下可能令人困惑的情况:
+
+- Accessing an object property whose key is an integer will fall under the category `array` destructuring.
+- 访问键值为整数的对象属性将属于 `array` 析构的类别。
+- Accessing an array element through a computed index will fall under the category `object` destructuring.
+- 通过计算索引访问数组元素属于 `object` 析构的类别。
 
 Examples of **incorrect** code for this rule:
 

@@ -2,6 +2,7 @@
 title: New Rules
 layout: doc
 edit_link: https://github.com/eslint/eslint/edit/master/docs/developer-guide/contributing/new-rules.md
+
 ---
 <!-- Note: No pull requests accepted for this file. See README.md in the root directory for details. -->
 
@@ -40,11 +41,10 @@ Even though these are the formal criteria for inclusion, each rule is evaluated 
 
 ## Proposing a Rule
 
-If you want to propose a new rule, [create an issue](https://github.com/eslint/eslint/issues/new?body=**When%20does%20this%20rule%20warn%3F%20Please%20describe%20and%20show%20example%20code%3A**%0A%0A**Is%20this%20rule%20preventing%20an%20error%20or%20is%20it%20stylistic%3F**%0A%0A**Why%20is%20this%20rule%20a%20candidate%20for%20inclusion%20instead%20of%20creating%20a%20custom%20rule%3F**%0A%0A**Are%20you%20willing%20to%20create%20the%20rule%20yourself%3F**%0A%0A) be sure to include:
+If you want to propose a new rule, please see how to [create a pull request](/docs/developer-guide/contributing/pull-requests) or submit an issue by filling out a [new rule template](https://github.com/eslint/eslint/issues/new?template=NEW_RULE.md).
 
-If you want to propose a new rule, [create a pull request](/docs/developer-guide/contributing/pull-requests) or new issue and paste the questions from the [rule proposal template](https://github.com/eslint/eslint/blob/master/templates/rule-proposal.md) into the description.
 
-如果你想提出一条新规则，[创建一个合并请求（pull request）](/docs/developer-guide/contributing/pull-requests)，或新 issue，把[规则提议模板](https://github.com/eslint/eslint/blob/master/templates/rule-proposal.md)的问题粘贴到描述里。
+如果你想提议一条新规则，请查看如何 [创建一个合并请求（pull request）](/docs/developer-guide/contributing/pull-requests)，或通过填写[新规则模板](https://github.com/eslint/eslint/blob/master/templates/rule-proposal.md)提交一个 issue。
 
 We need all of this information in order to determine whether or not the rule is a good core rule candidate.
 
